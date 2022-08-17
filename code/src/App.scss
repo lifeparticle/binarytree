@@ -1,0 +1,10 @@
+.app {
+	display: grid;
+	grid-template-columns: 300px;
+	background-color: blueviolet;
+	justify-content: center;
+
+	.mantine-Col-root {
+		background-color: red;
+	}
+}
