@@ -7,6 +7,7 @@ import JSZipUtils from "jszip-utils";
 import { saveAs } from "file-saver";
 
 // #FF0000, #00FFFF, #FFFFFF, #C0C0C0, #000000
+
 const ImageGeneratorFromColors: React.FC = () => {
 	const [value, setValue] = useState("");
 	const [divs, setDivs] = useState("");
