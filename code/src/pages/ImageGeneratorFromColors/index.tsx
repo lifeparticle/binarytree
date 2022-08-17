@@ -1,7 +1,7 @@
 import style from "./ImageGeneratorFromColors.module.scss";
 import { Button, Space, Textarea } from "@mantine/core";
 import { useRef, useState } from "react";
-import { toPng, toJpeg, toBlob, toPixelData, toSvg } from "html-to-image";
+import { toPng } from "html-to-image";
 import JSZip from "jszip";
 import JSZipUtils from "jszip-utils";
 import { saveAs } from "file-saver";
