@@ -9,34 +9,29 @@ import { saveAs } from "file-saver";
 // #FF0000, #00FFFF, #FFFFFF, #C0C0C0, #000000
 
 const ImageGeneratorFromColors: React.FC = () => {
-	const [value, setValue] = useState("");
-	const [divs, setDivs] = useState("");
-	const domEl = useRef(null);
-	console.log(value);
+	const [colors, setColors] = useState<Array<string>>([]);
+	const domEl = useRef<Array<HTMLDivElement>>([]);
+	domEl.current = [];
 
-	const onTextareaChange = (event: any) => {
-		setValue(event.currentTarget.value);
-		const colors = event.currentTarget.value.split(",");
-		const divs = colors.map((color: string) => {
-			return (
-				<div ref={domEl} key={color} style={{ backgroundColor: color }}></div>
-			);
-		});
-		setDivs(divs);
-		console.log(divs);
+	const onTextAreaChange = (event: any) => {
+		setColors(event.currentTarget.value.split(","));
 	};
 
-	const onButtonClik = async () => {
+	const onButtonClick = async () => {
+		console.log("on button click", domEl.current);
 		if (!domEl.current) return;
-		const dataUrl = await toPng(domEl.current);
-
 		const zip = new JSZip();
-		const baseData = await JSZipUtils.getBinaryContent(dataUrl);
-		zip.file("test.png", baseData, { binary: true });
 
-		zip.generateAsync({ type: "blob" }).then(function (content) {
-			saveAs(content, "ImageGeneratorFromColors.zip");
-		});
+		await Promise.all(
+			domEl.current.map(async (el, idx) => {
+				const dataUrl = await toPng(el);
+				const baseData = await JSZipUtils.getBinaryContent(dataUrl);
+				zip.file(`test-${idx + 1}.png`, baseData, { binary: true });
+			})
+		);
+
+		const content = await zip.generateAsync({ type: "blob" });
+		saveAs(content, "ImageGeneratorFromColors.zip");
 	};
 
 	return (
@@ -47,12 +42,26 @@ const ImageGeneratorFromColors: React.FC = () => {
 				label="Colors"
 				radius="md"
 				minRows={4}
-				onChange={onTextareaChange}
+				onChange={onTextAreaChange}
 			/>
 			<Space h="md" />
-			<div className={style.colorGrid}>{divs}</div>
+			<div className={style.colorGrid}>
+				{colors.map((color: string) => {
+					return (
+						<div
+							ref={(ref) => {
+								if (ref) {
+									domEl.current.push(ref);
+								}
+							}}
+							key={color}
+							style={{ backgroundColor: color }}
+						></div>
+					);
+				})}
+			</div>
 			<Space h="md" />
-			<Button onClick={onButtonClik}>Downlaod</Button>
+			<Button onClick={onButtonClick}>Downlaod</Button>
 			<Space h="md" />
 		</div>
 	);
