@@ -1,5 +1,5 @@
 import style from "./ImageGeneratorFromColors.module.scss";
-import { Button, Textarea, NumberInput } from "@mantine/core";
+import { Button, Textarea, NumberInput, Space } from "@mantine/core";
 import { useRef, useState } from "react";
 import { toPng } from "html-to-image";
 import JSZip from "jszip";
@@ -36,7 +36,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 			domEl.current.map(async (el, idx) => {
 				const dataUrl = await toPng(el);
 				const baseData = await JSZipUtils.getBinaryContent(dataUrl);
-				zip.file(`test-${idx + 1}.png`, baseData, { binary: true });
+				zip.file(`image-${idx + 1}.png`, baseData, { binary: true });
 			})
 		);
 
@@ -76,6 +76,18 @@ const ImageGeneratorFromColors: React.FC = () => {
 					value={rounded}
 					onChange={(val: any) => setRounded(val)}
 				/>
+				<Space h="xl" />
+				<Button
+					styles={(theme) => ({
+						root: {
+							backgroundColor:
+								theme.colorScheme === "dark" ? theme.colors.dark : "#228be6",
+						},
+					})}
+					onClick={onButtonClick}
+				>
+					Downlaod
+				</Button>
 			</div>
 
 			<div className={style.colorGrid}>
@@ -98,18 +110,6 @@ const ImageGeneratorFromColors: React.FC = () => {
 					);
 				})}
 			</div>
-
-			<Button
-				styles={(theme) => ({
-					root: {
-						backgroundColor:
-							theme.colorScheme === "dark" ? theme.colors.dark : "#228be6",
-					},
-				})}
-				onClick={onButtonClick}
-			>
-				Downlaod
-			</Button>
 		</div>
 	);
 };
