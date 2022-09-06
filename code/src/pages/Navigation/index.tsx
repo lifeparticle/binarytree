@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { createStyles, Navbar, Group, Button } from "@mantine/core";
-import { IconBellRinging, IconReceipt2, IconPlayCard } from "@tabler/icons";
+import {
+	IconPlayCard,
+	IconColorPicker,
+	IconMarkdown,
+	IconBoxPadding,
+	IconWindmill,
+} from "@tabler/icons";
 import { Link } from "react-router-dom";
 
 const useStyles = createStyles((theme, _params, getRef) => {
@@ -82,9 +88,10 @@ const useStyles = createStyles((theme, _params, getRef) => {
 });
 
 const data = [
-	{ link: "/", label: "Image Generator From Colors", icon: IconBellRinging },
-	{ link: "/cp", label: "Color Picker", icon: IconReceipt2 },
-	{ link: "/me", label: "Markdown Editor", icon: IconReceipt2 },
+	{ link: "/", label: "Image Generator From Colors", icon: IconWindmill },
+	{ link: "/cp", label: "Color Picker", icon: IconColorPicker },
+	{ link: "/me", label: "Markdown Editor", icon: IconMarkdown },
+	{ link: "/icons", label: "Icons", icon: IconBoxPadding },
 ];
 
 interface NavigationProps {
