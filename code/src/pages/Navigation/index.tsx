@@ -1,15 +1,7 @@
 import { useState } from "react";
 import { createStyles, Navbar, Group, Button } from "@mantine/core";
-import {
-	IconBellRinging,
-	IconFingerprint,
-	IconKey,
-	IconSettings,
-	Icon2fa,
-	IconDatabaseImport,
-	IconReceipt2,
-	IconPlayCard,
-} from "@tabler/icons";
+import { IconBellRinging, IconReceipt2, IconPlayCard } from "@tabler/icons";
+import { Link } from "react-router-dom";
 
 const useStyles = createStyles((theme, _params, getRef) => {
 	const icon = getRef("icon");
@@ -90,13 +82,9 @@ const useStyles = createStyles((theme, _params, getRef) => {
 });
 
 const data = [
-	{ link: "", label: "Notifications", icon: IconBellRinging },
-	{ link: "", label: "Billing", icon: IconReceipt2 },
-	{ link: "", label: "Security", icon: IconFingerprint },
-	{ link: "", label: "SSH Keys", icon: IconKey },
-	{ link: "", label: "Databases", icon: IconDatabaseImport },
-	{ link: "", label: "Authentication", icon: Icon2fa },
-	{ link: "", label: "Other Settings", icon: IconSettings },
+	{ link: "/", label: "Image Generator From Colors", icon: IconBellRinging },
+	{ link: "/cp", label: "Color Picker", icon: IconReceipt2 },
+	{ link: "/me", label: "Markdown Editor", icon: IconReceipt2 },
 ];
 
 interface NavigationProps {
@@ -108,23 +96,20 @@ const Navigation: React.FC<NavigationProps> = ({ value, toggle }) => {
 	const { classes, cx } = useStyles();
 	const [active, setActive] = useState("Billing");
 
-	console.log(value);
-
 	const links = data.map((item) => (
-		<a
+		<Link
 			className={cx(classes.link, {
 				[classes.linkActive]: item.label === active,
 			})}
-			href={item.link}
+			to={item.link}
 			key={item.label}
 			onClick={(event) => {
-				event.preventDefault();
 				setActive(item.label);
 			}}
 		>
 			<item.icon className={classes.linkIcon} stroke={1.5} />
 			<span>{item.label}</span>
-		</a>
+		</Link>
 	));
 
 	return (

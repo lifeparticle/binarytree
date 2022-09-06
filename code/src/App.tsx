@@ -1,5 +1,4 @@
-import { MantineProvider } from "@mantine/core";
-import style from "./App.module.scss";
+import { AppShell, Header, MantineProvider } from "@mantine/core";
 import { useToggle } from "@mantine/hooks";
 import Home from "./pages/Home";
 import Navigation from "./pages/Navigation";
@@ -8,10 +7,25 @@ function App() {
 	const [value, toggle] = useToggle<"dark" | "light">(["light", "dark"]); // same as above
 	return (
 		<MantineProvider theme={{ colorScheme: value }}>
-			<div className={style.app}>
-				<Navigation value={value} toggle={toggle} />
+			<AppShell
+				padding="md"
+				navbar={<Navigation value={value} toggle={toggle} />}
+				header={
+					<Header height={60} p="xs">
+						{/* Header content */}
+					</Header>
+				}
+				styles={(theme) => ({
+					main: {
+						backgroundColor:
+							theme.colorScheme === "dark"
+								? theme.colors.dark[8]
+								: theme.colors.gray[0],
+					},
+				})}
+			>
 				<Home />
-			</div>
+			</AppShell>
 		</MantineProvider>
 	);
 }

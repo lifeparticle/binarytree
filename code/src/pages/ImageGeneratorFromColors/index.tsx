@@ -1,5 +1,5 @@
 import style from "./ImageGeneratorFromColors.module.scss";
-import { Button, Space, Textarea } from "@mantine/core";
+import { Button, Textarea, NumberInput } from "@mantine/core";
 import { useRef, useState } from "react";
 import { toPng } from "html-to-image";
 import JSZip from "jszip";
@@ -7,14 +7,24 @@ import JSZipUtils from "jszip-utils";
 import { saveAs } from "file-saver";
 
 // #FF0000, #00FFFF, #FFFFFF, #C0C0C0, #000000
+/*
+#FF0000
+#00FFFF
+#FFFFFF
+#C0C0C0
+#000000
+*/
 
 const ImageGeneratorFromColors: React.FC = () => {
 	const [colors, setColors] = useState<Array<string>>([]);
 	const domEl = useRef<Array<HTMLDivElement>>([]);
+	const [height, setHeight] = useState(40);
+	const [width, setWidth] = useState(40);
+	const [rounded, setRounded] = useState(20);
 	domEl.current = [];
 
 	const onTextAreaChange = (event: any) => {
-		setColors(event.currentTarget.value.split(","));
+		setColors(event.currentTarget.value.split(/[\n,]+/));
 	};
 
 	const onButtonClick = async () => {
@@ -36,15 +46,38 @@ const ImageGeneratorFromColors: React.FC = () => {
 
 	return (
 		<div className={style.igfc}>
-			<Space h="md" />
 			<Textarea
-				placeholder="Paste colors separated by commas"
+				placeholder="Paste colors separated by commas or new line"
 				label="Colors"
 				radius="md"
-				minRows={4}
+				minRows={20}
 				onChange={onTextAreaChange}
 			/>
-			<Space h="md" />
+			<div>
+				{" "}
+				<NumberInput
+					mt="xl"
+					label="Height"
+					placeholder="NumberInput with custom layout"
+					value={height}
+					onChange={(val: any) => setHeight(val)}
+				/>
+				<NumberInput
+					mt="xl"
+					label="Width"
+					placeholder="NumberInput with custom layout"
+					value={width}
+					onChange={(val: any) => setWidth(val)}
+				/>
+				<NumberInput
+					mt="xl"
+					label="Border radius"
+					placeholder="NumberInput with custom layout"
+					value={rounded}
+					onChange={(val: any) => setRounded(val)}
+				/>
+			</div>
+
 			<div className={style.colorGrid}>
 				{colors.map((color: string) => {
 					return (
@@ -55,14 +88,28 @@ const ImageGeneratorFromColors: React.FC = () => {
 								}
 							}}
 							key={color}
-							style={{ backgroundColor: color }}
+							style={{
+								backgroundColor: color,
+								height: `${height}px`,
+								width: `${width}px`,
+								borderRadius: `${rounded}px`,
+							}}
 						></div>
 					);
 				})}
 			</div>
-			<Space h="md" />
-			<Button onClick={onButtonClick}>Downlaod</Button>
-			<Space h="md" />
+
+			<Button
+				styles={(theme) => ({
+					root: {
+						backgroundColor:
+							theme.colorScheme === "dark" ? theme.colors.dark : "#228be6",
+					},
+				})}
+				onClick={onButtonClick}
+			>
+				Downlaod
+			</Button>
 		</div>
 	);
 };

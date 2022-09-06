@@ -1,10 +1,14 @@
 .igfc {
+	display: grid;
+	padding-left: 20px;
+	padding-right: 20px;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 20px;
 	.colorGrid {
+		grid-column: 1/-1;
 		display: flex;
 		gap: 5px;
-		div {
-			height: 40px;
-			width: 40px;
-		}
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
 }
