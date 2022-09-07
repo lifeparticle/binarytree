@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Navigation from "./pages/Navigation";
 
 function App() {
-	const [value, toggle] = useToggle<"dark" | "light">(["light", "dark"]); // same as above
+	const [value, toggle] = useToggle<"dark" | "light">(["dark", "light"]);
 	return (
 		<MantineProvider theme={{ colorScheme: value }}>
 			<AppShell

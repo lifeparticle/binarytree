@@ -4,6 +4,7 @@ import ColorPicker from "pages/ColorPicker";
 import ImageGeneratorFromColors from "pages/ImageGeneratorFromColors";
 import MarkdownEditor from "pages/MarkdownEditor";
 import Icons from "pages/Icons";
+import TextEditor from "pages/TextEditor";
 
 const Home: React.FC = () => {
 	return (
@@ -12,6 +13,7 @@ const Home: React.FC = () => {
 				<Route path="/" element={<ImageGeneratorFromColors />} />
 				<Route path="/cp" element={<ColorPicker />} />
 				<Route path="/me" element={<MarkdownEditor />} />
+				<Route path="/te" element={<TextEditor />} />
 				<Route path="/icons" element={<Icons />} />
 			</Routes>
 		</div>

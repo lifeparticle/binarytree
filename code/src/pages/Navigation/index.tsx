@@ -6,6 +6,7 @@ import {
 	IconMarkdown,
 	IconBoxPadding,
 	IconWindmill,
+	IconFileText,
 } from "@tabler/icons";
 import { Link } from "react-router-dom";
 
@@ -91,6 +92,7 @@ const data = [
 	{ link: "/", label: "Image Generator From Colors", icon: IconWindmill },
 	{ link: "/cp", label: "Color Picker", icon: IconColorPicker },
 	{ link: "/me", label: "Markdown Editor", icon: IconMarkdown },
+	{ link: "/te", label: "Text Editor", icon: IconFileText },
 	{ link: "/icons", label: "Icons", icon: IconBoxPadding },
 ];
 
