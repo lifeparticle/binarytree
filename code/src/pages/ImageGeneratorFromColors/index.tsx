@@ -17,6 +17,7 @@ import { saveAs } from "file-saver";
 
 const ImageGeneratorFromColors: React.FC = () => {
 	const [colors, setColors] = useState<Array<string>>([]);
+	const [value, setValue] = useState("");
 	const domEl = useRef<Array<HTMLDivElement>>([]);
 	const [height, setHeight] = useState(40);
 	const [width, setWidth] = useState(40);
@@ -25,11 +26,13 @@ const ImageGeneratorFromColors: React.FC = () => {
 
 	const onTextAreaChange = (event: any) => {
 		setColors(event.currentTarget.value.split(/[\n,]+/));
+		setValue(event.currentTarget.value);
 	};
 
 	const onButtonClick = async () => {
 		console.log("on button click", domEl.current);
-		if (!domEl.current) return;
+		if (!domEl.current || colors.length === 0) return;
+
 		const zip = new JSZip();
 
 		await Promise.all(
@@ -52,6 +55,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 				radius="md"
 				minRows={20}
 				onChange={onTextAreaChange}
+				value={value}
 			/>
 			<div>
 				{" "}
@@ -87,6 +91,20 @@ const ImageGeneratorFromColors: React.FC = () => {
 					onClick={onButtonClick}
 				>
 					Downlaod
+				</Button>
+				<Button
+					styles={(theme) => ({
+						root: {
+							backgroundColor:
+								theme.colorScheme === "dark" ? theme.colors.dark : "#228be6",
+						},
+					})}
+					onClick={() => {
+						setValue("");
+						setColors([]);
+					}}
+				>
+					Clear
 				</Button>
 			</div>
 

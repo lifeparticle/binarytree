@@ -2,6 +2,7 @@ import { useState } from "react";
 import { RichTextEditor } from "@mantine/rte";
 import style from "./TextEditor.module.scss";
 import { useEffect } from "react";
+import { Button } from "@mantine/core";
 
 const TextEditor: React.FC = () => {
 	const [value, onChange] = useState("");
@@ -10,19 +11,16 @@ const TextEditor: React.FC = () => {
 	const [charCountWithoutSpace, setCharCountWithoutSpace] = useState(0);
 
 	useEffect(() => {
-		let cleanValue = value.trim().replace("<p><br></p>", "");
-		cleanValue = cleanValue
-			.replace(/<p>/g, "")
-			.replace(/<\/p>/g, "\n")
-			.replace(/<br>/g, "");
-		if (cleanValue === "") return;
-		console.log(value);
-		console.log(cleanValue);
-		console.log(cleanValue.split(/[\n\s]+/));
-
-		setWordCount(cleanValue.split(/\s+/).length);
+		let cleanValue = value.replace(/(<([^>]+)>)/gi, " ").trim();
+		if (cleanValue === "") {
+			setWordCount(0);
+			setCharCount(0);
+			setCharCountWithoutSpace(0);
+			return;
+		}
+		setWordCount(cleanValue.split(/[\s]+/g).length);
 		setCharCount(cleanValue.length);
-		setCharCountWithoutSpace(cleanValue.split(/\s+/).join("").length);
+		setCharCountWithoutSpace(cleanValue.replace(/[\s]+/g, "").length);
 	}, [value]);
 	return (
 		<div className={style.te}>
@@ -30,6 +28,19 @@ const TextEditor: React.FC = () => {
 			<h3>Charecter count: {charCount}</h3>
 			<h3>Charecter count witout space: {charCountWithoutSpace}</h3>
 			<RichTextEditor value={value} onChange={onChange} />
+			<Button
+				styles={(theme) => ({
+					root: {
+						backgroundColor:
+							theme.colorScheme === "dark" ? theme.colors.dark : "#228be6",
+					},
+				})}
+				onClick={() => {
+					onChange("");
+				}}
+			>
+				Clear
+			</Button>
 		</div>
 	);
 };
