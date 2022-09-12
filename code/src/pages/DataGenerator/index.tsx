@@ -26,38 +26,42 @@ const DataGenerator: React.FC = () => {
 			/>
 			<div className={style.dg__table}>
 				<div className={style.dg__table_left}>
-					{Array.from({ length: colNum }, (_, k) => (
-						<TextInput
-							label={`# ${k + 1}`}
-							placeholder="Column name"
-							value={value}
-							onChange={(event) => setValue(event.currentTarget.value)}
-							mt="xl"
-							autoComplete="nope"
-						/>
-					))}
-
-					{Array.from({ length: colNum }, (_, k) => (
-						<TextInput
-							label={`# ${k + 1}`}
-							placeholder="Column name"
-							value={value}
-							onChange={(event) => setValue(event.currentTarget.value)}
-							mt="xl"
-							autoComplete="nope"
-						/>
-					))}
-
-					{Array.from({ length: colNum }, (_, k) => (
-						<TextInput
-							label={`# ${k + 1}`}
-							placeholder="Column name"
-							value={value}
-							onChange={(event) => setValue(event.currentTarget.value)}
-							mt="xl"
-							autoComplete="nope"
-						/>
-					))}
+					<div>
+						{Array.from({ length: colNum }, (_, k) => (
+							<TextInput
+								label={`# ${k + 1}`}
+								placeholder="Column name"
+								value={value}
+								onChange={(event) => setValue(event.currentTarget.value)}
+								mt="xl"
+								autoComplete="nope"
+							/>
+						))}
+					</div>
+					<div>
+						{Array.from({ length: colNum }, (_, k) => (
+							<TextInput
+								label={`# ${k + 1}`}
+								placeholder="Column name"
+								value={value}
+								onChange={(event) => setValue(event.currentTarget.value)}
+								mt="xl"
+								autoComplete="nope"
+							/>
+						))}
+					</div>
+					<div>
+						{Array.from({ length: colNum }, (_, k) => (
+							<TextInput
+								label={`# ${k + 1}`}
+								placeholder="Column name"
+								value={value}
+								onChange={(event) => setValue(event.currentTarget.value)}
+								mt="xl"
+								autoComplete="nope"
+							/>
+						))}
+					</div>
 				</div>
 
 				<div className={style.dg__table_right}>
