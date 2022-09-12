@@ -1,10 +1,7 @@
 .te {
 	display: grid;
-
-	&__editor {
-		height: 800px;
-	}
 	&__footer {
+		margin-right: 15px;
 		background-color: #25262b;
 		display: flex;
 		justify-content: space-between;

@@ -2,6 +2,7 @@ import { AppShell, Header, MantineProvider } from "@mantine/core";
 import { useToggle } from "@mantine/hooks";
 import Home from "./pages/Home";
 import Navigation from "./pages/Navigation";
+import "App.scss";
 
 function App() {
 	const [value, toggle] = useToggle<"dark" | "light">(["dark", "light"]);

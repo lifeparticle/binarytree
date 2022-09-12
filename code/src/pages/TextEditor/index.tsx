@@ -27,12 +27,14 @@ const TextEditor: React.FC = () => {
 			<RichTextEditor
 				value={value}
 				onChange={onChange}
+				sticky={true}
+				stickyOffset={60}
 				className={style.te__editor}
 			/>
 			<div className={style.te__footer}>
 				<h4>Word count: {wordCount}</h4>
 				<h4>Charecter count: {charCount}</h4>
-				<h4>Charecter count witout space: {charCountWithoutSpace}</h4>
+				<h4>Charecter count without space: {charCountWithoutSpace}</h4>
 			</div>
 			<Button
 				className={style.te__button}
