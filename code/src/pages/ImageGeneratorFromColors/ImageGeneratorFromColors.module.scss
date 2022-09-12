@@ -4,11 +4,19 @@
 	padding-right: 20px;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 20px;
-	.colorGrid {
-		grid-column: 1/-1;
+	.colors {
 		display: flex;
-		gap: 5px;
+		grid-column: 1/-1;
 		flex-direction: row;
 		flex-wrap: wrap;
+		row-gap: 10px;
+		column-gap: 40px;
+		&__color {
+			display: grid;
+			justify-items: center;
+			h5 {
+				color: #fff;
+			}
+		}
 	}
 }

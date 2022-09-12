@@ -108,23 +108,26 @@ const ImageGeneratorFromColors: React.FC = () => {
 				</Button>
 			</div>
 
-			<div className={style.colorGrid}>
+			<div className={style.colors}>
 				{colors.map((color: string) => {
 					return (
-						<div
-							ref={(ref) => {
-								if (ref) {
-									domEl.current.push(ref);
-								}
-							}}
-							key={color}
-							style={{
-								backgroundColor: color,
-								height: `${height}px`,
-								width: `${width}px`,
-								borderRadius: `${rounded}px`,
-							}}
-						></div>
+						<div className={style.colors__color}>
+							<div
+								ref={(ref) => {
+									if (ref) {
+										domEl.current.push(ref);
+									}
+								}}
+								key={color}
+								style={{
+									backgroundColor: color,
+									height: `${height}px`,
+									width: `${width}px`,
+									borderRadius: `${rounded}px`,
+								}}
+							></div>
+							<h5>{color}</h5>
+						</div>
 					);
 				})}
 			</div>
