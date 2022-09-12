@@ -7,6 +7,7 @@ import {
 	IconBoxPadding,
 	IconWindmill,
 	IconFileText,
+	IconDatabase,
 } from "@tabler/icons";
 import { Link } from "react-router-dom";
 
@@ -94,6 +95,7 @@ const data = [
 	{ link: "/me", label: "Markdown Editor", icon: IconMarkdown },
 	{ link: "/te", label: "Text Editor", icon: IconFileText },
 	{ link: "/icons", label: "Icons", icon: IconBoxPadding },
+	{ link: "/data_gen", label: "Data Generator", icon: IconDatabase },
 ];
 
 interface NavigationProps {

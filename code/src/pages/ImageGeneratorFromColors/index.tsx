@@ -58,7 +58,6 @@ const ImageGeneratorFromColors: React.FC = () => {
 				value={value}
 			/>
 			<div>
-				{" "}
 				<NumberInput
 					mt="xl"
 					label="Height"
