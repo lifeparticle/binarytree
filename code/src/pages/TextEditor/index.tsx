@@ -24,11 +24,18 @@ const TextEditor: React.FC = () => {
 	}, [value]);
 	return (
 		<div className={style.te}>
-			<h3>Word count: {wordCount}</h3>
-			<h3>Charecter count: {charCount}</h3>
-			<h3>Charecter count witout space: {charCountWithoutSpace}</h3>
-			<RichTextEditor value={value} onChange={onChange} />
+			<RichTextEditor
+				value={value}
+				onChange={onChange}
+				className={style.te__editor}
+			/>
+			<div className={style.te__footer}>
+				<h4>Word count: {wordCount}</h4>
+				<h4>Charecter count: {charCount}</h4>
+				<h4>Charecter count witout space: {charCountWithoutSpace}</h4>
+			</div>
 			<Button
+				className={style.te__button}
 				styles={(theme) => ({
 					root: {
 						backgroundColor:

@@ -1,5 +1,21 @@
 .te {
-	h3 {
-		color: white;
+	display: grid;
+
+	&__editor {
+		height: 800px;
+	}
+	&__footer {
+		background-color: #25262b;
+		display: flex;
+		justify-content: space-between;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 0px 0px 4px 4px;
+		h4 {
+			color: white;
+		}
+	}
+	&__button {
+		margin-top: 20px;
 	}
 }

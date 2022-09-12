@@ -1,5 +1,5 @@
 import style from "./ImageGeneratorFromColors.module.scss";
-import { Button, Textarea, NumberInput, Space } from "@mantine/core";
+import { Button, Textarea, NumberInput, Space, Group } from "@mantine/core";
 import { useRef, useState } from "react";
 import { toPng } from "html-to-image";
 import JSZip from "jszip";
@@ -81,31 +81,33 @@ const ImageGeneratorFromColors: React.FC = () => {
 					onChange={(val: any) => setRounded(val)}
 				/>
 				<Space h="xl" />
-				<Button
-					styles={(theme) => ({
-						root: {
-							backgroundColor:
-								theme.colorScheme === "dark" ? theme.colors.dark : "#228be6",
-						},
-					})}
-					onClick={onButtonClick}
-				>
-					Downlaod
-				</Button>
-				<Button
-					styles={(theme) => ({
-						root: {
-							backgroundColor:
-								theme.colorScheme === "dark" ? theme.colors.dark : "#228be6",
-						},
-					})}
-					onClick={() => {
-						setValue("");
-						setColors([]);
-					}}
-				>
-					Clear
-				</Button>
+				<Group>
+					<Button
+						styles={(theme) => ({
+							root: {
+								backgroundColor:
+									theme.colorScheme === "dark" ? theme.colors.dark : "#228be6",
+							},
+						})}
+						onClick={onButtonClick}
+					>
+						Downlaod
+					</Button>
+					<Button
+						styles={(theme) => ({
+							root: {
+								backgroundColor:
+									theme.colorScheme === "dark" ? theme.colors.dark : "#228be6",
+							},
+						})}
+						onClick={() => {
+							setValue("");
+							setColors([]);
+						}}
+					>
+						Clear
+					</Button>
+				</Group>
 			</div>
 
 			<div className={style.colors}>
