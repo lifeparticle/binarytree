@@ -1,12 +1,5 @@
-import { faker } from "@faker-js/faker";
-import {
-	Button,
-	Grid,
-	NumberInput,
-	Stack,
-	Textarea,
-	TextInput,
-} from "@mantine/core";
+// import { faker } from "@faker-js/faker";
+import { NumberInput, Textarea, TextInput } from "@mantine/core";
 import { useState } from "react";
 import style from "./DataGenerator.module.scss";
 
