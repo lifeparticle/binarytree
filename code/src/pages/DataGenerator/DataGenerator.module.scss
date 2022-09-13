@@ -1,7 +1,7 @@
 .dg {
 	display: grid;
 	column-gap: 20px;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	row-gap: 20px;
 	&__table {
 		column-gap: 20px;
