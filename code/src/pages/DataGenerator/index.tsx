@@ -1,14 +1,57 @@
 // import { faker } from "@faker-js/faker";
-import { NumberInput, Select, Textarea, TextInput } from "@mantine/core";
+import {
+	Button,
+	NumberInput,
+	Select,
+	Textarea,
+	TextInput,
+} from "@mantine/core";
 import { useState } from "react";
 import style from "./DataGenerator.module.scss";
+
+const SQL_DATA_TYPES = [
+	{ value: "TEXT", label: "String" },
+	{ value: "INT", label: "Integer" },
+];
+
+const FAKER_DATA_TYPES = [
+	{ value: "firstName", label: "First Name" },
+	{ value: "lastName", label: "Last Name" },
+];
 
 const DataGenerator: React.FC = () => {
 	const [value, setValue] = useState("");
 	const [colNum, setColNum] = useState(0);
 	const [rowNum, setRowNum] = useState(0);
-	const [colNames, setColNames] = useState<any>([{}]);
+	const [colNames, setColNames] = useState<string[]>([]);
+	const [dataTypes, setDataTypes] = useState<string[]>([]);
+	const [fakeDataTypes, setFakeDataTypes] = useState<string[]>([]);
 
+	const onColNamesChange = (e: any, idx: number) => {
+		setColNames((p: string[]) => [
+			...p.slice(0, idx),
+			e.target.value,
+			...p.slice(idx + 1),
+		]);
+	};
+
+	const onDataTypesChange = (e: any, idx: number) => {
+		setDataTypes((p: string[]) => [...p.slice(0, idx), e, ...p.slice(idx + 1)]);
+	};
+
+	const onFakeDataTypesChange = (e: any, idx: number) => {
+		setFakeDataTypes((p: string[]) => [
+			...p.slice(0, idx),
+			e,
+			...p.slice(idx + 1),
+		]);
+	};
+
+	const onButtonClick = () => {
+		console.log(colNames);
+		console.log(dataTypes);
+		console.log(fakeDataTypes);
+	};
 	return (
 		<div className={style.dg}>
 			<TextInput
@@ -24,7 +67,12 @@ const DataGenerator: React.FC = () => {
 				label="Number of columns"
 				placeholder="NumberInput with custom layout"
 				value={colNum}
-				onChange={(val: any) => setColNum(val)}
+				onChange={(val: any) => {
+					setColNum(val);
+					setColNames((p: string[]) => [...p.slice(0, val)]);
+					setDataTypes((p: string[]) => [...p.slice(0, val)]);
+					setFakeDataTypes((p: string[]) => [...p.slice(0, val)]);
+				}}
 			/>
 			<NumberInput
 				mt="xl"
@@ -41,14 +89,10 @@ const DataGenerator: React.FC = () => {
 								key={`col-name-${k}`}
 								label={`# ${k + 1}`}
 								placeholder="Column name"
-								value={"dddd"}
-								onChange={(event) => {
-									setColNames((pA: any) => {
-										// pA[k] = {};
-										console.log(pA);
-										pA.push({ id: k, value: event.currentTarget.value });
-									});
-								}}
+								value={
+									colNames[k] === undefined ? (colNames[k] = "") : colNames[k]
+								}
+								onChange={(e) => onColNamesChange(e, k)}
 								mt="xl"
 								autoComplete="nope"
 							/>
@@ -61,12 +105,13 @@ const DataGenerator: React.FC = () => {
 								key={`data-type-${k}`}
 								label={`# ${k + 1}`}
 								placeholder="Pick one"
-								data={[
-									{ value: "string", label: "String" },
-									// { value: "ng", label: "Angular" },
-									// { value: "svelte", label: "Svelte" },
-									// { value: "vue", label: "Vue" },
-								]}
+								value={
+									dataTypes[k] === undefined
+										? (dataTypes[k] = "")
+										: dataTypes[k]
+								}
+								data={SQL_DATA_TYPES}
+								onChange={(e) => onDataTypesChange(e, k)}
 							/>
 						))}
 					</div>
@@ -74,21 +119,33 @@ const DataGenerator: React.FC = () => {
 						{Array.from({ length: colNum }, (_, k) => (
 							<Select
 								mt="xl"
-								key={`fake-data-type-${k}`}
+								key={`faker-data-type-${k}`}
 								label={`# ${k + 1}`}
+								value={
+									fakeDataTypes[k] === undefined
+										? (fakeDataTypes[k] = "")
+										: fakeDataTypes[k]
+								}
 								placeholder="Pick one"
-								data={[
-									{ value: "firstName", label: "First Name" },
-									// { value: "ng", label: "Angular" },
-									// { value: "svelte", label: "Svelte" },
-									// { value: "vue", label: "Vue" },
-								]}
+								data={FAKER_DATA_TYPES}
+								onChange={(e) => onFakeDataTypesChange(e, k)}
 							/>
 						))}
 					</div>
 				</div>
 				<div className={style.dg__table_right}>
 					{colNum > 0 ? <Textarea placeholder="" label="SQL" /> : null}
+					<Button
+						styles={(theme) => ({
+							root: {
+								backgroundColor:
+									theme.colorScheme === "dark" ? theme.colors.dark : "#228be6",
+							},
+						})}
+						onClick={onButtonClick}
+					>
+						Downlaod
+					</Button>
 				</div>
 			</div>
 		</div>
