@@ -8,6 +8,7 @@ import {
 	IconWindmill,
 	IconFileText,
 	IconDatabase,
+	IconTextPlus,
 } from "@tabler/icons";
 import { Link } from "react-router-dom";
 
@@ -96,6 +97,7 @@ const data = [
 	{ link: "/te", label: "Text Editor", icon: IconFileText },
 	{ link: "/icons", label: "Icons", icon: IconBoxPadding },
 	{ link: "/data_gen", label: "Data Generator", icon: IconDatabase },
+	{ link: "/base64", label: "Base 64 Converter", icon: IconTextPlus },
 ];
 
 interface NavigationProps {
