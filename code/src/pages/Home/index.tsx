@@ -6,6 +6,7 @@ import MarkdownEditor from "pages/MarkdownEditor";
 import Icons from "pages/Icons";
 import TextEditor from "pages/TextEditor";
 import DataGenerator from "pages/DataGenerator";
+import Base64 from "pages/Base64";
 
 const Home: React.FC = () => {
 	return (
@@ -17,6 +18,7 @@ const Home: React.FC = () => {
 				<Route path="/te" element={<TextEditor />} />
 				<Route path="/icons" element={<Icons />} />
 				<Route path="/data_gen" element={<DataGenerator />} />
+				<Route path="/base64" element={<Base64 />} />
 			</Routes>
 		</div>
 	);
