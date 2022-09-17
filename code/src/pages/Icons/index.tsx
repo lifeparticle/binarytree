@@ -14,6 +14,12 @@ const URLS = [
 		website: "https://iconoir.com/",
 		github: "https://github.com/iconoir-icons/iconoir",
 	},
+	{
+		id: 3,
+		name: "Lordicon",
+		website: "https://lordicon.com/",
+		github: "",
+	},
 ];
 
 const Icons: React.FC = () => {
@@ -32,14 +38,16 @@ const Icons: React.FC = () => {
 							>
 								Website
 							</Button>
-							<Button
-								component="a"
-								href={url.github}
-								target="_blank"
-								leftIcon={<IconBrandGithub size={14} />}
-							>
-								GitHub
-							</Button>
+							{url.github === "" ? null : (
+								<Button
+									component="a"
+									href={url.github}
+									target="_blank"
+									leftIcon={<IconBrandGithub size={14} />}
+								>
+									GitHub
+								</Button>
+							)}
 						</Stack>
 					</Grid.Col>
 				);
