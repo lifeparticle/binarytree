@@ -21,6 +21,7 @@ const FAKER_DATA_TYPES = [
 
 const DataGenerator: React.FC = () => {
 	const [value, setValue] = useState("");
+	const [result, setResult] = useState("");
 	const [colNum, setColNum] = useState(0);
 	const [rowNum, setRowNum] = useState(0);
 	const [colNames, setColNames] = useState<string[]>([]);
@@ -36,7 +37,11 @@ const DataGenerator: React.FC = () => {
 	};
 
 	const onDataTypesChange = (e: any, idx: number) => {
-		setDataTypes((p: string[]) => [...p.slice(0, idx), e, ...p.slice(idx + 1)]);
+		setDataTypes((p: string[]) => [
+			...p.slice(0, idx),
+			e,
+			...p.slice(idx + 1),
+		]);
 	};
 
 	const onFakeDataTypesChange = (e: any, idx: number) => {
@@ -51,6 +56,12 @@ const DataGenerator: React.FC = () => {
 		console.log(colNames);
 		console.log(dataTypes);
 		console.log(fakeDataTypes);
+		let result = "";
+		colNames.map((colName, index) => {
+			result += `${colNames[index]} ${dataTypes[index]} ${fakeDataTypes[index]} \n`;
+		});
+
+		setResult(result);
 	};
 	return (
 		<div className={style.dg}>
@@ -90,7 +101,9 @@ const DataGenerator: React.FC = () => {
 								label={`# ${k + 1}`}
 								placeholder="Column name"
 								value={
-									colNames[k] === undefined ? (colNames[k] = "") : colNames[k]
+									colNames[k] === undefined
+										? (colNames[k] = "")
+										: colNames[k]
 								}
 								onChange={(e) => onColNamesChange(e, k)}
 								mt="xl"
@@ -134,18 +147,29 @@ const DataGenerator: React.FC = () => {
 					</div>
 				</div>
 				<div className={style.dg__table_right}>
-					{colNum > 0 ? <Textarea placeholder="" label="SQL" /> : null}
-					<Button
-						styles={(theme) => ({
-							root: {
-								backgroundColor:
-									theme.colorScheme === "dark" ? theme.colors.dark : "#228be6",
-							},
-						})}
-						onClick={onButtonClick}
-					>
-						Downlaod
-					</Button>
+					{colNum > 0 ? (
+						<>
+							<Textarea
+								placeholder=""
+								label="SQL"
+								value={result}
+								minRows={10}
+							/>
+							<Button
+								styles={(theme) => ({
+									root: {
+										backgroundColor:
+											theme.colorScheme === "dark"
+												? theme.colors.dark
+												: "#228be6",
+									},
+								})}
+								onClick={onButtonClick}
+							>
+								Downlaod
+							</Button>
+						</>
+					) : null}
 				</div>
 			</div>
 		</div>
