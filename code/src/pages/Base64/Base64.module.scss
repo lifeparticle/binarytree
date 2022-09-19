@@ -1,0 +1,11 @@
+.base{
+	display: grid;
+	grid-template-columns: 1fr 0.5fr 1fr;
+	&__buttons{
+		display: grid;
+		justify-content: center;
+		align-self: center;
+		
+	}
+	
+}

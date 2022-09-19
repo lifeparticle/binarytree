@@ -20,6 +20,7 @@
     "@types/react-dom": "^18.0.6",
     "@types/react-router-dom": "^5.3.3",
     "@uiw/react-md-editor": "^3.18.1",
+    "buffer": "^6.0.3",
     "file-saver": "^2.0.5",
     "html-to-image": "^1.10.4",
     "jszip": "^3.10.1",
