@@ -57,9 +57,10 @@ const DataGenerator: React.FC = () => {
 		console.log(dataTypes);
 		console.log(fakeDataTypes);
 		let result = "";
-		colNames.map((colName, index) => {
-			result += `${colNames[index]} ${dataTypes[index]} ${fakeDataTypes[index]} \n`;
-		});
+
+		for (let i = 0; i < colNames.length; i++) {
+			result += `${colNames[i]} ${dataTypes[i]} ${fakeDataTypes[i]} \n`;
+		}
 
 		setResult(result);
 	};
