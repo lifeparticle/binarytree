@@ -1,4 +1,4 @@
-// import { faker } from "@faker-js/faker";
+import { faker } from "@faker-js/faker";
 import {
 	Button,
 	NumberInput,
@@ -15,15 +15,34 @@ const SQL_DATA_TYPES = [
 ];
 
 const FAKER_DATA_TYPES = [
-	{ value: "firstName", label: "First Name" },
-	{ value: "lastName", label: "Last Name" },
+	{
+		value: "firstName",
+		label: "First Name",
+		method: () => {
+			return faker.name.firstName();
+		},
+	},
+	{
+		value: "lastName",
+		label: "Last Name",
+		method: () => {
+			return faker.name.lastName();
+		},
+	},
+	{
+		value: "fullName",
+		label: "Full Name",
+		method: () => {
+			return faker.name.fullName();
+		},
+	},
 ];
 
 const DataGenerator: React.FC = () => {
-	const [value, setValue] = useState("");
+	const [tableName, setTableName] = useState("");
 	const [result, setResult] = useState("");
 	const [colNum, setColNum] = useState(0);
-	const [rowNum, setRowNum] = useState(0);
+	const [rowNum, setRowNum] = useState(5);
 	const [colNames, setColNames] = useState<string[]>([]);
 	const [dataTypes, setDataTypes] = useState<string[]>([]);
 	const [fakeDataTypes, setFakeDataTypes] = useState<string[]>([]);
@@ -58,9 +77,28 @@ const DataGenerator: React.FC = () => {
 		console.log(fakeDataTypes);
 		let result = "";
 
-		for (let i = 0; i < colNames.length; i++) {
-			result += `${colNames[i]} ${dataTypes[i]} ${fakeDataTypes[i]} \n`;
+		let allColName = colNames.join("`, `");
+
+		let fakeData: any = [[]];
+
+		for (let i = 0; i < rowNum; i++) {
+			fakeData[i] = [];
+			for (let j = 0; j < colNames.length; j++) {
+				fakeData[i].push(
+					FAKER_DATA_TYPES.find((faker, index) => {
+						return faker.value === fakeDataTypes[j];
+					})?.method()
+				);
+			}
 		}
+
+		for (let i = 0; i < rowNum; i++) {
+			result += `INSERT INTO \`${tableName}\` (\`${allColName}\`) VALUES ('${fakeData[
+				i
+			].join("', '")}')  \n`;
+		}
+
+		console.log(fakeData);
 
 		setResult(result);
 	};
@@ -69,8 +107,8 @@ const DataGenerator: React.FC = () => {
 			<TextInput
 				label="Table name"
 				placeholder="OMG, it also has a placeholder"
-				value={value}
-				onChange={(event) => setValue(event.currentTarget.value)}
+				value={tableName}
+				onChange={(event) => setTableName(event.currentTarget.value)}
 				mt="xl"
 				autoComplete="nope"
 			/>
@@ -155,6 +193,7 @@ const DataGenerator: React.FC = () => {
 								label="SQL"
 								value={result}
 								minRows={10}
+								readOnly
 							/>
 							<Button
 								styles={(theme) => ({
@@ -167,7 +206,7 @@ const DataGenerator: React.FC = () => {
 								})}
 								onClick={onButtonClick}
 							>
-								Downlaod
+								Generate
 							</Button>
 						</>
 					) : null}

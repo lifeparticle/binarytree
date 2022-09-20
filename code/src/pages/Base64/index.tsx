@@ -1,7 +1,7 @@
 import { Textarea, SegmentedControl, Button, Group } from "@mantine/core";
 import { useState } from "react";
-import {Buffer} from 'buffer';
-import  style  from "./Base64.module.scss";
+import { Buffer } from "buffer";
+import style from "./Base64.module.scss";
 
 const Base64: React.FC = () => {
 	const [input, setInput] = useState("");
@@ -10,14 +10,14 @@ const Base64: React.FC = () => {
 	const onButtonClick = () => {
 		if (value === "") return;
 		if (value === "encode") {
-			setResult(Buffer.from(input, 'utf8').toString('base64'));
+			setResult(Buffer.from(input, "utf8").toString("base64"));
 		} else {
-			setResult(Buffer.from(input, 'base64').toString('utf-8'));
+			setResult(Buffer.from(input, "base64").toString("utf-8"));
 		}
 	};
 
 	return (
-		<div className= {style.base}>
+		<div className={style.base}>
 			<Textarea
 				value={input}
 				onChange={(currentValue) => setInput(currentValue.target.value)}
@@ -27,18 +27,26 @@ const Base64: React.FC = () => {
 				minRows={10}
 			/>
 
-			<Group className= {style.base__buttons}>
-			<SegmentedControl className= {style.base__buttons_segment}
-				value={value}
-				onChange={setValue}
-				data={[
-					{ label: "Encode", value: "encode" },
-					{ label: "Decode", value: "decode" },
-				]}
-			/>
+			<Group className={style.base__buttons}>
+				<SegmentedControl
+					className={style.base__buttons_segment}
+					value={value}
+					onChange={setValue}
+					data={[
+						{ label: "Encode", value: "encode" },
+						{ label: "Decode", value: "decode" },
+					]}
+				/>
 
-			<Button  onClick={onButtonClick}>Convert</Button>
-			<Button  onClick={()=>{setInput("");setResult("");}}>Clear</Button>
+				<Button onClick={onButtonClick}>Convert</Button>
+				<Button
+					onClick={() => {
+						setInput("");
+						setResult("");
+					}}
+				>
+					Clear
+				</Button>
 			</Group>
 			<Textarea
 				value={result}
