@@ -1,0 +1,9 @@
+.pc {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	row-gap: 10px;
+	column-gap: 10px;
+	&__base {
+		grid-column: 1 / -1;
+	}
+}

@@ -9,6 +9,7 @@ import {
 	IconFileText,
 	IconDatabase,
 	IconTextPlus,
+	IconCalculator,
 } from "@tabler/icons";
 import { Link } from "react-router-dom";
 
@@ -98,6 +99,7 @@ const data = [
 	{ link: "/icons", label: "Icons", icon: IconBoxPadding },
 	{ link: "/data_gen", label: "Data Generator", icon: IconDatabase },
 	{ link: "/base64", label: "Base 64 Converter", icon: IconTextPlus },
+	{ link: "/pixel_converter", label: "Pixel Converter", icon: IconCalculator},
 ];
 
 interface NavigationProps {
