@@ -1,6 +1,7 @@
-import { faker } from "@faker-js/faker";
 import {
+	Autocomplete,
 	Button,
+	Group,
 	NumberInput,
 	Select,
 	Textarea,
@@ -8,41 +9,15 @@ import {
 } from "@mantine/core";
 import { useState } from "react";
 import style from "./DataGenerator.module.scss";
+import { FAKER_DATA_TYPES, SQL_DATA_TYPES } from "./util/constants";
 
-const SQL_DATA_TYPES = [
-	{ value: "TEXT", label: "String" },
-	{ value: "INT", label: "Integer" },
-];
-
-const FAKER_DATA_TYPES = [
-	{
-		value: "firstName",
-		label: "First Name",
-		method: () => {
-			return faker.name.firstName();
-		},
-	},
-	{
-		value: "lastName",
-		label: "Last Name",
-		method: () => {
-			return faker.name.lastName();
-		},
-	},
-	{
-		value: "fullName",
-		label: "Full Name",
-		method: () => {
-			return faker.name.fullName();
-		},
-	},
-];
+import { saveAs } from "file-saver";
 
 const DataGenerator: React.FC = () => {
 	const [tableName, setTableName] = useState("");
 	const [result, setResult] = useState("");
 	const [colNum, setColNum] = useState(0);
-	const [rowNum, setRowNum] = useState(5);
+	const [rowNum, setRowNum] = useState(0);
 	const [colNames, setColNames] = useState<string[]>([]);
 	const [dataTypes, setDataTypes] = useState<string[]>([]);
 	const [fakeDataTypes, setFakeDataTypes] = useState<string[]>([]);
@@ -106,7 +81,7 @@ const DataGenerator: React.FC = () => {
 		<div className={style.dg}>
 			<TextInput
 				label="Table name"
-				placeholder="OMG, it also has a placeholder"
+				placeholder="Table name"
 				value={tableName}
 				onChange={(event) => setTableName(event.currentTarget.value)}
 				mt="xl"
@@ -117,6 +92,7 @@ const DataGenerator: React.FC = () => {
 				label="Number of columns"
 				placeholder="NumberInput with custom layout"
 				value={colNum}
+				min={0}
 				onChange={(val: any) => {
 					setColNum(val);
 					setColNames((p: string[]) => [...p.slice(0, val)]);
@@ -129,6 +105,7 @@ const DataGenerator: React.FC = () => {
 				label="Number of rows"
 				placeholder="NumberInput with custom layout"
 				value={rowNum}
+				min={0}
 				onChange={(val: any) => setRowNum(val)}
 			/>
 			<div className={style.dg__table}>
@@ -167,9 +144,10 @@ const DataGenerator: React.FC = () => {
 							/>
 						))}
 					</div>
+					{/* Fix the warning */}
 					<div>
 						{Array.from({ length: colNum }, (_, k) => (
-							<Select
+							<Autocomplete
 								mt="xl"
 								key={`faker-data-type-${k}`}
 								label={`# ${k + 1}`}
@@ -180,7 +158,9 @@ const DataGenerator: React.FC = () => {
 								}
 								placeholder="Pick one"
 								data={FAKER_DATA_TYPES}
-								onChange={(e) => onFakeDataTypesChange(e, k)}
+								onChange={(e: any) =>
+									onFakeDataTypesChange(e, k)
+								}
 							/>
 						))}
 					</div>
@@ -195,19 +175,40 @@ const DataGenerator: React.FC = () => {
 								minRows={10}
 								readOnly
 							/>
-							<Button
-								styles={(theme) => ({
-									root: {
-										backgroundColor:
-											theme.colorScheme === "dark"
-												? theme.colors.dark
-												: "#228be6",
-									},
-								})}
-								onClick={onButtonClick}
-							>
-								Generate
-							</Button>
+							<Group>
+								<Button
+									styles={(theme) => ({
+										root: {
+											backgroundColor:
+												theme.colorScheme === "dark"
+													? theme.colors.dark
+													: "#228be6",
+										},
+									})}
+									onClick={onButtonClick}
+								>
+									Generate
+								</Button>
+								<Button
+									styles={(theme) => ({
+										root: {
+											backgroundColor:
+												theme.colorScheme === "dark"
+													? theme.colors.dark
+													: "#228be6",
+										},
+									})}
+									onClick={() => {
+										saveAs(
+											new File([result], "demo.sql", {
+												type: "text/plain;charset=utf-8",
+											})
+										);
+									}}
+								>
+									Download
+								</Button>
+							</Group>
 						</>
 					) : null}
 				</div>
