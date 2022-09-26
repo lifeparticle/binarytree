@@ -1,5 +1,6 @@
-import { Button, Grid, Stack } from "@mantine/core";
+import { Grid, Stack } from "@mantine/core";
 import { IconAppWindow, IconBrandGithub } from "@tabler/icons";
+import Button from "components/Button";
 
 const URLS = [
 	{
@@ -30,6 +31,7 @@ const Icons: React.FC = () => {
 					<Grid.Col span={4} key={url.id}>
 						<Stack>
 							<h1>{url.name}</h1>
+
 							<Button
 								component="a"
 								href={url.website}
@@ -38,6 +40,7 @@ const Icons: React.FC = () => {
 							>
 								Website
 							</Button>
+
 							{url.github === "" ? null : (
 								<Button
 									component="a"

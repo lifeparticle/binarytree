@@ -2,7 +2,7 @@ import { useState } from "react";
 import { RichTextEditor } from "@mantine/rte";
 import style from "./TextEditor.module.scss";
 import { useEffect } from "react";
-import { Button } from "@mantine/core";
+import Button from "components/Button";
 
 const TextEditor: React.FC = () => {
 	const [value, onChange] = useState("");
@@ -38,12 +38,6 @@ const TextEditor: React.FC = () => {
 			</div>
 			<Button
 				className={style.te__button}
-				styles={(theme) => ({
-					root: {
-						backgroundColor:
-							theme.colorScheme === "dark" ? theme.colors.dark : "#228be6",
-					},
-				})}
 				onClick={() => {
 					onChange("");
 				}}

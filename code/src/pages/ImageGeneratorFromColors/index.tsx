@@ -1,10 +1,11 @@
 import style from "./ImageGeneratorFromColors.module.scss";
-import { Button, Textarea, NumberInput, Space, Group } from "@mantine/core";
+import { Textarea, NumberInput, Space, Group } from "@mantine/core";
 import { useRef, useState } from "react";
 import { toPng } from "html-to-image";
 import JSZip from "jszip";
 import JSZipUtils from "jszip-utils";
 import { saveAs } from "file-saver";
+import Button from "components/Button";
 
 // #FF0000, #00FFFF, #FFFFFF, #C0C0C0, #000000
 /*
@@ -30,7 +31,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 	};
 
 	const onButtonClick = async () => {
-		console.log("on button click", domEl.current);
+		console.log(colors);
 		if (!domEl.current || colors.length === 0) return;
 
 		const zip = new JSZip();
@@ -81,24 +82,8 @@ const ImageGeneratorFromColors: React.FC = () => {
 				/>
 				<Space h="xl" />
 				<Group>
+					<Button onClick={onButtonClick}>Downlaod</Button>
 					<Button
-						styles={(theme) => ({
-							root: {
-								backgroundColor:
-									theme.colorScheme === "dark" ? theme.colors.dark : "#228be6",
-							},
-						})}
-						onClick={onButtonClick}
-					>
-						Downlaod
-					</Button>
-					<Button
-						styles={(theme) => ({
-							root: {
-								backgroundColor:
-									theme.colorScheme === "dark" ? theme.colors.dark : "#228be6",
-							},
-						})}
 						onClick={() => {
 							setValue("");
 							setColors([]);
@@ -110,7 +95,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 			</div>
 
 			<div className={style.colors}>
-				{colors.map((color: string) => {
+				{colors.map((color: string, index: number) => {
 					return (
 						<div className={style.colors__color}>
 							<div
@@ -119,7 +104,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 										domEl.current.push(ref);
 									}
 								}}
-								key={color}
+								key={`${index}-${color}`}
 								style={{
 									backgroundColor: color,
 									height: `${height}px`,

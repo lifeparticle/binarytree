@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { ColorPicker as CP, Text, Stack, Select } from "@mantine/core";
+import { useClipboard } from "@mantine/hooks";
+import Button from "components/Button";
 
 const ColorPicker: React.FC = () => {
-	const [value, onChange] = useState("rgba(47, 119, 150, 0.7)");
-	const [format, setFormat] = useState<"hex" | "rgba" | "rgb" | "hsl" | "hsla">(
-		"hex"
-	);
+	const [color, setColor] = useState("rgba(47, 119, 150, 0.7)");
+	const [format, setFormat] = useState<
+		"hex" | "rgba" | "rgb" | "hsl" | "hsla"
+	>("hex");
+	const clipboard = useClipboard({ timeout: 500 });
+
 	return (
 		<Stack align="center">
 			<Select
@@ -20,8 +24,16 @@ const ColorPicker: React.FC = () => {
 				]}
 				onChange={(val: any) => setFormat(val)}
 			/>
-			<CP format={format} value={value} onChange={onChange} size="xl" />
-			<Text>{value}</Text>
+			<CP
+				format={format}
+				value={color}
+				onChange={(val) => setColor(val)}
+				size="xl"
+			/>
+			<Text>{color}</Text>
+			<Button onClick={() => clipboard.copy(color)}>
+				{clipboard.copied ? "Copied" : "Copy"}
+			</Button>
 		</Stack>
 	);
 };

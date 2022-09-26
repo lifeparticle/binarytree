@@ -1,17 +1,17 @@
 import {
 	Autocomplete,
-	Button,
 	Group,
 	NumberInput,
 	Select,
 	Textarea,
 	TextInput,
 } from "@mantine/core";
+import { downloadTextFile } from "utils/utils";
 import { useState } from "react";
 import style from "./DataGenerator.module.scss";
-import { FAKER_DATA_TYPES, SQL_DATA_TYPES } from "./util/constants";
-
-import { saveAs } from "file-saver";
+import { FAKER_DATA_TYPES, SQL_DATA_TYPES } from "./utils/constants";
+import Button from "components/Button";
+import { useClipboard } from "@mantine/hooks";
 
 const DataGenerator: React.FC = () => {
 	const [tableName, setTableName] = useState("");
@@ -22,6 +22,7 @@ const DataGenerator: React.FC = () => {
 	const [dataTypes, setDataTypes] = useState<string[]>([]);
 	const [fakeDataTypes, setFakeDataTypes] = useState<string[]>([]);
 
+	const clipboard = useClipboard({ timeout: 500 });
 	const onColNamesChange = (e: any, idx: number) => {
 		setColNames((p: string[]) => [
 			...p.slice(0, idx),
@@ -79,42 +80,49 @@ const DataGenerator: React.FC = () => {
 	};
 	return (
 		<div className={style.dg}>
-			<TextInput
-				label="Table name"
-				placeholder="Table name"
-				value={tableName}
-				onChange={(event) => setTableName(event.currentTarget.value)}
-				mt="xl"
-				autoComplete="nope"
-			/>
-			<NumberInput
-				mt="xl"
-				label="Number of columns"
-				placeholder="NumberInput with custom layout"
-				value={colNum}
-				min={0}
-				onChange={(val: any) => {
-					setColNum(val);
-					setColNames((p: string[]) => [...p.slice(0, val)]);
-					setDataTypes((p: string[]) => [...p.slice(0, val)]);
-					setFakeDataTypes((p: string[]) => [...p.slice(0, val)]);
-				}}
-			/>
-			<NumberInput
-				mt="xl"
-				label="Number of rows"
-				placeholder="NumberInput with custom layout"
-				value={rowNum}
-				min={0}
-				onChange={(val: any) => setRowNum(val)}
-			/>
-			<div className={style.dg__table}>
-				<div className={style.dg__table_left}>
+			<div className={style.dg__left}>
+				<div className={style.dg__left_top}>
+					<TextInput
+						label="Table name"
+						placeholder="Table name"
+						value={tableName}
+						onChange={(event) =>
+							setTableName(event.currentTarget.value)
+						}
+						mt="xl"
+						autoComplete="nope"
+					/>
+					<NumberInput
+						mt="xl"
+						label="Number of columns"
+						placeholder="NumberInput with custom layout"
+						value={colNum}
+						min={0}
+						onChange={(val: any) => {
+							setColNum(val);
+							setColNames((p: string[]) => [...p.slice(0, val)]);
+							setDataTypes((p: string[]) => [...p.slice(0, val)]);
+							setFakeDataTypes((p: string[]) => [
+								...p.slice(0, val),
+							]);
+						}}
+					/>
+					<NumberInput
+						mt="xl"
+						label="Number of rows"
+						placeholder="NumberInput with custom layout"
+						value={rowNum}
+						min={0}
+						onChange={(val: any) => setRowNum(val)}
+					/>
+				</div>
+
+				<div className={style.dg__left_left}>
 					<div>
 						{Array.from({ length: colNum }, (_, k) => (
 							<TextInput
 								key={`col-name-${k}`}
-								label={`# ${k + 1}`}
+								label={`Column name #${k + 1}`}
 								placeholder="Column name"
 								value={
 									colNames[k] === undefined
@@ -132,8 +140,8 @@ const DataGenerator: React.FC = () => {
 							<Select
 								mt="xl"
 								key={`data-type-${k}`}
-								label={`# ${k + 1}`}
-								placeholder="Pick one"
+								label={`Data type #${k + 1}`}
+								placeholder="Data type"
 								value={
 									dataTypes[k] === undefined
 										? (dataTypes[k] = "")
@@ -150,7 +158,7 @@ const DataGenerator: React.FC = () => {
 							<Autocomplete
 								mt="xl"
 								key={`faker-data-type-${k}`}
-								label={`# ${k + 1}`}
+								label={`Faker data type #${k + 1}`}
 								value={
 									fakeDataTypes[k] === undefined
 										? (fakeDataTypes[k] = "")
@@ -165,53 +173,41 @@ const DataGenerator: React.FC = () => {
 						))}
 					</div>
 				</div>
-				<div className={style.dg__table_right}>
-					{colNum > 0 ? (
-						<>
-							<Textarea
-								placeholder=""
-								label="SQL"
-								value={result}
-								minRows={10}
-								readOnly
-							/>
-							<Group>
-								<Button
-									styles={(theme) => ({
-										root: {
-											backgroundColor:
-												theme.colorScheme === "dark"
-													? theme.colors.dark
-													: "#228be6",
-										},
-									})}
-									onClick={onButtonClick}
-								>
-									Generate
-								</Button>
-								<Button
-									styles={(theme) => ({
-										root: {
-											backgroundColor:
-												theme.colorScheme === "dark"
-													? theme.colors.dark
-													: "#228be6",
-										},
-									})}
-									onClick={() => {
-										saveAs(
-											new File([result], "demo.sql", {
-												type: "text/plain;charset=utf-8",
-											})
-										);
-									}}
-								>
-									Download
-								</Button>
-							</Group>
-						</>
-					) : null}
-				</div>
+			</div>
+
+			<div className={style.dg__right}>
+				{colNum > 0 ? (
+					<>
+						<Group mt="xl">
+							<Button onClick={onButtonClick}>Generate</Button>
+							<Button
+								onClick={() => {
+									downloadTextFile(result, "demo.sql");
+								}}
+							>
+								Download SQL
+							</Button>
+							<Button
+								onClick={() => {
+									downloadTextFile(result, "demo.sql");
+								}}
+							>
+								Download JSON
+							</Button>
+							<Button onClick={() => clipboard.copy(result)}>
+								{clipboard.copied ? "Copied" : "Copy"}
+							</Button>
+						</Group>
+						<Textarea
+							placeholder=""
+							label="SQL"
+							value={result}
+							maxRows={30}
+							minRows={30}
+							readOnly
+						/>
+					</>
+				) : null}
 			</div>
 		</div>
 	);
