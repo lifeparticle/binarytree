@@ -1,23 +1,30 @@
 .dg {
 	display: grid;
 	column-gap: 20px;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 0.8fr 1fr;
 	row-gap: 20px;
-	&__table {
-		column-gap: 20px;
-		grid-column: 1 / -1;
+
+	&__left {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		column-gap: 10px;
+		grid-template-rows: 100px 100px;
+
+		&_top {
+			display: grid;
+			column-gap: 10px;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
 
 		&_left {
 			display: grid;
 			column-gap: 10px;
 			grid-template-columns: 1fr 1fr 1fr;
 		}
-		&_right {
-			display: grid;
-			row-gap: 10px;
-			grid-template-columns: 1fr;
-		}
+	}
+
+	&__right {
+		display: grid;
+		row-gap: 10px;
+		grid-template-columns: 1fr;
 	}
 }
