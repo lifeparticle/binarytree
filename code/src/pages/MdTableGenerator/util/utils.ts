@@ -87,26 +87,26 @@ export const generateTabletemp = (row: number, column: number, output: any) => {
 };
 
 // todo
-const generateHeader = (col: number) => {
+export const generateHeader = (col: number) => {
 	return "";
 };
 
 // todo
-const generateRows = (row: number, col: number) => {
+export const generateRows = (row: number, col: number) => {
 	return "";
 };
 
 // todo
-const updateHeader = (prevHeader: string, col: number) => {
+export const updateHeader = (prevHeader: string, col: number) => {
 	return "";
 };
 
 // todo
-const updateRows = (prevRows: string[], row: number, col: number) => {
+export const updateRows = (prevRows: string[], row: number, col: number) => {
 	return "";
 };
 
 // todo
-const generateTable = (row: number, col: number, prevTable: string) => {
+export const generateTable = (row: number, col: number, prevTable: string) => {
 	return "";
 };

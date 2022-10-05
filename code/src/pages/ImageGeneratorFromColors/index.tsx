@@ -65,6 +65,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 					placeholder="NumberInput with custom layout"
 					value={height}
 					onChange={(val: any) => setHeight(val)}
+					min={0}
 				/>
 				<NumberInput
 					mt="xl"
@@ -72,6 +73,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 					placeholder="NumberInput with custom layout"
 					value={width}
 					onChange={(val: any) => setWidth(val)}
+					min={0}
 				/>
 				<NumberInput
 					mt="xl"
@@ -79,6 +81,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 					placeholder="NumberInput with custom layout"
 					value={rounded}
 					onChange={(val: any) => setRounded(val)}
+					min={0}
 				/>
 				<Space h="xl" />
 				<Group>

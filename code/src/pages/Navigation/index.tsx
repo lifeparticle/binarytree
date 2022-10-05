@@ -10,6 +10,7 @@ import {
 	IconDatabase,
 	IconTextPlus,
 	IconCalculator,
+	IconList,
 	IconColorSwatch,
 	IconTable,
 } from "@tabler/icons";
@@ -111,6 +112,7 @@ const data = [
 		label: "Pixel Converter",
 		icon: IconCalculator,
 	},
+	{ link: "/toc", label: "Table Of Content", icon: IconList },
 	{ link: "/shades", label: "Shade Generator", icon: IconColorSwatch },
 	{
 		link: "/md_table_generator",

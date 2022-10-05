@@ -9,9 +9,10 @@ import {
 import { downloadTextFile } from "utils/utils";
 import { useState } from "react";
 import style from "./DataGenerator.module.scss";
-import { FAKER_DATA_TYPES, SQL_DATA_TYPES } from "./utils/constants";
+import { FAKER_DATA_TYPES, MYSQL_DATA_TYPES } from "./utils/constants";
 import Button from "components/Button";
 import { useClipboard } from "@mantine/hooks";
+import { convertToJSON } from "./utils/utils";
 
 const DataGenerator: React.FC = () => {
 	const [tableName, setTableName] = useState("");
@@ -23,10 +24,11 @@ const DataGenerator: React.FC = () => {
 	const [fakeDataTypes, setFakeDataTypes] = useState<string[]>([]);
 
 	const clipboard = useClipboard({ timeout: 500 });
+
 	const onColNamesChange = (e: any, idx: number) => {
 		setColNames((p: string[]) => [
 			...p.slice(0, idx),
-			e.target.value,
+			e,
 			...p.slice(idx + 1),
 		]);
 	};
@@ -48,36 +50,43 @@ const DataGenerator: React.FC = () => {
 	};
 
 	const onButtonClick = () => {
-		console.log(colNames);
-		console.log(dataTypes);
-		console.log(fakeDataTypes);
+		// console.log(colNames);
+		// console.log(dataTypes);
+		// console.log(fakeDataTypes);
+
 		let result = "";
-
 		let allColName = colNames.join("`, `");
+		let fakeDataMethods: any = [];
+		let sqlTable = `CREATE TABLE \`${tableName}\` (\n`;
 
-		let fakeData: any = [[]];
+		for (let i = 0; i < colNames.length; i++) {
+			sqlTable += `\`${colNames[i]}\` ${dataTypes[i]}\n`;
+		}
+
+		sqlTable += `) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;`;
+
+		for (let j = 0; j < colNames.length; j++) {
+			fakeDataMethods.push(
+				FAKER_DATA_TYPES.find((faker, index) => {
+					return faker.value === fakeDataTypes[j];
+				})?.method
+			);
+		}
 
 		for (let i = 0; i < rowNum; i++) {
-			fakeData[i] = [];
+			let fakeData: any = [];
 			for (let j = 0; j < colNames.length; j++) {
-				fakeData[i].push(
-					FAKER_DATA_TYPES.find((faker, index) => {
-						return faker.value === fakeDataTypes[j];
-					})?.method()
-				);
+				fakeData.push(fakeDataMethods[j]?.());
 			}
+
+			result += `INSERT INTO \`${tableName}\` (\`${allColName}\`) VALUES ('${fakeData.join(
+				"', '"
+			)}');\n`;
 		}
 
-		for (let i = 0; i < rowNum; i++) {
-			result += `INSERT INTO \`${tableName}\` (\`${allColName}\`) VALUES ('${fakeData[
-				i
-			].join("', '")}')  \n`;
-		}
-
-		console.log(fakeData);
-
-		setResult(result);
+		setResult(`${sqlTable} \n\n\n\n\n ${result}`);
 	};
+
 	return (
 		<div className={style.dg}>
 			<div className={style.dg__left}>
@@ -118,40 +127,6 @@ const DataGenerator: React.FC = () => {
 				</div>
 
 				<div className={style.dg__left_left}>
-					<div>
-						{Array.from({ length: colNum }, (_, k) => (
-							<TextInput
-								key={`col-name-${k}`}
-								label={`Column name #${k + 1}`}
-								placeholder="Column name"
-								value={
-									colNames[k] === undefined
-										? (colNames[k] = "")
-										: colNames[k]
-								}
-								onChange={(e) => onColNamesChange(e, k)}
-								mt="xl"
-								autoComplete="nope"
-							/>
-						))}
-					</div>
-					<div>
-						{Array.from({ length: colNum }, (_, k) => (
-							<Select
-								mt="xl"
-								key={`data-type-${k}`}
-								label={`Data type #${k + 1}`}
-								placeholder="Data type"
-								value={
-									dataTypes[k] === undefined
-										? (dataTypes[k] = "")
-										: dataTypes[k]
-								}
-								data={SQL_DATA_TYPES}
-								onChange={(e) => onDataTypesChange(e, k)}
-							/>
-						))}
-					</div>
 					{/* Fix the warning */}
 					<div>
 						{Array.from({ length: colNum }, (_, k) => (
@@ -166,9 +141,48 @@ const DataGenerator: React.FC = () => {
 								}
 								placeholder="Pick one"
 								data={FAKER_DATA_TYPES}
-								onChange={(e: any) =>
-									onFakeDataTypesChange(e, k)
+								onChange={(e: any) => {
+									onFakeDataTypesChange(e, k);
+									if (colNames[k] === "")
+										onColNamesChange(e, k);
+								}}
+							/>
+						))}
+					</div>
+					<div>
+						{Array.from({ length: colNum }, (_, k) => (
+							<Select
+								mt="xl"
+								key={`data-type-${k}`}
+								label={`Data type #${k + 1}`}
+								placeholder="Data type"
+								value={
+									dataTypes[k] === undefined
+										? (dataTypes[k] =
+												MYSQL_DATA_TYPES[0].value)
+										: dataTypes[k]
 								}
+								data={MYSQL_DATA_TYPES}
+								onChange={(e) => onDataTypesChange(e, k)}
+							/>
+						))}
+					</div>
+					<div>
+						{Array.from({ length: colNum }, (_, k) => (
+							<TextInput
+								key={`col-name-${k}`}
+								label={`Column name #${k + 1}`}
+								placeholder="Column name"
+								value={
+									colNames[k] === undefined
+										? (colNames[k] = "")
+										: colNames[k]
+								}
+								onChange={(e) =>
+									onColNamesChange(e.target.value, k)
+								}
+								mt="xl"
+								autoComplete="nope"
 							/>
 						))}
 					</div>
@@ -182,14 +196,17 @@ const DataGenerator: React.FC = () => {
 							<Button onClick={onButtonClick}>Generate</Button>
 							<Button
 								onClick={() => {
-									downloadTextFile(result, "demo.sql");
+									downloadTextFile(result, "data.sql");
 								}}
 							>
 								Download SQL
 							</Button>
 							<Button
 								onClick={() => {
-									downloadTextFile(result, "demo.sql");
+									downloadTextFile(
+										convertToJSON(colNames, rowNum, result),
+										"data.json"
+									);
 								}}
 							>
 								Download JSON
