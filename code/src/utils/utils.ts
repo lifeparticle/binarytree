@@ -18,6 +18,5 @@ export const downloadPDFFile = (fileContent: any, fileName: string) => {
 };
 
 export const downloadTextFile = (fileContent: any, fileName: string) => {
-	// downloadFile(fileContent, fileName, "applcation/pdf");
 	downloadFile(fileContent, fileName, "text/plain;charset=utf-8");
 };

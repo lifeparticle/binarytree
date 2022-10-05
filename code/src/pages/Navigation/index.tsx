@@ -10,6 +10,8 @@ import {
 	IconDatabase,
 	IconTextPlus,
 	IconCalculator,
+	IconTable,
+	IconList,
 } from "@tabler/icons";
 import { Link } from "react-router-dom";
 
@@ -58,7 +60,10 @@ const useStyles = createStyles((theme, _params, getRef) => {
 				color: theme.colorScheme === "dark" ? theme.white : theme.black,
 
 				[`& .${icon}`]: {
-					color: theme.colorScheme === "dark" ? theme.white : theme.black,
+					color:
+						theme.colorScheme === "dark"
+							? theme.white
+							: theme.black,
 				},
 			},
 		},
@@ -78,8 +83,10 @@ const useStyles = createStyles((theme, _params, getRef) => {
 					variant: "light",
 					color: theme.primaryColor,
 				}).background,
-				color: theme.fn.variant({ variant: "light", color: theme.primaryColor })
-					.color,
+				color: theme.fn.variant({
+					variant: "light",
+					color: theme.primaryColor,
+				}).color,
 				[`& .${icon}`]: {
 					color: theme.fn.variant({
 						variant: "light",
@@ -99,7 +106,12 @@ const data = [
 	{ link: "/icons", label: "Icons", icon: IconBoxPadding },
 	{ link: "/data_gen", label: "Data Generator", icon: IconDatabase },
 	{ link: "/base64", label: "Base 64 Converter", icon: IconTextPlus },
-	{ link: "/pixel_converter", label: "Pixel Converter", icon: IconCalculator},
+	{
+		link: "/pixel_converter",
+		label: "Pixel Converter",
+		icon: IconCalculator,
+	},
+	{ link: "/toc", label: "Table Of Content", icon: IconList },
 ];
 
 interface NavigationProps {

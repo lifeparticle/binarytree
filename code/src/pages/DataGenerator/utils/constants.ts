@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 
-export const SQL_DATA_TYPES = [
+export const MYSQL_DATA_TYPES = [
 	{ value: "TEXT", label: "String" },
 	{ value: "INT", label: "Integer" },
 ];
