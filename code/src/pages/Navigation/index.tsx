@@ -10,8 +10,8 @@ import {
 	IconDatabase,
 	IconTextPlus,
 	IconCalculator,
-	IconTable,
 	IconList,
+	IconTable,
 } from "@tabler/icons";
 import { Link } from "react-router-dom";
 
@@ -112,6 +112,11 @@ const data = [
 		icon: IconCalculator,
 	},
 	{ link: "/toc", label: "Table Of Content", icon: IconList },
+	{
+		link: "/md_table_generator",
+		label: "MD Table Generator",
+		icon: IconTable,
+	},
 ];
 
 interface NavigationProps {
