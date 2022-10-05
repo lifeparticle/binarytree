@@ -9,7 +9,7 @@ import DataGenerator from "pages/DataGenerator";
 import Base64 from "pages/Base64";
 import PixelConverter from "pages/PixelConverter";
 import Shades from "pages/Shades";
-
+import TableGenerator from "pages/MdTableGenerator";
 
 const Home: React.FC = () => {
 	return (
@@ -24,6 +24,10 @@ const Home: React.FC = () => {
 				<Route path="/base64" element={<Base64 />} />
 				<Route path="/shades" element={<Shades />} />
 				<Route path="/pixel_converter" element={<PixelConverter />} />
+				<Route
+					path="/md_table_generator"
+					element={<TableGenerator />}
+				/>
 			</Routes>
 		</div>
 	);
