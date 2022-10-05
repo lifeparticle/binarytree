@@ -10,6 +10,7 @@ import {
 	IconDatabase,
 	IconTextPlus,
 	IconCalculator,
+	IconColorSwatch,
 	IconTable,
 } from "@tabler/icons";
 import { Link } from "react-router-dom";
@@ -110,6 +111,7 @@ const data = [
 		label: "Pixel Converter",
 		icon: IconCalculator,
 	},
+	{ link: "/shades", label: "Shade Generator", icon: IconColorSwatch },
 	{
 		link: "/md_table_generator",
 		label: "MD Table Generator",
