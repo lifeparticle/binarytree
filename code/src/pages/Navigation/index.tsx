@@ -11,6 +11,7 @@ import {
 	IconTextPlus,
 	IconCalculator,
 	IconList,
+	IconColorSwatch,
 	IconTable,
 } from "@tabler/icons";
 import { Link } from "react-router-dom";
@@ -112,6 +113,7 @@ const data = [
 		icon: IconCalculator,
 	},
 	{ link: "/toc", label: "Table Of Content", icon: IconList },
+	{ link: "/shades", label: "Shade Generator", icon: IconColorSwatch },
 	{
 		link: "/md_table_generator",
 		label: "MD Table Generator",

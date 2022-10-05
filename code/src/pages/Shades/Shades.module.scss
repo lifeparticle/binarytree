@@ -1,0 +1,12 @@
+.shades {
+	display: grid;
+	row-gap: 10px;
+	&__shade {
+		display: flex;
+		column-gap: 10px;
+		&_box {
+			height: 20px;
+			width: 20px;
+		}
+	}
+}
