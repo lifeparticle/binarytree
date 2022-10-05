@@ -8,6 +8,7 @@ import TextEditor from "pages/TextEditor";
 import DataGenerator from "pages/DataGenerator";
 import Base64 from "pages/Base64";
 import PixelConverter from "pages/PixelConverter";
+import TableGenerator from "pages/MdTableGenerator";
 
 const Home: React.FC = () => {
 	return (
@@ -21,6 +22,10 @@ const Home: React.FC = () => {
 				<Route path="/data_gen" element={<DataGenerator />} />
 				<Route path="/base64" element={<Base64 />} />
 				<Route path="/pixel_converter" element={<PixelConverter />} />
+				<Route
+					path="/md_table_generator"
+					element={<TableGenerator />}
+				/>
 			</Routes>
 		</div>
 	);
