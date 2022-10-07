@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { createStyles, Navbar, Group, Button } from "@mantine/core";
 import {
-	IconPlayCard,
 	IconColorPicker,
 	IconMarkdown,
 	IconBoxPadding,
