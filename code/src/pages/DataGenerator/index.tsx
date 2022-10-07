@@ -84,7 +84,7 @@ const DataGenerator: React.FC = () => {
 			)}');\n`;
 		}
 
-		setResult(`${sqlTable} \n\n\n\n\n ${result}`);
+		setResult(`${sqlTable}\n\n\n\n\n${result}`);
 	};
 
 	return (
