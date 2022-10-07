@@ -15,6 +15,7 @@ import {
 	IconTable,
 } from "@tabler/icons";
 import { Link } from "react-router-dom";
+import logo from "logo.svg";
 
 const useStyles = createStyles((theme, _params, getRef) => {
 	const icon = getRef("icon");
@@ -150,7 +151,7 @@ const Navigation: React.FC<NavigationProps> = ({ value, toggle }) => {
 		<Navbar width={{ sm: 300 }} p="md">
 			<Navbar.Section grow>
 				<Group className={classes.header} position="apart">
-					<IconPlayCard size={28} />
+					<img src={logo} alt="logo" />
 					<Button color={value} onClick={() => toggle()}>
 						{value}
 					</Button>
