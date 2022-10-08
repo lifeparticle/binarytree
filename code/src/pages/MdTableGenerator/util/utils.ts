@@ -86,44 +86,56 @@ export const generateTabletemp = (row: number, column: number, output: any) => {
 	}
 };
 
-export const generateRow = (col: number, fill = `   `) => {
+export const generateRow = (colNum: number, fill = `   `) => {
 	let result = ``;
 
-	for (let i = 0; i < col; i++) {
+	for (let i = 0; i < colNum; i++) {
 		result += `|${fill}`;
 	}
 	result += `|`;
 	return result;
 };
 
-export const generateHeader = (col: number) => {
-	let tableHeader = generateRow(col);
-	let tableHeaderDivider = generateRow(col, `---`);
+export const generateHeader = (colNum: number) => {
+	let tableHeader = generateRow(colNum);
+	let tableHeaderDivider = generateRow(colNum, `---`);
 	return `${tableHeader}\n${tableHeaderDivider}`;
 };
 
-export const updateHeader = (prevHeader: string, col: number) => {
+export const updateHeader = (prevHeader: string, colNum: number) => {
 	return "";
 };
 
-export const generateRows = (row: number, col: number) => {
+export const generateRows = (rowNum: number, colNum: number) => {
 	let result = ``;
-	for (let j = 0; j < row; j++) {
-		result += `${generateRow(col)}\n`;
+	let row = generateRow(colNum);
+	for (let j = 0; j < rowNum; j++) {
+		result += `${row}\n`;
 	}
-
 	return result;
 };
 
-export const updateRows = (prevRows: string[], row: number, col: number) => {
+export const updateRows = (
+	prevRows: string[],
+	rowNum: number,
+	colNum: number
+) => {
 	return "";
 };
 
-export const generateTable = (row: number, col: number, prevTable: string) => {
-	return `${generateHeader(col)}\n${generateRows(row, col)}`;
+export const generateTable = (
+	rowNum: number,
+	colNum: number,
+	prevTable: string
+) => {
+	return `${generateHeader(colNum)}\n${generateRows(rowNum, colNum)}`;
 };
 
-export const updateTable = (row: number, col: number, prevTable: string) => {
+export const updateTable = (
+	rowNum: number,
+	colNum: number,
+	prevTable: string
+) => {
 	// generateHeader ? updateHeader
 	// generateRows ? updateRows ?
 	return "";
