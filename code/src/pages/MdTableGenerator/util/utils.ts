@@ -86,27 +86,45 @@ export const generateTabletemp = (row: number, column: number, output: any) => {
 	}
 };
 
-// todo
+export const generateRow = (col: number, fill = `   `) => {
+	let result = ``;
+
+	for (let i = 0; i < col; i++) {
+		result += `|${fill}`;
+	}
+	result += `|`;
+	return result;
+};
+
 export const generateHeader = (col: number) => {
-	return "";
+	let tableHeader = generateRow(col);
+	let tableHeaderDivider = generateRow(col, `---`);
+	return `${tableHeader}\n${tableHeaderDivider}`;
 };
 
-// todo
-export const generateRows = (row: number, col: number) => {
-	return "";
-};
-
-// todo
 export const updateHeader = (prevHeader: string, col: number) => {
 	return "";
 };
 
-// todo
+export const generateRows = (row: number, col: number) => {
+	let result = ``;
+	for (let j = 0; j < row; j++) {
+		result += `${generateRow(col)}\n`;
+	}
+
+	return result;
+};
+
 export const updateRows = (prevRows: string[], row: number, col: number) => {
 	return "";
 };
 
-// todo
 export const generateTable = (row: number, col: number, prevTable: string) => {
+	return `${generateHeader(col)}\n${generateRows(row, col)}`;
+};
+
+export const updateTable = (row: number, col: number, prevTable: string) => {
+	// generateHeader ? updateHeader
+	// generateRows ? updateRows ?
 	return "";
 };
