@@ -29,7 +29,7 @@ const TableGenerator: React.FC = () => {
 				value={column}
 				placeholder="Column"
 				label="Column"
-				min={0}
+				min={1}
 				onChange={(val: number) => {
 					setColumn(val);
 					setOutput((prevOutput) =>
