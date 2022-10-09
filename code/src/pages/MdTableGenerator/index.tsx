@@ -4,8 +4,8 @@ import { useState } from "react";
 import { generateTable } from "./util/utils";
 
 const TableGenerator: React.FC = () => {
-	const [row, setRow] = useState(1);
-	const [column, setColumn] = useState(1);
+	const [row, setRow] = useState(10);
+	const [column, setColumn] = useState(10);
 	const [output, setOutput] = useState(() => {
 		return generateTable(row, column, "");
 	});
@@ -29,7 +29,7 @@ const TableGenerator: React.FC = () => {
 				value={column}
 				placeholder="Column"
 				label="Column"
-				min={0}
+				min={1}
 				onChange={(val: number) => {
 					setColumn(val);
 					setOutput((prevOutput) =>
