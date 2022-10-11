@@ -108,7 +108,9 @@ export const updateHeader = (prevHeader: string, colNum: number) => {
 	let lines = prevHeader.split(/\r?\n/).filter((line: string) => line !== "");
 	let prevColNum = lines[0].replace(/\s/g, "").length - 1;
 
-	if (prevColNum === colNum) return;
+	if (prevColNum === colNum) {
+		return prevHeader;
+	}
 
 	let isColNumInc = prevColNum < colNum ? true : false;
 	let tableHeader = ``;
@@ -176,7 +178,9 @@ export const updateRows = (
 	let appendRows = ``;
 	let result = ``;
 
-	if (prevRowNum === rowNum) return;
+	if (prevRowNum === rowNum) {
+		return prevRows;
+	}
 
 	let isRowNumInc = prevRowNum < rowNum ? true : false;
 
