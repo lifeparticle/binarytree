@@ -41,7 +41,6 @@ const TableGenerator: React.FC = () => {
 			<MDEditor
 				value={output}
 				onChange={(val: any) => {
-					console.log("whyyyyyyy");
 					setOutput(val);
 				}}
 				height="800px"

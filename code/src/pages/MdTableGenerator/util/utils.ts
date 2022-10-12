@@ -22,7 +22,7 @@ export const generateHeader = (colNum: number) => {
 
 export const updateHeader = (prevTable: string, colNum: number) => {
 	let lines = prevTable.split(/\r?\n/).filter((line: string) => line !== "");
-	let prevColNum = lines[0].replace(/\s/g, "").length - 1;
+	let prevColNum = lines[0].replace(/[^|]/g, "").length - 1;
 
 	if (prevColNum === colNum) {
 		return `${lines[0]}\n${lines[1]}`;
@@ -33,6 +33,7 @@ export const updateHeader = (prevTable: string, colNum: number) => {
 	let tableHeaderDivider = ``;
 
 	if (isColNumInc) {
+		console.log("HERR");
 		tableHeader = `${lines[0]}${generateRow(
 			colNum - prevColNum,
 			FILL_SPACE,
@@ -91,7 +92,7 @@ export const updateRows = (
 ) => {
 	let lines = prevTable.split(/\r?\n/).filter((line: string) => line !== "");
 	let prevRowNum = lines.length - 2;
-	let prevColNum = lines[0].replace(/\s/g, "").length - 1;
+	let prevColNum = lines[0].replace(/[^|]/g, "").length - 1;
 	let appendRows = ``;
 	let result = ``;
 
