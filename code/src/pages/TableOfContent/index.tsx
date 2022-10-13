@@ -5,6 +5,7 @@ import { Buffer } from 'buffer';
 import Button from "components/Button";
 import { useClipboard } from "@mantine/hooks";
 import { downloadTextFile, downloadPDFFile } from "utils/utils";
+import { httpGetMarkedDownText } from "api/Config";
 // import { getTOC } from "./toc.gen";
 import Toc from "react-toc";
 // let toc = require("markdown-toc");
@@ -23,14 +24,14 @@ const TableOfContent: React.FC = () => {
 		if (url.trim() !== "") {
 			const getData = async () => {
 				let URL = url;
-				const response = await fetch(URL);
-				const arrayBuffer = await response.arrayBuffer()
+				const arrayBuffer = await httpGetMarkedDownText(URL);
 				const buffer = Buffer.from(arrayBuffer, 8);
 				console.log(buffer.toString())
 				// console.log(ReactMarkdown(buffer));
 				setMarkdown(buffer.toString())
 			};
 			getData();
+			setToc("")
 			// const generatedTOC = getTOC(markdown)
 			// setToc(generatedTOC)
 			// setToc(getTOC(markdown))
