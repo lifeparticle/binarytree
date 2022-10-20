@@ -33,7 +33,6 @@ export const updateHeader = (prevTable: string, colNum: number) => {
 	let tableHeaderDivider = ``;
 
 	if (isColNumInc) {
-		console.log("HERR");
 		tableHeader = `${lines[0]}${generateRow(
 			colNum - prevColNum,
 			FILL_SPACE,

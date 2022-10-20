@@ -50,10 +50,6 @@ const DataGenerator: React.FC = () => {
 	};
 
 	const onButtonClick = () => {
-		// console.log(colNames);
-		// console.log(dataTypes);
-		// console.log(fakeDataTypes);
-
 		let result = "";
 		let allColName = colNames.join("`, `");
 		let fakeDataMethods: any = [];
@@ -143,8 +139,9 @@ const DataGenerator: React.FC = () => {
 								data={FAKER_DATA_TYPES}
 								onChange={(e: any) => {
 									onFakeDataTypesChange(e, k);
-									if (colNames[k] === "")
-										onColNamesChange(e, k);
+									// how to handle this better?
+									// if (colNames[k] === "")
+									onColNamesChange(e, k);
 								}}
 							/>
 						))}
