@@ -31,7 +31,6 @@ const ImageGeneratorFromColors: React.FC = () => {
 	};
 
 	const onButtonClick = async () => {
-		console.log(colors);
 		if (!domEl.current || colors.length === 0) return;
 
 		const zip = new JSZip();
