@@ -150,7 +150,7 @@ const Navigation: React.FC<NavigationProps> = ({ value, toggle }) => {
 		<Navbar width={{ sm: 300 }} p="md">
 			<Navbar.Section grow>
 				<Group className={classes.header} position="apart">
-					<img src={logo} alt="logo" />
+					<img src={logo} alt="logo" height={20} width={20} />
 					<Button color={value} onClick={() => toggle()}>
 						{value}
 					</Button>
