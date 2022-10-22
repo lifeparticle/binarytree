@@ -1,4 +1,5 @@
-import { Button, TextInput } from "@mantine/core";
+import { TextInput } from "@mantine/core";
+import Button from "components/Button";
 import { useState } from "react";
 import styles from "./Shades.module.scss";
 
