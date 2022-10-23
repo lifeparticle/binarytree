@@ -1,4 +1,5 @@
 import { NumberInput } from "@mantine/core";
+import Group from "hoc/Group";
 import MDEditor from "@uiw/react-md-editor";
 import { useState } from "react";
 import { generateTable } from "./util/utils";
@@ -11,7 +12,7 @@ const TableGenerator: React.FC = () => {
 	});
 
 	return (
-		<div>
+		<Group>
 			<NumberInput
 				value={row}
 				placeholder="Row"
@@ -46,7 +47,7 @@ const TableGenerator: React.FC = () => {
 				height="800px"
 				style={{ fontSize: "52" }}
 			/>
-		</div>
+		</Group>
 	);
 };
 

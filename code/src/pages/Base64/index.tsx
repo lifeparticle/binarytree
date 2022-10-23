@@ -1,4 +1,5 @@
-import { Textarea, SegmentedControl, Button, Group } from "@mantine/core";
+import { Textarea, SegmentedControl, Group } from "@mantine/core";
+import Button from "components/Button";
 import { useState } from "react";
 import { Buffer } from "buffer";
 import style from "./Base64.module.scss";

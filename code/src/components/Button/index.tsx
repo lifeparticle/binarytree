@@ -17,9 +17,7 @@ const Button: React.FC<ButtonProps & MantineButtonButtonProps> = ({
 			styles={(theme) => ({
 				root: {
 					backgroundColor:
-						theme.colorScheme === "dark"
-							? theme.colors.dark
-							: "#228be6",
+						theme.colorScheme === "dark" ? "#424242" : "#228be6",
 				},
 			})}
 		>
