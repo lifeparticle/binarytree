@@ -1,4 +1,4 @@
-import { Textarea, SegmentedControl, Group } from "@mantine/core";
+import { Textarea, SegmentedControl, Stack } from "@mantine/core";
 import Button from "components/Button";
 import { useState } from "react";
 import { Buffer } from "buffer";
@@ -28,7 +28,7 @@ const Base64: React.FC = () => {
 				minRows={10}
 			/>
 
-			<Group className={style.base__buttons}>
+			<Stack className={style.base__controls}>
 				<SegmentedControl
 					className={style.base__buttons_segment}
 					value={value}
@@ -48,7 +48,7 @@ const Base64: React.FC = () => {
 				>
 					Clear
 				</Button>
-			</Group>
+			</Stack>
 			<Textarea
 				value={result}
 				onChange={(currentValue) =>

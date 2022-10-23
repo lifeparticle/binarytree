@@ -1,13 +1,11 @@
 import { Group as MantineGroup } from "@mantine/core";
-import style from "./Base64.module.scss";
+import style from "./Group.module.scss";
 
 type GroupProps = {
-	children: any; // 👈️ define children prop
-	id: any;
-	key: any;
+	children: any;
 };
 
-const Group: React.FC<GroupProps> = (children) => {
+const Group: React.FC<GroupProps> = ({ children }) => {
 	return <MantineGroup className={style.base}>{children}</MantineGroup>;
 };
 

@@ -1,6 +1,7 @@
 import { Grid, Stack } from "@mantine/core";
 import { IconAppWindow, IconBrandGithub } from "@tabler/icons";
 import Button from "components/Button";
+import style from "./Icons.module.scss";
 
 const URLS = [
 	{
@@ -25,12 +26,12 @@ const URLS = [
 
 const Icons: React.FC = () => {
 	return (
-		<Grid grow>
+		<Grid grow className={style.icons}>
 			{URLS.map((url: any) => {
 				return (
 					<Grid.Col span={4} key={url.id}>
 						<Stack>
-							<h1>{url.name}</h1>
+							<h1 className={style.icons__title}> {url.name}</h1>
 
 							<Button
 								component="a"
