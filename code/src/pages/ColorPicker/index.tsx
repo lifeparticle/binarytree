@@ -30,7 +30,7 @@ const ColorPicker: React.FC = () => {
 				onChange={(val) => setColor(val)}
 				size="xl"
 			/>
-			<Text>{color}</Text>
+			<Text color="blue">{color}</Text>
 			<Button onClick={() => clipboard.copy(color)}>
 				{clipboard.copied ? "Copied" : "Copy"}
 			</Button>

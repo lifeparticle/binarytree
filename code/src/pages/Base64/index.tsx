@@ -31,6 +31,14 @@ const Base64: React.FC = () => {
 			<Stack className={style.base__controls}>
 				<SegmentedControl
 					className={style.base__buttons_segment}
+					styles={(theme) => ({
+						root: {
+							backgroundColor:
+								theme.colorScheme === "dark"
+									? theme.colors.dark[3]
+									: "#228be6",
+						},
+					})}
 					value={value}
 					onChange={setValue}
 					data={[

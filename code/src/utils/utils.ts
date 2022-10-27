@@ -1,4 +1,5 @@
 import { saveAs } from "file-saver";
+import jsPDF from "jspdf";
 
 export const downloadFile = (
 	fileContent: any,
@@ -13,8 +14,11 @@ export const downloadFile = (
 };
 
 export const downloadPDFFile = (fileContent: any, fileName: string) => {
-	const blob = new Blob([fileContent], { type: "application/pdf" });
-	saveAs(blob, fileName);
+	const doc = new jsPDF();
+	doc.text(fileContent, 10, 10);
+	doc.save(fileName);
+	// const blob = new Blob([fileContent], { type: "application/pdf" });
+	// saveAs(blob, fileName);
 };
 
 export const downloadTextFile = (fileContent: any, fileName: string) => {

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { createStyles, Navbar, Group, Button } from "@mantine/core";
+import { createStyles, Navbar, Group } from "@mantine/core";
+import Button from "components/Button";
 import {
 	IconColorPicker,
 	IconMarkdown,

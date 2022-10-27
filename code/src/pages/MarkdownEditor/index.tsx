@@ -3,7 +3,7 @@ import MDEditor from "@uiw/react-md-editor";
 import style from "./MarkdownEditor.module.scss";
 import { Group } from "@mantine/core";
 import Button from "components/Button";
-import { downloadTextFile } from "utils/utils";
+import { downloadPDFFile, downloadTextFile } from "utils/utils";
 import { useClipboard } from "@mantine/hooks";
 
 const MarkdownEditor: React.FC = () => {
@@ -16,9 +16,7 @@ const MarkdownEditor: React.FC = () => {
 				<Button onClick={() => downloadTextFile(markdown, "README.md")}>
 					Downlaod
 				</Button>
-				<Button
-					onClick={() => downloadTextFile(markdown, "README.pdf")}
-				>
+				<Button onClick={() => downloadPDFFile(markdown, "README.pdf")}>
 					Downlaod PDF
 				</Button>
 				<Button onClick={() => clipboard.copy(markdown)}>

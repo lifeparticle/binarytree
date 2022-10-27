@@ -4,9 +4,13 @@
 	&__shade {
 		display: flex;
 		column-gap: 10px;
+
+		justify-content: center;
 		&_box {
-			height: 20px;
-			width: 20px;
+			color: #228be6;
+			height: 50px;
+			width: 50px;
+			text-align: center;
 		}
 	}
 }
