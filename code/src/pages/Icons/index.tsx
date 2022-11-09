@@ -22,6 +22,12 @@ const URLS = [
 		website: "https://lordicon.com/",
 		github: "",
 	},
+	{
+		id: 4,
+		name: "Iconer",
+		website: "https://iconer.app/",
+		github: "",
+	},
 ];
 
 const Icons: React.FC = () => {
