@@ -7,8 +7,6 @@ test("Navigation Button Works", async () => {
 	const downloadBt = screen.getByText(/downlaod/i);
 	const clearBt = screen.getByText(/clear/i);
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-expressions, jest/valid-expect
-	expect(downloadBt).toBeInTheDocument;
-	// eslint-disable-next-line @typescript-eslint/no-unused-expressions, jest/valid-expect
-	expect(clearBt).toBeInTheDocument;
+	expect(downloadBt).toBeInTheDocument();
+	expect(clearBt).toBeInTheDocument();
 });
