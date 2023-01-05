@@ -37,8 +37,8 @@ const TableOfContent: React.FC = () => {
 		const generateTocItem = (text: string) => {
 			return `[${text}](#${text
 				.toLowerCase()
-				.replaceAll(" ", "-")
-				.replace(/[(),/."&|]/g, "")})`;
+				.replace(/\s/g, "-")
+				.replace(/[^A-Za-z0-9-_]/g, "")})`;
 		};
 		const tableOfContentsText = tableOfContents
 			.reduce((acc, tocItem) => {
@@ -63,7 +63,7 @@ const TableOfContent: React.FC = () => {
 						break;
 					}
 					case "H5": {
-						acc.push(`\t\t\t\t+ ${generateTocItem(text)}`);
+						acc.push(`\t\t\t\t* ${generateTocItem(text)}`);
 
 						break;
 					}
@@ -97,7 +97,6 @@ const TableOfContent: React.FC = () => {
 			);
 	};
 
-	// https://raw.githubusercontent.com/lifeparticle/JS-Cheatsheet/main/README.md
 	return (
 		<div className={style.toc}>
 			<div>
