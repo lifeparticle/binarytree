@@ -1,65 +1,138 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import style from "./TableOfContent.module.scss";
 import { Group, Textarea, TextInput } from "@mantine/core";
 import Button from "components/Button";
 import { useClipboard } from "@mantine/hooks";
-import ReactMarkdown from "react-markdown";
+import { marked } from "marked";
+
+type TocItem = {
+	tag: "H1" | "H2" | "H3" | "H4" | "H5" | "H6";
+	text: string;
+};
 
 const TableOfContent: React.FC = () => {
 	const [url, setUrl] = useState("");
 	const [markdown, setMarkdown] = useState("");
-	const [toc, setToc] = useState("");
+	const [tableOfContents, setTableOfContents] = useState<string>("");
 	const clipboard = useClipboard({ timeout: 500 });
 
-	useEffect(() => {
-		if (url.trim() === "" && markdown === "") return;
+	const onMarkdownChange = (text: string) => {
+		setMarkdown(text);
+		const markdownHtml = marked.parse(text);
+		const tempDiv = document.createElement("div");
 
-		setToc(markdown);
+		tempDiv.innerHTML = markdownHtml;
+		const headings = [
+			...tempDiv.querySelectorAll("h1, h2, h3, h4, h5, h6"),
+		].map((el) => {
+			return {
+				tag: el.tagName as TocItem["tag"],
+				text: el.textContent?.trim() || "",
+			};
+		});
 
-		// if (url.trim() !== "") {
-		// 	const getData = async () => {
-		// 		let URL = url;
-		// 		const response = await fetch(URL);
-		// 		const buffer = Buffer.from(response.arrayBuffer(), "utf-8");
-		// 		console.log(ReactMarkdown(buffer.toString()).content);
-		// 	};
+		setTableOfContents(generateTableOfContentsText(headings));
+	};
+	const generateTableOfContentsText = (tableOfContents: TocItem[]) => {
+		const generateTocItem = (text: string) => {
+			return `[${text}](#${text
+				.toLowerCase()
+				.replaceAll(" ", "-")
+				.replace(/[(),/."&|]/g, "")})`;
+		};
+		const tableOfContentsText = tableOfContents
+			.reduce((acc, tocItem) => {
+				const { tag, text } = tocItem;
+				switch (tag) {
+					case "H1": {
+						acc.push(`- ${generateTocItem(text)}`);
+						break;
+					}
+					case "H2": {
+						acc.push(`\t* ${generateTocItem(text)}`);
+						break;
+					}
+					case "H3": {
+						acc.push(`\t\t+ ${generateTocItem(text)}`);
 
-		// 	getData();
+						break;
+					}
+					case "H4": {
+						acc.push(`\t\t\t- ${generateTocItem(text)}`);
 
-		// 	setToc("");
-		// }
+						break;
+					}
+					case "H5": {
+						acc.push(`\t\t\t\t+ ${generateTocItem(text)}`);
 
-		return;
-	}, [url, markdown]);
+						break;
+					}
+					case "H6": {
+						acc.push(`\t\t\t\t\t+ ${generateTocItem(text)}`);
+
+						break;
+					}
+				}
+				return acc;
+			}, [] as string[])
+			.join("\n");
+
+		return tableOfContentsText;
+	};
+
+	const fetchData = (url: string) => {
+		console.log(url);
+		setUrl(url);
+
+		fetch(url)
+			.then((res) => res.text())
+			.then(
+				(result) => {
+					setMarkdown(result);
+					onMarkdownChange(result);
+				},
+				(error) => {
+					console.log(error);
+				}
+			);
+	};
 
 	// https://raw.githubusercontent.com/lifeparticle/JS-Cheatsheet/main/README.md
 	return (
 		<div className={style.toc}>
 			<div>
 				<TextInput
-					label="Table name"
-					placeholder="Table name"
+					label="URL"
+					placeholder="URL"
 					value={url}
-					onChange={(event) => setUrl(event.currentTarget.value)}
-					mt="xl"
+					onChange={(event) => fetchData(event.currentTarget.value)}
 					autoComplete="nope"
 				/>
 				<Textarea
 					placeholder=""
 					label="Markdown"
 					value={markdown}
-					onChange={(event) => setMarkdown(event.currentTarget.value)}
+					onChange={(event) =>
+						onMarkdownChange(event.currentTarget.value)
+					}
 					maxRows={29}
 					minRows={29}
 				/>
 			</div>
 			<div>
-				<Group>
-					<Button onClick={() => clipboard.copy(toc)}>
+				<Group mt="xl">
+					<Button onClick={() => clipboard.copy(tableOfContents)}>
 						{clipboard.copied ? "Copied" : "Copy"}
 					</Button>
 				</Group>
-				<ReactMarkdown>{toc}</ReactMarkdown>
+
+				<Textarea
+					mt="xl"
+					value={tableOfContents}
+					maxRows={29}
+					minRows={29}
+					readOnly
+				/>
 			</div>
 		</div>
 	);

@@ -26,7 +26,7 @@
     "jspdf": "^2.5.1",
     "jszip": "^3.10.1",
     "jszip-utils": "^0.1.0",
-    "markdown-toc": "^1.2.0",
+    "marked": "^4.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
@@ -58,5 +58,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/marked": "^4.0.8"
   }
 }
