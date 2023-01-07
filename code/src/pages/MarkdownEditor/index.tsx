@@ -3,12 +3,15 @@ import MDEditor from "@uiw/react-md-editor";
 import style from "./MarkdownEditor.module.scss";
 import { Group } from "@mantine/core";
 import Button from "components/Button";
-import { downloadPDFFile, downloadTextFile } from "utils/utils";
+import { downloadPDFFile, downloadTextFile, useKeyPress } from "utils/utils";
 import { useClipboard } from "@mantine/hooks";
 
 const MarkdownEditor: React.FC = () => {
 	const [markdown, setMarkdown] = useState("");
 	const clipboard = useClipboard({ timeout: 500 });
+
+	useKeyPress(() => setMarkdown("# Hello, World!"), ["KeyE"]);
+
 	return (
 		<div className={style.me}>
 			<Group>

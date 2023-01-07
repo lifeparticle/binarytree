@@ -6,15 +6,7 @@ import JSZip from "jszip";
 import JSZipUtils from "jszip-utils";
 import { saveAs } from "file-saver";
 import Button from "components/Button";
-
-// #FF0000, #00FFFF, #FFFFFF, #C0C0C0, #000000
-/*
-#FF0000
-#00FFFF
-#FFFFFF
-#C0C0C0
-#000000
-*/
+import { useKeyPress } from "utils/utils";
 
 const ImageGeneratorFromColors: React.FC = () => {
 	const [colors, setColors] = useState<Array<string>>([]);
@@ -25,9 +17,14 @@ const ImageGeneratorFromColors: React.FC = () => {
 	const [rounded, setRounded] = useState(20);
 	domEl.current = [];
 
-	const onTextAreaChange = (event: any) => {
-		setColors(event.currentTarget.value.split(/[\n,]+/));
-		setValue(event.currentTarget.value);
+	useKeyPress(
+		() => onTextAreaChange("#FF0000, #00FFFF, #FFFFFF, #C0C0C0, #000000"),
+		["KeyE"]
+	);
+
+	const onTextAreaChange = (value: string) => {
+		setColors(value.split(/[\n,]+/));
+		setValue(value);
 	};
 
 	const onButtonClick = async () => {
@@ -54,7 +51,9 @@ const ImageGeneratorFromColors: React.FC = () => {
 				label="Colors"
 				radius="md"
 				minRows={20}
-				onChange={onTextAreaChange}
+				onChange={(event) =>
+					onTextAreaChange(event.currentTarget.value)
+				}
 				value={value}
 			/>
 			<div>

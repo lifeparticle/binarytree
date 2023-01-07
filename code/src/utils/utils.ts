@@ -1,5 +1,6 @@
 import { saveAs } from "file-saver";
 import jsPDF from "jspdf";
+import { useCallback, useEffect } from "react";
 
 export const downloadFile = (
 	fileContent: any,
@@ -24,3 +25,29 @@ export const downloadPDFFile = (fileContent: any, fileName: string) => {
 export const downloadTextFile = (fileContent: any, fileName: string) => {
 	downloadFile(fileContent, fileName, "text/plain;charset=utf-8");
 };
+
+type CallBackFunction = {
+	(): void;
+};
+
+export function useKeyPress(
+	callback: CallBackFunction,
+	keyCodes: string[]
+): void {
+	const handler = useCallback(
+		({ code }: KeyboardEvent) => {
+			console.log(code);
+			if (keyCodes.includes(code)) {
+				callback();
+			}
+		},
+		[callback, keyCodes]
+	);
+
+	useEffect(() => {
+		window.addEventListener("keydown", handler);
+		return () => {
+			window.removeEventListener("keydown", handler);
+		};
+	}, [handler]);
+}
