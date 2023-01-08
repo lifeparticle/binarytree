@@ -6,7 +6,7 @@ yarn install
 yarn start
 ```
 
-# Press key 'e' for example input
+# Press key 'e' for example input and press key 'c' tp clear the example input
 
 # ImageGeneratorFromColors
 

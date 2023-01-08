@@ -36,7 +36,6 @@ export function useKeyPress(
 ): void {
 	const handler = useCallback(
 		({ code }: KeyboardEvent) => {
-			console.log(code);
 			if (keyCodes.includes(code)) {
 				callback();
 			}

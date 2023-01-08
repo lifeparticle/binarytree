@@ -23,7 +23,11 @@ const TableOfContent: React.FC = () => {
 			),
 		["KeyE"]
 	);
-	useKeyPress(() => fetchData(""), ["KeyC"]);
+	useKeyPress(() => {
+		setUrl("");
+		setMarkdown("");
+		setTableOfContents("");
+	}, ["KeyC"]);
 
 	const onMarkdownChange = (text: string) => {
 		setMarkdown(text);
