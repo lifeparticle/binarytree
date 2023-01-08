@@ -21,6 +21,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 		() => onTextAreaChange("#FF0000, #00FFFF, #FFFFFF, #C0C0C0, #000000"),
 		["KeyE"]
 	);
+	useKeyPress(() => onTextAreaChange(""), ["KeyC"]);
 
 	const onTextAreaChange = (value: string) => {
 		setColors(value.split(/[\n,]+/));

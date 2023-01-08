@@ -11,6 +11,7 @@ const MarkdownEditor: React.FC = () => {
 	const clipboard = useClipboard({ timeout: 500 });
 
 	useKeyPress(() => setMarkdown("# Hello, World!"), ["KeyE"]);
+	useKeyPress(() => setMarkdown(""), ["KeyC"]);
 
 	return (
 		<div className={style.me}>

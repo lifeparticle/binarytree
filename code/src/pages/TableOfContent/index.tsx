@@ -23,6 +23,7 @@ const TableOfContent: React.FC = () => {
 			),
 		["KeyE"]
 	);
+	useKeyPress(() => fetchData(""), ["KeyC"]);
 
 	const onMarkdownChange = (text: string) => {
 		setMarkdown(text);
