@@ -8,7 +8,7 @@ yarn start
 
 # Tips
 
-Press key <kbd> <br> e <br> </kbd> for example input and press key <kbd> <br> c <br> </kbd> tp clear the example input
+Press key <kbd> <br> e <br> </kbd> for example input and press key <kbd> <br> c <br> </kbd> to clear the example input
 
 # ImageGeneratorFromColors
 
