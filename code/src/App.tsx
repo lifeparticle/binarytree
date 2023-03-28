@@ -4,6 +4,7 @@ import Navigation from "./pages/Navigation";
 import "App.scss";
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
+import Sorting from "pages/Sorting";
 const ColorPicker = lazy(() => import("pages/ColorPicker"));
 const ImageGeneratorFromColors = lazy(
 	() => import("pages/ImageGeneratorFromColors")
@@ -46,6 +47,7 @@ function App() {
 								path="/"
 								element={<ImageGeneratorFromColors />}
 							/>
+							<Route path="/sorting" element={<Sorting />} />
 							<Route path="/cp" element={<ColorPicker />} />
 							<Route path="/me" element={<MarkdownEditor />} />
 							<Route path="/te" element={<TextEditor />} />

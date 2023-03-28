@@ -13,6 +13,7 @@ import {
 	IconList,
 	IconColorSwatch,
 	IconTable,
+	IconSortAscending,
 } from "@tabler/icons";
 import { Link } from "react-router-dom";
 import logo from "logo.svg";
@@ -102,6 +103,7 @@ const useStyles = createStyles((theme, _params, getRef) => {
 
 const data = [
 	{ link: "/", label: "Image Generator From Colors", icon: IconWindmill },
+	{ link: "/sorting", label: "Sorting", icon: IconSortAscending },
 	{ link: "/cp", label: "Color Picker", icon: IconColorPicker },
 	{ link: "/me", label: "Markdown Editor", icon: IconMarkdown },
 	{ link: "/te", label: "Text Editor", icon: IconFileText },
