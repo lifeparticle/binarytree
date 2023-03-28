@@ -50,7 +50,7 @@ const Sorting: React.FC = () => {
 			</div>
 			<div>
 				<Group>
-					<Button onClick={() => clipboard.copy("")}>
+					<Button onClick={() => clipboard.copy(output)}>
 						{clipboard.copied ? "Copied" : "Copy"}
 					</Button>
 				</Group>
