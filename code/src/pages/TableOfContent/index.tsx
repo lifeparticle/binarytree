@@ -4,7 +4,7 @@ import { Group, Textarea, TextInput } from "@mantine/core";
 import Button from "components/Button";
 import { useClipboard } from "@mantine/hooks";
 import { marked } from "marked";
-import { useKeyPress } from "utils/utils";
+import { useCombinedKeyPress } from "utils/utils";
 
 type TocItem = {
 	tag: "H1" | "H2" | "H3" | "H4" | "H5" | "H6";
@@ -16,18 +16,18 @@ const TableOfContent: React.FC = () => {
 	const [markdown, setMarkdown] = useState("");
 	const [tableOfContents, setTableOfContents] = useState<string>("");
 	const clipboard = useClipboard({ timeout: 500 });
-	useKeyPress(
+	useCombinedKeyPress(
 		() =>
 			fetchData(
 				"https://raw.githubusercontent.com/lifeparticle/JS-Cheatsheet/main/README.md"
 			),
-		["KeyE"]
+		["ControlLeft", "KeyE"]
 	);
-	useKeyPress(() => {
+	useCombinedKeyPress(() => {
 		setUrl("");
 		setMarkdown("");
 		setTableOfContents("");
-	}, ["KeyC"]);
+	}, ["ControlLeft", "KeyC"]);
 
 	const onMarkdownChange = (text: string) => {
 		setMarkdown(text);

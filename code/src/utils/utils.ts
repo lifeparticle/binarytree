@@ -1,6 +1,6 @@
 import { saveAs } from "file-saver";
 import jsPDF from "jspdf";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
 export const downloadFile = (
 	fileContent: any,
@@ -30,13 +30,21 @@ type CallBackFunction = {
 	(): void;
 };
 
-export function useKeyPress(
+export function useCombinedKeyPress(
 	callback: CallBackFunction,
 	keyCodes: string[]
 ): void {
+	const keysPressed = useRef(new Set<string>());
+
 	const handler = useCallback(
-		({ code }: KeyboardEvent) => {
-			if (keyCodes.includes(code)) {
+		({ code, type }: KeyboardEvent) => {
+			if (type === "keydown") {
+				keysPressed.current.add(code);
+			} else if (type === "keyup") {
+				keysPressed.current.delete(code);
+			}
+
+			if (keyCodes.every((keyCode) => keysPressed.current.has(keyCode))) {
 				callback();
 			}
 		},
@@ -45,8 +53,10 @@ export function useKeyPress(
 
 	useEffect(() => {
 		window.addEventListener("keydown", handler);
+		window.addEventListener("keyup", handler);
 		return () => {
 			window.removeEventListener("keydown", handler);
+			window.removeEventListener("keyup", handler);
 		};
 	}, [handler]);
 }

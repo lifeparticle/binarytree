@@ -6,7 +6,7 @@ import JSZip from "jszip";
 import JSZipUtils from "jszip-utils";
 import { saveAs } from "file-saver";
 import Button from "components/Button";
-import { useKeyPress } from "utils/utils";
+import { useCombinedKeyPress } from "utils/utils";
 
 const ImageGeneratorFromColors: React.FC = () => {
 	const [colors, setColors] = useState<Array<string>>([]);
@@ -17,11 +17,14 @@ const ImageGeneratorFromColors: React.FC = () => {
 	const [rounded, setRounded] = useState(20);
 	domEl.current = [];
 
-	useKeyPress(
+	useCombinedKeyPress(
 		() => onTextAreaChange("#FF0000, #00FFFF, #FFFFFF, #C0C0C0, #000000"),
-		["KeyE"]
+		["ControlLeft", "KeyE"]
 	);
-	useKeyPress(() => onTextAreaChange(""), ["KeyC"]);
+
+	useCombinedKeyPress(() => {
+		onTextAreaChange("");
+	}, ["ControlLeft", "KeyC"]);
 
 	const onTextAreaChange = (value: string) => {
 		setColors(value.split(/[\n,]+/));
