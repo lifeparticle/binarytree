@@ -8,9 +8,6 @@ yarn install
 yarn start
 ```
 
-# Tips
-
-Press key <kbd> <br> e <br> </kbd> for example input and press key <kbd> <br> c <br> </kbd> to clear the example input
 
 # Features
 
@@ -28,3 +25,6 @@ Press key <kbd> <br> e <br> </kbd> for example input and press key <kbd>
 | TableOfContent | Houdini can generate a markdown table of contents for your site automatically. |
 | TextEditor | You can format the text, add images, and links, and preview the final output. |
 
+# Tips
+
+Press key <kbd> <br> e <br> </kbd> for example input and press key <kbd> <br> c <br> </kbd> to clear the example input
