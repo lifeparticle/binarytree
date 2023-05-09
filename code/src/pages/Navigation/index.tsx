@@ -1,29 +1,15 @@
 import { useState } from "react";
 import { createStyles, Navbar, Group } from "@mantine/core";
 import Button from "components/Button";
-import {
-	IconColorPicker,
-	IconMarkdown,
-	IconBoxPadding,
-	IconWindmill,
-	IconFileText,
-	IconDatabase,
-	IconTextPlus,
-	IconCalculator,
-	IconList,
-	IconColorSwatch,
-	IconTable,
-	IconSortAscending,
-} from "@tabler/icons";
+
 import { Link } from "react-router-dom";
 import logo from "logo.svg";
 
 const useStyles = createStyles((theme, _params, getRef) => {
-	const icon = getRef("icon");
 	return {
 		header: {
 			paddingBottom: theme.spacing.md,
-			marginBottom: theme.spacing.md * 1.5,
+			marginBottom: 1.5,
 			borderBottom: `1px solid ${
 				theme.colorScheme === "dark"
 					? theme.colors.dark[4]
@@ -62,7 +48,7 @@ const useStyles = createStyles((theme, _params, getRef) => {
 						: theme.colors.gray[0],
 				color: theme.colorScheme === "dark" ? theme.white : theme.black,
 
-				[`& .${icon}`]: {
+				[`& .`]: {
 					color:
 						theme.colorScheme === "dark"
 							? theme.white
@@ -72,7 +58,6 @@ const useStyles = createStyles((theme, _params, getRef) => {
 		},
 
 		linkIcon: {
-			ref: icon,
 			color:
 				theme.colorScheme === "dark"
 					? theme.colors.dark[2]
@@ -90,7 +75,7 @@ const useStyles = createStyles((theme, _params, getRef) => {
 					variant: "light",
 					color: theme.primaryColor,
 				}).color,
-				[`& .${icon}`]: {
+				[`& `]: {
 					color: theme.fn.variant({
 						variant: "light",
 						color: theme.primaryColor,
@@ -102,25 +87,23 @@ const useStyles = createStyles((theme, _params, getRef) => {
 });
 
 const data = [
-	{ link: "/", label: "Image Generator From Colors", icon: IconWindmill },
-	{ link: "/sorting", label: "Sorting", icon: IconSortAscending },
-	{ link: "/cp", label: "Color Picker", icon: IconColorPicker },
-	{ link: "/me", label: "Markdown Editor", icon: IconMarkdown },
-	{ link: "/te", label: "Text Editor", icon: IconFileText },
-	{ link: "/icons", label: "Icons", icon: IconBoxPadding },
-	{ link: "/data_gen", label: "Data Generator", icon: IconDatabase },
-	{ link: "/base64", label: "Base 64 Converter", icon: IconTextPlus },
+	{ link: "/", label: "Image Generator From Colors" },
+	{ link: "/sorting", label: "Sorting" },
+	{ link: "/cp", label: "Color Picker" },
+	{ link: "/me", label: "Markdown Editor" },
+	{ link: "/te", label: "Text Editor" },
+	{ link: "/icons", label: "Icons" },
+	{ link: "/data_gen", label: "Data Generator" },
+	{ link: "/base64", label: "Base 64 Converter" },
 	{
 		link: "/pixel_converter",
 		label: "Pixel Converter",
-		icon: IconCalculator,
 	},
-	{ link: "/toc", label: "Table Of Content", icon: IconList },
-	{ link: "/shades", label: "Shade Generator", icon: IconColorSwatch },
+	{ link: "/toc", label: "Table Of Content" },
+	{ link: "/shades", label: "Shade Generator" },
 	{
 		link: "/md_table_generator",
 		label: "MD Table Generator",
-		icon: IconTable,
 	},
 ];
 
@@ -144,7 +127,6 @@ const Navigation: React.FC<NavigationProps> = ({ value, toggle }) => {
 				setActive(item.label);
 			}}
 		>
-			<item.icon className={classes.linkIcon} stroke={1.5} />
 			<span>{item.label}</span>
 		</Link>
 	));

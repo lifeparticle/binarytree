@@ -1,5 +1,4 @@
 import { Grid, Stack } from "@mantine/core";
-import { IconAppWindow, IconBrandGithub } from "@tabler/icons";
 import Button from "components/Button";
 import style from "./Icons.module.scss";
 
@@ -43,7 +42,6 @@ const Icons: React.FC = () => {
 								component="a"
 								href={url.website}
 								target="_blank"
-								leftIcon={<IconAppWindow size={14} />}
 							>
 								Website
 							</Button>
@@ -53,7 +51,6 @@ const Icons: React.FC = () => {
 									component="a"
 									href={url.github}
 									target="_blank"
-									leftIcon={<IconBrandGithub size={14} />}
 								>
 									GitHub
 								</Button>
