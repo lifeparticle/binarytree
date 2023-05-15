@@ -5,6 +5,9 @@ import Button from "components/Button";
 import { useClipboard } from "@mantine/hooks";
 import { marked } from "marked";
 import { useCombinedKeyPress } from "utils/utils";
+import { Input, Space } from "antd";
+
+const { TextArea } = Input;
 
 type TocItem = {
 	tag: "H1" | "H2" | "H3" | "H4" | "H5" | "H6";
@@ -112,36 +115,31 @@ const TableOfContent: React.FC = () => {
 	return (
 		<div className={style.toc}>
 			<div>
-				<TextInput
-					label="URL"
+				<Input
 					placeholder="URL"
 					value={url}
 					onChange={(event) => fetchData(event.currentTarget.value)}
 					autoComplete="nope"
 				/>
-				<Textarea
+				<TextArea
 					placeholder=""
-					label="Markdown"
 					value={markdown}
 					onChange={(event) =>
 						onMarkdownChange(event.currentTarget.value)
 					}
-					maxRows={29}
-					minRows={29}
+					rows={29}
 				/>
 			</div>
 			<div>
-				<Group mt="xl">
+				<Space>
 					<Button onClick={() => clipboard.copy(tableOfContents)}>
 						{clipboard.copied ? "Copied" : "Copy"}
 					</Button>
-				</Group>
+				</Space>
 
-				<Textarea
-					mt="xl"
+				<TextArea
 					value={tableOfContents}
-					maxRows={29}
-					minRows={29}
+					rows={29}
 					readOnly
 				/>
 			</div>

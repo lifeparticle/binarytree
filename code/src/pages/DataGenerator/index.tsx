@@ -1,18 +1,12 @@
-import {
-	Autocomplete,
-	Group,
-	NumberInput,
-	Select,
-	Textarea,
-	TextInput,
-} from "@mantine/core";
 import { downloadTextFile } from "utils/utils";
 import { useState } from "react";
 import style from "./DataGenerator.module.scss";
 import { FAKER_DATA_TYPES, MYSQL_DATA_TYPES } from "./utils/constants";
-import Button from "components/Button";
+import { Button, Input, InputNumber, Select, AutoComplete, Space } from "antd";
 import { useClipboard } from "@mantine/hooks";
 import { convertToJSON } from "./utils/utils";
+
+const { TextArea } = Input;
 
 const DataGenerator: React.FC = () => {
 	const [tableName, setTableName] = useState("");
@@ -87,19 +81,14 @@ const DataGenerator: React.FC = () => {
 		<div className={style.dg}>
 			<div className={style.dg__left}>
 				<div className={style.dg__left_top}>
-					<TextInput
-						label="Table name"
+					<Input
 						placeholder="Table name"
 						value={tableName}
-						onChange={(event) =>
-							setTableName(event.currentTarget.value)
-						}
-						mt="xl"
+						onChange={(event) => setTableName(event.currentTarget.value)}
 						autoComplete="nope"
 					/>
-					<NumberInput
-						mt="xl"
-						label="Number of columns"
+					<InputNumber
+						
 						placeholder="NumberInput with custom layout"
 						value={colNum}
 						min={0}
@@ -112,9 +101,7 @@ const DataGenerator: React.FC = () => {
 							]);
 						}}
 					/>
-					<NumberInput
-						mt="xl"
-						label="Number of rows"
+					<InputNumber	
 						placeholder="NumberInput with custom layout"
 						value={rowNum}
 						min={0}
@@ -122,21 +109,19 @@ const DataGenerator: React.FC = () => {
 					/>
 				</div>
 
-				<div className={style.dg__left_left}>
+				<div className={style.dg__left_bottom}>
 					{/* Fix the warning */}
 					<div>
 						{Array.from({ length: colNum }, (_, k) => (
-							<Autocomplete
-								mt="xl"
+							<AutoComplete
 								key={`faker-data-type-${k}`}
-								label={`Faker data type #${k + 1}`}
 								value={
 									fakeDataTypes[k] === undefined
 										? (fakeDataTypes[k] = "")
 										: fakeDataTypes[k]
 								}
 								placeholder="Pick one"
-								data={FAKER_DATA_TYPES}
+								options={FAKER_DATA_TYPES}
 								onChange={(e: any) => {
 									onFakeDataTypesChange(e, k);
 									// how to handle this better?
@@ -149,9 +134,7 @@ const DataGenerator: React.FC = () => {
 					<div>
 						{Array.from({ length: colNum }, (_, k) => (
 							<Select
-								mt="xl"
 								key={`data-type-${k}`}
-								label={`Data type #${k + 1}`}
 								placeholder="Data type"
 								value={
 									dataTypes[k] === undefined
@@ -159,16 +142,16 @@ const DataGenerator: React.FC = () => {
 												MYSQL_DATA_TYPES[0].value)
 										: dataTypes[k]
 								}
-								data={MYSQL_DATA_TYPES}
+								options={MYSQL_DATA_TYPES}
 								onChange={(e) => onDataTypesChange(e, k)}
 							/>
 						))}
 					</div>
 					<div>
 						{Array.from({ length: colNum }, (_, k) => (
-							<TextInput
+							<Input
 								key={`col-name-${k}`}
-								label={`Column name #${k + 1}`}
+								
 								placeholder="Column name"
 								value={
 									colNames[k] === undefined
@@ -178,7 +161,6 @@ const DataGenerator: React.FC = () => {
 								onChange={(e) =>
 									onColNamesChange(e.target.value, k)
 								}
-								mt="xl"
 								autoComplete="nope"
 							/>
 						))}
@@ -189,7 +171,7 @@ const DataGenerator: React.FC = () => {
 			<div className={style.dg__right}>
 				{colNum > 0 ? (
 					<>
-						<Group mt="xl">
+						<Space>
 							<Button onClick={onButtonClick}>Generate</Button>
 							<Button
 								onClick={() => {
@@ -211,13 +193,12 @@ const DataGenerator: React.FC = () => {
 							<Button onClick={() => clipboard.copy(result)}>
 								{clipboard.copied ? "Copied" : "Copy"}
 							</Button>
-						</Group>
-						<Textarea
+						</Space>
+						<TextArea
 							placeholder=""
-							label="SQL"
 							value={result}
-							maxRows={30}
-							minRows={30}
+							rows={30}
+							maxLength={30}
 							readOnly
 						/>
 					</>

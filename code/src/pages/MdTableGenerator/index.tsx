@@ -1,7 +1,7 @@
-import { NumberInput, Stack } from "@mantine/core";
 import MDEditor from "@uiw/react-md-editor";
 import { useState } from "react";
 import { generateTable } from "./util/utils";
+import {  InputNumber, Space } from "antd";
 
 const TableGenerator: React.FC = () => {
 	const [row, setRow] = useState(10);
@@ -11,30 +11,32 @@ const TableGenerator: React.FC = () => {
 	});
 
 	return (
-		<Stack>
-			<NumberInput
+		<Space>
+			<InputNumber
 				value={row}
 				placeholder="Row"
-				label="Row"
 				min={0}
-				onChange={(val: number) => {
-					setRow(val);
-					setOutput((prevOutput) =>
+				onChange={(val: number | null) => {
+					if (val !== null) {
+					  setRow(val);
+					  setOutput((prevOutput) =>
 						generateTable(val, column, prevOutput)
-					);
-				}}
+					  );
+					}
+				  }}
 			/>
-
-			<NumberInput
+			
+			<InputNumber
 				value={column}
 				placeholder="Column"
-				label="Column"
 				min={1}
-				onChange={(val: number) => {
-					setColumn(val);
-					setOutput((prevOutput) =>
-						generateTable(row, val, prevOutput)
-					);
+				onChange={(val: number | null) => {
+					if (val !== null) {
+						setColumn(val);
+						setOutput((prevOutput) =>
+							generateTable(row, val, prevOutput)
+						);
+					}
 				}}
 			/>
 
@@ -46,7 +48,7 @@ const TableGenerator: React.FC = () => {
 				height="800px"
 				style={{ fontSize: "52" }}
 			/>
-		</Stack>
+		</Space>
 	);
 };
 

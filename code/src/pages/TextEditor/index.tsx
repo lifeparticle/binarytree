@@ -2,7 +2,7 @@ import { useState } from "react";
 import { RichTextEditor } from "@mantine/rte";
 import style from "./TextEditor.module.scss";
 import { useEffect } from "react";
-import Button from "components/Button";
+import { Button } from "antd";
 
 const TextEditor: React.FC = () => {
 	const [value, onChange] = useState("");

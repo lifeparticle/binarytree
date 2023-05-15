@@ -2,6 +2,7 @@ import { TextInput } from "@mantine/core";
 import Button from "components/Button";
 import { useState } from "react";
 import styles from "./Shades.module.scss";
+import { Input} from "antd";
 
 const NUM_OF_SHADES = 5;
 
@@ -9,9 +10,8 @@ const Shades: React.FC = () => {
 	const [color, setColor] = useState("");
 	return (
 		<div className={styles.shades}>
-			<TextInput
+			<Input
 				placeholder=""
-				label="HEX Code"
 				value={color}
 				onChange={(e) => setColor(e.target.value)}
 			/>
