@@ -1,5 +1,7 @@
-import { AppShell, Header, MantineProvider } from "@mantine/core";
-import { useToggle } from "@mantine/hooks";
+import React, { useState } from "react";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import { Layout, Menu, Button, theme } from "antd";
+
 import Navigation from "./pages/Navigation";
 import "App.scss";
 import { lazy, Suspense } from "react";
@@ -19,59 +21,86 @@ const TableOfContent = lazy(() => import("pages/TableOfContent"));
 const Shades = lazy(() => import("pages/Shades"));
 const TableGenerator = lazy(() => import("pages/MdTableGenerator"));
 
+const { Header, Sider, Content } = Layout;
+
 function App() {
-	const [value, toggle] = useToggle<"dark" | "light">(["dark", "light"]);
+	const [collapsed, setCollapsed] = useState(false);
+	const {
+		token: { colorBgContainer },
+	} = theme.useToken();
+
 	return (
-		<MantineProvider theme={{ colorScheme: value }}>
-			<AppShell
-				padding="md"
-				navbar={<Navigation value={value} toggle={toggle} />}
-				header={
-					<Header height={60} p="xs">
-						{/* Header content */}
-					</Header>
-				}
-				styles={(theme) => ({
-					main: {
-						backgroundColor:
-							theme.colorScheme === "dark"
-								? theme.colors.dark[8]
-								: theme.colors.gray[0],
-					},
-				})}
-			>
-				<Suspense fallback={<div>Loading...</div>}>
-					<div>
-						<Routes>
-							<Route
-								path="/"
-								element={<ImageGeneratorFromColors />}
-							/>
-							<Route path="/sorting" element={<Sorting />} />
-							<Route path="/cp" element={<ColorPicker />} />
-							<Route path="/me" element={<MarkdownEditor />} />
-							<Route path="/te" element={<TextEditor />} />
-							<Route path="/icons" element={<Icons />} />
-							<Route
-								path="/data_gen"
-								element={<DataGenerator />}
-							/>
-							<Route path="/base64" element={<Base64 />} />
-							<Route path="/shades" element={<Shades />} />
-							<Route
-								path="/pixel_converter"
-								element={<PixelConverter />}
-							/>
-							<Route path="/toc" element={<TableOfContent />} />
-							<Route
-								path="/md_table_generator"
-								element={<TableGenerator />}
-							/>
-						</Routes>
-					</div>
-				</Suspense>
-			</AppShell>
-		</MantineProvider>
+		<Layout style={{ background: colorBgContainer }}>
+			<Sider trigger={null} collapsible collapsed={collapsed}>
+				<div className="demo-logo-vertical" />
+				<Navigation />
+			</Sider>
+			<Layout>
+				<Header style={{ padding: 0, background: colorBgContainer }}>
+					<Button
+						type="text"
+						icon={
+							collapsed ? (
+								<MenuUnfoldOutlined />
+							) : (
+								<MenuFoldOutlined />
+							)
+						}
+						onClick={() => setCollapsed(!collapsed)}
+						style={{
+							fontSize: "16px",
+							width: 64,
+							height: 64,
+						}}
+					/>
+				</Header>
+				<Content
+					style={{
+						margin: "24px 16px",
+						padding: 24,
+						minHeight: 280,
+						background: colorBgContainer,
+					}}
+				>
+					<Suspense fallback={<div>Loading...</div>}>
+						<div>
+							<Routes>
+								<Route
+									path="/"
+									element={<ImageGeneratorFromColors />}
+								/>
+								<Route path="/sorting" element={<Sorting />} />
+								<Route path="/cp" element={<ColorPicker />} />
+								<Route
+									path="/me"
+									element={<MarkdownEditor />}
+								/>
+								<Route path="/te" element={<TextEditor />} />
+								<Route path="/icons" element={<Icons />} />
+								<Route
+									path="/data_gen"
+									element={<DataGenerator />}
+								/>
+								<Route path="/base64" element={<Base64 />} />
+								<Route path="/shades" element={<Shades />} />
+								<Route
+									path="/pixel_converter"
+									element={<PixelConverter />}
+								/>
+								<Route
+									path="/toc"
+									element={<TableOfContent />}
+								/>
+								<Route
+									path="/md_table_generator"
+									element={<TableGenerator />}
+								/>
+							</Routes>
+						</div>
+					</Suspense>
+				</Content>
+			</Layout>
+		</Layout>
 	);
 }
 
