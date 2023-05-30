@@ -1,12 +1,13 @@
 import style from "./ImageGeneratorFromColors.module.scss";
-import { Textarea, NumberInput, Space, Group } from "@mantine/core";
+import { Button, Input, InputNumber, Space } from "antd";
 import { useRef, useState } from "react";
 import { toPng } from "html-to-image";
 import JSZip from "jszip";
 import JSZipUtils from "jszip-utils";
 import { saveAs } from "file-saver";
-import Button from "components/Button";
 import { useCombinedKeyPress } from "utils/utils";
+
+const { TextArea } = Input;
 
 const ImageGeneratorFromColors: React.FC = () => {
 	const [colors, setColors] = useState<Array<string>>([]);
@@ -50,43 +51,37 @@ const ImageGeneratorFromColors: React.FC = () => {
 
 	return (
 		<div className={style.igfc}>
-			<Textarea
+			<TextArea
 				placeholder="Paste colors separated by commas or new line"
-				label="Colors"
-				radius="md"
-				minRows={20}
+				rows={20}
 				onChange={(event) =>
 					onTextAreaChange(event.currentTarget.value)
 				}
 				value={value}
 			/>
-			<div>
-				<NumberInput
-					mt="xl"
-					label="Height"
+			<div className={style.igfc__inputs}>
+				<InputNumber
 					placeholder="NumberInput with custom layout"
 					value={height}
 					onChange={(val: any) => setHeight(val)}
 					min={0}
+					style={{ width: "100%" }}
 				/>
-				<NumberInput
-					mt="xl"
-					label="Width"
+				<InputNumber
 					placeholder="NumberInput with custom layout"
 					value={width}
 					onChange={(val: any) => setWidth(val)}
 					min={0}
+					style={{ width: "100%" }}
 				/>
-				<NumberInput
-					mt="xl"
-					label="Border radius"
+				<InputNumber
 					placeholder="NumberInput with custom layout"
 					value={rounded}
 					onChange={(val: any) => setRounded(val)}
 					min={0}
+					style={{ width: "100%" }}
 				/>
-				<Space h="xl" />
-				<Group>
+				<Space>
 					<Button onClick={onButtonClick}>Downlaod</Button>
 					<Button
 						onClick={() => {
@@ -96,7 +91,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 					>
 						Clear
 					</Button>
-				</Group>
+				</Space>
 			</div>
 
 			<div className={style.colors}>

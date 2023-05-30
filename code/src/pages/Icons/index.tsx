@@ -1,6 +1,4 @@
-import { Grid, Stack } from "@mantine/core";
-import { IconAppWindow, IconBrandGithub } from "@tabler/icons";
-import Button from "components/Button";
+import { Space, Button } from "antd";
 import style from "./Icons.module.scss";
 
 const URLS = [
@@ -32,37 +30,30 @@ const URLS = [
 
 const Icons: React.FC = () => {
 	return (
-		<Grid grow className={style.icons}>
+		<Space className={style.icons}>
 			{URLS.map((url: any) => {
 				return (
-					<Grid.Col span={4} key={url.id}>
-						<Stack>
+						<Space>
 							<h1 className={style.icons__title}> {url.name}</h1>
-
 							<Button
-								component="a"
 								href={url.website}
 								target="_blank"
-								leftIcon={<IconAppWindow size={14} />}
 							>
 								Website
 							</Button>
 
 							{url.github === "" ? null : (
 								<Button
-									component="a"
 									href={url.github}
 									target="_blank"
-									leftIcon={<IconBrandGithub size={14} />}
 								>
 									GitHub
 								</Button>
 							)}
-						</Stack>
-					</Grid.Col>
+						</Space>
 				);
 			})}
-		</Grid>
+		</Space>
 	);
 };
 

@@ -1,7 +1,9 @@
 .te {
-	display: grid;
+	display: flex;
+	flex-direction: column;
+	grid-gap: 20px;
 	&__footer {
-		margin-right: 15px;
+		margin-top: 20px;
 		background-color: #25262b;
 		display: flex;
 		justify-content: space-between;
@@ -11,8 +13,5 @@
 		h4 {
 			color: white;
 		}
-	}
-	&__button {
-		margin-top: 20px;
 	}
 }

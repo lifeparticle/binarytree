@@ -1,9 +1,9 @@
 import style from "./Sorting.module.scss";
-import { Group, SegmentedControl, Textarea } from "@mantine/core";
-import Button from "components/Button";
 import { useClipboard } from "@mantine/hooks";
 import { useEffect, useState } from "react";
 import { sortData } from "./util";
+import { Button, Input, Space, Segmented } from "antd";
+const { TextArea } = Input;
 
 const Sorting: React.FC = () => {
 	const [data, setData] = useState("");
@@ -17,53 +17,34 @@ const Sorting: React.FC = () => {
 	}, [data, order]);
 
 	return (
-		<div className={style.toc}>
-			<div>
-				<SegmentedControl
+		<div className={style.sort}>
+			<Space direction="vertical">
+				<Segmented
 					className={style.base__buttons_segment}
-					styles={(theme) => ({
-						root: {
-							backgroundColor:
-								theme.colorScheme === "dark"
-									? theme.colors.dark[3]
-									: "#228be6",
-						},
-					})}
 					value={order}
-					onChange={setOrder}
-					data={[
+					onChange={(value: string | number) =>
+						setOrder(value as string)
+					}
+					options={[
 						{ label: "Ascending", value: "Ascending" },
 						{ label: "Descending", value: "Descending" },
 					]}
 				/>
-				<Textarea
-					mt="xl"
+				<TextArea
 					placeholder=""
-					label="Input"
 					value={data}
-					maxRows={43}
-					minRows={43}
+					rows={43}
 					onChange={(event) => {
 						setData(event.currentTarget.value);
 					}}
 				/>
-			</div>
-			<div>
-				<Group>
-					<Button onClick={() => clipboard.copy(output)}>
-						{clipboard.copied ? "Copied" : "Copy"}
-					</Button>
-				</Group>
-
-				<Textarea
-					mt="xl"
-					label="Output"
-					value={output}
-					maxRows={43}
-					minRows={43}
-					readOnly
-				/>
-			</div>
+			</Space>
+			<Space direction="vertical">
+				<Button onClick={() => clipboard.copy(output)}>
+					{clipboard.copied ? "Copied" : "Copy"}
+				</Button>
+				<TextArea value={output} rows={43} readOnly />
+			</Space>
 		</div>
 	);
 };

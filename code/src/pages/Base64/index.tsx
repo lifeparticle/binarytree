@@ -1,14 +1,16 @@
-import { Textarea, SegmentedControl, Stack } from "@mantine/core";
-import Button from "components/Button";
+import { Button, Input, Radio, RadioChangeEvent } from "antd";
 import { useState } from "react";
 import { Buffer } from "buffer";
 import style from "./Base64.module.scss";
+
+const { TextArea } = Input;
 
 const Base64: React.FC = () => {
 	const [input, setInput] = useState("");
 	const [result, setResult] = useState("");
 	const [value, setValue] = useState("encode");
-	const onButtonClick = () => {
+
+	const onClick = () => {
 		if (value === "") return;
 		if (value === "encode") {
 			setResult(Buffer.from(input, "utf8").toString("base64"));
@@ -19,35 +21,24 @@ const Base64: React.FC = () => {
 
 	return (
 		<div className={style.base}>
-			<Textarea
+			<TextArea
 				value={input}
 				onChange={(currentValue) => setInput(currentValue.target.value)}
 				placeholder="Input"
-				label="Input"
-				autosize
-				minRows={10}
+				autoSize={{ minRows: 10 }}
 			/>
 
-			<Stack className={style.base__controls}>
-				<SegmentedControl
-					className={style.base__buttons_segment}
-					styles={(theme) => ({
-						root: {
-							backgroundColor:
-								theme.colorScheme === "dark"
-									? theme.colors.dark[3]
-									: "#228be6",
-						},
-					})}
-					value={value}
-					onChange={setValue}
-					data={[
-						{ label: "Encode", value: "encode" },
-						{ label: "Decode", value: "decode" },
-					]}
-				/>
+			<div className={style.base__controls}>
+				<Radio.Group
+					className={style.base__controls_radio}
+					onChange={(e: RadioChangeEvent) => setValue(e.target.value)}
+					defaultValue={value}
+				>
+					<Radio.Button value="encode">Encode</Radio.Button>
+					<Radio.Button value="decode">Decode</Radio.Button>
+				</Radio.Group>
 
-				<Button onClick={onButtonClick}>Convert</Button>
+				<Button onClick={onClick}>Convert</Button>
 				<Button
 					onClick={() => {
 						setInput("");
@@ -56,16 +47,14 @@ const Base64: React.FC = () => {
 				>
 					Clear
 				</Button>
-			</Stack>
-			<Textarea
+			</div>
+			<TextArea
 				value={result}
 				onChange={(currentValue) =>
 					setResult(currentValue.target.value)
 				}
-				label="Result"
 				placeholder="Result"
-				autosize
-				minRows={10}
+				autoSize={{ minRows: 10 }}
 			/>
 		</div>
 	);

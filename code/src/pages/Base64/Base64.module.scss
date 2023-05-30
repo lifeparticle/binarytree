@@ -1,9 +1,15 @@
 .base {
 	display: grid;
 	grid-template-columns: 1fr 0.5fr 1fr;
+	gap: 20px;
 	&__controls {
-		display: grid;
+		&_radio {
+			display: flex;
+			justify-content: center;
+		}
+		display: flex;
+		gap: 5px;
+		flex-direction: column;
 		justify-content: center;
-		align-self: center;
 	}
 }
