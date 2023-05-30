@@ -1,5 +1,5 @@
 import style from "./ImageGeneratorFromColors.module.scss";
-import {Button, Input, InputNumber, Space } from "antd";
+import { Button, Input, InputNumber, Space } from "antd";
 import { useRef, useState } from "react";
 import { toPng } from "html-to-image";
 import JSZip from "jszip";
@@ -59,26 +59,28 @@ const ImageGeneratorFromColors: React.FC = () => {
 				}
 				value={value}
 			/>
-			<div>
+			<div className={style.igfc__inputs}>
 				<InputNumber
 					placeholder="NumberInput with custom layout"
 					value={height}
 					onChange={(val: any) => setHeight(val)}
 					min={0}
+					style={{ width: "100%" }}
 				/>
 				<InputNumber
 					placeholder="NumberInput with custom layout"
 					value={width}
 					onChange={(val: any) => setWidth(val)}
 					min={0}
+					style={{ width: "100%" }}
 				/>
 				<InputNumber
 					placeholder="NumberInput with custom layout"
 					value={rounded}
 					onChange={(val: any) => setRounded(val)}
 					min={0}
+					style={{ width: "100%" }}
 				/>
-				<Space/>
 				<Space>
 					<Button onClick={onButtonClick}>Downlaod</Button>
 					<Button

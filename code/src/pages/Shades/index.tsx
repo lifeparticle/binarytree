@@ -1,8 +1,7 @@
-import { TextInput } from "@mantine/core";
 import Button from "components/Button";
 import { useState } from "react";
 import styles from "./Shades.module.scss";
-import { Input} from "antd";
+import { Input } from "antd";
 
 const NUM_OF_SHADES = 5;
 

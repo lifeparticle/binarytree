@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
-import { Layout, Menu, Button, theme } from "antd";
+import { Layout, Button, theme } from "antd";
 
 import Navigation from "./pages/Navigation";
 import "App.scss";
@@ -81,7 +81,7 @@ function App() {
 									path="/data_gen"
 									element={<DataGenerator />}
 								/>
-								<Route path="/base64" element={<Base64 />} />
+								<Route path="/base_64" element={<Base64 />} />
 								<Route path="/shades" element={<Shades />} />
 								<Route
 									path="/pixel_converter"

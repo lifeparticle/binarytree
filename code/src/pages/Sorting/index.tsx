@@ -1,9 +1,8 @@
 import style from "./Sorting.module.scss";
-import Button from "components/Button";
 import { useClipboard } from "@mantine/hooks";
 import { useEffect, useState } from "react";
 import { sortData } from "./util";
-import { Input, Space, Segmented } from "antd";
+import { Button, Input, Space, Segmented } from "antd";
 const { TextArea } = Input;
 
 const Sorting: React.FC = () => {
@@ -18,13 +17,14 @@ const Sorting: React.FC = () => {
 	}, [data, order]);
 
 	return (
-		<div className={style.toc}>
-			<div>
+		<div className={style.sort}>
+			<Space direction="vertical">
 				<Segmented
 					className={style.base__buttons_segment}
-		
 					value={order}
-					onChange={(value: string | number) => setOrder(value as string)}
+					onChange={(value: string | number) =>
+						setOrder(value as string)
+					}
 					options={[
 						{ label: "Ascending", value: "Ascending" },
 						{ label: "Descending", value: "Descending" },
@@ -38,20 +38,13 @@ const Sorting: React.FC = () => {
 						setData(event.currentTarget.value);
 					}}
 				/>
-			</div>
-			<div>
-				<Space>
-					<Button onClick={() => clipboard.copy(output)}>
-						{clipboard.copied ? "Copied" : "Copy"}
-					</Button>
-				</Space>
-
-				<TextArea
-					value={output}
-					rows={43}
-					readOnly
-				/>
-			</div>
+			</Space>
+			<Space direction="vertical">
+				<Button onClick={() => clipboard.copy(output)}>
+					{clipboard.copied ? "Copied" : "Copy"}
+				</Button>
+				<TextArea value={output} rows={43} readOnly />
+			</Space>
 		</div>
 	);
 };

@@ -1,3 +1,4 @@
+import style from "./ColorPicker.module.scss";
 import { useState } from "react";
 import { ColorPicker as CP } from "@mantine/core";
 import { useClipboard } from "@mantine/hooks";
@@ -11,7 +12,7 @@ const ColorPicker: React.FC = () => {
 	const clipboard = useClipboard({ timeout: 500 });
 
 	return (
-		<div>
+		<div className={style.cp}>
 			<Select
 				defaultValue={format}
 				onChange={(val: any) => setFormat(val)}

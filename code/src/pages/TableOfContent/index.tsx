@@ -1,12 +1,9 @@
 import { useState } from "react";
 import style from "./TableOfContent.module.scss";
-import { Group, Textarea, TextInput } from "@mantine/core";
-import Button from "components/Button";
 import { useClipboard } from "@mantine/hooks";
 import { marked } from "marked";
 import { useCombinedKeyPress } from "utils/utils";
-import { Input, Space } from "antd";
-
+import { Input, Space, Button } from "antd";
 const { TextArea } = Input;
 
 type TocItem = {
@@ -114,7 +111,7 @@ const TableOfContent: React.FC = () => {
 
 	return (
 		<div className={style.toc}>
-			<div>
+			<Space direction="vertical">
 				<Input
 					placeholder="URL"
 					value={url}
@@ -129,19 +126,14 @@ const TableOfContent: React.FC = () => {
 					}
 					rows={29}
 				/>
-			</div>
+			</Space>
 			<div>
-				<Space>
+				<Space direction="vertical" style={{ width: "100%" }}>
 					<Button onClick={() => clipboard.copy(tableOfContents)}>
 						{clipboard.copied ? "Copied" : "Copy"}
 					</Button>
+					<TextArea value={tableOfContents} rows={29} readOnly />
 				</Space>
-
-				<TextArea
-					value={tableOfContents}
-					rows={29}
-					readOnly
-				/>
 			</div>
 		</div>
 	);

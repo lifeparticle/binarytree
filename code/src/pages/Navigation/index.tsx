@@ -5,7 +5,7 @@ import {
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -52,6 +52,7 @@ const Navigation: React.FC = () => {
 
 	return (
 		<Menu
+			style={{ height: "100vh" }}
 			onClick={onClick}
 			defaultSelectedKeys={["1"]}
 			defaultOpenKeys={["sub1"]}
