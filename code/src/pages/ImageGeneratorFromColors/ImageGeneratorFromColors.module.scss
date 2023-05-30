@@ -4,9 +4,17 @@
 	padding-right: 20px;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 20px;
+	&__inputs {
+		padding-left: 20px;
+		padding-right: 20px;
+		grid-gap: 20px;
+		grid-column: 2 / 3;
+		display: flex;
+		flex-direction: column;
+	}
 	.colors {
 		display: flex;
-		grid-column: 1/-1;
+		grid-column: 1 /-1;
 		flex-direction: row;
 		flex-wrap: wrap;
 		row-gap: 10px;

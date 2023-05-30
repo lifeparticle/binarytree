@@ -1,8 +1,7 @@
 import { useState } from "react";
 import MDEditor from "@uiw/react-md-editor";
 import style from "./MarkdownEditor.module.scss";
-import { Group } from "@mantine/core";
-import Button from "components/Button";
+import { Space, Button } from "antd";
 import {
 	downloadPDFFile,
 	downloadTextFile,
@@ -22,7 +21,7 @@ const MarkdownEditor: React.FC = () => {
 
 	return (
 		<div className={style.me}>
-			<Group>
+			<Space>
 				<Button onClick={() => setMarkdown("")}>Clear</Button>
 				<Button onClick={() => downloadTextFile(markdown, "README.md")}>
 					Downlaod
@@ -33,7 +32,7 @@ const MarkdownEditor: React.FC = () => {
 				<Button onClick={() => clipboard.copy(markdown)}>
 					{clipboard.copied ? "Copied" : "Copy"}
 				</Button>
-			</Group>
+			</Space>
 			<MDEditor
 				value={markdown}
 				onChange={(val: any) => setMarkdown(val)}
