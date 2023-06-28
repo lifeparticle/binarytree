@@ -61,7 +61,7 @@ const TableOfContent: React.FC = () => {
 			headingCounts[text]++;
 			return `${text}-${headingCounts[text]}`;
 		} else {
-			headingCounts[text] = 1;
+			headingCounts[text] = 0;
 			return text;
 		}
 	};
