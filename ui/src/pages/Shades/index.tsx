@@ -1,7 +1,6 @@
-import Button from "components/Button";
 import { useState } from "react";
 import styles from "./Shades.module.scss";
-import { Input } from "antd";
+import { Button, Input } from "antd";
 
 const NUM_OF_SHADES = 5;
 

@@ -48,7 +48,7 @@ const TableOfContent: React.FC = () => {
 	};
 
 	const generateTocItem = (text: string) => {
-		return `[${text}](#${text
+		return `[${text}](#${getUniqueHeadingText(text)
 			.toLowerCase()
 			.replace(/\s/g, "-")
 			.replace(/[^A-Za-z0-9-_]/g, "")})`;
@@ -57,7 +57,7 @@ const TableOfContent: React.FC = () => {
 	const headingCounts: Record<string, number> = {};
 
 	const getUniqueHeadingText = (text: string) => {
-		if (headingCounts[text]) {
+		if (headingCounts[text] >= 0) {
 			headingCounts[text]++;
 			return `${text}-${headingCounts[text]}`;
 		} else {
@@ -70,40 +70,33 @@ const TableOfContent: React.FC = () => {
 		const tableOfContentsText = tableOfContents
 			.reduce((acc, tocItem) => {
 				const { tag, text } = tocItem;
-				const uniqueHeadingText = getUniqueHeadingText(text);
 
 				switch (tag) {
 					case "H1": {
-						acc.push(`- ${generateTocItem(uniqueHeadingText)}`);
+						acc.push(`- ${generateTocItem(text)}`);
 						break;
 					}
 					case "H2": {
-						acc.push(`\t* ${generateTocItem(uniqueHeadingText)}`);
+						acc.push(`\t* ${generateTocItem(text)}`);
 						break;
 					}
 					case "H3": {
-						acc.push(`\t\t+ ${generateTocItem(uniqueHeadingText)}`);
+						acc.push(`\t\t+ ${generateTocItem(text)}`);
 
 						break;
 					}
 					case "H4": {
-						acc.push(
-							`\t\t\t- ${generateTocItem(uniqueHeadingText)}`
-						);
+						acc.push(`\t\t\t- ${generateTocItem(text)}`);
 
 						break;
 					}
 					case "H5": {
-						acc.push(
-							`\t\t\t\t* ${generateTocItem(uniqueHeadingText)}`
-						);
+						acc.push(`\t\t\t\t* ${generateTocItem(text)}`);
 
 						break;
 					}
 					case "H6": {
-						acc.push(
-							`\t\t\t\t\t+ ${generateTocItem(uniqueHeadingText)}`
-						);
+						acc.push(`\t\t\t\t\t+ ${generateTocItem(text)}`);
 
 						break;
 					}

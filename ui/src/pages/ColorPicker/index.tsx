@@ -28,7 +28,7 @@ const ColorPicker: React.FC = () => {
 			<CP
 				format={format}
 				value={color}
-				onChange={(val) => setColor(val)}
+				onChange={(val: string) => setColor(val)}
 				size="xl"
 			/>
 			<h1 color="blue">{color}</h1>
