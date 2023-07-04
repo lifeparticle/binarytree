@@ -3,7 +3,7 @@ Houdini is an open-source project that offers a range of developer tools to save
 # Developemnt
 
 ```shell
-cd code
+cd ui
 yarn install
 yarn start
 ```
