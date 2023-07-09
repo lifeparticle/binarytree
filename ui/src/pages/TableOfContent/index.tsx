@@ -11,6 +11,15 @@ type TocItem = {
 	text: string;
 };
 
+const indentMap = {
+	H1: "",
+	H2: "\t* ",
+	H3: "\t\t+ ",
+	H4: "\t\t\t- ",
+	H5: "\t\t\t\t* ",
+	H6: "\t\t\t\t\t+ ",
+};
+
 const TableOfContent: React.FC = () => {
 	const [url, setUrl] = useState("");
 	const [markdown, setMarkdown] = useState("");
@@ -47,13 +56,6 @@ const TableOfContent: React.FC = () => {
 		setTableOfContents(generateTableOfContentsText(headings));
 	};
 
-	const generateTocItem = (text: string) => {
-		return `[${text}](#${getUniqueHeadingText(text)
-			.toLowerCase()
-			.replace(/\s/g, "-")
-			.replace(/[^A-Za-z0-9-_]/g, "")})`;
-	};
-
 	const headingCounts: Record<string, number> = {};
 
 	const getUniqueHeadingText = (text: string) => {
@@ -66,46 +68,21 @@ const TableOfContent: React.FC = () => {
 		}
 	};
 
+	const generateTocItem = (text: string) => {
+		return `[${text}](#${getUniqueHeadingText(text)
+			.toLowerCase()
+			.replace(/\s/g, "-")
+			.replace(/[^A-Za-z0-9-_]/g, "")})`;
+	};
+
 	const generateTableOfContentsText = (tableOfContents: TocItem[]) => {
-		const tableOfContentsText = tableOfContents
-			.reduce((acc, tocItem) => {
-				const { tag, text } = tocItem;
-
-				switch (tag) {
-					case "H1": {
-						acc.push(`- ${generateTocItem(text)}`);
-						break;
-					}
-					case "H2": {
-						acc.push(`\t* ${generateTocItem(text)}`);
-						break;
-					}
-					case "H3": {
-						acc.push(`\t\t+ ${generateTocItem(text)}`);
-
-						break;
-					}
-					case "H4": {
-						acc.push(`\t\t\t- ${generateTocItem(text)}`);
-
-						break;
-					}
-					case "H5": {
-						acc.push(`\t\t\t\t* ${generateTocItem(text)}`);
-
-						break;
-					}
-					case "H6": {
-						acc.push(`\t\t\t\t\t+ ${generateTocItem(text)}`);
-
-						break;
-					}
-				}
-				return acc;
-			}, [] as string[])
+		return tableOfContents
+			.map((tocItem) => {
+				return `${indentMap[tocItem.tag]}${generateTocItem(
+					tocItem.text
+				)}`;
+			})
 			.join("\n");
-
-		return tableOfContentsText;
 	};
 
 	const fetchData = (url: string) => {
