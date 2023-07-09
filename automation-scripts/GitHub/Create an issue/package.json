@@ -1,0 +1,20 @@
+{
+	"name": "cia",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+		"build": "tsc",
+		"watch": "tsc -w"
+	},
+	"devDependencies": {
+		"nodemon": "^3.0.0",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.1.6"
+	},
+	"dependencies": {
+		"dotenv": "^16.3.1",
+		"octokit": "^2.1.0"
+	}
+}

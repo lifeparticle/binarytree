@@ -1,0 +1,40 @@
+Title,Body,Labels
+Side navigation toogle button,Move the side navigation toggle button from the right panel to left panel,enhancement
+Use appropriate icons for side naviation ,"Currently, we are using @ant-design/icons. If we can find all the icons, then use this. If not, check other free icon libraries.",enhancement
+Add tests for Base64,"Add tests, and refactor the code if needed",enhancement
+Add tests for ColorPicker,"Add tests, and refactor the code if needed
+https://hslpicker.com/",enhancement
+Add tests for DataGenerator,"Add tests, and refactor the code if needed",enhancement
+Add tests for Icons,"Add tests, and refactor the code if needed",enhancement
+Add tests for ImageGeneratorFromColors,"Add tests, and refactor the code if needed",enhancement
+Add tests for MarkdownEditor,"Add tests, and refactor the code if needed",enhancement
+Add tests for MdTableGenerator,"Add tests, and refactor the code if needed
+https://github.com/alanwsmith/markdown_table_formatter
+http://markdowntable.com/
+https://webutility.io/markdown-beautifier",enhancement
+Add tests for PixelConverter,"Add tests, and refactor the code if needed",enhancement
+Add tests for Shades,"Add tests, and refactor the code if needed
+RGBA to HSLA
+https://www.had2know.org/technology/hsl-rgb-color-converter.html",enhancement
+Add tests for TableOfContent,"Add tests, and refactor the code if needed
+https://github.com/lifeparticle/Houdini/issues/11
+https://github.com/lifeparticle/Houdini/issues/41",enhancement
+Add tests for TextEditor,"Add tests, and refactor the code if needed",enhancement
+Inevestigate how to show tips on the UI,Research and come up with few solutions,enhancement
+Add show tips option the UI,Add show tips option the UI,enhancement
+Add new feature Text Diff,Add new feature Text Diff,enhancement
+Add new feature QR code generator,Add new feature QR code generator,enhancement
+Add new feature JSON to TypeScript,Generate TypeScript interface from JSON data,enhancement
+Add new feature Code formatter,"HTML, CSS, JavaScript, JSON, YML",enhancement
+Add new feature Markdown to pdf ,Add new feature Markdown to pdf ,enhancement
+Add new feature Syntax highlight,Markdown code blocks - Syntax highlight,enhancement
+Add new feature Avatar generator ,"For example, https://www.dicebear.com/how-to-use/http-api",enhancement
+Update DataGenerator,https://github.com/lifeparticle/Houdini/issues/3,enhancement
+Add new feature A list of plugins,https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma?hl=en,enhancement
+Investigate about dashbaord,Do we a need a dashaboard?,enhancement
+Add new feature GitHub emoji API,"Web interface for this API
+https://docs.github.com/en/rest/emojis?apiVersion=2022-11-28",enhancement
+Add new feature Mime types,"Web interface for 
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types",enhancement
+Add feature SVG,"Combining SVG Path Data
+https://codepen.io/shshaw/pen/mwKvZr/?editors=1000",enhancement
