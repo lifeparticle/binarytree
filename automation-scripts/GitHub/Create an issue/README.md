@@ -11,6 +11,8 @@ npx tsc --init
 mkdir src
 cd src
 touch index.ts
+yarn add progress
+yarn add @types/progress
 ```
 
 # Run the script
