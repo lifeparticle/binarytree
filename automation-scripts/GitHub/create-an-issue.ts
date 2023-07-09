@@ -1,3 +1,4 @@
+// Source: https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#create-an-issue
 // Octokit.js
 // https://github.com/octokit/core.js#readme
 const octokit = new Octokit({
