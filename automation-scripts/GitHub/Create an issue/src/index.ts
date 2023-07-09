@@ -7,6 +7,9 @@ import ProgressBar from "progress";
 const REPO = "Houdini";
 const OWNER = "lifeparticle";
 const TOKEN = process.env.TOKEN;
+const FILE_PATH = __dirname + "/issues.csv";
+const FIVE_SECONDS_DELAY = 5000;
+const MILLISECONDS_IN_SECOND = 1000;
 
 const octokit = new Octokit({ auth: TOKEN });
 
@@ -29,13 +32,15 @@ const checkRateLimit = async (): Promise<void> => {
 	const response = await octokit.request("GET /rate_limit");
 	if (response.data.rate.remaining === 0) {
 		const resetTime = new Date(
-			((response.headers["x-ratelimit-reset"] || 0) as number) * 1000
+			((response.headers["x-ratelimit-reset"] || 0) as number) *
+				MILLISECONDS_IN_SECOND
 		);
 		const currentTime = new Date();
-		const timeToWait = resetTime.getTime() - currentTime.getTime() + 1000;
+		const timeToWait =
+			resetTime.getTime() - currentTime.getTime() + MILLISECONDS_IN_SECOND;
 		console.log(
 			"Rate limit exceeded. Waiting for",
-			Math.ceil(timeToWait / 1000),
+			Math.ceil(timeToWait / MILLISECONDS_IN_SECOND),
 			"seconds before retrying..."
 		);
 		await delay(timeToWait);
@@ -66,7 +71,7 @@ const createIssue = async (
 
 const run = async (): Promise<void> => {
 	try {
-		const dataRows = await parseCsvFile(__dirname + "/issues.csv");
+		const dataRows = await parseCsvFile(FILE_PATH);
 		const progressBar = new ProgressBar(":bar :current/:total", {
 			total: dataRows.length,
 		});
@@ -74,7 +79,7 @@ const run = async (): Promise<void> => {
 		let issues = [];
 
 		for (const row of dataRows) {
-			await delay(5000);
+			await delay(FIVE_SECONDS_DELAY);
 			const issue = await createIssue(
 				row.Title,
 				row.Body,
