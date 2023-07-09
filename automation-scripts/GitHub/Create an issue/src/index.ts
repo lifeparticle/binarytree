@@ -1,30 +1,93 @@
 import { Octokit } from "@octokit/core";
 import "dotenv/config";
+import * as fs from "fs";
+import csv from "csv-parser";
+import ProgressBar from "progress";
 
-// Octokit.js
-// https://github.com/octokit/core.js#readme
-const octokit = new Octokit({
-	auth: process.env.TOKEN,
-});
+const REPO = "Houdini";
+const OWNER = "lifeparticle";
+const TOKEN = process.env.TOKEN;
 
-async function createIssue() {
-	try {
-		await octokit.request("POST /repos/{owner}/{repo}/issues", {
-			owner: "OWNER",
-			repo: "REPO",
-			title: "Found a bug",
-			body: "I'm having a problem with this.",
-			assignees: ["octocat"],
-			milestone: 1,
-			labels: ["bug"],
-			headers: {
-				"X-GitHub-Api-Version": "2022-11-28",
-			},
-		});
-		console.log("Issue created successfully");
-	} catch (error) {
-		console.error("Error creating issue:", error);
+const octokit = new Octokit({ auth: TOKEN });
+
+const parseCsvFile = (filePath: string): Promise<any[]> => {
+	return new Promise((resolve, reject) => {
+		const rows: any[] = [];
+		fs.createReadStream(filePath)
+			.pipe(csv())
+			.on("data", (row) => rows.push(row))
+			.on("end", () => resolve(rows))
+			.on("error", (error) => reject(error));
+	});
+};
+
+const delay = (ms: number): Promise<void> => {
+	return new Promise((resolve) => setTimeout(resolve, ms));
+};
+
+const checkRateLimit = async (): Promise<void> => {
+	const response = await octokit.request("GET /rate_limit");
+	if (response.data.rate.remaining === 0) {
+		const resetTime = new Date(
+			((response.headers["x-ratelimit-reset"] || 0) as number) * 1000
+		);
+		const currentTime = new Date();
+		const timeToWait = resetTime.getTime() - currentTime.getTime() + 1000;
+		console.log(
+			"Rate limit exceeded. Waiting for",
+			Math.ceil(timeToWait / 1000),
+			"seconds before retrying..."
+		);
+		await delay(timeToWait);
+		await checkRateLimit();
+	} else {
+		console.log("Remaining rate limit:", response.data.rate.remaining);
 	}
-}
+};
 
-createIssue();
+const createIssue = async (
+	title: string,
+	body: string,
+	labels: string[]
+): Promise<any> => {
+	await checkRateLimit();
+	const response = await octokit.request("POST /repos/{owner}/{repo}/issues", {
+		owner: OWNER,
+		repo: REPO,
+		title,
+		body,
+		labels,
+		headers: { "X-GitHub-Api-Version": "2022-11-28" },
+	});
+	console.log("Issue created successfully");
+	console.log("Issue URL:", response.data.html_url);
+	return response.data.html_url;
+};
+
+const run = async (): Promise<void> => {
+	try {
+		const dataRows = await parseCsvFile(__dirname + "/issues.csv");
+		const progressBar = new ProgressBar(":bar :current/:total", {
+			total: dataRows.length,
+		});
+
+		let issues = [];
+
+		for (const row of dataRows) {
+			await delay(5000);
+			const issue = await createIssue(
+				row.Title,
+				row.Body,
+				row.Labels.split(",")
+			);
+			issues.push(issue);
+			progressBar.tick();
+		}
+
+		fs.writeFileSync("issues.json", JSON.stringify(issues, null, 2));
+	} catch (error) {
+		console.error("Error:", error);
+	}
+};
+
+run();
