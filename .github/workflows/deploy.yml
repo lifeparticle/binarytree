@@ -26,11 +26,14 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version-file: .nvmrc
-          corepack: true
           cache: yarn
+
+      - name: Install Yarn
+        run: corepack enable |
+          corepack prepare yarn@stable --activate
 
       - name: Install dependencies
         run: yarn install --immutable
