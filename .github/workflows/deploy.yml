@@ -30,6 +30,7 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --immutable
+        working-directory: ./ui
 
       - name: Build
         run: yarn build
