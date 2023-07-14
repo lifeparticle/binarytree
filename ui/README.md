@@ -10,7 +10,7 @@ yarn -v
 # Developemnt
 
 ```shell
-yarn install
+yarn install --immutable
 yarn start
 ```
 
