@@ -18,6 +18,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./ui
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -25,16 +28,15 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 18.4.x
+          node-version-file: .nvmrc
+          corepack: true
           cache: yarn
 
       - name: Install dependencies
         run: yarn install --immutable
-        working-directory: ./ui
 
       - name: Build
         run: yarn build
-        working-directory: ./ui
         env:
           CI: true
 
