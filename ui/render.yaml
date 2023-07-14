@@ -1,0 +1,1 @@
+buildCommand: yarn && yarn rw deploy render web
