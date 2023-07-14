@@ -1,7 +1,15 @@
+# Environment
+
+```shell
+ndoe -v
+# 18.16.1
+yarn -v
+# 3.6.1
+```
+
 # Developemnt
 
 ```shell
-cd ui
 yarn install
 yarn start
 ```
