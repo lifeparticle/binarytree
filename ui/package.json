@@ -1,66 +1,67 @@
 {
-  "name": "code",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@emotion/react": "^11.11.0",
-    "@faker-js/faker": "^7.6.0",
-    "@mantine/core": "^6.0.10",
-    "@mantine/ds": "^6.0.10",
-    "@mantine/hooks": "^6.0.10",
-    "@tabler/icons": "^2.17.0",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^14.0.0",
-    "@testing-library/user-event": "^14.4.3",
-    "@types/file-saver": "^2.0.5",
-    "@types/jest": "^29.5.1",
-    "@types/node": "^20.1.1",
-    "@types/react": "^18.2.6",
-    "@types/react-dom": "^18.2.4",
-    "@types/react-router-dom": "^5.3.3",
-    "@uiw/react-md-editor": "^3.20.10",
-    "antd": "^5.4.7",
-    "buffer": "^6.0.3",
-    "file-saver": "^2.0.5",
-    "html-to-image": "^1.11.11",
-    "jspdf": "^2.5.1",
-    "jszip": "^3.10.1",
-    "jszip-utils": "^0.1.0",
-    "marked": "^5.0.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-quill": "^2.0.0",
-    "react-router-dom": "^6.11.1",
-    "react-scripts": "5.0.1",
-    "sass": "^1.62.1",
-    "typescript": "^5.0.4",
-    "web-vitals": "^3.3.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@types/marked": "^4.3.0"
-  }
+	"name": "code",
+	"version": "0.1.0",
+	"private": true,
+	"packageManager": "yarn@3.6.1",
+	"dependencies": {
+		"@emotion/react": "^11.11.0",
+		"@faker-js/faker": "^7.6.0",
+		"@mantine/core": "^6.0.10",
+		"@mantine/ds": "^6.0.10",
+		"@mantine/hooks": "^6.0.10",
+		"@tabler/icons": "^2.17.0",
+		"@testing-library/jest-dom": "^5.14.1",
+		"@testing-library/react": "^14.0.0",
+		"@testing-library/user-event": "^14.4.3",
+		"@types/file-saver": "^2.0.5",
+		"@types/jest": "^29.5.1",
+		"@types/node": "^20.1.1",
+		"@types/react": "^18.2.6",
+		"@types/react-dom": "^18.2.4",
+		"@types/react-router-dom": "^5.3.3",
+		"@uiw/react-md-editor": "^3.20.10",
+		"antd": "^5.4.7",
+		"buffer": "^6.0.3",
+		"file-saver": "^2.0.5",
+		"html-to-image": "^1.11.11",
+		"jspdf": "^2.5.1",
+		"jszip": "^3.10.1",
+		"jszip-utils": "^0.1.0",
+		"marked": "^5.0.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-quill": "^2.0.0",
+		"react-router-dom": "^6.11.1",
+		"react-scripts": "5.0.1",
+		"sass": "^1.62.1",
+		"typescript": "^5.0.4",
+		"web-vitals": "^3.3.1"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"@types/marked": "^4.3.0"
+	}
 }
