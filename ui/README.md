@@ -7,7 +7,7 @@ yarn -v
 # 3.6.1
 ```
 
-# Developemnt
+# Run locally
 
 ```shell
 yarn install --immutable
