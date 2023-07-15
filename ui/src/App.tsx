@@ -22,7 +22,7 @@ const TableOfContent = lazy(() => import("pages/TableOfContent"));
 const Shades = lazy(() => import("pages/Shades"));
 const TableGenerator = lazy(() => import("pages/MdTableGenerator"));
 
-const { Header, Sider, Content } = Layout;
+const { Sider, Content } = Layout;
 
 function App() {
 	const { defaultAlgorithm, darkAlgorithm } = theme;
