@@ -80,7 +80,7 @@ function App() {
 						<Button
 							type="text"
 							icon={
-								collapsed ? (
+								isDarkMode ? (
 									<Sun size={24} />
 								) : (
 									<Moon size={24} />
