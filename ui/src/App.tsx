@@ -3,7 +3,6 @@ import { Button, ConfigProvider, Layout, Switch, theme } from "antd";
 import { useState } from "react";
 
 import "App.scss";
-import { Divider } from "antd";
 import { Moon, Sun } from "lucide-react";
 import Sorting from "pages/Sorting";
 import { Suspense, lazy } from "react";
@@ -59,6 +58,19 @@ function App() {
 					<div className="demo-logo-vertical" />
 
 					<div className="collapsibleMenu">
+						<div>
+							<Switch
+								className="switch"
+								checkedChildren={
+									<Moon
+										size={16}
+										style={{ marginTop: "2px" }}
+									/>
+								}
+								unCheckedChildren={<Sun size={16} />}
+								onChange={handleThemeChange}
+							/>
+						</div>
 						<Button
 							type="ghost"
 							icon={
@@ -72,20 +84,7 @@ function App() {
 						/>
 					</div>
 
-					<Divider className="divider" />
-
 					<Navigation />
-
-					<div className="modeToggle">
-						<Switch
-							className="switch"
-							checkedChildren={
-								<Moon size={16} style={{ marginTop: "2px" }} />
-							}
-							unCheckedChildren={<Sun size={16} />}
-							onChange={handleThemeChange}
-						/>
-					</div>
 				</Sider>
 				<Layout>
 					<Content

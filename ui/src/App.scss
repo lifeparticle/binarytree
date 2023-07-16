@@ -4,19 +4,9 @@
 
 .collapsibleMenu {
 	display: flex;
-	justify-content: flex-end;
-	padding-right: 20px;
-	height: 45px;
-	overflow: hidden;
-}
-
-.modeToggle {
-	display: flex;
-	justify-content: flex-end;
-	padding-right: 20px;
-	height: 75px;
-}
-
-.divider {
-	margin: 0px 0px;
+	justify-content: space-evenly;
+	align-items: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-inline-end: 1px solid rgba(253, 253, 253, 0.12);
 }
