@@ -1,8 +1,9 @@
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
-import { Button, ConfigProvider, Layout, theme } from "antd";
+import { Button, ConfigProvider, Layout, Switch, theme } from "antd";
 import { useState } from "react";
 
 import "App.scss";
+import { Divider } from "antd";
 import { Moon, Sun } from "lucide-react";
 import Sorting from "pages/Sorting";
 import { Suspense, lazy } from "react";
@@ -28,8 +29,8 @@ function App() {
 	const { defaultAlgorithm, darkAlgorithm } = theme;
 	const [isDarkMode, setIsDarkMode] = useState(false);
 
-	const handleClick = () => {
-		setIsDarkMode((previousValue) => !previousValue);
+	const handleThemeChange = (checked: boolean) => {
+		setIsDarkMode(checked);
 	};
 
 	const [collapsed, setCollapsed] = useState(false);
@@ -49,6 +50,7 @@ function App() {
 						backgroundColor: isDarkMode
 							? "#141414"
 							: colorBgContainer,
+						borderRight: isDarkMode ? "none" : "1px solid #ededed",
 					}}
 					trigger={null}
 					collapsible
@@ -56,9 +58,9 @@ function App() {
 				>
 					<div className="demo-logo-vertical" />
 
-					<div style={{ display: "flex", justifyContent: "end" }}>
+					<div className="collapsibleMenu">
 						<Button
-							type="text"
+							type="ghost"
 							icon={
 								collapsed ? (
 									<MenuUnfoldOutlined />
@@ -67,40 +69,32 @@ function App() {
 								)
 							}
 							onClick={() => setCollapsed(!collapsed)}
-							style={{
-								fontSize: "16px",
-								marginRight: "10px",
-							}}
 						/>
 					</div>
 
+					<Divider className="divider" />
+
 					<Navigation />
 
-					<div style={{ display: "flex", justifyContent: "end" }}>
-						<Button
-							type="text"
-							icon={
-								isDarkMode ? (
-									<Sun size={24} />
-								) : (
-									<Moon size={24} />
-								)
+					<div className="modeToggle">
+						<Switch
+							className="switch"
+							checkedChildren={
+								<Moon size={16} style={{ marginTop: "2px" }} />
 							}
-							onClick={handleClick}
-							style={{
-								fontSize: "16px",
-								marginRight: "10px",
-							}}
+							unCheckedChildren={<Sun size={16} />}
+							onChange={handleThemeChange}
 						/>
 					</div>
 				</Sider>
 				<Layout>
 					<Content
 						style={{
-							margin: "24px 16px",
 							padding: 24,
 							minHeight: 280,
-							// background: colorBgContainer,
+							backgroundColor: isDarkMode
+								? "#111"
+								: colorBgContainer,
 						}}
 					>
 						<Suspense fallback={<div>Loading...</div>}>
