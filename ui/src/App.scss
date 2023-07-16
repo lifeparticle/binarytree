@@ -6,13 +6,15 @@
 	display: flex;
 	justify-content: flex-end;
 	padding-right: 20px;
-	margin-bottom: 10px;
+	height: 45px;
+	overflow: hidden;
 }
 
 .modeToggle {
 	display: flex;
 	justify-content: flex-end;
-	margin-right: 20px;
+	padding-right: 20px;
+	height: 75px;
 }
 
 .divider {

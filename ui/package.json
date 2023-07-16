@@ -1,6 +1,6 @@
 {
 	"name": "code",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"private": true,
 	"packageManager": "yarn@3.6.1",
 	"dependencies": {
