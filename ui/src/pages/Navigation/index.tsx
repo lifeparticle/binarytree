@@ -3,6 +3,8 @@ import { Menu } from "antd";
 import { useNavigate } from "react-router-dom";
 import { items } from "./data";
 
+import style from "./navigation.module.scss";
+
 const Navigation: React.FC = () => {
 	const navigate = useNavigate();
 
@@ -13,7 +15,7 @@ const Navigation: React.FC = () => {
 
 	return (
 		<Menu
-			style={{ minHeight: "calc(100vh - 100px)", borderRight: "none" }}
+			className={style.menuBar}
 			onClick={onClick}
 			defaultSelectedKeys={["1"]}
 			defaultOpenKeys={["sub1"]}
