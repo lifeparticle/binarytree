@@ -2,21 +2,44 @@
 	height: 500px;
 }
 
-.collapsibleMenu {
-	display: flex;
-	justify-content: flex-end;
-	padding-right: 20px;
-	height: 45px;
-	overflow: hidden;
-}
-
-.modeToggle {
-	display: flex;
-	justify-content: flex-end;
-	padding-right: 20px;
-	height: 75px;
+.sidebar {
+	position: relative;
+	.logo {
+		height: 64px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		img {
+			width: 35px;
+			height: 35px;
+		}
+	}
+	.collapsibleMenu {
+		position: absolute;
+		right: -12px;
+		top: 10px;
+		border: 1px dashed #bdbcbc;
+		border-radius: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2px;
+		background-color: transparent;
+		cursor: pointer;
+		color: #ccc9c9;
+		// padding: 3px -5px;
+		// height: auto;
+	}
 }
 
 .divider {
 	margin: 0px 0px;
+}
+
+.header {
+	.toggler {
+		margin-left: auto;
+		margin-right: 0;
+		width: fit-content;
+	}
 }
