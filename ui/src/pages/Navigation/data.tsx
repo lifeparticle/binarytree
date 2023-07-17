@@ -39,6 +39,8 @@ function getItem(
 }
 
 export const items: MenuProps["items"] = [
+	{ type: "divider" },
+
 	getItem("Colors", "colors", <Brush size={16} />, [
 		getItem("Color Picker", "/cp", <Baseline size={16} />),
 		// getItem("Shade Generator", "/shades", <Layers size={16} />),

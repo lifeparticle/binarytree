@@ -31,8 +31,8 @@
     4.1 Move to the project directory and install dependencies
 
     ```shell
-    cd code
-    yarn install
+    cd ui
+    yarn install --immutable
     yarn start
     ```
 
