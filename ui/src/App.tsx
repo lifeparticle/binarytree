@@ -1,19 +1,18 @@
-import { ConfigProvider, Layout, Switch, theme } from "antd";
-import { useState } from "react";
-
 import "App.scss";
-import { Divider } from "antd";
-import { ChevronLeft, ChevronRight, Hexagon, Moon, Sun } from "lucide-react";
+import { useState } from "react";
 import Sorting from "pages/Sorting";
 import NewsDashboard from "pages/news";
 import { Suspense, lazy } from "react";
-import { Link, Route, Routes } from "react-router-dom";
 import Navigation from "./pages/Navigation";
+import { Link, Route, Routes } from "react-router-dom";
+import { ConfigProvider, Layout, Switch, theme } from "antd";
+import { ChevronLeft, ChevronRight, Hexagon, Moon, Sun } from "lucide-react";
 
 const ColorPicker = lazy(() => import("pages/ColorPicker"));
 const ImageGeneratorFromColors = lazy(
 	() => import("pages/ImageGeneratorFromColors")
 );
+
 const MarkdownEditor = lazy(() => import("pages/MarkdownEditor"));
 const Icons = lazy(() => import("pages/Icons"));
 const TextEditor = lazy(() => import("pages/TextEditor"));
@@ -75,8 +74,6 @@ function App() {
 						)}
 					</button>
 
-					<Divider className="divider" />
-
 					<Navigation />
 				</Sider>
 				<Layout>
@@ -102,7 +99,7 @@ function App() {
 							/>
 						</div>
 					</Header>
-					<Divider className="divider" />
+
 					<Content
 						style={{
 							padding: 24,

@@ -1,9 +1,8 @@
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
-import { useNavigate } from "react-router-dom";
-
 import { items } from "./data";
 import style from "./navigation.module.scss";
+import { useNavigate } from "react-router-dom";
 
 const Navigation: React.FC = () => {
 	const navigate = useNavigate();
