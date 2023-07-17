@@ -73,7 +73,7 @@ const NAV_ITEMS = [
 			},
 			{
 				name: "Image Generator From Colors",
-				url: "/",
+				url: "/igfc",
 				icon: <Image size={16} />,
 				show: true,
 			},
