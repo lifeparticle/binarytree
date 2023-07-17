@@ -1,14 +1,15 @@
-import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
-import { Button, ConfigProvider, Layout, Switch, theme } from "antd";
+import { ConfigProvider, Layout, Switch, theme } from "antd";
 import { useState } from "react";
 
 import "App.scss";
 import { Divider } from "antd";
-import { Moon, Sun } from "lucide-react";
+import { ChevronLeft, ChevronRight, Hexagon, Moon, Sun } from "lucide-react";
 import Sorting from "pages/Sorting";
+import NewsDashboard from "pages/news";
 import { Suspense, lazy } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import Navigation from "./pages/Navigation";
+
 const ColorPicker = lazy(() => import("pages/ColorPicker"));
 const ImageGeneratorFromColors = lazy(
 	() => import("pages/ImageGeneratorFromColors")
@@ -23,7 +24,7 @@ const TableOfContent = lazy(() => import("pages/TableOfContent"));
 const Shades = lazy(() => import("pages/Shades"));
 const TableGenerator = lazy(() => import("pages/MdTableGenerator"));
 
-const { Sider, Content } = Layout;
+const { Sider, Content, Header } = Layout;
 
 function App() {
 	const { defaultAlgorithm, darkAlgorithm } = theme;
@@ -55,39 +56,53 @@ function App() {
 					trigger={null}
 					collapsible
 					collapsed={collapsed}
+					className="sidebar"
 				>
-					<div className="demo-logo-vertical" />
-
-					<div className="collapsibleMenu">
-						<Button
-							type="ghost"
-							icon={
-								collapsed ? (
-									<MenuUnfoldOutlined />
-								) : (
-									<MenuFoldOutlined />
-								)
-							}
-							onClick={() => setCollapsed(!collapsed)}
-						/>
+					<div className="logo">
+						<Link to={"/"}>
+							<Hexagon size={32} color="#6d8128" />
+						</Link>
 					</div>
+
+					<button
+						className="collapsibleMenu"
+						onClick={() => setCollapsed(!collapsed)}
+					>
+						{collapsed ? (
+							<ChevronRight size={16} />
+						) : (
+							<ChevronLeft size={16} />
+						)}
+					</button>
 
 					<Divider className="divider" />
 
 					<Navigation />
-
-					<div className="modeToggle">
-						<Switch
-							className="switch"
-							checkedChildren={
-								<Moon size={16} style={{ marginTop: "2px" }} />
-							}
-							unCheckedChildren={<Sun size={16} />}
-							onChange={handleThemeChange}
-						/>
-					</div>
 				</Sider>
 				<Layout>
+					<Header
+						style={{
+							backgroundColor: isDarkMode
+								? "#141414"
+								: colorBgContainer,
+						}}
+						className="header"
+					>
+						<div className="toggler">
+							<Switch
+								className="switch"
+								checkedChildren={
+									<Moon
+										size={16}
+										style={{ marginTop: "2px" }}
+									/>
+								}
+								unCheckedChildren={<Sun size={16} />}
+								onChange={handleThemeChange}
+							/>
+						</div>
+					</Header>
+					<Divider className="divider" />
 					<Content
 						style={{
 							padding: 24,
@@ -144,6 +159,10 @@ function App() {
 									<Route
 										path="/md_table_generator"
 										element={<TableGenerator />}
+									/>
+									<Route
+										path="/news"
+										element={<NewsDashboard />}
 									/>
 								</Routes>
 							</div>
