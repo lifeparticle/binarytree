@@ -4,6 +4,7 @@
 
 .sidebar {
 	position: relative;
+
 	.logo {
 		height: 64px;
 		display: flex;
@@ -27,16 +28,11 @@
 		background-color: transparent;
 		cursor: pointer;
 		color: #ccc9c9;
-		// padding: 3px -5px;
-		// height: auto;
 	}
 }
 
-.divider {
-	margin: 0px 0px;
-}
-
 .header {
+	border-bottom: 1px solid rgba(5, 5, 5, 0.06);
 	.toggler {
 		margin-left: auto;
 		margin-right: 0;
