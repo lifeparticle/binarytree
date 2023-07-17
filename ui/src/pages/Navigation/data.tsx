@@ -29,7 +29,7 @@ export const items: MenuProps["items"] = [
 			item.children
 				.filter((item) => item.show)
 				.map((child: any) =>
-					getItem(child.name, child.name as React.Key, child.icon)
+					getItem(child.name, child.url as React.Key, child.icon)
 				)
 		);
 	}),

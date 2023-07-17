@@ -1,7 +1,7 @@
 import "App.scss";
 import { useState } from "react";
 import Sorting from "pages/Sorting";
-import NewsDashboard from "pages/news";
+import NewsDashboard from "pages/News";
 import { Suspense, lazy } from "react";
 import Navigation from "./pages/Navigation";
 import { Link, Route, Routes } from "react-router-dom";
@@ -114,11 +114,15 @@ function App() {
 								<Routes>
 									<Route
 										path="/"
-										element={<ImageGeneratorFromColors />}
+										element={<NewsDashboard />}
 									/>
 									<Route
 										path="/sorting"
 										element={<Sorting />}
+									/>
+									<Route
+										path="/igfc"
+										element={<ImageGeneratorFromColors />}
 									/>
 									<Route
 										path="/cp"
@@ -156,10 +160,6 @@ function App() {
 									<Route
 										path="/md_table_generator"
 										element={<TableGenerator />}
-									/>
-									<Route
-										path="/news"
-										element={<NewsDashboard />}
 									/>
 								</Routes>
 							</div>

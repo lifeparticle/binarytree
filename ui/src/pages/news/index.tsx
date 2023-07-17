@@ -13,7 +13,7 @@ const NewsDashboard = () => {
 	const location = useLocation();
 
 	const { data, isLoading, isError } = useQuery<Main>({
-		queryKey: [location.search || "apple"],
+		queryKey: [location.search || "?q=apple"],
 		queryFn: () => getAllNews(location.search || "apple"),
 	});
 
