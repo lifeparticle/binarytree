@@ -2,6 +2,7 @@ import {
 	AlignEndHorizontal,
 	ArrowUpNarrowWide,
 	Baseline,
+	BookCopy,
 	Brush,
 	ClipboardEdit,
 	Code2,
@@ -11,7 +12,7 @@ import {
 	FileEdit,
 	FileOutput,
 	Image,
-	Layers,
+	Newspaper,
 	Pencil,
 	Repeat,
 	Replace,
@@ -42,7 +43,7 @@ export const items: MenuProps["items"] = [
 
 	getItem("Colors", "colors", <Brush size={16} />, [
 		getItem("Color Picker", "/cp", <Baseline size={16} />),
-		getItem("Shade Generator", "/shades", <Layers size={16} />),
+		// getItem("Shade Generator", "/shades", <Layers size={16} />),
 	]),
 	getItem("Markdown", "markdown", <Code2 size={16} />, [
 		getItem("Markdown Editor", "/me", <FileEdit size={16} />),
@@ -72,6 +73,7 @@ export const items: MenuProps["items"] = [
 	getItem("Icons", "icons", <AlignEndHorizontal size={16} />, [
 		getItem("Icons", "/icons"),
 	]),
-
-	{ type: "divider" },
+	getItem("News", "news", <BookCopy size={16} />, [
+		getItem("Daily News", "/news", <Newspaper size={16} />),
+	]),
 ];
