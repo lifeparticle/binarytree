@@ -18,11 +18,11 @@ function TopHeader({
 	return (
 		<Header
 			style={{
-				backgroundColor: isDarkMode ? "#141414" : colorBgContainer,
+				backgroundColor: isDarkMode ? "#292828" : "#f6f4f4",
 			}}
 			className={style.headerSp}
 		>
-			<div className="toggler">
+			<div className={style.toggler}>
 				<Switch
 					className="switch"
 					checkedChildren={
