@@ -24,7 +24,7 @@
 
 			// Firefox scrollbar
 			scrollbar-width: 5px;
-			scrollbar-color: rgb(123, 123, 123) #7775;
+			scrollbar-color: var(--store-2) var(--stone-7);
 		}
 
 		// chrome | Edge | safari scrollbar
@@ -32,10 +32,10 @@
 			width: 5px;
 		}
 		.content::-webkit-scrollbar-thumb {
-			background-color: rgb(123, 123, 123);
+			background-color: var(--gray-8);
 		}
 		.content::-webkit-scrollbar-track {
-			background-color: #7775;
+			background-color: var(--gray-6);
 		}
 	}
 }

@@ -18,7 +18,7 @@ function TopHeader({
 	return (
 		<Header
 			style={{
-				backgroundColor: isDarkMode ? "#292828" : "#f6f4f4",
+				backgroundColor: isDarkMode ? "var(--gray-9)" : "var(--sand-0)",
 			}}
 			className={style.headerSp}
 		>
