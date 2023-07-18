@@ -43,7 +43,14 @@ function App() {
 						/>
 					</div>
 
-					<div className="content">
+					<div
+						style={{
+							backgroundColor: isDarkMode
+								? "#111"
+								: colorBgContainer,
+						}}
+						className="content"
+					>
 						<Content>
 							<Router />
 						</Content>
