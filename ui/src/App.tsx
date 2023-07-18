@@ -1,12 +1,13 @@
 import "App.scss";
-import { useState } from "react";
 import Sorting from "pages/Sorting";
-import NewsDashboard from "pages/News";
-import { Suspense, lazy } from "react";
-import Navigation from "./pages/Navigation";
-import { Link, Route, Routes } from "react-router-dom";
+import { useState } from "react";
+
 import { ConfigProvider, Layout, Switch, theme } from "antd";
 import { ChevronLeft, ChevronRight, Hexagon, Moon, Sun } from "lucide-react";
+import News from "pages/news";
+import { Suspense, lazy } from "react";
+import { Link, Route, Routes } from "react-router-dom";
+import Navigation from "./pages/Navigation";
 
 const ColorPicker = lazy(() => import("pages/ColorPicker"));
 const ImageGeneratorFromColors = lazy(
@@ -112,10 +113,7 @@ function App() {
 						<Suspense fallback={<div>Loading...</div>}>
 							<div>
 								<Routes>
-									<Route
-										path="/"
-										element={<NewsDashboard />}
-									/>
+									<Route path="/" element={<News />} />
 									<Route
 										path="/sorting"
 										element={<Sorting />}
