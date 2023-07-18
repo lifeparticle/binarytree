@@ -9,7 +9,7 @@ import { Main } from "./types/news.types";
 
 const antIcon = <LoadingOutlined style={{ fontSize: 34 }} spin />;
 
-const NewsDashboard = () => {
+const News = () => {
 	const location = useLocation();
 
 	const { data, isLoading, isError } = useQuery<Main>({
@@ -32,4 +32,4 @@ const NewsDashboard = () => {
 	);
 };
 
-export default NewsDashboard;
+export default News;
