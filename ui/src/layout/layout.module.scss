@@ -38,6 +38,8 @@
 }
 
 .headerSp {
+	display: flex;
+	justify-items: flex-end;
 	.toggler {
 		margin-left: auto;
 		margin-right: 0;
