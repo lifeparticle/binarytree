@@ -1,41 +1,41 @@
-.quill {
-	height: 500px;
-}
+.container {
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
 
-.sidebar {
-	position: relative;
+	display: flex;
 
-	.logo {
-		height: 64px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		img {
-			width: 35px;
-			height: 35px;
+	.main {
+		flex: 1;
+		height: 100%;
+		.header {
+			position: sticky;
+			width: 100%;
+
+			top: 0;
+			left: 0;
+			margin: 0;
 		}
-	}
-	.collapsibleMenu {
-		position: absolute;
-		right: -12px;
-		top: 10px;
-		border: 1px dashed #bdbcbc;
-		border-radius: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 2px;
-		background-color: transparent;
-		cursor: pointer;
-		color: #ccc9c9;
-	}
-}
 
-.header {
-	border-bottom: 1px solid rgba(5, 5, 5, 0.06);
-	.toggler {
-		margin-left: auto;
-		margin-right: 0;
-		width: fit-content;
+		.content {
+			padding: 10px;
+			overflow-y: auto;
+			height: 100%;
+
+			// Firefox scrollbar
+			scrollbar-width: 5px;
+			scrollbar-color: rgb(123, 123, 123) #7775;
+		}
+
+		// chrome | Edge | safari scrollbar
+		.content::-webkit-scrollbar {
+			width: 5px;
+		}
+		.content::-webkit-scrollbar-thumb {
+			background-color: rgb(123, 123, 123);
+		}
+		.content::-webkit-scrollbar-track {
+			background-color: #7775;
+		}
 	}
 }

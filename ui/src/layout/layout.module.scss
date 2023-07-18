@@ -1,0 +1,46 @@
+.sidebarSp {
+	position: relative;
+	height: 100vh;
+	overflow-y: auto;
+
+	// firefox
+	scrollbar-width: 0px;
+
+	// chrome | Edge | safari scrollbar
+	&::-webkit-scrollbar {
+		width: 0px;
+	}
+
+	.logo {
+		height: 64px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		img {
+			width: 35px;
+			height: 35px;
+		}
+	}
+	.collapsibleMenu {
+		position: absolute;
+		right: 0px;
+		top: 10px;
+		border: 1px dashed #bdbcbc;
+		border-radius: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2px;
+		background-color: transparent;
+		cursor: pointer;
+		color: #ccc9c9;
+	}
+}
+
+.headerSp {
+	.toggler {
+		margin-left: auto;
+		margin-right: 0;
+		width: fit-content;
+	}
+}
