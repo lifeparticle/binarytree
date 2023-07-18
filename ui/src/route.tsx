@@ -1,22 +1,19 @@
 import News from "pages/news";
-import { lazy } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
 
 // ----------------Page -----------
-const ColorPicker = lazy(() => import("pages/ColorPicker"));
-const ImageGeneratorFromColors = lazy(
-	() => import("pages/ImageGeneratorFromColors")
-);
-const MarkdownEditor = lazy(() => import("pages/MarkdownEditor"));
-const Icons = lazy(() => import("pages/Icons"));
-const TextEditor = lazy(() => import("pages/TextEditor"));
-const DataGenerator = lazy(() => import("pages/DataGenerator"));
-const Base64 = lazy(() => import("pages/Base64"));
-const PixelConverter = lazy(() => import("pages/PixelConverter"));
-const TableOfContent = lazy(() => import("pages/TableOfContent"));
-const Shades = lazy(() => import("pages/Shades"));
-const TableGenerator = lazy(() => import("pages/MdTableGenerator"));
-const Sorting = lazy(() => import("pages/Sorting"));
+import Base64 from "pages/Base64";
+import ColorPicker from "pages/ColorPicker";
+import DataGenerator from "pages/DataGenerator";
+import Icons from "pages/Icons";
+import ImageGeneratorFromColors from "pages/ImageGeneratorFromColors";
+import MarkdownEditor from "pages/MarkdownEditor";
+import TableGenerator from "pages/MdTableGenerator";
+import PixelConverter from "pages/PixelConverter";
+import Shades from "pages/Shades";
+import Sorting from "pages/Sorting";
+import TableOfContent from "pages/TableOfContent";
+import TextEditor from "pages/TextEditor";
 
 // --------------EndPage----------
 
