@@ -2,6 +2,8 @@ import { Row } from "antd";
 import { Article } from "../types/news.types";
 import ArticleCard from "./Article";
 
+
+
 interface PropsType {
 	articles: Article[];
 }

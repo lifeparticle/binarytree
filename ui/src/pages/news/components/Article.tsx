@@ -1,13 +1,23 @@
 import { Card, Col } from "antd";
 import { Article } from "../types/news.types";
+import style from "./article.module.scss";
 
 const { Meta } = Card;
 
-function ArticleCard({ author, title, urlToImage, content }: Article) {
+function ArticleCard({ title, urlToImage, content }: Article) {
 	return (
 		<Col span={6}>
-			<Card cover={<img src={urlToImage} alt={title} />}>
-				<Meta title={title} description={content} />
+			<Card
+				className={style.card}
+				cover={
+					<img
+						src={urlToImage}
+						alt={title}
+						className={style.cardImage}
+					/>
+				}
+			>
+				<Meta title={title} description={content.slice(0, 120)} />
 			</Card>
 		</Col>
 	);
