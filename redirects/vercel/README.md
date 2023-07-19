@@ -1,1 +1,1 @@
-https://houdini-app.vercel.app/
+https://binarytree-dev.vercel.app/
