@@ -13,12 +13,14 @@ const antIcon = <LoadingOutlined style={{ fontSize: 34 }} spin />;
 const News = () => {
 	const location = useLocation();
 
+	const endpoint =
+		location.search?.length > 3 ? location.search : "?q=javascript";
+
 	const { data, isLoading, isError } = useQuery<Main>({
-		queryKey: [location.search || "?q=javascript"],
+		queryKey: [endpoint],
 		queryFn: () => {
 			const API_BASE_URL = "https://newsapi.org/v2/everything";
 			const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
-			const endpoint = location.search || "?q=javascript";
 			const url = `${API_BASE_URL}/${endpoint}&apiKey=${API_KEY}`;
 			return getData(url);
 		},
