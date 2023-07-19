@@ -10,11 +10,7 @@ interface HeaderProps {
 	handleThemeChange: (checked: boolean) => void;
 }
 
-function TopHeader({
-	isDarkMode,
-	colorBgContainer,
-	handleThemeChange,
-}: HeaderProps) {
+function TopHeader({ isDarkMode, handleThemeChange }: HeaderProps) {
 	return (
 		<Header
 			style={{

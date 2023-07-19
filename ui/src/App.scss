@@ -1,6 +1,5 @@
 .container {
-	height: 100vh;
-	width: 100vw;
+	height: var(--container-height);
 	overflow: hidden;
 
 	display: flex;
@@ -18,24 +17,24 @@
 		}
 
 		.content {
-			padding: 10px;
+			padding: var(--content-padding);
 			overflow-y: auto;
 			height: 100%;
 
 			// Firefox scrollbar
-			scrollbar-width: 5px;
+			scrollbar-width: var(--content-scrollbar-width);
 			scrollbar-color: var(--store-2) var(--stone-7);
 		}
 
 		// chrome | Edge | safari scrollbar
 		.content::-webkit-scrollbar {
-			width: 5px;
+			width: var(--content-scrollbar-width);
 		}
 		.content::-webkit-scrollbar-thumb {
-			background-color: var(--gray-8);
+			background-color: var(--gray-6);
 		}
 		.content::-webkit-scrollbar-track {
-			background-color: var(--gray-6);
+			background-color: var(--gray-4);
 		}
 	}
 }

@@ -1,6 +1,6 @@
 .sidebarSp {
 	position: relative;
-	height: 100vh;
+	height: 100%;
 	overflow-y: auto;
 
 	// firefox
@@ -11,15 +11,11 @@
 		width: 0px;
 	}
 
-	.logo {
-		height: 64px;
+	.logoContainer {
+		height: var(--logo-container-height);
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		img {
-			width: 35px;
-			height: 35px;
-		}
 	}
 	.collapsibleMenu {
 		position: absolute;
@@ -33,7 +29,7 @@
 		padding: 2px;
 		background-color: transparent;
 		cursor: pointer;
-		color: #ccc9c9;
+		color: var(--stone-6);
 	}
 }
 
