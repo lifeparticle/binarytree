@@ -6,7 +6,7 @@ const { Meta } = Card;
 
 function ArticleCard({ title, urlToImage, content }: Article) {
 	return (
-		<Col span={6}>
+		<Col xs={24} sm={24} md={12} lg={6} xl={6}>
 			<Card
 				className={style.card}
 				cover={
