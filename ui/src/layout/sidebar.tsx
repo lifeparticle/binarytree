@@ -27,7 +27,7 @@ function Sidebar({ isDarkMode, colorBgContainer }: SidebarProps) {
 			collapsed={collapsed}
 			className={style.sidebarSp}
 		>
-			<div className={style.logo}>
+			<div className={style.logoContainer}>
 				<Link to={"/"}>
 					<Hexagon size={32} color="#6d8128" />
 				</Link>

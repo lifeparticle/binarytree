@@ -15,7 +15,13 @@ const News = () => {
 
 	const { data, isLoading, isError } = useQuery<Main>({
 		queryKey: [location.search || "?q=javascript"],
-		queryFn: () => getData(location.search || "?q=javascript"),
+		queryFn: () => {
+			const API_BASE_URL = "https://newsapi.org/v2/everything";
+			const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
+			const endpoint = location.search || "?q=javascript";
+			const url = `${API_BASE_URL}/${endpoint}&apiKey=${API_KEY}`;
+			return getData(url);
+		},
 	});
 
 	return (
