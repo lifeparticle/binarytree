@@ -1,4 +1,4 @@
-import { downloadTextFile } from "utils/utils";
+import { downloadTextFile } from "lib/utils/files";
 import { useState } from "react";
 import style from "./DataGenerator.module.scss";
 import { FAKER_DATA_TYPES, MYSQL_DATA_TYPES } from "./utils/constants";
@@ -84,11 +84,12 @@ const DataGenerator: React.FC = () => {
 					<Input
 						placeholder="Table name"
 						value={tableName}
-						onChange={(event) => setTableName(event.currentTarget.value)}
+						onChange={(event) =>
+							setTableName(event.currentTarget.value)
+						}
 						autoComplete="nope"
 					/>
 					<InputNumber
-						
 						placeholder="NumberInput with custom layout"
 						value={colNum}
 						min={0}
@@ -101,7 +102,7 @@ const DataGenerator: React.FC = () => {
 							]);
 						}}
 					/>
-					<InputNumber	
+					<InputNumber
 						placeholder="NumberInput with custom layout"
 						value={rowNum}
 						min={0}
@@ -151,7 +152,6 @@ const DataGenerator: React.FC = () => {
 						{Array.from({ length: colNum }, (_, k) => (
 							<Input
 								key={`col-name-${k}`}
-								
 								placeholder="Column name"
 								value={
 									colNames[k] === undefined

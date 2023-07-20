@@ -1,8 +1,9 @@
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
-import { items } from "./data";
+
 import style from "./navigation.module.scss";
 import { useNavigate } from "react-router-dom";
+import { MenuItems } from "./menus.contant";
 
 const Navigation: React.FC = () => {
 	const navigate = useNavigate();
@@ -19,7 +20,7 @@ const Navigation: React.FC = () => {
 			defaultSelectedKeys={["1"]}
 			defaultOpenKeys={["sub1"]}
 			mode="inline"
-			items={items}
+			items={MenuItems}
 		/>
 	);
 };

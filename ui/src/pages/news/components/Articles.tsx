@@ -1,5 +1,5 @@
 import { Row } from "antd";
-import { Article } from "../types/news.types";
+import { Article } from "../types.ts/types";
 import ArticleCard from "./Article";
 
 interface PropsType {

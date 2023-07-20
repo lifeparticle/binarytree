@@ -2,12 +2,9 @@ import { useState } from "react";
 import MDEditor from "@uiw/react-md-editor";
 import style from "./MarkdownEditor.module.scss";
 import { Space, Button } from "antd";
-import {
-	downloadPDFFile,
-	downloadTextFile,
-	useCombinedKeyPress,
-} from "utils/utils";
+import { downloadPDFFile, downloadTextFile } from "lib/utils/files";
 import { useClipboard } from "@mantine/hooks";
+import { useCombinedKeyPress } from "lib/utils/keypress";
 
 const MarkdownEditor: React.FC = () => {
 	const [markdown, setMarkdown] = useState("");

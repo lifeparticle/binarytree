@@ -2,8 +2,8 @@ import { useState } from "react";
 import style from "./TableOfContent.module.scss";
 import { useClipboard } from "@mantine/hooks";
 import { marked } from "marked";
-import { useCombinedKeyPress } from "utils/utils";
 import { Input, Space, Button } from "antd";
+import { useCombinedKeyPress } from "lib/utils/keypress";
 const { TextArea } = Input;
 
 type TocItem = {

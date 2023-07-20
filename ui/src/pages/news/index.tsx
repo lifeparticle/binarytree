@@ -2,11 +2,10 @@ import { LoadingOutlined } from "@ant-design/icons";
 import { useQuery } from "@tanstack/react-query";
 import { Spin } from "antd";
 import { useLocation } from "react-router-dom";
-
 import { getData } from "api/API";
-import SearchBar from "./SearchBar";
+import SearchBar from "./components/SearchBar";
 import Articles from "./components/Articles";
-import { Main } from "./types/news.types";
+import { APIResponse } from "./types.ts/types";
 
 const antIcon = <LoadingOutlined style={{ fontSize: 34 }} spin />;
 const API_BASE_URL = "https://newsapi.org/v2/everything";
@@ -18,7 +17,7 @@ const News = () => {
 	const endpoint =
 		location.search?.length > 3 ? location.search : "?q=javascript";
 
-	const { data, isLoading, isError } = useQuery<Main>({
+	const { data, isLoading, isError } = useQuery<APIResponse>({
 		queryKey: [endpoint],
 		queryFn: () => {
 			const url = `${API_BASE_URL}/${endpoint}&apiKey=${API_KEY}`;

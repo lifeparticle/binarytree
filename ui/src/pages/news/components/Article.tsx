@@ -1,5 +1,5 @@
 import { Card, Col } from "antd";
-import { Article } from "../types/news.types";
+import { Article } from "../types.ts/types";
 import style from "./article.module.scss";
 
 const { Meta } = Card;

@@ -2,7 +2,7 @@ import { Button, Input } from "antd";
 import { FormEvent, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
-function SearchBar() {
+const SearchBar: React.FC = () => {
 	const [query, setQuery] = useState("");
 
 	const searchParams = useSearchParams("");
@@ -26,6 +26,6 @@ function SearchBar() {
 			</form>
 		</div>
 	);
-}
+};
 
 export default SearchBar;

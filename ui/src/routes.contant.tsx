@@ -11,7 +11,7 @@ import Shades from "pages/Shades";
 import Sorting from "pages/Sorting";
 import TableOfContent from "pages/TableOfContent";
 import TextEditor from "pages/TextEditor";
-import News from "pages/news";
+import News from "pages/News";
 import { Navigate } from "react-router-dom";
 // --------------EndPage----------
 
