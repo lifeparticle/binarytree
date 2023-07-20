@@ -1,0 +1,41 @@
+.sidebar {
+	position: relative;
+	height: 100%;
+	overflow-y: auto;
+	background-color: var(--sand-0);
+	border-right: 1px solid var(--gray-4);
+
+	// firefox
+	scrollbar-width: 0px;
+
+	// chrome | Edge | safari scrollbar
+	&::-webkit-scrollbar {
+		width: 0px;
+	}
+
+	&.darkMode {
+		background-color: var(--gray-8);
+		border-right: none;
+	}
+
+	&__logoContainer {
+		height: var(--logo-container-height);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__collapsibleMenu {
+		position: absolute;
+		right: 0px;
+		top: 10px;
+		border: 1px dashed var(--stone-6);
+		border-radius: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2px;
+		background-color: transparent;
+		cursor: pointer;
+		color: var(--stone-6);
+	}
+}

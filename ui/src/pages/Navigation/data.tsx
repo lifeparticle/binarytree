@@ -1,5 +1,5 @@
 import type { MenuProps } from "antd";
-import { NAV_ITEMS } from "./constants";
+import { NAV_ITEMS } from "../../constant/menus.contant";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -21,7 +21,7 @@ function getItem(
 
 export const items: MenuProps["items"] = [
 	{ type: "divider" },
-	...NAV_ITEMS.map((item) => {
+	...NAV_ITEMS.filter((rootItem) => rootItem.show).map((item) => {
 		return getItem(
 			item.name,
 			item.name as React.Key,

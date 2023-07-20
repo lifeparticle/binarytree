@@ -1,0 +1,7 @@
+.card {
+	.cardImage {
+		height: var(--card-image-height);
+		object-fit: cover;
+		object-position: center;
+	}
+}

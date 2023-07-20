@@ -1,7 +1,8 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 font-family: 'Inter', sans-serif; */
 
-@import url("./styles/colors.scss");
+@import "./styles/colors.scss";
+@import "./styles/sizes.scss";
 
 body {
 	margin: 0;
@@ -15,9 +16,4 @@ body {
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 		monospace;
-}
-
-#root {
-	min-height: 100vh;
-	display: grid;
 }
