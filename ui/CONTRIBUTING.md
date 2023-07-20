@@ -5,7 +5,7 @@
     3.1.
 
     ```shell
-    git remote add upstream git@github.com:lifeparticle/Houdini.git
+    git remote add upstream git@github.com:lifeparticle/binarytree.git
     ```
 
     3.2.
@@ -60,7 +60,7 @@
 
     7.2 If you're having problem finding the url
 
-        a) https://github.com/lifeparticle/Houdini/pulls
+        a) https://github.com/lifeparticle/binarytree/pulls
 
         b) Click the button 'New pull request'
 
@@ -75,6 +75,6 @@
 8.  Repeat
 
     ```shell
-    git checkout master
+    git checkout main
     git pull
     ```
