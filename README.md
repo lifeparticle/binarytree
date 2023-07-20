@@ -1,4 +1,4 @@
-Houdini is an open-source project that offers a range of developer tools to save time.
+Binary Tree is an open-source project that offers a range of developer productivity tools to save time.
 
 # UI
 
