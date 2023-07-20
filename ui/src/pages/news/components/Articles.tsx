@@ -6,7 +6,7 @@ interface PropsType {
 	articles: Article[];
 }
 
-const Articles = ({ articles }: PropsType) => {
+const Articles: React.FC<PropsType> = ({ articles }) => {
 	return (
 		<div>
 			<Row gutter={[16, 16]}>

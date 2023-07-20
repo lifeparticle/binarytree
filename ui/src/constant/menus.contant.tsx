@@ -11,17 +11,18 @@ import {
 	FileEdit,
 	FileOutput,
 	Image,
+	Layers,
 	Pencil,
 	Repeat,
 	Replace,
 	Table,
-	Layers,
 } from "lucide-react";
 
 const NAV_ITEMS = [
 	{
 		name: "Colors",
 		icon: <Brush size={16} />,
+		show: true,
 		children: [
 			{
 				name: "Color Picker",
@@ -40,6 +41,7 @@ const NAV_ITEMS = [
 	{
 		name: "Markdown",
 		icon: <Code2 size={16} />,
+		show: true,
 		children: [
 			{
 				name: "Markdown Editor",
@@ -64,6 +66,7 @@ const NAV_ITEMS = [
 	{
 		name: "Data",
 		icon: <Database size={16} />,
+		show: true,
 		children: [
 			{
 				name: "Data Generator",
@@ -88,6 +91,7 @@ const NAV_ITEMS = [
 	{
 		name: "Converter",
 		icon: <Repeat size={16} />,
+		show: true,
 		children: [
 			{
 				name: "Base 64 Converter",
@@ -106,6 +110,7 @@ const NAV_ITEMS = [
 	{
 		name: "Text",
 		icon: <Pencil size={16} />,
+		show: true,
 		children: [
 			{
 				name: "Text Editor",
@@ -118,6 +123,7 @@ const NAV_ITEMS = [
 	{
 		name: "List",
 		icon: <AlignEndHorizontal size={16} />,
+		show: true,
 		children: [
 			{
 				name: "Icons",
