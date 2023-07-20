@@ -1,4 +1,4 @@
-Binary Tree offers a range of developer productivity tools to save time.
+[binarytree.dev](https://binarytree.dev) offers a range of developer productivity tools to save time
 
 # UI
 
