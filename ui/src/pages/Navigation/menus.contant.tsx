@@ -1,3 +1,4 @@
+import { MenuProps } from "antd";
 import {
 	AlignEndHorizontal,
 	ArrowUpNarrowWide,
@@ -18,7 +19,7 @@ import {
 	Table,
 } from "lucide-react";
 
-const NAV_ITEMS = [
+const ITEMS = [
 	{
 		name: "Colors",
 		icon: <Brush size={16} />,
@@ -135,4 +136,38 @@ const NAV_ITEMS = [
 	},
 ];
 
-export { NAV_ITEMS };
+type MenuItem = Required<MenuProps>["items"][number];
+
+function getItem(
+	label: React.ReactNode,
+	key: React.Key,
+	icon?: React.ReactNode,
+	children?: MenuItem[],
+	type?: "group"
+): MenuItem {
+	return {
+		key,
+		icon,
+		children,
+		label,
+		type,
+	} as MenuItem;
+}
+
+const MenuItems: MenuProps["items"] = [
+	{ type: "divider" },
+	...ITEMS.filter((rootItem) => rootItem.show).map((item) => {
+		return getItem(
+			item.name,
+			item.name as React.Key,
+			item.icon,
+			item.children
+				.filter((item) => item.show)
+				.map((child: any) =>
+					getItem(child.name, child.url as React.Key, child.icon)
+				)
+		);
+	}),
+];
+
+export { MenuItems };

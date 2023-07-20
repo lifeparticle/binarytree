@@ -1,12 +1,11 @@
 import { useState } from "react";
-import Router from "route";
-
+import { routes } from "routes.contant";
+import { useRoutes } from "react-router-dom";
 import { ConfigProvider, Layout, theme } from "antd";
-
 import "App.scss";
 import clsx from "clsx";
-import Header from "layout/Header";
-import Menus from "layout/Menus";
+import Header from "sections/Header";
+import Menus from "sections/Menus";
 
 const { Content } = Layout;
 
@@ -26,7 +25,6 @@ function App() {
 		>
 			<div className={"container"}>
 				<Menus isDarkMode={isDarkMode} />
-
 				<div className={"container__main"}>
 					<div className={"container__main__header"}>
 						<Header
@@ -34,16 +32,13 @@ function App() {
 							isDarkMode={isDarkMode}
 						/>
 					</div>
-
 					<div
 						className={clsx(
 							"container__main__content",
 							isDarkMode && "darkMode"
 						)}
 					>
-						<Content>
-							<Router />
-						</Content>
+						<Content>{useRoutes(routes)}</Content>
 					</div>
 				</div>
 			</div>

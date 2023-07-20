@@ -1,10 +1,10 @@
-export interface Main {
+interface APIResponse {
 	status: string;
 	totalResults: number;
 	articles: Article[];
 }
 
-export interface Article {
+interface Article {
 	source: Source;
 	author: string;
 	title: string;
@@ -15,15 +15,17 @@ export interface Article {
 	content: string;
 }
 
-export interface Source {
+interface Source {
 	id: ID | null;
 	name: string;
 }
 
-export enum ID {
+enum ID {
 	BbcNews = "bbc-news",
 	BusinessInsider = "business-insider",
 	Engadget = "engadget",
 	TheVerge = "the-verge",
 	Wired = "wired",
 }
+
+export type { APIResponse, Article, Source, ID };

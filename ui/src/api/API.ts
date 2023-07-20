@@ -1,6 +1,4 @@
-// api.js
-
-async function makeApiRequest(url: string, method = "GET", data = null) {
+async function makeRequest(url: string, method = "GET", data = null) {
 	const options = {
 		method: method,
 		body: data ? JSON.stringify(data) : null,
@@ -25,5 +23,5 @@ async function makeApiRequest(url: string, method = "GET", data = null) {
 }
 
 export async function getData(url: string) {
-	return makeApiRequest(url);
+	return makeRequest(url);
 }

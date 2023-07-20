@@ -33,24 +33,18 @@ const Icons: React.FC = () => {
 		<Space className={style.icons}>
 			{URLS.map((url: any) => {
 				return (
-						<Space>
-							<h1 className={style.icons__title}> {url.name}</h1>
-							<Button
-								href={url.website}
-								target="_blank"
-							>
-								Website
-							</Button>
+					<Space>
+						<h1 className={style.icons__title}> {url.name}</h1>
+						<Button href={url.website} target="_blank">
+							Website
+						</Button>
 
-							{url.github === "" ? null : (
-								<Button
-									href={url.github}
-									target="_blank"
-								>
-									GitHub
-								</Button>
-							)}
-						</Space>
+						{url.github === "" ? null : (
+							<Button href={url.github} target="_blank">
+								GitHub
+							</Button>
+						)}
+					</Space>
 				);
 			})}
 		</Space>

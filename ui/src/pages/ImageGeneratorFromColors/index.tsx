@@ -5,7 +5,7 @@ import { toPng } from "html-to-image";
 import JSZip from "jszip";
 import JSZipUtils from "jszip-utils";
 import { saveAs } from "file-saver";
-import { useCombinedKeyPress } from "utils/utils";
+import { useCombinedKeyPress } from "lib/utils/keypress";
 
 const { TextArea } = Input;
 
