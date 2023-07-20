@@ -9,6 +9,8 @@ import Articles from "./components/Articles";
 import { Main } from "./types/news.types";
 
 const antIcon = <LoadingOutlined style={{ fontSize: 34 }} spin />;
+const API_BASE_URL = "https://newsapi.org/v2/everything";
+const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
 
 const News = () => {
 	const location = useLocation();
@@ -19,8 +21,6 @@ const News = () => {
 	const { data, isLoading, isError } = useQuery<Main>({
 		queryKey: [endpoint],
 		queryFn: () => {
-			const API_BASE_URL = "https://newsapi.org/v2/everything";
-			const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
 			const url = `${API_BASE_URL}/${endpoint}&apiKey=${API_KEY}`;
 			return getData(url);
 		},

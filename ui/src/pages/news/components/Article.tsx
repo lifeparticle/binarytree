@@ -4,7 +4,7 @@ import style from "./article.module.scss";
 
 const { Meta } = Card;
 
-function ArticleCard({ title, urlToImage, content }: Article) {
+const ArticleCard: React.FC<Article> = ({ title, urlToImage, content }) => {
 	return (
 		<Col xs={24} sm={24} md={12} lg={6} xl={6}>
 			<Card
@@ -21,6 +21,6 @@ function ArticleCard({ title, urlToImage, content }: Article) {
 			</Card>
 		</Col>
 	);
-}
+};
 
 export default ArticleCard;
