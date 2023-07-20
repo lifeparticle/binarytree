@@ -1,7 +1,9 @@
-.sidebarSp {
+.sidebar {
 	position: relative;
 	height: 100%;
 	overflow-y: auto;
+	background-color: var(--sand-0);
+	border-right: 1px solid var(--gray-4);
 
 	// firefox
 	scrollbar-width: 0px;
@@ -11,13 +13,18 @@
 		width: 0px;
 	}
 
-	.logoContainer {
+	&.darkMode {
+		background-color: var(--gray-8);
+		border-right: none;
+	}
+
+	&__logoContainer {
 		height: var(--logo-container-height);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
-	.collapsibleMenu {
+	&__collapsibleMenu {
 		position: absolute;
 		right: 0px;
 		top: 10px;
@@ -30,15 +37,5 @@
 		background-color: transparent;
 		cursor: pointer;
 		color: var(--stone-6);
-	}
-}
-
-.headerSp {
-	display: flex;
-	justify-items: flex-end;
-	.toggler {
-		margin-left: auto;
-		margin-right: 0;
-		width: fit-content;
 	}
 }

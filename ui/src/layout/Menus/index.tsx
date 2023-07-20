@@ -1,40 +1,35 @@
 import { Layout } from "antd";
+import clsx from "clsx";
 import { ChevronLeft, ChevronRight, Hexagon } from "lucide-react";
 import Navigation from "pages/Navigation";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import style from "./layout.module.scss";
+import style from "./sidebar.module.scss";
 
 const { Sider } = Layout;
 
-interface SidebarProps {
+interface MenusProps {
 	isDarkMode: boolean;
-	colorBgContainer: string;
 }
 
-function Sidebar({ isDarkMode, colorBgContainer }: SidebarProps) {
+const Menus: React.FC<MenusProps> = ({ isDarkMode }) => {
 	const [collapsed, setCollapsed] = useState(false);
 
 	return (
 		<Sider
-			style={{
-				backgroundColor: isDarkMode ? "#141414" : colorBgContainer,
-				borderRight: isDarkMode ? "none" : "1px solid #ededed",
-				width: "400px",
-			}}
 			trigger={null}
 			collapsible
 			collapsed={collapsed}
-			className={style.sidebarSp}
+			className={clsx(style.sidebar, isDarkMode && style.darkMode)}
 		>
-			<div className={style.logoContainer}>
+			<div className={style.sidebar__logoContainer}>
 				<Link to={"/"}>
 					<Hexagon size={32} color="#6d8128" />
 				</Link>
 			</div>
 
 			<button
-				className={style.collapsibleMenu}
+				className={style.sidebar__collapsibleMenu}
 				onClick={() => setCollapsed(!collapsed)}
 			>
 				{collapsed ? (
@@ -47,6 +42,6 @@ function Sidebar({ isDarkMode, colorBgContainer }: SidebarProps) {
 			<Navigation />
 		</Sider>
 	);
-}
+};
 
-export default Sidebar;
+export default Menus;

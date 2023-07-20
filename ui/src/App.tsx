@@ -1,10 +1,12 @@
-import "App.scss";
 import { useState } from "react";
+import Router from "route";
 
 import { ConfigProvider, Layout, theme } from "antd";
-import TopHeader from "layout/header";
-import Sidebar from "layout/sidebar";
-import Router from "route";
+
+import "App.scss";
+import clsx from "clsx";
+import Header from "layout/Header";
+import Menus from "layout/Menus";
 
 const { Content } = Layout;
 
@@ -16,40 +18,28 @@ function App() {
 		setIsDarkMode(checked);
 	};
 
-	const {
-		token: { colorBgContainer },
-	} = theme.useToken();
-
 	return (
 		<ConfigProvider
 			theme={{
 				algorithm: isDarkMode ? darkAlgorithm : defaultAlgorithm,
 			}}
 		>
-			<div className="container">
-				<div className="sidebar">
-					<Sidebar
-						colorBgContainer={colorBgContainer}
-						isDarkMode={isDarkMode}
-					/>
-				</div>
+			<div className={"container"}>
+				<Menus isDarkMode={isDarkMode} />
 
-				<div className="main">
-					<div className="header">
-						<TopHeader
+				<div className={"container__main"}>
+					<div className={"container__main__header"}>
+						<Header
 							handleThemeChange={handleThemeChange}
-							colorBgContainer={colorBgContainer}
 							isDarkMode={isDarkMode}
 						/>
 					</div>
 
 					<div
-						style={{
-							backgroundColor: isDarkMode
-								? "#111"
-								: colorBgContainer,
-						}}
-						className="content"
+						className={clsx(
+							"container__main__content",
+							isDarkMode && "darkMode"
+						)}
 					>
 						<Content>
 							<Router />

@@ -2,13 +2,11 @@ import { Row } from "antd";
 import { Article } from "../types/news.types";
 import ArticleCard from "./Article";
 
-
-
 interface PropsType {
 	articles: Article[];
 }
 
-const Articles = ({ articles }: PropsType) => {
+const Articles: React.FC<PropsType> = ({ articles }) => {
 	return (
 		<div>
 			<Row gutter={[16, 16]}>

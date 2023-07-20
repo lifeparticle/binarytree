@@ -1,24 +1,25 @@
 import { Layout, Switch } from "antd";
+import { clsx } from "clsx";
 import { Moon, Sun } from "lucide-react";
-import style from "./layout.module.scss";
+import style from "./header.module.scss";
 
-const { Header } = Layout;
+const { Header: AntHeader } = Layout;
 
 interface HeaderProps {
 	isDarkMode: boolean;
-	colorBgContainer: string;
+
 	handleThemeChange: (checked: boolean) => void;
 }
 
-function TopHeader({ isDarkMode, handleThemeChange }: HeaderProps) {
+const Header: React.FC<HeaderProps> = ({ isDarkMode, handleThemeChange }) => {
 	return (
-		<Header
-			style={{
-				backgroundColor: isDarkMode ? "var(--gray-9)" : "var(--sand-0)",
-			}}
-			className={style.headerSp}
+		<AntHeader
+			className={clsx(
+				style.headerContainer,
+				isDarkMode && style.darkmode
+			)}
 		>
-			<div className={style.toggler}>
+			<div className={style.headerContainer__toggler}>
 				<Switch
 					className="switch"
 					checkedChildren={
@@ -28,8 +29,8 @@ function TopHeader({ isDarkMode, handleThemeChange }: HeaderProps) {
 					onChange={handleThemeChange}
 				/>
 			</div>
-		</Header>
+		</AntHeader>
 	);
-}
+};
 
-export default TopHeader;
+export default Header;
