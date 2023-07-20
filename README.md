@@ -1,4 +1,4 @@
-Binary Tree is an open-source project that offers a range of developer productivity tools to save time.
+Binary Tree offers a range of developer productivity tools to save time.
 
 # UI
 
