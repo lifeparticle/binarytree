@@ -19,7 +19,7 @@ import {
 	Table,
 } from "lucide-react";
 
-const ITEMS = [
+const MENU_ITEMS = [
 	{
 		name: "Colors",
 		icon: <Brush size={16} />,
@@ -154,9 +154,9 @@ function getItem(
 	} as MenuItem;
 }
 
-const MenuItems: MenuProps["items"] = [
+const ITEMS: MenuProps["items"] = [
 	{ type: "divider" },
-	...ITEMS.filter((rootItem) => rootItem.show).map((item) => {
+	...MENU_ITEMS.filter((rootItem) => rootItem.show).map((item) => {
 		return getItem(
 			item.name,
 			item.name as React.Key,
@@ -170,4 +170,4 @@ const MenuItems: MenuProps["items"] = [
 	}),
 ];
 
-export { MenuItems };
+export { ITEMS };

@@ -1,26 +1,17 @@
-import { Card, Col } from "antd";
-import { Article } from "../types.ts/types";
+import { Card } from "antd";
 import style from "./article.module.scss";
+import { Article as IArticle } from "pages/News/types.ts/types";
 
-const { Meta } = Card;
-
-const ArticleCard: React.FC<Article> = ({ title, urlToImage, content }) => {
+const Article: React.FC<IArticle> = ({ title, urlToImage, content, url }) => {
 	return (
-		<Col xs={24} sm={24} md={12} lg={6} xl={6}>
-			<Card
-				className={style.card}
-				cover={
-					<img
-						src={urlToImage}
-						alt={title}
-						className={style.cardImage}
-					/>
-				}
-			>
-				<Meta title={title} description={content.slice(0, 120)} />
-			</Card>
-		</Col>
+		<div className={style.article}>
+			<a href={url} target="_blank" rel="noopener noreferrer">
+				<Card>
+					<h4>{title}</h4>
+					{content.slice(0, 120)}
+				</Card>
+			</a>
+		</div>
 	);
 };
-
-export default ArticleCard;
+export default Article;

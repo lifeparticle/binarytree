@@ -17,3 +17,21 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 		monospace;
 }
+
+h4 {
+	margin-block-start: 0px;
+	margin-block-end: 0px;
+}
+
+.ant-layout {
+	min-height: 100vh;
+}
+.ant-layout-content {
+	margin: 24px 16px;
+	padding: 24px;
+}
+
+.ant-menu {
+	/* height: 100vh; */
+	/* overflow: hidden; */
+}
