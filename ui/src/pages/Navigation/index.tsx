@@ -3,7 +3,7 @@ import { Menu } from "antd";
 
 import style from "./navigation.module.scss";
 import { useNavigate } from "react-router-dom";
-import { MenuItems } from "./menus.contant";
+import { MenuItems } from "./menus.constant";
 
 const Navigation: React.FC = () => {
 	const navigate = useNavigate();
