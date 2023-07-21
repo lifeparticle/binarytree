@@ -1,13 +1,14 @@
-import { Suspense, useState } from "react";
-import { routes } from "routes.constant";
-import { useRoutes } from "react-router-dom";
-import { ConfigProvider, Layout, theme } from "antd";
 import "App.scss";
-import clsx from "clsx";
+import { Layout } from "antd";
+import Menu from "sections/Menu";
 import Header from "sections/Header";
-import Menus from "sections/Menus";
+import { routes } from "routes.constant";
+import { Suspense, useState } from "react";
+import { useRoutes } from "react-router-dom";
+import { ConfigProvider } from "antd";
+import { theme } from "antd";
 
-const { Content } = Layout;
+const { Sider, Content } = Layout;
 
 function App() {
 	const { defaultAlgorithm, darkAlgorithm } = theme;
@@ -17,35 +18,33 @@ function App() {
 		setIsDarkMode(checked);
 	};
 
+	const [collapsed, setCollapsed] = useState(false);
 	return (
 		<ConfigProvider
 			theme={{
 				algorithm: isDarkMode ? darkAlgorithm : defaultAlgorithm,
 			}}
 		>
-			<div className={"container"}>
-				<Menus isDarkMode={isDarkMode} />
-				<div className={"container__main"}>
-					<div className={"container__main__header"}>
-						<Header
-							handleThemeChange={handleThemeChange}
-							isDarkMode={isDarkMode}
-						/>
-					</div>
-					<div
-						className={clsx(
-							"container__main__content",
-							isDarkMode && "darkMode"
-						)}
-					>
-						<Content>
-							<Suspense fallback={<div>Loading...</div>}>
-								{useRoutes(routes)}
-							</Suspense>
-						</Content>
-					</div>
-				</div>
-			</div>
+			<Layout>
+				<Sider trigger={null} collapsible collapsed={collapsed}>
+					<Menu
+						isDarkMode={isDarkMode}
+						collapsed={collapsed}
+						setCollapsed={setCollapsed}
+					/>
+				</Sider>
+				<Layout>
+					<Header
+						handleThemeChange={handleThemeChange}
+						isDarkMode={isDarkMode}
+					/>
+					<Content>
+						<Suspense fallback={<div>Loading...</div>}>
+							{useRoutes(routes)}
+						</Suspense>
+					</Content>
+				</Layout>
+			</Layout>
 		</ConfigProvider>
 	);
 }

@@ -1,0 +1,1306 @@
+{
+	"status": "ok",
+	"totalResults": 4942,
+	"articles": [
+		{
+			"source": {
+				"id": null,
+				"name": "Bun.sh"
+			},
+			"author": null,
+			"title": "JavaScript Macros in Bun",
+			"description": "Call JavaScript functions at bundle-time and inline results into the AST",
+			"url": "https://bun.sh/blog/bun-macros",
+			"urlToImage": "https://bun.sh/og/blog/bun-macros.jpg",
+			"publishedAt": "2023-06-29T11:02:01Z",
+			"content": "Two weeks ago, we launched our new JavaScript bundler in Bun v0.6.0. Today we're releasing a new feature that highlights the tight integration between Bun's bundler and runtime: Bun Macros.\r\nMacros a… [+8548 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "ReadWrite"
+			},
+			"author": "Harikrishna Kundariya",
+			"title": "Top 10 Angular Development Companies In 2023",
+			"description": "Angular is one of the most popular JavaScript frameworks used for developing dynamic web applications. It has a huge community […]\nThe post Top 10 Angular Development Companies In 2023 appeared first on ReadWrite.",
+			"url": "https://readwrite.com/top-10-angular-development-companies-in-2023/",
+			"urlToImage": "https://readwrite.com/wp-content/uploads/2023/04/Top-10-Angular-Development-Companies-In-2023.jpg",
+			"publishedAt": "2023-06-27T18:00:27Z",
+			"content": "Angular is one of the most popular JavaScript frameworks used for developing dynamic web applications. It has a huge community of developers, which makes it easy to get help and find resources for le… [+10610 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Github.com"
+			},
+			"author": "kudoai",
+			"title": "Chatgpt.js: An open-source, powerful client-side JavaScript library for ChatGPT",
+			"description": " A powerful client-side JavaScript library for ChatGPT - GitHub - kudoai/chatgpt.js:  A powerful client-side JavaScript library for ChatGPT",
+			"url": "https://github.com/kudoai/chatgpt.js",
+			"urlToImage": "https://repository-images.githubusercontent.com/614250126/8b0bdef2-4f0c-4003-bfa9-1f5af0e3c994",
+			"publishedAt": "2023-07-08T07:15:11Z",
+			"content": "A powerful client-side JavaScript library for ChatGPT\r\nAbout\r\nchatgpt.js is a powerful JavaScript library that allows for super easy interaction w/ the ChatGPT DOM.\r\n<ul><li>Feature-rich</li><li>Obje… [+3275 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Substack.com"
+			},
+			"author": "Alex Bezhan",
+			"title": "Going from React to Vanilla JavaScript",
+			"description": "This is a spreadsheet that I have built in React and then migrated to Vanilla JS, and I claim that Vanilla JS is better suited for building such complex interfaces. React story Almost nobody uses Vanilla JS nowadays to build web apps. React has taken over the…",
+			"url": "https://alexbezhan.substack.com/p/going-from-react-to-vanilla-js",
+			"urlToImage": "https://substackcdn.com/image/fetch/w_1200,h_600,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F663e5b3d-2874-420a-86da-b117fe3b2e12_2870x1318.png",
+			"publishedAt": "2023-07-08T13:38:16Z",
+			"content": "This is a spreadsheet that I have built in React and then migrated to Vanilla JS, and I claim that Vanilla JS is better suited for building such complex interfaces.\r\nReact story\r\nAlmost nobody uses V… [+2464 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "heise online"
+			},
+			"author": "Sebastian Springer",
+			"title": "heise+ | Webentwicklung: Die neue Generation JavaScript-Metaframeworks",
+			"description": "Clientseitige SPAs sind recht eingeschränkt. Metaframeworks wie Next.js, Remix und Gatsby kombinieren hingegen die Stärken von Client und Server.",
+			"url": "https://www.heise.de/hintergrund/Webentwicklung-Die-neue-Generation-JavaScript-Metaframeworks-9207984.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus",
+			"urlToImage": "https://heise.cloudimg.io/bound/1200x1200/q85.png-lossy-85.webp-lossy-85.foil1/_www-heise-de_/imgs/18/4/2/6/6/7/7/5/metaframeworks-0919e6c599602366.png",
+			"publishedAt": "2023-07-12T10:30:00Z",
+			"content": "Inhaltsverzeichnis\r\nDie Single-Page-Applications-Architektur (SPA) hat sich so durchgesetzt, dass fast jedes Problem damit lösbar ist. Unter den SPA-Frameworks konnten sich Angular, Vue und React eta… [+1536 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Github.io"
+			},
+			"author": "Tom MacWright",
+			"title": "Simple Statistics: Statistical methods in JavaScript for browsers and servers",
+			"description": "Statistical methods in readable JavaScript for browsers, servers, and people.",
+			"url": "https://simple-statistics.github.io/",
+			"urlToImage": null,
+			"publishedAt": "2023-06-24T14:49:53Z",
+			"content": "Simple Statistics is a JavaScript library that implements\r\n statistical methods.\r\nIt helps coders harness the power of statistics and statisticians\r\n understand code. The library is exhaustively docu… [+71 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Github.io"
+			},
+			"author": "Bryan Hu",
+			"title": "How to Convert Bytes to Grams",
+			"description": "In response to 'light-as-a-feather' JavaScript library claims",
+			"url": "https://thatxliner.github.io/blog/posts/how-to-convert-bytes-to-grams/",
+			"urlToImage": "https://thatxliner.github.io/How%20to%20convert%20bytes%20to%20grams.png",
+			"publishedAt": "2023-07-16T08:13:24Z",
+			"content": "In the JavaScript world, youve probably seen something like this:\r\nExample from the PrismJS website\r\nSure, its just an idiom to say that the JavaScript library wont add much to your bundle size (whic… [+4275 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Kaboomjs.com"
+			},
+			"author": null,
+			"title": "Kaboom.js 3000",
+			"description": "JavaScript game programming library that helps you make games fast and fun",
+			"url": "https://kaboomjs.com/blog/3000",
+			"urlToImage": "https://kaboomjs.com/static/blog/banners/3000.png",
+			"publishedAt": "2023-07-01T01:38:25Z",
+			"content": "tga, 01/15/2023\r\nWe're releasing Kaboom v3000 beta! This major version update includes a lot of new features and improvements, and also breaking changes (see migration guide below).\r\nTo try the beta … [+6023 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "ReadWrite"
+			},
+			"author": "Harikrishna Kundariya",
+			"title": "Top 10 ReactJS Development Companies in 2023",
+			"description": "A JavaScript library, ReactJS is increasingly gaining popularity among developers. It has become the most widely utilized technology among numerous brands, including Skype, Facebook, and Netflix due to its aesthetic layouts and intuitive features. So if you w…",
+			"url": "https://readwrite.com/top-10-reactjs-development-companies-in-2023/",
+			"urlToImage": "https://readwrite.com/wp-content/uploads/2023/04/Top-10-ReactJS-Development-Companies-in-2023.jpg",
+			"publishedAt": "2023-06-21T18:00:24Z",
+			"content": "A JavaScript library, ReactJS is increasingly gaining popularity among developers. It has become the most widely utilized technology among numerous brands, including Skype, Facebook, and Netflix due … [+9109 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Boing Boing"
+			},
+			"author": "Rob Beschizza",
+			"title": "The No CSS Club celebrates websites with no stylesheets, let alone javascript. There should be a No HTML Club for websites that are pure text",
+			"description": "I was alerted to the No CSS Club, which celebrates (and satirizes) the nostalgic, minimalist and brutalist tendencies of websites which avoid the bloat of modern frameworks (and of everything else that isn't raw HTML) \n\n\n\n\nThe modern web is literally Satan an…",
+			"url": "https://boingboing.net/2023/07/19/the-no-css-club-celebrates-websites-with-no-stylesheets-let-alone-javascript-there-should-be-a-no-html-club-for-websites-that-are-pure-text.html",
+			"urlToImage": "https://i0.wp.com/boingboing.net/wp-content/uploads/2021/06/websites.jpg?fit=1024%2C576&ssl=1",
+			"publishedAt": "2023-07-19T12:14:00Z",
+			"content": "I was alerted to the No CSS Club, which celebrates (and satirizes) the nostalgic, minimalist and brutalist tendencies of websites which avoid the bloat of modern frameworks (and of everything else th… [+4378 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Tedd.it"
+			},
+			"author": null,
+			"title": "Teddit Is Shutting Down",
+			"description": "Teddit is a free and open source alternative Reddit front-end focused on privacy. Teddit doesn't require you to have JavaScript enabled in your browser.",
+			"url": "https://tedd.it/shutdown",
+			"urlToImage": "https://tedd.it/logo512.png",
+			"publishedAt": "2023-07-16T01:51:49Z",
+			"content": "Tedd.it is Shutting Down\r\nOn August 1st, 2023, tedd.it will cease its operations and shut down permanently.\r\nWith the new restrictions on the Reddit API taking place, tedd.it's access to Reddit and i… [+1744 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "heise online"
+			},
+			"author": "Stefan Baumgartner",
+			"title": "heise+ | Softwareentwicklung: Warum Rust für TypeScript-Entwickler interessant ist",
+			"description": "Wer in JavaScript und TypeScript programmiert, muss sich nicht um Speichermanagement kümmern. Für Servercode und Serverless-Funktionen ist Rust eine Alternative",
+			"url": "https://www.heise.de/hintergrund/Softwareentwicklung-Warum-Rust-fuer-TypeScript-Entwickler-interessant-ist-9188382.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus",
+			"urlToImage": "https://heise.cloudimg.io/bound/1200x1200/q85.png-lossy-85.webp-lossy-85.foil1/_www-heise-de_/imgs/18/4/2/5/6/0/1/2/titel3_rust_js_digital-81912ceae31d221d.png",
+			"publishedAt": "2023-06-21T05:30:00Z",
+			"content": "Inhaltsverzeichnis\r\nRust ist laut Stack-Overflow-Umfrage derzeit die beliebteste Programmiersprache und vor allem die Big-Tech-Industrie investiert in Rust. Daher fragen sich viele Webprogrammierer u… [+3273 chars]"
+		},
+		{
+			"source": {
+				"id": "hacker-news",
+				"name": "Hacker News"
+			},
+			"author": null,
+			"title": "Ask HN: Anyone else notice that HN isn’t full of JavaScript frameworks lately?",
+			"description": "Comments",
+			"url": "https://news.ycombinator.com/item?id=36780295",
+			"urlToImage": null,
+			"publishedAt": "2023-07-18T23:20:52Z",
+			"content": "React is now the de facto choice and much less painful than past de facto choices, is my take on why. It has a mature and healthy ecosystem, and its relatively small surface makes it easy to learn an… [+350 chars]"
+		},
+		{
+			"source": {
+				"id": "the-next-web",
+				"name": "The Next Web"
+			},
+			"author": ".cult",
+			"title": "These are the best frameworks for full-stack developers in 2023",
+			"description": "This article was originally published on .cult by Luis Minvielle. .cult is a Berlin-based community platform for developers. We write about all things career-related, make original documentaries, and share heaps of other untold developer stories from around t…",
+			"url": "https://thenextweb.com/news/best-frameworks-fullstack-developers-2023",
+			"urlToImage": "https://img-cdn.tnwcdn.com/image/tnw-blurple?filter_last=1&fit=1280%2C640&url=https%3A%2F%2Fcdn0.tnwcdn.com%2Fwp-content%2Fblogs.dir%2F1%2Ffiles%2F2023%2F07%2FAdd-a-heading-1-1.jpg&signature=4121e97731cba16ac9555c86569e83e8",
+			"publishedAt": "2023-07-17T12:43:04Z",
+			"content": "This article was originally published on .cult by Luis Minvielle. .cult is a Berlin-based community platform for developers. We write about all things career-related, make original documentaries, and… [+8961 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Microsiervos.com"
+			},
+			"author": "alvy@microsiervos.com (Alvy)",
+			"title": "Un reloj de epiciclos hipnotizante, creado en JavaScript",
+			"description": "Sophie Houlden es una creadora de videojuegos que tiene en su web este interesante Reloj de epiciclos que emplea estas curiosas formas geométricas para marcar la hora exacta.\n\nLos epiciclos se «inventaron» en la época de los griegos para explicar los movimien…",
+			"url": "https://www.microsiervos.com/archivo/ordenadores/reloj-epiciclos-hipnotizante-javascript.html",
+			"urlToImage": "https://img.microsiervos.com/images2023/epitime.jpg",
+			"publishedAt": "2023-06-26T11:56:03Z",
+			"content": "Por @Alvy 26 de Junio de 2023\r\nSophie Houlden es una creadora de videojuegos que tiene en su web este interesante Reloj de epiciclos que emplea estas curiosas formas geométricas para marcar la hora e… [+953 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Genbeta.com"
+			},
+			"author": "José Alberto Lizana",
+			"title": "Aprende a programar gratis mientras juegas con esta web. Incluye Python, CSS o JavaScript",
+			"description": "Es una realidad que programar en pocos años no será algo opcional, y pasará a ser obligatorio para conseguir uno de los puestos de trabajo que están surgiendo debido a la revolución tecnológica que vivimos. Pero también es una realidad que sentarnos a estudia…",
+			"url": "https://www.genbeta.com/a-fondo/aprende-a-programar-gratis-juegas-esta-web-incluye-python-css-javascript",
+			"urlToImage": "https://i.blogs.es/a66376/inicio/840_560.jpeg",
+			"publishedAt": "2023-06-26T16:31:39Z",
+			"content": "Es una realidad que programar en pocos años no será algo opcional, y pasará a ser obligatorio para conseguir uno de los puestos de trabajo que están surgiendo debido a la revolución tecnológica que v… [+2166 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "MacRumors"
+			},
+			"author": "Juli Clover",
+			"title": "Apple Releases Safari Technology Preview 173 With Safari 17 Features",
+			"description": "Apple today released a new update for Safari Technology Preview, the experimental browser Apple first introduced in March 2016. Apple designed the ‌Safari Technology Preview‌ to test features that may be introduced into future release versions of Safari.\n\n\n\n\n…",
+			"url": "https://www.macrumors.com/2023/06/28/apple-releases-safari-technology-preview-173/",
+			"urlToImage": "https://images.macrumors.com/t/jHD1aGfXq86Ln_kfzTyWIF68vOo=/2368x/article-new/2021/02/Safari-Technology-Preview-Feature.jpg",
+			"publishedAt": "2023-06-28T21:36:28Z",
+			"content": "Apple today released a new update for Safari Technology Preview, the experimental browser Apple first introduced in March 2016. Apple designed the ‌Safari Technology Preview‌ to test features that ma… [+1759 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Liriliri.io"
+			},
+			"author": null,
+			"title": "Devtools for Mobile Browsers",
+			"description": "Comments",
+			"url": "https://eruda.liriliri.io/",
+			"urlToImage": null,
+			"publishedAt": "2023-06-26T11:54:08Z",
+			"content": "<li>MONITOR\r\nDisplay fps and memory\r\n</li><li>FEATURES\r\nBrowser feature detections\r\n</li><li>BENCHMARK\r\nRun JavaScript benchmarks\r\n</li><li>GEOLOCATION\r\nTest geolocation\r\n</li><li>TIMING\r\nShow perfor… [+159 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Github.com"
+			},
+			"author": "Mike Melanson",
+			"title": "“The days of using untyped languages on non-trivial projects are over.”",
+			"description": "TypeScript ushered in an era of gradual typing, where developers don’t have to choose between the agility of dynamic languages and the type safety of static languages, all while helping avoid the p...",
+			"url": "https://github.com/readme/featured/typescript-gradual-types",
+			"urlToImage": "https://images.ctfassets.net/s5uo95nf6njh/1clDarkWiac4qGdCsdVBCY/e8cbb25cd4a9be78cf72e15bae0afc1c/1200x628-ReadMe-FB_Post-Typescript__1_.png",
+			"publishedAt": "2023-07-14T16:34:29Z",
+			"content": "The FullScreenMario project burned brightly for a few short weeks in October 2013 after Boing Boing lauded\r\n it as a pretty impressive example of what HTML5, in-browser functionality can do. A few da… [+21164 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Pcjs.org"
+			},
+			"author": null,
+			"title": "Running DOS Software from the Command-Line",
+			"description": "Home of the original IBM PC emulator for browsers. PCjs offers a variety of online machine emulators written in JavaScript. Run DOS, Windows, OS/2 and other vintage PC applications in a web browser on your desktop computer, iPhone, or iPad. An assortment of m…",
+			"url": "https://www.pcjs.org/blog/2023/07/15/",
+			"urlToImage": "https://www.pcjs.org/assets/img/logo-home.png",
+			"publishedAt": "2023-07-16T05:46:39Z",
+			"content": "Running DOS Software from the Command-Line\r\nRecently, Ive been working on a command-line utility that uses PCjs machines to run DOS software on modern operating systems, and its called, aptly enough,… [+18158 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Github.com"
+			},
+			"author": "jesparza",
+			"title": "Peepdf – Powerful Python tool to analyze PDF documents",
+			"description": "Powerful Python tool to analyze PDF documents. Contribute to jesparza/peepdf development by creating an account on GitHub.",
+			"url": "https://github.com/jesparza/peepdf",
+			"urlToImage": "https://opengraph.githubassets.com/73b7ede866f51b71a99bb33f1962c33b20a83a9d4409bed36816b8c8cc9adae1/jesparza/peepdf",
+			"publishedAt": "2023-07-16T12:13:59Z",
+			"content": "peepdf is a Python tool to explore PDF files in order to find out if the file can be harmful or not. The aim of this tool is to provide all the necessary components that\r\na security researcher could … [+2210 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Fettblog.eu"
+			},
+			"author": null,
+			"title": "Inconvenient Truths about TypeScript",
+			"description": "I’m writing books about TypeScript and I do workshops and trainings online and in-house. Every time I meet a new group of developers there are some TypeScript facts that they need to be confronted with:",
+			"url": "https://fettblog.eu/5-truths-about-typescript/",
+			"urlToImage": "https://fettblog.eu/teasers/5-truths-about-typescript.jpg",
+			"publishedAt": "2023-07-18T12:46:13Z",
+			"content": "Im writing books about TypeScript and I do workshops and trainings online and in-house. Every time I meet a new group of developers there are some TypeScript facts that they need to be confronted wit… [+7370 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Hugotunius.se"
+			},
+			"author": null,
+			"title": "The Great Pendulum",
+			"description": "On the great pendulum that hides in the tech industry",
+			"url": "https://hugotunius.se/2023/07/09/the-great-pendulum.html",
+			"urlToImage": "https://hugotunius.se/favicon-192.png",
+			"publishedAt": "2023-07-10T10:11:07Z",
+			"content": "17 odd years ago when I stared programming, PHP was all the rage. Javascript was steadily gaining traction. Django and Ruby on Rails were in their infancy, but promised greatly increased productivity… [+2172 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Hackaday"
+			},
+			"author": "Lewin Day",
+			"title": "Gumball Coaster Is 3D-Printed Candy Fun",
+			"description": "Marble runs are fun enough on their own, but what if you could eat the marbles? Gumballs are the satisfying answer to that question. To that end, [Adrian Seeley] whipped up a system for producing g…",
+			"url": "https://hackaday.com/2023/06/23/gumball-coaster-is-3d-printed-candy-fun/",
+			"urlToImage": "https://hackaday.com/wp-content/uploads/2023/06/gumcoaster-8-6-screenshot.png",
+			"publishedAt": "2023-06-24T05:00:42Z",
+			"content": "Marble runs are fun enough on their own, but what if you could eat the marbles? Gumballs are the satisfying answer to that question. To that end, [Adrian Seeley] whipped up a system for producing gum… [+860 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Davidwalsh.name"
+			},
+			"author": "David Walsh",
+			"title": "JavaScript closest",
+			"description": "When it comes to finding relationships between elements, we traditionally think of a top-down approach. We can thank CSS and querySelector/querySelectorAll for that relationship in selectors. What if we want to find an element’s parent based on selector? To l…",
+			"url": "https://davidwalsh.name/element-closest",
+			"urlToImage": "https://davidwalsh.name/wp-content/themes/punky/images/logo.png",
+			"publishedAt": "2023-07-05T20:27:30Z",
+			"content": "When it comes to finding relationships between elements, we traditionally think of a top-down approach. We can thank CSS and querySelector/querySelectorAll for that relationship in selectors. What if… [+491 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Gitlab.com"
+			},
+			"author": null,
+			"title": "Gitlab AI is going head to head with GitHub Copilot",
+			"description": "GitLab’s AI-assisted Code Suggestions. Keeps your proprietary source code secure. Helps you code more productively. Puts billions of lines of code at your fingertips.",
+			"url": "https://about.gitlab.com/solutions/code-suggestions/",
+			"urlToImage": "https://about.gitlab.com/nuxt-images/solutions/code-suggestions/secure-code.jpeg",
+			"publishedAt": "2023-06-29T17:58:54Z",
+			"content": "AI-powered Code Suggestions that fit the way you work. is available in 13 languages: C/C++, C#, Go, Java, JavaScript, Python, PHP, Ruby, Rust, Scala, Kotlin, and TypeScript"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Trickster.dev"
+			},
+			"author": null,
+			"title": "Abusing Ahrefs Backlink Checker",
+			"description": "Code level discussion of web scraping, gray hat automation, growth hacking and bounty hunting",
+			"url": "https://www.trickster.dev/post/abusing-ahrefs-backlink-checker/",
+			"urlToImage": null,
+			"publishedAt": "2023-06-27T11:11:00Z",
+			"content": "World Wide Web is a network of HTML documents (pages) with hyperlinks between\r\nthem. Consider a directed graph that consists of vertices representing pages\r\nand edges representing links between pages… [+13289 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Macwright.com"
+			},
+			"author": "Tom MacWright",
+			"title": "Tom MacWright's Projects",
+			"description": "Comments",
+			"url": "https://macwright.com/projects/",
+			"urlToImage": "https://macwright.com/graphics/projects/preview.jpg",
+			"publishedAt": "2023-06-21T16:47:55Z",
+			"content": "PlacemarkA better map data editorOld FashionedA peculiar cocktail recipe browserSystem Font StackThe opposite of web fontsObservableHelped build a better way to code. 2017-2019Enigma machineA visual … [+1413 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Internet"
+			},
+			"author": "info@thehackernews.com (The Hacker News)",
+			"title": "Powerful JavaScript Dropper PindOS Distributes Bumblebee and IcedID Malware",
+			"description": "A new strain of JavaScript dropper has been observed delivering next-stage payloads like Bumblebee and IcedID.\nCybersecurity firm Deep Instinct is tracking the malware as PindOS, which contains the name in its \"User-Agent\" string.\nBoth Bumblebee and IcedID se…",
+			"url": "https://thehackernews.com/2023/06/powerful-javascript-dropper-pindos.html",
+			"urlToImage": "https://thehackernews.com/new-images/img/b/R29vZ2xl/AVvXsEhXf38sdGZd6xjM79xFIz2xxM-EUcQX8747fgC6dqKKMliYfCj-5wAK8Liw1Af49bYztCR-LvCgDi0CPotPWvWA1cm712j5wyZ1UPfh8l463M_0UTEwchCrk7XK-xe_5vtIAuwTEMgXHw6Dnplie39c670D3zM-oNtsczsr4HvkPU_vLicPhX3W5v6loGA/s728-e3650/code.jpg",
+			"publishedAt": "2023-06-23T10:40:00Z",
+			"content": "A new strain of JavaScript dropper has been observed delivering next-stage payloads like Bumblebee and IcedID.\r\nCybersecurity firm Deep Instinct is tracking the malware as PindOS, which contains the … [+1751 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Github.com"
+			},
+			"author": "262588213843476",
+			"title": "Svelte is a language",
+			"description": "The truth about Svelte. GitHub Gist: instantly share code, notes, and snippets.",
+			"url": "https://gist.github.com/Rich-Harris/0f910048478c2a6505d1c32185b61934",
+			"urlToImage": "https://github.githubassets.com/images/modules/gists/gist-og-image.png",
+			"publishedAt": "2023-07-11T16:36:51Z",
+			"content": "I've been deceiving you all. I had you believe that Svelte was a UI framework unlike React and Vue etc, because it shifts work out of the client and into the compiler, but a framework nonetheless.\r\nB… [+2253 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Adafruit.com"
+			},
+			"author": "Anne Barela",
+			"title": "An ESP8266 Simulator in JavaScript #Emulation @WokwiMakes",
+			"description": "esp8266js is an ESP8266 simulator in JavaScript from Wokwi, released under a permissive MIT license. See GitHub for more.",
+			"url": "https://blog.adafruit.com/2023/06/21/an-esp8266-simulator-in-javascript-emulation-wokwimakes/",
+			"urlToImage": "https://cdn-blog.adafruit.com/uploads/2023/06/one-2.jpg",
+			"publishedAt": "2023-06-21T13:37:30Z",
+			"content": "Adafruit publishes a wide range of writing and video content, including interviews and reporting on the maker market and the wider technology world. Our standards page is intended as a guide to best … [+2467 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Github.com"
+			},
+			"author": "262588213843476",
+			"title": "Ten Things You Can Do with GraalVM (2018)",
+			"description": "GitHub Gist: instantly share code, notes, and snippets.",
+			"url": "https://gist.github.com/chrisseaton/535e0e80ea19803d5529c623c6beb921",
+			"urlToImage": "https://github.githubassets.com/images/modules/gists/gist-og-image.png",
+			"publishedAt": "2023-07-14T13:19:24Z",
+			"content": "Ten Things You Can Do With GraalVM\r\nGraalVM is a polyglot platform from Oracle\r\nLabs with the goal of allowing you to write in any\r\nlanguage, using libraries from any language, and run on any platfor… [+31185 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Davidwalsh.name"
+			},
+			"author": "David Walsh",
+			"title": "JavaScript: Reverse Arrays",
+			"description": "Manipulating data is core to any programming language. JavaScript is no exception, especially as JSON has token over as a prime data delivery format. One such data manipulation is reversing arrays. You may want to reverse an array to show most recent transact…",
+			"url": "https://davidwalsh.name/javascript-reverse-array",
+			"urlToImage": "https://davidwalsh.name/wp-content/themes/punky/images/logo.png",
+			"publishedAt": "2023-06-26T10:41:43Z",
+			"content": "Manipulating data is core to any programming language. JavaScript is no exception, especially as JSON has token over as a prime data delivery format. One such data manipulation is reversing arrays. Y… [+853 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Gigazine.net"
+			},
+			"author": "@GIGAZINE",
+			"title": "Googleアナリティクスの過去データをMatomoにインポートして移行し解析結果を保存する手順まとめ",
+			"description": "Googleが提供するアクセス解析サービスのGoogleアナリティクスでは、2023年7月1日に「Google アナリティクス 4(GA4)」への完全移行が実施され、前世代のGoogleアナリティクスである「ユニバーサル アナリティクス(UA)」でのデータ処理が終了しました。完全に更新が止まったUAのデータをそのうちGoogleが消したりアクセス不能にしたりする前に、別のアクセス解析ツールであるMatomoへとインポートしてみました。続きを読む...",
+			"url": "https://gigazine.net/news/20230715-matomo-google-analytics/",
+			"urlToImage": "https://i.gzn.jp/img/2023/07/15/matomo-google-analytics/00.png",
+			"publishedAt": "2023-07-15T09:00:00Z",
+			"content": "GoogleGoogle202371Google 4(GA4)Google (UA)UAGoogleMatomo\r\nImport Google Analytics User Guide - Analytics Platform - Matomohttps://matomo.org/guide/installation-maintenance/import-google-analytics/\r\nM… [+525 chars]"
+		},
+		{
+			"source": {
+				"id": "hacker-news",
+				"name": "Hacker News"
+			},
+			"author": null,
+			"title": "PayPal “Buy Now” buttons have been broken for a week",
+			"description": "Comments",
+			"url": "https://news.ycombinator.com/item?id=36514098",
+			"urlToImage": null,
+			"publishedAt": "2023-06-28T23:23:56Z",
+			"content": "Eight days ago, PayPal broke their Buy Now buttons ^[1] for customers who sell electronic goods (i.e. who don't collect shipping addresses).The error is because they use `eval()` in their JavaScript,… [+478 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Swig.org"
+			},
+			"author": null,
+			"title": "Swig – Connect C/C++ programs with high-level programming languages",
+			"description": "Comments",
+			"url": "https://www.swig.org/",
+			"urlToImage": null,
+			"publishedAt": "2023-07-18T09:37:48Z",
+			"content": "SWIG is a software development tool that connects programs written in\r\nC and C++ with a variety of high-level programming\r\nlanguages. SWIG is used with different types of target languages including c… [+6105 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Rybicki.io"
+			},
+			"author": "Chris Rybicki",
+			"title": "Using WebAssembly to turn Rust crates into fast TypeScript libraries",
+			"description": "Hi there - my name’s Chris. I’m an avid software engineer that enjoys building things.",
+			"url": "https://rybicki.io/blog/2023/06/27/rust-crate-into-typescript-library.html",
+			"urlToImage": null,
+			"publishedAt": "2023-07-02T00:03:53Z",
+			"content": "Hi there - my names Chris.\r\nIm an avid software engineer that enjoys building things.\r\nIn this post, Ill walk through how you can create an npm package that re-exports the APIs of a Rust crate for us… [+13792 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Kurtextrem.de"
+			},
+			"author": "Jacob 'kurtextrem' Groß",
+			"title": "Breaking Up with SVG-in-JS in 2023",
+			"description": "Technical deep-dive on why you shouldn't have SVGs in your JS bundle and better techniques for JSX usage.",
+			"url": "https://kurtextrem.de/posts/svg-in-js/",
+			"urlToImage": "https://kurtextrem.de/assets/posts/2/cover-v.png",
+			"publishedAt": "2023-07-02T07:45:04Z",
+			"content": "In December last year, “Why We’re Breaking Up with CSS-in-JS” made rounds and describes why you no longer want to have CSS inside of your JS bundles.\r\nHowever, CSS isn’t the only thing that lands in … [+18423 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Github.com"
+			},
+			"author": "gibbok",
+			"title": "TypeScript Book",
+			"description": "The Concise TypeScript Book: A Concise Guide to Effective Development in TypeScript. Free and Open Source. - GitHub - gibbok/typescript-book: The Concise TypeScript Book: A Concise Guide to Effecti...",
+			"url": "https://github.com/gibbok/typescript-book",
+			"urlToImage": "https://opengraph.githubassets.com/4f6be8d6d21f09f7cee569d96aa7b3ad3fdeed6db0e40154759e886a7607ecc2/gibbok/typescript-book",
+			"publishedAt": "2023-07-08T05:37:31Z",
+			"content": "The Concise TypeScript Book provides a comprehensive and succinct overview of TypeScript's capabilities. It offers clear explanations covering all aspects found in the latest version of the language,… [+125244 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Hackaday"
+			},
+			"author": "Al Williams",
+			"title": "Ask Hackaday: Learn Assembly First, Last, or Never?",
+			"description": "A few days ago, I ran into an online post where someone pointed out the book “Learn to Program with Assembly” and asked if anyone had ever learned assembly language as a first programmi…",
+			"url": "https://hackaday.com/2023/07/14/ask-hackaday-learn-assembly-first-last-or-never/",
+			"urlToImage": "https://hackaday.com/wp-content/uploads/2023/07/digital_rain.png",
+			"publishedAt": "2023-07-14T17:00:21Z",
+			"content": "A few days ago, I ran into an online post where someone pointed out the book “Learn to Program with Assembly” and asked if anyone had ever learned assembly language as a first programming language. I… [+4573 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Csswizardry.com"
+			},
+			"author": null,
+			"title": "In Defence of DOM­Content­Loaded",
+			"description": "Is there any reason to still measure the DOMContentLoaded event? Perhaps…",
+			"url": "https://csswizardry.com/2023/07/in-defence-of-domcontentloaded/",
+			"urlToImage": "https://csswizardry.com/wp-content/uploads/2023/06/devtools-dcl.png",
+			"publishedAt": "2023-07-07T06:16:35Z",
+			"content": "1 July, 2023Written by Harry Roberts on CSS Wizardry.\r\nTable of Contents\r\n<ol><li>Measure the User Experience</li><li>Technically Meaningful</li><li>What Does It Actually Mean?</li><li>Putting It to … [+17023 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Thedailywtf.com"
+			},
+			"author": "Remy Porter",
+			"title": "Tales from the Interview: An Interview Resolution",
+			"description": "Jack's team was hiring a new web developer. As part of their interview process, they asked for some code samples- whether a public Github or just snippets to review. The goal isn't to be one of those companies that requires a super active Github history, but …",
+			"url": "https://thedailywtf.com/articles/an-interview-resolution",
+			"urlToImage": "https://thedailywtf.com/images/remy/Remy203-300x300.png",
+			"publishedAt": "2023-06-27T06:30:00Z",
+			"content": "Jack's team was hiring a new web developer. As part of their interview process, they asked for some code samples- whether a public Github or just snippets to review. The goal isn't to be one of those… [+2104 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "heise online"
+			},
+			"author": "Maika Möbus",
+			"title": "heise-Angebot: We Are Developers! Die englische Ausgabe 2023 ist kostenfrei verfügbar",
+			"description": "Die Sommerausgabe der \"We Are Developers!\"-Beilage zu c't und iX bietet in diesem Jahr unter anderem ein Tutorial zu Astro und eine Einführung in Rust.",
+			"url": "https://www.heise.de/news/We-Are-Developers-Die-englische-Ausgabe-2023-ist-kostenfrei-verfuegbar-9201013.html",
+			"urlToImage": "https://heise.cloudimg.io/bound/1200x1200/q85.png-lossy-85.webp-lossy-85.foil1/_www-heise-de_/imgs/18/4/2/6/2/9/6/3/We-Are-Developers-2023-02-40383a032c07fe60.jpg",
+			"publishedAt": "2023-06-30T08:53:00Z",
+			"content": "(This article is also available in English.)\r\nDas zweite englischsprachige \"We Are Developers!\"-Magazin liegt der neuesten Ausgabe der iX sowie der nächsten Ausgabe der c't bei. Daneben steht es kost… [+2759 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Railsnotes.xyz"
+			},
+			"author": "Harrison Broadbent",
+			"title": "Learn Stimulus in Ruby on Rails by Building a Toggle)",
+			"description": "So, you're new to Stimulus and want to try it out in your Ruby on Rails app. Or perhaps you just need a simple toggle pattern to follow. Either way, you're in the right place...",
+			"url": "https://railsnotes.xyz/blog/your-first-stimulus-controller-learn-stimulus-ruby-on-rails-by-building-a-toggle-beginners-guide",
+			"urlToImage": "https://railsnotes.xyz/static/images/your-first-stimulus-controller-learn-stimulus-ruby-on-rails-by-building-a-toggle-beginners-guide/cover.png",
+			"publishedAt": "2023-06-26T22:50:56Z",
+			"content": "So, you're new to Stimulus and want to try it out in your Ruby on Rails app. Or perhaps you just need a simple toggle pattern to follow. Either way, you're in the right place.\r\nToday we're going to b… [+19602 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Search Engine Journal"
+			},
+			"author": "Dan Taylor",
+			"title": "Rehydration For Client-Side Or Server-Side Rendering via @sejournal, @TaylorDanRW",
+			"description": "Rehydration is a necessity for your highly interactive website. Discover when best to use it for faster initial load times and improved user experience.\nThe post Rehydration For Client-Side Or Server-Side Rendering appeared first on Search Engine Journal.",
+			"url": "https://www.searchenginejournal.com/rehydration/485009/",
+			"urlToImage": "https://www.searchenginejournal.com/wp-content/uploads/2023/04/rehydration-6447b053e4285-sej.png",
+			"publishedAt": "2023-06-27T08:15:24Z",
+			"content": "Rehydration, or more simply ‘hydration,’ is a term that often comes up when we look at SPAs and server-side rendering.\r\nHydration does not, in essence, affect SEO but is an essential step for serving… [+5005 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Speckyboy.com"
+			},
+			"author": "Eric Karkovack",
+			"title": "8 Ways To Dress up Quotes With CSS & JavaScript",
+			"description": "Eight compelling CSS & JavaScript snippets to present quotes on your website. There is a style here to fit just about every need.\nThe post 8 Ways To Dress up Quotes With CSS & JavaScript appeared first on Speckyboy Design Magazine.",
+			"url": "https://speckyboy.com/css-javascript-snippets-quotes/",
+			"urlToImage": "https://speckyboy.com/wp-content/uploads/2023/07/quotes-css-thumb.jpg",
+			"publishedAt": "2023-07-10T06:49:24Z",
+			"content": "Quotes are among the most versatile web design elements. They can practically leap off the page. And you can also use them to create separation within long text passages.\r\nAs for styling, there’s a w… [+3660 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Search Engine Journal"
+			},
+			"author": "Ruth Everett",
+			"title": "Using Chrome DevTools To Diagnose Site Issues In An Audit via @sejournal, @rvtheverett",
+			"description": "Learn how to perform comprehensive SEO audits using Chrome DevTools, a powerful tool built into the Chrome browser. \nThe post Using Chrome DevTools To Diagnose Site Issues In An Audit appeared first on Search Engine Journal.",
+			"url": "https://www.searchenginejournal.com/seo-audit/chrome-devtools-to-diagnose-site-issues/",
+			"urlToImage": "https://www.searchenginejournal.com/wp-content/uploads/2023/07/chrome-devtools-64a2d87689564-sej.jpg",
+			"publishedAt": "2023-07-10T09:00:38Z",
+			"content": "Chrome DevTools is a free tool built into the Chrome browser. Its many features help you audit elements on your website in real time.\r\nChrome DevTools is a powerful toolbox for technical SEO audits a… [+20565 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "MakeUseOf"
+			},
+			"author": "David Ekete",
+			"title": "The Top 5 Node.js Linters",
+			"description": "A linter helps take the effort out of cleaning up your code, but which one should you choose for your Node.js project?",
+			"url": "https://www.makeuseof.com/node-linters-top/",
+			"urlToImage": "https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/05/woman-holding-nodejs-sticker.jpg",
+			"publishedAt": "2023-06-22T10:00:18Z",
+			"content": "Linters help to improve the quality and readability of your code by analyzing it for syntax and style errors. The resulting code is cleaner and more consistent, making it easier to maintain and debug… [+7482 chars]"
+		},
+		{
+			"source": {
+				"id": "hacker-news",
+				"name": "Hacker News"
+			},
+			"author": null,
+			"title": "HockeyStack (YC S23) Is Hiring Founding Engineers",
+			"description": "HockeyStack is the only tool on the market that can accurately show GTM teams (marketing, sales, customer success etc.) how their efforts translate to revenue or any other insight they want to get from their customer data. We are replacing the complex stack o…",
+			"url": "https://www.ycombinator.com/companies/hockeystack/jobs/JehKPk7-founding-backend-engineer",
+			"urlToImage": "https://www.ycombinator.com/images/original/missing.png",
+			"publishedAt": "2023-07-02T17:00:08Z",
+			"content": "HockeyStack is the only tool on the market that can accurately show GTM teams (marketing, sales, customer success etc.) how their efforts translate to revenue or any other insight they want to get fr… [+1087 chars]"
+		},
+		{
+			"source": {
+				"id": "hacker-news",
+				"name": "Hacker News"
+			},
+			"author": null,
+			"title": "Terra (YC W21) Is Hiring AI Engineers in London",
+			"description": "We work in super small teams, with extremely high velocity.\nWe are building multiple AI products, such as OdinAI, Graph API, and many more\nAs an AI engineer, you'll work in a small team, with maximum autonomy.\n- Be behind the curtain, creating, testing, and i…",
+			"url": "https://www.ycombinator.com/companies/terra/jobs/0f5CP0r-ai-engineer",
+			"urlToImage": "https://www.ycombinator.com/images/original/missing.png",
+			"publishedAt": "2023-07-01T07:00:08Z",
+			"content": "We work in super small teams, with extremely high velocity.\r\nWe are building multiple AI products, such as OdinAI, Graph API, and many more\r\nAs an AI engineer, you'll work in a small team, with maxim… [+1126 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Itch.io"
+			},
+			"author": null,
+			"title": "Decker Fantasy Camp 2023",
+			"description": "A game jam from 2023-07-01 to 2023-08-01 hosted by Internet Janitor. Summer is upon us. The weather is hot, but pixels are cooler than ever. Pack your bags with swim trunks, mosquito repellent, animated GIFs, plenty of...",
+			"url": "https://itch.io/jam/decker-fantasy-camp-2023",
+			"urlToImage": "https://img.itch.zone/aW1nLzEyMjE5Nzg1LmdpZg==/original/cRkvlS.gif",
+			"publishedAt": "2023-06-24T21:18:30Z",
+			"content": "Summer is upon us. The weather is hot, but pixels are cooler than ever. Pack your bags with swim trunks, mosquito repellent, animated GIFs, plenty of snacks, and, of course, your favorite multimedia … [+1194 chars]"
+		},
+		{
+			"source": {
+				"id": "hacker-news",
+				"name": "Hacker News"
+			},
+			"author": null,
+			"title": "Ask HN: How much do you work, what's your salary and how experienced are you?",
+			"description": "Comments",
+			"url": "https://news.ycombinator.com/item?id=36540289",
+			"urlToImage": null,
+			"publishedAt": "2023-06-30T18:53:25Z",
+			"content": "Last contract was ~100k EUR a year and that was my highest ever payment.I usually work 35-40 hours a week, fully remotely. Last time I worked in an office was in January 2011.\r\nSenior programmer with… [+926 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Artificialworlds.net"
+			},
+			"author": null,
+			"title": "Building cross-platform Rust for Web, Android and iOS – a minimal example",
+			"description": "Comments",
+			"url": "https://www.artificialworlds.net/blog/2022/07/06/building-cross-platform-rust-for-web-android-and-ios-a-minimal-example/",
+			"urlToImage": null,
+			"publishedAt": "2023-07-09T16:54:29Z",
+			"content": "Hi Andy,\r\nThanks for the great intro/reference. We’re currently looking at building a cross platform rust app targeting Android and Web. Being new to Rust, we’re in the process of getting our heads a… [+927 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Stefanjudis.com"
+			},
+			"author": null,
+			"title": "A Firefox-Only Minimap",
+			"description": "A quick explanation on how the Firefox-only map is built using the `element()` CSS function.",
+			"url": "https://www.stefanjudis.com/a-firefox-only-minimap/",
+			"urlToImage": null,
+			"publishedAt": "2023-07-17T12:44:09Z",
+			"content": "Greetings! \r\nIf you discovered this page, you're part of the few Firefox desktop users out there (market share is only 4% right now) and wondered how my blog posts' minimaps are made.\r\nIf you're not … [+786 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Boing Boing"
+			},
+			"author": "Jason Weisberger",
+			"title": "Twitter's latest panic-driven implosion may have been the result of a self-inflicted DDOS",
+			"description": "Elon \"Pedo Guy\" Musk's strategy of buying Twitter at the highest price, firing anyone who understands how it works, and then running his mouth seems to be paying off. This weekend, after rate-limiting users, Twitter is plagued by service issues related to rat…",
+			"url": "https://boingboing.net/2023/07/02/twitters-latest-panic-driven-implosion-may-have-been-the-result-of-a-self-inflicted-ddos.html",
+			"urlToImage": "https://i0.wp.com/boingboing.net/wp-content/uploads/2023/05/garbage-musk.jpeg?fit=1200%2C800&ssl=1",
+			"publishedAt": "2023-07-02T18:41:48Z",
+			"content": "Elon \"Pedo Guy\" Musk's strategy of buying Twitter at the highest price, firing anyone who understands how it works, and then running his mouth seems to be paying off. This weekend, after rate-limitin… [+2329 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Precursorapp.com"
+			},
+			"author": null,
+			"title": "Clojure is a product design tool",
+			"description": "Clojure makes me more efficient and extends my reach as a designer. And it protects me from complex design workflows...",
+			"url": "https://precursorapp.com/blog/clojure-is-a-product-design-tool",
+			"urlToImage": "https://dtwdl3ecuoduc.cloudfront.net/blog/clojurescript-is-a-design-tool/illustrator-onoff.gif",
+			"publishedAt": "2023-06-22T20:16:07Z",
+			"content": "As a product designer I'm obsessed with solving problems, and lately I've been designing with a niche programming language.\r\nClojure carries a stark notoriety among developers, despite being a tremen… [+5123 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "MakeUseOf"
+			},
+			"author": "Pranav Bhardwaj",
+			"title": "What Is a Device Fingerprint? Here's How Cybercriminals Can Use It",
+			"description": "Your device doesn't need an inkpad to leave a noticeable fingerprint, and the result can be just as personally identifiable.",
+			"url": "https://www.makeuseof.com/what-is-device-fingerprint/",
+			"urlToImage": "https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/12/finger-print-with-word-security.jpg",
+			"publishedAt": "2023-07-11T18:01:16Z",
+			"content": "Our devices regularly leave behind unique digital footprints. These footprints, known as device fingerprints, are created by the combination of various factors that make each device unique. Device fi… [+9261 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Debugagent.com"
+			},
+			"author": "Shai Almog",
+			"title": "GraphQL, JavaScript, Preprocessor, SQL, and More in Manifold",
+			"description": "We reached the final installment of our Manifold series but not the end of its remarkable capabilities. Throughout this series, we have delved into various aspects of Manifold, highlighting its unique features and showcasing how it enhances Java development. …",
+			"url": "https://debugagent.com/graphql-javascript-preprocessor-sql-and-more-in-manifold",
+			"urlToImage": "https://dz2cdn3.dzone.com/storage/article-thumb/17045386-thumb.jpg",
+			"publishedAt": "2023-07-05T10:41:50Z",
+			"content": "We reached the final installment of our Manifold series but not the end of its remarkable capabilities. Throughout this series, we have delved into various aspects of Manifold, highlighting its uniqu… [+6305 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Genbeta.com"
+			},
+			"author": "Marcos Merino",
+			"title": "ChatGPT Plus desactiva el plug-in de Bing: servía para acceder a contenidos actualizados… incluyendo las noticias de pago",
+			"description": "OpenAI, la empresa detrás de ChatGPT, cambió hace dos días la documentación de ayuda al usuario de su función 'Browse with Bing', anunciando la desactivación temporal de la misma hasta que corrijan un problema que han detectado:\n<!-- BREAK 1 -->\n\"Si un usuari…",
+			"url": "https://www.genbeta.com/actualidad/chatgpt-plus-desactiva-plug-in-bing-servia-para-acceder-a-contenidos-actualizados-incluyendo-noticias-pago",
+			"urlToImage": "https://i.blogs.es/22e345/chatgpt1/840_560.jpeg",
+			"publishedAt": "2023-07-05T12:27:27Z",
+			"content": "OpenAI, la empresa detrás de ChatGPT, cambió hace dos días la documentación de ayuda al usuario de su función 'Browse with Bing', anunciando la desactivación temporal de la misma hasta que corrijan u… [+2772 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "The Guardian"
+			},
+			"author": "Sarah Rendell",
+			"title": "Wimbledon women’s singles final: Marketa Vondrousova v Ons Jabeur – live",
+			"description": "<ul><li>Game-by-game updates from the final on Centre Court</li><li>Email Sarah with any thoughts | Tweet @rendellx</li></ul>Czech player Vondrousova got through the first three rounds in straight sets against Peyton Stearns, Veronika Kudermetova and Donna Ve…",
+			"url": "https://www.theguardian.com/sport/live/2023/jul/15/wimbledon-womens-final-marketa-vondrousova-ons-jabeur-tennis-live",
+			"urlToImage": "https://i.guim.co.uk/img/media/b8c09507b8166c70851a677abcc7cdbcf46a8872/0_0_4000_2400/master/4000.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=865fbad2aeeb3f40f9b85102a475b5d6",
+			"publishedAt": "2023-07-15T12:10:20Z",
+			"content": "&lt;strong&gt;Hello and welcome to the womens singles final at Wimbledon!&lt;/strong&gt; Ons Jabeur will be aiming to avenge her final loss last year when she fell to defeat over three sets to Elena … [+4267 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "The Guardian"
+			},
+			"author": "Luke McLaughlin",
+			"title": "Austrian Grand Prix: Formula One – live",
+			"description": "<ul><li>Updates from the Red Bull Ring, race starts 2pm BST</li><li>Verstappen speaks out over ‘unnecessary’ death of driver at Spa</li><li>Email Luke with any thoughts | Tweet @LukeMcLaughlin</li></ul>Formula One will stage a minute’s silence before today’s …",
+			"url": "https://www.theguardian.com/sport/live/2023/jul/02/austrian-grand-prix-formula-one-live",
+			"urlToImage": "https://i.guim.co.uk/img/media/8572dc4f19841283bb1f93ecce8f10005c399524/60_0_3277_1967/master/3277.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=bfa0dc9f8d3757f704afe837559e6e42",
+			"publishedAt": "2023-07-02T12:15:34Z",
+			"content": "&lt;strong&gt;Will anyone catch Max Verstappen?&lt;/strong&gt; Almost certainly not, either today at the Austrian grand prix, or in the drivers championship that he currently leads by a mammoth 69 po… [+4943 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "The Guardian"
+			},
+			"author": "Michael Butler (now) and Tom Davies (later)",
+			"title": "Tour de France 2023: stage nine updates on race to Puy de Dôme – live",
+			"description": "<ul><li>Cycling updates on 182km stage to Puy de Dôme</li><li>Astana Qazaqstan offer Cavendish contract to ride at 2024 Tour</li><li>Get in touch! Email Michael here or tweet @MichaelButler18</li></ul>Today’s finish at Puy de Dôme did not feature in the Tour …",
+			"url": "https://www.theguardian.com/sport/live/2023/jul/09/tour-de-france-2023-stage-nine-updates-on-race-to-to-puy-de-dome-live",
+			"urlToImage": "https://i.guim.co.uk/img/media/e095331c73e86bc84040b55feefcc2bc7fa0a5a3/0_406_5906_3545/master/5906.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=7b386de8035bfe4bf1dd5eb319032a19",
+			"publishedAt": "2023-07-09T11:22:29Z",
+			"content": "&lt;strong&gt;Hello and welcome to stage nine of the Tour de France 2023!&lt;/strong&gt; Today the cyclists will have a 182.4km ride from Saint-Leonard-de-Noblat to Put de Dome. And while the athlete… [+5556 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "The Guardian"
+			},
+			"author": "Dominic Booth (now) and Tanya Aldred (later)",
+			"title": "Wimbledon 2023: Murray v Tsitsipas to resume, Swiatek, Alcaraz and more – live",
+			"description": "<ul><li>News and updates from Friday’s matches at SW19</li><li>Murray battles back to lead Tsitsipas before time runs out</li><li>Get in touch! Email Dominic or tweet him @DomBooth19</li></ul>A great start for Kvitova. She’s broken Sasnovich to take race into…",
+			"url": "https://www.theguardian.com/sport/live/2023/jul/07/wimbledon-day-five-murray-tsitsipas-swiatek-alcaraz-djokovic-live",
+			"urlToImage": "https://i.guim.co.uk/img/media/5aac318729d59538a626dc374231766642306262/0_116_3500_2100/master/3500.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=384a0c15705cdbaf080e06a792e461eb",
+			"publishedAt": "2023-07-07T10:18:12Z",
+			"content": "&lt;strong&gt;Well, what a day five we have in store.&lt;/strong&gt; Those with Centre Court tickets are in for a real treat. Theyll get to see the third round matches involving top seeds Carlos Alca… [+4542 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "The Guardian"
+			},
+			"author": "Geoff Lemon at Old Trafford (now) and Rob Smyth (later)",
+			"title": "The Ashes 2023: England v Australia, fourth Test, day one – live",
+			"description": "<ul><li>Live cricket updates from Old Trafford (11am BST/8pm AEST)</li><li>Sign up for The Spin newsletter | Email Geoff or tweet him</li></ul>Now for Australia, and unusually their team news came out the day before the match. They have been waiting until the…",
+			"url": "https://www.theguardian.com/sport/live/2023/jul/19/the-ashes-2023-england-v-australia-fourth-test-day-one-live-updates-score-results-eng-vs-aus-old-trafford-start-time",
+			"urlToImage": "https://i.guim.co.uk/img/media/5fd1a7067fe3b31bd4e34334d1f6ff66a4a648d6/103_130_3310_1985/master/3310.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=56623eb162be08a2705cae6cc3ab0ca6",
+			"publishedAt": "2023-07-19T09:19:05Z",
+			"content": "Interesting call! Thats been their method in this new era. Know what youre chasing. Overheads can help, says Stokes, but he would have bowled even if the sun was out.&lt;/p&gt;\",\"elementId\":\"ea1653fe… [+6208 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "The Guardian"
+			},
+			"author": "Geoff Lemon at Lord's (now) and Rob Smyth (later)",
+			"title": "The Ashes 2023: England v Australia, second Test, day one – live",
+			"description": "<ul><li>Play at Lord’s in London starts at 11am BST/8pm AEST</li><li>Any thoughts? Email Geoff or tweet @GeoffLemonSport</li></ul>We finally have an Australian XI. We knew England’s yesterday.AustraliaDavid WarnerUsman KhawajaMarnus LabuschagneSteven SmithTra…",
+			"url": "https://www.theguardian.com/sport/live/2023/jun/28/the-ashes-2023-england-vs-australia-live-updates-second-test-cricket-eng-v-aus-latest-score-day-one-lords",
+			"urlToImage": "https://i.guim.co.uk/img/media/d14269ff6fec14e80302e57e4b5adf52e78ba357/0_129_3500_2099/master/3500.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=dc4cde543f763d8a53ba958fdb66026e",
+			"publishedAt": "2023-06-28T09:34:50Z",
+			"content": "We finally have an Australian XI. We knew Englands yesterday.&lt;/p&gt;\",\"elementId\":\"072b9a6d-2e92-4fc5-99d8-458c85d94af3\"},{\"_type\":\"model.dotcomrendering.pageElements.TextBlockElement\",\"html\":\"&lt… [+6732 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Github.com"
+			},
+			"author": "Explosion-Scratch",
+			"title": "Claude 2 Internal API Client and CLI",
+			"description": "Unofficial API for Claude-2 via Claude Web (Also CLI) - GitHub - Explosion-Scratch/claude-unofficial-api: Unofficial API for Claude-2 via Claude Web (Also CLI)",
+			"url": "https://github.com/Explosion-Scratch/claude-unofficial-api",
+			"urlToImage": "https://opengraph.githubassets.com/64a2ba570fbb5b20651c42f17884900fe0fa2165f701c44e425be932cb363852/Explosion-Scratch/claude-unofficial-api",
+			"publishedAt": "2023-07-14T19:55:22Z",
+			"content": "demo_sped.mp4\r\nThis is a lightweight JavaScript library for interacting with the Claude AI chatbot's unofficial internal API.\r\nFeatures\r\n<ul><li>\r\n Start new conversations</li><li>\r\n Upload files</li… [+2301 chars]"
+		},
+		{
+			"source": {
+				"id": "hacker-news",
+				"name": "Hacker News"
+			},
+			"author": null,
+			"title": "Ask HN: Why aren't modern programming languages, like Rust, more legible?",
+			"description": "Comments",
+			"url": "https://news.ycombinator.com/item?id=36558794",
+			"urlToImage": null,
+			"publishedAt": "2023-07-02T06:21:05Z",
+			"content": "This is a question I've often wondered, and am perhaps asking now out of sheer frustration. I have ADHD, of which my particular 'mutation' of ADHD makes it difficult to read and absorb written text.I… [+1362 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "MakeUseOf"
+			},
+			"author": "David Uzondu",
+			"title": "useState vs. useReducer in React: Picking the Right State Management Hook",
+			"description": "Confused between useState and useReducer in React? Discover the best state management hook for your needs in this helpful guide.",
+			"url": "https://www.makeuseof.com/usestate-vs-usereducer-react-hooks/",
+			"urlToImage": "https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2023/07/react-mui.jpg",
+			"publishedAt": "2023-07-13T14:00:17Z",
+			"content": "If you want to land a web development job, you'd have a better chance of succeeding if you learn the React JavaScript library. React is one of the most used libraries in the industry. And one of the … [+6307 chars]"
+		},
+		{
+			"source": {
+				"id": "hacker-news",
+				"name": "Hacker News"
+			},
+			"author": null,
+			"title": "Ask HN: Am I hurting my programming career by not exploring AI coding tools?",
+			"description": "Comments",
+			"url": "https://news.ycombinator.com/item?id=36521564",
+			"urlToImage": null,
+			"publishedAt": "2023-06-29T15:18:41Z",
+			"content": "I think its a neat skill to have at the moment, but not very meaningful when it comes to pure application and infrastructure development and design. What you can accomplish with GPT is still possible… [+1482 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Internet"
+			},
+			"author": "info@thehackernews.com (The Hacker News)",
+			"title": "MULTI#STORM Campaign Targets India and U.S. with Remote Access Trojans",
+			"description": "A new phishing campaign codenamed MULTI#STORM has set its sights on India and the U.S. by leveraging JavaScript files to deliver remote access trojans on compromised systems.\n\"The attack chain ends with the victim machine infected with multiple unique RAT (re…",
+			"url": "https://thehackernews.com/2023/06/multistorm-campaign-targets-india-and.html",
+			"urlToImage": "https://thehackernews.com/new-images/img/b/R29vZ2xl/AVvXsEjcbzJjjUydSSsFwLhn8J_FBOwb2rShTJ9u9L3O68jcLeqqboDAZoWxCgpm2Yz2GJCO23QQTYdEzi0X-VMlnJgAzudcTwDBGHhg6FSKGISfWNtTpCepZSW2bSH9ZlEd-aJjEmH0K8JFU2MXMVjDucMSquUd3sKlC5exxd1i03JsRSzKquMdSxtQ_Q2h6cA/s728-e3650/rat.jpg",
+			"publishedAt": "2023-06-22T16:58:00Z",
+			"content": "A new phishing campaign codenamed MULTI#STORM has set its sights on India and the U.S. by leveraging JavaScript files to deliver remote access trojans on compromised systems.\r\n\"The attack chain ends … [+2456 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Stratoflow.com"
+			},
+			"author": "Zuzanna Pajorska",
+			"title": "Python consumes 38x more energy than Java",
+			"description": "Which is the most efficient programming language, and thus the most environment friendly? Check the comparison we prepared based on reports.",
+			"url": "https://stratoflow.com/efficient-and-environment-friendly-programming-languages/",
+			"urlToImage": "https://stratoflow.com/wp-content/uploads/2022/11/Stratoflow-Blog-Headers-16.png",
+			"publishedAt": "2023-07-13T10:00:10Z",
+			"content": "Fastest and most energy efficient programming languages – what factors should be taken into account?\r\nJava, Python, Go, JavaSript, and other programming languages differ in many ways. We are talking … [+7073 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Convex.dev"
+			},
+			"author": null,
+			"title": "The Magic of Embeddings",
+			"description": "Embeddings, why they’re useful, and how we can store and use them in Convex.",
+			"url": "https://stack.convex.dev/the-magic-of-embeddings",
+			"urlToImage": "https://cdn.sanity.io/images/ts10onj4/production/4e40aa260c25ec7bdde41bd26f4a2a07f41d138a-1200x628.png?w=1200",
+			"publishedAt": "2023-06-24T01:26:05Z",
+			"content": "How similar are the strings I care about strong ACID guarantees and I like transactional databases? While theres a number of ways we could compare these stringssyntactically or grammatically for inst… [+7802 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Fingerprint.com"
+			},
+			"author": null,
+			"title": "Brute-forcing a macOS user’s real name from a browser using mDNS",
+			"description": "Exploring potential privacy vulnerabilities in Apple devices. This article discusses revealing a user's first name without permissions using the mDNS protocol.",
+			"url": "https://fingerprint.com/blog/apple-macos-mdns-brute-force/",
+			"urlToImage": "https://fingerprint.com/static/945665703aa4fb0ecf49155ee25bfe77/2detecting-user-first-name-on-apple-devices-with-mdns-protocol-without-permissions.png",
+			"publishedAt": "2023-07-13T17:24:22Z",
+			"content": "This article is the second in a series that explores potential privacy vulnerabilities in Apple devices. In the first article, we discussed detecting a system Apple ID region. This article presents a… [+7565 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Microsiervos.com"
+			},
+			"author": "alvy@microsiervos.com (Alvy)",
+			"title": "Los clubes web del «NO»",
+			"description": "La web moderna es literalmente Satán y probablemente se comerá a tu primogénito si no hacemos algo al respecto, ¡y rápido!– No CSS Club,hiperboleando\n\nMe encontré por ahí varios sitios web técnicamente reivindicativos hasta el extremismo, a saber:\n\n<ul>\n<li>E…",
+			"url": "https://www.microsiervos.com/archivo/internet/clubes-web-no.html",
+			"urlToImage": "https://img.microsiervos.com/images2023/No-JS-club.jpg",
+			"publishedAt": "2023-07-16T12:23:57Z",
+			"content": "Por @Alvy 16 de Julio de 2023\r\nLa web moderna es literalmente Satán y probablemente se comerá a tu primogénito si no hacemos algo al respecto, ¡y rápido!\r\n No CSS Club,hiperboleando\r\nMe encontré por … [+1093 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Cohost.org"
+			},
+			"author": "https://cohost.org/mcc",
+			"title": "A one-person oral history of Geocities HTML Chat (2022)",
+			"description": "Geocities HTML Chat has been forgotten by the world. It is possible I am the only one who remembers it. I only half remember it. It was my first Internet community.\n\nHere is what I remember.\n\nBackground\n\n 1. Geocities was a formative website for the older mil…",
+			"url": "https://cohost.org/mcc/post/325362-a-one-person-oral-hi",
+			"urlToImage": "https://staging.cohostcdn.org/attachment/3e0eb1db-2cb5-4c0f-a445-aae3e3f3d38f/empty169x2.png",
+			"publishedAt": "2023-06-26T21:28:44Z",
+			"content": "Geocities HTML Chat has been forgotten by the world. It is possible I am the only one who remembers it. I only half remember it. It was my first Internet community.Here is what I remember.<li>Geociti… [+14874 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Nodejs.org"
+			},
+			"author": null,
+			"title": "Node v20.4.0 (Current)",
+			"description": "Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
+			"url": "https://nodejs.org/en/blog/release/v20.4.0",
+			"urlToImage": "https://nodejs.org/static/images/logo-hexagon-card.png",
+			"publishedAt": "2023-07-05T14:13:56Z",
+			"content": "By Rafael Gonzaga, 2023-07-05\r\nNotable Changes\r\nMock Timers\r\nThe new feature allows developers to write more reliable and predictable tests for time-dependent functionality.\r\nIt includes MockTimers w… [+7435 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Wordpress.com"
+			},
+			"author": "advaitsarkar",
+			"title": "Cookie Clicker saved my PhD",
+			"description": "Or, how I cookie-clicked my way to a doctorate in interaction design. It’s been 5 years since I finished my Ph.D. on user interfaces for machine learning. To celebrate/commiserate, I’m sharing an u…",
+			"url": "https://advaitsarkar.wordpress.com/2021/12/17/how-my-online-gaming-addiction-saved-my-phd/",
+			"urlToImage": "https://advaitsarkar.files.wordpress.com/2021/12/pexels-photo-3977908.jpeg?w=1200",
+			"publishedAt": "2023-06-21T12:11:13Z",
+			"content": "Or, how I cookie-clicked my way to a doctorate in interaction design.\r\nIts been 5 years since I finished my Ph.D. on user interfaces for machine learning. To celebrate/commiserate, Im sharing an unus… [+11533 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Jayconrod.com"
+			},
+			"author": "Jay Conrod",
+			"title": "Goroutines: The concurrency model we wanted all along",
+			"description": "Goroutines are the single feature that distinguishes Go from other languages. They look very much like threads, but they are cheap to create and manage. Go's runtime schedules goroutines onto real threads efficiently so you can easily create lots of goroutine…",
+			"url": "https://jayconrod.com/posts/128/goroutines-the-concurrency-model-we-wanted-all-along",
+			"urlToImage": "https://jayconrod.com/images/beach-background-2x.jpg",
+			"publishedAt": "2023-07-07T18:40:09Z",
+			"content": "I often hear criticisms of Go that seem superficial: the variable names are too short, the functions are not overloadable, the exporting-symbols-by-capitalizing thing is weird, and until recently, ge… [+15971 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Digital Trends"
+			},
+			"author": "Fionna Agomuoh",
+			"title": "DMV-focused exploit leaves data of 9.5 million U.S. residents exposed",
+			"description": "A vulnerability in the MOVEit file transfer software has affected the personal records of millions of Americans across several states.",
+			"url": "https://www.digitaltrends.com/computing/dmv-focused-exploit-leaves-data-of-six-million-us-residents-exposed/",
+			"urlToImage": "https://www.digitaltrends.com/wp-content/uploads/2022/06/neon-keyboard-typing-01.jpg?resize=1200%2C630&p=1",
+			"publishedAt": "2023-06-21T19:53:19Z",
+			"content": "A vulnerability in the MOVEit file transfer software has led to the infiltration of the personal records of millions of Americans across several states, according to Tech Radar.\r\nThe exploit has targ… [+2340 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Denizaksimsek.com"
+			},
+			"author": null,
+			"title": "Using XPath in 2023",
+			"description": "Comments",
+			"url": "https://denizaksimsek.com/2023/xpath/",
+			"urlToImage": null,
+			"publishedAt": "2023-07-16T23:24:02Z",
+			"content": "In the latest release of htmx,\r\nyou can add event listeners to elements with hx-on:\r\nFor all the other hx- attributes, we use CSS attribute selectors.\r\nHowever, with hx-on, the attribute name is not … [+2407 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "The Guardian"
+			},
+			"author": "Luke McLaughlin",
+			"title": "Tour de France 2023: stage 13 heads for summit finish on Grand Colombier – live",
+			"description": "<ul><li>Updates as riders head for brutal climb on Bastille Day</li><li>Email Luke or tweet him with your thoughts on the race</li></ul>The omens could hardly be better for UAE Team Emirates today. In 2020, Tadej Pogacar won stage 15 atop Grand Colombier on a…",
+			"url": "https://www.theguardian.com/sport/live/2023/jul/14/tour-de-france-2023-stage-13-heads-for-summit-finish-on-grand-colombier-live",
+			"urlToImage": "https://i.guim.co.uk/img/media/2ffb727be027582c35cf0a23a734feedd9a0f943/0_365_5472_3283/master/5472.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=c0e2c458dc3185144b8dfe55c437e825",
+			"publishedAt": "2023-07-14T11:07:17Z",
+			"content": "Have you got much planned for this weekend? The &lt;a href=\\\"https://www.theguardian.com/sport/tourdefrance\\\" data-component=\\\"auto-linked-tag\\\"&gt;Tour de France&lt;/a&gt; certainly has: three mount… [+7696 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "The Guardian"
+			},
+			"author": "Daniel Gallan",
+			"title": "England v Australia: Women’s Ashes, first T20 match – live",
+			"description": "<ul><li>Updates from Edgbaston, 6.35pm BST/3.35am AEST start</li><li>Sign up to The Spin newsletter | Email Daniel or tweet him</li></ul>And they said cricket in England has a problem with equality?Yup…. Continue reading...",
+			"url": "https://www.theguardian.com/sport/live/2023/jul/01/england-australia-womens-ashes-cricket-first-t20-match-live",
+			"urlToImage": "https://i.guim.co.uk/img/media/086fd7e3eb315fdd3601aafc056a9d0956ffbace/0_158_2133_1280/master/2133.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=b5fd26385993261be9e6a3eea354c212",
+			"publishedAt": "2023-07-01T16:57:40Z",
+			"content": "England need to win this one if they have any hope of securing the Ashes. Its handy batting first here where the average score is 151. Anything north of that should be defendable.&lt;/p&gt;\",\"element… [+6604 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Nodejs.org"
+			},
+			"author": null,
+			"title": "Node v20.3.1 (Current)",
+			"description": "Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
+			"url": "https://nodejs.org/en/blog/release/v20.3.1",
+			"urlToImage": "https://nodejs.org/static/images/logo-hexagon-card.png",
+			"publishedAt": "2023-06-20T20:13:40Z",
+			"content": "By Rafael Gonzaga, 2023-06-20\r\nNotable Changes\r\nThe following CVEs are fixed in this release:\r\nMore detailed information on each of the vulnerabilities can be found in June 2023 Security Releases blo… [+5896 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Nodejs.org"
+			},
+			"author": null,
+			"title": "Node v16.20.1 (LTS)",
+			"description": "Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
+			"url": "https://nodejs.org/en/blog/release/v16.20.1",
+			"urlToImage": "https://nodejs.org/static/images/logo-hexagon-card.png",
+			"publishedAt": "2023-06-20T19:27:28Z",
+			"content": "By Rafael Gonzaga, 2023-06-20\r\nNotable Changes\r\nThe following CVEs are fixed in this release:\r\nMore detailed information on each of the vulnerabilities can be found in June 2023 Security Releases blo… [+5168 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Nodejs.org"
+			},
+			"author": null,
+			"title": "Node v18.16.1 (LTS)",
+			"description": "Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
+			"url": "https://nodejs.org/en/blog/release/v18.16.1",
+			"urlToImage": "https://nodejs.org/static/images/logo-hexagon-card.png",
+			"publishedAt": "2023-06-20T20:33:42Z",
+			"content": "By Rafael Gonzaga, 2023-06-20\r\nNotable Changes\r\nThe following CVEs are fixed in this release:\r\nMore detailed information on each of the vulnerabilities can be found in June 2023 Security Releases blo… [+5168 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "heise online"
+			},
+			"author": "Dirk Knop",
+			"title": "Vishing: Betrüger arbeiten mit raffinierter Voice-Phishing-Masche",
+			"description": "Betrüger erklimmen beim Voice-Phishing (Vishing) das nächste Level: Sie leiten etwa gezielt Anrufe um, um betrügerische Abzocke zu verschleiern.",
+			"url": "https://www.heise.de/news/Vishing-Betrueger-arbeiten-mit-raffinierter-Voice-Phishing-Masche-9212374.html",
+			"urlToImage": "https://heise.cloudimg.io/bound/1200x1200/q85.png-lossy-85.webp-lossy-85.foil1/_www-heise-de_/imgs/18/4/2/6/9/0/9/1/shutterstock_1705443640-1501776280c10e76.jpg",
+			"publishedAt": "2023-07-11T07:42:00Z",
+			"content": "Das Smartphone klingelt, dran ist ein vermeintlicher Bankberater: \"Hier spricht das Sicherheits-Team Ihrer Bank die Nachrichten, die Sie erhalten, sind kein Problem, machen Sie sich keine Sorgen!\" So… [+2704 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "MakeUseOf"
+			},
+			"author": "Idowu Omisola",
+			"title": "Interpreters and Compilers: What Are They and How Are They Different?",
+			"description": "Every line of code you write needs to be translated into a language your computer can understand. But how does that happen?",
+			"url": "https://www.makeuseof.com/interpreters-compilers-what-how-different/",
+			"urlToImage": "https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2023/07/compilers-and-interpreters-differences.jpg",
+			"publishedAt": "2023-07-12T14:30:19Z",
+			"content": "The source code of high-level programming languages like PHP, Swift, and JavaScript looks a bit like natural language. You'll see English words in such code and you’ll be able to understand some of i… [+7248 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "heise online"
+			},
+			"author": "Rainald Menge-Sonnentag",
+			"title": "Security: Schwachstellen-Scanner für Google Go geht an den Start",
+			"description": "Das Tool Govulncheck untersucht Go-Projekte auf bekannte Schwachstellen in den Dependencies. Eine Extension integriert die Überprüfung in Visual Studio Code.",
+			"url": "https://www.heise.de/news/Security-Schwachstellen-Scanner-fuer-Google-Go-geht-an-den-Start-9216187.html",
+			"urlToImage": "https://heise.cloudimg.io/bound/1200x1200/q85.png-lossy-85.webp-lossy-85.foil1/_www-heise-de_/imgs/18/4/2/7/1/1/2/5/shutterstock_2033447216-267e128890ac87b3.jpg",
+			"publishedAt": "2023-07-14T07:57:00Z",
+			"content": "Google hat das Tool Govulncheck und die zugehörige API in Version 1.0 veröffentlicht. Damit gilt das Tool, das Projekte in der Programmiersprache Go auf Schwachstellen untersucht, als stabil.\r\nDas er… [+2358 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "heise online"
+			},
+			"author": "Matthias Parbel",
+			"title": "heise-Angebot: Herbstcampus 2023: Praxisrelevantes Wissen für die Softwareentwicklung",
+			"description": "Der Herbstcampus geht in Langvorträgen und Workshops in die Tiefe, blickt aber auch über den Tellerrand. Frühbucherrabatt bis zum 1. August verlängert.",
+			"url": "https://www.heise.de/news/Herbstcampus-2023-Praxisrelevantes-Wissen-fuer-die-Softwareentwicklung-9219709.html",
+			"urlToImage": "https://heise.cloudimg.io/bound/1200x1200/q85.png-lossy-85.webp-lossy-85.foil1/_www-heise-de_/imgs/18/4/2/7/3/0/1/2/HO-Aufmacherbild-HC23_Termin-0025f8e081f101d5.png",
+			"publishedAt": "2023-07-18T13:42:00Z",
+			"content": "Inhaltsverzeichnis\r\nDer Herbstcampus bietet in seiner mittlerweile 15. Auflage erneut ein professionelles, aber auch familiäres Umfeld, in dem Entwicklerinnen und Entwickler nicht nur aktuelle Trends… [+2818 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "heise online"
+			},
+			"author": "undefined",
+			"title": "heise+ | Mercury: Mit Jupyter erstellte Anwendungen als Web-App aufbereiten",
+			"description": "Jupyter-Notebooks glänzen beim schnellen Umsetzen von Prototypen. Will man daraus Webanwendungen machen, kann man das ohne WebDev-Kenntnisse mit Mercury.",
+			"url": "https://www.heise.de/ratgeber/Mercury-Mit-Jupyter-erstellte-Anwendungen-als-Web-App-aufbereiten-9216206.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus",
+			"urlToImage": "https://heise.cloudimg.io/bound/1200x1200/q85.png-lossy-85.webp-lossy-85.foil1/_www-heise-de_/imgs/18/4/2/7/1/1/3/7/shutterstock_1495217498-6734606e066516f0.jpg",
+			"publishedAt": "2023-07-18T10:30:00Z",
+			"content": "Inhaltsverzeichnis\r\nMehr zu Tools\r\nJupyter-Notebooks haben sich als Tool zur Datenanalyse auf breiter Front etabliert. Die zellbasierte interaktive Nutzung mit einer möglichen Mischung aus Textausgab… [+2532 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "MakeUseOf"
+			},
+			"author": "David Ekete",
+			"title": "How to Use Enums in TypeScript",
+			"description": "TypeScript’s enumerated type is a handy way of packaging related values, with clear meaning.",
+			"url": "https://www.makeuseof.com/typescript-enums-how-to-use/",
+			"urlToImage": "https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/09/pexels-caryn-938165.jpg",
+			"publishedAt": "2023-06-24T20:00:18Z",
+			"content": "An enum, or an enumerated type, is a data structure that allows you to define a set of named values.\r\nEnums provide a way to represent a fixed set of values as constants. They can help make your code… [+7286 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Genbeta.com"
+			},
+			"author": "Antonio Vallejo",
+			"title": "Esta web es una mina para aprender a programar gratis: hasta 67 lenguajes y con la ayuda de miles de mentores",
+			"description": "Aprender a programar es algo a lo que cada vez más usuarios se apuntan, ya sea a través de distintos niveles académicos, cursos, o de forma autodidacta. Y si bien en Genbeta hemos hablado de infinidad de recursos para aprender a escribir código en múltiples l…",
+			"url": "https://www.genbeta.com/web/esta-web-mina-para-aprender-a-programar-gratis-67-lenguajes-ayuda-miles-mentores",
+			"urlToImage": "https://i.blogs.es/ef5dad/mentoring-55681b539cc66e98874c057bc76f778742f79f1e/840_560.jpeg",
+			"publishedAt": "2023-07-15T12:01:20Z",
+			"content": "Aprender a programar es algo a lo que cada vez más usuarios se apuntan, ya sea a través de distintos niveles académicos, cursos, o de forma autodidacta. Y si bien en Genbeta hemos hablado de infinida… [+2129 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Genbeta.com"
+			},
+			"author": "José Alberto Lizana",
+			"title": "Harvard está ofreciendo cursos gratis a cualquiera para aprender a programar desde cero o aprender una nueva temática",
+			"description": "Todos vemos la Universidad de Harvard como un lugar icónico que se relaciona con la excelencia mundial, pero sobre todo también con lo elitista que es y lo difícil que puede llegar a ser acceder a su formación. Pero aunque sea difícil, a día de hoy se pueden …",
+			"url": "https://www.genbeta.com/actualidad/harvard-esta-ofreciendo-cursos-gratis-a-para-aprender-a-programar-cero-aprender-nueva-tematica",
+			"urlToImage": "https://i.blogs.es/69de85/1366_2000-14-/840_560.jpeg",
+			"publishedAt": "2023-07-20T08:39:31Z",
+			"content": "Todos vemos la Universidad de Harvard como un lugar icónico que se relaciona con la excelencia mundial, pero sobre todo también con lo elitista que es y lo difícil que puede llegar a ser acceder a su… [+1956 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Tutsplus.com"
+			},
+			"author": "Monty Shokeen",
+			"title": "Tips for Effective Code-Generating ChatGPT Prompt Design",
+			"description": "This tutorial will teach you how to design effective prompts in ChatGPT in order to generate the code you want.",
+			"url": "https://code.tutsplus.com/tips-for-effective-code-generating-chatgpt-prompts-prompt-design--cms-107346t",
+			"urlToImage": "https://cms-assets.tutsplus.com/uploads/users/769/posts/107346/preview_image/studying_with_a_robot_2023_03_02_23_40_32_utc.jpg",
+			"publishedAt": "2023-07-19T03:35:47Z",
+			"content": "* { box-sizing: border-box; } body {margin: 0;}*{box-sizing:border-box;}body{margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;}\nChatGPT can be a great tool to boost your productivity… [+14718 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Blogspot.com"
+			},
+			"author": "Steve Yegge",
+			"title": "Dynamic Languages Strike Back (2008)",
+			"description": "Comments",
+			"url": "http://steve-yegge.blogspot.com/2008/05/dynamic-languages-strike-back.html",
+			"urlToImage": null,
+			"publishedAt": "2023-07-03T12:31:09Z",
+			"content": "Some guys at Stanford invited me to speak at their EE Computer Systems Colloquium last week. Pretty cool, eh? It was quite an honor. I wound up giving a talk on dynamic languages: the tools, the perf… [+74201 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Web.dev"
+			},
+			"author": null,
+			"title": "Google's new metrics: Interaction to Next Paint (INP)",
+			"description": "This post introduces the Interaction to Next Paint (INP) metric and explains how it works, how to measure it, and offers suggestions on how to improve it.",
+			"url": "https://web.dev/inp/",
+			"urlToImage": "https://web-dev.imgix.net/image/FNkVSAX8UDTTQWQkKftSgGe9clO2/uZ3hQS2EPrA9csOgkoXI.png?auto=format&fit=max&w=1200&fm=auto",
+			"publishedAt": "2023-07-11T15:35:30Z",
+			"content": "May 6, 2022 Updated Jun 28, 2023\r\nBrowser support<ul><li>Chrome 96, Supported 96 </li><li>Firefox, Not supported</li><li>Edge 96, Supported 96 </li><li>Safari, Not supported</li></ul>Source\r\nInteract… [+11594 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Thedailywtf.com"
+			},
+			"author": "Remy Porter",
+			"title": "CodeSOD: Evaluating Tax Burdens",
+			"description": "Many years ago, Westie's employer got hired to help a client rebuild their tax advice website. The current version was… not in good shape, didn't provide a good user experience, and was incredibly unmaintainable. Westie's mission? Rewrite it from scratch.\nAs …",
+			"url": "https://thedailywtf.com/articles/evaluating-tax-burdens",
+			"urlToImage": "https://thedailywtf.com/images/remy/Remy203-300x300.png",
+			"publishedAt": "2023-07-19T06:30:00Z",
+			"content": "Many years ago, Westie's employer got hired to help a client rebuild their tax advice website. The current version was not in good shape, didn't provide a good user experience, and was incredibly unm… [+962 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Biztoc.com"
+			},
+			"author": "blockworks.co",
+			"title": "ATOM holders can soon mint Agoric stablecoin IST",
+			"description": "Agoric, a blockchain network built on Cosmos, aims to empower developers in building DeFi applications using JavaScript. As part of its continuing development, the network is launching a minting application built on top of the Inter Protocol called Vaults. In…",
+			"url": "https://biztoc.com/x/6c1174934f194404",
+			"urlToImage": "https://c.biztoc.com/p/6c1174934f194404/s.webp",
+			"publishedAt": "2023-06-28T14:10:06Z",
+			"content": "Agoric, a blockchain network built on Cosmos, aims to empower developers in building DeFi applications using JavaScript. As part of its continuing development, the network is launching a minting appl… [+313 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Theregister.com"
+			},
+			"author": "Thomas Claburn",
+			"title": "JavaScript registry npm vulnerable to 'manifest confusion' abuse",
+			"description": "Failure to match metadata with packaged files presents supply chain vulnerability The npm Public Registry, a database of JavaScript packages, fails to compare npm package manifest data with the archive of files that data describes, creating an opportunity for…",
+			"url": "https://www.theregister.com/2023/06/27/javascript_registry_npm_vulnerable/",
+			"urlToImage": "https://regmedia.co.uk/2020/02/22/shutterstock_js_illustration.jpg",
+			"publishedAt": "2023-06-27T20:40:13Z",
+			"content": "The npm Public Registry, a database of JavaScript packages, fails to compare npm package manifest data with the archive of files that data describes, creating an opportunity for the installation and … [+6077 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Hillelwayne.com"
+			},
+			"author": null,
+			"title": "There's Always More History (2020)",
+			"description": "Last month I researched two historical questions. I originally posted summaries on Twitter and am reproducing both here.1\nWhy Vim Uses hjkl Question: Why does Vim use hjkl and not the arrow keys for navigation?\nCommon Explanation: It keeps your fingers on the…",
+			"url": "https://www.hillelwayne.com/post/always-more-history/",
+			"urlToImage": null,
+			"publishedAt": "2023-07-10T17:34:05Z",
+			"content": "Last month I researched two historical questions. I originally posted summaries on Twitter and am reproducing both here.1\r\nWhy Vim Uses hjkl\r\nQuestion: Why does Vim use hjkl and not the arrow keys fo… [+7144 chars]"
+		}
+	]
+}

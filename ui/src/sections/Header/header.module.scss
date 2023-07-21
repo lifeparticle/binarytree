@@ -1,15 +1,9 @@
-.headerContainer {
+.header {
 	display: flex;
-	justify-items: flex-end;
-	&__toggler {
-		margin-left: auto;
-		margin-right: 0;
-		width: fit-content;
-	}
-
-	background-color: var(--sand-0);
-
-	&.darkmode {
-		background-color: var(--gray-9);
+	align-items: center;
+	justify-content: flex-end;
+	&__switch {
+		// fix this
+		padding-top: 2px;
 	}
 }
