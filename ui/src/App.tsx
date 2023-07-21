@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { routes } from "routes.contant";
+import { Suspense, useState } from "react";
+import { routes } from "routes.constant";
 import { useRoutes } from "react-router-dom";
 import { ConfigProvider, Layout, theme } from "antd";
 import "App.scss";
@@ -38,7 +38,11 @@ function App() {
 							isDarkMode && "darkMode"
 						)}
 					>
-						<Content>{useRoutes(routes)}</Content>
+						<Content>
+							<Suspense fallback={<div>Loading...</div>}>
+								{useRoutes(routes)}
+							</Suspense>
+						</Content>
 					</div>
 				</div>
 			</div>

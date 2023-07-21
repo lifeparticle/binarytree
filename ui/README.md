@@ -1,7 +1,7 @@
 # Environment
 
 ```shell
-ndoe -v
+node -v
 # 18.16.1
 yarn -v
 # 3.6.1
