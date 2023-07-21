@@ -11,7 +11,7 @@ yarn -v
 
 ```shell
 yarn install --immutable
-yarn start
+yarn dev
 ```
 
 # Features
