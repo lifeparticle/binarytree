@@ -1,5 +1,5 @@
-let FILL_SPACE = `        `;
-let FILL_HYPHEN = `------`;
+const FILL_SPACE = `        `;
+const FILL_HYPHEN = `------`;
 
 export const generateRow = (
 	colNum: number,
@@ -15,20 +15,22 @@ export const generateRow = (
 };
 
 export const generateHeader = (colNum: number) => {
-	let tableHeader = generateRow(colNum);
-	let tableHeaderDivider = generateRow(colNum, FILL_HYPHEN);
+	const tableHeader = generateRow(colNum);
+	const tableHeaderDivider = generateRow(colNum, FILL_HYPHEN);
 	return `${tableHeader}\n${tableHeaderDivider}`;
 };
 
 export const updateHeader = (prevTable: string, colNum: number) => {
-	let lines = prevTable.split(/\r?\n/).filter((line: string) => line !== "");
-	let prevColNum = lines[0].replace(/[^|]/g, "").length - 1;
+	const lines = prevTable
+		.split(/\r?\n/)
+		.filter((line: string) => line !== "");
+	const prevColNum = lines[0].replace(/[^|]/g, "").length - 1;
 
 	if (prevColNum === colNum) {
 		return `${lines[0]}\n${lines[1]}`;
 	}
 
-	let isColNumInc = prevColNum < colNum ? true : false;
+	const isColNumInc = prevColNum < colNum ? true : false;
 	let tableHeader = ``;
 	let tableHeaderDivider = ``;
 
@@ -40,7 +42,7 @@ export const updateHeader = (prevTable: string, colNum: number) => {
 		)}`;
 		tableHeaderDivider = generateRow(colNum, FILL_HYPHEN);
 	} else {
-		let updatedColNum = prevColNum - (prevColNum - colNum) + 1;
+		const updatedColNum = prevColNum - (prevColNum - colNum) + 1;
 		let currChar = ``;
 
 		let tempUpdatedColNum = updatedColNum;
@@ -77,7 +79,7 @@ export const updateHeader = (prevTable: string, colNum: number) => {
 
 export const generateRows = (rowNum: number, colNum: number) => {
 	let result = ``;
-	let row = generateRow(colNum);
+	const row = generateRow(colNum);
 	for (let j = 0; j < rowNum; j++) {
 		result += `${row}\n`;
 	}
@@ -89,13 +91,15 @@ export const updateRows = (
 	rowNum: number,
 	colNum: number
 ) => {
-	let lines = prevTable.split(/\r?\n/).filter((line: string) => line !== "");
-	let prevRowNum = lines.length - 2;
-	let prevColNum = lines[0].replace(/[^|]/g, "").length - 1;
+	const lines = prevTable
+		.split(/\r?\n/)
+		.filter((line: string) => line !== "");
+	const prevRowNum = lines.length - 2;
+	const prevColNum = lines[0].replace(/[^|]/g, "").length - 1;
 	let appendRows = ``;
 	let result = ``;
 
-	let isColNumInc = prevColNum < colNum ? true : false;
+	const isColNumInc = prevColNum < colNum ? true : false;
 
 	if (rowNum === 0) return "";
 
@@ -109,7 +113,7 @@ export const updateRows = (
 				)}\n`;
 			}
 		} else {
-			let updatedColNum = prevColNum - (prevColNum - colNum) + 1;
+			const updatedColNum = prevColNum - (prevColNum - colNum) + 1;
 			let currChar = ``;
 			let updatedRow;
 			let tempUpdatedColNum;
@@ -135,10 +139,10 @@ export const updateRows = (
 		return result;
 	}
 
-	let isRowNumInc = prevRowNum < rowNum ? true : false;
+	const isRowNumInc = prevRowNum < rowNum ? true : false;
 
 	if (isRowNumInc) {
-		let rows =
+		const rows =
 			lines.length === 2
 				? ``
 				: `${lines.slice(2, lines.length).join("\n")}\n`;
@@ -166,11 +170,7 @@ export const updateTable = (
 	)}`;
 };
 
-export const createTable = (
-	rowNum: number,
-	colNum: number,
-	prevTable: string
-) => {
+export const createTable = (rowNum: number, colNum: number) => {
 	return `${generateHeader(colNum)}\n${generateRows(rowNum, colNum)}`;
 };
 
@@ -181,5 +181,5 @@ export const generateTable = (
 ) => {
 	return prevTable
 		? updateTable(rowNum, colNum, prevTable)
-		: createTable(rowNum, colNum, prevTable);
+		: createTable(rowNum, colNum);
 };

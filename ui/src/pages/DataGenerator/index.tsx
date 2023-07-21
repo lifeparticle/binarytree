@@ -57,7 +57,7 @@ const DataGenerator: React.FC = () => {
 
 		for (let j = 0; j < colNames.length; j++) {
 			fakeDataMethods.push(
-				FAKER_DATA_TYPES.find((faker, index) => {
+				FAKER_DATA_TYPES.find((faker) => {
 					return faker.value === fakeDataTypes[j];
 				})?.method
 			);

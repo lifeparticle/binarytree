@@ -1,5 +1,7 @@
 export const convertToJSON = (
 	colNames: string[],
 	rowNum: number,
-	result: any
-) => {};
+	result: string
+) => {
+	console.log(colNames, rowNum, result);
+};

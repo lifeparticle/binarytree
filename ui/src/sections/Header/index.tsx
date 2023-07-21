@@ -10,6 +10,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ isDarkMode, handleThemeChange }) => {
+	console.log(isDarkMode);
 	return (
 		<AntHeader className={style.header}>
 			<Switch
