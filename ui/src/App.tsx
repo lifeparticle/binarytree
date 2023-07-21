@@ -1,4 +1,3 @@
-import "App.scss";
 import { Layout } from "antd";
 import Menu from "sections/Menu";
 import Header from "sections/Header";
