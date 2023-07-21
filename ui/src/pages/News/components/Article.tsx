@@ -3,6 +3,7 @@ import style from "./article.module.scss";
 import { Article as IArticle } from "pages/News/types.ts/types";
 
 const Article: React.FC<IArticle> = ({ title, urlToImage, content, url }) => {
+	console.log(urlToImage);
 	return (
 		<div className={style.article}>
 			<a href={url} target="_blank" rel="noopener noreferrer">

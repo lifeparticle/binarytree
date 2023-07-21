@@ -3848,6 +3848,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/marked@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "@types/marked@npm:5.0.1"
+  checksum: 84323058e0a5127aeb67d709e1dcb0cc0024b190c337ca68813fcd1f271e7c7351ed14ea83e5e21a7a264fb87ba8767c0a98fb26d05a06181a7edd49299ef437
+  languageName: node
+  linkType: hard
+
 "@types/mdast@npm:^3.0.0":
   version: 3.0.12
   resolution: "@types/mdast@npm:3.0.12"
@@ -5936,6 +5943,7 @@ __metadata:
     "@testing-library/user-event": ^14.4.3
     "@types/file-saver": ^2.0.5
     "@types/jest": ^29.5.1
+    "@types/marked": ^5.0.1
     "@types/node": ^20.1.1
     "@types/react": ^18.2.15
     "@types/react-dom": ^18.2.7
