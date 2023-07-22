@@ -19,62 +19,77 @@ const Shades = lazy(() => import("pages/Shades"));
 const TableGenerator = lazy(() => import("pages/MdTableGenerator"));
 // --------------EndPage----------
 
-export const routes = [
+const routes = [
 	{
 		path: "/",
 		element: <News />,
+		title: "Dashboard",
 	},
 	{
 		path: "/sorting",
 		element: <Sorting />,
+		title: "Sorting",
 	},
 	{
 		path: "/me",
 		element: <MarkdownEditor />,
+		title: "Markdown Editor",
 	},
 	{
 		path: "/igfc",
 		element: <ImageGeneratorFromColors />,
+		title: "Image Generator From Colors",
 	},
 	{
 		path: "/te",
 		element: <TextEditor />,
+		title: "Text Editor",
 	},
 	{
 		path: "/icons",
 		element: <Icons />,
+		title: "Icons",
 	},
 	{
 		path: "/data_gen",
 		element: <DataGenerator />,
+		title: "Data Generator",
 	},
 	{
 		path: "/cp",
 		element: <ColorPicker />,
+		title: "Color Picker",
 	},
 	{
 		path: "/base_64",
 		element: <Base64 />,
+		title: "Base64",
 	},
 	{
 		path: "/shades",
 		element: <Shades />,
+		title: "Shades",
 	},
 	{
 		path: "/pixel_converter",
 		element: <PixelConverter />,
+		title: "Pixel Converter",
 	},
 	{
 		path: "/toc",
 		element: <TableOfContent />,
+		title: "Table Of Content",
 	},
 	{
 		path: "/md_table_generator",
 		element: <TableGenerator />,
+		title: "Markdown Table Generator",
 	},
-
 	{
 		path: "*",
 		element: <Navigate to="/404" />,
+		title: "Page Not Found",
 	},
 ];
+
+export { routes };
