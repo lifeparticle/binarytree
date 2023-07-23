@@ -36,14 +36,17 @@ function App() {
 						trigger={null}
 						collapsible
 						collapsed={collapsed}
-						// style={{
-						// 	overflow: "auto",
-						// 	height: "100vh",
-						// 	position: "fixed",
-						// 	left: 0,
-						// 	top: 64,
-						// 	bottom: 0,
-						// }}
+						style={{
+							overflow: "auto",
+							height: "100vh",
+							position: "sticky",
+							left: 0,
+							top: 64,
+							bottom: 0,
+							backgroundColor: isDarkMode
+								? "rgb(20, 20, 20)"
+								: "rgb(255, 255, 255)",
+						}}
 					>
 						<Menu isDarkMode={isDarkMode} collapsed={collapsed} />
 					</Sider>
