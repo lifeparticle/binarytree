@@ -3,5 +3,5 @@ export const convertToJSON = (
 	rowNum: number,
 	result: string
 ) => {
-	console.log(colNames, rowNum, result);
+	return JSON.stringify({ colNames, rowNum, result });
 };

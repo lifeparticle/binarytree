@@ -1,9 +1,8 @@
-import { useState } from "react";
-import style from "./TextEditor.module.scss";
-import { useEffect } from "react";
 import { Button } from "antd";
+import { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import style from "./TextEditor.module.scss";
 
 const TextEditor: React.FC = () => {
 	const [value, onChange] = useState("");
@@ -12,7 +11,7 @@ const TextEditor: React.FC = () => {
 	const [charCountWithoutSpace, setCharCountWithoutSpace] = useState(0);
 
 	useEffect(() => {
-		let cleanValue = value.replace(/(<([^>]+)>)/gi, " ").trim();
+		const cleanValue = value.replace(/(<([^>]+)>)/gi, " ").trim();
 		if (cleanValue === "") {
 			setWordCount(0);
 			setCharCount(0);
