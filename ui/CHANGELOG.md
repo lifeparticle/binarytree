@@ -1,3 +1,13 @@
+### [3.5.0] - 2023-07-23
+
+-   Create a ClipboardButton component
+-   Create a useCopyToClipboard hook
+-   ColorPicker CSS cleanups
+-   Refactor useWindowWidth hook
+-   Hide icon from header on mobile device
+-   Add borders.css
+-   Refactor colors.css
+
 ### [3.4.0] - 2023-07-23
 
 -   Change Color picker Design
