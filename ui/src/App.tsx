@@ -49,7 +49,7 @@ function App() {
 					</Sider>
 					<Content>
 						<Typography.Title level={2}>
-							{currentTitle}{" "}
+							{currentTitle}
 						</Typography.Title>
 						<Suspense fallback={<div>Loading...</div>}>
 							{useRoutes(routes)}
