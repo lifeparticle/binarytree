@@ -1,7 +1,7 @@
 import MDEditor from "@uiw/react-md-editor";
+import { InputNumber, Space } from "antd";
 import { useState } from "react";
 import { generateTable } from "./util/utils";
-import { InputNumber, Space } from "antd";
 
 const TableGenerator: React.FC = () => {
 	const [row, setRow] = useState(10);
@@ -44,9 +44,7 @@ const TableGenerator: React.FC = () => {
 
 			<MDEditor
 				value={output}
-				onChange={(val: any) => {
-					setOutput(val);
-				}}
+				onChange={(val) => val && setOutput(val)}
 				height="800px"
 				style={{ fontSize: "52" }}
 			/>

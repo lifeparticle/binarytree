@@ -1,4 +1,4 @@
-import { Space, Button } from "antd";
+import { Button, Space } from "antd";
 import style from "./Icons.module.scss";
 
 const URLS = [
@@ -31,7 +31,7 @@ const URLS = [
 const Icons: React.FC = () => {
 	return (
 		<Space className={style.icons}>
-			{URLS.map((url: any) => {
+			{URLS.map((url) => {
 				return (
 					<Space>
 						<h1 className={style.icons__title}> {url.name}</h1>

@@ -1,5 +1,23 @@
 .cp {
 	display: flex;
-	flex-direction: column;
-	grid-gap: 20px;
+
+	&__result {
+		display: flex;
+		justify-content: space-between;
+		gap: var(--bt-size-5);
+		margin: 10px 0px;
+
+		&__color {
+			border: 1px dashed #ddd;
+			padding: var(--bt-size-4) var(--bt-size-10);
+			flex: 1;
+			border-radius: var(--bt-size-5);
+		}
+
+		&__button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
 }
