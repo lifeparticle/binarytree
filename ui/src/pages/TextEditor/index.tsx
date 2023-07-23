@@ -28,8 +28,8 @@ const TextEditor: React.FC = () => {
 			<ReactQuill theme="snow" value={value} onChange={onChange} />
 			<div className={style.te__footer}>
 				<h4>Word count: {wordCount}</h4>
-				<h4>Charecter count: {charCount}</h4>
-				<h4>Charecter count without space: {charCountWithoutSpace}</h4>
+				<h4>Character count: {charCount}</h4>
+				<h4>Character count without space: {charCountWithoutSpace}</h4>
 			</div>
 
 			<Button
