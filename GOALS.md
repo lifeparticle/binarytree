@@ -1,3 +1,4 @@
-1. User Frindly
+1. User Friendly
 2. Zero Dependencies
-3. 100% code coverage
+3. 100% Code Coverage
+4. Don't Repeat Yourself (DRY)
