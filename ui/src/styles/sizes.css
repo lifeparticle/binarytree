@@ -1,7 +1,5 @@
 :where(html) {
-	--container-height: 100vh;
-	--content-scrollbar-width: 5px;
-	--content-padding: 10px;
-	--logo-container-height: 64px;
-	--card-image-height: 200px;
+	--bt-size-2: 2px;
+	--bt-size-16: 16px;
+	--bt-size-24: 24px;
 }
