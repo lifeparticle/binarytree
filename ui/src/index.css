@@ -29,12 +29,13 @@ h5 {
 
 .ant-layout {
 	min-height: 100vh;
+	/* margin-left: 200px; */
 }
 
 .ant-layout-content {
 	margin: 24px 16px 0px;
 	overflow: initial;
-	/* margin-left: 200px; */
+
 	padding: 0px 20px 20px 20px;
 }
 
