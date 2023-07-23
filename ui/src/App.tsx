@@ -2,7 +2,7 @@ import { Layout, Typography } from "antd";
 import Menu from "sections/Menu";
 import Header from "sections/Header";
 import { routes } from "routes.constant";
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useRoutes } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import useDarkMode, { usePageTitle, useWindowWidth } from "lib/utils/hooks";
@@ -14,8 +14,12 @@ export const MOBILE_WIDTH = 768;
 function App() {
 	const { algorithm, toggleTheme, isDarkMode } = useDarkMode();
 	const currentTitle = usePageTitle(routes);
-	const [collapsed, setCollapsed] = useState(false);
-	const { windowWidth } = useWindowWidth(MOBILE_WIDTH, setCollapsed);
+	const { windowWidth } = useWindowWidth(MOBILE_WIDTH);
+	const [collapsed, setCollapsed] = useState(windowWidth <= MOBILE_WIDTH);
+
+	useEffect(() => {
+		setCollapsed(windowWidth <= MOBILE_WIDTH);
+	}, [windowWidth]);
 
 	return (
 		<ConfigProvider

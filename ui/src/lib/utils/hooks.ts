@@ -30,14 +30,13 @@ const usePageTitle = (routes: Array<{ title: string; path: string }>) => {
 	return currentRoute ? currentRoute.title : "Default Title";
 };
 
-const useWindowWidth = (width: number, callback: (val: boolean) => void) => {
+const useWindowWidth = (width: number) => {
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
 	useEffect(() => {
 		const handleResize = () => {
 			const currentWidth = window.innerWidth;
 			setWindowWidth(currentWidth);
-			callback(currentWidth <= width);
 		};
 
 		window.addEventListener("resize", handleResize);
@@ -45,7 +44,7 @@ const useWindowWidth = (width: number, callback: (val: boolean) => void) => {
 		return () => {
 			window.removeEventListener("resize", handleResize);
 		};
-	}, [width, callback]);
+	}, [width]);
 
 	return { windowWidth };
 };
