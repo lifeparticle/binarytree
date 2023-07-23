@@ -1,7 +1,7 @@
 import { saveAs } from "file-saver";
 import jsPDF from "jspdf";
 
-const downloadFile = (fileContent: any, fileName: string, type: string) => {
+const downloadFile = (fileContent: string, fileName: string, type: string) => {
 	saveAs(
 		new File([fileContent], fileName, {
 			type: type,
@@ -9,7 +9,7 @@ const downloadFile = (fileContent: any, fileName: string, type: string) => {
 	);
 };
 
-const downloadPDFFile = (fileContent: any, fileName: string) => {
+const downloadPDFFile = (fileContent: string, fileName: string) => {
 	const doc = new jsPDF();
 	doc.text(fileContent, 10, 10);
 	doc.save(fileName);
@@ -17,7 +17,7 @@ const downloadPDFFile = (fileContent: any, fileName: string) => {
 	// saveAs(blob, fileName);
 };
 
-const downloadTextFile = (fileContent: any, fileName: string) => {
+const downloadTextFile = (fileContent: string, fileName: string) => {
 	downloadFile(fileContent, fileName, "text/plain;charset=utf-8");
 };
 

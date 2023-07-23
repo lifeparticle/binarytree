@@ -1,10 +1,10 @@
-import { useState } from "react";
-import MDEditor from "@uiw/react-md-editor";
-import style from "./MarkdownEditor.module.scss";
-import { Space, Button } from "antd";
-import { downloadPDFFile, downloadTextFile } from "lib/utils/files";
 import { useClipboard } from "@mantine/hooks";
+import MDEditor from "@uiw/react-md-editor";
+import { Button, Space } from "antd";
+import { downloadPDFFile, downloadTextFile } from "lib/utils/files";
 import { useCombinedKeyPress } from "lib/utils/keypress";
+import { useState } from "react";
+import style from "./MarkdownEditor.module.scss";
 
 const MarkdownEditor: React.FC = () => {
 	const [markdown, setMarkdown] = useState("");
@@ -32,7 +32,7 @@ const MarkdownEditor: React.FC = () => {
 			</Space>
 			<MDEditor
 				value={markdown}
-				onChange={(val: any) => setMarkdown(val)}
+				onChange={(val) => val && setMarkdown(val)}
 				height="800px"
 				style={{ fontSize: "52" }}
 			/>

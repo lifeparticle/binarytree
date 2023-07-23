@@ -1,23 +1,28 @@
 ### [3.0.0] - 2023-07-22
 
 -   CRA to vite
--
+
+### [2.2.0] - 2023-07-19
+
+-   Remove customs styles and use Ant Design Stuff
+
+### [2.1.0] - 2023-06-15
+
+-   Add Hook for Page Header
+
+### [2.0.1] - 2023-05-10
+
+-   Fix Eslist Error
 
 ### [2.0.0] - 2023-07-19
-
-**Breaking Change**:
 
 -   Updated the UI with major design changes.
 
 ### [1.1.0] - 2023-06-15
 
-**Feature**:
-
 -   Added dark mode option.
 
 ### [1.0.1] - 2023-05-10
-
-**Bug Fix**:
 
 -   Resolved issue Api & CSS
 

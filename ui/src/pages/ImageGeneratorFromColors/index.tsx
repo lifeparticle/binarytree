@@ -1,11 +1,11 @@
-import style from "./ImageGeneratorFromColors.module.scss";
 import { Button, Input, InputNumber, Space } from "antd";
-import { useRef, useState } from "react";
+import { saveAs } from "file-saver";
 import { toPng } from "html-to-image";
 import JSZip from "jszip";
 import JSZipUtils from "jszip-utils";
-import { saveAs } from "file-saver";
 import { useCombinedKeyPress } from "lib/utils/keypress";
+import { useRef, useState } from "react";
+import style from "./ImageGeneratorFromColors.module.scss";
 
 const { TextArea } = Input;
 
@@ -63,21 +63,21 @@ const ImageGeneratorFromColors: React.FC = () => {
 				<InputNumber
 					placeholder="NumberInput with custom layout"
 					value={height}
-					onChange={(val: any) => setHeight(val)}
+					onChange={(val) => val && setHeight(val)}
 					min={0}
 					style={{ width: "100%" }}
 				/>
 				<InputNumber
 					placeholder="NumberInput with custom layout"
 					value={width}
-					onChange={(val: any) => setWidth(val)}
+					onChange={(val) => val && setWidth(val)}
 					min={0}
 					style={{ width: "100%" }}
 				/>
 				<InputNumber
 					placeholder="NumberInput with custom layout"
 					value={rounded}
-					onChange={(val: any) => setRounded(val)}
+					onChange={(val) => val && setRounded(val)}
 					min={0}
 					style={{ width: "100%" }}
 				/>
