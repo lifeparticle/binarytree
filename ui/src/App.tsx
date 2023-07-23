@@ -5,33 +5,12 @@ import { routes } from "routes.constant";
 import { Suspense, useEffect, useState } from "react";
 import { useRoutes } from "react-router-dom";
 import { ConfigProvider } from "antd";
-import { theme } from "antd";
-import { usePageTitle } from "lib/utils/hooks";
+import useDarkMode, { usePageTitle, useWindowWidth } from "lib/utils/hooks";
 
 const { Sider, Content } = Layout;
 
-const useWindowWidth = () => {
-	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-	useEffect(() => {
-		const handleResize = () => setWindowWidth(window.innerWidth);
-		window.addEventListener("resize", handleResize);
-
-		return () => {
-			window.removeEventListener("resize", handleResize);
-		};
-	}, []);
-
-	return windowWidth;
-};
-
 function App() {
-	const { defaultAlgorithm, darkAlgorithm } = theme;
-	const [isDarkMode, setIsDarkMode] = useState(false);
-
-	const handleThemeChange = (checked: boolean) => {
-		setIsDarkMode(checked);
-	};
+	const { algorithm, toggleTheme, isDarkMode } = useDarkMode();
 	const currentTitle = usePageTitle(routes);
 	const windowWidth = useWindowWidth();
 	const [collapsed, setCollapsed] = useState(false);
@@ -43,12 +22,12 @@ function App() {
 	return (
 		<ConfigProvider
 			theme={{
-				algorithm: isDarkMode ? darkAlgorithm : defaultAlgorithm,
+				algorithm,
 			}}
 		>
 			<Layout>
 				<Header
-					handleThemeChange={handleThemeChange}
+					handleThemeChange={toggleTheme}
 					collapsed={collapsed}
 					setCollapsed={setCollapsed}
 				/>
