@@ -9,7 +9,7 @@ const Article: React.FC<IArticle> = ({ title, urlToImage, content, url }) => {
 			<a href={url} target="_blank" rel="noopener noreferrer">
 				<Card>
 					<h4>{title}</h4>
-					{content.slice(0, 120)}
+					{content}
 				</Card>
 			</a>
 		</div>
