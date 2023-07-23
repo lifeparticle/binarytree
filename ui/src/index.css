@@ -30,12 +30,19 @@ h5 {
 .ant-layout {
 	min-height: 100vh;
 }
+
 .ant-layout-content {
-	margin: 24px 16px;
-	padding: 24px;
+	margin: 24px 16px 0px;
+	overflow: initial;
+	/* margin-left: 200px; */
+	padding: 0px 20px 20px 20px;
 }
 
-.ant-menu {
-	/* height: 100vh; */
-	/* overflow: hidden; */
+.ant-layout-header {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	width: 100%;
+	display: flex;
+	align-items: center;
 }

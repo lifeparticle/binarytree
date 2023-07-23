@@ -1,4 +1,4 @@
-import { Row } from "antd";
+import { Row, Typography } from "antd";
 import ArticleCard from "./Article";
 import style from "./articles.module.scss";
 import { Article } from "pages/News/types.ts/types";
@@ -15,6 +15,13 @@ const Articles: React.FC<PropsType> = ({ articles }) => {
 					<ArticleCard {...article} key={article.url} />
 				))}
 			</Row>
+
+			<Typography.Title level={5}>
+				News from{" "}
+				<a href="https://newsapi.org/" target="_blank">
+					newsapi
+				</a>
+			</Typography.Title>
 		</div>
 	);
 };
