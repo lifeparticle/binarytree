@@ -1,16 +1,20 @@
-### [3.0.0] - 2023-07-22
+### [3.0.0] - 2023-07-21
 
 -   CRA to vite
 
-### [2.2.0] - 2023-07-19
+### [2.3.0] - 2023-07-21
+
+-   Add Lazy loading
+
+### [2.2.0] - 2023-07-21
 
 -   Remove customs styles and use Ant Design Stuff
 
-### [2.1.0] - 2023-06-15
+### [2.1.0] - 2023-06-21
 
 -   Add Hook for Page Header
 
-### [2.0.1] - 2023-05-10
+### [2.0.1] - 2023-05-21
 
 -   Fix Eslist Error
 
