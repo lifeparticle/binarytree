@@ -3,6 +3,7 @@ font-family: 'Inter', sans-serif; */
 
 @import "./styles/colors.css";
 @import "./styles/sizes.css";
+@import "./styles/z-index.css";
 
 body {
 	margin: 0;
