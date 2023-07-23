@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({
 	setCollapsed,
 }) => {
 	const {
-		token: { colorBgContainer },
+		token: { colorBgContainer, colorText },
 	} = theme.useToken();
 
 	return (
@@ -25,24 +25,27 @@ const Header: React.FC<HeaderProps> = ({
 			className={style.header}
 			style={{ background: colorBgContainer }}
 		>
-			<div>
-				<Link to={"/"}>
-					<Hexagon size={32} />
-				</Link>
+			<div className={style.header_left}>
+				<Button type="text">
+					<Link to={"/"}>
+						<Hexagon color={colorText} />
+					</Link>
+				</Button>
 
-				<Button onClick={() => setCollapsed(!collapsed)}>
+				<Button onClick={() => setCollapsed(!collapsed)} type="text">
 					{collapsed ? (
-						<ArrowRightFromLine size={12} />
+						<ArrowRightFromLine color={colorText} />
 					) : (
-						<ArrowLeftFromLine size={12} />
+						<ArrowLeftFromLine color={colorText} />
 					)}
 				</Button>
 			</div>
 			<Switch
 				className={style.header_switch}
-				checkedChildren={<Moon size={16} />}
+				checkedChildren={<Moon size={16} color={colorBgContainer} />}
 				unCheckedChildren={<Sun size={16} />}
 				onChange={handleThemeChange}
+				style={{ backgroundColor: colorText }}
 			/>
 		</AntHeader>
 	);
