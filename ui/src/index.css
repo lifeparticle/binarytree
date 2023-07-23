@@ -29,20 +29,18 @@ h5 {
 
 .ant-layout {
 	min-height: 100vh;
-	/* margin-left: 200px; */
 }
 
 .ant-layout-content {
-	margin: 24px 16px 0px;
-	overflow: initial;
-
-	padding: 0px 20px 20px 20px;
+	margin: var(--bt-size-16) var(--bt-size-24) 0px;
+	overflow-x: hidden;
+	padding: 0px var(--bt-size-16) var(--bt-size-16) var(--bt-size-16);
 }
 
 .ant-layout-header {
 	position: sticky;
 	top: 0;
-	z-index: 1;
+	z-index: var(--bt-z-index-header);
 	width: 100%;
 	display: flex;
 	align-items: center;

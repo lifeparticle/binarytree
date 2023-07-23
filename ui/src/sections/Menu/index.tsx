@@ -1,6 +1,5 @@
 import { Layout, Menu as AntdMenu } from "antd";
 import { To } from "react-router-dom";
-import style from "./menu.module.scss";
 import { useNavigate } from "react-router-dom";
 import { ITEMS } from "./items.constant";
 
@@ -19,12 +18,7 @@ const Menu: React.FC<MenuProps> = ({ collapsed }) => {
 	};
 
 	return (
-		<Sider
-			trigger={null}
-			collapsible
-			collapsed={collapsed}
-			className={style.menu}
-		>
+		<Sider trigger={null} collapsible collapsed={collapsed}>
 			<AntdMenu mode="inline" onClick={onClick} items={ITEMS} />
 		</Sider>
 	);
