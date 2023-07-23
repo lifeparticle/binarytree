@@ -1,6 +1,6 @@
+import { theme } from "antd";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { theme } from "antd";
 
 const useDarkMode = () => {
 	const { defaultAlgorithm, darkAlgorithm } = theme;
@@ -19,11 +19,11 @@ const useDarkMode = () => {
 
 export default useDarkMode;
 
-const usePageTitle = (routes: any) => {
+const usePageTitle = (routes: Array<{ title: string; path: string }>) => {
 	const location = useLocation();
 
 	const currentRoute = routes.find(
-		(route: any) => route.path === location.pathname
+		(route) => route.path === location.pathname
 	);
 
 	return currentRoute ? currentRoute.title : "Default Title";

@@ -1,9 +1,9 @@
+import { useClipboard } from "@mantine/hooks";
+import { AutoComplete, Button, Input, InputNumber, Select, Space } from "antd";
 import { downloadTextFile } from "lib/utils/files";
 import { useState } from "react";
 import style from "./DataGenerator.module.scss";
 import { FAKER_DATA_TYPES, MYSQL_DATA_TYPES } from "./utils/constants";
-import { Button, Input, InputNumber, Select, AutoComplete, Space } from "antd";
-import { useClipboard } from "@mantine/hooks";
 import { convertToJSON } from "./utils/utils";
 
 const { TextArea } = Input;
@@ -19,7 +19,7 @@ const DataGenerator: React.FC = () => {
 
 	const clipboard = useClipboard({ timeout: 500 });
 
-	const onColNamesChange = (e: any, idx: number) => {
+	const onColNamesChange = (e: string, idx: number) => {
 		setColNames((p: string[]) => [
 			...p.slice(0, idx),
 			e,
@@ -27,7 +27,7 @@ const DataGenerator: React.FC = () => {
 		]);
 	};
 
-	const onDataTypesChange = (e: any, idx: number) => {
+	const onDataTypesChange = (e: string, idx: number) => {
 		setDataTypes((p: string[]) => [
 			...p.slice(0, idx),
 			e,
@@ -35,7 +35,7 @@ const DataGenerator: React.FC = () => {
 		]);
 	};
 
-	const onFakeDataTypesChange = (e: any, idx: number) => {
+	const onFakeDataTypesChange = (e: string, idx: number) => {
 		setFakeDataTypes((p: string[]) => [
 			...p.slice(0, idx),
 			e,
@@ -45,8 +45,8 @@ const DataGenerator: React.FC = () => {
 
 	const onButtonClick = () => {
 		let result = "";
-		let allColName = colNames.join("`, `");
-		let fakeDataMethods: any = [];
+		const allColName = colNames.join("`, `");
+		const fakeDataMethods = [];
 		let sqlTable = `CREATE TABLE \`${tableName}\` (\n`;
 
 		for (let i = 0; i < colNames.length; i++) {
@@ -64,7 +64,7 @@ const DataGenerator: React.FC = () => {
 		}
 
 		for (let i = 0; i < rowNum; i++) {
-			let fakeData: any = [];
+			const fakeData = [];
 			for (let j = 0; j < colNames.length; j++) {
 				fakeData.push(fakeDataMethods[j]?.());
 			}
@@ -93,20 +93,26 @@ const DataGenerator: React.FC = () => {
 						placeholder="NumberInput with custom layout"
 						value={colNum}
 						min={0}
-						onChange={(val: any) => {
-							setColNum(val);
-							setColNames((p: string[]) => [...p.slice(0, val)]);
-							setDataTypes((p: string[]) => [...p.slice(0, val)]);
-							setFakeDataTypes((p: string[]) => [
-								...p.slice(0, val),
-							]);
+						onChange={(val) => {
+							if (val) {
+								setColNum(val);
+								setColNames((p: string[]) => [
+									...p.slice(0, val),
+								]);
+								setDataTypes((p: string[]) => [
+									...p.slice(0, val),
+								]);
+								setFakeDataTypes((p: string[]) => [
+									...p.slice(0, val),
+								]);
+							}
 						}}
 					/>
 					<InputNumber
 						placeholder="NumberInput with custom layout"
 						value={rowNum}
 						min={0}
-						onChange={(val: any) => setRowNum(val)}
+						onChange={(val) => val && setRowNum(val)}
 					/>
 				</div>
 
@@ -123,7 +129,7 @@ const DataGenerator: React.FC = () => {
 								}
 								placeholder="Pick one"
 								options={FAKER_DATA_TYPES}
-								onChange={(e: any) => {
+								onChange={(e) => {
 									onFakeDataTypesChange(e, k);
 									// how to handle this better?
 									// if (colNames[k] === "")

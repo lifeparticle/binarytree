@@ -1,8 +1,8 @@
-import style from "./ColorPicker.module.scss";
-import { useState } from "react";
 import { ColorPicker as CP } from "@mantine/core";
 import { useClipboard } from "@mantine/hooks";
 import { Button, Select } from "antd";
+import { useState } from "react";
+import style from "./ColorPicker.module.scss";
 
 const ColorPicker: React.FC = () => {
 	const [color, setColor] = useState("rgba(47, 119, 150, 0.7)");
@@ -15,7 +15,7 @@ const ColorPicker: React.FC = () => {
 		<div className={style.cp}>
 			<Select
 				defaultValue={format}
-				onChange={(val: any) => setFormat(val)}
+				onChange={(val) => val && setFormat(val)}
 				style={{ width: 200 }}
 				options={[
 					{ value: "hex", label: "HEX" },

@@ -163,7 +163,7 @@ const ITEMS: MenuProps["items"] = [
 			item.icon,
 			item.children
 				.filter((item) => item.show)
-				.map((child: any) =>
+				.map((child) =>
 					getItem(child.name, child.url as React.Key, child.icon)
 				)
 		);
