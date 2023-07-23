@@ -1,6 +1,7 @@
 import { theme } from "antd";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { message } from "antd";
 
 const useDarkMode = () => {
 	const { defaultAlgorithm, darkAlgorithm } = theme;
@@ -29,19 +30,49 @@ const usePageTitle = (routes: Array<{ title: string; path: string }>) => {
 	return currentRoute ? currentRoute.title : "Default Title";
 };
 
-const useWindowWidth = () => {
+const useWindowWidth = (width: number, callback: (val: boolean) => void) => {
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
 	useEffect(() => {
-		const handleResize = () => setWindowWidth(window.innerWidth);
+		const handleResize = () => {
+			const currentWidth = window.innerWidth;
+			setWindowWidth(currentWidth);
+			callback(currentWidth <= width);
+		};
+
 		window.addEventListener("resize", handleResize);
 
 		return () => {
 			window.removeEventListener("resize", handleResize);
 		};
-	}, []);
+	}, [width, callback]);
 
-	return windowWidth;
+	return { windowWidth };
 };
 
-export { usePageTitle, useWindowWidth };
+const useCopyToClipboard = (timeout = 500) => {
+	const [copied, setCopied] = useState(false);
+	const [messageApi, contextHolder] = message.useMessage();
+
+	const copyToClipboard = useCallback(
+		(text: string) => {
+			navigator.clipboard.writeText(text);
+
+			messageApi.open({
+				type: "success",
+				content: `Copied: ${text} 👍`,
+			});
+
+			setCopied(true);
+
+			setTimeout(() => {
+				setCopied(false);
+			}, timeout);
+		},
+		[messageApi, timeout]
+	);
+
+	return { copied, copyToClipboard, ClipboardMessage: contextHolder };
+};
+
+export { usePageTitle, useWindowWidth, useCopyToClipboard };

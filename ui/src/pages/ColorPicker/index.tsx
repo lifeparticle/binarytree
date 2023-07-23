@@ -1,9 +1,8 @@
 import { ColorPicker as CP } from "@mantine/core";
-import { useClipboard } from "@mantine/hooks";
-import { Button, Card, Space, Tag, message } from "antd";
-import { Check, Copy } from "lucide-react";
+import { Card, Space, Tag } from "antd";
 import { useState } from "react";
 import style from "./ColorPicker.module.scss";
+import ClipboardButton from "atoms/ClipboardButton";
 
 type FormatType = "hex" | "rgba" | "rgb" | "hsl" | "hsla";
 type DataType = {
@@ -22,69 +21,39 @@ const DATA_OPTIONS: DataType[] = [
 const ColorPicker: React.FC = () => {
 	const [color, setColor] = useState("rgba(47, 119, 150, 0.7)");
 	const [format, setFormat] = useState<FormatType>("hex");
-	const clipboard = useClipboard({ timeout: 500 });
-
-	const [messageApi, contextHolder] = message.useMessage();
-
-	const success = (color: string) => {
-		navigator.clipboard.writeText(color);
-
-		messageApi.open({
-			type: "success",
-			content: `Copied color : ${color} 👍`,
-		});
-	};
 
 	return (
 		<div className={style.cp}>
-			{contextHolder}
+			<Card bordered={false}>
+				<Space size="large" direction="vertical" wrap>
+					<Space size="small" direction="horizontal" wrap>
+						{DATA_OPTIONS.map((option) => (
+							<Tag
+								onClick={() => setFormat(option.value)}
+								color={
+									format === option.value
+										? "success"
+										: "default"
+								}
+								key={option.value}
+								style={{ cursor: "pointer" }}
+							>
+								{option.label}
+							</Tag>
+						))}
+					</Space>
 
-			<Card
-				bordered={false}
-				style={{ maxWidth: "var(--bt-cp-card-width)" }}
-			>
-				<Space
-					size={[0, 8]}
-					wrap
-					style={{ marginBottom: "var(--bt-size-24)" }}
-				>
-					{DATA_OPTIONS.map((option) => (
-						<Tag
-							onClick={() => setFormat(option.value)}
-							color={
-								format === option.value ? "success" : "default"
-							}
-							key={option.value}
-							style={{ cursor: "pointer" }}
-						>
-							{option.label}
-						</Tag>
-					))}
+					<CP
+						format={format}
+						value={color}
+						onChange={(val: string) => setColor(val)}
+						size="xl"
+					/>
+					<div className={style.cp__result}>
+						<div className={style.cp__result__color}>{color}</div>
+						<ClipboardButton text={color} />
+					</div>
 				</Space>
-				<CP
-					format={format}
-					value={color}
-					onChange={(val: string) => setColor(val)}
-					size="xl"
-				/>
-
-				<div className={style.cp__result}>
-					<div className={style.cp__result__color}>{color}</div>
-					<Button
-						onClick={() => {
-							clipboard.copy(color);
-							success(color);
-						}}
-						type="default"
-						className={style.cp__result__button}
-					>
-						{clipboard.copied ? (
-							<Check size={20} />
-						) : (
-							<Copy size={20} />
-						)}
-					</Button>
-				</div>
 			</Card>
 		</div>
 	);
