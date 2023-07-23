@@ -2,8 +2,7 @@ import { Card } from "antd";
 import style from "./article.module.scss";
 import { Article as IArticle } from "pages/News/types.ts/types";
 
-const Article: React.FC<IArticle> = ({ title, urlToImage, content, url }) => {
-	console.log(urlToImage);
+const Article: React.FC<IArticle> = ({ title, content, url }) => {
 	return (
 		<div className={style.article}>
 			<a href={url} target="_blank" rel="noopener noreferrer">
