@@ -16,11 +16,15 @@ jobs:
         with:
           node-version: "18.16.1"
           cache: yarn
+          
+      - name: PWD
+        run: pwd
 
       - name: Install Yarn
         run: |
           corepack enable
           corepack prepare yarn@stable --activate
+          pwd
         working-directory: ./automation-scripts/News
 
       - name: Install dependencies
