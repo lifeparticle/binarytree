@@ -1,20 +1,15 @@
-# Intital setup
-
 ```shell
-yarn init
+yarn init -2
+
 yarn add --dev typescript
 yarn add --dev ts-node
 yarn add --dev nodemon
-yarn add octokit
-npx tsc --init
+yarn add fs
+
 mkdir src
 cd src
 touch index.ts
-yarn add progress
-yarn add @types/progress
 ```
-
-# Run the script
 
 ```shell
 yarn start
