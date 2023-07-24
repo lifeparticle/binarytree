@@ -20,7 +20,7 @@ jobs:
           node-version: "18.16.1"
 
       - name: PWD
-        working-directory: ./automation-scripts/News
+        working-directory: automation-scripts/News
         run: pwd
         
       - name: Install Yarn
