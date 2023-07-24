@@ -1,3 +1,9 @@
+### [3.6.0] - 2023-07-24
+
+-   Persist dark/light mode
+-   Add End to End test in color picker
+-   Refactor Collapse Menu hide
+
 ### [3.5.0] - 2023-07-23
 
 -   Create a ClipboardButton component

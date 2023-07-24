@@ -1,18 +1,20 @@
-import { Layout, Typography } from "antd";
-import Menu from "sections/Menu";
-import Header from "sections/Header";
-import { routes } from "routes.constant";
+import { ConfigProvider, Layout, Typography } from "antd";
+import useDarkMode, { usePageTitle, useWindowWidth } from "lib/utils/hooks";
 import { Suspense, useEffect, useState } from "react";
 import { useRoutes } from "react-router-dom";
-import { ConfigProvider } from "antd";
-import useDarkMode, { usePageTitle, useWindowWidth } from "lib/utils/hooks";
+import { routes } from "routes.constant";
+import Header from "sections/Header";
+import Menu from "sections/Menu";
 
 const { Sider, Content } = Layout;
 
 export const MOBILE_WIDTH = 768;
 
 function App() {
-	const { algorithm, toggleTheme, isDarkMode } = useDarkMode();
+	const { algorithm, toggleTheme, isDarkMode } = useDarkMode(
+		"darkMode",
+		false
+	);
 	const currentTitle = usePageTitle(routes);
 	const { windowWidth } = useWindowWidth(MOBILE_WIDTH);
 	const [collapsed, setCollapsed] = useState(windowWidth <= MOBILE_WIDTH);
@@ -32,7 +34,6 @@ function App() {
 					handleThemeChange={toggleTheme}
 					collapsed={collapsed}
 					setCollapsed={setCollapsed}
-					windowWidth={windowWidth}
 				/>
 				<Layout hasSider>
 					<Sider
