@@ -50,8 +50,7 @@ jobs:
         working-directory: automation-scripts/News
 
       - name: Move data.json
-        run: mv data.json ../../ui/public/data.json
-        working-directory: automation-scripts/News
+        run: mv automation-scripts/News/data.json ui/public/data.json
 
       - name: Commit and push if changed
         run: |-
