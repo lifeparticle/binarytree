@@ -9,6 +9,10 @@ on:
 jobs:
   fetch-news:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: automation-scripts/News
     steps:
       - name: Checkout
         uses: actions/checkout@v2
