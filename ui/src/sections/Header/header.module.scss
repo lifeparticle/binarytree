@@ -6,6 +6,12 @@
 	&_left {
 		display: flex;
 		align-items: center;
+
+		&_collapseBtn {
+			@media (max-width: 768px) {
+				display: none;
+			}
+		}
 	}
 
 	&_switch {

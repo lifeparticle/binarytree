@@ -1,17 +1,12 @@
 import { message, theme } from "antd";
 import { useCallback, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { getLocalstorageValue, setLocalstorageValue } from "./helper";
 
 const useDarkMode = (storageKey: string, defaultValue: boolean) => {
 	const { defaultAlgorithm, darkAlgorithm } = theme;
 	const [isDarkMode, setIsDarkMode] = useState(() => {
-		const storageValue = localStorage.getItem(storageKey);
-
-		if (storageValue) {
-			return JSON.parse(storageValue);
-		} else {
-			return defaultValue;
-		}
+		return getLocalstorageValue<boolean>(storageKey) ?? defaultValue;
 	});
 
 	const toggleTheme = () => {
@@ -19,7 +14,7 @@ const useDarkMode = (storageKey: string, defaultValue: boolean) => {
 	};
 
 	useEffect(() => {
-		localStorage.setItem(storageKey, JSON.stringify(isDarkMode));
+		setLocalstorageValue<boolean>(storageKey, isDarkMode);
 	}, [isDarkMode]);
 
 	return {
