@@ -21,7 +21,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "18.16.1"
-          cache: yarn
       
       - name: List directory contents
         run: ls -R      
@@ -34,7 +33,7 @@ jobs:
           corepack enable
           corepack prepare yarn@stable --activate
           pwd
-        working-directory: ./automation-scripts/News
+        working-directory: automation-scripts/News
 
       - name: Install dependencies
         run: yarn install --immutable
@@ -42,13 +41,13 @@ jobs:
 
       - name: Print current directory
         run: pwd
-        working-directory: ./automation-scripts/News
+        working-directory: automation-scripts/News
 
       - name: Run
         env:
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
         run: yarn start
-        working-directory: ./automation-scripts/News
+        working-directory: automation-scripts/News
 
       - name: Commit and push if changed
         run: |-
@@ -57,4 +56,4 @@ jobs:
           git add data.json
           git commit -m "Update data.json" || true
           git push
-        working-directory: ./automation-scripts/News
+        working-directory: automation-scripts/News
