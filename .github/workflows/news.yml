@@ -33,21 +33,17 @@ jobs:
           corepack enable
           corepack prepare yarn@stable --activate
           pwd
-        # working-directory: automation-scripts/News
 
       - name: Install dependencies
         run: yarn install --immutable
-        # working-directory: ./automation-scripts/News
 
       - name: Print current directory
         run: pwd
-        # working-directory: automation-scripts/News
 
       - name: Run
         env:
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
         run: yarn start
-        # working-directory: automation-scripts/News
 
       # - name: Move data.json
       #   run: mv automation-scripts/News/data.json ui/public/data.json
@@ -58,4 +54,3 @@ jobs:
           git add data.json
           git commit -m "Update data.json" || true
           git push
-        # working-directory: automation-scripts/News
