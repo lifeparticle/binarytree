@@ -34,7 +34,6 @@ function App() {
 					handleThemeChange={toggleTheme}
 					collapsed={collapsed}
 					setCollapsed={setCollapsed}
-					windowWidth={windowWidth}
 				/>
 				<Layout hasSider>
 					<Sider
