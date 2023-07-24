@@ -27,6 +27,10 @@ jobs:
         run: yarn install --immutable
         working-directory: ./automation-scripts/News
 
+      - name: Print current directory
+        run: pwd
+        working-directory: ./automation-scripts/News
+
       - name: Run
         env:
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
