@@ -2,10 +2,10 @@ name: Fetch News
 
 on:
   schedule:
-    - cron: '0 0 * * 1'
+    - cron: "0 0 * * 1"
   push:
-    branches: [main, master]
-    
+    branches: main
+
 jobs:
   fetch-news:
     runs-on: ubuntu-latest
@@ -21,10 +21,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "18.16.1"
-      
+
       - name: List directory contents
-        run: ls -R      
-        
+        run: ls -R
+
       - name: PWD
         run: pwd
 
@@ -47,6 +47,10 @@ jobs:
         env:
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
         run: yarn start
+        working-directory: automation-scripts/News
+
+      - name: Move data.json
+        run: mv data.json ../../ui/public/data.json
         working-directory: automation-scripts/News
 
       - name: Commit and push if changed
