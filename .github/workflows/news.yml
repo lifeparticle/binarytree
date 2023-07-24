@@ -10,6 +10,10 @@ on:
 jobs:
   fetch-news:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: automation-scripts/News
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -21,14 +25,8 @@ jobs:
           
       - name: List directory contents
         run: ls -R     
-
-      - name: PWD
-        working-directory: automation-scripts/News
-        run: pwd
         
       - name: Install Yarn
         run: |
           corepack enable
           corepack prepare yarn@stable --activate
-          pwd
-        working-directory: ./automation-scripts/News
