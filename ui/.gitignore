@@ -25,3 +25,7 @@ dist-ssr
 
 .DS_Store
 .yarn/*
+
+/test-results/
+/playwright-report/
+/playwright/.cache/
