@@ -3,7 +3,9 @@ name: Fetch News
 on:
   schedule:
     - cron: '0 0 * * 1'
-
+  push:
+    branches: [main, master]
+    
 jobs:
   fetch-news:
     runs-on: ubuntu-latest
