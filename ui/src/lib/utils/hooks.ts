@@ -1,15 +1,26 @@
-import { theme } from "antd";
-import { useEffect, useState, useCallback } from "react";
+import { message, theme } from "antd";
+import { useCallback, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { message } from "antd";
 
-const useDarkMode = () => {
+const useDarkMode = (storageKey: string, defaultValue: boolean) => {
 	const { defaultAlgorithm, darkAlgorithm } = theme;
-	const [isDarkMode, setIsDarkMode] = useState(false);
+	const [isDarkMode, setIsDarkMode] = useState(() => {
+		const storageValue = localStorage.getItem(storageKey);
+
+		if (storageValue) {
+			return JSON.parse(storageValue);
+		} else {
+			return defaultValue;
+		}
+	});
 
 	const toggleTheme = () => {
 		setIsDarkMode(!isDarkMode);
 	};
+
+	useEffect(() => {
+		localStorage.setItem(storageKey, JSON.stringify(isDarkMode));
+	}, [isDarkMode]);
 
 	return {
 		algorithm: isDarkMode ? darkAlgorithm : defaultAlgorithm,
