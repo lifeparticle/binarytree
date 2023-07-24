@@ -16,36 +16,3 @@ jobs:
         with:
           node-version: "18.16.1"
           cache: yarn
-          
-      - name: PWD
-        run: pwd
-
-      - name: Install Yarn
-        run: |
-          corepack enable
-          corepack prepare yarn@stable --activate
-          pwd
-        working-directory: ./automation-scripts/News
-
-      - name: Install dependencies
-        run: yarn install --immutable
-        working-directory: ./automation-scripts/News
-
-      - name: Print current directory
-        run: pwd
-        working-directory: ./automation-scripts/News
-
-      - name: Run
-        env:
-          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
-        run: yarn start
-        working-directory: ./automation-scripts/News
-
-      - name: Commit and push if changed
-        run: |-
-          git config --global user.email "actions@github.com"
-          git config --global user.name "GitHub Actions"
-          git add data.json
-          git commit -m "Update data.json" || true
-          git push
-        working-directory: ./automation-scripts/News
