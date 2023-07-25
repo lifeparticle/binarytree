@@ -45,7 +45,7 @@ jobs:
         run: yarn start
 
       - name: Move data.json
-        run: git mv data.json ../../ui/public/data.json
+        run: git mv -f data.json ../../ui/public/data.json
 
 #       - name: change directory
 #         run: |-
