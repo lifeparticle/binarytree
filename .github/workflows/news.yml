@@ -21,13 +21,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "18.16.1"
-
-      - name: List directory contents
-        run: ls -R
-
-      - name: PWD
-        run: pwd
-
+          
       - name: Install Yarn
         run: |
           corepack enable
@@ -36,9 +30,6 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
 
-      - name: Print current directory
-        run: pwd
-
       - name: Run
         env:
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
@@ -46,11 +37,6 @@ jobs:
 
       - name: Move data.json
         run: git mv data.json ../../ui/public/data.json
-
-#       - name: change directory
-#         run: |-
-#           cd ../..
-#           ls
         
       - name: Commit and push if changed
         run: |-
