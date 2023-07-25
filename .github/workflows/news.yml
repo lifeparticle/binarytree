@@ -45,13 +45,12 @@ jobs:
         run: yarn start
 
 #       - name: Move data.json
-#         run: git mv automation-scripts/News/data.json ../ui/public/data.json
+#         run: git mv automation-scripts/News/data.json ../../ui/public/data.json
 
       - name: change directory
         run: |-
-          cd ..
-          pwd
-          ls -R
+          cd ../..
+          ls
         
       - name: Commit and push if changed
         run: |-
