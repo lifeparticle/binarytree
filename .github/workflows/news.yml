@@ -36,7 +36,7 @@ jobs:
         run: yarn start
 
       - name: Move news.json
-        run: git mv news.json ../../ui/public/news.json
+        run: git mv -f news.json ../../ui/public/news.json
         
       - name: Commit and push if changed
         run: |-
