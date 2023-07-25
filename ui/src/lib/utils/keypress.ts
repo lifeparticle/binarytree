@@ -1,22 +1,23 @@
 import { useCallback, useEffect, useRef } from "react";
 
-type CallBackFunction = {
-	(): void;
-};
+type CallBackFunction = () => void;
 
 function useCombinedKeyPress(
 	callback: CallBackFunction,
 	keyCodes: string[]
 ): void {
-	const keysPressed = useRef(new Set<string>());
+	const keysPressed = useRef<Set<string>>(new Set());
 
-	const handler = useCallback(
-		({ code, type }: KeyboardEvent) => {
-			if (type === "keydown") {
-				keysPressed.current.add(code);
-			} else if (type === "keyup") {
-				keysPressed.current.delete(code);
+	const handleKeyDown = useCallback(
+		(event: KeyboardEvent) => {
+			const { code, ctrlKey } = event;
+
+			if (ctrlKey && keyCodes.includes(code)) {
+				// Prevent the default behavior of Ctrl + specified key combination
+				event.preventDefault();
 			}
+
+			keysPressed.current.add(code);
 
 			if (keyCodes.every((keyCode) => keysPressed.current.has(keyCode))) {
 				callback();
@@ -25,14 +26,19 @@ function useCombinedKeyPress(
 		[callback, keyCodes]
 	);
 
+	const handleKeyUp = useCallback((event: KeyboardEvent) => {
+		const { code } = event;
+		keysPressed.current.delete(code);
+	}, []);
+
 	useEffect(() => {
-		window.addEventListener("keydown", handler);
-		window.addEventListener("keyup", handler);
+		window.addEventListener("keydown", handleKeyDown);
+		window.addEventListener("keyup", handleKeyUp);
 		return () => {
-			window.removeEventListener("keydown", handler);
-			window.removeEventListener("keyup", handler);
+			window.removeEventListener("keydown", handleKeyDown);
+			window.removeEventListener("keyup", handleKeyUp);
 		};
-	}, [handler]);
+	}, [handleKeyDown, handleKeyUp]);
 }
 
 export { useCombinedKeyPress };
