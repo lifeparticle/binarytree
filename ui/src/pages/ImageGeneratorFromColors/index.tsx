@@ -97,7 +97,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 			<div className={style.colors}>
 				{colors.map((color: string, index: number) => {
 					return (
-						<div className={style.colors__color}>
+						<div className={style.colors__color} key={color}>
 							<div
 								ref={(ref) => {
 									if (ref) {

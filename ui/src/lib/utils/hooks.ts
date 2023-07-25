@@ -26,6 +26,36 @@ const useDarkMode = (storageKey: string, defaultValue: boolean) => {
 
 export default useDarkMode;
 
+export const MOBILE_WIDTH = 768;
+
+export const useMenuCollapsed = (storageKey: string) => {
+	const { windowWidth } = useWindowWidth(MOBILE_WIDTH);
+	const [collapsed, setCollapsed] = useState(() => {
+		return (
+			getLocalstorageValue<boolean>(storageKey) ??
+			windowWidth <= MOBILE_WIDTH
+		);
+	});
+
+	const toggleCollapse = () => {
+		setLocalstorageValue<boolean>(storageKey, !collapsed);
+		setCollapsed(!collapsed);
+	};
+
+	useEffect(() => {
+		const value = windowWidth <= MOBILE_WIDTH;
+		if (value) {
+			setLocalstorageValue<boolean>(storageKey, value);
+			setCollapsed(value);
+		}
+	}, [windowWidth]);
+
+	return {
+		toggleCollapse,
+		collapsed,
+	};
+};
+
 const usePageTitle = (routes: Array<{ title: string; path: string }>) => {
 	const location = useLocation();
 
