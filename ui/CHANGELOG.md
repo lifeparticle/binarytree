@@ -1,8 +1,8 @@
-### [3.7.0] - 2023-07-24
+### [3.7.0] - 2023-07-25
 
 -   Persist Menu Collapse State
 
-### [3.6.1] - 2023-07-24
+### [3.6.1] - 2023-07-25
 
 -   Fix keyboard shortcut in windows & ubuntu
 
