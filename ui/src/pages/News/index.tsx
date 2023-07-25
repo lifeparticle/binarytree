@@ -21,8 +21,6 @@ const News = () => {
 		},
 	});
 
-	console.log(data);
-
 	return (
 		<div>
 			{isLoading ? (
