@@ -44,13 +44,13 @@ jobs:
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
         run: yarn start
 
-#       - name: Move data.json
-#         run: git mv automation-scripts/News/data.json ../../ui/public/data.json
+      - name: Move data.json
+        run: git mv data.json ../../ui/public/data.json
 
-      - name: change directory
-        run: |-
-          cd ../..
-          ls
+#       - name: change directory
+#         run: |-
+#           cd ../..
+#           ls
         
       - name: Commit and push if changed
         run: |-
