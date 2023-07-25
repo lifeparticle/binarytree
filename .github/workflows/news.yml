@@ -45,7 +45,7 @@ jobs:
         run: yarn start
 
       - name: Move data.json
-        run: git mv automation-scripts/News/data.json ui/public/data.json
+        run: git mv automation-scripts/News/data.json ../ui/public/data.json
         
       - name: Commit and push if changed
         run: |-
