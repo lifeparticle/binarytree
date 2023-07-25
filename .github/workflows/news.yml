@@ -59,3 +59,4 @@ jobs:
           git add data.json
           git commit -m "Update data.json" || true
           git push
+        working-directory: ui/public
