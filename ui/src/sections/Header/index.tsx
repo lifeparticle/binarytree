@@ -11,15 +11,15 @@ import style from "./header.module.scss";
 const { Header: AntHeader } = Layout;
 
 interface HeaderProps {
-	handleThemeChange: (checked: boolean) => void;
+	handleThemeChange: () => void;
 	collapsed: boolean;
-	setCollapsed: (collapsed: boolean) => void;
+	handleMenuCollapse: () => void;
 }
 
 const Header: React.FC<HeaderProps> = ({
 	handleThemeChange,
 	collapsed,
-	setCollapsed,
+	handleMenuCollapse,
 }) => {
 	const {
 		token: { colorBgContainer, colorText },
@@ -38,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({
 				</Button>
 
 				<Button
-					onClick={() => setCollapsed(!collapsed)}
+					onClick={handleMenuCollapse}
 					type="text"
 					className={style.header_left_collapseBtn}
 				>

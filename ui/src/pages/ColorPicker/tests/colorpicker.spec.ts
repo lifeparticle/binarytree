@@ -1,7 +1,7 @@
 import { test } from "@playwright/test";
 
 test("test", async ({ page }) => {
-	await page.goto("http://localhost:5173/");
+	await page.goto("http://localhost:5173");
 	await page.getByText("Colors").click();
 	await page.getByText("Color Picker").click();
 	await page.getByText("HEX").click();
