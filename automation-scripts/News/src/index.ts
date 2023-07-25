@@ -36,8 +36,8 @@ async function main() {
 		throw new Error("NEWS_API_KEY environment variable not set");
 	}
 	const articles = await fetchNews(apiKey);
-	await saveDataToFile(articles, "data.json");
-	console.log("Data saved to data.json");
+	await saveDataToFile(articles, "news.json");
+	console.log("Data saved to news.json");
 }
 
 main().catch((err) => {
