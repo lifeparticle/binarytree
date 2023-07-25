@@ -8,12 +8,17 @@ import Menu from "sections/Menu";
 
 const { Sider, Content } = Layout;
 
+const darkModeStorageKey = "darkMode";
+const menuCollapsedStorageKey = "menuCollapsed";
+
 function App() {
 	const { algorithm, toggleTheme, isDarkMode } = useDarkMode(
-		"darkMode",
+		darkModeStorageKey,
 		false
 	);
-	const { collapsed, toggleCollapse } = useMenuCollapsed("menuCollapsed");
+	const { collapsed, toggleCollapse } = useMenuCollapsed(
+		menuCollapsedStorageKey
+	);
 	const currentTitle = usePageTitle(routes);
 
 	return (

@@ -1,3 +1,11 @@
+### [3.7.0] - 2023-07-24
+
+-   Persist Menu Collapse State
+
+### [3.6.1] - 2023-07-24
+
+-   Fix keyboard shortcut in windows & ubuntu
+
 ### [3.6.0] - 2023-07-24
 
 -   Persist dark/light mode
