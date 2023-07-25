@@ -10,12 +10,7 @@ async function fetchNews(apiKey: string): Promise<Article[]> {
 	const response = await fetch(
 		`https://newsapi.org/v2/everything?q=javascript&apiKey=${apiKey}`
 	);
-	const data = await response.json();
-	return data.articles.map((article: any) => ({
-		title: article.title,
-		description: article.description,
-		url: article.url,
-	}));
+	return await response.json();
 }
 
 async function saveDataToFile(data: any, filename: string): Promise<void> {
