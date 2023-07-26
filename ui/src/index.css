@@ -46,7 +46,3 @@ h5 {
 	display: flex;
 	align-items: center;
 }
-
-.ant-menu {
-	height: 100vh;
-}
