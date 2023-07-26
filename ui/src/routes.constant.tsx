@@ -1,4 +1,6 @@
 // ----------------Page -----------
+import Channel from "pages/Channel";
+import GithubList from "pages/GithubList";
 import { lazy } from "react";
 import { Navigate } from "react-router-dom";
 
@@ -46,11 +48,6 @@ const routes = [
 		title: "Text Editor",
 	},
 	{
-		path: "/icons",
-		element: <Icons />,
-		title: "Icons",
-	},
-	{
 		path: "/data_gen",
 		element: <DataGenerator />,
 		title: "Data Generator",
@@ -84,6 +81,21 @@ const routes = [
 		path: "/md_table_generator",
 		element: <TableGenerator />,
 		title: "Markdown Table Generator",
+	},
+	{
+		path: "/icons",
+		element: <Icons />,
+		title: "Icons",
+	},
+	{
+		path: "/youtube-channel",
+		element: <Channel />,
+		title: "Channel",
+	},
+	{
+		path: "/github-repo",
+		element: <GithubList />,
+		title: "Github Repository",
 	},
 	{
 		path: "*",

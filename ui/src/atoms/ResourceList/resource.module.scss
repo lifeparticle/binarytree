@@ -1,0 +1,21 @@
+/* styles.css */
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.cardContainer {
+		width: 500px;
+
+		h2 {
+			padding: 10px 0px;
+		}
+		input {
+			margin-bottom: 20px;
+		}
+
+		.card {
+			margin-bottom: 20px;
+		}
+	}
+}
