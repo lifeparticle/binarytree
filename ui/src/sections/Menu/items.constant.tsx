@@ -11,12 +11,14 @@ import {
 	Dice5,
 	FileEdit,
 	FileOutput,
+	Github,
 	Image,
 	Layers,
 	Pencil,
 	Repeat,
 	Replace,
 	Table,
+	Youtube,
 } from "lucide-react";
 
 const MENU_ITEMS = [
@@ -130,6 +132,18 @@ const MENU_ITEMS = [
 				name: "Icons",
 				url: "/icons",
 				icon: <ClipboardEdit size={16} />,
+				show: true,
+			},
+			{
+				name: "Channel",
+				url: "/youtube-channel",
+				icon: <Youtube size={16} />,
+				show: true,
+			},
+			{
+				name: "Github Repo",
+				url: "/github-repo",
+				icon: <Github size={16} />,
 				show: true,
 			},
 		],
