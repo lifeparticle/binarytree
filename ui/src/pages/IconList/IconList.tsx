@@ -28,7 +28,7 @@ const URLS = [
 	},
 ];
 
-const Icons: React.FC = () => {
+const IconList: React.FC = () => {
 	return (
 		<Space className={style.icons}>
 			{URLS.map((url) => {
@@ -51,4 +51,4 @@ const Icons: React.FC = () => {
 	);
 };
 
-export default Icons;
+export default IconList;

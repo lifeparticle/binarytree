@@ -3,10 +3,16 @@ interface Social {
 	name: string;
 }
 
-export interface ResourceType {
+interface ResourceType {
 	name: string;
 	category: string;
 	url: string;
 	subCategory: string[];
 	socials: Social[];
 }
+
+interface ResourceListProps {
+	listData: ResourceType[];
+}
+
+export type { ResourceListProps, ResourceType };
