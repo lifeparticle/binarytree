@@ -2,7 +2,6 @@ import { Typography } from "antd";
 import { usePageTitle } from "lib/utils/hooks";
 import { useLocation } from "react-router-dom";
 import { routes } from "routes.constant";
-import style from "./pageHeader.module.scss";
 
 const { Title } = Typography;
 const YOUTUBE = "youtube";
