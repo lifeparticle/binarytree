@@ -21,7 +21,7 @@ import {
 	Youtube,
 } from "lucide-react";
 
-const IN_DEV = import.meta.env.VITE_IN_DEV;
+const IN_DEV = import.meta.env.DEV;
 
 const MENU_ITEMS = [
 	{
