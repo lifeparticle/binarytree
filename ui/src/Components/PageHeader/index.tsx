@@ -5,26 +5,23 @@ import { routes } from "routes.constant";
 import style from "./pageHeader.module.scss";
 
 const { Title } = Typography;
-const youtube = "youtube";
-const github = "github";
+const YOUTUBE = "youtube";
+const GITHUB = "github";
 
 const PageHeader: React.FC = () => {
 	const location = useLocation();
 	const title = usePageTitle(routes);
 
 	if (
-		location.pathname.includes(youtube) ||
-		location.pathname.includes(github)
+		location.pathname.includes(YOUTUBE) ||
+		location.pathname.includes(GITHUB)
 	) {
 		return (
-			<div className={style.pageHeader}>
-				<div className={style.pageHeader__container}>
-					<Title level={3}>{title}</Title>
-				</div>
-			</div>
+			<Title style={{ textAlign: "center" }} level={3}>
+				{title}
+			</Title>
 		);
 	}
 	return <Title level={3}>{title}</Title>;
 };
-
 export default PageHeader;

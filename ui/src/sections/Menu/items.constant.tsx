@@ -21,6 +21,8 @@ import {
 	Youtube,
 } from "lucide-react";
 
+const IN_DEV = import.meta.env.VITE_IN_DEV;
+
 const MENU_ITEMS = [
 	{
 		name: "Colors",
@@ -138,13 +140,13 @@ const MENU_ITEMS = [
 				name: "Channel",
 				url: "/youtube-channel",
 				icon: <Youtube size={16} />,
-				show: true,
+				show: IN_DEV,
 			},
 			{
 				name: "Github Repo",
 				url: "/github-repo",
 				icon: <Github size={16} />,
-				show: true,
+				show: IN_DEV,
 			},
 		],
 	},
