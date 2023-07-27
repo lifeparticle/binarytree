@@ -6,8 +6,17 @@ font-family: 'Inter', sans-serif; */
 @import "./styles/z-index.css";
 @import "./styles/borders.css";
 
-body {
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
 	margin: 0;
+}
+
+body {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
 		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
 		"Helvetica Neue", sans-serif;
