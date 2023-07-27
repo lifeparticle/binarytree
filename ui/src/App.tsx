@@ -1,11 +1,12 @@
-import { ConfigProvider, Layout, Typography } from "antd";
-import useDarkMode, { useMenuCollapsed, usePageTitle } from "lib/utils/hooks";
+import { ConfigProvider, Layout } from "antd";
+import useDarkMode, { useMenuCollapsed } from "lib/utils/hooks";
 import { Suspense } from "react";
 import { useRoutes } from "react-router-dom";
 import { routes } from "routes.constant";
 import Header from "sections/Header";
 import Menu from "sections/Menu";
 import { ErrorBoundary } from "react-error-boundary";
+import PageHeader from "atoms/PageHeader";
 
 const { Sider, Content } = Layout;
 
@@ -20,7 +21,6 @@ function App() {
 	const { collapsed, toggleCollapse } = useMenuCollapsed(
 		menuCollapsedStorageKey
 	);
-	const currentTitle = usePageTitle(routes);
 
 	return (
 		<ErrorBoundary fallback={<p>Something went wrong</p>}>
