@@ -1,14 +1,18 @@
 import React, { ChangeEvent, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-
-import { Card, Input, Tag } from "antd";
+import { Avatar, Card, Input, Skeleton, Space, Tag } from "antd";
 import style from "./resource.module.scss";
-import { ResourceType } from "./resource.type";
+import { ResourceListProps } from "./resource.type";
+import {
+	EditOutlined,
+	EllipsisOutlined,
+	SettingOutlined,
+} from "@ant-design/icons";
+import Meta from "antd/es/card/Meta";
 
-const ResourceList: React.FC<{ listData: ResourceType[] }> = ({ listData }) => {
+const ResourceList: React.FC<ResourceListProps> = ({ listData }) => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const query = searchParams.get("q") || "";
-
 	const [searchQuery, setSearchQuery] = useState(query);
 
 	const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -23,6 +27,10 @@ const ResourceList: React.FC<{ listData: ResourceType[] }> = ({ listData }) => {
 		)
 	);
 
+	const handleOnClick = (url: string) => {
+		window.open(url, "_blank");
+	};
+
 	return (
 		<div className={style.container}>
 			<div className={style.cardContainer}>
@@ -32,24 +40,35 @@ const ResourceList: React.FC<{ listData: ResourceType[] }> = ({ listData }) => {
 					value={searchQuery}
 					onChange={handleSearchChange}
 				/>
-				{filteredChannels.map((channel, index) => (
-					<a
-						href={channel.url}
-						target="_blank"
-						rel="noopener noreferrer"
+				{filteredChannels.map((channel) => (
+					<Card
+						className={style.card}
+						actions={[
+							<SettingOutlined key="setting" />,
+							<EditOutlined key="edit" />,
+							<EllipsisOutlined key="ellipsis" />,
+						]}
+						key={channel.name}
+						hoverable
+						onClick={() => handleOnClick(channel.url)}
 					>
-						<Card key={index} className={style.card}>
-							<Tag color="orange"> {channel.category}</Tag>
-							<h2>{channel.name}</h2>
-							<div>
+						<Skeleton loading={false} avatar active>
+							<Meta
+								avatar={
+									<Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=2" />
+								}
+								title={channel.name}
+								description={channel.category}
+							/>
+							<Space size="large" direction="horizontal" wrap>
 								{channel.subCategory.map((category) => (
 									<Tag color="green" key={category}>
 										{category}
 									</Tag>
 								))}
-							</div>
-						</Card>
-					</a>
+							</Space>
+						</Skeleton>
+					</Card>
 				))}
 			</div>
 		</div>

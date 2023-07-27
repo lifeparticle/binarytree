@@ -1,6 +1,5 @@
 // ----------------Page -----------
-import Channel from "pages/Channel";
-import GithubList from "pages/GithubList";
+
 import { lazy } from "react";
 import { Navigate } from "react-router-dom";
 
@@ -11,7 +10,11 @@ const ImageGeneratorFromColors = lazy(
 	() => import("pages/ImageGeneratorFromColors")
 );
 const MarkdownEditor = lazy(() => import("pages/MarkdownEditor"));
-const Icons = lazy(() => import("pages/Icons"));
+
+const IconList = lazy(() => import("pages/IconList"));
+const YouTubeList = lazy(() => import("pages/YouTubeList"));
+const GithubList = lazy(() => import("pages/GithubList"));
+
 const TextEditor = lazy(() => import("pages/TextEditor"));
 const DataGenerator = lazy(() => import("pages/DataGenerator"));
 const Base64 = lazy(() => import("pages/Base64"));
@@ -84,12 +87,12 @@ const routes = [
 	},
 	{
 		path: "/icons",
-		element: <Icons />,
+		element: <IconList />,
 		title: "Icons",
 	},
 	{
 		path: "/youtube-channel",
-		element: <Channel />,
+		element: <YouTubeList />,
 		title: "Channel",
 	},
 	{
