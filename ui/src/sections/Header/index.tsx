@@ -5,6 +5,7 @@ import {
 	Hexagon,
 	Moon,
 	Sun,
+	Github,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import style from "./header.module.scss";
@@ -49,13 +50,28 @@ const Header: React.FC<HeaderProps> = ({
 					)}
 				</Button>
 			</div>
-			<Switch
-				className={style.header_switch}
-				checkedChildren={<Moon size={16} color={colorBgContainer} />}
-				unCheckedChildren={<Sun size={16} />}
-				onChange={handleThemeChange}
-				style={{ backgroundColor: colorText }}
-			/>
+			<div className={style.header_right}>
+				<Switch
+					className={style.header_switch}
+					checkedChildren={
+						<Moon size={16} color={colorBgContainer} />
+					}
+					unCheckedChildren={<Sun size={16} />}
+					onChange={handleThemeChange}
+					style={{ backgroundColor: colorText }}
+				/>
+				<Button
+					type="text"
+					onClick={() =>
+						window.open(
+							"https://github.com/lifeparticle/binarytree",
+							"_blank"
+						)
+					}
+				>
+					<Github color={colorText} />
+				</Button>
+			</div>
 		</AntHeader>
 	);
 };
