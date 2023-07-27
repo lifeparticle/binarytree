@@ -6,7 +6,7 @@ import { routes } from "routes.constant";
 import Header from "sections/Header";
 import Menu from "sections/Menu";
 import { ErrorBoundary } from "react-error-boundary";
-import PageHeader from "atoms/PageHeader";
+import PageHeader from "Components/PageHeader";
 
 const { Sider, Content } = Layout;
 

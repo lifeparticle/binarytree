@@ -1,6 +1,6 @@
 import { repositories } from "./data";
 
-import ResourceList from "../../atoms/ResourceList";
+import ResourceList from "../../Components/ResourceList/ResourceList";
 
 function GithubList() {
 	return (
