@@ -58,9 +58,7 @@ function App() {
 							/>
 						</Sider>
 						<Content>
-							<Typography.Title level={2}>
-								{currentTitle}
-							</Typography.Title>
+							<PageHeader />
 							<ErrorBoundary
 								fallback={<p>Something went wrong</p>}
 							>
