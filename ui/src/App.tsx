@@ -1,5 +1,6 @@
-import { ConfigProvider, Layout, Typography } from "antd";
-import useDarkMode, { useMenuCollapsed, usePageTitle } from "lib/utils/hooks";
+import { ConfigProvider, Layout } from "antd";
+import PageHeader from "atoms/PageHeader";
+import useDarkMode, { useMenuCollapsed } from "lib/utils/hooks";
 import { Suspense } from "react";
 
 import { useRoutes } from "react-router-dom";
@@ -20,7 +21,6 @@ function App() {
 	const { collapsed, toggleCollapse } = useMenuCollapsed(
 		menuCollapsedStorageKey
 	);
-	const currentTitle = usePageTitle(routes);
 
 	return (
 		<ConfigProvider
@@ -54,9 +54,7 @@ function App() {
 						<Menu isDarkMode={isDarkMode} collapsed={collapsed} />
 					</Sider>
 					<Content>
-						<Typography.Title level={2}>
-							{currentTitle}
-						</Typography.Title>
+						<PageHeader />
 
 						<Suspense fallback={<div>Loading...</div>}>
 							{useRoutes(routes)}
