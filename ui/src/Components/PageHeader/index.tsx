@@ -1,7 +1,6 @@
 import { Typography } from "antd";
-import { usePageTitle } from "lib/utils/hooks";
+import usePageTitle from "lib/utils/hooks/usePageTitle";
 import { useLocation } from "react-router-dom";
-import { routes } from "routes.constant";
 
 const { Title } = Typography;
 const YOUTUBE = "youtube";
@@ -9,7 +8,7 @@ const GITHUB = "github";
 
 const PageHeader: React.FC = () => {
 	const location = useLocation();
-	const title = usePageTitle(routes);
+	const title = usePageTitle(location.pathname);
 
 	if (
 		location.pathname.includes(YOUTUBE) ||

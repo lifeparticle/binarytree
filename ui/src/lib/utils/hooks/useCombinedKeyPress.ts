@@ -41,4 +41,4 @@ function useCombinedKeyPress(
 	}, [handleKeyDown, handleKeyUp]);
 }
 
-export { useCombinedKeyPress };
+export default useCombinedKeyPress;

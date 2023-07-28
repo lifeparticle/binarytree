@@ -1,6 +1,5 @@
+import ResourceList from "Components/ResourceList";
 import { repositories } from "./data";
-
-import ResourceList from "../../Components/ResourceList/ResourceList";
 
 function GithubList() {
 	return (

@@ -3,7 +3,7 @@ import style from "./TableOfContent.module.scss";
 import { useClipboard } from "@mantine/hooks";
 import { marked } from "marked";
 import { Input, Space, Button } from "antd";
-import { useCombinedKeyPress } from "lib/utils/keypress";
+import { useCombinedKeyPress } from "lib/utils/hooks/useCombinedKeyPress";
 const { TextArea } = Input;
 
 type TocItem = {

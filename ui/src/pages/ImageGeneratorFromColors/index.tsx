@@ -3,7 +3,7 @@ import { saveAs } from "file-saver";
 import { toPng } from "html-to-image";
 import JSZip from "jszip";
 import JSZipUtils from "jszip-utils";
-import { useCombinedKeyPress } from "lib/utils/keypress";
+import { useCombinedKeyPress } from "lib/utils/hooks/useCombinedKeyPress";
 import { useRef, useState } from "react";
 import style from "./ImageGeneratorFromColors.module.scss";
 

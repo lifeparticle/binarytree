@@ -17,6 +17,7 @@ const Shades: React.FC = () => {
 			<div className={styles.shades__shade}>
 				{Array.from({ length: NUM_OF_SHADES }, (_, k) => (
 					<div
+						key={k}
 						className={styles.shades__shade_box}
 						style={{ backgroundColor: color }}
 					>
