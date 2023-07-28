@@ -12,8 +12,6 @@
 
 # UI
 
-- [How to contribute](./ui/CONTRIBUTING.md)
-
 # Automation scripts
 
 # Packages
