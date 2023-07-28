@@ -1,30 +1,32 @@
-// ----------------Page -----------
+import { ReactNode, Suspense } from "react";
+import { ErrorBoundary } from "react-error-boundary";
+import { Navigate, useRoutes } from "react-router-dom";
 
-import { lazy } from "react";
-import { Navigate } from "react-router-dom";
+import {
+	News,
+	Sorting,
+	MarkdownEditor,
+	ImageGeneratorFromColors,
+	TextEditor,
+	DataGenerator,
+	ColorPicker,
+	Base64,
+	PixelConverter,
+	TableOfContent,
+	Shades,
+	TableGenerator,
+	IconList,
+	YouTubeList,
+	GithubList,
+} from "pages/pages";
 
-const News = lazy(() => import("pages/News"));
-const Sorting = lazy(() => import("pages/Sorting"));
-const ColorPicker = lazy(() => import("pages/ColorPicker"));
-const ImageGeneratorFromColors = lazy(
-	() => import("pages/ImageGeneratorFromColors")
-);
-const MarkdownEditor = lazy(() => import("pages/MarkdownEditor"));
+interface Route {
+	path: string;
+	element: ReactNode;
+	title: string;
+}
 
-const IconList = lazy(() => import("pages/IconList"));
-const YouTubeList = lazy(() => import("pages/YouTubeList"));
-const GithubList = lazy(() => import("pages/GithubList"));
-
-const TextEditor = lazy(() => import("pages/TextEditor"));
-const DataGenerator = lazy(() => import("pages/DataGenerator"));
-const Base64 = lazy(() => import("pages/Base64"));
-const PixelConverter = lazy(() => import("pages/PixelConverter"));
-const TableOfContent = lazy(() => import("pages/TableOfContent"));
-const Shades = lazy(() => import("pages/Shades"));
-const TableGenerator = lazy(() => import("pages/MdTableGenerator"));
-// --------------EndPage----------
-
-const routes = [
+export const ROUTES: Route[] = [
 	{
 		path: "/",
 		element: <News />,
@@ -91,12 +93,12 @@ const routes = [
 		title: "Icons",
 	},
 	{
-		path: "/youtube-channel",
+		path: "/youtube_channels",
 		element: <YouTubeList />,
 		title: "Channel",
 	},
 	{
-		path: "/github-repo",
+		path: "/github_repos",
 		element: <GithubList />,
 		title: "Github Repository",
 	},
@@ -107,4 +109,14 @@ const routes = [
 	},
 ];
 
-export { routes };
+const Routes = () => {
+	return (
+		<ErrorBoundary fallback={<p>Something went wrong</p>}>
+			<Suspense fallback={<div>Loading...</div>}>
+				{useRoutes(ROUTES)}
+			</Suspense>
+		</ErrorBoundary>
+	);
+};
+
+export default Routes;

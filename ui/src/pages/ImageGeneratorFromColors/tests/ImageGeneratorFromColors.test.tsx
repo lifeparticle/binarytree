@@ -1,5 +1,5 @@
 import { screen, render } from "@testing-library/react";
-import ImageGeneratorFromColors from "../pages/ImageGeneratorFromColors";
+import ImageGeneratorFromColors from "..";
 
 test("Navigation Button Works", async () => {
 	render(<ImageGeneratorFromColors />);

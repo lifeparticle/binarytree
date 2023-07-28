@@ -1,3 +1,18 @@
+### [3.8.0] - 2023-07-28
+
+-   Create hooks folder
+-   Create components folder
+-   Fix eslint errors
+-   Remove index.tsx
+-   Add GitHub icon
+-   ENV for dev and prod
+-   Hard coded strings varaible names changed to upper case
+-   Relative url
+-   Consistent namming
+-   Refactor ResourceList
+-   Error boundaries
+-   Fix lazy loading
+
 ### [3.7.0] - 2023-07-25
 
 -   Persist Menu Collapse State

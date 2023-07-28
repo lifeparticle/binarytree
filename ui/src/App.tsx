@@ -1,25 +1,24 @@
+import Menu from "components/sections/Menu";
 import { ConfigProvider, Layout } from "antd";
-import useDarkMode, { useMenuCollapsed } from "lib/utils/hooks";
-import { Suspense } from "react";
-import { useRoutes } from "react-router-dom";
-import { routes } from "routes.constant";
-import Header from "sections/Header";
-import Menu from "sections/Menu";
+import PageHeader from "components/PageHeader";
+import Header from "components/sections/Header";
 import { ErrorBoundary } from "react-error-boundary";
-import PageHeader from "Components/PageHeader";
+import useDarkMode from "lib/utils/hooks/useDarkMode";
+import useMenuCollapsed from "lib/utils/hooks/useMenuCollapsed";
+import Routes from "pages/Routes/Routes";
 
 const { Sider, Content } = Layout;
 
-const darkModeStorageKey = "darkMode";
-const menuCollapsedStorageKey = "menuCollapsed";
+const DARK_MODE_STORAGE_KEY = "darkMode";
+const MENU_COLLAPSED_STORAGE_KEY = "menuCollapsed";
 
 function App() {
 	const { algorithm, toggleTheme, isDarkMode } = useDarkMode(
-		darkModeStorageKey,
+		DARK_MODE_STORAGE_KEY,
 		false
 	);
 	const { collapsed, toggleCollapse } = useMenuCollapsed(
-		menuCollapsedStorageKey
+		MENU_COLLAPSED_STORAGE_KEY
 	);
 
 	return (
@@ -59,13 +58,7 @@ function App() {
 						</Sider>
 						<Content>
 							<PageHeader />
-							<ErrorBoundary
-								fallback={<p>Something went wrong</p>}
-							>
-								<Suspense fallback={<div>Loading...</div>}>
-									{useRoutes(routes)}
-								</Suspense>
-							</ErrorBoundary>
+							<Routes />
 						</Content>
 					</Layout>
 				</Layout>

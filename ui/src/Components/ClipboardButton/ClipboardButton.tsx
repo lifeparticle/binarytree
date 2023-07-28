@@ -1,5 +1,5 @@
 import { Button } from "antd";
-import { useCopyToClipboard } from "lib/utils/hooks";
+import { useCopyToClipboard } from "lib/utils/hooks/constant";
 import { Check, Copy } from "lucide-react";
 
 interface ClipboardButtonProps {

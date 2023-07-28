@@ -39,7 +39,7 @@ const MENU_ITEMS = [
 				name: "Shade Generator",
 				url: "/shades",
 				icon: <Layers size={16} />,
-				show: false,
+				show: IN_DEV,
 			},
 		],
 	},
