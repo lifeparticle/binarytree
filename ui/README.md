@@ -20,4 +20,4 @@ Press key <kbd> <br> ControlLeft + e <br> </kbd> for example input and p
 
 # Contributing
 
-- [How to contribute](./ui/CONTRIBUTING.md)
+[How to contribute](CONTRIBUTING.md)
