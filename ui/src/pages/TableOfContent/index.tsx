@@ -3,7 +3,7 @@ import style from "./TableOfContent.module.scss";
 import { useClipboard } from "@mantine/hooks";
 import { marked } from "marked";
 import { Input, Space, Button } from "antd";
-import { useCombinedKeyPress } from "lib/utils/hooks/useCombinedKeyPress";
+import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 const { TextArea } = Input;
 
 type TocItem = {
@@ -25,6 +25,7 @@ const TableOfContent: React.FC = () => {
 	const [markdown, setMarkdown] = useState("");
 	const [tableOfContents, setTableOfContents] = useState<string>("");
 	const clipboard = useClipboard({ timeout: 500 });
+
 	useCombinedKeyPress(
 		() =>
 			fetchData(
