@@ -8,6 +8,10 @@
 
 # UI
 
+## Tips
+
+Press key <kbd> <br> ControlLeft + e <br> </kbd> for example input and press key <kbd> <br> ControlLeft + c <br> </kbd> to clear the example input.
+
 <details>
   <summary>Colors</summary>
 
@@ -54,6 +58,7 @@
 -  <kbd>[Icons](https://binarytree.dev/icons)</kbd>
 
 </details>
+
 
 
 # Automation scripts
