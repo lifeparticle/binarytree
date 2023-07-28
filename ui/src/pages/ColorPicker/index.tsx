@@ -2,7 +2,7 @@ import { ColorPicker as CP } from "@mantine/core";
 import { Card, Space, Tag } from "antd";
 import { useState } from "react";
 import style from "./ColorPicker.module.scss";
-import ClipboardButton from "atoms/ClipboardButton";
+import ClipboardButton from "components/ClipboardButton/ClipboardButton";
 
 type FormatType = "hex" | "rgba" | "rgb" | "hsl" | "hsla";
 type DataType = {

@@ -1,4 +1,4 @@
-import ResourceList from "Components/ResourceList";
+import ResourceList from "components/ResourceList";
 import { repositories } from "./data";
 
 function GithubList() {

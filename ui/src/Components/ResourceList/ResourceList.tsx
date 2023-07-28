@@ -2,13 +2,13 @@ import React, { ChangeEvent, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Avatar, Card, Input, Skeleton, Space, Tag } from "antd";
 import style from "./resource.module.scss";
-import { ResourceListProps } from "./resource.type";
 import {
 	EditOutlined,
 	EllipsisOutlined,
 	SettingOutlined,
 } from "@ant-design/icons";
 import Meta from "antd/es/card/Meta";
+import { ResourceListProps } from "./types";
 
 const ResourceList: React.FC<ResourceListProps> = ({ listData }) => {
 	const [searchParams, setSearchParams] = useSearchParams();
