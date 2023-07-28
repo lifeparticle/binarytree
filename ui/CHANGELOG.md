@@ -8,7 +8,7 @@
 -   ENV for dev and prod
 -   Hard coded strings varaible names changed to upper case
 -   Relative url
--   Consistent namming
+-   Consistent naming
 -   Refactor ResourceList
 -   Error boundaries
 -   Fix lazy loading
