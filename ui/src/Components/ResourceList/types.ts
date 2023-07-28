@@ -11,7 +11,7 @@ interface ResourceType {
 	socials: Social[];
 }
 
-interface ResourceListProps {
+export interface ResourceListProps {
 	listData: ResourceType[];
 }
 
