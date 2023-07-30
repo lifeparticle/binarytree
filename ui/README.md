@@ -15,4 +15,4 @@ yarn dev
 
 # Contributing
 
-[How to contribute](CONTRIBUTING.md)
+[How To Contribute](CONTRIBUTING.md)
