@@ -27,29 +27,54 @@ const Routes = () => {
 				<RRDRoutes>
 					News
 					<Route path="/" element={<News />} />
-					<Route
-						path="/igfc"
-						element={<ImageGeneratorFromColors />}
-					/>
-					<Route path="/sorting" element={<Sorting />} />
-					<Route path="/cp" element={<ColorPicker />} />
-					<Route path="/me" element={<MarkdownEditor />} />
-					<Route path="/te" element={<TextEditor />} />
-					<Route path="/icons" element={<IconList />} />
-					<Route path="/github_repos" element={<GithubList />} />
-					<Route path="/youtube_channels" element={<YouTubeList />} />
-					<Route path="/data_gen" element={<DataGenerator />} />
-					<Route path="/base_64" element={<Base64 />} />
-					<Route path="/shades" element={<Shades />} />
-					<Route
-						path="/pixel_converter"
-						element={<PixelConverter />}
-					/>
-					<Route path="/toc" element={<TableOfContent />} />
-					<Route
-						path="/md_table_generator"
-						element={<TableGenerator />}
-					/>
+					<Route path="/data">
+						<Route index element={<Navigate to={"igfc"} />} />
+						<Route
+							path="igfc"
+							element={<ImageGeneratorFromColors />}
+						/>
+						<Route path="data-gen" element={<DataGenerator />} />
+						<Route path="sorting" element={<Sorting />} />
+					</Route>
+					<Route path="/markdown">
+						<Route index element={<Navigate to={"me"} />} />
+						<Route path="me" element={<MarkdownEditor />} />
+						<Route path="toc" element={<TableOfContent />} />
+						<Route
+							path="md-table-generator"
+							element={<TableGenerator />}
+						/>
+					</Route>
+					<Route path="/colors">
+						<Route index element={<Navigate to={"cp"} />} />
+						<Route path="cp" element={<ColorPicker />} />
+						<Route path="shades" element={<Shades />} />
+					</Route>
+					<Route path="/converter">
+						<Route index element={<Navigate to={"base-64"} />} />
+
+						<Route path="base-64" element={<Base64 />} />
+
+						<Route
+							path="pixel-converter"
+							element={<PixelConverter />}
+						/>
+					</Route>
+					<Route path="/text">
+						<Route index element={<Navigate to={"base-64"} />} />
+
+						<Route path="te" element={<TextEditor />} />
+					</Route>
+					<Route path="/list">
+						<Route index element={<Navigate to={"icons"} />} />
+
+						<Route path="icons" element={<IconList />} />
+						<Route path="github-repos" element={<GithubList />} />
+						<Route
+							path="youtube-channels"
+							element={<YouTubeList />}
+						/>
+					</Route>
 					<Route path="*" element={<Navigate to="/404" />} />
 				</RRDRoutes>
 			</Suspense>
