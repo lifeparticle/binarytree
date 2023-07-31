@@ -11,9 +11,6 @@
 		"@mantine/hooks": "^6.0.10",
 		"@tabler/icons": "^2.17.0",
 		"@tanstack/react-query": "^4.29.25",
-		"@testing-library/jest-dom": "^5.14.1",
-		"@testing-library/react": "^14.0.0",
-		"@testing-library/user-event": "^14.4.3",
 		"@types/file-saver": "^2.0.5",
 		"@types/jest": "^29.5.1",
 		"@types/react-router-dom": "^5.3.3",
@@ -32,7 +29,6 @@
 		"react-error-boundary": "^4.0.10",
 		"react-quill": "^2.0.0",
 		"react-router-dom": "^6.11.1",
-		"react-scripts": "5.0.1",
 		"sass": "^1.62.1",
 		"web-vitals": "^3.3.1"
 	},
@@ -40,8 +36,6 @@
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"test:unit": "vitest",
-		"test:e2e": "playwright test",
-		"test:e2e-report": "playwright show-report",
 		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview"
 	},
@@ -64,7 +58,6 @@
 		]
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.36.1",
 		"@types/marked": "^5.0.1",
 		"@types/node": "^20.4.4",
 		"@types/react": "^18.2.15",
@@ -79,6 +72,7 @@
 		"typescript": "^5.0.2",
 		"vite": "^4.4.6",
 		"vite-plugin-svgr": "^3.2.0",
-		"vite-tsconfig-paths": "^4.2.0"
+		"vite-tsconfig-paths": "^4.2.0",
+		"vitest": "^0.33.0"
 	}
 }

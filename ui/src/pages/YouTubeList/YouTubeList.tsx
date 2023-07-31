@@ -1,5 +1,5 @@
 import { programmingChannels } from "./data";
-import ResourceList from "components/ResourceList";
+import ResourceList from "components/Hoc/List";
 
 const YouTubeList: React.FC = () => {
 	return (

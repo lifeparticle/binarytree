@@ -1,7 +1,7 @@
-import Menu from "components/sections/Menu";
+import Menu from "components/Layouts/Menu";
 import { ConfigProvider, Layout } from "antd";
 import PageHeader from "components/PageHeader";
-import Header from "components/sections/Header";
+import Header from "components/Layouts/Header";
 import { ErrorBoundary } from "react-error-boundary";
 import useDarkMode from "lib/utils/hooks/useDarkMode";
 import useMenuCollapsed from "lib/utils/hooks/useMenuCollapsed";

@@ -3,7 +3,7 @@ interface Social {
 	name: string;
 }
 
-interface ResourceType {
+interface ListType {
 	name: string;
 	category: string;
 	url: string;
@@ -11,8 +11,10 @@ interface ResourceType {
 	socials: Social[];
 }
 
-interface ResourceListProps {
-	listData: ResourceType[];
+interface ListProps<T> {
+	items: T;
+	resourceName: string;
+	itemComponent: T;
 }
 
-export type { ResourceListProps, ResourceType };
+export type { ListProps, ListType };
