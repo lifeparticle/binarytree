@@ -31,13 +31,13 @@ const MENU_ITEMS = [
 		children: [
 			{
 				name: "Color Picker",
-				url: "/cp",
+				url: "/colors/cp",
 				icon: <Baseline size={16} />,
 				show: true,
 			},
 			{
 				name: "Shade Generator",
-				url: "/shades",
+				url: "/colors/shades",
 				icon: <Layers size={16} />,
 				show: IN_DEV,
 			},
@@ -50,19 +50,19 @@ const MENU_ITEMS = [
 		children: [
 			{
 				name: "Markdown Editor",
-				url: "/me",
+				url: "/markdown/me",
 				icon: <FileEdit size={16} />,
 				show: true,
 			},
 			{
 				name: "Table Of Content",
-				url: "/toc",
+				url: "/markdown/toc",
 				icon: <Table size={16} />,
 				show: true,
 			},
 			{
 				name: "MD Table Generator",
-				url: "/md_table_generator",
+				url: "/markdown/md-table-generator",
 				icon: <Dice5 size={16} />,
 				show: true,
 			},
@@ -74,20 +74,20 @@ const MENU_ITEMS = [
 		show: true,
 		children: [
 			{
-				name: "Data Generator",
-				url: "/data_gen",
-				icon: <DatabaseBackup size={16} />,
-				show: true,
-			},
-			{
 				name: "Image Generator From Colors",
-				url: "/igfc",
+				url: "/data/igfc",
 				icon: <Image size={16} />,
 				show: true,
 			},
 			{
+				name: "Data Generator",
+				url: "/data/data-gen",
+				icon: <DatabaseBackup size={16} />,
+				show: true,
+			},
+			{
 				name: "Sorting",
-				url: "/sorting",
+				url: "/data/sorting",
 				icon: <ArrowUpNarrowWide size={16} />,
 				show: true,
 			},
@@ -100,13 +100,13 @@ const MENU_ITEMS = [
 		children: [
 			{
 				name: "Base 64 Converter",
-				url: "/base_64",
+				url: "/converter/base-64",
 				icon: <Replace size={16} />,
 				show: true,
 			},
 			{
 				name: "Pixel Converter",
-				url: "/pixel_converter",
+				url: "/converter/pixel-converter",
 				icon: <FileOutput size={16} />,
 				show: true,
 			},
@@ -119,7 +119,7 @@ const MENU_ITEMS = [
 		children: [
 			{
 				name: "Text Editor",
-				url: "/te",
+				url: "/text/te",
 				icon: <ClipboardEdit size={16} />,
 				show: true,
 			},
@@ -132,19 +132,19 @@ const MENU_ITEMS = [
 		children: [
 			{
 				name: "Icons",
-				url: "/icons",
+				url: "/list/icons",
 				icon: <ClipboardEdit size={16} />,
 				show: true,
 			},
 			{
 				name: "Channel",
-				url: "/youtube-channel",
+				url: "/list/youtube-channels",
 				icon: <Youtube size={16} />,
 				show: IN_DEV,
 			},
 			{
 				name: "Github Repo",
-				url: "/github-repo",
+				url: "/list/github-repos",
 				icon: <Github size={16} />,
 				show: IN_DEV,
 			},
