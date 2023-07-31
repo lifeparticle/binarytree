@@ -2,7 +2,8 @@ import { ColorPicker as CP } from "@mantine/core";
 import { Card, Space, Tag } from "antd";
 import { useState } from "react";
 import style from "./ColorPicker.module.scss";
-import ClipboardButton from "components/ClipboardButton/ClipboardButton";
+import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
+import Clipboard from "components/Hoc/Clipboard/Clipboard";
 
 type FormatType = "hex" | "rgba" | "rgb" | "hsl" | "hsla";
 type DataType = {
@@ -51,7 +52,10 @@ const ColorPicker: React.FC = () => {
 					/>
 					<div className={style.cp__result}>
 						<div className={style.cp__result__color}>{color}</div>
-						<ClipboardButton text={color} />
+						<Clipboard
+							text={color}
+							clipboardComponent={ClipboardButton}
+						/>
 					</div>
 				</Space>
 			</Card>
