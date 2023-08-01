@@ -1,8 +1,3 @@
-interface ListItemProps<T> {
-	resource: T;
-	handleOnClick: (url: string) => void;
-}
-
 interface ListProps<T> {
 	items: T[];
 	resourceName: string;
@@ -12,4 +7,4 @@ interface ListProps<T> {
 	}>;
 }
 
-export type { ListProps, ListItemProps };
+export type { ListProps };
