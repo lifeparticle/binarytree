@@ -8,12 +8,18 @@ import {
 import Meta from "antd/es/card/Meta";
 
 interface ResourceProps {
-	resource: any;
+	resource: {
+		name: string;
+		category: string;
+		subCategory: string[];
+		url: string;
+	};
+	handleOnClick: (url: string) => void;
 }
 
-const Resource: React.FC<ResourceProps> = ({ resource }) => {
+const Resource: React.FC<ResourceProps> = ({ resource, handleOnClick }) => {
 	const { name, category, subCategory, url } = resource;
-
+	console.log({ resource });
 	return (
 		<Card
 			className={style.card}

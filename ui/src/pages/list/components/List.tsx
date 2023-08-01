@@ -5,9 +5,19 @@ import style from "./resource.module.scss";
 
 import { ListProps } from "./types";
 
-const List: React.FC<ListProps<T>> = ({
+type ListItemType = {
+	name: string;
+	category: string;
+	subCategory: string[];
+	url: string;
+	socials: {
+		url: string;
+		name: string;
+	}[];
+};
+
+const List: React.FC<ListProps<ListItemType>> = ({
 	items,
-	resourceName,
 	itemComponent: ItemComponent,
 }) => {
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -20,22 +30,11 @@ const List: React.FC<ListProps<T>> = ({
 		setSearchParams(`?q=${value}`);
 	};
 
-	const filteredList =
-		resourceName === "news"
-			? searchQuery
-				? items.filter((item) =>
-						item.title
-							.toLowerCase()
-							.includes(searchQuery.toLowerCase())
-				  )
-				: items
-			: items.filter((listItem) =>
-					listItem.subCategory.some((subcategory: any) =>
-						subcategory
-							.toLowerCase()
-							.includes(searchQuery.toLowerCase())
-					)
-			  );
+	const filteredList = items.filter((listItem) =>
+		listItem.subCategory.some((subcategory: any) =>
+			subcategory.toLowerCase().includes(searchQuery.toLowerCase())
+		)
+	);
 
 	const handleOnClick = (url: string) => {
 		window.open(url, "_blank");

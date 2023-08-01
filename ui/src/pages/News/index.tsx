@@ -1,21 +1,16 @@
 import { LoadingOutlined } from "@ant-design/icons";
 import { useQuery } from "@tanstack/react-query";
 import { Spin } from "antd";
-import { useLocation } from "react-router-dom";
 import { getData } from "api/API";
-import Articles from "./components/Articles";
 import { APIResponse } from "./types.ts/types";
+import List from "components/Hoc/List/List";
+import News from "components/General/ListItems/News/News";
 
 const URL = `./news.json`;
 
-const News = () => {
-	const location = useLocation();
-
-	const endpoint =
-		location.search?.length > 3 ? location.search : "?q=javascript";
-
+const NewsPage = () => {
 	const { data, isLoading, isError } = useQuery<APIResponse>({
-		queryKey: [endpoint],
+		queryKey: ["news"],
 		queryFn: () => {
 			return getData(URL);
 		},
@@ -32,10 +27,14 @@ const News = () => {
 			) : isError ? (
 				<div>Something wrong</div>
 			) : (
-				<Articles articles={data.articles} />
+				<List
+					items={data.articles}
+					resourceName="news"
+					itemComponent={News}
+				/>
 			)}
 		</div>
 	);
 };
 
-export default News;
+export default NewsPage;

@@ -4,10 +4,10 @@ import { Input } from "antd";
 import style from "./resource.module.scss";
 
 import { ListProps } from "./types";
+import { Article } from "../types.ts/types";
 
-const List: React.FC<ListProps<T>> = ({
+const List: React.FC<ListProps<Article>> = ({
 	items,
-	resourceName,
 	itemComponent: ItemComponent,
 }) => {
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -20,22 +20,11 @@ const List: React.FC<ListProps<T>> = ({
 		setSearchParams(`?q=${value}`);
 	};
 
-	const filteredList =
-		resourceName === "news"
-			? searchQuery
-				? items.filter((item) =>
-						item.title
-							.toLowerCase()
-							.includes(searchQuery.toLowerCase())
-				  )
-				: items
-			: items.filter((listItem) =>
-					listItem.subCategory.some((subcategory: any) =>
-						subcategory
-							.toLowerCase()
-							.includes(searchQuery.toLowerCase())
-					)
-			  );
+	const filteredList = searchQuery
+		? items.filter((item) =>
+				item.title.toLowerCase().includes(searchQuery.toLowerCase())
+		  )
+		: items;
 
 	const handleOnClick = (url: string) => {
 		window.open(url, "_blank");
