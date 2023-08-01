@@ -16,14 +16,10 @@ const News: React.FC<NewsProps> = ({ resource, handleOnClick }) => {
 	const { title, content, url } = resource;
 
 	return (
-		<div className={style.article}>
-			<a onClick={() => handleOnClick(url)}>
-				<Card>
-					<h4>{title}</h4>
-					{content}
-				</Card>
-			</a>
-		</div>
+		<Card className={style.article} onClick={() => handleOnClick(url)}>
+			<h4>{title}</h4>
+			{content}
+		</Card>
 	);
 };
 

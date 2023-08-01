@@ -18,9 +18,11 @@ const client = new QueryClient({
 });
 
 root.render(
-	<QueryClientProvider client={client}>
-		<BrowserRouter>
-			<App />
-		</BrowserRouter>
-	</QueryClientProvider>
+	<React.StrictMode>
+		<QueryClientProvider client={client}>
+			<BrowserRouter>
+				<App />
+			</BrowserRouter>
+		</QueryClientProvider>
+	</React.StrictMode>
 );

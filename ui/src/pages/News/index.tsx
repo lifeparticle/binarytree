@@ -2,15 +2,16 @@ import { LoadingOutlined } from "@ant-design/icons";
 import { useQuery } from "@tanstack/react-query";
 import { Spin } from "antd";
 import { getData } from "api/API";
-import { APIResponse } from "./types.ts/types";
+import { APIResponse } from "./types";
 import List from "components/Hoc/List/List";
 import News from "components/General/ListItems/News/News";
 
 const URL = `./news.json`;
+const queryKey = "news";
 
 const NewsPage = () => {
 	const { data, isLoading, isError } = useQuery<APIResponse>({
-		queryKey: ["news"],
+		queryKey: [queryKey],
 		queryFn: () => {
 			return getData(URL);
 		},

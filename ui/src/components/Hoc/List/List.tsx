@@ -5,7 +5,7 @@ import style from "./resource.module.scss";
 
 import { ListProps } from "./types";
 
-const List: React.FC<ListProps<T>> = ({
+const List: React.FC<ListProps<any>> = ({
 	items,
 	resourceName,
 	itemComponent: ItemComponent,
