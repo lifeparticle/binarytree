@@ -19,7 +19,7 @@ interface ResourceProps {
 
 const Resource: React.FC<ResourceProps> = ({ resource, handleOnClick }) => {
 	const { name, category, subCategory, url } = resource;
-	console.log({ resource });
+
 	return (
 		<Card
 			className={style.card}
