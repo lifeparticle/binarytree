@@ -5,8 +5,8 @@ import { useQuery } from "@tanstack/react-query";
 import { Spin } from "antd";
 import { getData } from "api/API";
 
-const URL = `./news.json`;
-const queryKey = "news";
+const URL = `./github.json`;
+const queryKey = "github";
 
 function GithubList() {
 	const { data, isLoading, isError } = useQuery({
