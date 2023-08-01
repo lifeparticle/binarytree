@@ -1,0 +1,33 @@
+name: UI PR
+
+on:
+  pull_request:
+    branches: main
+
+jobs:
+  fetch-news:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ui
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.16.1"
+
+      - name: Install Yarn
+        run: |
+          corepack enable
+          corepack prepare yarn@stable --activate
+      - name: yarn install
+        run: yarn install
+
+      - name: Danger
+        run: yarn danger ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
