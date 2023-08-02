@@ -16,7 +16,7 @@ function YoutubeList() {
 	return (
 		<List
 			items={data}
-			resourceName="youtube"
+			resourceName={QUERY_KEY}
 			itemComponent={Resource}
 			isLoading={isLoading}
 			isError={isError}

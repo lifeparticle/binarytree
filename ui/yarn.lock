@@ -63,9 +63,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ant-design/icons@npm:^5.1.0":
-  version: 5.2.3
-  resolution: "@ant-design/icons@npm:5.2.3"
+"@ant-design/icons@npm:^5.2.2":
+  version: 5.2.4
+  resolution: "@ant-design/icons@npm:5.2.4"
   dependencies:
     "@ant-design/colors": ^7.0.0
     "@ant-design/icons-svg": ^4.3.0
@@ -76,7 +76,7 @@ __metadata:
   peerDependencies:
     react: ">=16.0.0"
     react-dom: ">=16.0.0"
-  checksum: 22c51ff45c77420c2442b348d18d60ea33fbd8b7451be90e722e1894e4c425d2fe053ceca8ed83a6cc6d778d123eee396931960f03b770524cb54c084dfbe91e
+  checksum: 6f2f2fa01ffcb4048b923d591f2136c753eabaa6b99fcbd28dc04a4cb9ef0759e7805a725907a15440aab6f965b2ea9f9970b48a986dc5b80c31d78587eeb66c
   languageName: node
   linkType: hard
 
@@ -1972,7 +1972,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^6.0.0":
+"@typescript-eslint/parser@npm:^6.2.1":
   version: 6.2.1
   resolution: "@typescript-eslint/parser@npm:6.2.1"
   dependencies:
@@ -2309,12 +2309,12 @@ __metadata:
   linkType: hard
 
 "antd@npm:^5.4.7":
-  version: 5.8.0
-  resolution: "antd@npm:5.8.0"
+  version: 5.8.1
+  resolution: "antd@npm:5.8.1"
   dependencies:
     "@ant-design/colors": ^7.0.0
     "@ant-design/cssinjs": ^1.16.0
-    "@ant-design/icons": ^5.1.0
+    "@ant-design/icons": ^5.2.2
     "@ant-design/react-slick": ~1.0.0
     "@babel/runtime": ^7.18.3
     "@ctrl/tinycolor": ^3.6.0
@@ -2363,7 +2363,7 @@ __metadata:
   peerDependencies:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: 25c8cb64b6cc638255f60fd4be97e09eb0c160ab07719f7bfc4fc8bf6aace3fe77030e2908d8975f2db4875b7cbbbdd53742e6540d07295998ac14364fcb6f49
+  checksum: ad6dc5de8474550e75fba9f7f7b58fdb00f6f4fd1b3c5044a20b2fc24571b5b44a0e2c4e099dd87d90cecedb436c2428114f14b914793fcc898bad2f6a288736
   languageName: node
   linkType: hard
 
@@ -2908,7 +2908,7 @@ __metadata:
     "@types/react-dom": ^18.2.7
     "@types/react-router-dom": ^5.3.3
     "@typescript-eslint/eslint-plugin": ^6.0.0
-    "@typescript-eslint/parser": ^6.0.0
+    "@typescript-eslint/parser": ^6.2.1
     "@uiw/react-md-editor": ^3.20.10
     "@vitejs/plugin-react": ^4.0.3
     antd: ^5.4.7
@@ -7308,8 +7308,8 @@ __metadata:
   linkType: hard
 
 "rc-select@npm:~14.7.0, rc-select@npm:~14.7.1":
-  version: 14.7.2
-  resolution: "rc-select@npm:14.7.2"
+  version: 14.7.3
+  resolution: "rc-select@npm:14.7.3"
   dependencies:
     "@babel/runtime": ^7.10.1
     "@rc-component/trigger": ^1.5.0
@@ -7321,7 +7321,7 @@ __metadata:
   peerDependencies:
     react: "*"
     react-dom: "*"
-  checksum: 5812d93f9bc6afbfc35abded20df61cc29cea5692f9669bbebf1e0fd63e81896923ff67b5ce7c63d6d7f53adef2dbd5a75ac23db9098c2c5a409057d8ba92096
+  checksum: b81c4b1adc903efc26eab1f85695846f77b4ab7afbd95754fa627e7f8f1390bc63a8e7cd3287c4aacb1565dd1a69d1dc1d3ec8ae3eb0788aa29618fafbd64b8d
   languageName: node
   linkType: hard
 

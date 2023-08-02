@@ -35,7 +35,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
-		"test:unit": "vitest",
+		"test": "vitest",
 		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview"
 	},
@@ -65,7 +65,7 @@
 		"@types/react": "^18.2.15",
 		"@types/react-dom": "^18.2.7",
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
-		"@typescript-eslint/parser": "^6.0.0",
+		"@typescript-eslint/parser": "^6.2.1",
 		"@vitejs/plugin-react": "^4.0.3",
 		"danger": "^11.2.7",
 		"eslint": "^8.45.0",
