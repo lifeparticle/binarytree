@@ -6,11 +6,11 @@ import { Spin } from "antd";
 import { getData } from "api/API";
 
 const URL = `./icons.json`;
-const queryKey = "icons";
+const QUERY_KEY = "icons";
 
 function IconList() {
 	const { data, isLoading, isError } = useQuery({
-		queryKey: [queryKey],
+		queryKey: [QUERY_KEY],
 		queryFn: () => {
 			return getData(URL);
 		},

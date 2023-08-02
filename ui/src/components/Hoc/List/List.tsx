@@ -2,14 +2,25 @@ import React, { ChangeEvent, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Input } from "antd";
 import style from "./resource.module.scss";
+// ... other imports ...
 
 import { ListProps } from "./types";
 
-const List: React.FC<ListProps<any>> = ({
+interface ListType {
+	subCategory: string[];
+}
+
+interface NewsType {
+	title: string;
+}
+
+type UnionType = ListType | NewsType;
+
+const List = <T extends UnionType>({
 	items,
 	resourceName,
 	itemComponent: ItemComponent,
-}) => {
+}: ListProps<T>) => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const query = searchParams.get("q") || "";
 	const [searchQuery, setSearchQuery] = useState(query);
@@ -24,17 +35,21 @@ const List: React.FC<ListProps<any>> = ({
 		resourceName === "news"
 			? searchQuery
 				? items.filter((item) =>
-						item.title
-							.toLowerCase()
-							.includes(searchQuery.toLowerCase())
+						"title" in item
+							? item.title
+									.toLowerCase()
+									.includes(searchQuery.toLowerCase())
+							: false
 				  )
 				: items
 			: items.filter((listItem) =>
-					listItem.subCategory.some((subcategory: any) =>
-						subcategory
-							.toLowerCase()
-							.includes(searchQuery.toLowerCase())
-					)
+					"subCategory" in listItem
+						? listItem.subCategory.some((subcategory) =>
+								subcategory
+									.toLowerCase()
+									.includes(searchQuery.toLowerCase())
+						  )
+						: false
 			  );
 
 	const handleOnClick = (url: string) => {

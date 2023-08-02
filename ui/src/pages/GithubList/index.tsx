@@ -6,15 +6,17 @@ import { Spin } from "antd";
 import { getData } from "api/API";
 
 const URL = `./github.json`;
-const queryKey = "github";
+const QUERY_KEY = "github";
 
 function GithubList() {
 	const { data, isLoading, isError } = useQuery({
-		queryKey: [queryKey],
+		queryKey: [QUERY_KEY],
 		queryFn: () => {
 			return getData(URL);
 		},
 	});
+
+	console.log({ data });
 	return (
 		<div>
 			{isLoading ? (

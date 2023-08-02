@@ -7,11 +7,11 @@ import List from "components/Hoc/List/List";
 import News from "components/General/ListItems/News/News";
 
 const URL = `./news.json`;
-const queryKey = "news";
+const QUERY_KEY = "news";
 
 const NewsPage = () => {
 	const { data, isLoading, isError } = useQuery<APIResponse>({
-		queryKey: [queryKey],
+		queryKey: [QUERY_KEY],
 		queryFn: () => {
 			return getData(URL);
 		},
