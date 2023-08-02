@@ -10,8 +10,7 @@ describe("ColorPicker Component", () => {
 
 	test("displays color format options", () => {
 		const { getByText } = render(<ColorPicker />);
-
-		// Check if all format labels are present
+		// get it from the component
 		const formatLabels = ["HEX", "RGBA", "RGB", "HSL", "HSLA"];
 		formatLabels.forEach((label) => {
 			const tagElement = getByText(label);
@@ -22,12 +21,11 @@ describe("ColorPicker Component", () => {
 	test("updates color format on tag click", () => {
 		const { getByText } = render(<ColorPicker />);
 
-		// Click on a format tag and check if it gets selected
+		// use a loop and check all the tags
 		const rgbaTag = getByText("RGBA");
 		fireEvent.click(rgbaTag);
 		expect(rgbaTag).toHaveClass("ant-tag-success");
 
-		// Click on another format tag and check if it gets selected
 		const hexTag = getByText("HEX");
 		fireEvent.click(hexTag);
 		expect(rgbaTag).not.toHaveClass("ant-tag-success");

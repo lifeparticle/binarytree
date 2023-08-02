@@ -17,7 +17,7 @@ function GithubList() {
 	return (
 		<List
 			items={data}
-			resourceName="github"
+			resourceName={QUERY_KEY}
 			itemComponent={Resource}
 			isLoading={isLoading}
 			isError={isError}
