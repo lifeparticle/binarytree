@@ -6,11 +6,11 @@ import { Spin } from "antd";
 import { getData } from "api/API";
 
 const URL = `./youtube.json`;
-const queryKey = "youtube";
+const QUERY_KEY = "youtube";
 
 function YoutubeList() {
 	const { data, isLoading, isError } = useQuery({
-		queryKey: [queryKey],
+		queryKey: [QUERY_KEY],
 		queryFn: () => {
 			return getData(URL);
 		},

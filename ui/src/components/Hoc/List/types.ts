@@ -6,10 +6,7 @@ interface ListItemProps<T> {
 interface ListProps<T> {
 	items: T[];
 	resourceName: string;
-	itemComponent: React.FC<{
-		resource: T;
-		handleOnClick: (url: string) => void;
-	}>;
+	itemComponent: React.FC<ListItemProps<T>>;
 }
 
 export type { ListProps, ListItemProps };

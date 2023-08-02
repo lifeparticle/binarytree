@@ -29,7 +29,7 @@ const ROUTES: Route[] = [
 		title: "Data Generator",
 	},
 	{
-		path: "/cp",
+		path: "/colors/cp",
 		title: "Color Picker",
 	},
 	{
@@ -37,7 +37,7 @@ const ROUTES: Route[] = [
 		title: "Base64",
 	},
 	{
-		path: "/shades",
+		path: "/colors/shades",
 		title: "Shades",
 	},
 	{

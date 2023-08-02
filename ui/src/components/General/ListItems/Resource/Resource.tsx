@@ -7,17 +7,22 @@ import {
 } from "@ant-design/icons";
 import Meta from "antd/es/card/Meta";
 
-interface ResourceProps {
-	resource: {
+interface ListItemProps<T> {
+	resource: T;
+	handleOnClick: (url: string) => void;
+}
+
+const Resource = <
+	T extends {
 		name: string;
 		category: string;
 		subCategory: string[];
 		url: string;
-	};
-	handleOnClick: (url: string) => void;
-}
-
-const Resource: React.FC<ResourceProps> = ({ resource, handleOnClick }) => {
+	}
+>({
+	resource,
+	handleOnClick,
+}: ListItemProps<T>) => {
 	const { name, category, subCategory, url } = resource;
 
 	return (
