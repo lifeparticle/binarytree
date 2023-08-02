@@ -1,20 +1,14 @@
-interface Social {
-	url: string;
-	name: string;
-}
-
-interface ListType {
-	name: string;
-	category: string;
-	url: string;
-	subCategory: string[];
-	socials: Social[];
+interface ListItemProps<T> {
+	resource: T;
+	handleOnClick: (url: string) => void;
 }
 
 interface ListProps<T> {
-	items: T;
+	items: T[];
 	resourceName: string;
-	itemComponent: T;
+	itemComponent: React.FC<ListItemProps<T>>;
+	isLoading: boolean;
+	isError: boolean;
 }
 
-export type { ListProps, ListType };
+export type { ListProps, ListItemProps };

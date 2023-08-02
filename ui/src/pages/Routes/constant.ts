@@ -9,59 +9,59 @@ const ROUTES: Route[] = [
 		title: "Dashboard",
 	},
 	{
-		path: "/sorting",
+		path: "/data/sorting",
 		title: "Sorting",
 	},
 	{
-		path: "/me",
+		path: "/markdown/me",
 		title: "Markdown Editor",
 	},
 	{
-		path: "/igfc",
+		path: "/data/igfc",
 		title: "Image Generator From Colors",
 	},
 	{
-		path: "/te",
+		path: "/text/te",
 		title: "Text Editor",
 	},
 	{
-		path: "/data_gen",
+		path: "/data/data-gen",
 		title: "Data Generator",
 	},
 	{
-		path: "/cp",
+		path: "/colors/cp",
 		title: "Color Picker",
 	},
 	{
-		path: "/base_64",
+		path: "/converter/base-64",
 		title: "Base64",
 	},
 	{
-		path: "/shades",
+		path: "/converter/colors/shades",
 		title: "Shades",
 	},
 	{
-		path: "/pixel_converter",
+		path: "/converter/pixel-converter",
 		title: "Pixel Converter",
 	},
 	{
-		path: "/toc",
+		path: "/markdown/toc",
 		title: "Table Of Content",
 	},
 	{
-		path: "/md_table_generator",
+		path: "/markdown/md-table-generator",
 		title: "Markdown Table Generator",
 	},
 	{
-		path: "/icons",
+		path: "/list/icons",
 		title: "Icons",
 	},
 	{
-		path: "/youtube_channels",
+		path: "/list/youtube-channels",
 		title: "Channel",
 	},
 	{
-		path: "/github_repos",
+		path: "/list/github-repos",
 		title: "Github Repository",
 	},
 	{

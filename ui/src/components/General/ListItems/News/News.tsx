@@ -1,47 +1,24 @@
-import { Avatar, Card, Skeleton, Space, Tag } from "antd";
-import style from "./resource.module.scss";
-import {
-	EditOutlined,
-	EllipsisOutlined,
-	SettingOutlined,
-} from "@ant-design/icons";
-import Meta from "antd/es/card/Meta";
+import { Card } from "antd";
+
+import style from "./article.module.scss";
 
 interface NewsProps {
-	resource: any;
+	resource: {
+		title: string;
+		content: string;
+
+		url: string;
+	};
+	handleOnClick: (url: string) => void;
 }
 
-const News: React.FC<NewsProps> = ({ resource }) => {
-	const { name, category, subCategory, url } = resource;
+const News: React.FC<NewsProps> = ({ resource, handleOnClick }) => {
+	const { title, content, url } = resource;
 
 	return (
-		<Card
-			className={style.card}
-			actions={[
-				<SettingOutlined key="setting" />,
-				<EditOutlined key="edit" />,
-				<EllipsisOutlined key="ellipsis" />,
-			]}
-			key={name}
-			hoverable
-			onClick={() => handleOnClick(url)}
-		>
-			<Skeleton loading={false} avatar active>
-				<Meta
-					avatar={
-						<Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=2" />
-					}
-					title={name}
-					description={category}
-				/>
-				<Space size="large" direction="horizontal" wrap>
-					{subCategory.map((category) => (
-						<Tag color="green" key={category}>
-							{category}
-						</Tag>
-					))}
-				</Space>
-			</Skeleton>
+		<Card className={style.article} onClick={() => handleOnClick(url)}>
+			<h4>{title}</h4>
+			{content}
 		</Card>
 	);
 };
