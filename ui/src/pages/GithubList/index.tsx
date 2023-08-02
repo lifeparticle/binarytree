@@ -1,11 +1,27 @@
-import ResourceList from "components/Hoc/List";
-import { repositories } from "./data";
+import List from "components/Hoc/List/List";
+import Resource from "components/General/ListItems/Resource/Resource";
+import { useQuery } from "@tanstack/react-query";
+import { getData } from "api/API";
+
+const URL = `./github.json`;
+const QUERY_KEY = "github";
 
 function GithubList() {
+	const { data, isLoading, isError } = useQuery({
+		queryKey: [QUERY_KEY],
+		queryFn: () => {
+			return getData(URL);
+		},
+	});
+
 	return (
-		<div>
-			<ResourceList listData={repositories} />
-		</div>
+		<List
+			items={data}
+			resourceName="github"
+			itemComponent={Resource}
+			isLoading={isLoading}
+			isError={isError}
+		/>
 	);
 }
 
