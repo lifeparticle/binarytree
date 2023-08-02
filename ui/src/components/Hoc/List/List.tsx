@@ -1,10 +1,11 @@
-import React, { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Input } from "antd";
 import style from "./resource.module.scss";
 // ... other imports ...
 
 import { ListProps } from "./types";
+import SkeletonCard from "components/General/ListItems/SkeletonCard";
 
 interface ListType {
 	subCategory: string[];
@@ -20,6 +21,8 @@ const List = <T extends UnionType>({
 	items,
 	resourceName,
 	itemComponent: ItemComponent,
+	isLoading,
+	isError,
 }: ListProps<T>) => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const query = searchParams.get("q") || "";
@@ -34,7 +37,7 @@ const List = <T extends UnionType>({
 	const filteredList =
 		resourceName === "news"
 			? searchQuery
-				? items.filter((item) =>
+				? items?.filter((item) =>
 						"title" in item
 							? item.title
 									.toLowerCase()
@@ -42,7 +45,7 @@ const List = <T extends UnionType>({
 							: false
 				  )
 				: items
-			: items.filter((listItem) =>
+			: items?.filter((listItem) =>
 					"subCategory" in listItem
 						? listItem.subCategory.some((subcategory) =>
 								subcategory
@@ -65,13 +68,19 @@ const List = <T extends UnionType>({
 					value={searchQuery}
 					onChange={handleSearchChange}
 				/>
-				{filteredList.map((item, i) => (
-					<ItemComponent
-						key={i}
-						resource={item}
-						handleOnClick={handleOnClick}
-					/>
-				))}
+				{isLoading ? (
+					<SkeletonCard />
+				) : isError ? (
+					<div>Something went wrong</div>
+				) : (
+					filteredList.map((item, i) => (
+						<ItemComponent
+							key={i}
+							resource={item}
+							handleOnClick={handleOnClick}
+						/>
+					))
+				)}
 			</div>
 		</div>
 	);

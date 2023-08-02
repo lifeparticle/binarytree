@@ -7,6 +7,8 @@ interface ListProps<T> {
 	items: T[];
 	resourceName: string;
 	itemComponent: React.FC<ListItemProps<T>>;
+	isLoading: boolean;
+	isError: boolean;
 }
 
 export type { ListProps, ListItemProps };
