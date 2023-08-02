@@ -5,7 +5,7 @@ on:
     branches: main
 
 jobs:
-  fetch-news:
+  ui-pr:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -25,7 +25,7 @@ jobs:
           corepack enable
           corepack prepare yarn@stable --activate
       - name: yarn install
-        run: yarn install
+        run: yarn install --immutable
 
       - name: Danger
         run: yarn danger ci
