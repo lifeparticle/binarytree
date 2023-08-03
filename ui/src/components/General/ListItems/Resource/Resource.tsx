@@ -36,7 +36,7 @@ const Resource: React.FC<ListItemProps<ResourceType>> = ({
 					description={category}
 				/>
 				<Space size="large" direction="horizontal" wrap>
-					{subCategory.map((category: any) => (
+					{subCategory.map((category) => (
 						<Tag color="green" key={category}>
 							{category}
 						</Tag>
