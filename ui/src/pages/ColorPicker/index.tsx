@@ -5,19 +5,16 @@ import style from "./ColorPicker.module.scss";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
 import Clipboard from "components/Hoc/Clipboard/Clipboard";
 
-type FormatType = "hex" | "rgba" | "rgb" | "hsl" | "hsla";
-type DataType = {
-	value: FormatType;
-	label: string;
-};
+export const formatLabels = ["HEX", "RGBA", "RGB", "HSL", "HSLA"] as const;
 
-const DATA_OPTIONS: DataType[] = [
-	{ value: "hex", label: "HEX" },
-	{ value: "rgba", label: "RGBA" },
-	{ value: "rgb", label: "RGB" },
-	{ value: "hsl", label: "HSL" },
-	{ value: "hsla", label: "HSLA" },
-];
+type FormatType = Lowercase<(typeof formatLabels)[number]>;
+
+const DATA_OPTIONS: { value: FormatType; label: string }[] = formatLabels.map(
+	(label) => ({
+		value: label.toLowerCase() as FormatType,
+		label: label,
+	})
+);
 
 const ColorPicker: React.FC = () => {
 	const [color, setColor] = useState("rgba(47, 119, 150, 0.7)");

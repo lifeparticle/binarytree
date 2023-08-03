@@ -1,3 +1,17 @@
+### [3.9.0] - 2023-08-03
+
+-   Add Common Search Functionality
+-   Add test to Clipboard
+-   Fix Generic Error
+-   Refactor ColorPicker Test Case
+
+### [3.8.0] - 2023-08-02
+
+-   Create Hoc folder
+-   List Data moved to Public/list
+-   Add Unit test in ColorPicker
+-   Fix & Refactor Collapsible Menu
+
 ### [3.8.0] - 2023-07-28
 
 -   Create hooks folder

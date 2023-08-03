@@ -1,6 +1,6 @@
 import useCopyToClipboard from "lib/utils/hooks/useCopyToClipboard";
 
-interface ClipboardProps {
+export interface ClipboardProps {
 	text: string;
 	clipboardComponent: React.ElementType;
 }

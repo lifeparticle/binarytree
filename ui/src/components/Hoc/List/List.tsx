@@ -4,59 +4,27 @@ import { Input } from "antd";
 import style from "./resource.module.scss";
 import { ListProps } from "./types";
 import SkeletonCard from "components/General/ListItems/SkeletonCard";
+import { ResourceType } from "components/General/ListItems/Resource/resource.type";
+import { NewsType } from "components/General/ListItems/News/news.types";
 
-interface ListType {
-	subCategory: string[];
-}
-
-interface NewsType {
-	title: string;
-}
-
-// type UnionType = ListType | NewsType;
-
-// const filteredData = < T >(searchQuery: string, items: T[], property: keyof T) => {
-//     return searchQuery
-//         ? items.filter((item: T) => {
-// 	 if (property in item) {
-//                 if (typeof item[property] === 'string') {
-//                     return item[property].toLowerCase().includes(searchQuery.toLowerCase());
-//                 } else if (Array.isArray(item[property])) {
-//                     return item[property].some(subItem =>
-//                         typeof subItem === 'string' && subItem.toLowerCase().includes(searchQuery.toLowerCase())
-//                     );
-//                 }
-//             }
-//             return false;
-//           })
-//         : items;
-// };
-
-const filteredNews = (searchQuery: string, items) => {
-	return searchQuery
-		? items.filter((item) =>
-				"title" in item
-					? item.title
-							.toLowerCase()
-							.includes(searchQuery.toLowerCase())
-					: false
-		  )
-		: items;
+const filteredNews = (searchQuery: string, items: NewsType[]) => {
+	if (searchQuery) {
+		return items.filter((item) =>
+			item.title.toLowerCase().includes(searchQuery.toLowerCase())
+		);
+	}
+	return items;
 };
 
-const filteredResource = (searchQuery: string, items) => {
+const filteredResource = (searchQuery: string, items: ResourceType[]) => {
 	return items?.filter((listItem) =>
-		"subCategory" in listItem
-			? listItem.subCategory.some((subcategory) =>
-					subcategory
-						.toLowerCase()
-						.includes(searchQuery.toLowerCase())
-			  )
-			: false
+		listItem.subCategory.some((subcategory) =>
+			subcategory.toLowerCase().includes(searchQuery.toLowerCase())
+		)
 	);
 };
 
-const List: React.FC<ListProps<ListType | NewsType>> = ({
+const List: React.FC<ListProps<NewsType | ResourceType>> = ({
 	items,
 	resourceName,
 	itemComponent: ItemComponent,
@@ -75,8 +43,8 @@ const List: React.FC<ListProps<ListType | NewsType>> = ({
 
 	const filteredList =
 		resourceName === "news"
-			? filteredNews(searchQuery, items)
-			: filteredResource(searchQuery, items);
+			? filteredNews(searchQuery, items as NewsType[])
+			: filteredResource(searchQuery, items as ResourceType[]);
 
 	const handleOnClick = (url: string) => {
 		window.open(url, "_blank");
