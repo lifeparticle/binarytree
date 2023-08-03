@@ -1,18 +1,13 @@
 import { Card } from "antd";
 
 import style from "./article.module.scss";
+import { ListItemProps } from "components/Hoc/List/types";
+import { NewsType } from "./news.types";
 
-interface NewsProps {
-	resource: {
-		title: string;
-		content: string;
-
-		url: string;
-	};
-	handleOnClick: (url: string) => void;
-}
-
-const News: React.FC<NewsProps> = ({ resource, handleOnClick }) => {
+const News: React.FC<ListItemProps<NewsType>> = ({
+	resource,
+	handleOnClick,
+}) => {
 	const { title, content, url } = resource;
 
 	return (
