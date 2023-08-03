@@ -8,11 +8,12 @@ import { ResourceType } from "components/General/ListItems/Resource/resource.typ
 import { NewsType } from "components/General/ListItems/News/news.types";
 
 const filteredNews = (searchQuery: string, items: NewsType[]) => {
-	return searchQuery
-		? items.filter((item) =>
-				item.title.toLowerCase().includes(searchQuery.toLowerCase())
-		  )
-		: items;
+	if (searchQuery) {
+		return items.filter((item) =>
+			item.title.toLowerCase().includes(searchQuery.toLowerCase())
+		);
+	}
+	return items;
 };
 
 const filteredResource = (searchQuery: string, items: ResourceType[]) => {
