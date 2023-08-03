@@ -6,23 +6,13 @@ import {
 	SettingOutlined,
 } from "@ant-design/icons";
 import Meta from "antd/es/card/Meta";
+import { ListItemProps } from "components/Hoc/List/types";
+import { ResourceType } from "./resource.type";
 
-interface ListItemProps<T> {
-	resource: T;
-	handleOnClick: (url: string) => void;
-}
-
-const Resource = <
-	T extends {
-		name: string;
-		category: string;
-		subCategory: string[];
-		url: string;
-	}
->({
+const Resource: React.FC<ListItemProps<ResourceType>> = ({
 	resource,
 	handleOnClick,
-}: ListItemProps<T>) => {
+}) => {
 	const { name, category, subCategory, url } = resource;
 
 	return (
