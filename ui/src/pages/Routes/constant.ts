@@ -37,7 +37,7 @@ const ROUTES: Route[] = [
 		title: "Base64",
 	},
 	{
-		path: "/converter/colors/shades",
+		path: "/colors/shades",
 		title: "Shades",
 	},
 	{

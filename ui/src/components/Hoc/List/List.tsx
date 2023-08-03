@@ -13,46 +13,22 @@ interface NewsType {
 	title: string;
 }
 
-// type UnionType = ListType | NewsType;
-
-// const filteredData = < T >(searchQuery: string, items: T[], property: keyof T) => {
-//     return searchQuery
-//         ? items.filter((item: T) => {
-// 	 if (property in item) {
-//                 if (typeof item[property] === 'string') {
-//                     return item[property].toLowerCase().includes(searchQuery.toLowerCase());
-//                 } else if (Array.isArray(item[property])) {
-//                     return item[property].some(subItem =>
-//                         typeof subItem === 'string' && subItem.toLowerCase().includes(searchQuery.toLowerCase())
-//                     );
-//                 }
-//             }
-//             return false;
-//           })
-//         : items;
-// };
-
-const filteredNews = (searchQuery: string, items) => {
+const filteredNews = <T extends NewsType>(searchQuery: string, items: T[]) => {
 	return searchQuery
 		? items.filter((item) =>
-				"title" in item
-					? item.title
-							.toLowerCase()
-							.includes(searchQuery.toLowerCase())
-					: false
+				item.title.toLowerCase().includes(searchQuery.toLowerCase())
 		  )
 		: items;
 };
 
-const filteredResource = (searchQuery: string, items) => {
+const filteredResource = <T extends ListType>(
+	searchQuery: string,
+	items: T[]
+) => {
 	return items?.filter((listItem) =>
-		"subCategory" in listItem
-			? listItem.subCategory.some((subcategory) =>
-					subcategory
-						.toLowerCase()
-						.includes(searchQuery.toLowerCase())
-			  )
-			: false
+		listItem.subCategory.some((subcategory) =>
+			subcategory.toLowerCase().includes(searchQuery.toLowerCase())
+		)
 	);
 };
 
@@ -75,8 +51,8 @@ const List: React.FC<ListProps<ListType | NewsType>> = ({
 
 	const filteredList =
 		resourceName === "news"
-			? filteredNews(searchQuery, items)
-			: filteredResource(searchQuery, items);
+			? filteredNews(searchQuery, items as NewsType[])
+			: filteredResource(searchQuery, items as ListType[]);
 
 	const handleOnClick = (url: string) => {
 		window.open(url, "_blank");
