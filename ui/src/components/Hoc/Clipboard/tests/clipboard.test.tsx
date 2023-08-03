@@ -1,9 +1,8 @@
-import { render, fireEvent } from "@testing-library/react";
-import { describe, test, vi, vitest } from "vitest";
+import { render } from "@testing-library/react";
+import { describe, test } from "vitest";
 
-import Clipboard, { ClipboardProps } from "../Clipboard";
+import Clipboard from "../Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
-import useCopyToClipboard from "lib/utils/hooks/useCopyToClipboard";
 
 describe("Clipboard Component", () => {
 	const testText = "Test Text";
