@@ -1,20 +1,3 @@
-# Run Test locally
-
-```shell
-node -v
-# 18.16.1
-yarn -v
-# 3.6.1
-```
-
-## Run End to End Test
-
-```shell
-npx install playwright
-yarn test:e2e
-yarn test:e2e-report
-```
-
 # Run locally
 
 ```shell
@@ -27,6 +10,12 @@ yarn -v
 ```shell
 yarn install --immutable
 yarn dev
+```
+
+## Run Test locally
+
+```shell
+yarn test
 ```
 
 # Contributing
