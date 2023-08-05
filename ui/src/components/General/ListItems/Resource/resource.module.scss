@@ -1,20 +1,13 @@
-.container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.card {
+	display: grid;
+	width: 50vw;
 
-	.cardContainer {
-		width: var(--bt-list-card-container);
+	&_space {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr auto;
+	}
 
-		h2 {
-			padding: var(--bt-size-10) 0px;
-		}
-		input {
-			margin-bottom: var(--bt-size-24);
-		}
-
-		.card {
-			margin-bottom: var(--bt-size-24);
-		}
+	@media screen and (max-width: 550px) {
+		width: 100%;
 	}
 }
