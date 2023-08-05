@@ -1,13 +1,13 @@
 import { Card, Skeleton, Space, Tag, Typography } from "antd";
 import style from "./resource.module.scss";
 import { ListItemProps } from "components/Hoc/List/types";
-import { ResourceType } from "./resource.type";
+import { ResourceType, SocialName } from "./resource.type";
 import Clipboard from "components/Hoc/Clipboard/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
 import { GithubIcon, WebhookIcon, YoutubeIcon } from "lucide-react";
 const { Title } = Typography;
 
-const Iocns = {
+const Iocns: Record<SocialName, React.ComponentType> = {
 	github: GithubIcon,
 	youtube: YoutubeIcon,
 	website: WebhookIcon,
