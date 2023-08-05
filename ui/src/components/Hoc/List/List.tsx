@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Input } from "antd";
-import style from "./resource.module.scss";
+import style from "./list.module.scss";
 import { ListProps } from "./types";
 import SkeletonCard from "components/General/ListItems/SkeletonCard";
 import { ResourceType } from "components/General/ListItems/Resource/resource.type";
@@ -52,27 +52,26 @@ const List: React.FC<ListProps<NewsType | ResourceType>> = ({
 
 	return (
 		<div className={style.container}>
-			<div className={style.cardContainer}>
-				<Input
-					type="text"
-					placeholder="Search..."
-					value={searchQuery}
-					onChange={handleSearchChange}
-				/>
-				{isLoading ? (
-					<SkeletonCard />
-				) : isError ? (
-					<div>Something went wrong</div>
-				) : (
-					filteredList.map((item, i) => (
-						<ItemComponent
-							key={i}
-							resource={item}
-							handleOnClick={handleOnClick}
-						/>
-					))
-				)}
-			</div>
+			<Input
+				type="text"
+				placeholder="Search..."
+				value={searchQuery}
+				onChange={handleSearchChange}
+				className={style.container_input}
+			/>
+			{isLoading ? (
+				<SkeletonCard />
+			) : isError ? (
+				<div>Something went wrong</div>
+			) : (
+				filteredList.map((item, i) => (
+					<ItemComponent
+						key={i}
+						resource={item}
+						handleOnClick={handleOnClick}
+					/>
+				))
+			)}
 		</div>
 	);
 };
