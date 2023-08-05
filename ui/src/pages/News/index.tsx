@@ -1,22 +1,15 @@
-import { useQuery } from "@tanstack/react-query";
-import { getData } from "api/API";
-import { APIResponse } from "./types";
 import List from "components/Hoc/List/List";
 import News from "components/General/ListItems/News/News";
 import { NewsType } from "components/General/ListItems/News/news.types";
 import { ResourceType } from "components/General/ListItems/Resource/resource.type";
 import { ListItemProps } from "components/Hoc/List/types";
+import useFetchList from "lib/utils/hooks/useFetchList";
 
 const URL = `./news.json`;
 const QUERY_KEY = "news";
 
 const NewsPage = () => {
-	const { data, isLoading, isError } = useQuery<APIResponse>({
-		queryKey: [QUERY_KEY],
-		queryFn: () => {
-			return getData(URL);
-		},
-	});
+	const { data, isLoading, isError } = useFetchList(QUERY_KEY, URL);
 
 	return (
 		<List
