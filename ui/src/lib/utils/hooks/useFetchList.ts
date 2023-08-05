@@ -9,7 +9,6 @@ const useFetchList = (key: string, url: string) => {
 		},
 	});
 
-	console.log({ data, isLoading, isError, error, isSuccess });
 	return { data, isLoading, isError, error, isSuccess };
 };
 
