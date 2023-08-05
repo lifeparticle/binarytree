@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import { describe, test } from "vitest";
 
-import Clipboard from "../Clipboard";
+import Clipboard from "./Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
 
 describe("Clipboard Component", () => {
