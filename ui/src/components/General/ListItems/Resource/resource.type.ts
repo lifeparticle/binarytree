@@ -1,5 +1,7 @@
+export type SocialName = "github" | "youtube" | "website";
+
 interface Social {
-	name: string;
+	name: SocialName;
 	url: string;
 }
 
