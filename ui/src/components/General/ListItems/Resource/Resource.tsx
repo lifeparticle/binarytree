@@ -4,7 +4,14 @@ import { ListItemProps } from "components/Hoc/List/types";
 import { ResourceType } from "./resource.type";
 import Clipboard from "components/Hoc/Clipboard/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
+import { GithubIcon, WebhookIcon, YoutubeIcon } from "lucide-react";
 const { Title } = Typography;
+
+const Iocns = {
+	github: GithubIcon,
+	youtube: YoutubeIcon,
+	website: WebhookIcon,
+};
 
 const Resource: React.FC<ListItemProps<ResourceType>> = ({
 	resource,
@@ -30,7 +37,10 @@ const Resource: React.FC<ListItemProps<ResourceType>> = ({
 					<Tag color="green" key={category}>
 						{category}
 					</Tag>
-					{socials.map((social) => social.name)}
+					{socials.map((social) => {
+						const Ic = Iocns[social.name];
+						return <Ic />;
+					})}
 					<Clipboard
 						text={url}
 						clipboardComponent={ClipboardButton}
