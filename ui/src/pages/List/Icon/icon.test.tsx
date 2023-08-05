@@ -14,6 +14,6 @@ describe("Icon List component check", () => {
 	});
 
 	test("Render component without creashed", () => {
-		render(wrapper(<IconList />));
+		render(wrapper({ children: <IconList /> }));
 	});
 });
