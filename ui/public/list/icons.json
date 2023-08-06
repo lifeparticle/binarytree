@@ -12,13 +12,13 @@
 		]
 	},
 	{
-		"name": "Lodicon",
+		"name": "Lordicon",
 		"category": "Frontend",
 		"subCategory": ["React", "Frontend"],
 		"url": "https://lordicon.com/",
 		"socials": [
 			{
-				"url": "https://github.com/tabler/tabler-icons",
+				"url": "",
 				"name": "github"
 			}
 		]
@@ -27,10 +27,10 @@
 		"name": "Iconir",
 		"category": "Frontend",
 		"subCategory": ["React", "Frontend"],
-		"url": "https://tabler-icons.io/",
+		"url": "https://iconoir.com/",
 		"socials": [
 			{
-				"url": "https://github.com/tabler/tabler-icons",
+				"url": "https://github.com/iconoir-icons/iconoir",
 				"name": "github"
 			}
 		]
@@ -42,7 +42,19 @@
 		"url": "https://lucide.dev/",
 		"socials": [
 			{
-				"url": "https://github.com/tabler/tabler-icons",
+				"url": "https://github.com/lucide-icons/lucide",
+				"name": "github"
+			}
+		]
+	},
+	{
+		"name": "Feather",
+		"category": "Icons",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://feathericons.com/",
+		"socials": [
+			{
+				"url": "https://github.com/feathericons/feather",
 				"name": "github"
 			}
 		]
