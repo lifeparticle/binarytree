@@ -4,10 +4,8 @@ import { Input } from "antd";
 import style from "./list.module.scss";
 import { ListProps } from "./types";
 import SkeletonCard from "components/General/ListItems/SkeletonCard";
-import { ResourceType } from "components/General/ListItems/Resource/resource.type";
-import { NewsType } from "components/General/ListItems/News/news.types";
 
-const filteredNews = (searchQuery: string, items: NewsType[]) => {
+const filteredNews = <T,>(searchQuery: string, items: T[]) => {
 	if (searchQuery) {
 		return items.filter((item) =>
 			item.title.toLowerCase().includes(searchQuery.toLowerCase())
@@ -16,7 +14,7 @@ const filteredNews = (searchQuery: string, items: NewsType[]) => {
 	return items;
 };
 
-const filteredResource = (searchQuery: string, items: ResourceType[]) => {
+const filteredResource = <T,>(searchQuery: string, items: T[]) => {
 	return items?.filter((listItem) =>
 		listItem.subCategory.some((subcategory) =>
 			subcategory.toLowerCase().includes(searchQuery.toLowerCase())
@@ -24,13 +22,13 @@ const filteredResource = (searchQuery: string, items: ResourceType[]) => {
 	);
 };
 
-const List: React.FC<ListProps<NewsType | ResourceType>> = ({
+const List = <T,>({
 	items,
 	resourceName,
 	itemComponent: ItemComponent,
 	isLoading,
 	isError,
-}) => {
+}: ListProps<T>): JSX.Element => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const query = searchParams.get("q") || "";
 	const [searchQuery, setSearchQuery] = useState(query);
@@ -43,8 +41,8 @@ const List: React.FC<ListProps<NewsType | ResourceType>> = ({
 
 	const filteredList =
 		resourceName === "news"
-			? filteredNews(searchQuery, items as NewsType[])
-			: filteredResource(searchQuery, items as ResourceType[]);
+			? filteredNews(searchQuery, items)
+			: filteredResource(searchQuery, items);
 
 	const handleOnClick = (url: string) => {
 		window.open(url, "_blank");
