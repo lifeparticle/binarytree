@@ -76,6 +76,10 @@ const List = <T,>({
 
 	const categories = getCategories(items as ResourceType[], resourceName);
 
+	if (isError) {
+		return <div>Something went wrong</div>;
+	}
+
 	return (
 		<div className={style.container}>
 			<Input
@@ -94,8 +98,6 @@ const List = <T,>({
 
 			{isLoading ? (
 				<SkeletonCard />
-			) : isError ? (
-				<div>Something went wrong</div>
 			) : (
 				filteredList.map((item, i) => (
 					<ItemComponent
