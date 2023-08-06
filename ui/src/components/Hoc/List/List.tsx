@@ -79,7 +79,7 @@ const List = <T,>({
 				onChange={handleSearchChange}
 			/>
 
-			{subCategorys.length > 0 && (
+			{category.length > 0 && (
 				<div>
 					<Tag
 						color={category === "" ? "cyan" : "default"}
