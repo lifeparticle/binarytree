@@ -1,10 +1,12 @@
 import { Typography } from "antd";
 import usePageTitle from "lib/utils/hooks/usePageTitle";
 import { useLocation } from "react-router-dom";
+import style from "./pageHeader.module.scss";
 
 const { Title } = Typography;
 const YOUTUBE = "youtube";
 const GITHUB = "github";
+const ICONS = "icons";
 
 const PageHeader: React.FC = () => {
 	const location = useLocation();
@@ -12,10 +14,11 @@ const PageHeader: React.FC = () => {
 
 	if (
 		location.pathname.includes(YOUTUBE) ||
-		location.pathname.includes(GITHUB)
+		location.pathname.includes(GITHUB) ||
+		location.pathname.includes(ICONS)
 	) {
 		return (
-			<Title style={{ textAlign: "center" }} level={3}>
+			<Title className={style.pageHeader} level={3}>
 				{title}
 			</Title>
 		);
