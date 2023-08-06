@@ -1,7 +1,7 @@
 import { Card, Skeleton, Space, Tag, Typography } from "antd";
 import style from "./resource.module.scss";
 import { ListItemProps } from "components/Hoc/List/types";
-import { ResourceType, SocialName } from "./resource.type";
+import { SocialName } from "./resource.type";
 import Clipboard from "components/Hoc/Clipboard/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
 import { GithubIcon, WebhookIcon, YoutubeIcon } from "lucide-react";
@@ -13,10 +13,10 @@ const Iocns: Record<SocialName, React.ComponentType> = {
 	website: WebhookIcon,
 };
 
-const Resource: React.FC<ListItemProps<ResourceType>> = ({
+const Resource = <T,>({
 	resource,
 	handleOnClick,
-}) => {
+}: ListItemProps<T>): JSX.Element => {
 	const { name, category, socials, url } = resource;
 
 	return (
