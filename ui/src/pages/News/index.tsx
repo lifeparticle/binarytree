@@ -6,10 +6,10 @@ import { ListItemProps } from "components/Hoc/List/types";
 import useFetchList from "lib/utils/hooks/useFetchList";
 
 const URL = `./news.json`;
-const QUERY_KEY = "news";
+export const QUERY_KEY_NEWS = "news";
 
 const NewsPage = () => {
-	const { data, isLoading, isError } = useFetchList(QUERY_KEY, URL);
+	const { data, isLoading, isError } = useFetchList(QUERY_KEY_NEWS, URL);
 
 	return (
 		<List
