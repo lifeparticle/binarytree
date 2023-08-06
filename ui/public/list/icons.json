@@ -58,5 +58,41 @@
 				"name": "github"
 			}
 		]
+	},
+	{
+		"name": "Simple icons",
+		"category": "Icons",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://simpleicons.org/",
+		"socials": [
+			{
+				"url": "https://github.com/simple-icons/simple-icons",
+				"name": "github"
+			}
+		]
+	},
+	{
+		"name": "Octicons",
+		"category": "Icons",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://github.com/primer/octicons",
+		"socials": [
+			{
+				"url": "https://primer.style/design/foundations/icons",
+				"name": "github"
+			}
+		]
+	},
+	{
+		"name": "Font Awesome",
+		"category": "Icons",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://fontawesome.com/",
+		"socials": [
+			{
+				"url": "https://github.com/FortAwesome/Font-Awesome",
+				"name": "github"
+			}
+		]
 	}
 ]
