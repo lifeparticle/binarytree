@@ -5,7 +5,7 @@ import useFetchList from "lib/utils/hooks/useFetchList";
 export const URL = `./icons.json`;
 export const QUERY_KEY = "icons";
 
-function IconList() {
+const IconList: React.FC = () => {
 	const { data, isLoading, isError } = useFetchList(QUERY_KEY, URL);
 	return (
 		<List
@@ -16,6 +16,6 @@ function IconList() {
 			isError={isError}
 		/>
 	);
-}
+};
 
 export default IconList;
