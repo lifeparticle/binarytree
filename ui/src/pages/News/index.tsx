@@ -11,7 +11,10 @@ const NewsPage = () => {
 
 	return (
 		<>
-			<Search />
+			<Search
+				items={data?.articles || []}
+				resourceName={QUERY_KEY_NEWS}
+			/>
 			<List
 				items={data?.articles || []}
 				resourceName={QUERY_KEY_NEWS}

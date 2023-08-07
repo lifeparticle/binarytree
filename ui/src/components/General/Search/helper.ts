@@ -1,5 +1,5 @@
-import { ResourceType } from "components/General/ListItems/Resource/resource.type";
 import { QUERY_KEY_NEWS } from "pages/News";
+import { ResourceType } from "../ListItems/Resource/resource.type";
 
 const getCategories = <T extends ResourceType>(
 	items: T[],
