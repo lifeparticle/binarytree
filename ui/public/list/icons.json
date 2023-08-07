@@ -1,97 +1,121 @@
 [
 	{
-		"name": "Tabler Icons",
-		"category": "Frontend",
-		"subCategory": ["React", "Frontend"],
-		"url": "https://tabler-icons.io/",
-		"socials": [
-			{
-				"url": "https://github.com/tabler/tabler-icons",
-				"name": "github"
-			}
-		]
-	},
-	{
-		"name": "Lordicon",
-		"category": "Frontend",
-		"subCategory": ["React", "Frontend"],
-		"url": "https://lordicon.com/",
+		"name": "freeCodeCamp",
+		"category": "GitHub Repository",
+		"subCategory": ["TypeScript", "Educational"],
+		"url": "https://github.com/freeCodeCamp/freeCodeCamp",
 		"socials": [
 			{
 				"url": "",
-				"name": "github"
+				"name": "GitHub"
 			}
 		]
 	},
 	{
-		"name": "Iconir",
-		"category": "Frontend",
-		"subCategory": ["React", "Frontend"],
-		"url": "https://iconoir.com/",
+		"name": "free-programming-books",
+		"category": "GitHub Repository",
+		"subCategory": ["None", "Educational"],
+		"url": "https://github.com/EbookFoundation/free-programming-books",
 		"socials": [
 			{
-				"url": "https://github.com/iconoir-icons/iconoir",
-				"name": "github"
+				"url": "",
+				"name": "GitHub"
 			}
 		]
 	},
 	{
-		"name": "Lucide Icons",
-		"category": "Icons",
-		"subCategory": ["React", "Frontend"],
-		"url": "https://lucide.dev/",
+		"name": "996.ICU",
+		"category": "GitHub Repository",
+		"subCategory": ["None", "Protest"],
+		"url": "https://github.com/996icu/996.ICU",
 		"socials": [
 			{
-				"url": "https://github.com/lucide-icons/lucide",
-				"name": "github"
+				"url": "",
+				"name": "GitHub"
 			}
 		]
 	},
 	{
-		"name": "Feather",
-		"category": "Icons",
-		"subCategory": ["React", "Frontend"],
-		"url": "https://feathericons.com/",
+		"name": "awesome",
+		"category": "GitHub Repository",
+		"subCategory": ["None", "Curated List"],
+		"url": "https://github.com/sindresorhus/awesome",
 		"socials": [
 			{
-				"url": "https://github.com/feathericons/feather",
-				"name": "github"
+				"url": "",
+				"name": "GitHub"
 			}
 		]
 	},
 	{
-		"name": "Simple icons",
-		"category": "Icons",
-		"subCategory": ["React", "Frontend"],
-		"url": "https://simpleicons.org/",
+		"name": "coding-interview-university",
+		"category": "GitHub Repository",
+		"subCategory": ["None", "Educational"],
+		"url": "https://github.com/jwasham/coding-interview-university",
 		"socials": [
 			{
-				"url": "https://github.com/simple-icons/simple-icons",
-				"name": "github"
+				"url": "",
+				"name": "GitHub"
 			}
 		]
 	},
 	{
-		"name": "Octicons",
-		"category": "Icons",
-		"subCategory": ["React", "Frontend"],
-		"url": "https://github.com/primer/octicons",
+		"name": "public-apis",
+		"category": "GitHub Repository",
+		"subCategory": ["Python", "APIs"],
+		"url": "https://github.com/public-apis/public-apis",
 		"socials": [
 			{
-				"url": "https://primer.style/design/foundations/icons",
-				"name": "github"
+				"url": "",
+				"name": "GitHub"
 			}
 		]
 	},
 	{
-		"name": "Font Awesome",
-		"category": "Icons",
-		"subCategory": ["React", "Frontend"],
-		"url": "https://fontawesome.com/",
+		"name": "developer-roadmap",
+		"category": "GitHub Repository",
+		"subCategory": ["TypeScript", "Guides"],
+		"url": "https://github.com/kamranahmedse/developer-roadmap",
 		"socials": [
 			{
-				"url": "https://github.com/FortAwesome/Font-Awesome",
-				"name": "github"
+				"url": "",
+				"name": "GitHub"
+			}
+		]
+	},
+	{
+		"name": "system-design-primer",
+		"category": "GitHub Repository",
+		"subCategory": ["Python", "System Design"],
+		"url": "https://github.com/donnemartin/system-design-primer",
+		"socials": [
+			{
+				"url": "",
+				"name": "GitHub"
+			}
+		]
+	},
+	{
+		"name": "react",
+		"category": "GitHub Repository",
+		"subCategory": ["JavaScript", "Library"],
+		"url": "https://github.com/facebook/react",
+		"socials": [
+			{
+				"url": "",
+				"name": "GitHub"
+			}
+		]
+	},
+	{
+		"name": "build-your-own-x",
+		"category": "GitHub Repository",
+		"subCategory": ["None", "Educational"],
+		"url": "https://github.com/danistefanovic/build-your-own-x",
+		"socials": [
+			{
+				"url": "",
+				"name": "GitHub"
 			}
 		]
 	}

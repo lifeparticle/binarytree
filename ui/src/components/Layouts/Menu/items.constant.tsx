@@ -137,13 +137,13 @@ const MENU_ITEMS = [
 				show: true,
 			},
 			{
-				name: "Channel",
+				name: "Youtube",
 				url: "/list/youtube-channels",
 				icon: <Youtube size={16} />,
 				show: true,
 			},
 			{
-				name: "Github Repo",
+				name: "Github",
 				url: "/list/github-repos",
 				icon: <Github size={16} />,
 				show: true,
