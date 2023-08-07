@@ -1,121 +1,97 @@
 [
 	{
-		"name": "freeCodeCamp",
-		"category": "GitHub Repository",
-		"subCategory": ["TypeScript", "Educational"],
-		"url": "https://github.com/freeCodeCamp/freeCodeCamp",
+		"name": "Tabler Icons",
+		"category": "Frontend",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://tabler-icons.io/",
 		"socials": [
 			{
-				"url": "",
-				"name": "GitHub"
+				"url": "https://github.com/tabler/tabler-icons",
+				"name": "github"
 			}
 		]
 	},
 	{
-		"name": "free-programming-books",
-		"category": "GitHub Repository",
-		"subCategory": ["None", "Educational"],
-		"url": "https://github.com/EbookFoundation/free-programming-books",
+		"name": "Lordicon",
+		"category": "Frontend",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://lordicon.com/",
 		"socials": [
 			{
 				"url": "",
-				"name": "GitHub"
+				"name": "github"
 			}
 		]
 	},
 	{
-		"name": "996.ICU",
-		"category": "GitHub Repository",
-		"subCategory": ["None", "Protest"],
-		"url": "https://github.com/996icu/996.ICU",
+		"name": "Iconir",
+		"category": "Frontend",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://iconoir.com/",
 		"socials": [
 			{
-				"url": "",
-				"name": "GitHub"
+				"url": "https://github.com/iconoir-icons/iconoir",
+				"name": "github"
 			}
 		]
 	},
 	{
-		"name": "awesome",
-		"category": "GitHub Repository",
-		"subCategory": ["None", "Curated List"],
-		"url": "https://github.com/sindresorhus/awesome",
+		"name": "Lucide Icons",
+		"category": "Icons",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://lucide.dev/",
 		"socials": [
 			{
-				"url": "",
-				"name": "GitHub"
+				"url": "https://github.com/lucide-icons/lucide",
+				"name": "github"
 			}
 		]
 	},
 	{
-		"name": "coding-interview-university",
-		"category": "GitHub Repository",
-		"subCategory": ["None", "Educational"],
-		"url": "https://github.com/jwasham/coding-interview-university",
+		"name": "Feather",
+		"category": "Icons",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://feathericons.com/",
 		"socials": [
 			{
-				"url": "",
-				"name": "GitHub"
+				"url": "https://github.com/feathericons/feather",
+				"name": "github"
 			}
 		]
 	},
 	{
-		"name": "public-apis",
-		"category": "GitHub Repository",
-		"subCategory": ["Python", "APIs"],
-		"url": "https://github.com/public-apis/public-apis",
+		"name": "Simple icons",
+		"category": "Icons",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://simpleicons.org/",
 		"socials": [
 			{
-				"url": "",
-				"name": "GitHub"
+				"url": "https://github.com/simple-icons/simple-icons",
+				"name": "github"
 			}
 		]
 	},
 	{
-		"name": "developer-roadmap",
-		"category": "GitHub Repository",
-		"subCategory": ["TypeScript", "Guides"],
-		"url": "https://github.com/kamranahmedse/developer-roadmap",
+		"name": "Octicons",
+		"category": "Icons",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://github.com/primer/octicons",
 		"socials": [
 			{
-				"url": "",
-				"name": "GitHub"
+				"url": "https://primer.style/design/foundations/icons",
+				"name": "github"
 			}
 		]
 	},
 	{
-		"name": "system-design-primer",
-		"category": "GitHub Repository",
-		"subCategory": ["Python", "System Design"],
-		"url": "https://github.com/donnemartin/system-design-primer",
+		"name": "Font Awesome",
+		"category": "Icons",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://fontawesome.com/",
 		"socials": [
 			{
-				"url": "",
-				"name": "GitHub"
-			}
-		]
-	},
-	{
-		"name": "react",
-		"category": "GitHub Repository",
-		"subCategory": ["JavaScript", "Library"],
-		"url": "https://github.com/facebook/react",
-		"socials": [
-			{
-				"url": "",
-				"name": "GitHub"
-			}
-		]
-	},
-	{
-		"name": "build-your-own-x",
-		"category": "GitHub Repository",
-		"subCategory": ["None", "Educational"],
-		"url": "https://github.com/danistefanovic/build-your-own-x",
-		"socials": [
-			{
-				"url": "",
-				"name": "GitHub"
+				"url": "https://github.com/FortAwesome/Font-Awesome",
+				"name": "github"
 			}
 		]
 	}
