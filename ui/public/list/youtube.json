@@ -2,7 +2,7 @@
 	{
 		"name": "Traversy Media",
 		"category": "Web Development",
-		"subCategory": ["HTML/CSS", "JavaScript"],
+		"subCategory": ["HTML", "CSS", "JavaScript"],
 		"url": "https://www.youtube.com/user/TechGuyWeb",
 		"socials": [
 			{ "url": "https://github.com/bradtraversy", "name": "GitHub" }
@@ -16,13 +16,6 @@
 		"socials": [
 			{ "url": "https://github.com/freeCodeCamp", "name": "GitHub" }
 		]
-	},
-	{
-		"name": "Fun Fun Function",
-		"category": "Programming",
-		"subCategory": ["Functional Programming", "JavaScript"],
-		"url": "https://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q",
-		"socials": [{ "url": "https://github.com/mpj", "name": "GitHub" }]
 	},
 	{
 		"name": "The Net Ninja",
@@ -59,12 +52,20 @@
 		"socials": [{ "url": "https://github.com/academind", "name": "GitHub" }]
 	},
 	{
-		"name": "Ben Awad",
+		"name": "Fireship",
 		"category": "Web Development",
-		"subCategory": ["React", "GraphQL"],
-		"url": "https://www.youtube.com/user/99baddawg",
-		"socials": [{ "url": "https://github.com/benawad", "name": "GitHub" }]
+		"subCategory": ["Angular", "Firebase"],
+		"url": "https://www.youtube.com/@Fireship",
+		"socials": [{ "url": "", "name": "GitHub" }]
 	},
+	{
+		"name": "Web Dev Simplified",
+		"category": "Web Development",
+		"subCategory": ["HTML", "CSS", "JavaScript"],
+		"url": "https://www.youtube.com/c/WebDevSimplified",
+		"socials": [{ "url": "", "name": "GitHub" }]
+	},
+
 	{
 		"name": "Dev Ed",
 		"category": "Web Development",
@@ -79,8 +80,90 @@
 		"category": "Programming",
 		"subCategory": ["Tech Talks", "Interviews"],
 		"url": "https://www.youtube.com/c/CodingTech",
-		"socials": [
-			{ "url": "https://github.com/CodingTech", "name": "GitHub" }
-		]
+		"socials": [{ "url": "", "name": "GitHub" }]
+	},
+	{
+		"name": "ThePrimeTime",
+		"category": "Programming",
+		"subCategory": ["Tech Talks", "Interviews"],
+		"url": "https://www.youtube.com/@ThePrimeTimeagen",
+		"socials": [{ "url": "", "name": "GitHub" }]
+	},
+	{
+		"name": "Beyond Fireship",
+		"category": "Programming",
+		"subCategory": ["Tech Talks", "Interviews"],
+		"url": "https://www.youtube.com/@beyondfireship",
+		"socials": [{ "url": "", "name": "GitHub" }]
+	},
+	{
+		"name": "Scrimba",
+		"category": "Web Development",
+		"subCategory": ["Frontend", "Backend"],
+		"url": "https://www.youtube.com/@Scrimba",
+		"socials": [{ "url": "" }]
+	},
+	{
+		"name": "Matt Pocock",
+		"category": "TypeScript",
+		"subCategory": ["Frontend", "Backend", "Tyescript"],
+		"url": "https://www.youtube.com/@mattpocockuk",
+		"socials": [{ "url": "" }]
+	},
+	{
+		"name": "Visual Studio Code ",
+		"category": "Programming",
+		"subCategory": ["Tech Talks", "Interviews"],
+		"url": "https://www.youtube.com/@code",
+		"socials": [{ "url": "" }]
+	},
+	{
+		"name": "Kevin Powell",
+		"category": "Web Development",
+		"subCategory": ["CSS", "HTML"],
+		"url": "https://www.youtube.com/user/KepowOb",
+		"socials": [{ "url": "" }]
+	},
+	{
+		"name": "CodeAesthetic",
+		"category": "Web Development",
+		"subCategory": ["CSS", "HTML"],
+		"url": "https://www.youtube.com/@CodeAesthetic",
+		"socials": [{ "url": "" }]
+	},
+	{
+		"name": "dan",
+		"category": "React",
+		"subCategory": ["CSS", "HTML"],
+		"url": "https://www.youtube.com/@DanAbramov8",
+		"socials": [{ "url": "" }]
+	},
+	{
+		"name": "CS50",
+		"category": "Programming",
+		"subCategory": ["Tech Talks", "Interviews"],
+		"url": "https://www.youtube.com/@cs50",
+		"socials": [{ "url": "" }]
+	},
+	{
+		"name": "Reducible",
+		"category": "Programming",
+		"subCategory": ["Tech Talks", "Interviews"],
+		"url": "https://www.youtube.com/@Reducible",
+		"socials": [{ "url": "" }]
+	},
+	{
+		"name": "3Blue1Brown",
+		"category": "Mathematics",
+		"subCategory": ["Tech Talks", "Interviews"],
+		"url": "https://www.youtube.com/@3blue1brown",
+		"socials": [{ "url": "" }]
+	},
+	{
+		"name": "Kent C. Dodds",
+		"category": "Programming",
+		"subCategory": ["Tech Talks", "Interviews"],
+		"url": "https://www.youtube.com/@KentCDodds-vids",
+		"socials": [{ "url": "" }]
 	}
 ]
