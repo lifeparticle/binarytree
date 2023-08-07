@@ -11,7 +11,7 @@ const News: React.FC<ListItemProps<NewsType>> = ({
 	const { title, content, url } = resource || {};
 
 	return (
-		<Card onClick={() => handleOnClick(url)}>
+		<Card onClick={() => handleOnClick(url)} hoverable>
 			<Skeleton loading={isLoading}>
 				<Title level={4}>{title}</Title>
 				{content}
