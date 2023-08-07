@@ -5,7 +5,7 @@ import useFetchList from "lib/utils/hooks/useFetchList";
 const URL = `./youtube.json`;
 const QUERY_KEY = "youtube";
 
-function YoutubeList() {
+const YoutubeList: React.FC = () => {
 	const { data, isLoading, isError } = useFetchList(QUERY_KEY, URL);
 	return (
 		<List
@@ -16,6 +16,6 @@ function YoutubeList() {
 			isError={isError}
 		/>
 	);
-}
+};
 
 export default YoutubeList;

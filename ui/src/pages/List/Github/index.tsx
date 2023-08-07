@@ -5,7 +5,7 @@ import useFetchList from "lib/utils/hooks/useFetchList";
 const URL = `./github.json`;
 const QUERY_KEY = "github";
 
-function GithubList() {
+const GithubList: React.FC = () => {
 	const { data, isLoading, isError } = useFetchList(QUERY_KEY, URL);
 
 	return (
@@ -17,6 +17,6 @@ function GithubList() {
 			isError={isError}
 		/>
 	);
-}
+};
 
 export default GithubList;
