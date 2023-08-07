@@ -26,6 +26,9 @@ function App() {
 			<ConfigProvider
 				theme={{
 					algorithm,
+					token: {
+						fontFamily: "Inter",
+					},
 				}}
 			>
 				<Layout>

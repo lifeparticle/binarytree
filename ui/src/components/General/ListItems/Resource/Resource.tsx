@@ -20,10 +20,7 @@ const Resource: React.FC<ListItemProps<ResourceType>> = ({
 			<Skeleton loading={isLoading} avatar active>
 				<Space className={style.card__container}>
 					<Space size={16}>
-						<Avatar
-							size={70}
-							style={{ fontWeight: "bold", fontSize: "35px" }}
-						>
+						<Avatar className={style.card__avatar}>
 							{FIRST_LETTER}
 						</Avatar>
 						<Space direction="vertical">
