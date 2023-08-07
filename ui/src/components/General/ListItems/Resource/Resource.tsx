@@ -7,14 +7,17 @@ import ClipboardButton from "components/General/ClipboardButton/ClipboardButton"
 
 const { Title } = Typography;
 
-const Resource: React.FC<ListItemProps<ResourceType>> = ({ resource }) => {
-	const { name, category, url } = resource;
+const Resource: React.FC<ListItemProps<ResourceType>> = ({
+	resource,
+	isLoading,
+}) => {
+	const { name, category, url } = resource || {};
 
 	const FIRST_LETTER = name?.[0];
 
 	return (
 		<Card className={style.card} key={name} hoverable>
-			<Skeleton loading={false} avatar active>
+			<Skeleton loading={isLoading} avatar active>
 				<Space className={style.card__container}>
 					<Space size={16}>
 						<Avatar
