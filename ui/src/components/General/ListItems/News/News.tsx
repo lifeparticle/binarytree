@@ -1,8 +1,7 @@
-import { Card, Skeleton } from "antd";
-
-import style from "./article.module.scss";
+import { Card, Skeleton, Typography } from "antd";
 import { ListItemProps } from "components/Hoc/List/types";
 import { NewsType } from "./news.types";
+const { Title } = Typography;
 
 const News: React.FC<ListItemProps<NewsType>> = ({
 	resource,
@@ -12,9 +11,9 @@ const News: React.FC<ListItemProps<NewsType>> = ({
 	const { title, content, url } = resource || {};
 
 	return (
-		<Card className={style.article} onClick={() => handleOnClick(url)}>
+		<Card onClick={() => handleOnClick(url)}>
 			<Skeleton loading={isLoading}>
-				<h4>{title}</h4>
+				<Title level={4}>{title}</Title>
 				{content}
 			</Skeleton>
 		</Card>

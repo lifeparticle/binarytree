@@ -7,7 +7,7 @@ import { NewsType } from "components/General/ListItems/News/news.types";
 import { ResourceType } from "components/General/ListItems/Resource/resource.type";
 import { getCategories } from "./helper";
 import { QUERY_KEY_NEWS } from "pages/News";
-import CategoryTags from "./CategoryTags";
+import CategoryTags from "./CategoryTags/CategoryTags";
 
 const filteredNews = (searchQuery: string, items: NewsType[]) => {
 	if (searchQuery) {
@@ -26,7 +26,7 @@ const filteredResource = (
 	const lowercaseSearchQuery = searchQuery.toLowerCase();
 	const lowercaseCategoryQuery = categoryQuery.toLowerCase();
 
-	return items.filter((item) => {
+	return items?.filter((item) => {
 		const name = item?.name?.toLowerCase();
 		const category = item?.category?.toLowerCase();
 
