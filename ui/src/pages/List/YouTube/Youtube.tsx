@@ -5,7 +5,7 @@ import useFetchList from "lib/utils/hooks/useFetchList";
 const URL = `./youtube.json`;
 const QUERY_KEY = "youtube";
 
-const YoutubeList: React.FC = () => {
+const Youtube: React.FC = () => {
 	const { data, isLoading, isError } = useFetchList(QUERY_KEY, URL);
 	return (
 		<List
@@ -18,4 +18,4 @@ const YoutubeList: React.FC = () => {
 	);
 };
 
-export default YoutubeList;
+export default Youtube;

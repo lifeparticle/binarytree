@@ -1,7 +1,7 @@
 import { render, renderHook, waitFor } from "@testing-library/react";
 import useFetchList from "lib/utils/hooks/useFetchList";
 import { describe, test } from "vitest";
-import IconList, { QUERY_KEY, URL } from ".";
+import IconList, { QUERY_KEY, URL } from "./Icon";
 import { wrapper } from "test/wrapper";
 
 describe("Icon List component check", () => {

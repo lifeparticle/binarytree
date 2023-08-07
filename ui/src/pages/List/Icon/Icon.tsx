@@ -2,16 +2,15 @@ import List from "components/Hoc/List/List";
 import Resource from "components/General/ListItems/Resource/Resource";
 import useFetchList from "lib/utils/hooks/useFetchList";
 
-const URL = `./github.json`;
-const QUERY_KEY = "github";
+export const URL = `./icons.json`;
+export const QUERY_KEY = "icons";
 
-const GithubList: React.FC = () => {
+const Icon: React.FC = () => {
 	const { data, isLoading, isError } = useFetchList(QUERY_KEY, URL);
-
 	return (
 		<List
 			items={data}
-			resourceName={QUERY_KEY}
+			resourceName="github"
 			itemComponent={Resource}
 			isLoading={isLoading}
 			isError={isError}
@@ -19,4 +18,4 @@ const GithubList: React.FC = () => {
 	);
 };
 
-export default GithubList;
+export default Icon;

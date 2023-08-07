@@ -20,9 +20,9 @@ const PixelConverter = lazy(() => import("pages/Converter/PixelConverter"));
 
 const TextEditor = lazy(() => import("pages/Text/TextEditor"));
 
-const IconList = lazy(() => import("pages/List/Icon"));
-const YouTubeList = lazy(() => import("pages/List/YouTube"));
-const GithubList = lazy(() => import("pages/List/Github"));
+const IconList = lazy(() => import("pages/List/Icon/Icon"));
+const YouTubeList = lazy(() => import("pages/List/YouTube/Youtube"));
+const GithubList = lazy(() => import("pages/List/Github/Github"));
 
 export {
 	News,
