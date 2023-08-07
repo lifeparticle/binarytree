@@ -65,6 +65,26 @@ const ROUTES: Route[] = [
 		title: "Github Repository",
 	},
 	{
+		path: "/list/blog",
+		title: "Blog",
+	},
+	{
+		path: "/list/book",
+		title: "Book",
+	},
+	{
+		path: "/list/course",
+		title: "Course",
+	},
+	{
+		path: "/list/movie",
+		title: "movie",
+	},
+	{
+		path: "/list/tv-series",
+		title: "Tv Series",
+	},
+	{
 		path: "*",
 		title: "Page Not Found",
 	},

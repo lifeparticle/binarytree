@@ -19,6 +19,11 @@ import {
 	Replace,
 	Table,
 	Youtube,
+	PanelTop,
+	Book,
+	GraduationCap,
+	Clapperboard,
+	Tv,
 } from "lucide-react";
 
 const IN_DEV = import.meta.env.DEV;
@@ -147,6 +152,36 @@ const MENU_ITEMS = [
 				url: "/list/github-repos",
 				icon: <Github size={16} />,
 				show: true,
+			},
+			{
+				name: "Blog",
+				url: "/list/blog",
+				icon: <PanelTop size={16} />,
+				show: IN_DEV,
+			},
+			{
+				name: "Book",
+				url: "/list/book",
+				icon: <Book size={16} />,
+				show: IN_DEV,
+			},
+			{
+				name: "Course",
+				url: "/list/course",
+				icon: <GraduationCap size={16} />,
+				show: IN_DEV,
+			},
+			{
+				name: "Movie",
+				url: "/list/movie",
+				icon: <Clapperboard size={16} />,
+				show: IN_DEV,
+			},
+			{
+				name: "TV Series",
+				url: "/list/tv-series",
+				icon: <Tv size={16} />,
+				show: IN_DEV,
 			},
 		],
 	},
