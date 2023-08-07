@@ -1,6 +1,6 @@
+import { NewsType } from "./news.types";
 import { Card, Skeleton, Typography } from "antd";
 import { ListItemProps } from "components/Hoc/List/types";
-import { NewsType } from "./news.types";
 const { Title } = Typography;
 
 const News: React.FC<ListItemProps<NewsType>> = ({
