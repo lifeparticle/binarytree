@@ -1,5 +1,6 @@
 import React from "react";
 import CategoryTag from "./CategoryTag";
+import { Space } from "antd";
 
 interface CategoryTagsProps {
 	categories: string[];
@@ -17,7 +18,7 @@ const CategoryTags: React.FC<CategoryTagsProps> = ({
 	if (categories.length === 0) return null;
 
 	return (
-		<div>
+		<Space wrap>
 			<CategoryTag
 				label="All"
 				selected={category === ""}
@@ -33,7 +34,7 @@ const CategoryTags: React.FC<CategoryTagsProps> = ({
 					className={className}
 				/>
 			))}
-		</div>
+		</Space>
 	);
 };
 
