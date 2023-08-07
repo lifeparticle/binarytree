@@ -15,9 +15,9 @@ import {
 	TableOfContent,
 	Shades,
 	TableGenerator,
-	IconList,
-	YouTubeList,
-	GithubList,
+	Icon,
+	YouTube,
+	Github,
 } from "pages/pages";
 
 const Routes = () => {
@@ -68,12 +68,9 @@ const Routes = () => {
 					<Route path="/list">
 						<Route index element={<Navigate to={"icons"} />} />
 
-						<Route path="icons" element={<IconList />} />
-						<Route path="github-repos" element={<GithubList />} />
-						<Route
-							path="youtube-channels"
-							element={<YouTubeList />}
-						/>
+						<Route path="icons" element={<Icon />} />
+						<Route path="github-repos" element={<Github />} />
+						<Route path="youtube-channels" element={<YouTube />} />
 					</Route>
 					<Route path="*" element={<Navigate to="/404" />} />
 				</RRDRoutes>
