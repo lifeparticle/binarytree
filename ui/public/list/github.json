@@ -1,8 +1,8 @@
 [
 	{
 		"name": "freeCodeCamp",
-		"category": "GitHub Repository",
-		"subCategory": ["TypeScript", "Educational"],
+		"category": "Education",
+		"subCategory": ["TypeScript", "Web Development"],
 		"url": "https://github.com/freeCodeCamp/freeCodeCamp",
 		"socials": [
 			{
@@ -13,8 +13,8 @@
 	},
 	{
 		"name": "free-programming-books",
-		"category": "GitHub Repository",
-		"subCategory": ["None", "Educational"],
+		"category": "Education",
+		"subCategory": ["None", "Programming Books"],
 		"url": "https://github.com/EbookFoundation/free-programming-books",
 		"socials": [
 			{
@@ -25,8 +25,8 @@
 	},
 	{
 		"name": "996.ICU",
-		"category": "GitHub Repository",
-		"subCategory": ["None", "Protest"],
+		"category": "Protest",
+		"subCategory": ["None", "Working Conditions"],
 		"url": "https://github.com/996icu/996.ICU",
 		"socials": [
 			{
@@ -37,7 +37,7 @@
 	},
 	{
 		"name": "awesome",
-		"category": "GitHub Repository",
+		"category": "Curated Lists",
 		"subCategory": ["None", "Curated List"],
 		"url": "https://github.com/sindresorhus/awesome",
 		"socials": [
@@ -49,8 +49,8 @@
 	},
 	{
 		"name": "coding-interview-university",
-		"category": "GitHub Repository",
-		"subCategory": ["None", "Educational"],
+		"category": "Education",
+		"subCategory": ["None", "Interview Preparation"],
 		"url": "https://github.com/jwasham/coding-interview-university",
 		"socials": [
 			{
@@ -61,7 +61,7 @@
 	},
 	{
 		"name": "public-apis",
-		"category": "GitHub Repository",
+		"category": "APIs",
 		"subCategory": ["Python", "APIs"],
 		"url": "https://github.com/public-apis/public-apis",
 		"socials": [
@@ -73,8 +73,8 @@
 	},
 	{
 		"name": "developer-roadmap",
-		"category": "GitHub Repository",
-		"subCategory": ["TypeScript", "Guides"],
+		"category": "Guides",
+		"subCategory": ["TypeScript", "Web Development"],
 		"url": "https://github.com/kamranahmedse/developer-roadmap",
 		"socials": [
 			{
@@ -85,7 +85,7 @@
 	},
 	{
 		"name": "system-design-primer",
-		"category": "GitHub Repository",
+		"category": "System Design",
 		"subCategory": ["Python", "System Design"],
 		"url": "https://github.com/donnemartin/system-design-primer",
 		"socials": [
@@ -97,8 +97,8 @@
 	},
 	{
 		"name": "react",
-		"category": "GitHub Repository",
-		"subCategory": ["JavaScript", "Library"],
+		"category": "Library",
+		"subCategory": ["JavaScript", "Web Development"],
 		"url": "https://github.com/facebook/react",
 		"socials": [
 			{
@@ -109,8 +109,8 @@
 	},
 	{
 		"name": "build-your-own-x",
-		"category": "GitHub Repository",
-		"subCategory": ["None", "Educational"],
+		"category": "Education",
+		"subCategory": ["None", "Programming"],
 		"url": "https://github.com/danistefanovic/build-your-own-x",
 		"socials": [
 			{
