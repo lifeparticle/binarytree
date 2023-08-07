@@ -1,6 +1,7 @@
 interface ListItemProps<T> {
 	resource: T;
 	handleOnClick: (url: string) => void;
+	isLoading: boolean;
 }
 
 interface ListProps<T> {
