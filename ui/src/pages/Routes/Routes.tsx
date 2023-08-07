@@ -18,6 +18,11 @@ import {
 	Icon,
 	YouTube,
 	Github,
+	TvSeries,
+	Movie,
+	Course,
+	Blog,
+	Book,
 } from "pages/pages";
 
 const Routes = () => {
@@ -71,6 +76,11 @@ const Routes = () => {
 						<Route path="icons" element={<Icon />} />
 						<Route path="github-repos" element={<Github />} />
 						<Route path="youtube-channels" element={<YouTube />} />
+						<Route path="book" element={<Book />} />
+						<Route path="blog" element={<Blog />} />
+						<Route path="course" element={<Course />} />
+						<Route path="movie" element={<Movie />} />
+						<Route path="tv-series" element={<TvSeries />} />
 					</Route>
 					<Route path="*" element={<Navigate to="/404" />} />
 				</RRDRoutes>
