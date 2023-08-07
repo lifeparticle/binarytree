@@ -1,5 +1,6 @@
 import { Button } from "antd";
 import { Check, Copy } from "lucide-react";
+import style from "./clipboardButton.module.scss";
 
 export interface ClipboardButtonProps {
 	copyToClipboard: (text: string) => void;
@@ -13,8 +14,8 @@ const ClipboardButton: React.FC<ClipboardButtonProps> = ({
 	text,
 }) => {
 	return (
-		<Button onClick={() => copyToClipboard(text)}>
-			{copied ? <Check size={20} /> : <Copy size={20} />}
+		<Button className={style.button} onClick={() => copyToClipboard(text)}>
+			{copied ? <Check size={18} /> : <Copy size={18} />}
 		</Button>
 	);
 };

@@ -1,40 +1,46 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Input } from "antd";
 import style from "./list.module.scss";
 import { ListProps } from "./types";
-import SkeletonCard from "components/General/ListItems/SkeletonCard";
 import { NewsType } from "components/General/ListItems/News/news.types";
 import { ResourceType } from "components/General/ListItems/Resource/resource.type";
 import { getCategories } from "./helper";
 import { QUERY_KEY_NEWS } from "pages/News";
 import CategoryTags from "./CategoryTags";
 
-const filteredNews = <T extends NewsType>(searchQuery: string, items: T[]) => {
+const filteredNews = (searchQuery: string, items: NewsType[]) => {
 	if (searchQuery) {
-		return items.filter((item) =>
+		return items?.filter((item) =>
 			item.title.toLowerCase().includes(searchQuery.toLowerCase())
 		);
 	}
 	return items;
 };
 
-const filteredResource = <T extends ResourceType>(
-	type: string,
-	value: string,
-	items: T[]
+const filteredResource = (
+	searchQuery: string,
+	categoryQuery: string,
+	items: ResourceType[]
 ) => {
-	if (type === "text") {
-		return items.filter((item) =>
-			item?.name.toLowerCase().includes(value.toLowerCase())
-		);
-	} else if (type === "cat") {
-		return items.filter((item) =>
-			item?.category.toLowerCase().includes(value.toLowerCase())
-		);
-	} else {
-		return items;
-	}
+	const lowercaseSearchQuery = searchQuery.toLowerCase();
+	const lowercaseCategoryQuery = categoryQuery.toLowerCase();
+
+	return items.filter((item) => {
+		const name = item?.name?.toLowerCase();
+		const category = item?.category?.toLowerCase();
+
+		if (searchQuery || categoryQuery !== "All") {
+			return (
+				(searchQuery ? name?.includes(lowercaseSearchQuery) : true) &&
+				(categoryQuery !== "All"
+					? category?.includes(lowercaseCategoryQuery)
+					: true)
+			);
+		}
+
+		return true;
+	});
 };
 
 const List = <T,>({
@@ -45,28 +51,36 @@ const List = <T,>({
 	isError,
 }: ListProps<T>): JSX.Element => {
 	const [searchParams, setSearchParams] = useSearchParams();
-	const query = searchParams.get("q") || "";
-	const category = searchParams.get("cat") || "";
-	const [searchQuery, setSearchQuery] = useState(query);
-	const [categoryQuery, setCategoryQuery] = useState(category);
+	const [queryParams, setQueryParams] = useState({
+		q: searchParams.get("q") || "",
+		cat: searchParams.get("cat") || "",
+	});
+
+	const { q: searchQuery, cat: categoryQuery } = queryParams;
+
+	useEffect(() => {
+		if (resourceName === QUERY_KEY_NEWS) {
+			setSearchParams(`?q=${searchQuery}`);
+		} else {
+			setSearchParams(`?q=${searchQuery}&cat=${categoryQuery}`);
+		}
+	}, [searchQuery, categoryQuery, setSearchParams, resourceName]);
 
 	const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
 		const value = e.target.value;
-		setSearchQuery(value);
-		setSearchParams(`?q=${value}`);
+		setQueryParams((prevParams) => ({ ...prevParams, q: value }));
 	};
 
 	const handleCategoryChange = (value: string) => {
-		setCategoryQuery(value);
-		setSearchParams(`?cat=${value}`);
+		setQueryParams((prevParams) => ({ ...prevParams, cat: value }));
 	};
 
 	const filteredList =
 		resourceName === QUERY_KEY_NEWS
 			? filteredNews(searchQuery, items as NewsType[])
 			: filteredResource(
-					searchQuery ? "text" : categoryQuery ? "cat" : "",
-					searchQuery || categoryQuery,
+					searchQuery,
+					categoryQuery,
 					items as ResourceType[]
 			  );
 
@@ -76,6 +90,7 @@ const List = <T,>({
 
 	const categories = getCategories(items as ResourceType[], resourceName);
 
+	const list = filteredList ? filteredList : [...Array(20).keys()];
 	if (isError) {
 		return <div>Something went wrong</div>;
 	}
@@ -91,22 +106,19 @@ const List = <T,>({
 
 			<CategoryTags
 				categories={categories}
-				category={category}
+				category={categoryQuery}
 				handleCategoryChange={handleCategoryChange}
 				className={style.container__tag}
 			/>
 
-			{isLoading ? (
-				<SkeletonCard />
-			) : (
-				filteredList.map((item, i) => (
-					<ItemComponent
-						key={i}
-						resource={item as T}
-						handleOnClick={handleOnClick}
-					/>
-				))
-			)}
+			{list.map((item, i) => (
+				<ItemComponent
+					key={i}
+					resource={item as T}
+					handleOnClick={handleOnClick}
+					isLoading={isLoading}
+				/>
+			))}
 		</div>
 	);
 };
