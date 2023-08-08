@@ -5,6 +5,7 @@ import { NewsType } from "components/General/ListItems/News/news.types";
 import { ResourceType } from "components/General/ListItems/Resource/resource.type";
 import { QUERY_KEY_NEWS } from "pages/News";
 import Search from "components/General/Search/Search";
+import { getCategories } from "components/General/Search/helper";
 
 const filteredNews = (searchQuery: string, items: NewsType[]) => {
 	if (searchQuery) {
@@ -68,16 +69,16 @@ const List = <T,>({
 	};
 
 	const list = filteredList ? filteredList : [...Array(20).keys()];
+
+	const categories = getCategories(items as ResourceType[], resourceName);
+
 	if (isError) {
 		return <div>Something went wrong</div>;
 	}
 
 	return (
 		<div className={style.container}>
-			<Search
-				items={items as (ResourceType | NewsType)[]}
-				resourceName={resourceName}
-			/>
+			<Search categories={categories} resourceName={resourceName} />
 			{list.map((item, i) => (
 				<ItemComponent
 					key={i}

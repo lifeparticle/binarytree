@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { MOBILE_WIDTH } from "./constant";
-import { getLocalstorageValue, setLocalstorageValue } from "../helper";
+import { getLocalstorageValue, setLocalstorageValue } from "lib/utils/helper";
 import useWindowWidth from "./useWindowWidth";
 
 export const useMenuCollapsed = (storageKey: string) => {
