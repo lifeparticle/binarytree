@@ -4,6 +4,7 @@ import { ListProps } from "./types";
 import { NewsType } from "components/General/ListItems/News/news.types";
 import { ResourceType } from "components/General/ListItems/Resource/resource.type";
 import { QUERY_KEY_NEWS } from "pages/News";
+import Search from "components/General/Search/Search";
 
 const filteredNews = (searchQuery: string, items: NewsType[]) => {
 	if (searchQuery) {
@@ -73,6 +74,10 @@ const List = <T,>({
 
 	return (
 		<div className={style.container}>
+			<Search
+				items={items as (ResourceType | NewsType)[]}
+				resourceName={resourceName}
+			/>
 			{list.map((item, i) => (
 				<ItemComponent
 					key={i}
