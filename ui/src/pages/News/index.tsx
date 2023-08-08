@@ -10,19 +10,13 @@ const NewsPage = () => {
 	const { data, isLoading, isError } = useFetchList(QUERY_KEY_NEWS, URL);
 
 	return (
-		<>
-			<Search
-				items={data?.articles || []}
-				resourceName={QUERY_KEY_NEWS}
-			/>
-			<List
-				items={data?.articles || []}
-				resourceName={QUERY_KEY_NEWS}
-				itemComponent={News}
-				isLoading={isLoading}
-				isError={isError}
-			/>
-		</>
+		<List
+			items={data?.articles || []}
+			resourceName={QUERY_KEY_NEWS}
+			itemComponent={News}
+			isLoading={isLoading}
+			isError={isError}
+		/>
 	);
 };
 
