@@ -44,7 +44,7 @@ function App() {
 							collapsed={collapsed}
 							style={{
 								overflow: "auto",
-								height: "100vh",
+								height: "calc(100vh - 64px)",
 								position: "sticky",
 								left: 0,
 								top: 64,
