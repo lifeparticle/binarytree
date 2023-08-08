@@ -13,6 +13,7 @@ const { Header: AntHeader } = Layout;
 
 interface HeaderProps {
 	handleThemeChange: () => void;
+	isDarkMode: boolean;
 	collapsed: boolean;
 	handleMenuCollapse: () => void;
 }
@@ -21,6 +22,7 @@ const Header: React.FC<HeaderProps> = ({
 	handleThemeChange,
 	collapsed,
 	handleMenuCollapse,
+	isDarkMode,
 }) => {
 	const {
 		token: { colorBgContainer, colorText },
@@ -59,6 +61,7 @@ const Header: React.FC<HeaderProps> = ({
 					unCheckedChildren={<Sun size={16} />}
 					onChange={handleThemeChange}
 					style={{ backgroundColor: colorText }}
+					checked={isDarkMode}
 				/>
 				<Button
 					type="text"
