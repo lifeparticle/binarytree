@@ -3,20 +3,18 @@ import { ConfigProvider, Layout } from "antd";
 import PageHeader from "components/PageHeader";
 import Header from "components/Layouts/Header";
 import { ErrorBoundary } from "react-error-boundary";
-import useDarkMode from "lib/utils/hooks/useDarkMode";
 import useMenuCollapsed from "lib/utils/hooks/useMenuCollapsed";
 import Routes from "pages/Routes/Routes";
+import { DarkModeContext } from "Provider";
+import { useContext } from "react";
 
 const { Sider, Content } = Layout;
 
-const DARK_MODE_STORAGE_KEY = "darkMode";
 const MENU_COLLAPSED_STORAGE_KEY = "menuCollapsed";
 
 function App() {
-	const { algorithm, toggleTheme, isDarkMode } = useDarkMode(
-		DARK_MODE_STORAGE_KEY,
-		false
-	);
+	const { algorithm, toggleTheme, isDarkMode } = useContext(DarkModeContext);
+
 	const { collapsed, toggleCollapse } = useMenuCollapsed(
 		MENU_COLLAPSED_STORAGE_KEY
 	);
@@ -34,6 +32,7 @@ function App() {
 				<Layout>
 					<Header
 						handleThemeChange={toggleTheme}
+						isDarkMode={isDarkMode}
 						collapsed={collapsed}
 						handleMenuCollapse={toggleCollapse}
 					/>
