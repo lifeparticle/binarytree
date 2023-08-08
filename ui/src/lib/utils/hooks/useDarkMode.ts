@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getLocalstorageValue, setLocalstorageValue } from "../helper";
+import { getLocalstorageValue, setLocalstorageValue } from "lib/utils/helper";
 import { theme } from "antd";
 
 const useDarkMode = (storageKey: string, defaultValue = false) => {

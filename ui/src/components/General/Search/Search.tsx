@@ -4,17 +4,14 @@ import { useState, useEffect, ChangeEvent } from "react";
 import { useSearchParams } from "react-router-dom";
 import CategoryTags from "./CategoryTags/CategoryTags";
 
-import { ResourceType } from "../ListItems/Resource/resource.type";
-
 import style from "./search.module.scss";
-import { getCategories } from "./helper";
-import { NewsType } from "../ListItems/News/news.types";
+
 interface SearchProps {
-	items: (ResourceType | NewsType)[];
+	categories: string[];
 	resourceName: string;
 }
 
-const Search: React.FC<SearchProps> = ({ resourceName, items }) => {
+const Search: React.FC<SearchProps> = ({ resourceName, categories }) => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const [queryParams, setQueryParams] = useState({
 		q: searchParams.get("q") || "",
@@ -39,8 +36,6 @@ const Search: React.FC<SearchProps> = ({ resourceName, items }) => {
 	const handleCategoryChange = (value: string) => {
 		setQueryParams((prevParams) => ({ ...prevParams, cat: value }));
 	};
-
-	const categories = getCategories(items as ResourceType[], resourceName);
 
 	return (
 		<div className={style.search}>
