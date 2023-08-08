@@ -4,19 +4,13 @@ import { useLocation } from "react-router-dom";
 import style from "./pageHeader.module.scss";
 
 const { Title } = Typography;
-const YOUTUBE = "youtube";
-const GITHUB = "github";
-const ICONS = "icons";
+const LIST_PAGE_COMMON_PATH = "list";
 
 const PageHeader: React.FC = () => {
 	const location = useLocation();
 	const title = usePageTitle(location.pathname);
 
-	if (
-		location.pathname.includes(YOUTUBE) ||
-		location.pathname.includes(GITHUB) ||
-		location.pathname.includes(ICONS)
-	) {
+	if (location.pathname.includes(LIST_PAGE_COMMON_PATH)) {
 		return (
 			<Title className={style.pageHeader} level={3}>
 				{title}

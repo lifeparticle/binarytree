@@ -1,3 +1,8 @@
+### [3.9.1] - 2023-08-07
+
+-   Separete Search code from list
+-   Fix Routes
+
 ### [3.9.0] - 2023-08-03
 
 -   Add Common Search Functionality

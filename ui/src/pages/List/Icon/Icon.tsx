@@ -1,7 +1,6 @@
 import List from "components/Hoc/List/List";
 import Resource from "components/General/ListItems/Resource/Resource";
 import useFetchList from "lib/utils/hooks/useFetchList";
-
 export const URL = `./icons.json`;
 export const QUERY_KEY = "icons";
 
