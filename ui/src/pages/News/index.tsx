@@ -1,7 +1,6 @@
 import List from "components/Hoc/List/List";
 import News from "components/General/ListItems/News/News";
 import useFetchList from "lib/utils/hooks/useFetchList";
-import Search from "components/General/Search/Search";
 
 const URL = `./news.json`;
 export const QUERY_KEY_NEWS = "news";
