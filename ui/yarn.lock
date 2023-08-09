@@ -2950,6 +2950,7 @@ __metadata:
     jszip-utils: ^0.1.0
     lucide-react: ^0.260.0
     markdown-it: ^13.0.1
+    marked: ^7.0.1
     react: ^18.2.0
     react-dom: ^18.2.0
     react-error-boundary: ^4.0.10
@@ -5622,6 +5623,15 @@ __metadata:
   version: 3.0.3
   resolution: "markdown-table@npm:3.0.3"
   checksum: 8fcd3d9018311120fbb97115987f8b1665a603f3134c93fbecc5d1463380c8036f789e2a62c19432058829e594fff8db9ff81c88f83690b2f8ed6c074f8d9e10
+  languageName: node
+  linkType: hard
+
+"marked@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "marked@npm:7.0.1"
+  bin:
+    marked: bin/marked.js
+  checksum: 05a877d9c81db4eb9166b89d9ad170f92a338137c8a45d20e5fa3620c21e8818a0168b3979d0954eebadfc235a550246b97bb522c640f9ee1e1894c09031e645
   languageName: node
   linkType: hard
 
