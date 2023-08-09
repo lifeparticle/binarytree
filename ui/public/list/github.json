@@ -110,8 +110,20 @@
 	{
 		"name": "build-your-own-x",
 		"category": "Education",
-		"subCategory": ["None", "Programming"],
+		"subCategory": ["Programming"],
 		"url": "https://github.com/danistefanovic/build-your-own-x",
+		"socials": [
+			{
+				"url": "",
+				"name": "GitHub"
+			}
+		]
+	},
+	{
+		"name": "design-patterns-for-humans",
+		"category": "System Design",
+		"subCategory": ["Programming"],
+		"url": "https://github.com/kamranahmedse/design-patterns-for-humans",
 		"socials": [
 			{
 				"url": "",
