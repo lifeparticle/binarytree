@@ -1,1 +1,84 @@
-[{}]
+[
+    {
+        "name": "The Pragmatic Programmer",
+        "category": "Best Practices",
+        "subCategory": "Programming",
+        "url": "https://www.amazon.com.au/Pragmatic-Programmer-special-David-Thomas/dp/0135957052/",
+        "socials": []
+    },
+    {
+        "name": "Clean Code",
+        "category": "Code Quality",
+        "subCategory": "Programming",
+        "url": "https://www.amazon.com.au/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/",
+        "socials": []
+    },
+    {
+        "name": "Effective Java",
+        "category": "Java",
+        "subCategory": "Programming",
+        "url": "https://www.amazon.com.au/Effective-Java-Joshua-Bloch/dp/0134685997",
+        "socials": []
+    },
+    {
+        "name": "Structure and Interpretation of Computer Programs",
+        "category": "Foundational Concepts",
+        "subCategory": "Programming",
+        "url": "https://www.amazon.com.au/Structure-Interpretation-Massachusetts-Institute-Technology/dp/0262510871/",
+        "socials": []
+    },
+    {
+        "name": "Code Complete",
+        "category": "Software Development",
+        "subCategory": "Programming",
+        "url": "https://www.amazon.com.au/Code-Complete-Steven-C-McConnell/dp/1556154844/",
+        "socials": []
+    },
+    {
+        "name": "Growing Object-Oriented Software",
+        "category": "Object-Oriented Design",
+        "subCategory": "Programming",
+        "url": "https://www.amazon.com.au/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627/",
+        "socials": []
+    },
+    {
+        "name": "Refactoring",
+        "category": "Code Quality",
+        "subCategory": "Programming",
+        "url": "https://www.amazon.com.au/Refactoring-Improving-Existing-Addison-Wesley-Signature-ebook/dp/B07LCM8RG2/",
+        "socials": []
+    },
+    {
+        "name": "Design Patterns",
+        "category": "Software Design",
+        "subCategory": "Programming",
+        "url": "https://www.amazon.com.au/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8",
+        "socials": []
+    },
+    {
+        "name": "Test Driven Development",
+        "category": "Software Testing",
+        "subCategory": "Programming",
+        "url": "https://www.amazon.com.au/Test-Driven-Development-Kent-Beck-ebook/dp/B095SQ9WP4/",
+        "socials": []
+    },
+    {
+        "name": "Cracking the Coding Interview",
+        "category": "Technical Interviews",
+        "subCategory": "Job Preparation",
+        "url": "https://www.amazon.com.au/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/",
+        "socials": []
+    },
+    {
+        "name": "CSS Secrets: Better Solutions to Everyday Web Design Problems",
+        "category": "CSS",
+        "subCategory": "Programming",
+        "url": "https://www.amazon.com.au/CSS-Secrets-Lea-Verou/dp/1449372635/",
+        "socials": [
+            {
+                "url": "",
+                "name": ""
+            }
+        ]
+    }
+]
