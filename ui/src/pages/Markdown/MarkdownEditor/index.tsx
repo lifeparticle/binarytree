@@ -26,7 +26,7 @@ const MarkdownEditor: React.FC = () => {
 			<Space>
 				<Button onClick={() => setMarkdown("")}>Clear</Button>
 				<Button onClick={() => downloadTextFile(markdown, "README.md")}>
-					Downlaod
+					Downlaod Markdown
 				</Button>
 				<Button onClick={() => downloadPDFFile(markdown, "README.pdf")}>
 					Downlaod PDF

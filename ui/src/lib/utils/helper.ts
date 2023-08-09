@@ -22,3 +22,9 @@ function getLocalstorageValue<T>(key: string): T | null {
 }
 
 export { setLocalstorageValue, getLocalstorageValue };
+
+const classNames = (...args: (string | undefined)[]) => {
+	return args.filter(Boolean).join(" ");
+};
+
+export { classNames };
