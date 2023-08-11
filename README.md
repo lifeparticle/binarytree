@@ -42,6 +42,7 @@ Press key <kbd> <br> ControlLeft + e <br> </kbd> for example input and p
   <summary>List</summary>
 
 -  <kbd>[Blog](https://binarytree.dev/list/blog)</kbd>
+-  <kbd>[Book](https://binarytree.dev/list/book)</kbd>
 -  <kbd>[Icons](https://binarytree.dev/icons)</kbd>
 
 </details>
