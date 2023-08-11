@@ -6,16 +6,17 @@ const { Title } = Typography;
 
 interface TextProps {
 	text: string;
+	level?: 1 | 2 | 3 | 4 | 5;
 }
 
 const LIST_PAGE_COMMON_PATH = "list";
 
-const Text: React.FC<TextProps> = ({ text }) => {
+const Text: React.FC<TextProps> = ({ text, level = 4 }) => {
 	const location = useLocation();
 
 	return (
 		<Title
-			level={3}
+			level={level}
 			className={
 				location.pathname.includes(LIST_PAGE_COMMON_PATH)
 					? style.pageHeader

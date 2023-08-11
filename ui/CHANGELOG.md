@@ -1,3 +1,8 @@
+### [4.0.2] - 2023-08-12
+
+-   Refactor Text
+-   Update root README
+
 ### [4.0.1] - 2023-08-12
 
 -   Refactor ColorPicker
