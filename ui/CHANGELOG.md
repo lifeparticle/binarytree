@@ -1,3 +1,8 @@
+### [4.0.3] - 2023-08-12
+
+-   Zero ESLint errors
+-   Update icons
+
 ### [4.0.2] - 2023-08-12
 
 -   Refactor Text

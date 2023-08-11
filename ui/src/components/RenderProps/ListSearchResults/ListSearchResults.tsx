@@ -13,26 +13,28 @@ import { Typography } from "antd";
 
 const { Title } = Typography;
 
-const filteredNews = (searchQuery: string, items: NewsType[]) => {
+const filteredNews = <T,>(searchQuery: string, items: T[]) => {
 	if (searchQuery) {
 		return items?.filter((item) =>
-			item.title.toLowerCase().includes(searchQuery.toLowerCase())
+			(item as NewsType).title
+				.toLowerCase()
+				.includes(searchQuery.toLowerCase())
 		);
 	}
 	return items;
 };
 
-const filteredResource = (
+const filteredResource = <T,>(
 	searchQuery: string,
 	categoryQuery: string,
-	items: ResourceType[]
+	items: T[]
 ) => {
 	const lowercaseSearchQuery = searchQuery.toLowerCase();
 	const lowercaseCategoryQuery = categoryQuery.toLowerCase();
 
 	return items?.filter((item) => {
-		const name = item?.name?.toLowerCase();
-		const category = item?.category?.toLowerCase();
+		const name = (item as ResourceType).name?.toLowerCase();
+		const category = (item as ResourceType).category?.toLowerCase();
 
 		if (searchQuery || categoryQuery !== "All") {
 			return (
@@ -72,12 +74,8 @@ const ListSearchResults = <T,>({
 
 	const filteredList =
 		resourceName === QUERY_KEY_NEWS
-			? filteredNews(searchQuery, items as NewsType[])
-			: filteredResource(
-					searchQuery,
-					categoryQuery,
-					items as ResourceType[]
-			  );
+			? filteredNews(searchQuery, items)
+			: filteredResource(searchQuery, categoryQuery, items);
 
 	const list = filteredList ? filteredList : [...Array(20).keys()];
 

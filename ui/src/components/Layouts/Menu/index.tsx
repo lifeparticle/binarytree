@@ -1,6 +1,6 @@
 import { Menu as AntdMenu, Layout } from "antd";
 import { To, useNavigate } from "react-router-dom";
-import { ITEMS } from "./items.constant";
+import { ITEMS } from "./constant";
 
 const { Sider } = Layout;
 
