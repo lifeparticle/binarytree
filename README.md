@@ -22,14 +22,12 @@ Press key <kbd> <br> ControlLeft + e <br> </kbd> for example input and p
 </details>
 
 <details>
-  <summary>Markdown</summary>
+  <summary>Converter</summary>
 
--  <kbd>[Markdown Editor](https://binarytree.dev/me)</kbd>
--  <kbd>[Table Of Content](https://binarytree.dev/toc)</kbd>
--  <kbd>[Markdown Table Generator](https://binarytree.dev/md_table_generator)</kbd>
+-  <kbd>[Base64](https://binarytree.dev/base_64)</kbd>
+-  <kbd>[Pixel Converter](https://binarytree.dev/pixel_converter)</kbd>
 
 </details>
-
 
 <details>
   <summary>Data</summary>
@@ -41,10 +39,18 @@ Press key <kbd> <br> ControlLeft + e <br> </kbd> for example input and p
 </details>
 
 <details>
-  <summary>Converter</summary>
+  <summary>List</summary>
 
--  <kbd>[Base64](https://binarytree.dev/base_64)</kbd>
--  <kbd>[Pixel Converter](https://binarytree.dev/pixel_converter)</kbd>
+-  <kbd>[Icons](https://binarytree.dev/icons)</kbd>
+
+</details>
+
+<details>
+  <summary>Markdown</summary>
+
+-  <kbd>[Markdown Editor](https://binarytree.dev/me)</kbd>
+-  <kbd>[Table Of Content](https://binarytree.dev/toc)</kbd>
+-  <kbd>[Markdown Table Generator](https://binarytree.dev/md_table_generator)</kbd>
 
 </details>
 
@@ -54,12 +60,7 @@ Press key <kbd> <br> ControlLeft + e <br> </kbd> for example input and p
 -  <kbd>[Text Editor](https://binarytree.dev/te)</kbd>
 
 </details>
-<details>
-  <summary>List</summary>
 
--  <kbd>[Icons](https://binarytree.dev/icons)</kbd>
-
-</details>
 
 
 
