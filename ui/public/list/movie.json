@@ -1,1 +1,716 @@
-[{}]
+[
+	{
+		"name": "21",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama/Crime",
+		"url": "https://www.imdb.com/title/tt0478087/",
+		"socials": []
+	},
+	{
+		"name": "23",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama",
+		"url": "https://www.imdb.com/title/tt0126765/",
+		"socials": []
+	},
+	{
+		"name": "Algorithm",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama/Crime",
+		"url": "https://www.imdb.com/title/tt3293462/",
+		"socials": []
+	},
+	{
+		"name": "Anonymous",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama/Crime",
+		"url": "https://www.imdb.com/title/tt3173594/",
+		"socials": []
+	},
+	{
+		"name": "Antitrust",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama",
+		"url": "https://www.imdb.com/title/tt0218817/",
+		"socials": []
+	},
+	{
+		"name": "Blackhat",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama",
+		"url": "https://www.imdb.com/title/tt2717822/",
+		"socials": []
+	},
+	{
+		"name": "Brazil",
+		"category": "Thrillers / Drama",
+		"subCategory": "Drama/Science Fiction",
+		"url": "https://www.imdb.com/title/tt0088846/",
+		"socials": []
+	},
+	{
+		"name": "Enemy of the State",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama",
+		"url": "https://www.imdb.com/title/tt0120660/",
+		"socials": []
+	},
+	{
+		"name": "Hacker's Game",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama",
+		"url": "https://www.imdb.com/title/tt3140724/",
+		"socials": []
+	},
+	{
+		"name": "Hackers",
+		"category": "Thrillers / Drama",
+		"subCategory": "Drama/Crime",
+		"url": "https://www.imdb.com/title/tt0113243/",
+		"socials": []
+	},
+	{
+		"name": "Hidden Figures",
+		"category": "Thrillers / Drama",
+		"subCategory": "Biography/Drama/History",
+		"url": "https://www.imdb.com/title/tt4846340",
+		"socials": []
+	},
+	{
+		"name": "I.T.",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama/Crime",
+		"url": "https://www.imdb.com/title/tt2679552/",
+		"socials": []
+	},
+	{
+		"name": "Listening",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama",
+		"url": "https://www.imdb.com/title/tt3153582/",
+		"socials": []
+	},
+	{
+		"name": "Live Free or Die Hard",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Action",
+		"url": "https://www.imdb.com/title/tt0337978/",
+		"socials": []
+	},
+	{
+		"name": "Office Space",
+		"category": "Thrillers / Drama",
+		"subCategory": "Comedy/Romance",
+		"url": "https://www.imdb.com/title/tt0151804/",
+		"socials": []
+	},
+	{
+		"name": "Pi",
+		"category": "Thrillers / Drama",
+		"subCategory": "Drama/Mystery",
+		"url": "https://www.imdb.com/title/tt0138704/",
+		"socials": []
+	},
+	{
+		"name": "Primer",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama",
+		"url": "https://www.imdb.com/title/tt0390384/",
+		"socials": []
+	},
+	{
+		"name": "Reboot",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama",
+		"url": "https://www.imdb.com/title/tt2090594/",
+		"socials": []
+	},
+	{
+		"name": "Snowden",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama",
+		"url": "https://www.imdb.com/title/tt3774114/",
+		"socials": []
+	},
+	{
+		"name": "Swordfish",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Caper Story",
+		"url": "https://www.imdb.com/title/tt0244244/",
+		"socials": []
+	},
+	{
+		"name": "Takedown",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama",
+		"url": "https://www.imdb.com/title/tt0159784/",
+		"socials": []
+	},
+	{
+		"name": "The Circle",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama",
+		"url": "https://www.imdb.com/title/tt4287320/",
+		"socials": []
+	},
+	{
+		"name": "The Fifth Estate",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama",
+		"url": "https://www.imdb.com/title/tt1837703/",
+		"socials": []
+	},
+	{
+		"name": "The Girl with the Dragon Tattoo",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama",
+		"url": "https://www.imdb.com/title/tt1568346/",
+		"socials": []
+	},
+	{
+		"name": "The Imitation Game",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama",
+		"url": "https://www.imdb.com/title/tt2084970/",
+		"socials": []
+	},
+	{
+		"name": "The Net 2.0",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama",
+		"url": "https://www.imdb.com/title/tt0449077/",
+		"socials": []
+	},
+	{
+		"name": "The Net",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama",
+		"url": "https://www.imdb.com/title/tt0113957/",
+		"socials": []
+	},
+	{
+		"name": "The Signal",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller",
+		"url": "https://www.imdb.com/title/tt2910814/",
+		"socials": []
+	},
+	{
+		"name": "The Social Network",
+		"category": "Thrillers / Drama",
+		"subCategory": "Drama/History",
+		"url": "https://www.imdb.com/title/tt1285016/",
+		"socials": []
+	},
+	{
+		"name": "The Thirteenth Floor",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Mystery",
+		"url": "https://www.imdb.com/title/tt0139809/",
+		"socials": []
+	},
+	{
+		"name": "Underground: The Julian Assange Story",
+		"category": "Thrillers / Drama",
+		"subCategory": "Drama/Biography",
+		"url": "https://www.imdb.com/title/tt2357453/",
+		"socials": []
+	},
+	{
+		"name": "Untraceable",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Slasher",
+		"url": "https://www.imdb.com/title/tt0880578/",
+		"socials": []
+	},
+	{
+		"name": "WarGames",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama",
+		"url": "https://www.imdb.com/title/tt0086567/",
+		"socials": []
+	},
+	{
+		"name": "WarGames: The Dead Code",
+		"category": "Thrillers / Drama",
+		"subCategory": "Thriller/Drama",
+		"url": "https://www.imdb.com/title/tt0865957/",
+		"socials": []
+	},
+	{
+		"name": "Who Am I",
+		"category": "Thrillers / Drama",
+		"subCategory": "Drama/Crime",
+		"url": "https://www.imdb.com/title/tt3042408/",
+		"socials": []
+	},
+	{
+		"name": "2001: A Space Odyssey",
+		"category": "Science Fiction / Fantasy",
+		"subCategory": "Science Fiction/Fantasy",
+		"url": "https://www.imdb.com/title/tt0062622/",
+		"socials": []
+	},
+	{
+		"name": "Anon",
+		"category": "Science Fiction / Fantasy",
+		"subCategory": "Science Fiction/Thriller",
+		"url": "https://www.imdb.com/title/tt5397194/",
+		"socials": []
+	},
+	{
+		"name": "Avalon",
+		"category": "Science Fiction / Fantasy",
+		"subCategory": "Science Fiction/Fantasy",
+		"url": "https://www.imdb.com/title/tt0267287/",
+		"socials": []
+	},
+	{
+		"name": "Blade Runner",
+		"category": "Science Fiction / Fantasy",
+		"subCategory": "Science Fiction/Thriller",
+		"url": "https://www.imdb.com/title/tt0083658/",
+		"socials": []
+	},
+	{
+		"name": "Blade Runner 2049",
+		"category": "Science Fiction / Fantasy",
+		"subCategory": "Science Fiction/Drama",
+		"url": "https://www.imdb.com/title/tt1856101/",
+		"socials": []
+	},
+	{
+		"name": "Colossus: The Forbin Project",
+		"category": "Science Fiction / Fantasy",
+		"subCategory": "Science Fiction/Thriller",
+		"url": "https://www.imdb.com/title/tt0064177/",
+		"socials": []
+	},
+	{
+		"name": "Ex Machina",
+		"category": "Science Fiction / Fantasy",
+		"subCategory": "Fantasy/Mystery",
+		"url": "https://www.imdb.com/title/tt0470752/",
+		"socials": []
+	},
+	{
+		"name": "eXistenZ",
+		"category": "Science Fiction / Fantasy",
+		"subCategory": "Science Fiction/Thriller",
+		"url": "https://www.imdb.com/title/tt0120907/",
+		"socials": []
+	},
+	{
+		"name": "Ghost in the Shell",
+		"category": "Science Fiction / Fantasy",
+		"subCategory": "Fantasy/Animation",
+		"url": "https://www.imdb.com/title/tt0113568/",
+		"socials": []
+	},
+	{
+		"name": "Ghost in the Shell",
+		"category": "Science Fiction / Fantasy",
+		"subCategory": "Science Fiction/Action",
+		"url": "https://www.imdb.com/title/tt1219827/",
+		"socials": []
+	},
+	{
+		"name": "Her",
+		"category": "Science Fiction / Fantasy",
+		"subCategory": "Science Fiction/Romance",
+		"url": "https://www.imdb.com/title/tt1798709/",
+		"socials": []
+	},
+	{
+		"name": "Inception",
+		"category": "Science Fiction / Fantasy",
+		"subCategory": "Science Fiction/Mystery",
+		"url": "https://www.imdb.com/title/tt1375666/",
+		"socials": []
+	},
+	{
+		"name": "Johnny Mnemonic",
+		"category": "Science Fiction / Fantasy",
+		"subCategory": "Science Fiction/Action",
+		"url": "https://www.imdb.com/title/tt0113481/",
+		"socials": []
+	},
+	{
+		"name": "Morgan",
+		"category": "Science Fiction / Fantasy",
+		"subCategory": "Science Fiction/Thriller",
+		"url": "https://www.imdb.com/title/tt4520364/",
+		"socials": []
+	},
+	{
+		"name": "One Point O",
+		"category": "Science Fiction / Fantasy",
+		"subCategory": "Science Fiction/Mystery",
+		"url": "https://www.imdb.com/title/tt0317042/",
+		"socials": []
+	},
+	{
+		"name": "Open Windows",
+		"category": "Science Fiction / Fantasy",
+		"subCategory": "Fantasy/Crime",
+		"url": "https://www.imdb.com/title/tt2409818/",
+		"socials": []
+	},
+	{
+		"name": "The Lawnmower Man",
+		"category": "Science Fiction / Fantasy",
+		"subCategory": "Fantasy/Action",
+		"url": "https://www.imdb.com/title/tt0104692/",
+		"socials": []
+	},
+	{
+		"name": "The Matrix",
+		"category": "Science Fiction / Fantasy",
+		"subCategory": "Fantasy/Action",
+		"url": "https://www.imdb.com/title/tt0133093/",
+		"socials": []
+	},
+	{
+		"name": "The Matrix Reloaded",
+		"category": "Science Fiction / Fantasy",
+		"subCategory": "Science Fiction/Action",
+		"url": "https://www.imdb.com/title/tt0234215/",
+		"socials": []
+	},
+	{
+		"name": "Transcendence",
+		"category": "Science Fiction / Fantasy",
+		"subCategory": "Science Fiction/Drama",
+		"url": "https://www.imdb.com/title/tt2209764/",
+		"socials": []
+	},
+	{
+		"name": "World on a Wire",
+		"category": "Science Fiction / Fantasy",
+		"subCategory": "Science Fiction/Thriller",
+		"url": "https://www.imdb.com/title/tt0070904/",
+		"socials": []
+	},
+	{
+		"name": "Eagle Eye",
+		"category": "Action",
+		"subCategory": "Action/Thriller",
+		"url": "https://www.imdb.com/title/tt1059786/",
+		"socials": []
+	},
+	{
+		"name": "Echelon Conspiracy",
+		"category": "Action",
+		"subCategory": "Action/Crime/Mystery",
+		"url": "https://www.imdb.com/title/tt1124039/",
+		"socials": []
+	},
+	{
+		"name": "Firewall",
+		"category": "Action",
+		"subCategory": "Action/Thriller",
+		"url": "https://www.imdb.com/title/tt0408345/",
+		"socials": []
+	},
+	{
+		"name": "Gamer",
+		"category": "Action",
+		"subCategory": "Action/Thriller",
+		"url": "https://www.imdb.com/title/tt1034032/",
+		"socials": []
+	},
+	{
+		"name": "Kung Fury",
+		"category": "Action",
+		"subCategory": "Action/Comedy",
+		"url": "https://www.imdb.com/title/tt3472226/",
+		"socials": []
+	},
+	{
+		"name": "Sneakers",
+		"category": "Action",
+		"subCategory": "Action/Thriller",
+		"url": "https://www.imdb.com/title/tt0105435/",
+		"socials": []
+	},
+	{
+		"name": "The Island",
+		"category": "Action",
+		"subCategory": "Action/Adventure",
+		"url": "https://www.imdb.com/title/tt0399201/",
+		"socials": []
+	},
+	{
+		"name": "The Italian Job",
+		"category": "Action",
+		"subCategory": "Action/Thriller",
+		"url": "https://www.imdb.com/title/tt0317740/",
+		"socials": []
+	},
+	{
+		"name": "Tron",
+		"category": "Action",
+		"subCategory": "Action/Adventure",
+		"url": "https://www.imdb.com/title/tt0084827/",
+		"socials": []
+	},
+	{
+		"name": "Tron: Legacy",
+		"category": "Action",
+		"subCategory": "Action/Adventure",
+		"url": "https://www.imdb.com/title/tt1104001/",
+		"socials": []
+	},
+	{
+		"name": "Virtuosity",
+		"category": "Action",
+		"subCategory": "Action/Thriller",
+		"url": "https://www.imdb.com/title/tt0114857/",
+		"socials": []
+	},
+	{
+		"name": "BBS: The Documentary",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt0460402/",
+		"socials": []
+	},
+	{
+		"name": "Citizenfour",
+		"category": "Documentaries",
+		"subCategory": "Documentary/Biography",
+		"url": "https://www.imdb.com/title/tt4044364/",
+		"socials": []
+	},
+	{
+		"name": "Code 2600",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt1830538/",
+		"socials": []
+	},
+	{
+		"name": "Deep Web",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt3312868/",
+		"socials": []
+	},
+	{
+		"name": "DEFCON: The Documentary",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt3010462/",
+		"socials": []
+	},
+	{
+		"name": "DSKNECTD",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt2417174/",
+		"socials": []
+	},
+	{
+		"name": "Downloaded",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt2033981/",
+		"socials": []
+	},
+	{
+		"name": "Freedom Downtime",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt0309614/",
+		"socials": []
+	},
+	{
+		"name": "Good Copy Bad Copy",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt1782451/",
+		"socials": []
+	},
+	{
+		"name": "Hackers: Wizards of the Electronic Age",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt1191116/",
+		"socials": []
+	},
+	{
+		"name": "Hackers Are People Too",
+		"category": "Documentaries",
+		"subCategory": "Documentary/Short Film",
+		"url": "https://www.imdb.com/title/tt1279942/",
+		"socials": []
+	},
+	{
+		"name": "Hacking Democracy",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt0808532/",
+		"socials": []
+	},
+	{
+		"name": "Hackers Wanted",
+		"category": "Documentaries",
+		"subCategory": "Documentary/Indie Film",
+		"url": "https://www.imdb.com/title/tt2292707/",
+		"socials": []
+	},
+	{
+		"name": "In the Realm of the Hackers",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt1199631/",
+		"socials": []
+	},
+	{
+		"name": "Indie Game: The Movie",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt1942884/",
+		"socials": []
+	},
+	{
+		"name": "Kim Dotcom: Caught in the Web",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "http://www.imdb.com/title/tt3640710/",
+		"socials": []
+	},
+	{
+		"name": "Pirates of Silicon Valley",
+		"category": "Documentaries",
+		"subCategory": "Documentary/Drama/TV Film",
+		"url": "https://www.imdb.com/title/tt0168122/",
+		"socials": []
+	},
+	{
+		"name": "Plug and Pray",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt1692889/",
+		"socials": []
+	},
+	{
+		"name": "Revolution OS",
+		"category": "Documentaries",
+		"subCategory": "Documentary/Indie Film",
+		"url": "https://www.imdb.com/title/tt0308808/",
+		"socials": []
+	},
+	{
+		"name": "Silk Road: Drugs, Death and the Dark Web",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt7301126/",
+		"socials": []
+	},
+	{
+		"name": "Softwaring Hard",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt3063636/",
+		"socials": []
+	},
+	{
+		"name": "Steal This Film",
+		"category": "Documentaries",
+		"subCategory": "Documentary/Short Film",
+		"url": "https://www.imdb.com/title/tt1422757/",
+		"socials": []
+	},
+	{
+		"name": "TPB AFK: The Pirate Bay Away from Keyboard",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt2608732/",
+		"socials": []
+	},
+	{
+		"name": "Terms and Conditions May Apply",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt2084953/",
+		"socials": []
+	},
+	{
+		"name": "The Code",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt0315417/",
+		"socials": []
+	},
+	{
+		"name": "The Great Hack",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt9358204/",
+		"socials": []
+	},
+	{
+		"name": "The Hacker Wars",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt4047350/",
+		"socials": []
+	},
+	{
+		"name": "The Internet's Own Boy: The Story of Aaron Swartz",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt3268458/",
+		"socials": []
+	},
+	{
+		"name": "The KGB, the Computer and Me",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt0308449/",
+		"socials": []
+	},
+	{
+		"name": "The Secret History Of Hacking",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt2335921/",
+		"socials": []
+	},
+	{
+		"name": "The Singularity",
+		"category": "Documentaries",
+		"subCategory": "Drama/Science Fiction",
+		"url": "https://www.imdb.com/title/tt2073120/",
+		"socials": []
+	},
+	{
+		"name": "War for the Web",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt2390367/",
+		"socials": []
+	},
+	{
+		"name": "We Are Legion: The Story of the Hacktivists",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt2177843/",
+		"socials": []
+	},
+	{
+		"name": "We Steal Secrets: The Story of WikiLeaks",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt1824254/",
+		"socials": []
+	},
+	{
+		"name": "Zero Days",
+		"category": "Documentaries",
+		"subCategory": "Documentary",
+		"url": "https://www.imdb.com/title/tt5446858/",
+		"socials": []
+	}
+]

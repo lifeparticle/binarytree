@@ -1,1 +1,156 @@
-[{}]
+[
+	{
+		"name": "Open Peeps",
+		"category": "UI/UX",
+		"subCategory": "Illustrations",
+		"url": "https://www.openpeeps.com/",
+		"socials": []
+	},
+	{
+		"name": "Open Doodles",
+		"category": "UI/UX",
+		"subCategory": "Illustrations",
+		"url": "https://www.opendoodles.com/",
+		"socials": []
+	},
+	{
+		"name": "Open Color",
+		"category": "UI/UX",
+		"subCategory": "Colors",
+		"url": "https://yeun.github.io/open-color/",
+		"socials": []
+	},
+	{
+		"name": "Open Source Illustrations Kit",
+		"category": "UI/UX",
+		"subCategory": "Illustrations",
+		"url": "https://illlustrations.co/",
+		"socials": []
+	},
+	{
+		"name": "Codux",
+		"category": "UI/UX",
+		"subCategory": "Design System",
+		"url": "https://www.codux.com/",
+		"socials": []
+	},
+	{
+		"name": "Spline",
+		"category": "UI/UX",
+		"subCategory": "3D Illustrations",
+		"url": "https://spline.design/",
+		"socials": []
+	},
+	{
+		"name": "LottieFiles",
+		"category": "UI/UX",
+		"subCategory": "Animations",
+		"url": "https://lottiefiles.com/",
+		"socials": []
+	},
+	{
+		"name": "11ty",
+		"category": "Web Development",
+		"subCategory": "Static Site Generators",
+		"url": "https://www.11ty.dev/",
+		"socials": []
+	},
+	{
+		"name": "ECharts",
+		"category": "Data Visualization",
+		"subCategory": "Charts",
+		"url": "https://github.com/apache/echarts",
+		"socials": []
+	},
+	{
+		"name": "Diagrams",
+		"category": "UI/UX",
+		"subCategory": "Diagramming",
+		"url": "https://diagrams.mingrammer.com/",
+		"socials": []
+	},
+	{
+		"name": "Poet",
+		"category": "Social Media",
+		"subCategory": "Image Sharing",
+		"url": "https://poet.so/",
+		"socials": []
+	},
+	{
+		"name": "Carbon",
+		"category": "Development",
+		"subCategory": "Code Snippet Sharing",
+		"url": "https://carbon.now.sh/",
+		"socials": []
+	},
+	{
+		"name": "Responsively",
+		"category": "Web Development",
+		"subCategory": "Responsive Design",
+		"url": "https://responsively.app/",
+		"socials": []
+	},
+	{
+		"name": "Reshot",
+		"category": "Stock Photos",
+		"subCategory": "Free Photos",
+		"url": "https://www.reshot.com/",
+		"socials": []
+	},
+	{
+		"name": "Autodraw",
+		"category": "Design",
+		"subCategory": "Drawing",
+		"url": "https://www.autodraw.com/",
+		"socials": []
+	},
+	{
+		"name": "Meshgradient",
+		"category": "Design",
+		"subCategory": "Gradients",
+		"url": "https://meshgradient.com/",
+		"socials": []
+	},
+	{
+		"name": "Happyhues",
+		"category": "Design",
+		"subCategory": "Colors",
+		"url": "https://www.happyhues.co/",
+		"socials": []
+	},
+	{
+		"name": "Every timezone",
+		"category": "Time",
+		"subCategory": "Timezone Converter",
+		"url": "https://everytimezone.com/",
+		"socials": []
+	},
+	{
+		"name": "Programming zines by Julia Evans",
+		"category": "Programming",
+		"subCategory": "Zines",
+		"url": "https://wizardzines.com/comics/",
+		"socials": []
+	},
+	{
+		"name": "WebPageTest",
+		"category": "Web Development",
+		"subCategory": "Performance",
+		"url": "https://www.webpagetest.org/",
+		"socials": []
+	},
+	{
+		"name": "Excalidraw",
+		"category": "Diagramming",
+		"subCategory": "Diagramming",
+		"url": "https://excalidraw.com/",
+		"socials": []
+	},
+	{
+		"name": "Eraser",
+		"category": "Diagramming",
+		"subCategory": "Illustrations",
+		"url": "https://app.eraser.io/",
+		"socials": []
+	}
+]

@@ -3,7 +3,7 @@ import { Card, Space, Tag } from "antd";
 import { useState } from "react";
 import style from "./ColorPicker.module.scss";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
-import Clipboard from "components/Hoc/Clipboard/Clipboard";
+import Clipboard from "components/RenderProps/Clipboard/Clipboard";
 
 export const formatLabels = ["HEX", "RGBA", "RGB", "HSL", "HSLA"] as const;
 

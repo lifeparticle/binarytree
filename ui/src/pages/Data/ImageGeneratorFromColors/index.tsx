@@ -1,12 +1,14 @@
-import { Button, Input, InputNumber, Space } from "antd";
-import { saveAs } from "file-saver";
-import { toPng } from "html-to-image";
 import JSZip from "jszip";
+import { Typography } from "antd";
+import { saveAs } from "file-saver";
 import JSZipUtils from "jszip-utils";
+import { toPng } from "html-to-image";
 import { useRef, useState } from "react";
+import { Button, Input, InputNumber, Space } from "antd";
 import style from "./ImageGeneratorFromColors.module.scss";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 
+const { Title } = Typography;
 const { TextArea } = Input;
 
 const ImageGeneratorFromColors: React.FC = () => {
@@ -53,7 +55,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 		<div className={style.igfc}>
 			<TextArea
 				placeholder="Paste colors separated by commas or new line"
-				rows={20}
+				rows={8}
 				onChange={(event) =>
 					onTextAreaChange(event.currentTarget.value)
 				}
@@ -112,7 +114,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 									borderRadius: `${rounded}px`,
 								}}
 							></div>
-							<h5>{color}</h5>
+							<Title level={5}>{color}</Title>
 						</div>
 					);
 				})}

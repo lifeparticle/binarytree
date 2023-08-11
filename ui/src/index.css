@@ -14,16 +14,16 @@
 	margin: 0;
 }
 
+html,
 body {
-	font-family: var(--font-sans);
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
-/* code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-		monospace;
-} */
 
 h1,
 h2,
@@ -39,8 +39,11 @@ h5 {
 }
 
 .ant-layout-content {
-	overflow-x: hidden;
-	padding: var(--bt-size-24);
+	overflow-x: auto;
+	overflow-y: auto;
+	max-height: calc(100vh - 64px);
+	padding: var(--bt-size-10);
+	scroll-behavior: smooth;
 }
 
 .ant-layout-header {
@@ -50,4 +53,5 @@ h5 {
 	width: 100%;
 	display: flex;
 	align-items: center;
+	padding-inline: 0px;
 }

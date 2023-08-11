@@ -53,8 +53,8 @@ const ROUTES: Route[] = [
 		title: "Markdown Table Generator",
 	},
 	{
-		path: "/list/icons",
-		title: "Icons",
+		path: "/list/icon",
+		title: "Icon",
 	},
 	{
 		path: "/list/youtube-channels",
@@ -78,11 +78,19 @@ const ROUTES: Route[] = [
 	},
 	{
 		path: "/list/movie",
-		title: "movie",
+		title: "Movie",
 	},
 	{
 		path: "/list/tv-series",
-		title: "Tv Series",
+		title: "TV Series",
+	},
+	{
+		path: "/list/plugin",
+		title: "Plugin",
+	},
+	{
+		path: "/list/tool",
+		title: "Tool",
 	},
 	{
 		path: "*",
