@@ -117,7 +117,7 @@ const MENU_ITEMS = [
 			},
 			{
 				name: "Github",
-				url: "/list/github-repos",
+				url: "/list/github",
 				icon: <Github size={16} />,
 				show: true,
 			},
@@ -153,7 +153,7 @@ const MENU_ITEMS = [
 			},
 			{
 				name: "Youtube",
-				url: "/list/youtube-channels",
+				url: "/list/youtube",
 				icon: <Youtube size={16} />,
 				show: true,
 			},

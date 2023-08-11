@@ -75,18 +75,17 @@ const Routes: React.FC = () => {
 						<Route path="te" element={<TextEditor />} />
 					</Route>
 					<Route path="/list">
-						<Route index element={<Navigate to={"icons"} />} />
-
-						<Route path="icon" element={<Icon />} />
-						<Route path="github-repos" element={<Github />} />
-						<Route path="youtube-channels" element={<YouTube />} />
-						<Route path="book" element={<Book />} />
+						<Route index element={<Navigate to={"icon"} />} />
 						<Route path="blog" element={<Blog />} />
+						<Route path="book" element={<Book />} />
 						<Route path="course" element={<Course />} />
+						<Route path="github" element={<Github />} />
+						<Route path="icon" element={<Icon />} />
 						<Route path="movie" element={<Movie />} />
-						<Route path="tv-series" element={<TvSeries />} />
 						<Route path="plugin" element={<Plugin />} />
 						<Route path="tool" element={<Tool />} />
+						<Route path="tv-series" element={<TvSeries />} />
+						<Route path="youtube" element={<YouTube />} />
 					</Route>
 					<Route path="*" element={<Navigate to="/404" />} />
 				</RRDRoutes>

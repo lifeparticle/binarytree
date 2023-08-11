@@ -29,11 +29,9 @@ jobs:
 
       - name: Run Tests
         run: yarn test
-        continue-on-error: true
 
       - name: Run ESLint
         run: yarn lint
-        continue-on-error: true
 
       - name: Danger
         run: yarn danger ci

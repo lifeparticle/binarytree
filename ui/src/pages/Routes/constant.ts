@@ -57,12 +57,12 @@ const ROUTES: Route[] = [
 		title: "Icon",
 	},
 	{
-		path: "/list/youtube-channels",
-		title: "Channel",
+		path: "/list/youtube",
+		title: "Youtube",
 	},
 	{
-		path: "/list/github-repos",
-		title: "Github Repository",
+		path: "/list/github",
+		title: "Github",
 	},
 	{
 		path: "/list/blog",

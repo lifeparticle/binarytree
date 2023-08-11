@@ -9,7 +9,7 @@ const withPageTitle = <T extends object>(
 
 		return (
 			<>
-				<Text text={title} />
+				<Text text={title} level={3} />
 				<WrappedComponent {...props} />
 			</>
 		);
