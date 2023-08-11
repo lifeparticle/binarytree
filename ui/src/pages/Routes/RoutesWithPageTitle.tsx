@@ -26,13 +26,15 @@ import {
 	Plugin,
 	Tool,
 } from "pages/pages";
+import withPageTitle from "components/Hoc/withPageTitle";
+import Text from "components/General/Text/Text";
+import { API_LOADING } from "lib/utils/constant";
 
-const Routes = () => {
+const Routes: React.FC = () => {
 	return (
 		<ErrorBoundary fallback={<p>Something went wrong</p>}>
-			<Suspense fallback={<div>Loading...</div>}>
+			<Suspense fallback={<Text text={API_LOADING} />}>
 				<RRDRoutes>
-					News
 					<Route path="/" element={<News />} />
 					<Route path="/data">
 						<Route index element={<Navigate to={"igfc"} />} />
@@ -93,4 +95,5 @@ const Routes = () => {
 	);
 };
 
-export default Routes;
+const RoutesWithPageTitle = withPageTitle(Routes);
+export default RoutesWithPageTitle;

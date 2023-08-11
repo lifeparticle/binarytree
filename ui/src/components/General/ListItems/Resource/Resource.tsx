@@ -1,5 +1,5 @@
 import { Avatar, Card, Skeleton, Space, Tag, Typography } from "antd";
-import style from "./resource.module.scss";
+import style from "./Resource.module.scss";
 import { ResourceType } from "./resource.type";
 import { ListItemProps } from "components/RenderProps/List/types";
 import Clipboard from "components/RenderProps/Clipboard/Clipboard";
@@ -16,15 +16,15 @@ const Resource: React.FC<ListItemProps<ResourceType>> = ({
 
 	return (
 		<Card
-			className={style.card}
+			className={style.resource}
 			key={name}
 			onClick={() => handleOnClick(url)}
 			hoverable
 		>
 			<Skeleton loading={isLoading} avatar active>
-				<Space className={style.card__container}>
+				<Space className={style.resource__container}>
 					<Space size={16}>
-						<Avatar className={style.card__avatar}>
+						<Avatar className={style.resource__avatar}>
 							{name?.[0]}
 						</Avatar>
 						<Space direction="vertical">

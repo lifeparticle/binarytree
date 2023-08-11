@@ -1,44 +1,40 @@
-import { ColorPicker as CP } from "@mantine/core";
-import { Card, Space, Tag } from "antd";
 import { useState } from "react";
+import { FormatType } from "./type";
+import { Card, Space, Tag } from "antd";
+import { formatLabels } from "./constant";
 import style from "./ColorPicker.module.scss";
-import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
+import { ColorPicker as CP } from "@mantine/core";
 import Clipboard from "components/RenderProps/Clipboard/Clipboard";
+import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
 
-export const formatLabels = ["HEX", "RGBA", "RGB", "HSL", "HSLA"] as const;
-
-type FormatType = Lowercase<(typeof formatLabels)[number]>;
-
-const DATA_OPTIONS: { value: FormatType; label: string }[] = formatLabels.map(
-	(label) => ({
-		value: label.toLowerCase() as FormatType,
-		label: label,
-	})
-);
+const DATA_OPTIONS = formatLabels.map((label) => ({
+	value: label.toLowerCase() as FormatType,
+	label: label,
+}));
 
 const ColorPicker: React.FC = () => {
 	const [color, setColor] = useState("rgba(47, 119, 150, 0.7)");
 	const [format, setFormat] = useState<FormatType>("hex");
+
+	const renderTags = () => {
+		return DATA_OPTIONS.map((option) => (
+			<Tag
+				onClick={() => setFormat(option.value)}
+				color={format === option.value ? "success" : "default"}
+				key={option.value}
+				style={{ cursor: "pointer" }}
+			>
+				{option.label}
+			</Tag>
+		));
+	};
 
 	return (
 		<div className={style.cp}>
 			<Card bordered={false}>
 				<Space size="large" direction="vertical" wrap>
 					<Space size="small" direction="horizontal" wrap>
-						{DATA_OPTIONS.map((option) => (
-							<Tag
-								onClick={() => setFormat(option.value)}
-								color={
-									format === option.value
-										? "success"
-										: "default"
-								}
-								key={option.value}
-								style={{ cursor: "pointer" }}
-							>
-								{option.label}
-							</Tag>
-						))}
+						{renderTags()}
 					</Space>
 
 					<CP
@@ -47,6 +43,7 @@ const ColorPicker: React.FC = () => {
 						onChange={(val: string) => setColor(val)}
 						size="xl"
 					/>
+
 					<div className={style.cp__result}>
 						<div className={style.cp__result__color}>{color}</div>
 						<Clipboard

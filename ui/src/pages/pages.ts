@@ -2,7 +2,7 @@ import { lazy } from "react";
 
 const News = lazy(() => import("pages/News"));
 
-const ColorPicker = lazy(() => import("pages/Colors/ColorPicker"));
+const ColorPicker = lazy(() => import("pages/Colors/ColorPicker/ColorPicker"));
 const Shades = lazy(() => import("pages/Colors/Shades"));
 
 const MarkdownEditor = lazy(() => import("pages/Markdown/MarkdownEditor"));

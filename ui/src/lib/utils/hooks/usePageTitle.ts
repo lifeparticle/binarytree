@@ -1,7 +1,11 @@
 import { ROUTES } from "pages/Routes/constant";
+import { useLocation } from "react-router-dom";
 
-const usePageTitle = (pathname: string) => {
-	const pageTitle = ROUTES.find((route) => route.path === pathname)?.title;
+const usePageTitle = () => {
+	const location = useLocation();
+	const pageTitle = ROUTES.find(
+		(route) => route.path === location.pathname
+	)?.title;
 	return pageTitle ? pageTitle : "Page Not Found";
 };
 

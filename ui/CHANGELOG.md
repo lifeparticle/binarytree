@@ -1,4 +1,14 @@
-### [4.0.0] - 2023-08-07
+### [4.0.1] - 2023-08-12
+
+-   Refactor ColorPicker
+-   Remove word "News" from Routes
+-   Fix the PageHeader css bug
+-   Replace PageHeader component with withPageTitle Hoc
+-   Add Text component to add css consistency to Error, Loading and Page title
+-   Refactor usePageTitle
+-   Added test and eslint to the ui-pr actions
+
+### [4.0.0] - 2023-08-11
 
 -   Change brand logo
 -   Fix news list
@@ -16,6 +26,7 @@
 -   Use css variables in ImageGeneratorFromColors
 -   Use css variables in ImageGeneratorFromColors
 -   Temporarily remove custom font to stop flickering issue
+-   Global App constant
 
 ### [3.9.1] - 2023-08-07
 

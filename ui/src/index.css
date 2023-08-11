@@ -4,6 +4,10 @@
 @import "./styles/borders.css";
 @import "./styles/typography.css";
 
+/* * {
+	outline: 1px red solid;
+} */
+
 *,
 *::before,
 *::after {
