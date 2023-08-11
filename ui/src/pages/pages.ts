@@ -28,6 +28,8 @@ const Blog = lazy(() => import("pages/List/Blog/Blog"));
 const Course = lazy(() => import("pages/List/Course/Course"));
 const Movie = lazy(() => import("pages/List/Movie/Movie"));
 const TvSeries = lazy(() => import("pages/List/TvSeries/TvSeries"));
+const Plugin = lazy(() => import("pages/List/Plugin/Plugin"));
+const Tool = lazy(() => import("pages/List/Tool/Tool"));
 
 export {
 	News,
@@ -50,4 +52,6 @@ export {
 	Course,
 	Movie,
 	TvSeries,
+	Plugin,
+	Tool,
 };

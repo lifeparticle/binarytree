@@ -14,7 +14,7 @@ const Clipboard: React.FC<ClipboardProps> = ({
 	const { copied, copyToClipboard, ClipboardMessage } = useCopyToClipboard();
 
 	return (
-		<div className={className}>
+		<div className={className} onClick={(e) => e.stopPropagation()}>
 			{ClipboardMessage}
 			<ClipboardComponent
 				copyToClipboard={copyToClipboard}

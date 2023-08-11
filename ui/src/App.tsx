@@ -1,18 +1,19 @@
+import { useContext } from "react";
+import Routes from "pages/Routes/Routes";
 import Menu from "components/Layouts/Menu";
+import { DarkModeContext } from "Provider";
 import { ConfigProvider, Layout } from "antd";
 import PageHeader from "components/PageHeader";
 import Header from "components/Layouts/Header";
 import { ErrorBoundary } from "react-error-boundary";
 import useMenuCollapsed from "lib/utils/hooks/useMenuCollapsed";
-import Routes from "pages/Routes/Routes";
-import { DarkModeContext } from "Provider";
-import { useContext } from "react";
+// import { Footer } from "antd/es/layout/layout";
 
 const { Sider, Content } = Layout;
 
 const MENU_COLLAPSED_STORAGE_KEY = "menuCollapsed";
 
-function App() {
+const App: React.FC = () => {
 	const { algorithm, toggleTheme, isDarkMode } = useContext(DarkModeContext);
 
 	const { collapsed, toggleCollapse } = useMenuCollapsed(
@@ -24,9 +25,9 @@ function App() {
 			<ConfigProvider
 				theme={{
 					algorithm,
-					token: {
-						fontFamily: "Inter",
-					},
+					// token: {
+					// 	fontFamily: "Inter",
+					// },
 				}}
 			>
 				<Layout>
@@ -43,6 +44,7 @@ function App() {
 							collapsed={collapsed}
 							style={{
 								overflow: "auto",
+								overflowX: "hidden",
 								height: "calc(100vh - 64px)",
 								position: "sticky",
 								left: 0,
@@ -67,6 +69,6 @@ function App() {
 			</ConfigProvider>
 		</ErrorBoundary>
 	);
-}
+};
 
 export default App;

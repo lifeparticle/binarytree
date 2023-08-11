@@ -1,1 +1,121 @@
-[{}]
+[
+	{
+		"name": "Black Mirror",
+		"category": "TV Shows",
+		"subCategory": "Drama/Science Fiction",
+		"url": "https://www.imdb.com/title/tt2085059/",
+		"socials": []
+	},
+	{
+		"name": "CSI: Cyber",
+		"category": "TV Shows",
+		"subCategory": "Drama/Crime/Mystery",
+		"url": "https://www.imdb.com/title/tt3560060/",
+		"socials": []
+	},
+	{
+		"name": "Dark Net",
+		"category": "TV Shows",
+		"subCategory": "Documentary/Series",
+		"url": "https://www.imdb.com/title/tt5397520/",
+		"socials": []
+	},
+	{
+		"name": "Devs",
+		"category": "TV Shows",
+		"subCategory": "Drama/Mystery/Sci-Fi",
+		"url": "https://www.imdb.com/title/tt8134186/",
+		"socials": []
+	},
+	{
+		"name": "Halt and Catch Fire",
+		"category": "TV Shows",
+		"subCategory": "Drama",
+		"url": "https://www.imdb.com/title/tt2543312/",
+		"socials": []
+	},
+	{
+		"name": "Mr. Robot",
+		"category": "TV Shows",
+		"subCategory": "Thriller/Drama",
+		"url": "https://www.imdb.com/title/tt4158110/",
+		"socials": []
+	},
+	{
+		"name": "Person of Interest",
+		"category": "TV Shows",
+		"subCategory": "Action/Crime/Drama",
+		"url": "https://www.imdb.com/title/tt1839578/",
+		"socials": []
+	},
+	{
+		"name": "Scorpion",
+		"category": "TV Shows",
+		"subCategory": "Action/Drama",
+		"url": "https://www.imdb.com/title/tt3514324/",
+		"socials": []
+	},
+	{
+		"name": "Serial Experiments Lain",
+		"category": "TV Shows",
+		"subCategory": "Cyberpunk/Animation",
+		"url": "https://www.imdb.com/title/tt0500092/",
+		"socials": []
+	},
+	{
+		"name": "Silicon Valley",
+		"category": "TV Shows",
+		"subCategory": "Comedy",
+		"url": "https://www.imdb.com/title/tt2575988/",
+		"socials": []
+	},
+	{
+		"name": "StartUp",
+		"category": "TV Shows",
+		"subCategory": "Thriller/Crime",
+		"url": "https://www.imdb.com/title/tt5028002/",
+		"socials": []
+	},
+	{
+		"name": "The Code",
+		"category": "TV Shows",
+		"subCategory": "Drama",
+		"url": "https://www.imdb.com/title/tt3914672/",
+		"socials": []
+	},
+	{
+		"name": "The IT Crowd",
+		"category": "TV Shows",
+		"subCategory": "Comedy",
+		"url": "https://www.imdb.com/title/tt0487831/",
+		"socials": []
+	},
+	{
+		"name": "Travelers",
+		"category": "TV Shows",
+		"subCategory": "Science Fiction",
+		"url": "https://www.imdb.com/title/tt5651844/",
+		"socials": []
+	},
+	{
+		"name": "Valley of the Boom",
+		"category": "TV Shows",
+		"subCategory": "Documentary/Drama",
+		"url": "https://www.imdb.com/title/tt7768092/",
+		"socials": []
+	},
+	{
+		"name": "Westworld",
+		"category": "TV Shows",
+		"subCategory": "Drama/Mystery",
+		"url": "https://www.imdb.com/title/tt0475784/",
+		"socials": []
+	},
+	{
+		"name": "You Are Wanted",
+		"category": "TV Shows",
+		"subCategory": "Thriller/Drama",
+		"url": "https://www.imdb.com/title/tt5462886/",
+		"socials": []
+	}
+]

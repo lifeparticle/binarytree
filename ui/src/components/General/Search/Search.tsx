@@ -1,21 +1,21 @@
 import { Input } from "antd";
+import style from "./search.module.scss";
 import { QUERY_KEY_NEWS } from "pages/News";
-import { useState, useEffect, ChangeEvent } from "react";
 import { useSearchParams } from "react-router-dom";
 import CategoryTags from "./CategoryTags/CategoryTags";
-
-import style from "./search.module.scss";
-import { classNames } from "lib/utils/helper";
+import { useState, useEffect, ChangeEvent } from "react";
 
 interface SearchProps {
 	categories: string[];
 	resourceName: string;
+	isLoading: boolean;
 }
 
-const THRESS_HOLD = 100; // Adjust as needed
-
-const Search: React.FC<SearchProps> = ({ resourceName, categories }) => {
-	const [isSticky, setIsSticky] = useState(false);
+const Search: React.FC<SearchProps> = ({
+	resourceName,
+	categories,
+	isLoading,
+}) => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const [queryParams, setQueryParams] = useState({
 		q: searchParams.get("q") || "",
@@ -41,24 +41,14 @@ const Search: React.FC<SearchProps> = ({ resourceName, categories }) => {
 		setQueryParams((prevParams) => ({ ...prevParams, cat: value }));
 	};
 
-	const handleScroll = () => {
-		setIsSticky(window.scrollY >= THRESS_HOLD);
-	};
-
-	useEffect(() => {
-		window.addEventListener("scroll", handleScroll);
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-		};
-	}, []);
-
 	return (
-		<div className={classNames(style.search, isSticky ? style.sticky : "")}>
+		<div className={style.search}>
 			<Input
 				type="text"
 				placeholder="Search by title..."
 				value={searchQuery}
 				onChange={handleSearchChange}
+				disabled={isLoading}
 			/>
 
 			<CategoryTags

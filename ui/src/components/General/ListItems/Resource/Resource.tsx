@@ -1,20 +1,26 @@
 import { Avatar, Card, Skeleton, Space, Tag, Typography } from "antd";
 import style from "./resource.module.scss";
 import { ResourceType } from "./resource.type";
-import { ListItemProps } from "components/Hoc/List/types";
-import Clipboard from "components/Hoc/Clipboard/Clipboard";
+import { ListItemProps } from "components/RenderProps/List/types";
+import Clipboard from "components/RenderProps/Clipboard/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
 
 const { Title } = Typography;
 
 const Resource: React.FC<ListItemProps<ResourceType>> = ({
 	resource,
+	handleOnClick,
 	isLoading,
 }) => {
 	const { name, category, url } = resource || {};
 
 	return (
-		<Card className={style.card} key={name} hoverable>
+		<Card
+			className={style.card}
+			key={name}
+			onClick={() => handleOnClick(url)}
+			hoverable
+		>
 			<Skeleton loading={isLoading} avatar active>
 				<Space className={style.card__container}>
 					<Space size={16}>

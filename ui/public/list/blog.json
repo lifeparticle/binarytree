@@ -1,1 +1,58 @@
-[{}]
+[
+	{
+		"name": "Tania Rascia",
+		"category": "Best Practices",
+		"subCategory": "Programming",
+		"url": "https://www.taniarascia.com/blog/",
+		"socials": []
+	},
+	{
+		"name": "Overreacted",
+		"category": "React",
+		"subCategory": "Programming",
+		"url": "https://overreacted.io/",
+		"socials": []
+	},
+	{
+		"name": "React Training",
+		"category": "React",
+		"subCategory": "Programming",
+		"url": "https://reacttraining.com/blog",
+		"socials": []
+	},
+	{
+		"name": "DEV",
+		"category": "React",
+		"subCategory": "Programming",
+		"url": "https://dev.to/",
+		"socials": []
+	},
+	{
+		"name": "EPICWEB",
+		"category": "React",
+		"subCategory": "Programming",
+		"url": "https://www.epicweb.dev/articles",
+		"socials": []
+	},
+	{
+		"name": "Taylor",
+		"category": "Programming",
+		"subCategory": "Programming",
+		"url": "https://taylor.town/",
+		"socials": []
+	},
+	{
+		"name": "Daniel Lemire",
+		"category": "Programming",
+		"subCategory": "Programming",
+		"url": "https://lemire.me/blog/",
+		"socials": []
+	},
+	{
+		"name": "Learn X in Y minutes",
+		"category": "Programming",
+		"subCategory": "Programming",
+		"url": "https://learnxinyminutes.com/",
+		"socials": []
+	}
+]

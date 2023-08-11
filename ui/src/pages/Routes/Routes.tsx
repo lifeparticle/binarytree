@@ -23,6 +23,8 @@ import {
 	Course,
 	Blog,
 	Book,
+	Plugin,
+	Tool,
 } from "pages/pages";
 
 const Routes = () => {
@@ -73,7 +75,7 @@ const Routes = () => {
 					<Route path="/list">
 						<Route index element={<Navigate to={"icons"} />} />
 
-						<Route path="icons" element={<Icon />} />
+						<Route path="icon" element={<Icon />} />
 						<Route path="github-repos" element={<Github />} />
 						<Route path="youtube-channels" element={<YouTube />} />
 						<Route path="book" element={<Book />} />
@@ -81,6 +83,8 @@ const Routes = () => {
 						<Route path="course" element={<Course />} />
 						<Route path="movie" element={<Movie />} />
 						<Route path="tv-series" element={<TvSeries />} />
+						<Route path="plugin" element={<Plugin />} />
+						<Route path="tool" element={<Tool />} />
 					</Route>
 					<Route path="*" element={<Navigate to="/404" />} />
 				</RRDRoutes>

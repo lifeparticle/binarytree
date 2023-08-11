@@ -1,11 +1,16 @@
 import { useSearchParams } from "react-router-dom";
 import style from "./list.module.scss";
-import { ListProps } from "./types";
 import { NewsType } from "components/General/ListItems/News/news.types";
 import { ResourceType } from "components/General/ListItems/Resource/resource.type";
 import { QUERY_KEY_NEWS } from "pages/News";
 import Search from "components/General/Search/Search";
-import { getCategories } from "components/General/Search/helper";
+import { getCategories } from "components/General/Search/CategoryTags/helper";
+import { ListSearchResultsProps } from "./types";
+import List from "components/RenderProps/List/List";
+import { Typography } from "antd";
+import { API_ERROR, API_NO_DATA } from "lib/utils/constant";
+
+const { Title } = Typography;
 
 const filteredNews = (searchQuery: string, items: NewsType[]) => {
 	if (searchQuery) {
@@ -41,14 +46,23 @@ const filteredResource = (
 	});
 };
 
-const List = <T,>({
+const ListSearchResults = <T,>({
 	items,
 	resourceName,
-	itemComponent: ItemComponent,
+	itemComponent,
 	isLoading,
 	isError,
-}: ListProps<T>): JSX.Element => {
+	source = "",
+}: ListSearchResultsProps<T>): JSX.Element => {
 	const [searchParams] = useSearchParams();
+
+	if (isError) {
+		return <Title level={3}>{API_ERROR}</Title>;
+	}
+
+	if (!isError && !isLoading && items?.length === 0) {
+		return <Title level={3}>{API_NO_DATA}</Title>;
+	}
 
 	const { q: searchQuery, cat: categoryQuery } = {
 		q: searchParams.get("q") || "",
@@ -64,31 +78,27 @@ const List = <T,>({
 					items as ResourceType[]
 			  );
 
-	const handleOnClick = (url: string) => {
-		window.open(url, "_blank");
-	};
-
 	const list = filteredList ? filteredList : [...Array(20).keys()];
 
 	const categories = getCategories(items as ResourceType[], resourceName);
 
-	if (isError) {
-		return <div>Something went wrong</div>;
-	}
-
 	return (
 		<div className={style.container}>
-			<Search categories={categories} resourceName={resourceName} />
-			{list.map((item, i) => (
-				<ItemComponent
-					key={i}
-					resource={item as T}
-					handleOnClick={handleOnClick}
-					isLoading={isLoading}
-				/>
-			))}
+			<Search
+				categories={categories}
+				resourceName={resourceName}
+				isLoading={isLoading}
+			/>
+			<List
+				items={list as T[]}
+				itemComponent={itemComponent}
+				isLoading={isLoading}
+			/>
+			<Title level={5} onClick={() => window.open(source, "_blank")}>
+				{source && `Source: ${source}`}
+			</Title>
 		</div>
 	);
 };
 
-export default List;
+export default ListSearchResults;

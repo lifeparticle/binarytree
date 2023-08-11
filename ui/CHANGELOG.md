@@ -1,3 +1,22 @@
+### [4.0.0] - 2023-08-07
+
+-   Change brand logo
+-   Fix news list
+-   Added data for list
+-   New lists
+-   Added source props for list
+-   Added ListSearchResults
+-   Rename HOC to RenderProps
+-   AntD Header css
+-   Sort List alphabetically
+-   Sort Menu alphabetically
+-   Rename icons to icon
+-   Delete custom.d.ts
+-   Update globals.d.ts
+-   Use css variables in ImageGeneratorFromColors
+-   Use css variables in ImageGeneratorFromColors
+-   Temporarily remove custom font to stop flickering issue
+
 ### [3.9.1] - 2023-08-07
 
 -   Separete Search code from list
