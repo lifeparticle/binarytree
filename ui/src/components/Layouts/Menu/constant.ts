@@ -19,203 +19,193 @@ import {
 	Replace,
 	Table,
 	Youtube,
-	PanelTop,
-	Book,
 	GraduationCap,
 	Clapperboard,
 	Tv,
+	Plug,
+	Wrench,
+	BookOpen,
+	Keyboard,
+	Square,
 } from "lucide-react";
+import { getItem } from "./Menu";
 
 const IN_DEV = import.meta.env.DEV;
 
-const MENU_ITEMS = [
+export const MENU_ITEMS = [
 	{
 		name: "Colors",
-		icon: <Brush size={16} />,
+		icon: Brush,
 		show: true,
 		children: [
 			{
 				name: "Color Picker",
 				url: "/colors/cp",
-				icon: <Baseline size={16} />,
+				icon: Baseline,
 				show: true,
 			},
 			{
 				name: "Shade Generator",
 				url: "/colors/shades",
-				icon: <Layers size={16} />,
+				icon: Layers,
 				show: IN_DEV,
 			},
 		],
 	},
 	{
 		name: "Converter",
-		icon: <Repeat size={16} />,
+		icon: Repeat,
 		show: true,
 		children: [
 			{
 				name: "Base 64 Converter",
 				url: "/converter/base-64",
-				icon: <Replace size={16} />,
+				icon: Replace,
 				show: true,
 			},
 			{
 				name: "Pixel Converter",
 				url: "/converter/pixel-converter",
-				icon: <FileOutput size={16} />,
+				icon: FileOutput,
 				show: true,
 			},
 		],
 	},
 	{
 		name: "Data",
-		icon: <Database size={16} />,
+		icon: Database,
 		show: true,
 		children: [
 			{
 				name: "Data Generator",
 				url: "/data/data-gen",
-				icon: <DatabaseBackup size={16} />,
+				icon: DatabaseBackup,
 				show: true,
 			},
 			{
 				name: "Image Generator From Colors",
 				url: "/data/igfc",
-				icon: <Image size={16} />,
+				icon: Image,
 				show: true,
 			},
 			{
 				name: "Sorting",
 				url: "/data/sorting",
-				icon: <ArrowUpNarrowWide size={16} />,
+				icon: ArrowUpNarrowWide,
 				show: true,
 			},
 		],
 	},
 	{
 		name: "List",
-		icon: <AlignEndHorizontal size={16} />,
+		icon: AlignEndHorizontal,
 		show: true,
 		children: [
 			{
 				name: "Blog",
 				url: "/list/blog",
-				icon: <PanelTop size={16} />,
+				icon: Keyboard,
 				show: true,
 			},
 			{
 				name: "Book",
 				url: "/list/book",
-				icon: <Book size={16} />,
+				icon: BookOpen,
 				show: true,
 			},
 			{
 				name: "Course",
 				url: "/list/course",
-				icon: <GraduationCap size={16} />,
+				icon: GraduationCap,
 				show: true,
 			},
 			{
 				name: "Github",
 				url: "/list/github",
-				icon: <Github size={16} />,
+				icon: Github,
 				show: true,
 			},
 			{
 				name: "Icon",
 				url: "/list/icon",
-				icon: <ClipboardEdit size={16} />,
+				icon: Square,
 				show: true,
 			},
 			{
 				name: "Movie",
 				url: "/list/movie",
-				icon: <Clapperboard size={16} />,
+				icon: Clapperboard,
 				show: true,
 			},
 			{
 				name: "Plugin",
 				url: "/list/plugin",
-				icon: <Clapperboard size={16} />,
+				icon: Plug,
 				show: true,
 			},
 			{
 				name: "Tool",
 				url: "/list/tool",
-				icon: <Tv size={16} />,
+				icon: Wrench,
 				show: true,
 			},
 			{
 				name: "TV Series",
 				url: "/list/tv-series",
-				icon: <Tv size={16} />,
+				icon: Tv,
 				show: true,
 			},
 			{
 				name: "Youtube",
 				url: "/list/youtube",
-				icon: <Youtube size={16} />,
+				icon: Youtube,
 				show: true,
 			},
 		],
 	},
 	{
 		name: "Markdown",
-		icon: <Code2 size={16} />,
+		icon: Code2,
 		show: true,
 		children: [
 			{
 				name: "Markdown Editor",
 				url: "/markdown/me",
-				icon: <FileEdit size={16} />,
+				icon: FileEdit,
 				show: true,
 			},
 			{
 				name: "MD Table Generator",
 				url: "/markdown/md-table-generator",
-				icon: <Dice5 size={16} />,
+				icon: Dice5,
 				show: true,
 			},
 			{
 				name: "Table Of Content",
 				url: "/markdown/toc",
-				icon: <Table size={16} />,
+				icon: Table,
 				show: true,
 			},
 		],
 	},
 	{
 		name: "Text",
-		icon: <Pencil size={16} />,
+		icon: Pencil,
 		show: true,
 		children: [
 			{
 				name: "Text Editor",
 				url: "/text/te",
-				icon: <ClipboardEdit size={16} />,
+				icon: ClipboardEdit,
 				show: true,
 			},
 		],
 	},
 ];
 
-type MenuItem = Required<MenuProps>["items"][number];
-
-function getItem(
-	label: React.ReactNode,
-	key: React.Key,
-	icon?: React.ReactNode,
-	children?: MenuItem[],
-	type?: "group"
-): MenuItem {
-	return {
-		key,
-		icon,
-		children,
-		label,
-		type,
-	} as MenuItem;
-}
+export type IconComponentType =
+	| React.ComponentType<{ size: number }>
+	| undefined;
 
 const ITEMS: MenuProps["items"] = [
 	{ type: "divider" },
@@ -223,11 +213,15 @@ const ITEMS: MenuProps["items"] = [
 		return getItem(
 			item.name,
 			item.name as React.Key,
-			item.icon,
+			item.icon as IconComponentType,
 			item.children
 				.filter((item) => item.show)
 				.map((child) =>
-					getItem(child.name, child.url as React.Key, child.icon)
+					getItem(
+						child.name,
+						child.url as React.Key,
+						child.icon as IconComponentType
+					)
 				)
 		);
 	}),
