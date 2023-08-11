@@ -1,5 +1,5 @@
 import { useSearchParams } from "react-router-dom";
-import style from "./list.module.scss";
+import style from "./ListSearchResults.module.scss";
 import { NewsType } from "components/General/ListItems/News/news.types";
 import { ResourceType } from "components/General/ListItems/Resource/resource.type";
 import { QUERY_KEY_NEWS } from "pages/News";
@@ -7,8 +7,9 @@ import Search from "components/General/Search/Search";
 import { getCategories } from "components/General/Search/CategoryTags/helper";
 import { ListSearchResultsProps } from "./types";
 import List from "components/RenderProps/List/List";
-import { Typography } from "antd";
 import { API_ERROR, API_NO_DATA } from "lib/utils/constant";
+import Text from "components/General/Text/Text";
+import { Typography } from "antd";
 
 const { Title } = Typography;
 
@@ -57,11 +58,11 @@ const ListSearchResults = <T,>({
 	const [searchParams] = useSearchParams();
 
 	if (isError) {
-		return <Title level={3}>{API_ERROR}</Title>;
+		return <Text text={API_ERROR} />;
 	}
 
 	if (!isError && !isLoading && items?.length === 0) {
-		return <Title level={3}>{API_NO_DATA}</Title>;
+		return <Text text={API_NO_DATA} />;
 	}
 
 	const { q: searchQuery, cat: categoryQuery } = {

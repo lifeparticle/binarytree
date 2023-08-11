@@ -1,7 +1,8 @@
 import { test, expect } from "vitest";
-import { render, fireEvent, screen } from "@testing-library/react";
+import ColorPicker from "./ColorPicker";
+import { formatLabels } from "./constant";
 import "@testing-library/jest-dom/extend-expect";
-import ColorPicker, { formatLabels } from ".";
+import { render, fireEvent, screen } from "@testing-library/react";
 
 describe("ColorPicker Component", () => {
 	test("renders without crashing", () => {
