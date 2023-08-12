@@ -1,4 +1,4 @@
-import { test, expect } from "vitest";
+import { test, expect, describe } from "vitest";
 import ColorPicker from "./ColorPicker";
 import { formatLabels } from "./constant";
 import "@testing-library/jest-dom/extend-expect";
