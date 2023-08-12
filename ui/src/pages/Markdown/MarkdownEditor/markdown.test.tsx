@@ -2,7 +2,6 @@ import { describe, test, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import MarkdownEditor from ".";
 import { ButtonProps } from "antd/lib/button";
-import { DarkModeContext } from "Provider";
 
 // Define TypeScript types for the mocked components
 type MockButtonProps = {
