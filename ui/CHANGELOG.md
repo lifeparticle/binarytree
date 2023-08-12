@@ -34,7 +34,6 @@
 -   Delete custom.d.ts
 -   Update globals.d.ts
 -   Use css variables in ImageGeneratorFromColors
--   Use css variables in ImageGeneratorFromColors
 -   Temporarily remove custom font to stop flickering issue
 -   Global App constant
 
