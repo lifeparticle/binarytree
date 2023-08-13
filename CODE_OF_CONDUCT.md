@@ -59,12 +59,8 @@ representative at an online or offline event.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders responsible for enforcement at
-mahbubzaman17@gmail.com.
-All complaints will be reviewed and investigated promptly and fairly.
-
-All community leaders are obligated to respect the privacy and security of the
-reporter of any incident.
+reported by contacting us anonymously through [this form](https://docs.google.com/forms/d/e/1FAIpQLSd866XghkfFPszZUTu2fM66rX-0BBcPHw2XpGXfJnljdtGh8Q/viewform).
+All complaints will be reviewed and investigated promptly and fairly. The project team is obligated to maintain confidentiality with regard to the reporter of an incident.
 
 ## Enforcement Guidelines
 
