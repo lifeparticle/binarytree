@@ -8,7 +8,7 @@ describe("Markdown Component", () => {
 		render(<MarkdownEditor />);
 	});
 
-	test("render buttons correctly", () => {
+	test("render buttons correctly.", () => {
 		render(<MarkdownEditor />);
 		const clearButtonElement = screen.getByRole("button", {
 			name: /clear/i,
