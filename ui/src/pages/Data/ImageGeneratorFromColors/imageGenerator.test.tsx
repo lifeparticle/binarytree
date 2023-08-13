@@ -24,10 +24,15 @@ describe("Image Generator component", () => {
 		expect(clearButtonElement).toBeInTheDocument();
 	});
 
-	test("clear value after press clear button", async () => {
+	test("change textarea value and clear", async () => {
 		render(<ImageGeneratorFromColors />);
+		const COLOR = "#FFFFFF";
 
 		const textareaElement = screen.getByRole("textbox");
+
+		await user.type(textareaElement, COLOR);
+
+		expect(textareaElement).toHaveValue(COLOR);
 
 		const clearButtonElement = screen.getByRole("button", {
 			name: /clear/i,

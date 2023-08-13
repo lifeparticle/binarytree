@@ -1,16 +1,15 @@
 import { useClipboard } from "@mantine/hooks";
 import { Button, Space } from "antd";
 import { downloadPDFFile, downloadTextFile } from "lib/utils/files";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import style from "./MarkdownEditor.module.scss";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
-import MDEditor from "@uiw/react-md-editor";
-import { DarkModeContext } from "Provider";
+import SimpleMDE from "react-simplemde-editor";
+import "easymde/dist/easymde.min.css";
 
 const MarkdownEditor: React.FC = () => {
 	const [markdown, setMarkdown] = useState("");
 	const clipboard = useClipboard({ timeout: 500 });
-	const { isDarkMode } = useContext(DarkModeContext);
 
 	useCombinedKeyPress(
 		() => setMarkdown("# Hello, World!"),
@@ -19,28 +18,23 @@ const MarkdownEditor: React.FC = () => {
 	useCombinedKeyPress(() => setMarkdown(""), ["ControlLeft", "KeyC"]);
 
 	return (
-		<div
-			className={style.me}
-			data-color-mode={isDarkMode ? "dark" : "light"}
-		>
+		<div className={style.me}>
 			<Space>
 				<Button onClick={() => setMarkdown("")}>Clear</Button>
 				<Button onClick={() => downloadTextFile(markdown, "README.md")}>
 					Download Markdown
 				</Button>
-				<Button onClick={() => downloadPDFFile(markdown, "README.pdf")}>
-					Download PDF
+				<Button
+					onClick={() => downloadPDFFile(markdown, "README.html")}
+				>
+					Download HTML
 				</Button>
 				<Button onClick={() => clipboard.copy(markdown)}>
 					{clipboard.copied ? "Copied" : "Copy"}
 				</Button>
 			</Space>
-			<MDEditor
-				value={markdown}
-				onChange={(val) => val && setMarkdown(val)}
-				height="800px"
-				style={{ fontSize: "52" }}
-			/>
+
+			<SimpleMDE value={markdown} onChange={(val) => setMarkdown(val)} />
 		</div>
 	);
 };
