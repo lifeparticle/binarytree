@@ -1,72 +1,14 @@
-import { describe, test, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { describe, test } from "vitest";
+import { render, screen, fireEvent } from "@testing-library/react";
 import MarkdownEditor from ".";
-import { ButtonProps } from "antd/lib/button";
-
-// Define TypeScript types for the mocked components
-type MockButtonProps = {
-	children: React.ReactNode;
-} & ButtonProps; // Use ButtonProps to extend the mock component's props
-
-type MockSpaceProps = {
-	children: React.ReactNode;
-};
-
-type MockMDEditorProps = {
-	value: string;
-	onChange: (value: string) => void;
-};
-
-// Mock the DarkModeContext
-const mockDarkModeContext = {
-	isDarkMode: false,
-};
+// import { DarkModeProvider } from "Provider";
 
 describe("Markdown Component", () => {
-	vi.mock("@uiw/react-md-editor", () => ({
-		default: {
-			MDEditor: ({ value, onChange }: MockMDEditorProps) => (
-				<textarea
-					value={value}
-					onChange={(e) => onChange(e.target.value)}
-					data-testid="mock-md-editor"
-					style={{ fontSize: "52" }}
-				/>
-			),
-		},
-	}));
-
-	vi.mock("antd", () => ({
-		Button: ({ children }: MockButtonProps) => <button>{children}</button>,
-		Space: ({ children }: MockSpaceProps) => (
-			<div data-testid="mock-antd-space">{children}</div>
-		),
-	}));
-
-	vi.mock("@mantine/hooks", () => ({
-		useClipboard: () => ({
-			copy: vi.fn(),
-			copied: false,
-		}),
-	}));
-
-	vi.mock("lib/utils/files", () => ({
-		downloadPDFFile: vi.fn(),
-		downloadTextFile: vi.fn(),
-	}));
-
-	vi.mock("Provider", () => ({
-		DarkModeContext: {
-			...mockDarkModeContext, // Spread the mock context directly
-		},
-	}));
-
 	test("render component without crashing", () => {
 		render(<MarkdownEditor />);
 	});
 
 	test("render buttons correctly", () => {
-		screen.debug();
 		render(<MarkdownEditor />);
 		const clearButtonElement = screen.getByRole("button", {
 			name: /clear/i,
@@ -77,7 +19,7 @@ describe("Markdown Component", () => {
 		});
 
 		const downloadMarkdownPdfElement = screen.getByRole("button", {
-			name: /download pdf/i,
+			name: /download html/i,
 		});
 
 		const copyButtonElement = screen.getByRole("button", {
@@ -90,5 +32,22 @@ describe("Markdown Component", () => {
 		expect(copyButtonElement).toBeInTheDocument();
 
 		expect(clearButtonElement).toBeInTheDocument();
+	});
+
+	test("Markdown Editor test", async () => {
+		render(<MarkdownEditor />);
+
+		const typedText = "# Hello, World!";
+
+		const markdownEditor = screen.getByRole("textbox");
+		expect(markdownEditor).toBeInTheDocument();
+
+		fireEvent.change(markdownEditor, {
+			target: {
+				value: typedText,
+			},
+		});
+
+		expect(markdownEditor).toHaveValue(typedText);
 	});
 });
