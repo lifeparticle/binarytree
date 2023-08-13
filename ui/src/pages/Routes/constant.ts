@@ -5,64 +5,36 @@ interface Route {
 
 const ROUTES: Route[] = [
 	{
-		path: "/",
-		title: "Dashboard",
-	},
-	{
-		path: "/data/sorting",
-		title: "Sorting",
-	},
-	{
-		path: "/markdown/me",
-		title: "Markdown Editor",
-	},
-	{
-		path: "/data/igfc",
-		title: "Image Generator From Colors",
-	},
-	{
-		path: "/text/te",
-		title: "Text Editor",
-	},
-	{
-		path: "/data/data-gen",
-		title: "Data Generator",
-	},
-	{
 		path: "/colors/cp",
 		title: "Color Picker",
-	},
-	{
-		path: "/converter/base-64",
-		title: "Base64",
 	},
 	{
 		path: "/colors/shades",
 		title: "Shades",
 	},
 	{
-		path: "/converter/pixel-converter",
+		path: "/converter/base-64",
+		title: "Base64",
+	},
+	{
+		path: "/converter/pixel",
 		title: "Pixel Converter",
 	},
 	{
-		path: "/markdown/toc",
-		title: "Table Of Content",
+		path: "/converter/jtt",
+		title: "Pixel Converter",
 	},
 	{
-		path: "/markdown/md-table-generator",
-		title: "Markdown Table Generator",
+		path: "/data/data-gen",
+		title: "Data Generator",
 	},
 	{
-		path: "/list/icon",
-		title: "Icon",
+		path: "/data/igfc",
+		title: "Image Generator From Colors",
 	},
 	{
-		path: "/list/youtube",
-		title: "Youtube",
-	},
-	{
-		path: "/list/github",
-		title: "Github",
+		path: "/data/sorting",
+		title: "Sorting",
 	},
 	{
 		path: "/list/blog",
@@ -77,12 +49,16 @@ const ROUTES: Route[] = [
 		title: "Course",
 	},
 	{
-		path: "/list/movie",
-		title: "Movie",
+		path: "/list/github",
+		title: "Github",
 	},
 	{
-		path: "/list/tv-series",
-		title: "TV Series",
+		path: "/list/icon",
+		title: "Icon",
+	},
+	{
+		path: "/list/movie",
+		title: "Movie",
 	},
 	{
 		path: "/list/plugin",
@@ -91,6 +67,34 @@ const ROUTES: Route[] = [
 	{
 		path: "/list/tool",
 		title: "Tool",
+	},
+	{
+		path: "/list/tv-series",
+		title: "TV Series",
+	},
+	{
+		path: "/list/youtube",
+		title: "Youtube",
+	},
+	{
+		path: "/markdown/me",
+		title: "Markdown Editor",
+	},
+	{
+		path: "/markdown/md-table-generator",
+		title: "Markdown Table Generator",
+	},
+	{
+		path: "/markdown/toc",
+		title: "Table Of Content",
+	},
+	{
+		path: "/text/te",
+		title: "Text Editor",
+	},
+	{
+		path: "/",
+		title: "Dashboard",
 	},
 	{
 		path: "*",

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import style from "./PixelConverter.module.scss";
+import style from "./Pixel.module.scss";
 import { InputNumber, Form } from "antd";
 
-const PixelConverter: React.FC = () => {
+const Pixel: React.FC = () => {
 	const [pixel, setPixel] = useState(0.0);
 	const [rem, setRem] = useState(0.0);
 	const [base, setBase] = useState(16);
@@ -66,4 +66,4 @@ const PixelConverter: React.FC = () => {
 	);
 };
 
-export default PixelConverter;
+export default Pixel;
