@@ -6,7 +6,7 @@ import Header from "components/Layouts/Header";
 import { ErrorBoundary } from "react-error-boundary";
 import useMenuCollapsed from "lib/utils/hooks/useMenuCollapsed";
 import RoutesWithPageTitle from "pages/Routes/RoutesWithPageTitle";
-// import { Footer } from "antd/es/layout/layout";
+import { Footer } from "antd/es/layout/layout";
 
 const { Sider, Content } = Layout;
 
@@ -21,14 +21,7 @@ const App: React.FC = () => {
 
 	return (
 		<ErrorBoundary fallback={<p>Something went wrong</p>}>
-			<ConfigProvider
-				theme={{
-					algorithm,
-					// token: {
-					// 	fontFamily: "Inter",
-					// },
-				}}
-			>
+			<ConfigProvider theme={{ algorithm }}>
 				<Layout>
 					<Header
 						handleThemeChange={toggleTheme}
@@ -59,9 +52,19 @@ const App: React.FC = () => {
 								collapsed={collapsed}
 							/>
 						</Sider>
-						<Content>
-							<RoutesWithPageTitle />
-						</Content>
+						<Layout>
+							<Content>
+								<RoutesWithPageTitle />
+							</Content>
+							<Footer>
+								<a href="https://www.netlify.com">
+									<img
+										src="https://www.netlify.com/v3/img/components/netlify-dark.svg"
+										alt="Deploys by Netlify"
+									/>
+								</a>
+							</Footer>
+						</Layout>
 					</Layout>
 				</Layout>
 			</ConfigProvider>
