@@ -1,3 +1,4 @@
 :where(html) {
 	--bt-border-dashed: 1px dashed var(--bt-color-border);
+	--bt-border-radius-4: 4px;
 }
