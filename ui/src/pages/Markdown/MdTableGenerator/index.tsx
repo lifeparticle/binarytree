@@ -1,6 +1,6 @@
 import MDEditor from "@uiw/react-md-editor";
 import { InputNumber, Space } from "antd";
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { generateTable } from "./util/utils";
 
 const TableGenerator: React.FC = () => {
@@ -9,6 +9,8 @@ const TableGenerator: React.FC = () => {
 	const [output, setOutput] = useState(() => {
 		return generateTable(row, column, "");
 	});
+
+	const [isPending, startTransition] = useTransition();
 
 	return (
 		<Space direction="vertical" style={{ width: "100%" }}>
@@ -19,10 +21,12 @@ const TableGenerator: React.FC = () => {
 				min={0}
 				onChange={(val: number | null) => {
 					if (val !== null) {
-						setRow(val);
-						setOutput((prevOutput) =>
-							generateTable(val, column, prevOutput)
-						);
+						startTransition(() => {
+							setRow(val);
+							setOutput((prevOutput) =>
+								generateTable(val, column, prevOutput)
+							);
+						});
 					}
 				}}
 			/>
@@ -34,16 +38,18 @@ const TableGenerator: React.FC = () => {
 				min={1}
 				onChange={(val: number | null) => {
 					if (val !== null) {
-						setColumn(val);
-						setOutput((prevOutput) =>
-							generateTable(row, val, prevOutput)
-						);
+						startTransition(() => {
+							setColumn(val);
+							setOutput((prevOutput) =>
+								generateTable(row, val, prevOutput)
+							);
+						});
 					}
 				}}
 			/>
 
 			<MDEditor
-				value={output}
+				value={isPending ? "Generating table..." : output}
 				onChange={(val) => val && setOutput(val)}
 				height="800px"
 				style={{ fontSize: "52" }}

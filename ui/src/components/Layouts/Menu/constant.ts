@@ -58,16 +58,22 @@ export const MENU_ITEMS = [
 		show: true,
 		children: [
 			{
-				name: "Base 64 Converter",
+				name: "Base 64",
 				url: "/converter/base-64",
 				icon: Replace,
 				show: true,
 			},
 			{
-				name: "Pixel Converter",
-				url: "/converter/pixel-converter",
+				name: "Pixel",
+				url: "/converter/pixel",
 				icon: FileOutput,
 				show: true,
+			},
+			{
+				name: "JSON To TypeScript",
+				url: "/converter/jtt",
+				icon: FileOutput,
+				show: IN_DEV,
 			},
 		],
 	},

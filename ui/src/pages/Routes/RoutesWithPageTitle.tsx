@@ -4,27 +4,28 @@ import { Navigate, Route, Routes as RRDRoutes } from "react-router-dom";
 
 import {
 	News,
-	Sorting,
-	MarkdownEditor,
-	ImageGeneratorFromColors,
-	TextEditor,
-	DataGenerator,
 	ColorPicker,
-	Base64,
-	PixelConverter,
-	TableOfContent,
 	Shades,
-	TableGenerator,
-	Icon,
-	YouTube,
-	Github,
-	TvSeries,
-	Movie,
-	Course,
+	Base64,
+	Pixel,
+	DataGenerator,
+	ImageGeneratorFromColors,
+	Sorting,
 	Blog,
 	Book,
+	Course,
+	Github,
+	Icon,
+	Movie,
 	Plugin,
 	Tool,
+	TvSeries,
+	YouTube,
+	MarkdownEditor,
+	TableGenerator,
+	TableOfContent,
+	TextEditor,
+	JsonToTypescript,
 } from "pages/pages";
 import withPageTitle from "components/Hoc/withPageTitle";
 import Text from "components/General/Text/Text";
@@ -36,6 +37,17 @@ const Routes: React.FC = () => {
 			<Suspense fallback={<Text text={API_LOADING} />}>
 				<RRDRoutes>
 					<Route path="/" element={<News />} />
+					<Route path="/colors">
+						<Route index element={<Navigate to={"cp"} />} />
+						<Route path="cp" element={<ColorPicker />} />
+						<Route path="shades" element={<Shades />} />
+					</Route>
+					<Route path="/converter">
+						<Route index element={<Navigate to={"base-64"} />} />
+						<Route path="base-64" element={<Base64 />} />
+						<Route path="pixel" element={<Pixel />} />
+						<Route path="jtt" element={<JsonToTypescript />} />
+					</Route>
 					<Route path="/data">
 						<Route index element={<Navigate to={"igfc"} />} />
 						<Route
@@ -44,35 +56,6 @@ const Routes: React.FC = () => {
 						/>
 						<Route path="data-gen" element={<DataGenerator />} />
 						<Route path="sorting" element={<Sorting />} />
-					</Route>
-					<Route path="/markdown">
-						<Route index element={<Navigate to={"me"} />} />
-						<Route path="me" element={<MarkdownEditor />} />
-						<Route path="toc" element={<TableOfContent />} />
-						<Route
-							path="md-table-generator"
-							element={<TableGenerator />}
-						/>
-					</Route>
-					<Route path="/colors">
-						<Route index element={<Navigate to={"cp"} />} />
-						<Route path="cp" element={<ColorPicker />} />
-						<Route path="shades" element={<Shades />} />
-					</Route>
-					<Route path="/converter">
-						<Route index element={<Navigate to={"base-64"} />} />
-
-						<Route path="base-64" element={<Base64 />} />
-
-						<Route
-							path="pixel-converter"
-							element={<PixelConverter />}
-						/>
-					</Route>
-					<Route path="/text">
-						<Route index element={<Navigate to={"base-64"} />} />
-
-						<Route path="te" element={<TextEditor />} />
 					</Route>
 					<Route path="/list">
 						<Route index element={<Navigate to={"icon"} />} />
@@ -86,6 +69,19 @@ const Routes: React.FC = () => {
 						<Route path="tool" element={<Tool />} />
 						<Route path="tv-series" element={<TvSeries />} />
 						<Route path="youtube" element={<YouTube />} />
+					</Route>
+					<Route path="/markdown">
+						<Route index element={<Navigate to={"me"} />} />
+						<Route path="me" element={<MarkdownEditor />} />
+						<Route path="toc" element={<TableOfContent />} />
+						<Route
+							path="md-table-generator"
+							element={<TableGenerator />}
+						/>
+					</Route>
+					<Route path="/text">
+						<Route index element={<Navigate to={"te"} />} />
+						<Route path="te" element={<TextEditor />} />
 					</Route>
 					<Route path="*" element={<Navigate to="/404" />} />
 				</RRDRoutes>

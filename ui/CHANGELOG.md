@@ -1,3 +1,11 @@
+### [4.0.4] - 2023-08-12
+
+-   New page JsonToTypescript
+-   Sort routes
+-   Add footer
+-   Add custom scrollbar
+-   Add code of conduct
+
 ### [4.0.3] - 2023-08-12
 
 -   Zero ESLint errors

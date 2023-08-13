@@ -19,6 +19,7 @@
 		"buffer": "^6.0.3",
 		"file-saver": "^2.0.5",
 		"html-to-image": "^1.11.11",
+		"json-to-ts": "^1.7.0",
 		"jspdf": "^2.5.1",
 		"jszip": "^3.10.1",
 		"jszip-utils": "^0.1.0",
