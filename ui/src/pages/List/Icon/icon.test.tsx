@@ -12,9 +12,4 @@ describe("Icon List component check", () => {
 
 		await waitFor(() => expect(result.current.isLoading).toEqual(true));
 	});
-
-	// Falining test
-	// test("Render component without crashed", () => {
-	// 	render(wrapper({ children: <IconList /> }));
-	// });
 });
