@@ -6,7 +6,7 @@ import Header from "components/Layouts/Header";
 import { ErrorBoundary } from "react-error-boundary";
 import useMenuCollapsed from "lib/utils/hooks/useMenuCollapsed";
 import RoutesWithPageTitle from "pages/Routes/RoutesWithPageTitle";
-import { Footer } from "antd/es/layout/layout";
+import Footer from "components/Layouts/Footer";
 
 const { Sider, Content } = Layout;
 
@@ -55,15 +55,8 @@ const App: React.FC = () => {
 						<Layout>
 							<Content>
 								<RoutesWithPageTitle />
+								<Footer />
 							</Content>
-							<Footer>
-								<a href="https://www.netlify.com">
-									<img
-										src="https://www.netlify.com/v3/img/components/netlify-dark.svg"
-										alt="Deploys by Netlify"
-									/>
-								</a>
-							</Footer>
 						</Layout>
 					</Layout>
 				</Layout>
