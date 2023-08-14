@@ -1,3 +1,8 @@
+### [4.2.0] - 2023-08-12
+
+-   Remove news from public folder and put it in api folder to avoid extra build
+-   ColorPicker refactor
+
 ### [4.1.0] - 2023-08-12
 
 -   Fix Code , Change Ui and add test on Base64
