@@ -1,6 +1,6 @@
 .cp {
 	display: flex;
-
+	gap: var(--bt-size-16);
 	&__result {
 		display: flex;
 		justify-content: space-between;

@@ -1,6 +1,5 @@
 import { useSearchParams } from "react-router-dom";
 import style from "./ListSearchResults.module.scss";
-import { NewsType } from "components/General/ListItems/News/news.types";
 import { ResourceType } from "components/General/ListItems/Resource/resource.type";
 import { QUERY_KEY_NEWS } from "pages/News";
 import Search from "components/General/Search/Search";
@@ -10,44 +9,9 @@ import List from "components/RenderProps/List/List";
 import { API_ERROR, API_NO_DATA } from "lib/utils/constant";
 import Text from "components/General/Text/Text";
 import { Typography } from "antd";
+import { filteredNews, filteredResource } from "./helper";
 
 const { Title } = Typography;
-
-const filteredNews = <T,>(searchQuery: string, items: T[]) => {
-	if (searchQuery) {
-		return items?.filter((item) =>
-			(item as NewsType).title
-				.toLowerCase()
-				.includes(searchQuery.toLowerCase())
-		);
-	}
-	return items;
-};
-
-const filteredResource = <T,>(
-	searchQuery: string,
-	categoryQuery: string,
-	items: T[]
-) => {
-	const lowercaseSearchQuery = searchQuery.toLowerCase();
-	const lowercaseCategoryQuery = categoryQuery.toLowerCase();
-
-	return items?.filter((item) => {
-		const name = (item as ResourceType).name?.toLowerCase();
-		const category = (item as ResourceType).category?.toLowerCase();
-
-		if (searchQuery || categoryQuery !== "All") {
-			return (
-				(searchQuery ? name?.includes(lowercaseSearchQuery) : true) &&
-				(categoryQuery !== "All"
-					? category?.includes(lowercaseCategoryQuery)
-					: true)
-			);
-		}
-
-		return true;
-	});
-};
 
 const ListSearchResults = <T,>({
 	items,

@@ -4,12 +4,14 @@ export interface ClipboardProps {
 	text: string;
 	clipboardComponent: React.ElementType;
 	className?: string;
+	label?: string;
 }
 
 const Clipboard: React.FC<ClipboardProps> = ({
 	text,
 	clipboardComponent: ClipboardComponent,
 	className = "",
+	label,
 }) => {
 	const { copied, copyToClipboard, ClipboardMessage } = useCopyToClipboard();
 
@@ -20,6 +22,7 @@ const Clipboard: React.FC<ClipboardProps> = ({
 				copyToClipboard={copyToClipboard}
 				copied={copied}
 				text={text}
+				label={label}
 			/>
 		</div>
 	);

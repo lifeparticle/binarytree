@@ -1,32 +1,50 @@
-import { useState } from "react";
-import { FormatType } from "./type";
-import { Card, Space, Tag } from "antd";
-import { formatLabels } from "./constant";
+import React, { useState, useEffect } from "react";
+import tinycolor from "tinycolor2";
 import style from "./ColorPicker.module.scss";
+import { Card, Input, Space } from "antd";
 import { ColorPicker as CP } from "@mantine/core";
+import { FormatType } from "./type";
+import { INITIAL_COLOR, INITIAL_FORMAT } from "./constant";
+import { determineFormat } from "./helper";
+import ColorFormatTags from "./ColorFormatTags";
 import Clipboard from "components/RenderProps/Clipboard/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
-
-const DATA_OPTIONS = formatLabels.map((label) => ({
-	value: label.toLowerCase() as FormatType,
-	label: label,
-}));
+import DisplayColors from "./Colors";
 
 const ColorPicker: React.FC = () => {
-	const [color, setColor] = useState("rgba(47, 119, 150, 0.7)");
-	const [format, setFormat] = useState<FormatType>("hex");
+	const [color, setColor] = useState(INITIAL_COLOR);
+	const [format, setFormat] = useState<FormatType>(INITIAL_FORMAT);
+	const [colors, setColors] = useState({
+		hex: "",
+		rgb: "",
+		rgba: "",
+		hsl: "",
+		hsla: "",
+	});
 
-	const renderTags = () => {
-		return DATA_OPTIONS.map((option) => (
-			<Tag
-				onClick={() => setFormat(option.value)}
-				color={format === option.value ? "success" : "default"}
-				key={option.value}
-				style={{ cursor: "pointer" }}
-			>
-				{option.label}
-			</Tag>
-		));
+	useEffect(() => {
+		const tc = tinycolor(color);
+		const { r, g, b, a } = tc.toRgb();
+		const hsl = tc.toHsl();
+		const alpha = tc.getAlpha();
+
+		setColors({
+			hex: tc.toHexString(),
+			rgb: tc.toRgbString(),
+			rgba: `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(
+				b
+			)}, ${a})`,
+			hsl: tc.toHslString(),
+			hsla: `hsla(${Math.round(hsl.h)}, ${Math.round(
+				hsl.s * 100
+			)}%, ${Math.round(hsl.l * 100)}%, ${alpha})`,
+		});
+	}, [color]);
+
+	const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const input = e.target.value.trim();
+		setFormat(determineFormat(input));
+		setColor(input);
 	};
 
 	return (
@@ -34,18 +52,19 @@ const ColorPicker: React.FC = () => {
 			<Card bordered={false}>
 				<Space size="large" direction="vertical" wrap>
 					<Space size="small" direction="horizontal" wrap>
-						{renderTags()}
+						<ColorFormatTags
+							currentFormat={format}
+							onSelect={setFormat}
+						/>
 					</Space>
-
 					<CP
 						format={format}
 						value={color}
-						onChange={(val: string) => setColor(val)}
+						onChange={setColor}
 						size="xl"
 					/>
-
 					<div className={style.cp__result}>
-						<div className={style.cp__result__color}>{color}</div>
+						<Input value={color} onChange={onInputChange} />
 						<Clipboard
 							text={color}
 							clipboardComponent={ClipboardButton}
@@ -53,6 +72,12 @@ const ColorPicker: React.FC = () => {
 					</div>
 				</Space>
 			</Card>
+			<DisplayColors
+				colors={colors}
+				format={format}
+				displayType="colors"
+			/>
+			<DisplayColors colors={colors} displayType="variables" />
 		</div>
 	);
 };
