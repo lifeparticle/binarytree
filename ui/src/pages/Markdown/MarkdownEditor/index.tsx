@@ -1,15 +1,18 @@
 import { useClipboard } from "@mantine/hooks";
 import { Button, Space } from "antd";
 import { downloadPDFFile, downloadTextFile } from "lib/utils/files";
-import { useState } from "react";
-import style from "./MarkdownEditor.module.scss";
+import { useCallback, useContext, useState } from "react";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 import SimpleMDE from "react-simplemde-editor";
+import style from "./MarkdownEditor.module.scss";
+import { DarkModeContext } from "Provider";
 import "easymde/dist/easymde.min.css";
+import "./editorMDE.css";
 
 const MarkdownEditor: React.FC = () => {
 	const [markdown, setMarkdown] = useState("");
 	const clipboard = useClipboard({ timeout: 500 });
+	const { isDarkMode } = useContext(DarkModeContext);
 
 	useCombinedKeyPress(
 		() => setMarkdown("# Hello, World!"),
@@ -17,14 +20,24 @@ const MarkdownEditor: React.FC = () => {
 	);
 	useCombinedKeyPress(() => setMarkdown(""), ["ControlLeft", "KeyC"]);
 
+	const onChange = useCallback((value: string) => {
+		setMarkdown(value);
+	}, []);
+
+	const IS_MARKDOWN_EMPTY = markdown.length === 0;
+
 	return (
 		<div className={style.me}>
 			<Space>
 				<Button onClick={() => setMarkdown("")}>Clear</Button>
-				<Button onClick={() => downloadTextFile(markdown, "README.md")}>
+				<Button
+					disabled={IS_MARKDOWN_EMPTY}
+					onClick={() => downloadTextFile(markdown, "README.md")}
+				>
 					Download Markdown
 				</Button>
 				<Button
+					disabled={IS_MARKDOWN_EMPTY}
 					onClick={() => downloadPDFFile(markdown, "README.html")}
 				>
 					Download HTML
@@ -34,7 +47,9 @@ const MarkdownEditor: React.FC = () => {
 				</Button>
 			</Space>
 
-			<SimpleMDE value={markdown} onChange={(val) => setMarkdown(val)} />
+			<div className={isDarkMode ? "dark" : ""}>
+				<SimpleMDE value={markdown} onChange={onChange} />
+			</div>
 		</div>
 	);
 };
