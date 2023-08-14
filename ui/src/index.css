@@ -3,6 +3,8 @@
 @import "./styles/z-index.css";
 @import "./styles/borders.css";
 @import "./styles/typography.css";
+@import "./styles/shadows.css";
+@import "./styles/animations.css";
 
 /* * {
 	outline: 1px red solid;
@@ -36,6 +38,8 @@ h4,
 h5 {
 	margin-block-start: 0px;
 	margin-block-end: 0px;
+	/* can we do better? */
+	margin-bottom: 0 !important;
 }
 
 .ant-layout-sider,

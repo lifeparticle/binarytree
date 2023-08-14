@@ -1,0 +1,8 @@
+.cd {
+	display: flex;
+	gap: var(--bt-size-16);
+	align-items: center;
+	padding: var(--bt-size-4);
+	justify-content: space-between;
+	transition: var(--animation-fade-in);
+}

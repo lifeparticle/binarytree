@@ -1,3 +1,8 @@
+### [4.3.0] - 2023-08-12
+
+-   Refactor ImageGeneratorFromColors
+-   Refactor ColorPicker
+
 ### [4.2.0] - 2023-08-12
 
 -   Remove news from public folder and put it in api folder to avoid extra build

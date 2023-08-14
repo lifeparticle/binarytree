@@ -1,6 +1,6 @@
 import { Card, Space } from "antd";
-import { DATA_OPTIONS } from "./constant";
-import ColorDisplay from "./ColorDisplay";
+import { EXTENDED_DATA_OPTIONS } from "./constant";
+import ColorDisplay from "./ColorDisplay/ColorDisplay";
 import Clipboard from "components/RenderProps/Clipboard/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
 
@@ -8,29 +8,25 @@ interface DisplayProps {
 	colors: {
 		[key: string]: string;
 	};
-	format?: string;
+	format: string;
 	displayType: "variables" | "colors";
 }
 
 const DisplayColors: React.FC<DisplayProps> = ({
 	colors,
-	format,
 	displayType,
+	format,
 }) => {
-	let displayedOptions;
-	let clipboardText;
-
-	if (displayType === "variables") {
-		displayedOptions = DATA_OPTIONS;
-		clipboardText = DATA_OPTIONS.map(
-			(option) => `--color-${option.value}: ${colors[option.value]};`
-		).join("\n");
-	} else {
-		displayedOptions = DATA_OPTIONS.filter(
-			(option) => option.value !== format
-		);
-		clipboardText = Object.values(colors).join("\n");
-	}
+	const displayedOptions = EXTENDED_DATA_OPTIONS;
+	const clipboardText =
+		displayType === "variables"
+			? displayedOptions
+					.map(
+						(option) =>
+							`--color-${option.value}: ${colors[option.value]};`
+					)
+					.join("\n")
+			: Object.values(colors).join("\n");
 
 	return (
 		<Card bordered={false}>
@@ -44,6 +40,7 @@ const DisplayColors: React.FC<DisplayProps> = ({
 								: option.label
 						}
 						value={colors[option.value]}
+						format={format}
 					/>
 				))}
 				<Clipboard

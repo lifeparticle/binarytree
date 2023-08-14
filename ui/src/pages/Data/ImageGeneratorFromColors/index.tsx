@@ -7,6 +7,7 @@ import { useRef, useState } from "react";
 import { Button, Input, InputNumber, Space } from "antd";
 import style from "./ImageGeneratorFromColors.module.scss";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
+import { extractColors } from "./helper";
 
 const { Title } = Typography;
 const { TextArea } = Input;
@@ -21,7 +22,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 	domEl.current = [];
 
 	useCombinedKeyPress(
-		() => onTextAreaChange("#FF0000, #00FFFF, #FFFFFF, #C0C0C0, #221c1c"),
+		() => onTextAreaChange("#FF0000, #00FFFF, #FFFFFF, #C0C0C0, #000000"),
 		["ControlLeft", "KeyE"]
 	);
 
@@ -30,7 +31,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 	}, ["ControlLeft", "KeyC"]);
 
 	const onTextAreaChange = (value: string) => {
-		setColors(value.split(/[\n,]+/));
+		setColors(extractColors(value));
 		setValue(value);
 	};
 
@@ -95,7 +96,6 @@ const ImageGeneratorFromColors: React.FC = () => {
 					</Button>
 				</Space>
 			</div>
-
 			<div className={style.colors}>
 				{colors.map((color: string, index: number) => {
 					return (
@@ -113,7 +113,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 									width: `${width}px`,
 									borderRadius: `${rounded}px`,
 								}}
-							></div>
+							/>
 							<Title level={5}>{color}</Title>
 						</div>
 					);
