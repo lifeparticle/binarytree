@@ -2,6 +2,7 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: var(--bt-size-16);
+
 	&__inputs {
 		padding-left: var(--bt-size-16);
 		padding-right: var(--bt-size-16);
@@ -10,13 +11,19 @@
 		display: flex;
 		flex-direction: column;
 	}
+
 	.colors {
+		box-shadow: var(--bt-shadow-1);
+		background-color: var(--bt-card-background);
+		border-radius: var(--bt-border-radius-8);
+		padding: var(--bt-size-16);
 		display: flex;
-		grid-column: 1 /-1;
+		grid-column: 1 / -1;
 		flex-direction: row;
 		flex-wrap: wrap;
 		row-gap: var(--bt-size-16);
 		column-gap: var(--bt-size-16);
+		justify-content: center;
 		&__color {
 			display: grid;
 			justify-items: center;

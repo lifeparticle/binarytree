@@ -9,13 +9,14 @@ import { determineFormat } from "./helper";
 import ColorFormatTags from "./ColorFormatTags";
 import Clipboard from "components/RenderProps/Clipboard/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
-import DisplayColors from "./Colors";
+import DisplayColors from "./DisplayColors";
 
 const ColorPicker: React.FC = () => {
 	const [color, setColor] = useState(INITIAL_COLOR);
 	const [format, setFormat] = useState<FormatType>(INITIAL_FORMAT);
 	const [colors, setColors] = useState({
 		hex: "",
+		hex8: "",
 		rgb: "",
 		rgba: "",
 		hsl: "",
@@ -30,6 +31,7 @@ const ColorPicker: React.FC = () => {
 
 		setColors({
 			hex: tc.toHexString(),
+			hex8: tc.toHex8String(),
 			rgb: tc.toRgbString(),
 			rgba: `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(
 				b
@@ -77,7 +79,11 @@ const ColorPicker: React.FC = () => {
 				format={format}
 				displayType="colors"
 			/>
-			<DisplayColors colors={colors} displayType="variables" />
+			<DisplayColors
+				colors={colors}
+				format={format}
+				displayType="variables"
+			/>
 		</div>
 	);
 };
