@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, test } from "vitest";
 
 import Clipboard from "./Clipboard";
@@ -12,12 +12,12 @@ describe("Clipboard Component", () => {
 		);
 	});
 
-	test("render clipboard message and ClipboardButton", () => {
-		const { getByRole } = render(
+	test("ClipboardButton", () => {
+		render(
 			<Clipboard text={testText} clipboardComponent={ClipboardButton} />
 		);
 
-		const copyButton = getByRole("button");
+		const copyButton = screen.getByRole("button");
 		expect(copyButton).toBeInTheDocument();
 	});
 });

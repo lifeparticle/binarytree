@@ -1,7 +1,8 @@
 .base {
-	display: grid;
-	grid-template-columns: 1fr 0.5fr 1fr;
-	gap: 20px;
+	max-width: var(--bt-converter-width);
+	display: flex;
+	flex-direction: column;
+	gap: var(--bt-size-16);
 	&__controls {
 		&_radio {
 			display: flex;
