@@ -1,11 +1,13 @@
 import { useClipboard } from "@mantine/hooks";
-import MDEditor from "@uiw/react-md-editor";
 import { Button, Space } from "antd";
 import { downloadPDFFile, downloadTextFile } from "lib/utils/files";
-import { useState, useContext } from "react";
-import style from "./MarkdownEditor.module.scss";
+import { useCallback, useContext, useState } from "react";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
+import SimpleMDE from "react-simplemde-editor";
+import style from "./MarkdownEditor.module.scss";
 import { DarkModeContext } from "Provider";
+import "easymde/dist/easymde.min.css";
+import "./editorMDE.css";
 
 const MarkdownEditor: React.FC = () => {
 	const [markdown, setMarkdown] = useState("");
@@ -18,29 +20,36 @@ const MarkdownEditor: React.FC = () => {
 	);
 	useCombinedKeyPress(() => setMarkdown(""), ["ControlLeft", "KeyC"]);
 
+	const onChange = useCallback((value: string) => {
+		setMarkdown(value);
+	}, []);
+
+	const IS_MARKDOWN_EMPTY = markdown.length === 0;
+
 	return (
-		<div
-			className={style.me}
-			data-color-mode={isDarkMode ? "dark" : "light"}
-		>
+		<div className={style.me}>
 			<Space>
 				<Button onClick={() => setMarkdown("")}>Clear</Button>
-				<Button onClick={() => downloadTextFile(markdown, "README.md")}>
-					Downlaod Markdown
+				<Button
+					disabled={IS_MARKDOWN_EMPTY}
+					onClick={() => downloadTextFile(markdown, "README.md")}
+				>
+					Download Markdown
 				</Button>
-				<Button onClick={() => downloadPDFFile(markdown, "README.pdf")}>
-					Downlaod PDF
+				<Button
+					disabled={IS_MARKDOWN_EMPTY}
+					onClick={() => downloadPDFFile(markdown, "README.html")}
+				>
+					Download HTML
 				</Button>
 				<Button onClick={() => clipboard.copy(markdown)}>
 					{clipboard.copied ? "Copied" : "Copy"}
 				</Button>
 			</Space>
-			<MDEditor
-				value={markdown}
-				onChange={(val) => val && setMarkdown(val)}
-				height="800px"
-				style={{ fontSize: "52" }}
-			/>
+
+			<div className={isDarkMode ? "dark" : ""}>
+				<SimpleMDE value={markdown} onChange={onChange} />
+			</div>
 		</div>
 	);
 };

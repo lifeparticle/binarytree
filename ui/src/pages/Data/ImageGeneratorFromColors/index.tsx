@@ -15,13 +15,13 @@ const ImageGeneratorFromColors: React.FC = () => {
 	const [colors, setColors] = useState<Array<string>>([]);
 	const [value, setValue] = useState("");
 	const domEl = useRef<Array<HTMLDivElement>>([]);
-	const [height, setHeight] = useState(40);
-	const [width, setWidth] = useState(40);
+	const [height, setHeight] = useState(200);
+	const [width, setWidth] = useState(200);
 	const [rounded, setRounded] = useState(20);
 	domEl.current = [];
 
 	useCombinedKeyPress(
-		() => onTextAreaChange("#FF0000, #00FFFF, #FFFFFF, #C0C0C0, #000000"),
+		() => onTextAreaChange("#FF0000, #00FFFF, #FFFFFF, #C0C0C0, #221c1c"),
 		["ControlLeft", "KeyE"]
 	);
 
@@ -63,28 +63,28 @@ const ImageGeneratorFromColors: React.FC = () => {
 			/>
 			<div className={style.igfc__inputs}>
 				<InputNumber
-					placeholder="NumberInput with custom layout"
+					placeholder="Image Height"
 					value={height}
 					onChange={(val) => val && setHeight(val)}
 					min={0}
 					style={{ width: "100%" }}
 				/>
 				<InputNumber
-					placeholder="NumberInput with custom layout"
+					placeholder="Image Width"
 					value={width}
 					onChange={(val) => val && setWidth(val)}
 					min={0}
 					style={{ width: "100%" }}
 				/>
 				<InputNumber
-					placeholder="NumberInput with custom layout"
+					placeholder="Image Border Radius"
 					value={rounded}
 					onChange={(val) => val && setRounded(val)}
 					min={0}
 					style={{ width: "100%" }}
 				/>
 				<Space>
-					<Button onClick={onButtonClick}>Downlaod</Button>
+					<Button onClick={onButtonClick}>Download Zip</Button>
 					<Button
 						onClick={() => {
 							setValue("");
