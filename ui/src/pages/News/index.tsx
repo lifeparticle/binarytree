@@ -2,7 +2,7 @@ import News from "components/General/ListItems/News/News";
 import useFetchList from "lib/utils/hooks/useFetchList";
 import ListSearchResults from "components/RenderProps/ListSearchResults/ListSearchResults";
 
-const URL = `./news.json`;
+const URL = `https://raw.githubusercontent.com/lifeparticle/binarytree/main/api/news.json`;
 export const QUERY_KEY_NEWS = "news";
 
 const NewsPage = () => {

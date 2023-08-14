@@ -3,7 +3,7 @@ name: Fetch News
 on:
   schedule:
     - cron: "0 0 * * *"
-    
+
 jobs:
   fetch-news:
     runs-on: ubuntu-latest
@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "18.16.1"
-          
+
       - name: Install Yarn
         run: |
           corepack enable
@@ -36,8 +36,8 @@ jobs:
       - name: Move news.json
         run: |-
           git add news.json
-          git mv -f news.json ../../ui/public/news.json
-        
+          git mv -f news.json ../../api/news.json
+
       - name: Commit and push if changed
         run: |-
           git config --global user.email "actions@github.com"
