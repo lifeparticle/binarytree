@@ -1,21 +1,22 @@
-import { Button, Input, Radio, RadioChangeEvent } from "antd";
+import { Button, Input, Space } from "antd";
 import { useState } from "react";
 import { Buffer } from "buffer";
 import style from "./Base64.module.scss";
+import Clipboard from "components/RenderProps/Clipboard/Clipboard";
+import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
 
 const { TextArea } = Input;
 
 const Base64: React.FC = () => {
 	const [input, setInput] = useState("");
 	const [result, setResult] = useState("");
-	const [value, setValue] = useState("encode");
 
-	const onClick = () => {
-		if (value === "") return;
-		if (value === "encode") {
+	const onClick = (type: string) => {
+		if (type === "") return;
+		if (type === "encode") {
 			setResult(Buffer.from(input, "utf8").toString("base64"));
 		} else {
-			setResult(Buffer.from(input, "base64").toString("utf-8"));
+			setInput(Buffer.from(result, "base64").toString("utf-8"));
 		}
 	};
 
@@ -28,26 +29,16 @@ const Base64: React.FC = () => {
 				autoSize={{ minRows: 10 }}
 			/>
 
-			<div className={style.base__controls}>
-				<Radio.Group
-					className={style.base__controls_radio}
-					onChange={(e: RadioChangeEvent) => setValue(e.target.value)}
-					defaultValue={value}
-				>
-					<Radio.Button value="encode">Encode</Radio.Button>
-					<Radio.Button value="decode">Decode</Radio.Button>
-				</Radio.Group>
-
-				<Button onClick={onClick}>Convert</Button>
-				<Button
-					onClick={() => {
-						setInput("");
-						setResult("");
-					}}
-				>
+			<Space>
+				<Button onClick={() => onClick("encode")}>
+					Text to Base64
+				</Button>
+				<Clipboard text={input} clipboardComponent={ClipboardButton} />
+				<Button onClick={() => setInput("")} role="clear_text">
 					Clear
 				</Button>
-			</div>
+			</Space>
+
 			<TextArea
 				value={result}
 				onChange={(currentValue) =>
@@ -56,6 +47,15 @@ const Base64: React.FC = () => {
 				placeholder="Result"
 				autoSize={{ minRows: 10 }}
 			/>
+			<Space>
+				<Button onClick={() => onClick("decode")}>
+					Base64 to Text
+				</Button>
+				<Clipboard text={result} clipboardComponent={ClipboardButton} />
+				<Button onClick={() => setResult("")} role="clear_base64">
+					Clear
+				</Button>
+			</Space>
 		</div>
 	);
 };

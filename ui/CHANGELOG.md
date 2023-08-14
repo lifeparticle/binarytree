@@ -1,3 +1,11 @@
+### [4.1.0] - 2023-08-12
+
+-   Fix Code , Change Ui and add test on Base64
+-   Add Test on Markdown & change Package for markdown Editor
+-   Download Html instead of pdf from markdown file
+-   Disabled download button if markdown is empty
+-   Add footer at the end of the content
+
 ### [4.0.4] - 2023-08-12
 
 -   New page JsonToTypescript
@@ -41,7 +49,6 @@
 -   Rename icons to icon
 -   Delete custom.d.ts
 -   Update globals.d.ts
--   Use css variables in ImageGeneratorFromColors
 -   Use css variables in ImageGeneratorFromColors
 -   Temporarily remove custom font to stop flickering issue
 -   Global App constant
