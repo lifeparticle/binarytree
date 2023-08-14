@@ -4,6 +4,10 @@
 @import "./styles/borders.css";
 @import "./styles/typography.css";
 
+/* * {
+	outline: 1px red solid;
+} */
+
 *,
 *::before,
 *::after {
@@ -58,7 +62,7 @@ h5 {
 .ant-layout-content {
 	overflow-x: auto;
 	overflow-y: auto;
-	max-height: calc(100dvh - 10dvh);
+	max-height: calc(100dvh - 5dvh);
 	padding: var(--bt-size-10);
 	scroll-behavior: smooth;
 }

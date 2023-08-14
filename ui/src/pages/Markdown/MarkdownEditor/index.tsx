@@ -29,7 +29,12 @@ const MarkdownEditor: React.FC = () => {
 	return (
 		<div className={style.me}>
 			<Space>
-				<Button onClick={() => setMarkdown("")}>Clear</Button>
+				<Button
+					disabled={IS_MARKDOWN_EMPTY}
+					onClick={() => setMarkdown("")}
+				>
+					Clear
+				</Button>
 				<Button
 					disabled={IS_MARKDOWN_EMPTY}
 					onClick={() => downloadTextFile(markdown, "README.md")}
@@ -42,7 +47,10 @@ const MarkdownEditor: React.FC = () => {
 				>
 					Download HTML
 				</Button>
-				<Button onClick={() => clipboard.copy(markdown)}>
+				<Button
+					disabled={IS_MARKDOWN_EMPTY}
+					onClick={() => clipboard.copy(markdown)}
+				>
 					{clipboard.copied ? "Copied" : "Copy"}
 				</Button>
 			</Space>
