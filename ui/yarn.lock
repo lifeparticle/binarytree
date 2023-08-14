@@ -2998,6 +2998,7 @@ __metadata:
     react-quill: ^2.0.0
     react-router-dom: ^6.11.1
     sass: ^1.62.1
+    tinycolor2: ^1.6.0
     typescript: ^5.0.2
     vite: ^4.4.6
     vite-plugin-svgr: ^3.2.0
@@ -8987,6 +8988,13 @@ __metadata:
   version: 2.5.0
   resolution: "tinybench@npm:2.5.0"
   checksum: 284bb9428f197ec8b869c543181315e65e41ccfdad3c4b6c916bb1fdae1b5c6785661b0d90cf135b48d833b03cb84dc5357b2d33ec65a1f5971fae0ab2023821
+  languageName: node
+  linkType: hard
+
+"tinycolor2@npm:^1.6.0":
+  version: 1.6.0
+  resolution: "tinycolor2@npm:1.6.0"
+  checksum: 6df4d07fceeedc0a878d7bac47e2cd47c1ceeb1078340a9eb8a295bc0651e17c750f73d47b3028d829f30b85c15e0572c0fd4142083e4c21a30a597e47f47230
   languageName: node
   linkType: hard
 
