@@ -12,10 +12,10 @@ const Pixel: React.FC = () => {
 				<Form.Item label="Pixels" tooltip="This is a required field">
 					<InputNumber
 						style={{ width: "100%" }}
-						precision={10}
+						precision={2}
 						min={0}
 						step={1}
-						placeholder="NumberInput with custom layout"
+						placeholder="Enter pixel value"
 						value={pixel}
 						onChange={(px: number | null) => {
 							if (px) {
@@ -28,10 +28,10 @@ const Pixel: React.FC = () => {
 				<Form.Item label="REM" tooltip="This is a required field">
 					<InputNumber
 						style={{ width: "100%" }}
-						precision={10}
+						precision={2}
 						min={0}
 						step={0.01}
-						placeholder="NumberInput with custom layout"
+						placeholder="Enter REM value"
 						value={rem}
 						onChange={(rem: number | null) => {
 							if (rem) {
@@ -48,10 +48,10 @@ const Pixel: React.FC = () => {
 					<InputNumber
 						style={{ width: "100%" }}
 						className={style.pc__base}
-						precision={10}
+						precision={2}
 						min={0}
 						step={1}
-						placeholder="NumberInput with custom layout" //plz cont
+						placeholder="Enter Unit"
 						value={base}
 						onChange={(base: number | null) => {
 							if (base) {
