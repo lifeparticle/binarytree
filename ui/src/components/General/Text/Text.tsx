@@ -15,16 +15,18 @@ const Text: React.FC<TextProps> = ({ text, level = 4 }) => {
 	const location = useLocation();
 
 	return (
-		<Title
-			level={level}
-			className={
-				location.pathname.includes(LIST_PAGE_COMMON_PATH)
-					? style.pageHeader
-					: ""
-			}
-		>
-			{text}
-		</Title>
+		<div className={style.title}>
+			<Title
+				level={level}
+				className={
+					location.pathname.includes(LIST_PAGE_COMMON_PATH)
+						? style.title__pageHeader
+						: ""
+				}
+			>
+				{text}
+			</Title>
+		</div>
 	);
 };
 
