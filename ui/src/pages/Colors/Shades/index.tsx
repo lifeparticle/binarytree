@@ -13,11 +13,9 @@ const MAX_SHADES = 256;
 const MIN_SHADES = 1;
 
 const Shades: React.FC = () => {
-	const [color, setColor] = useState<string>(DEFAULT_COLOR);
+	const [color, setColor] = useState<string>("");
 	const [shades, setShades] = useState<string[]>([]);
-	const [numberOfShades, setNumberOfShades] = useState<number | null>(
-		DEFAULT_NUM_SHADES
-	);
+	const [numberOfShades, setNumberOfShades] = useState<number | null>(null);
 
 	useCombinedKeyPress(
 		() => setInputs(DEFAULT_COLOR, DEFAULT_NUM_SHADES),
