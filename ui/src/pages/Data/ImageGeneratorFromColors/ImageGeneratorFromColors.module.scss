@@ -12,17 +12,11 @@
 		flex-direction: column;
 	}
 
-	.colors {
-		box-shadow: var(--bt-shadow-1);
-		background-color: var(--bt-card-background);
-		border-radius: var(--bt-border-radius-8);
-		padding: var(--bt-size-16);
+	&__colors {
 		display: flex;
-		grid-column: 1 / -1;
 		flex-direction: row;
-		flex-wrap: wrap;
-		row-gap: var(--bt-size-16);
-		column-gap: var(--bt-size-16);
+		grid-column: 1 / -1;
+		gap: var(--bt-size-16);
 		justify-content: center;
 		&__color {
 			display: grid;

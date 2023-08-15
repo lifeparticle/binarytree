@@ -2,7 +2,6 @@ import TextArea from "antd/es/input/TextArea";
 import JsonToTS from "json-to-ts";
 import { useState } from "react";
 import { Highlight, themes } from "prism-react-renderer";
-
 import style from "./jsontots.module.scss";
 import { Button, Input, Space } from "antd";
 import Clipboard from "components/RenderProps/Clipboard/Clipboard";
@@ -76,9 +75,16 @@ const JsonToTypescript: React.FC = () => {
 				</Highlight>
 			)}
 			<Space>
-				<Button onClick={generateInterfaces}>Convert </Button>
-
-				<Clipboard clipboardComponent={ClipboardButton} text={json} />
+				<Button
+					onClick={generateInterfaces}
+					disabled={json.length === 0}
+				>
+					Convert
+				</Button>
+				<Clipboard
+					clipboardComponent={ClipboardButton}
+					text={json.length === 0 ? "" : "Interface copied"}
+				/>
 			</Space>
 		</div>
 	);

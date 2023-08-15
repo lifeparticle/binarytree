@@ -19,7 +19,7 @@ const ClipboardButton: React.FC<ClipboardButtonProps> = ({
 		<Button
 			disabled={text === ""}
 			className={style.button}
-			onClick={() => copyToClipboard(text)}
+			onClick={() => copyToClipboard(text.split(" ").join("\n"))}
 			icon={copied ? <Check size={18} /> : <Copy size={18} />}
 		>
 			{label && label}

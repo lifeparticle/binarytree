@@ -1,3 +1,10 @@
+### [4.4.0] - 2023-08-12
+
+-   New feature Shades generator
+-   Refactor Page Header
+-   Refactor ColorPicker
+-   Refactor ImageGeneratorFromColors
+
 ### [4.3.0] - 2023-08-12
 
 -   Add Test, change Layout in Pixel converter
