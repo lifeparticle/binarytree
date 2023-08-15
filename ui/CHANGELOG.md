@@ -2,7 +2,7 @@
 
 -   Add Test, change Layout in Pixel converter
 -   Add Test, change layout in JsonToTypescript Converter
-    \_ Fix Some CSS Changes in Page Header
+-   Fix Some CSS Changes in Page Header
 
 ### [4.3.0] - 2023-08-12
 
