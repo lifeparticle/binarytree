@@ -1,3 +1,5 @@
+import tinycolor from "tinycolor2";
+
 function setLocalstorageValue<T>(key: string, value: T): void {
 	try {
 		const serializedValue = JSON.stringify(value);
@@ -21,10 +23,12 @@ function getLocalstorageValue<T>(key: string): T | null {
 	}
 }
 
-export { setLocalstorageValue, getLocalstorageValue };
+const getTextColor = (value: string): string => {
+	return tinycolor(value).isDark() ? "white" : "black";
+};
 
 const classNames = (...args: (string | undefined)[]) => {
 	return args.filter(Boolean).join(" ");
 };
 
-export { classNames };
+export { setLocalstorageValue, getLocalstorageValue, classNames, getTextColor };

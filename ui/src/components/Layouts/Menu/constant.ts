@@ -48,7 +48,7 @@ export const MENU_ITEMS = [
 				name: "Shade Generator",
 				url: "/colors/shades",
 				icon: Layers,
-				show: IN_DEV,
+				show: true,
 			},
 		],
 	},

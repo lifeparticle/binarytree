@@ -9,7 +9,7 @@ interface DisplayProps {
 		[key: string]: string;
 	};
 	format: string;
-	displayType: "variables" | "colors";
+	displayType: "variables" | "colors" | "use-variables";
 }
 
 const DisplayColors: React.FC<DisplayProps> = ({
@@ -17,34 +17,56 @@ const DisplayColors: React.FC<DisplayProps> = ({
 	displayType,
 	format,
 }) => {
-	const displayedOptions = EXTENDED_DATA_OPTIONS;
-	const clipboardText =
-		displayType === "variables"
-			? displayedOptions
-					.map(
-						(option) =>
-							`--color-${option.value}: ${colors[option.value]};`
-					)
-					.join("\n")
-			: Object.values(colors).join("\n");
+	const determineLabel = (optionValue: string, optionLabel: string) => {
+		switch (displayType) {
+			case "variables":
+				return `--color-${optionValue}`;
+			case "use-variables":
+				return "background-color";
+			default:
+				return optionLabel;
+		}
+	};
+
+	const determineValue = (optionValue: string) => {
+		return displayType === "use-variables"
+			? `var(--color-${optionValue})`
+			: colors[optionValue];
+	};
+
+	const generateClipboardText = () => {
+		switch (displayType) {
+			case "variables":
+				return EXTENDED_DATA_OPTIONS.map(
+					(option) =>
+						`--color-${option.value}: ${colors[option.value]};`
+				).join("\n");
+
+			case "use-variables":
+				return EXTENDED_DATA_OPTIONS.map(
+					(option) => `var(--color-${option.value})`
+				).join("\n");
+
+			default:
+				return Object.values(colors).join("\n");
+		}
+	};
 
 	return (
 		<Card bordered={false}>
 			<Space direction="vertical">
-				{displayedOptions.map((option) => (
+				{EXTENDED_DATA_OPTIONS.map(({ value, label }) => (
 					<ColorDisplay
-						key={option.value}
-						label={
-							displayType === "variables"
-								? `--color-${option.value}`
-								: option.label
-						}
-						value={colors[option.value]}
+						key={value}
+						customLabel={determineLabel(value, label)}
+						label={label}
+						customValue={determineValue(value)}
+						value={colors[value]}
 						format={format}
 					/>
 				))}
 				<Clipboard
-					text={clipboardText}
+					text={generateClipboardText()}
 					label="Copy All"
 					clipboardComponent={ClipboardButton}
 				/>

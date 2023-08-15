@@ -84,6 +84,11 @@ const ColorPicker: React.FC = () => {
 				format={format}
 				displayType="variables"
 			/>
+			<DisplayColors
+				colors={colors}
+				format={format}
+				displayType="use-variables"
+			/>
 		</div>
 	);
 };

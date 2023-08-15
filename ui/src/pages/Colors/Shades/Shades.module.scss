@@ -1,16 +1,19 @@
 .shades {
 	display: grid;
-	row-gap: 10px;
-	&__shade {
-		display: flex;
-		column-gap: 10px;
+	gap: var(--bt-size-16);
+	&__inputs {
+		max-width: var(--bt-list-card-container);
+	}
 
-		justify-content: center;
-		&_box {
-			color: #228be6;
-			height: 50px;
-			width: 50px;
-			text-align: center;
+	&__container {
+		display: flex;
+		flex-direction: column;
+
+		&_shade {
+			display: flex;
+			flex-direction: column;
+			gap: var(--bt-size-4);
+			justify-content: center;
 		}
 	}
 }
