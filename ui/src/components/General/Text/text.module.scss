@@ -1,4 +1,7 @@
-.pageHeader {
-	max-width: var(--bt-list-card-container);
-	margin: 0 auto;
+.title {
+	margin-bottom: var(--bt-size-10);
+	&__pageHeader {
+		max-width: var(--bt-list-card-container);
+		margin: 0 auto;
+	}
 }

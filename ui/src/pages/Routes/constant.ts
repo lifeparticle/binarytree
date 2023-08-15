@@ -22,7 +22,7 @@ const ROUTES: Route[] = [
 	},
 	{
 		path: "/converter/jtt",
-		title: "Pixel Converter",
+		title: "Json To Typescript Converter",
 	},
 	{
 		path: "/data/data-gen",
