@@ -54,5 +54,12 @@
 		"subCategory": "Programming",
 		"url": "https://learnxinyminutes.com/",
 		"socials": []
+	},
+	{
+		"name": "Technically a blog",
+		"category": "Programming",
+		"subCategory": "Programming",
+		"url": "https://ntietz.com/blog/",
+		"socials": []
 	}
 ]
