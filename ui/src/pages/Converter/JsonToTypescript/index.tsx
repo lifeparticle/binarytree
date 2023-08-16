@@ -1,28 +1,30 @@
 import TextArea from "antd/es/input/TextArea";
 import JsonToTS from "json-to-ts";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Highlight, themes } from "prism-react-renderer";
 import style from "./jsontots.module.scss";
 import { Button, Input, Space } from "antd";
 import Clipboard from "components/RenderProps/Clipboard/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
 
+import ValidationStatus from "./components/ValidationStatus";
+import { isJsonValid } from "./utils/helper";
+
 const JsonToTypescript: React.FC = () => {
 	const [json, setJson] = useState("");
 	const [rootName, setRootName] = useState("");
 	const [interfaces, setInterfaces] = useState<string[]>([]);
+	const [status, setStatus] = useState<string>("");
+
+	const rootInterfaceName = {
+		rootName: rootName || "RootObject",
+	};
 
 	function generateInterfaces() {
-		if (!json.length) {
-			setInterfaces(["Paste JSON"]);
-			return;
-		}
 		try {
 			const data = JSON.parse(json);
 			const object: string[] = [];
-			JsonToTS(data, {
-				rootName: rootName || "RootObject",
-			}).forEach((typeInterface) => {
+			JsonToTS(data, rootInterfaceName).forEach((typeInterface) => {
 				object.push(typeInterface);
 			});
 			setInterfaces(object);
@@ -31,16 +33,24 @@ const JsonToTypescript: React.FC = () => {
 		}
 	}
 
+	useEffect(() => {
+		setStatus(isJsonValid(json));
+	}, [json]);
+
 	return (
 		<div className={style.json}>
-			<TextArea
-				placeholder="JSON"
-				rows={8}
-				onChange={(event) => setJson(event.target.value)}
-				value={json}
-				autoCorrect="off"
-				typeof="string"
-			/>
+			<div className={style.json__textarea}>
+				<TextArea
+					placeholder="JSON"
+					rows={8}
+					onChange={(event) => setJson(event.target.value)}
+					value={json}
+					autoCorrect="off"
+					typeof="string"
+				/>
+
+				<ValidationStatus status={status} />
+			</div>
 
 			<Input
 				placeholder="Root Interface name"

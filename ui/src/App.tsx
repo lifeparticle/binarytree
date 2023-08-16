@@ -5,8 +5,9 @@ import { ConfigProvider, Layout } from "antd";
 import Header from "components/Layouts/Header";
 import { ErrorBoundary } from "react-error-boundary";
 import useMenuCollapsed from "lib/utils/hooks/useMenuCollapsed";
-import RoutesWithPageTitle from "pages/Routes/RoutesWithPageTitle";
+
 import Footer from "components/Layouts/Footer";
+import RoutesWithPageTitle from "pages/Routes";
 
 const { Sider, Content } = Layout;
 

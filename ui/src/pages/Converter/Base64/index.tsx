@@ -1,15 +1,19 @@
 import { Button, Input, Space } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Buffer } from "buffer";
 import style from "./Base64.module.scss";
 import Clipboard from "components/RenderProps/Clipboard/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
+
+import ValidateStatus from "./components/ValidateStatus";
+import { isBase64Valid } from "./utils/helper";
 
 const { TextArea } = Input;
 
 const Base64: React.FC = () => {
 	const [input, setInput] = useState("");
 	const [result, setResult] = useState("");
+	const [status, setStatus] = useState<string>("");
 
 	const onClick = (type: string, value: string) => {
 		if (type === "") return;
@@ -22,6 +26,10 @@ const Base64: React.FC = () => {
 
 	const IS_INPUT_EMPTY = input.length === 0;
 	const IS_RESULT_EMPTY = result.length === 0;
+
+	useEffect(() => {
+		setStatus(isBase64Valid(result));
+	}, [result]);
 
 	return (
 		<div className={style.base}>
@@ -46,15 +54,21 @@ const Base64: React.FC = () => {
 				<Clipboard text={input} clipboardComponent={ClipboardButton} />
 			</Space>
 
-			<TextArea
-				value={result}
-				onChange={(currentValue) => {
-					setResult(currentValue.target.value);
-					onClick("decode", currentValue.target.value);
-				}}
-				placeholder="Result"
-				autoSize={{ minRows: 10 }}
-			/>
+			<div className={style.base__base64Container}>
+				<TextArea
+					value={result}
+					onChange={(currentValue) => {
+						const value = currentValue.target.value;
+						setResult(value);
+						onClick("decode", value);
+					}}
+					placeholder="Result"
+					autoSize={{ minRows: 10 }}
+				/>
+
+				<ValidateStatus status={status} />
+			</div>
+
 			<Space>
 				<Button
 					disabled={IS_RESULT_EMPTY}

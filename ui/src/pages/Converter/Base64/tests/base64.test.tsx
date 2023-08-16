@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe } from "vitest";
 import user from "@testing-library/user-event";
-import Base64 from ".";
+import Base64 from "..";
 
 describe("BASE64", () => {
 	test("render component without crash", () => {

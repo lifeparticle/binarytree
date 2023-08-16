@@ -3,14 +3,20 @@
 	display: flex;
 	flex-direction: column;
 	gap: var(--bt-size-16);
-	&__controls {
-		&_radio {
-			display: flex;
-			justify-content: center;
+
+	&__base64Container {
+		position: relative;
+
+		&__validator {
+			position: absolute;
+			top: var(--bt-size-10);
+			right: var(--bt-size-10);
+
+			button {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
 		}
-		display: flex;
-		gap: 5px;
-		flex-direction: column;
-		justify-content: center;
 	}
 }
