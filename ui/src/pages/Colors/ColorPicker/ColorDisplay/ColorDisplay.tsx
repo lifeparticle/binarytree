@@ -27,6 +27,10 @@ const ColorDisplay: React.FC<ColorDisplayProps> = ({
 			style={{
 				backgroundColor:
 					label.toLocaleLowerCase() === format ? value : "",
+				border:
+					label.toLocaleLowerCase() === format
+						? `1px solid ${getTextColor(value)}`
+						: "",
 			}}
 		>
 			<Title
