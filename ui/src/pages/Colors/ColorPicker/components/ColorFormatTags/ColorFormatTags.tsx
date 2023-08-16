@@ -1,6 +1,6 @@
 import { Tag } from "antd";
 import { FormatType } from "./type";
-import { DATA_OPTIONS } from "./constant";
+import { DATA_OPTIONS } from "../../utils/constant";
 
 const ColorFormatTags = ({
 	currentFormat,
