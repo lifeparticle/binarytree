@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 
 import { describe, test } from "vitest";
-import Pixel from ".";
+import Pixel from "..";
 
 describe("Pixel Converter", () => {
 	test("render component without crash", () => {

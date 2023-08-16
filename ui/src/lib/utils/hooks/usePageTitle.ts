@@ -1,4 +1,4 @@
-import { ROUTES } from "pages/Routes/constant";
+import { ROUTES } from "pages/Routes/utils/constant";
 import { useLocation } from "react-router-dom";
 
 const usePageTitle = () => {

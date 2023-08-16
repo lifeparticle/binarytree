@@ -7,7 +7,7 @@ import { useRef, useState } from "react";
 import { Button, Input, InputNumber, Space } from "antd";
 import style from "./ImageGeneratorFromColors.module.scss";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
-import { extractColors } from "./helper";
+import { extractColors } from "./utils/helper";
 
 const { Title } = Typography;
 const { TextArea } = Input;
