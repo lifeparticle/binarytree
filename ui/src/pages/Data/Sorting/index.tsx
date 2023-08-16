@@ -1,7 +1,7 @@
 import style from "./Sorting.module.scss";
 import { useClipboard } from "@mantine/hooks";
 import { useEffect, useState } from "react";
-import { sortData } from "./util";
+import { sortData } from "./utils/helper";
 import { Button, Input, Space, Segmented } from "antd";
 const { TextArea } = Input;
 

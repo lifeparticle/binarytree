@@ -6,25 +6,25 @@ import style from "./jsontots.module.scss";
 import { Button, Input, Space } from "antd";
 import Clipboard from "components/RenderProps/Clipboard/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
-import { Check, X } from "lucide-react";
+
+import ValidationStatus from "./components/ValidationStatus";
+import { isJsonValid } from "./utils/helper";
 
 const JsonToTypescript: React.FC = () => {
 	const [json, setJson] = useState("");
 	const [rootName, setRootName] = useState("");
 	const [interfaces, setInterfaces] = useState<string[]>([]);
-	const [isValidInput, setIsValidInput] = useState<string>("");
+	const [status, setStatus] = useState<string>("");
+
+	const rootInterfaceName = {
+		rootName: rootName || "RootObject",
+	};
 
 	function generateInterfaces() {
-		if (!json.length) {
-			setInterfaces(["Paste JSON"]);
-			return;
-		}
 		try {
 			const data = JSON.parse(json);
 			const object: string[] = [];
-			JsonToTS(data, {
-				rootName: rootName || "RootObject",
-			}).forEach((typeInterface) => {
+			JsonToTS(data, rootInterfaceName).forEach((typeInterface) => {
 				object.push(typeInterface);
 			});
 			setInterfaces(object);
@@ -34,16 +34,7 @@ const JsonToTypescript: React.FC = () => {
 	}
 
 	useEffect(() => {
-		function validateFunc() {
-			try {
-				JSON.parse(json);
-				setIsValidInput("valid");
-			} catch (error) {
-				setIsValidInput("invalid");
-			}
-		}
-
-		validateFunc();
+		setStatus(isJsonValid(json));
 	}, [json]);
 
 	return (
@@ -58,18 +49,7 @@ const JsonToTypescript: React.FC = () => {
 					typeof="string"
 				/>
 
-				<Space className={style.json__textarea__validator}>
-					{isValidInput.length === 0 ? null : isValidInput ===
-					  "valid" ? (
-						<Button size="small" style={{ borderColor: "green" }}>
-							<Check color="green" size={16} />
-						</Button>
-					) : (
-						<Button size="small" danger>
-							<X size={16} />
-						</Button>
-					)}
-				</Space>
+				<ValidationStatus status={status} />
 			</div>
 
 			<Input

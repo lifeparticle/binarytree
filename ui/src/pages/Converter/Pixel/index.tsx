@@ -1,6 +1,6 @@
 import { useState } from "react";
 import style from "./Pixel.module.scss";
-import { InputNumber, Form, Space, Row, Col } from "antd";
+import { InputNumber, Form, Row, Col } from "antd";
 import Clipboard from "components/RenderProps/Clipboard/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
 
