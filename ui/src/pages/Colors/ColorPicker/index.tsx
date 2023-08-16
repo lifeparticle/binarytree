@@ -3,13 +3,13 @@ import tinycolor from "tinycolor2";
 import style from "./ColorPicker.module.scss";
 import { Card, Input, Space } from "antd";
 import { ColorPicker as CP } from "@mantine/core";
-import { FormatType } from "./type";
-import { INITIAL_COLOR, INITIAL_FORMAT } from "./constant";
-import { determineFormat } from "./helper";
-import ColorFormatTags from "./ColorFormatTags";
+import { INITIAL_COLOR, INITIAL_FORMAT } from "./utils/constant";
+import ColorFormatTags from "./components/ColorFormatTags/ColorFormatTags";
 import Clipboard from "components/RenderProps/Clipboard/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
-import DisplayColors from "./DisplayColors";
+import DisplayColors from "./components/DisplayColors/DisplayColors";
+import { FormatType } from "./utils/types";
+import { determineFormat } from "./utils/helper";
 
 const ColorPicker: React.FC = () => {
 	const [color, setColor] = useState(INITIAL_COLOR);

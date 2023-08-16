@@ -1,4 +1,4 @@
-import { FormatType } from "./type";
+import { FormatType } from "./types";
 
 const determineFormat = (input: string): FormatType => {
 	const formats: Record<string, FormatType> = {

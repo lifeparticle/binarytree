@@ -44,6 +44,7 @@ h5 {
 
 .ant-layout-sider,
 .ant-layout-content {
+	max-height: calc(100dvh - 5dvh);
 	&::-webkit-scrollbar {
 		width: var(--bt-size-8);
 	}
@@ -81,12 +82,12 @@ h5 {
 	padding-inline: 0px;
 }
 
-.ant-layout-footer {
-	bottom: 0;
-	position: sticky;
-	text-align: right;
+/* .ant-layout-footer {
+	background-color: red;
+	width: 100%;
 	padding: var(--bt-size-10);
-}
+	color: red;
+} */
 
 .ant-layout-footer > a > img {
 	height: var(--bt-size-40);
