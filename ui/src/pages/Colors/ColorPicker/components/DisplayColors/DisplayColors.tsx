@@ -1,6 +1,6 @@
 import { Card, Space } from "antd";
-import { EXTENDED_DATA_OPTIONS } from "./constant";
-import ColorDisplay from "./ColorDisplay/ColorDisplay";
+import { EXTENDED_DATA_OPTIONS } from "../../utils/constant";
+import ColorDisplay from "../ColorDisplay/ColorDisplay";
 import Clipboard from "components/RenderProps/Clipboard/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
 

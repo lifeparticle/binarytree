@@ -1,6 +1,6 @@
 import { lazy } from "react";
 
-const ColorPicker = lazy(() => import("pages/Colors/ColorPicker/ColorPicker"));
+const ColorPicker = lazy(() => import("pages/Colors/ColorPicker"));
 const Shades = lazy(() => import("pages/Colors/Shades"));
 
 const Base64 = lazy(() => import("pages/Converter/Base64"));

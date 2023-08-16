@@ -1,6 +1,6 @@
 import { Tag } from "antd";
-import { FormatType } from "./type";
-import { DATA_OPTIONS } from "./constant";
+import { DATA_OPTIONS } from "pages/Colors/ColorPicker/utils/constant";
+import { FormatType } from "pages/Colors/ColorPicker/utils/types";
 
 const ColorFormatTags = ({
 	currentFormat,

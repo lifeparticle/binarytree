@@ -1,4 +1,10 @@
-### [4.4.0] - 2023-08-12
+### [4.5.0] - 2023-08-16
+
+-   Refactor Shades generator
+-   Refactor ColorPicker
+-   Refactor ClipboardButton
+
+### [4.4.0] - 2023-08-15
 
 -   New feature Shades generator
 -   Refactor Page Header
