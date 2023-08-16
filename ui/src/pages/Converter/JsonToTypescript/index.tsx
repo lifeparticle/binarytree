@@ -1,16 +1,18 @@
 import TextArea from "antd/es/input/TextArea";
 import JsonToTS from "json-to-ts";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Highlight, themes } from "prism-react-renderer";
 import style from "./jsontots.module.scss";
 import { Button, Input, Space } from "antd";
 import Clipboard from "components/RenderProps/Clipboard/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
+import { Check, X } from "lucide-react";
 
 const JsonToTypescript: React.FC = () => {
 	const [json, setJson] = useState("");
 	const [rootName, setRootName] = useState("");
 	const [interfaces, setInterfaces] = useState<string[]>([]);
+	const [isValidInput, setIsValidInput] = useState<string>("");
 
 	function generateInterfaces() {
 		if (!json.length) {
@@ -31,16 +33,44 @@ const JsonToTypescript: React.FC = () => {
 		}
 	}
 
+	useEffect(() => {
+		function validateFunc() {
+			try {
+				JSON.parse(json);
+				setIsValidInput("valid");
+			} catch (error) {
+				setIsValidInput("invalid");
+			}
+		}
+
+		validateFunc();
+	}, [json]);
+
 	return (
 		<div className={style.json}>
-			<TextArea
-				placeholder="JSON"
-				rows={8}
-				onChange={(event) => setJson(event.target.value)}
-				value={json}
-				autoCorrect="off"
-				typeof="string"
-			/>
+			<div className={style.json__textarea}>
+				<TextArea
+					placeholder="JSON"
+					rows={8}
+					onChange={(event) => setJson(event.target.value)}
+					value={json}
+					autoCorrect="off"
+					typeof="string"
+				/>
+
+				<Space className={style.json__textarea__validator}>
+					{isValidInput.length === 0 ? null : isValidInput ===
+					  "valid" ? (
+						<Button size="small" style={{ borderColor: "green" }}>
+							<Check color="green" size={16} />
+						</Button>
+					) : (
+						<Button size="small" danger>
+							<X size={16} />
+						</Button>
+					)}
+				</Space>
+			</div>
 
 			<Input
 				placeholder="Root Interface name"
