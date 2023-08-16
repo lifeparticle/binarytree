@@ -1,4 +1,4 @@
-import { FormatType } from "./type";
+import { FormatType } from "./types";
 
 const formatLabels = ["HEX", "RGB", "RGBA", "HSL", "HSLA"] as const;
 

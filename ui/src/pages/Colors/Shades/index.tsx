@@ -7,13 +7,14 @@ import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 import { ColorPicker as CP } from "@mantine/core";
 import Clipboard from "components/RenderProps/Clipboard/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
+import {
+	DEFAULT_COLOR,
+	DEFAULT_NUM_SHADES,
+	MAX_SHADES,
+	MIN_SHADES,
+} from "./utils/constants";
 
 const { Title } = Typography;
-
-const DEFAULT_COLOR = "#FFF";
-const DEFAULT_NUM_SHADES = 10;
-const MAX_SHADES = 256;
-const MIN_SHADES = 1;
 
 const Shades: React.FC = () => {
 	const [color, setColor] = useState<string>(DEFAULT_COLOR);

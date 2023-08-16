@@ -1,6 +1,6 @@
 import { test, expect, describe } from "vitest";
-import ColorPicker from "./ColorPicker";
-import { formatLabels } from "./constant";
+import ColorPicker from "..";
+import { formatLabels } from "../utils/constant";
 import "@testing-library/jest-dom/extend-expect";
 import { render, fireEvent, screen } from "@testing-library/react";
 
