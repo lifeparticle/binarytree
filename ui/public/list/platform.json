@@ -1,1 +1,9 @@
-[]
+[
+    {
+		"name": "Planetscale",
+		"category": "Database",
+		"subCategory": ["Programming"],
+		"url": "https://planetscale.com",
+		"socials": []
+	}
+]

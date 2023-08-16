@@ -165,5 +165,12 @@
 		"subCategory": ["Tech Talks", "Interviews"],
 		"url": "https://www.youtube.com/@KentCDodds-vids",
 		"socials": [{ "url": "" }]
+	},
+	{
+		"name": "Hyperplexed",
+		"category": "Web Development",
+		"subCategory": ["Programming"],
+		"url": "https://www.youtube.com/@Hyperplexed",
+		"socials": [{ "url": "" }]
 	}
 ]
