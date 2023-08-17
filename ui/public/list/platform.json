@@ -1,9 +1,86 @@
 [
-    {
+	{
 		"name": "Planetscale",
 		"category": "Database",
 		"subCategory": ["Programming"],
 		"url": "https://planetscale.com",
+		"socials": []
+	},
+
+	{
+		"name": "Render",
+		"category": "Platform",
+		"subCategory": ["Hosting", "Deployment"],
+		"url": "https://render.com/",
+		"socials": []
+	},
+	{
+		"name": "Firebase",
+		"category": "Platform",
+		"subCategory": ["Hosting", "Backend"],
+		"url": "https://firebase.google.com/",
+		"socials": []
+	},
+	{
+		"name": "Netlify",
+		"category": "Platform",
+		"subCategory": ["Hosting", "Deployment"],
+		"url": "https://www.netlify.com/",
+		"socials": []
+	},
+	{
+		"name": "Vercel",
+		"category": "Platform",
+		"subCategory": ["Hosting", "Deployment"],
+		"url": "https://vercel.com/",
+		"socials": []
+	},
+	{
+		"name": "MongoDB Atlas",
+		"category": "Database",
+		"subCategory": ["NoSQL", "DBaaS"],
+		"url": "https://www.mongodb.com/cloud/atlas",
+		"socials": []
+	},
+	{
+		"name": "DigitalOcean",
+		"category": "Cloud Infrastructure",
+		"subCategory": ["Hosting", "VPS"],
+		"url": "https://www.digitalocean.com/",
+		"socials": []
+	},
+	{
+		"name": "AWS",
+		"category": "Cloud Infrastructure",
+		"subCategory": ["Hosting", "Compute", "Storage"],
+		"url": "https://aws.amazon.com/",
+		"socials": []
+	},
+	{
+		"name": "Azure",
+		"category": "Cloud Infrastructure",
+		"subCategory": ["Hosting", "Compute", "Database"],
+		"url": "https://azure.microsoft.com/",
+		"socials": []
+	},
+	{
+		"name": "Google Cloud Platform",
+		"category": "Cloud Infrastructure",
+		"subCategory": [
+			"Hosting",
+			"Compute",
+			"Storage",
+			"Database",
+			"Machine Learning"
+		],
+		"url": "https://cloud.google.com/",
+		"socials": []
+	},
+	{
+		"name": "Airtable",
+		"category": "Database",
+		"subCategory": ["NoSQL", "Spreadsheet", "API"],
+		"url": "https://www.airtable.com/",
 		"socials": []
 	}
 ]

@@ -17,6 +17,7 @@ import {
 	Github,
 	Icon,
 	Movie,
+	Platform,
 	Plugin,
 	Tool,
 	TvSeries,
@@ -65,6 +66,7 @@ const Routes: React.FC = () => {
 						<Route path="github" element={<Github />} />
 						<Route path="icon" element={<Icon />} />
 						<Route path="movie" element={<Movie />} />
+						<Route path="platform" element={<Platform />} />
 						<Route path="plugin" element={<Plugin />} />
 						<Route path="tool" element={<Tool />} />
 						<Route path="tv-series" element={<TvSeries />} />
