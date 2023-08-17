@@ -1,7 +1,7 @@
 import { Card, Space } from "antd";
 import { EXTENDED_DATA_OPTIONS } from "../../utils/constant";
 import ColorDisplay from "../ColorDisplay/ColorDisplay";
-import Clipboard from "components/RenderProps/Clipboard/Clipboard";
+import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
 
 interface DisplayProps {

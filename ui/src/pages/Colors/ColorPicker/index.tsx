@@ -5,7 +5,7 @@ import { Card, Input, Space } from "antd";
 import { ColorPicker as CP } from "@mantine/core";
 import { INITIAL_COLOR, INITIAL_FORMAT } from "./utils/constant";
 import ColorFormatTags from "./components/ColorFormatTags/ColorFormatTags";
-import Clipboard from "components/RenderProps/Clipboard/Clipboard";
+import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
 import DisplayColors from "./components/DisplayColors/DisplayColors";
 import { FormatType } from "./utils/types";
