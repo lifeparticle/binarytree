@@ -29,7 +29,7 @@ const Shades: React.FC = () => {
 	const [shades, setShades] = useState<string[]>([]);
 	const [numberOfShades, setNumberOfShades] = useState<number | null>(null);
 	const [isPending, startTransition] = useTransition();
-	const [mode, setMode] = useState("dark"); // Add this state for switch
+	const [mode, setMode] = useState("darkest"); // Add this state for switch
 
 	useCombinedKeyPress(
 		() => setInputs(DEFAULT_COLOR, DEFAULT_NUM_SHADES),
@@ -51,7 +51,7 @@ const Shades: React.FC = () => {
 
 			const step = 100 / (count - 1);
 
-			if (mode === "dark") {
+			if (mode === "darkest") {
 				return [
 					selectedColor,
 					...Array.from({ length: count - 1 }, (_, i) =>
@@ -120,10 +120,12 @@ const Shades: React.FC = () => {
 					Clear
 				</Button>
 				<Switch
-					checkedChildren="Dark"
-					unCheckedChildren="Light"
+					checkedChildren="Darkest"
+					unCheckedChildren="Lightest"
 					defaultChecked
-					onChange={(checked) => setMode(checked ? "dark" : "light")}
+					onChange={(checked) =>
+						setMode(checked ? "darkest" : "lightest")
+					}
 				/>
 				<Clipboard
 					text={shades.join(" ")}
