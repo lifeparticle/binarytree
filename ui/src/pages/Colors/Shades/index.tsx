@@ -1,6 +1,14 @@
 import { useState, useEffect, useTransition } from "react";
 import styles from "./Shades.module.scss";
-import { Button, Card, Input, InputNumber, Space, Typography } from "antd";
+import {
+	Button,
+	Card,
+	Input,
+	InputNumber,
+	Space,
+	Switch,
+	Typography,
+} from "antd";
 import tinycolor from "tinycolor2";
 import { getTextColor } from "lib/utils/helper";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
@@ -21,6 +29,7 @@ const Shades: React.FC = () => {
 	const [shades, setShades] = useState<string[]>([]);
 	const [numberOfShades, setNumberOfShades] = useState<number | null>(null);
 	const [isPending, startTransition] = useTransition();
+	const [mode, setMode] = useState("dark"); // Add this state for switch
 
 	useCombinedKeyPress(
 		() => setInputs(DEFAULT_COLOR, DEFAULT_NUM_SHADES),
@@ -33,24 +42,39 @@ const Shades: React.FC = () => {
 		setNumberOfShades(numberOfShades);
 	};
 
-	const generateShadesForColor = (
-		selectedColor: string,
-		count: number | null
-	) => {
-		if (!selectedColor || !count || count <= 0) return [];
-
-		return Array.from({ length: count }, (_, i) =>
-			tinycolor(selectedColor)
-				.darken((100 / count) * (i + 1))
-				.toString()
-		);
-	};
-
 	useEffect(() => {
+		const generateShadesForColor = (
+			selectedColor: string,
+			count: number | null
+		) => {
+			if (!selectedColor || !count || count <= 0) return [];
+
+			const step = 100 / (count - 1);
+
+			if (mode === "dark") {
+				return [
+					selectedColor,
+					...Array.from({ length: count - 1 }, (_, i) =>
+						tinycolor(selectedColor)
+							.darken(step * (i + 1))
+							.toString()
+					),
+				];
+			} else {
+				return [
+					selectedColor,
+					...Array.from({ length: count - 1 }, (_, i) =>
+						tinycolor(selectedColor)
+							.lighten(step * (i + 1))
+							.toString()
+					),
+				];
+			}
+		};
 		startTransition(() => {
 			setShades(generateShadesForColor(color, numberOfShades));
 		});
-	}, [color, numberOfShades]);
+	}, [color, numberOfShades, mode]);
 
 	const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setColor(e.target.value);
@@ -95,6 +119,16 @@ const Shades: React.FC = () => {
 				>
 					Clear
 				</Button>
+				<Switch
+					checkedChildren="Dark"
+					unCheckedChildren="Light"
+					defaultChecked
+					onChange={(checked) => setMode(checked ? "dark" : "light")}
+				/>
+				<Clipboard
+					text={shades.join(" ")}
+					clipboardComponent={ClipboardButton}
+				/>
 			</Space>
 
 			{color && numberOfShades && (

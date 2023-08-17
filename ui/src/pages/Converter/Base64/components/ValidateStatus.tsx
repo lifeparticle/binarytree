@@ -2,7 +2,12 @@ import { Button, Space } from "antd";
 import { Check, X } from "lucide-react";
 import React from "react";
 import style from "pages/Converter/Base64/Base64.module.scss";
-const ValidateStatus: React.FC<{ status: string }> = ({ status }) => {
+
+interface ValidateStatusProps {
+	status: string;
+}
+
+const ValidateStatus: React.FC<ValidateStatusProps> = ({ status }) => {
 	return (
 		<Space className={style.base__base64Container__validator}>
 			{status.length === 0 ? null : status === "valid" ? (
