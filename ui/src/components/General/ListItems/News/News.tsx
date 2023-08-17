@@ -1,6 +1,6 @@
-import { NewsType } from "./news.types";
+import { NewsType } from "./types/types";
 import { Card, Skeleton, Typography } from "antd";
-import { ListItemProps } from "components/RenderProps/List/types";
+import { ListItemProps } from "components/RenderProps/List/utils/types";
 const { Title } = Typography;
 
 const News: React.FC<ListItemProps<NewsType>> = ({

@@ -28,7 +28,7 @@ import {
 	Keyboard,
 	Square,
 } from "lucide-react";
-import { getItem } from "./Menu";
+import { getItem } from "components/Layouts/Menu/utils/helper";
 
 const IN_DEV = import.meta.env.DEV;
 
