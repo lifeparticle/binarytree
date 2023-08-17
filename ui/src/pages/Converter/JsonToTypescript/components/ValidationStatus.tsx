@@ -1,7 +1,7 @@
 import { Button, Space } from "antd";
 import { Check, X } from "lucide-react";
 import React from "react";
-import style from "pages/Converter/JsonToTypescript/jsontots.module.scss";
+import style from "pages/Converter/JsonToTypescript/JsonToTypescript.module.scss";
 
 const ValidationStatus: React.FC<{ status: string }> = ({ status }) => {
 	return (
