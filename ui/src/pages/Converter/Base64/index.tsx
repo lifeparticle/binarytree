@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Buffer } from "buffer";
 import style from "./Base64.module.scss";
 import Clipboard from "components/RenderProps/Clipboard";
-import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
+import ClipboardButton from "components/General/ClipboardButton";
 
 import ValidateStatus from "./components/ValidateStatus";
 import { isBase64Valid } from "./utils/helper";

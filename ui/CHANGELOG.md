@@ -1,3 +1,8 @@
+### [4.6.0] - 2023-08-18
+
+-   Refactor Shades generator
+-   Add Platform under list
+
 ### [4.5.0] - 2023-08-16
 
 -   Refactor Shades generator
