@@ -122,11 +122,7 @@ const DataGenerator: React.FC = () => {
 						{Array.from({ length: colNum }, (_, k) => (
 							<AutoComplete
 								key={`faker-data-type-${k}`}
-								value={
-									fakeDataTypes[k] === undefined
-										? (fakeDataTypes[k] = "")
-										: fakeDataTypes[k]
-								}
+								value={fakeDataTypes[k] || ""}
 								placeholder="Pick one"
 								options={FAKER_DATA_TYPES}
 								onChange={(e) => {
@@ -135,6 +131,7 @@ const DataGenerator: React.FC = () => {
 									// if (colNames[k] === "")
 									onColNamesChange(e, k);
 								}}
+								style={{ width: "100%" }}
 							/>
 						))}
 					</div>

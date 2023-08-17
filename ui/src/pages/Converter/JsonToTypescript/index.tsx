@@ -93,7 +93,11 @@ const JsonToTypescript: React.FC = () => {
 				</Button>
 				<Clipboard
 					clipboardComponent={ClipboardButton}
-					text={json.length === 0 ? "" : "Interface copied"}
+					text={
+						json.length === 0
+							? ""
+							: interfaces.toString().replace(/,/g, "\n\n")
+					}
 				/>
 			</Space>
 		</div>
