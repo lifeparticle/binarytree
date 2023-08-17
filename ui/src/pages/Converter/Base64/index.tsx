@@ -41,6 +41,7 @@ const Base64: React.FC = () => {
 				}}
 				placeholder="Input"
 				autoSize={{ minRows: 2 }}
+				data-gramm="false"
 			/>
 
 			<Space>
@@ -64,6 +65,7 @@ const Base64: React.FC = () => {
 					}}
 					placeholder="Result"
 					autoSize={{ minRows: 2 }}
+					data-gramm="false"
 				/>
 
 				<ValidateStatus status={status} />
