@@ -6,7 +6,6 @@ import style from "./JsonToTypescript.module.scss";
 import { Button, Input, Space } from "antd";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
-
 import ValidationStatus from "./components/ValidationStatus";
 import { isJsonValid } from "./utils/helper";
 
