@@ -1,8 +1,8 @@
 import { Avatar, Card, Skeleton, Space, Tag, Typography } from "antd";
 import style from "./Resource.module.scss";
-import { ResourceType } from "./resource.type";
-import { ListItemProps } from "components/RenderProps/List/types";
-import Clipboard from "components/RenderProps/Clipboard/Clipboard";
+import { ResourceType } from "./types/types";
+import { ListItemProps } from "components/RenderProps/List/utils/types";
+import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
 
 const { Title } = Typography;

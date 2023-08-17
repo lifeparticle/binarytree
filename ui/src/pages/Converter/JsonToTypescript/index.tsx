@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Highlight, themes } from "prism-react-renderer";
 import style from "./jsontots.module.scss";
 import { Button, Input, Space } from "antd";
-import Clipboard from "components/RenderProps/Clipboard/Clipboard";
+import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
 
 import ValidationStatus from "./components/ValidationStatus";

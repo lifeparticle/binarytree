@@ -1,7 +1,7 @@
 import { useState } from "react";
 import style from "./Pixel.module.scss";
 import { InputNumber, Form, Row, Col } from "antd";
-import Clipboard from "components/RenderProps/Clipboard/Clipboard";
+import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
 
 const Pixel: React.FC = () => {

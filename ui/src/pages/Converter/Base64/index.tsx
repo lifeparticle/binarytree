@@ -2,7 +2,7 @@ import { Button, Input, Space } from "antd";
 import { useEffect, useState } from "react";
 import { Buffer } from "buffer";
 import style from "./Base64.module.scss";
-import Clipboard from "components/RenderProps/Clipboard/Clipboard";
+import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
 
 import ValidateStatus from "./components/ValidateStatus";
@@ -40,7 +40,7 @@ const Base64: React.FC = () => {
 					onClick("encode", currentValue.target.value);
 				}}
 				placeholder="Input"
-				autoSize={{ minRows: 10 }}
+				autoSize={{ minRows: 2 }}
 			/>
 
 			<Space>
@@ -63,7 +63,7 @@ const Base64: React.FC = () => {
 						onClick("decode", value);
 					}}
 					placeholder="Result"
-					autoSize={{ minRows: 10 }}
+					autoSize={{ minRows: 2 }}
 				/>
 
 				<ValidateStatus status={status} />

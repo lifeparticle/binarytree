@@ -1,6 +1,6 @@
 import { describe, test } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import MarkdownEditor from ".";
+import MarkdownEditor from "..";
 // import { DarkModeProvider } from "Provider";
 
 describe("Markdown Component", () => {
