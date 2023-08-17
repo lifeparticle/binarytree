@@ -14,7 +14,7 @@ import { getTextColor } from "lib/utils/helper";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 import { ColorPicker as CP } from "@mantine/core";
 import Clipboard from "components/RenderProps/Clipboard";
-import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
+import ClipboardButton from "components/General/ClipboardButton";
 import {
 	DEFAULT_COLOR,
 	DEFAULT_NUM_SHADES,
