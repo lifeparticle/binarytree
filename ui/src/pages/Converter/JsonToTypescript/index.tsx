@@ -52,6 +52,7 @@ const JsonToTypescript: React.FC = () => {
 			</div>
 
 			<Input
+				size="large"
 				placeholder="Root Interface name"
 				value={rootName}
 				onChange={(e) => setRootName(e.target.value)}

@@ -28,7 +28,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 
 	useCombinedKeyPress(() => {
 		onTextAreaChange("");
-	}, ["ControlLeft", "KeyC"]);
+	}, ["ControlLeft", "KeyR"]);
 
 	const onTextAreaChange = (value: string) => {
 		setColors(extractColors(value));
@@ -64,6 +64,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 			/>
 			<div className={style.igfc__inputs}>
 				<InputNumber
+					size="large"
 					placeholder="Image Height"
 					value={height}
 					onChange={(val) => val && setHeight(val)}
@@ -71,6 +72,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 					style={{ width: "100%" }}
 				/>
 				<InputNumber
+					size="large"
 					placeholder="Image Width"
 					value={width}
 					onChange={(val) => val && setWidth(val)}
@@ -78,6 +80,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 					style={{ width: "100%" }}
 				/>
 				<InputNumber
+					size="large"
 					placeholder="Image Border Radius"
 					value={rounded}
 					onChange={(val) => val && setRounded(val)}

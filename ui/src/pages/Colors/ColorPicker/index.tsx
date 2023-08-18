@@ -53,6 +53,17 @@ const ColorPicker: React.FC = () => {
 		<div className={style.cp}>
 			<Card bordered={false}>
 				<Space size="large" direction="vertical" wrap>
+					<div className={style.cp__result}>
+						<Input
+							value={color}
+							onChange={onInputChange}
+							size="large"
+						/>
+						<Clipboard
+							text={color}
+							clipboardComponent={ClipboardButton}
+						/>
+					</div>
 					<Space size="small" direction="horizontal" wrap>
 						<ColorFormatTags
 							currentFormat={format}
@@ -65,29 +76,25 @@ const ColorPicker: React.FC = () => {
 						onChange={setColor}
 						size="xl"
 					/>
-					<div className={style.cp__result}>
-						<Input value={color} onChange={onInputChange} />
-						<Clipboard
-							text={color}
-							clipboardComponent={ClipboardButton}
-						/>
-					</div>
 				</Space>
 			</Card>
 			<DisplayColors
 				colors={colors}
 				format={format}
 				displayType="colors"
+				title="Colors"
 			/>
 			<DisplayColors
 				colors={colors}
 				format={format}
 				displayType="variables"
+				title="CSS variables"
 			/>
 			<DisplayColors
 				colors={colors}
 				format={format}
 				displayType="use-variables"
+				title="Use CSS variables"
 			/>
 		</div>
 	);

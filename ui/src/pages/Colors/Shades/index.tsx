@@ -3,6 +3,7 @@ import styles from "./Shades.module.scss";
 import {
 	Button,
 	Card,
+	Form,
 	Input,
 	InputNumber,
 	Space,
@@ -35,7 +36,7 @@ const Shades: React.FC = () => {
 		() => setInputs(DEFAULT_COLOR, DEFAULT_NUM_SHADES),
 		["ControlLeft", "KeyE"]
 	);
-	useCombinedKeyPress(() => setInputs("", null), ["ControlLeft", "KeyC"]);
+	useCombinedKeyPress(() => setInputs("", null), ["ControlLeft", "KeyR"]);
 
 	const setInputs = (color: string, numberOfShades: number | null) => {
 		setColor(color);
@@ -87,50 +88,69 @@ const Shades: React.FC = () => {
 	return (
 		<div className={styles.shades}>
 			<Space className={styles.shades__inputs}>
-				<Input
-					placeholder="Enter Color"
-					value={color}
-					onChange={handleColorChange}
-				/>
-				<div className={styles.cardContainer}>
-					<Card size="small" style={{ background: color }}></Card>
-					<div className={styles.colorPickerDropdown}>
-						<CP
-							format="hex"
-							value={color}
-							onChange={setColor}
-							size="xl"
+				<Form layout="vertical">
+					<Space>
+						<Form.Item label="Color">
+							<Space>
+								<Input
+									size="large"
+									placeholder="Color"
+									value={color}
+									onChange={handleColorChange}
+									allowClear
+								/>
+
+								<div className={styles.cardContainer}>
+									<Card
+										size="small"
+										style={{ background: color }}
+									></Card>
+									<div className={styles.colorPickerDropdown}>
+										<CP
+											format="hex"
+											value={color}
+											onChange={setColor}
+											size="xl"
+										/>
+									</div>
+								</div>
+							</Space>
+						</Form.Item>
+						<Form.Item label="Number of shades">
+							<InputNumber
+								size="large"
+								style={{ width: "100%" }}
+								precision={0}
+								min={MIN_SHADES}
+								max={MAX_SHADES}
+								step={1}
+								placeholder="Number of shades"
+								value={numberOfShades}
+								onChange={handleNumberOfShadesChange}
+							/>
+						</Form.Item>
+						<Switch
+							checkedChildren="Darkest"
+							unCheckedChildren="Lightest"
+							defaultChecked
+							onChange={(checked) =>
+								setMode(checked ? "darkest" : "lightest")
+							}
 						/>
-					</div>
-				</div>
-				<InputNumber
-					style={{ width: "100%" }}
-					precision={0}
-					min={MIN_SHADES}
-					max={MAX_SHADES}
-					step={1}
-					placeholder="Enter pixel value"
-					value={numberOfShades}
-					onChange={handleNumberOfShadesChange}
-				/>
-				<Button
-					onClick={() => setInputs("", null)}
-					disabled={!color && !numberOfShades}
-				>
-					Clear
-				</Button>
-				<Switch
-					checkedChildren="Darkest"
-					unCheckedChildren="Lightest"
-					defaultChecked
-					onChange={(checked) =>
-						setMode(checked ? "darkest" : "lightest")
-					}
-				/>
-				<Clipboard
-					text={shades.join(" ")}
-					clipboardComponent={ClipboardButton}
-				/>
+
+						<Button
+							onClick={() => setInputs("", null)}
+							disabled={!color && !numberOfShades}
+						>
+							Clear
+						</Button>
+
+						<Clipboard
+							text={shades.join(" ")}
+							clipboardComponent={ClipboardButton}
+						/>
+					</Space>
+				</Form>
 			</Space>
 
 			{color && numberOfShades && (
