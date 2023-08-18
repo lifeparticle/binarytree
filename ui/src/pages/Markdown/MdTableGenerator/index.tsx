@@ -15,6 +15,7 @@ const TableGenerator: React.FC = () => {
 	return (
 		<Space direction="vertical" style={{ width: "100%" }}>
 			<InputNumber
+				size="large"
 				style={{ width: "100%" }}
 				value={row}
 				placeholder="Row"
@@ -32,6 +33,7 @@ const TableGenerator: React.FC = () => {
 			/>
 
 			<InputNumber
+				size="large"
 				style={{ width: "100%" }}
 				value={column}
 				placeholder="Column"

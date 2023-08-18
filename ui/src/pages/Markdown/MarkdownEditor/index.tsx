@@ -18,7 +18,7 @@ const MarkdownEditor: React.FC = () => {
 		() => setMarkdown("# Hello, World!"),
 		["ControlLeft", "KeyE"]
 	);
-	useCombinedKeyPress(() => setMarkdown(""), ["ControlLeft", "KeyC"]);
+	useCombinedKeyPress(() => setMarkdown(""), ["ControlLeft", "KeyR"]);
 
 	const onChange = useCallback((value: string) => {
 		setMarkdown(value);

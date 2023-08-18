@@ -10,7 +10,7 @@
 
 ## Tips
 
-Press key <kbd> <br> ControlLeft + e <br> </kbd> for example input and press key <kbd> <br> ControlLeft + c <br> </kbd> to clear the example input.
+Press key <kbd> <br> ControlLeft + e <br> </kbd> for example input and press key <kbd> <br> ControlLeft + r <br> </kbd> to reset the example input.
 
 ## Features
 

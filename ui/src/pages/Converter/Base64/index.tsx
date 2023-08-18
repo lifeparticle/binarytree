@@ -1,4 +1,4 @@
-import { Button, Input, Space } from "antd";
+import { Button, Form, Input, Space } from "antd";
 import { useEffect, useState } from "react";
 import { Buffer } from "buffer";
 import style from "./Base64.module.scss";
@@ -32,7 +32,7 @@ const Base64: React.FC = () => {
 	}, [result]);
 
 	return (
-		<div className={style.base}>
+		<Form layout="vertical" className={style.base}>
 			<TextArea
 				value={input}
 				onChange={(currentValue) => {
@@ -81,7 +81,7 @@ const Base64: React.FC = () => {
 				</Button>
 				<Clipboard text={result} clipboardComponent={ClipboardButton} />
 			</Space>
-		</div>
+		</Form>
 	);
 };
 
