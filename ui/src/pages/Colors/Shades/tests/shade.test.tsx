@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import Shades from "..";
 
 describe("Shade", () => {
-	test("renders the component correctly", () => {
+	test("renders the component correctly.", () => {
 		render(<Shades />);
 
 		expect(screen.getByPlaceholderText("Enter Color")).toBeInTheDocument();
