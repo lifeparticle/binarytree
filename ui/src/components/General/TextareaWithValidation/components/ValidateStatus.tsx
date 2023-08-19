@@ -1,7 +1,7 @@
 import { Button, Space } from "antd";
 import { Check, X } from "lucide-react";
 import React from "react";
-import style from "pages/Converter/Base64/Base64.module.scss";
+import style from "../textareavalidation.module.scss";
 
 interface ValidateStatusProps {
 	status: string;
@@ -9,7 +9,7 @@ interface ValidateStatusProps {
 
 const ValidateStatus: React.FC<ValidateStatusProps> = ({ status }) => {
 	return (
-		<Space className={style.base__base64Container__validator}>
+		<Space className={style.textareaContainer__validator}>
 			{status.length === 0 ? null : status === "valid" ? (
 				<Button size="small" style={{ borderColor: "green" }}>
 					<Check color="green" size={16} />

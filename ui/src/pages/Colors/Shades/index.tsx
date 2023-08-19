@@ -14,6 +14,7 @@ import {
 	MIN_SHADES,
 } from "./utils/constants";
 import InputComponent from "components/General/InputComponent";
+import CopyInput from "components/Layouts/CopyInput";
 
 const { Title } = Typography;
 
@@ -82,13 +83,15 @@ const Shades: React.FC = () => {
 			<Space className={styles.shades__inputs}>
 				<Form layout="vertical">
 					<Space>
-						<InputComponent
-							label="Color"
-							placeholder="Color"
-							value={color}
-							onChange={handleColorChange}
-							type="text"
-						/>
+						<CopyInput>
+							<InputComponent
+								label="Color"
+								placeholder="Color"
+								value={color}
+								onChange={handleColorChange}
+								type="text"
+							/>
+						</CopyInput>
 
 						<div className={styles.cardContainer}>
 							<Card
@@ -105,17 +108,19 @@ const Shades: React.FC = () => {
 							</div>
 						</div>
 
-						<InputComponent
-							value={numberOfShades}
-							label="Number of shades"
-							onChange={handleNumberOfShadesChange}
-							placeholder="Number of shades"
-							precision={0}
-							step={1}
-							min={MIN_SHADES}
-							max={MAX_SHADES}
-							type="number"
-						/>
+						<CopyInput>
+							<InputComponent
+								value={numberOfShades}
+								label="Number of shades"
+								onChange={handleNumberOfShadesChange}
+								placeholder="Number of shades"
+								precision={0}
+								step={1}
+								min={MIN_SHADES}
+								max={MAX_SHADES}
+								type="number"
+							/>
+						</CopyInput>
 						<Switch
 							checkedChildren="Darkest"
 							unCheckedChildren="Lightest"
