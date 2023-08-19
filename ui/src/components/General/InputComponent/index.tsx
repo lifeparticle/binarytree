@@ -6,7 +6,7 @@ interface InputComponentProps {
 	min?: number;
 	step?: number;
 	value: number | string;
-	onChange: any;
+	onChange: () => void;
 	tooltip?: string;
 	showClipboard?: boolean;
 	placeholder?: string;
