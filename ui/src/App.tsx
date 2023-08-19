@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Menu from "components/Layouts/Menu";
-import { DarkModeContext } from "Provider";
+import { DarkModeContext } from "lib/utils/context/DarkModeProvider/DarkModeProvider";
 import { ConfigProvider, Layout } from "antd";
 import Header from "components/Layouts/Header";
 import { ErrorBoundary } from "react-error-boundary";

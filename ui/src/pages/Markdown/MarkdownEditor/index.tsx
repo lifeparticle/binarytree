@@ -5,7 +5,7 @@ import { useCallback, useContext, useState } from "react";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 import SimpleMDE from "react-simplemde-editor";
 import style from "./MarkdownEditor.module.scss";
-import { DarkModeContext } from "Provider";
+import { DarkModeContext } from "lib/utils/context/DarkModeProvider/DarkModeProvider";
 import "easymde/dist/easymde.min.css";
 import "./editorMDE.css";
 
