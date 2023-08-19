@@ -2,23 +2,13 @@ import { useState } from "react";
 import style from "./TableOfContent.module.scss";
 import { useClipboard } from "@mantine/hooks";
 import { marked } from "marked";
-import { Input, Space, Button } from "antd";
+import { Input, Space, Button, Form, Card } from "antd";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
+import { TocItem } from "./utils/types";
+import { indentMap } from "./utils/constant";
+import CopyInput from "components/Layouts/CopyInput";
+import InputComponent from "components/General/InputComponent";
 const { TextArea } = Input;
-
-type TocItem = {
-	tag: "H1" | "H2" | "H3" | "H4" | "H5" | "H6";
-	text: string;
-};
-
-const indentMap = {
-	H1: "",
-	H2: "\t* ",
-	H3: "\t\t+ ",
-	H4: "\t\t\t- ",
-	H5: "\t\t\t\t* ",
-	H6: "\t\t\t\t\t+ ",
-};
 
 const TableOfContent: React.FC = () => {
 	const [url, setUrl] = useState("");
@@ -103,33 +93,52 @@ const TableOfContent: React.FC = () => {
 	};
 
 	return (
-		<div className={style.toc}>
-			<Space direction="vertical">
-				<Input
-					size="large"
-					placeholder="URL"
-					value={url}
-					onChange={(event) => fetchData(event.currentTarget.value)}
-					autoComplete="nope"
-				/>
-				<TextArea
-					placeholder=""
-					value={markdown}
-					onChange={(event) =>
-						onMarkdownChange(event.currentTarget.value)
-					}
-					rows={29}
-				/>
-			</Space>
-			<div>
-				<Space direction="vertical" style={{ width: "100%" }}>
-					<Button onClick={() => clipboard.copy(tableOfContents)}>
-						{clipboard.copied ? "Copied" : "Copy"}
-					</Button>
-					<TextArea value={tableOfContents} rows={29} readOnly />
-				</Space>
-			</div>
-		</div>
+		<Card>
+			<Form layout="vertical">
+				<div className={style.toc}>
+					<Space direction="vertical">
+						<CopyInput>
+							<InputComponent
+								label="Provide URL"
+								placeholder="URL"
+								value={url}
+								onChange={(event) =>
+									fetchData(event.currentTarget.value)
+								}
+								type="text"
+							/>
+						</CopyInput>
+						<Form.Item label="Content">
+							<TextArea
+								placeholder=""
+								value={markdown}
+								onChange={(event) =>
+									onMarkdownChange(event.currentTarget.value)
+								}
+								rows={20}
+							/>
+						</Form.Item>
+					</Space>
+					<div>
+						<Space direction="vertical" style={{ width: "100%" }}>
+							<Button
+								onClick={() => clipboard.copy(tableOfContents)}
+							>
+								{clipboard.copied ? "Copied" : "Copy"}
+							</Button>
+
+							<Form.Item label="Output">
+								<TextArea
+									value={tableOfContents}
+									rows={20}
+									readOnly
+								/>
+							</Form.Item>
+						</Space>
+					</div>
+				</div>
+			</Form>
+		</Card>
 	);
 };
 
