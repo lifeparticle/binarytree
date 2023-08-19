@@ -144,8 +144,6 @@ const DataGenerator: React.FC = () => {
 									options={FAKER_DATA_TYPES}
 									onChange={(e) => {
 										onFakeDataTypesChange(e, k);
-										// how to handle this better?
-										// if (colNames[k] === "")
 										onColNamesChange(e, k);
 									}}
 									style={{ width: "100%" }}

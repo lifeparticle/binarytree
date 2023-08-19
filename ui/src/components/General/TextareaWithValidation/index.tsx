@@ -1,15 +1,16 @@
 import { Form } from "antd";
-import TextArea from "antd/es/input/TextArea";
 import ValidationStatus from "./components/ValidateStatus";
 import style from "./textareavalidation.module.scss";
+import { Input } from "antd";
+
+const { TextArea } = Input;
 
 interface TextareaWithValidationProps {
 	placeholder?: string;
 	rows?: number;
 	autoCorrect?: string;
-	value: string;
-	onChange: (value: any) => void;
-
+	value: string | number;
+	onChange: (value: React.ChangeEvent<HTMLTextAreaElement>) => void;
 	label: string;
 	status: string;
 }
