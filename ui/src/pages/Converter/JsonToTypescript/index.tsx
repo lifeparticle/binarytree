@@ -2,11 +2,10 @@ import TextArea from "antd/es/input/TextArea";
 import JsonToTS from "json-to-ts";
 import { useEffect, useState } from "react";
 import { Highlight, themes } from "prism-react-renderer";
-import style from "./jsontots.module.scss";
+import style from "./JsonToTypescript.module.scss";
 import { Button, Input, Space } from "antd";
 import Clipboard from "components/RenderProps/Clipboard";
-import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
-
+import ClipboardButton from "components/General/ClipboardButton";
 import ValidationStatus from "./components/ValidationStatus";
 import { isJsonValid } from "./utils/helper";
 
@@ -53,6 +52,7 @@ const JsonToTypescript: React.FC = () => {
 			</div>
 
 			<Input
+				size="large"
 				placeholder="Root Interface name"
 				value={rootName}
 				onChange={(e) => setRootName(e.target.value)}

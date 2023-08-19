@@ -1,6 +1,8 @@
 .cp {
-	display: flex;
+	display: grid;
+	grid-template-columns: auto auto auto auto;
 	gap: var(--bt-size-16);
+	justify-content: center;
 	&__result {
 		display: flex;
 		justify-content: space-between;
@@ -18,5 +20,19 @@
 			align-items: center;
 			justify-content: center;
 		}
+	}
+
+	@media (max-width: 1500px) {
+		grid-template-columns: auto auto;
+	}
+
+	@media (max-width: 1000px) {
+		grid-template-columns: 0.5fr;
+
+		align-items: center;
+	}
+
+	@media (max-width: 700px) {
+		grid-template-columns: auto;
 	}
 }

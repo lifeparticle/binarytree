@@ -1,8 +1,8 @@
 import { Card, Space } from "antd";
-import { EXTENDED_DATA_OPTIONS } from "../../utils/constant";
-import ColorDisplay from "../ColorDisplay/ColorDisplay";
+import { EXTENDED_DATA_OPTIONS } from "pages/Colors/ColorPicker/utils/constant";
+import ColorDisplay from "pages/Colors/ColorPicker/components/ColorDisplay/ColorDisplay";
 import Clipboard from "components/RenderProps/Clipboard";
-import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
+import ClipboardButton from "components/General/ClipboardButton";
 
 interface DisplayProps {
 	colors: {
@@ -10,12 +10,14 @@ interface DisplayProps {
 	};
 	format: string;
 	displayType: "variables" | "colors" | "use-variables";
+	title: string;
 }
 
 const DisplayColors: React.FC<DisplayProps> = ({
 	colors,
 	displayType,
 	format,
+	title,
 }) => {
 	const determineLabel = (optionValue: string, optionLabel: string) => {
 		switch (displayType) {
@@ -53,7 +55,7 @@ const DisplayColors: React.FC<DisplayProps> = ({
 	};
 
 	return (
-		<Card bordered={false}>
+		<Card bordered={false} title={title}>
 			<Space direction="vertical">
 				{EXTENDED_DATA_OPTIONS.map(({ value, label }) => (
 					<ColorDisplay

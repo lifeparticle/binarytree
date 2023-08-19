@@ -82,6 +82,7 @@ const DataGenerator: React.FC = () => {
 			<div className={style.dg__left}>
 				<div className={style.dg__left_top}>
 					<Input
+						size="large"
 						placeholder="Table name"
 						value={tableName}
 						onChange={(event) =>
@@ -90,6 +91,7 @@ const DataGenerator: React.FC = () => {
 						autoComplete="nope"
 					/>
 					<InputNumber
+						size="large"
 						placeholder="NumberInput with custom layout"
 						value={colNum}
 						min={0}
@@ -109,6 +111,7 @@ const DataGenerator: React.FC = () => {
 						}}
 					/>
 					<InputNumber
+						size="large"
 						placeholder="NumberInput with custom layout"
 						value={rowNum}
 						min={0}
@@ -121,6 +124,7 @@ const DataGenerator: React.FC = () => {
 					<div>
 						{Array.from({ length: colNum }, (_, k) => (
 							<AutoComplete
+								size="large"
 								key={`faker-data-type-${k}`}
 								value={fakeDataTypes[k] || ""}
 								placeholder="Pick one"
@@ -138,6 +142,7 @@ const DataGenerator: React.FC = () => {
 					<div>
 						{Array.from({ length: colNum }, (_, k) => (
 							<Select
+								size="large"
 								key={`data-type-${k}`}
 								placeholder="Data type"
 								value={
@@ -154,6 +159,7 @@ const DataGenerator: React.FC = () => {
 					<div>
 						{Array.from({ length: colNum }, (_, k) => (
 							<Input
+								size="large"
 								key={`col-name-${k}`}
 								placeholder="Column name"
 								value={

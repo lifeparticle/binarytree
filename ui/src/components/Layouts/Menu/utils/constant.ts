@@ -22,6 +22,7 @@ import {
 	GraduationCap,
 	Clapperboard,
 	Tv,
+	Server,
 	Plug,
 	Wrench,
 	BookOpen,
@@ -141,6 +142,12 @@ export const MENU_ITEMS = [
 				name: "Movie",
 				url: "/list/movie",
 				icon: Clapperboard,
+				show: true,
+			},
+			{
+				name: "Platform",
+				url: "/list/platform",
+				icon: Server,
 				show: true,
 			},
 			{
