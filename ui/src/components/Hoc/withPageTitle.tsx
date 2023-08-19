@@ -1,5 +1,5 @@
 import Text from "components/General/Text/Text";
-import usePageTitle from "lib/utils/hooks/usePageTitle";
+import usePageTitle from "components/Hoc/utils/hooks/usePageTitle";
 
 const withPageTitle = <T extends object>(
 	WrappedComponent: React.ComponentType<T>

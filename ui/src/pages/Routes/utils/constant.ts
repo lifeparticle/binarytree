@@ -61,6 +61,10 @@ const ROUTES: Route[] = [
 		title: "Movie",
 	},
 	{
+		path: "/list/platform",
+		title: "Platform",
+	},
+	{
 		path: "/list/plugin",
 		title: "Plugin",
 	},

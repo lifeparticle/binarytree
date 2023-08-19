@@ -1,5 +1,5 @@
 import { MapToken, SeedToken } from "antd/es/theme/interface";
-import useDarkMode from "lib/utils/hooks/useDarkMode";
+import useDarkMode from "lib/utils/context/DarkModeProvider/hooks/useDarkMode";
 import { ReactNode, createContext } from "react";
 
 interface DarkModeContextType {
