@@ -37,7 +37,7 @@ const TableOfContent: React.FC = () => {
 		setUrl("");
 		setMarkdown("");
 		setTableOfContents("");
-	}, ["ControlLeft", "KeyC"]);
+	}, ["ControlLeft", "KeyR"]);
 
 	const onMarkdownChange = (text: string) => {
 		setMarkdown(text);
@@ -106,6 +106,7 @@ const TableOfContent: React.FC = () => {
 		<div className={style.toc}>
 			<Space direction="vertical">
 				<Input
+					size="large"
 					placeholder="URL"
 					value={url}
 					onChange={(event) => fetchData(event.currentTarget.value)}

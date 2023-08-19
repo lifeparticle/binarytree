@@ -19,6 +19,7 @@ const Course = lazy(() => import("pages/List/Course/Course"));
 const Github = lazy(() => import("pages/List/Github/Github"));
 const Icon = lazy(() => import("pages/List/Icon/Icon"));
 const Movie = lazy(() => import("pages/List/Movie/Movie"));
+const Platform = lazy(() => import("pages/List/Platform/Platform"));
 const Plugin = lazy(() => import("pages/List/Plugin/Plugin"));
 const Tool = lazy(() => import("pages/List/Tool/Tool"));
 const TvSeries = lazy(() => import("pages/List/TvSeries/TvSeries"));
@@ -33,27 +34,28 @@ const TextEditor = lazy(() => import("pages/Text/TextEditor"));
 const News = lazy(() => import("pages/News"));
 
 export {
-	ColorPicker,
-	Shades,
 	Base64,
-	Pixel,
-	JsonToTypescript,
-	DataGenerator,
-	ImageGeneratorFromColors,
-	Sorting,
 	Blog,
 	Book,
+	ColorPicker,
 	Course,
+	DataGenerator,
 	Github,
 	Icon,
-	Movie,
-	Plugin,
-	Tool,
-	TvSeries,
-	YouTube,
+	ImageGeneratorFromColors,
+	JsonToTypescript,
 	MarkdownEditor,
+	Movie,
+	News,
+	Pixel,
+	Platform,
+	Plugin,
+	Shades,
+	Sorting,
 	TableGenerator,
 	TableOfContent,
 	TextEditor,
-	News,
+	Tool,
+	TvSeries,
+	YouTube,
 };

@@ -3,7 +3,7 @@ import style from "./Resource.module.scss";
 import { ResourceType } from "./types/types";
 import { ListItemProps } from "components/RenderProps/List/utils/types";
 import Clipboard from "components/RenderProps/Clipboard";
-import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
+import ClipboardButton from "components/General/ClipboardButton";
 
 const { Title } = Typography;
 

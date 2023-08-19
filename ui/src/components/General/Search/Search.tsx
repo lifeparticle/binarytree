@@ -44,6 +44,7 @@ const Search: React.FC<SearchProps> = ({
 	return (
 		<div className={style.search}>
 			<Input
+				size="large"
 				type="text"
 				placeholder="Search by title..."
 				value={searchQuery}

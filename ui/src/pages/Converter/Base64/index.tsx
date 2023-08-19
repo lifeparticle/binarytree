@@ -1,9 +1,9 @@
-import { Button, Input, Space } from "antd";
+import { Button, Form, Input, Space } from "antd";
 import { useEffect, useState } from "react";
 import { Buffer } from "buffer";
 import style from "./Base64.module.scss";
 import Clipboard from "components/RenderProps/Clipboard";
-import ClipboardButton from "components/General/ClipboardButton/ClipboardButton";
+import ClipboardButton from "components/General/ClipboardButton";
 
 import ValidateStatus from "./components/ValidateStatus";
 import { isBase64Valid } from "./utils/helper";
@@ -32,7 +32,7 @@ const Base64: React.FC = () => {
 	}, [result]);
 
 	return (
-		<div className={style.base}>
+		<Form layout="vertical" className={style.base}>
 			<TextArea
 				value={input}
 				onChange={(currentValue) => {
@@ -41,6 +41,7 @@ const Base64: React.FC = () => {
 				}}
 				placeholder="Input"
 				autoSize={{ minRows: 2 }}
+				data-gramm="false"
 			/>
 
 			<Space>
@@ -64,6 +65,7 @@ const Base64: React.FC = () => {
 					}}
 					placeholder="Result"
 					autoSize={{ minRows: 2 }}
+					data-gramm="false"
 				/>
 
 				<ValidateStatus status={status} />
@@ -79,7 +81,7 @@ const Base64: React.FC = () => {
 				</Button>
 				<Clipboard text={result} clipboardComponent={ClipboardButton} />
 			</Space>
-		</div>
+		</Form>
 	);
 };
 
