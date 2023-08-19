@@ -1,15 +1,6 @@
 import { useState, useEffect, useTransition } from "react";
 import styles from "./Shades.module.scss";
-import {
-	Button,
-	Card,
-	Form,
-	Input,
-	InputNumber,
-	Space,
-	Switch,
-	Typography,
-} from "antd";
+import { Button, Card, Form, Space, Switch, Typography } from "antd";
 import tinycolor from "tinycolor2";
 import { getTextColor } from "lib/utils/helper";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
@@ -22,13 +13,14 @@ import {
 	MAX_SHADES,
 	MIN_SHADES,
 } from "./utils/constants";
+import InputComponent from "components/General/InputComponent";
 
 const { Title } = Typography;
 
 const Shades: React.FC = () => {
 	const [color, setColor] = useState<string>(DEFAULT_COLOR);
 	const [shades, setShades] = useState<string[]>([]);
-	const [numberOfShades, setNumberOfShades] = useState<number | null>(null);
+	const [numberOfShades, setNumberOfShades] = useState<number>(0);
 	const [isPending, startTransition] = useTransition();
 	const [mode, setMode] = useState("darkest"); // Add this state for switch
 
@@ -36,9 +28,9 @@ const Shades: React.FC = () => {
 		() => setInputs(DEFAULT_COLOR, DEFAULT_NUM_SHADES),
 		["ControlLeft", "KeyE"]
 	);
-	useCombinedKeyPress(() => setInputs("", null), ["ControlLeft", "KeyR"]);
+	useCombinedKeyPress(() => setInputs("", 0), ["ControlLeft", "KeyR"]);
 
-	const setInputs = (color: string, numberOfShades: number | null) => {
+	const setInputs = (color: string, numberOfShades: number) => {
 		setColor(color);
 		setNumberOfShades(numberOfShades);
 	};
@@ -81,54 +73,49 @@ const Shades: React.FC = () => {
 		setColor(e.target.value);
 	};
 
-	const handleNumberOfShadesChange = (num: number | null) => {
-		setNumberOfShades(num || null);
+	const handleNumberOfShadesChange = (num: number) => {
+		setNumberOfShades(num);
 	};
 
 	return (
-		<div className={styles.shades}>
+		<Card className={styles.shades}>
 			<Space className={styles.shades__inputs}>
 				<Form layout="vertical">
 					<Space>
-						<Form.Item label="Color">
-							<Space>
-								<Input
-									size="large"
-									placeholder="Color"
-									value={color}
-									onChange={handleColorChange}
-									allowClear
-								/>
+						<InputComponent
+							label="Color"
+							placeholder="Color"
+							value={color}
+							onChange={handleColorChange}
+							type="text"
+						/>
 
-								<div className={styles.cardContainer}>
-									<Card
-										size="small"
-										style={{ background: color }}
-									></Card>
-									<div className={styles.colorPickerDropdown}>
-										<CP
-											format="hex"
-											value={color}
-											onChange={setColor}
-											size="xl"
-										/>
-									</div>
-								</div>
-							</Space>
-						</Form.Item>
-						<Form.Item label="Number of shades">
-							<InputNumber
-								size="large"
-								style={{ width: "100%" }}
-								precision={0}
-								min={MIN_SHADES}
-								max={MAX_SHADES}
-								step={1}
-								placeholder="Number of shades"
-								value={numberOfShades}
-								onChange={handleNumberOfShadesChange}
-							/>
-						</Form.Item>
+						<div className={styles.cardContainer}>
+							<Card
+								size="small"
+								style={{ background: color }}
+							></Card>
+							<div className={styles.colorPickerDropdown}>
+								<CP
+									format="hex"
+									value={color}
+									onChange={setColor}
+									size="xl"
+								/>
+							</div>
+						</div>
+
+						<InputComponent
+							value={numberOfShades}
+							label="Number of shades"
+							onChange={handleNumberOfShadesChange}
+							placeholder="Number of shades"
+							precision={0}
+							step={1}
+							min={MIN_SHADES}
+							max={MAX_SHADES}
+							type="number"
+						/>
 						<Switch
 							checkedChildren="Darkest"
 							unCheckedChildren="Lightest"
@@ -139,7 +126,7 @@ const Shades: React.FC = () => {
 						/>
 
 						<Button
-							onClick={() => setInputs("", null)}
+							onClick={() => setInputs("", 0)}
 							disabled={!color && !numberOfShades}
 						>
 							Clear
@@ -186,7 +173,7 @@ const Shades: React.FC = () => {
 					</div>
 				</Card>
 			)}
-		</div>
+		</Card>
 	);
 };
 
