@@ -21,8 +21,7 @@ const { Title } = Typography;
 const Shades: React.FC = () => {
 	const [color, setColor] = useState<string>(DEFAULT_COLOR);
 	const [shades, setShades] = useState<string[]>([]);
-	const [numberOfShades, setNumberOfShades] =
-		useState<number>(DEFAULT_NUM_SHADES);
+	const [numberOfShades, setNumberOfShades] = useState<number>(0);
 	const [isPending, startTransition] = useTransition();
 	const [mode, setMode] = useState("darkest"); // Add this state for switch
 
@@ -80,72 +79,72 @@ const Shades: React.FC = () => {
 	};
 
 	return (
-		<Space direction="vertical" className={styles.shades}>
-			<Card>
-				<Space className={styles.shades__inputs}>
-					<Form layout="vertical">
-						<Space>
-							<CopyInput>
-								<InputComponent
-									label="Color"
-									placeholder="Color"
+		<Card className={styles.shades}>
+			<Space className={styles.shades__inputs}>
+				<Form layout="vertical">
+					<Space>
+						<CopyInput>
+							<InputComponent
+								label="Color"
+								placeholder="Color"
+								value={color}
+								onChange={handleColorChange}
+								type="text"
+							/>
+						</CopyInput>
+
+						<div className={styles.cardContainer}>
+							<Card
+								size="small"
+								style={{ background: color }}
+							></Card>
+							<div className={styles.colorPickerDropdown}>
+								<CP
+									format="hex"
 									value={color}
-									onChange={handleColorChange}
-									type="text"
+									onChange={setColor}
+									size="xl"
 								/>
-							</CopyInput>
-
-							<div className={styles.cardContainer}>
-								<Card
-									size="small"
-									style={{ background: color }}
-								></Card>
-								<div className={styles.colorPickerDropdown}>
-									<CP
-										format="hex"
-										value={color}
-										onChange={setColor}
-										size="xl"
-									/>
-								</div>
 							</div>
-							<CopyInput>
-								<InputComponent
-									value={numberOfShades}
-									label="Number of shades"
-									onChange={handleNumberOfShadesChange}
-									placeholder="Number of shades"
-									precision={0}
-									step={1}
-									min={MIN_SHADES}
-									max={MAX_SHADES}
-									type="number"
-								/>
-							</CopyInput>
-							<Switch
-								checkedChildren="Darkest"
-								unCheckedChildren="Lightest"
-								defaultChecked
-								onChange={(checked) =>
-									setMode(checked ? "darkest" : "lightest")
-								}
-							/>
+						</div>
 
-							<Button
-								onClick={() => setInputs("", 0)}
-								disabled={!color && !numberOfShades}
-							>
-								Clear
-							</Button>
-
-							<Clipboard
-								text={shades.join(" ")}
-								clipboardComponent={ClipboardButton}
+						<CopyInput>
+							<InputComponent
+								value={numberOfShades}
+								label="Number of shades"
+								onChange={handleNumberOfShadesChange}
+								placeholder="Number of shades"
+								precision={0}
+								step={1}
+								min={MIN_SHADES}
+								max={MAX_SHADES}
+								type="number"
 							/>
-						</Space>
-					</Form>
-				</Space>
-			</Card>
+						</CopyInput>
+						<Switch
+							checkedChildren="Darkest"
+							unCheckedChildren="Lightest"
+							defaultChecked
+							onChange={(checked) =>
+								setMode(checked ? "darkest" : "lightest")
+							}
+						/>
+
+						<Button
+							onClick={() => setInputs("", 0)}
+							disabled={!color && !numberOfShades}
+						>
+							Clear
+						</Button>
+
+						<Clipboard
+							text={shades.join(" ")}
+							clipboardComponent={ClipboardButton}
+						/>
+					</Space>
+				</Form>
+			</Space>
+
 			{color && !!numberOfShades && (
 				<Card className={styles.shades__container}>
 					<div className={styles.shades__container_shade}>
@@ -179,7 +178,7 @@ const Shades: React.FC = () => {
 					</div>
 				</Card>
 			)}
-		</Space>
+		</Card>
 	);
 };
 

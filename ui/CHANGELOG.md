@@ -1,5 +1,12 @@
 ### [4.6.0] - 2023-08-18
 
+-   update label
+-   Create TextValidation component
+-   Back to the previous markdown editor
+-   Add Card to All form components
+
+### [4.6.0] - 2023-08-18
+
 -   Refactor Shades generator
 -   Add Platform under list
 
