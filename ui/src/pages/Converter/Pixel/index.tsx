@@ -10,6 +10,7 @@ const Pixel: React.FC = () => {
 	const [pixel, setPixel] = useState(0);
 	const [rem, setRem] = useState(0);
 	const [base, setBase] = useState(16);
+
 	return (
 		<Card bordered={false} className={style.pc}>
 			<Form layout="vertical">
@@ -18,7 +19,7 @@ const Pixel: React.FC = () => {
 						label="Pixels"
 						tooltip="This is a required field"
 						value={pixel}
-						onChange={(px: number | null) => {
+						onChange={(px) => {
 							if (px) {
 								setPixel(px);
 								setRem(px / base);
@@ -42,7 +43,7 @@ const Pixel: React.FC = () => {
 						label="REM"
 						tooltip="This is a required field"
 						value={rem}
-						onChange={(rem: number | null) => {
+						onChange={(rem) => {
 							if (rem) {
 								setRem(rem);
 								setPixel(rem * base);

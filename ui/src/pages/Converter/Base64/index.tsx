@@ -1,14 +1,11 @@
-import { Button, Form, Input, Space } from "antd";
+import { Button, Card, Form, Space } from "antd";
 import { useEffect, useState } from "react";
 import { Buffer } from "buffer";
 import style from "./Base64.module.scss";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
-
-import ValidateStatus from "./components/ValidateStatus";
 import { isBase64Valid } from "./utils/helper";
-
-const { TextArea } = Input;
+import TextareaWithValidation from "components/General/TextareaWithValidation";
 
 const Base64: React.FC = () => {
 	const [input, setInput] = useState("");
@@ -32,31 +29,35 @@ const Base64: React.FC = () => {
 	}, [result]);
 
 	return (
-		<Form layout="vertical" className={style.base}>
-			<TextArea
-				value={input}
-				onChange={(currentValue) => {
-					setInput(currentValue.target.value);
-					onClick("encode", currentValue.target.value);
-				}}
-				placeholder="Input"
-				autoSize={{ minRows: 2 }}
-				data-gramm="false"
-			/>
+		<Card>
+			<Form layout="vertical" className={style.base}>
+				<TextareaWithValidation
+					value={input}
+					onChange={(currentValue) => {
+						setInput(currentValue.target.value);
+						onClick("encode", currentValue.target.value);
+					}}
+					placeholder="Input"
+					label="raw input"
+					status={status}
+					rows={4}
+				/>
 
-			<Space>
-				<Button
-					disabled={IS_INPUT_EMPTY}
-					onClick={() => setInput("")}
-					role="clear_text"
-				>
-					Clear
-				</Button>
-				<Clipboard text={input} clipboardComponent={ClipboardButton} />
-			</Space>
+				<Space>
+					<Button
+						disabled={IS_INPUT_EMPTY}
+						onClick={() => setInput("")}
+						role="clear_text"
+					>
+						Clear
+					</Button>
+					<Clipboard
+						text={input}
+						clipboardComponent={ClipboardButton}
+					/>
+				</Space>
 
-			<div className={style.base__base64Container}>
-				<TextArea
+				<TextareaWithValidation
 					value={result}
 					onChange={(currentValue) => {
 						const value = currentValue.target.value;
@@ -64,24 +65,25 @@ const Base64: React.FC = () => {
 						onClick("decode", value);
 					}}
 					placeholder="Result"
-					autoSize={{ minRows: 2 }}
-					data-gramm="false"
+					status={status}
+					label="Base 64 output"
 				/>
 
-				<ValidateStatus status={status} />
-			</div>
-
-			<Space>
-				<Button
-					disabled={IS_RESULT_EMPTY}
-					onClick={() => setResult("")}
-					role="clear_base64"
-				>
-					Clear
-				</Button>
-				<Clipboard text={result} clipboardComponent={ClipboardButton} />
-			</Space>
-		</Form>
+				<Space>
+					<Button
+						disabled={IS_RESULT_EMPTY}
+						onClick={() => setResult("")}
+						role="clear_base64"
+					>
+						Clear
+					</Button>
+					<Clipboard
+						text={result}
+						clipboardComponent={ClipboardButton}
+					/>
+				</Space>
+			</Form>
+		</Card>
 	);
 };
 

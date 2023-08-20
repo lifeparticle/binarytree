@@ -1,22 +1,31 @@
 import { Input, InputNumber } from "antd";
 
-interface InputComponentProps {
+type NumberType = {
+	type: "number";
+	value: number;
+	onChange: (value: number | null) => void;
+};
+
+type TextType = {
+	type: "text";
+	value: string;
+	onChange: (value: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+type InputComponentPropsType = {
 	label: string;
 	precision?: number;
 	min?: number;
 	max?: number;
 	step?: number;
-	value: number | string;
 	tooltip?: string;
-	onChange: (value: any) => void;
 	placeholder?: string;
-	type: "text" | "number";
-}
-const InputComponent: React.FC<InputComponentProps> = (props) => {
+} & (NumberType | TextType);
+const InputComponent: React.FC<InputComponentPropsType> = (props) => {
 	return props.type === "number" ? (
 		<InputNumber size="large" style={{ width: "100%" }} {...props} />
 	) : (
-		<Input allowClear size="large" style={{ width: "100%" }} {...props} />
+		<Input allowClear size="large" style={{ width: "100%" }} />
 	);
 };
 
