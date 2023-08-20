@@ -1,7 +1,9 @@
 import MDEditor from "@uiw/react-md-editor";
-import { InputNumber, Space } from "antd";
+import { Card, Form, Space } from "antd";
 import { useState, useTransition } from "react";
 import { generateTable } from "./util/utils";
+import CopyInput from "components/Layouts/CopyInput";
+import InputComponent from "components/General/InputComponent";
 
 const TableGenerator: React.FC = () => {
 	const [row, setRow] = useState(10);
@@ -13,50 +15,62 @@ const TableGenerator: React.FC = () => {
 	const [isPending, startTransition] = useTransition();
 
 	return (
-		<Space direction="vertical" style={{ width: "100%" }}>
-			<InputNumber
-				size="large"
-				style={{ width: "100%" }}
-				value={row}
-				placeholder="Row"
-				min={0}
-				onChange={(val: number | null) => {
-					if (val !== null) {
-						startTransition(() => {
-							setRow(val);
-							setOutput((prevOutput) =>
-								generateTable(val, column, prevOutput)
-							);
-						});
-					}
-				}}
-			/>
+		<Card bordered={false}>
+			<Form layout="vertical">
+				<Space direction="vertical" style={{ width: "100%" }}>
+					<CopyInput>
+						<InputComponent
+							label="Number of ROW"
+							value={row}
+							placeholder="Row"
+							min={0}
+							onChange={(val: number | null) => {
+								if (val !== null) {
+									startTransition(() => {
+										setRow(val);
+										setOutput((prevOutput) =>
+											generateTable(
+												val,
+												column,
+												prevOutput
+											)
+										);
+									});
+								}
+							}}
+							type="number"
+						/>
+					</CopyInput>
 
-			<InputNumber
-				size="large"
-				style={{ width: "100%" }}
-				value={column}
-				placeholder="Column"
-				min={1}
-				onChange={(val: number | null) => {
-					if (val !== null) {
-						startTransition(() => {
-							setColumn(val);
-							setOutput((prevOutput) =>
-								generateTable(row, val, prevOutput)
-							);
-						});
-					}
-				}}
-			/>
+					<CopyInput>
+						<InputComponent
+							label="Number of Column"
+							type="number"
+							value={column}
+							placeholder="Column"
+							min={1}
+							onChange={(val: number | null) => {
+								if (val !== null) {
+									startTransition(() => {
+										setColumn(val);
+										setOutput((prevOutput) =>
+											generateTable(row, val, prevOutput)
+										);
+									});
+								}
+							}}
+						/>
+					</CopyInput>
 
-			<MDEditor
-				value={isPending ? "Generating table..." : output}
-				onChange={(val) => val && setOutput(val)}
-				height="800px"
-				style={{ fontSize: "52" }}
-			/>
-		</Space>
+					<MDEditor
+						value={isPending ? "Generating table..." : output}
+						onChange={(val) => val && setOutput(val)}
+						height="800px"
+						style={{ fontSize: "52" }}
+					/>
+				</Space>
+			</Form>
+		</Card>
 	);
 };
 

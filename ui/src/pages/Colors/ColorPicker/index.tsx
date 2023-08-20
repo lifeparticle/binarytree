@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import tinycolor from "tinycolor2";
 import style from "./ColorPicker.module.scss";
-import { Card, Input, Space } from "antd";
+import { Card, Form, Space } from "antd";
 import { ColorPicker as CP } from "@mantine/core";
 import { INITIAL_COLOR, INITIAL_FORMAT } from "./utils/constant";
 import ColorFormatTags from "./components/ColorFormatTags/ColorFormatTags";
@@ -10,6 +10,8 @@ import ClipboardButton from "components/General/ClipboardButton";
 import DisplayColors from "./components/DisplayColors/DisplayColors";
 import { FormatType } from "./utils/types";
 import { determineFormat } from "./utils/helper";
+import CopyInput from "components/Layouts/CopyInput";
+import InputComponent from "components/General/InputComponent";
 
 const ColorPicker: React.FC = () => {
 	const [color, setColor] = useState(INITIAL_COLOR);
@@ -50,53 +52,57 @@ const ColorPicker: React.FC = () => {
 	};
 
 	return (
-		<div className={style.cp}>
-			<Card bordered={false}>
-				<Space size="large" direction="vertical" wrap>
-					<div className={style.cp__result}>
-						<Input
+		<Form layout="vertical">
+			<div className={style.cp}>
+				<Card bordered={false}>
+					<Space size="large" direction="vertical" wrap>
+						<CopyInput>
+							<InputComponent
+								label="Color Code"
+								value={color}
+								onChange={onInputChange}
+								type="text"
+							/>
+							<Clipboard
+								text={color}
+								clipboardComponent={ClipboardButton}
+							/>
+						</CopyInput>
+
+						<Space size="small" direction="horizontal" wrap>
+							<ColorFormatTags
+								currentFormat={format}
+								onSelect={setFormat}
+							/>
+						</Space>
+						<CP
+							format={format}
 							value={color}
-							onChange={onInputChange}
-							size="large"
-						/>
-						<Clipboard
-							text={color}
-							clipboardComponent={ClipboardButton}
-						/>
-					</div>
-					<Space size="small" direction="horizontal" wrap>
-						<ColorFormatTags
-							currentFormat={format}
-							onSelect={setFormat}
+							onChange={setColor}
+							size="xl"
 						/>
 					</Space>
-					<CP
-						format={format}
-						value={color}
-						onChange={setColor}
-						size="xl"
-					/>
-				</Space>
-			</Card>
-			<DisplayColors
-				colors={colors}
-				format={format}
-				displayType="colors"
-				title="Colors"
-			/>
-			<DisplayColors
-				colors={colors}
-				format={format}
-				displayType="variables"
-				title="CSS variables"
-			/>
-			<DisplayColors
-				colors={colors}
-				format={format}
-				displayType="use-variables"
-				title="Use CSS variables"
-			/>
-		</div>
+				</Card>
+				<DisplayColors
+					colors={colors}
+					format={format}
+					displayType="colors"
+					title="Colors"
+				/>
+				<DisplayColors
+					colors={colors}
+					format={format}
+					displayType="variables"
+					title="CSS variables"
+				/>
+				<DisplayColors
+					colors={colors}
+					format={format}
+					displayType="use-variables"
+					title="Use CSS variables"
+				/>
+			</div>
+		</Form>
 	);
 };
 

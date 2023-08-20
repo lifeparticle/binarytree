@@ -27,9 +27,8 @@ describe("JsonToTs", () => {
 			target: { value: '{"key": "value"}' },
 		});
 
-		const interfaceInput = screen.getByPlaceholderText(
-			"Root Interface name"
-		);
+		const interfaceInput =
+			screen.getByPlaceholderText(/Enter Interface name/i);
 		const ROOT_INTERFACE_NAME = "MyInterface";
 
 		fireEvent.change(interfaceInput, {
