@@ -12,7 +12,6 @@ const TextEditor: React.FC = () => {
 	const [charCountWithoutSpace, setCharCountWithoutSpace] = useState(0);
 
 	useEffect(() => {
-		console.log({ value });
 		const cleanValue = value.replace(/(<([^>]+)>)/gi, " ").trim();
 		if (cleanValue === "") {
 			setWordCount(0);
@@ -20,8 +19,6 @@ const TextEditor: React.FC = () => {
 			setCharCountWithoutSpace(0);
 			return;
 		}
-
-		console.log({ cleanValue });
 		setWordCount(cleanValue.split(/[\s]+/g).length);
 		setCharCount(cleanValue.replace(/[\s]+/g, " ").length);
 		setCharCountWithoutSpace(cleanValue.replace(/[\s]+/g, "").length);
