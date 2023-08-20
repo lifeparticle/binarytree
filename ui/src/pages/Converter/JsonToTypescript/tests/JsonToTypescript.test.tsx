@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { describe } from "vitest";
+import { describe, test } from "vitest";
 import JsonToTypescript from "..";
 
 describe("JsonToTs", () => {
@@ -14,12 +14,12 @@ describe("JsonToTs", () => {
 		expect(JsonTextbox).toBeInTheDocument();
 
 		const rootInterfacenameInput = screen.getByPlaceholderText(
-			"Root Interface name"
+			"Enter Interface name"
 		);
 		expect(rootInterfacenameInput).toBeInTheDocument();
 	});
 
-	it("generates interfaces on button click", () => {
+	test("generates interfaces on button click", () => {
 		render(<JsonToTypescript />);
 
 		const jsonTextarea = screen.getByPlaceholderText("JSON");
