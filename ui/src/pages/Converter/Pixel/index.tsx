@@ -19,6 +19,7 @@ const Pixel: React.FC = () => {
 						label="Pixels"
 						tooltip="This is a required field"
 						value={pixel}
+						placeholder="Enter pixel value"
 						onChange={(px) => {
 							if (px) {
 								setPixel(px);
@@ -41,6 +42,7 @@ const Pixel: React.FC = () => {
 				<CopyInput>
 					<InputComponent
 						label="REM"
+						placeholder="Enter rem value"
 						tooltip="This is a required field"
 						value={rem}
 						onChange={(rem) => {
@@ -66,6 +68,7 @@ const Pixel: React.FC = () => {
 					<InputComponent
 						label="Base Font Size"
 						tooltip="This is a required field"
+						placeholder="Enter base font size"
 						value={base}
 						onChange={(base: number | null) => {
 							if (base) {
