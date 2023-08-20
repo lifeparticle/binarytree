@@ -1,4 +1,4 @@
-import { Button, Card, Form, Space } from "antd";
+import { Button, Card, Form, Space, Input } from "antd";
 import { useEffect, useState } from "react";
 import { Buffer } from "buffer";
 import style from "./Base64.module.scss";
@@ -6,6 +6,8 @@ import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import { isBase64Valid } from "./utils/helper";
 import TextareaWithValidation from "components/General/TextareaWithValidation";
+
+const { TextArea } = Input;
 
 const Base64: React.FC = () => {
 	const [input, setInput] = useState("");
@@ -31,17 +33,17 @@ const Base64: React.FC = () => {
 	return (
 		<Card>
 			<Form layout="vertical" className={style.base}>
-				<TextareaWithValidation
-					value={input}
-					onChange={(currentValue) => {
-						setInput(currentValue.target.value);
-						onClick("encode", currentValue.target.value);
-					}}
-					placeholder="Input"
-					label="raw input"
-					status={status}
-					rows={4}
-				/>
+				<Form.Item label="Text input">
+					<TextArea
+						value={input}
+						onChange={(currentValue) => {
+							setInput(currentValue.target.value);
+							onClick("encode", currentValue.target.value);
+						}}
+						placeholder="Input"
+						rows={4}
+					/>
+				</Form.Item>
 
 				<Space>
 					<Button
