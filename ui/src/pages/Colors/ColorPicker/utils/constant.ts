@@ -1,19 +1,28 @@
 import { FormatType } from "./types";
 
-const formatLabels = ["HEX", "RGB", "RGBA", "HSL", "HSLA"] as const;
+const FORMAT_LABELS = ["HEX", "RGB", "RGBA", "HSL", "HSLA"] as const;
 
-const extendedFormatLabels = [
-	...formatLabels.slice(0, 1),
+const EXTENDED_FORMAT_LABELS = [
+	...FORMAT_LABELS.slice(0, 1),
 	"HEX8",
-	...formatLabels.slice(1),
+	...FORMAT_LABELS.slice(1),
 ] as const;
 
-const DATA_OPTIONS = formatLabels.map((label) => ({
+const FORMAT_VALUES = {
+	hex: "",
+	hex8: "",
+	rgb: "",
+	rgba: "",
+	hsl: "",
+	hsla: "",
+};
+
+const DATA_OPTIONS = FORMAT_LABELS.map((label) => ({
 	value: label.toLowerCase() as FormatType,
 	label,
 }));
 
-const EXTENDED_DATA_OPTIONS = extendedFormatLabels.map((label) => ({
+const EXTENDED_DATA_OPTIONS = EXTENDED_FORMAT_LABELS.map((label) => ({
 	value: label.toLowerCase() as FormatType,
 	label,
 }));
@@ -22,8 +31,9 @@ const INITIAL_COLOR = "#ffffff";
 const INITIAL_FORMAT = DATA_OPTIONS[0].value;
 
 export {
-	formatLabels,
-	extendedFormatLabels,
+	FORMAT_LABELS,
+	FORMAT_VALUES,
+	EXTENDED_FORMAT_LABELS,
 	INITIAL_COLOR,
 	INITIAL_FORMAT,
 	DATA_OPTIONS,
