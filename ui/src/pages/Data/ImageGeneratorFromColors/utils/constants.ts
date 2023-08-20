@@ -1,0 +1,3 @@
+const DEFAULT_COLOR = ["#FF0000, #00FFFF, #FFFFFF, #C0C0C0, #000000"];
+
+export { DEFAULT_COLOR };
