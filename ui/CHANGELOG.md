@@ -1,5 +1,11 @@
 ### [4.6.0] - 2023-08-18
 
+-   Update Tests
+-   Fix Ui in Text Editor
+-   Fix error in Colorpicker & shades generator
+
+### [4.6.0] - 2023-08-18
+
 -   update label
 -   Create TextValidation component
 -   Back to the previous markdown editor
