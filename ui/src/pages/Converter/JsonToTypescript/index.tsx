@@ -1,13 +1,14 @@
-import TextArea from "antd/es/input/TextArea";
 import JsonToTS from "json-to-ts";
 import { useEffect, useState } from "react";
 import { Highlight, themes } from "prism-react-renderer";
 import style from "./JsonToTypescript.module.scss";
-import { Button, Input, Space } from "antd";
+import { Button, Card, Form, Space } from "antd";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
-import ValidationStatus from "./components/ValidationStatus";
 import { isJsonValid } from "./utils/helper";
+import TextareaWithValidation from "components/General/TextareaWithValidation";
+import CopyInput from "components/Layouts/CopyInput";
+import InputComponent from "components/General/InputComponent";
 
 const JsonToTypescript: React.FC = () => {
 	const [json, setJson] = useState("");
@@ -37,70 +38,73 @@ const JsonToTypescript: React.FC = () => {
 	}, [json]);
 
 	return (
-		<div className={style.json}>
-			<div className={style.json__textarea}>
-				<TextArea
+		<Card className={style.json}>
+			<Form layout="vertical">
+				<TextareaWithValidation
+					value={json}
+					onChange={(e) => {
+						setJson(e.target.value);
+					}}
+					label="Provide Json Input"
 					placeholder="JSON"
 					rows={8}
-					onChange={(event) => setJson(event.target.value)}
-					value={json}
-					autoCorrect="off"
-					typeof="string"
+					status={status}
 				/>
 
-				<ValidationStatus status={status} />
-			</div>
+				<CopyInput>
+					<InputComponent
+						label="Root Interface Name"
+						placeholder="Enter Interface name"
+						value={rootName}
+						onChange={(e) => setRootName(e.target.value)}
+						type="text"
+					/>
+				</CopyInput>
 
-			<Input
-				size="large"
-				placeholder="Root Interface name"
-				value={rootName}
-				onChange={(e) => setRootName(e.target.value)}
-			/>
-
-			{interfaces.length > 0 && (
-				<Highlight
-					code={interfaces
-						.map((int) => "export " + int)
-						.join("\n\n")
-						.trim()}
-					language="typescript"
-					theme={themes.okaidia}
-				>
-					{({ style, tokens, getLineProps, getTokenProps }) => (
-						<pre style={style}>
-							{tokens.map((line, i) => (
-								<div key={i} {...getLineProps({ line })}>
-									<span>{i + 1}</span>
-									{line.map((token, key) => (
-										<span
-											key={key}
-											{...getTokenProps({ token })}
-										/>
-									))}
-								</div>
-							))}
-						</pre>
-					)}
-				</Highlight>
-			)}
-			<Space>
-				<Button
-					onClick={generateInterfaces}
-					disabled={json.length === 0}
-				>
-					Convert
-				</Button>
-				<Clipboard
-					clipboardComponent={ClipboardButton}
-					text={
-						json.length === 0
-							? ""
-							: interfaces.toString().replace(/,/g, "\n\n")
-					}
-				/>
-			</Space>
-		</div>
+				{interfaces.length > 0 && (
+					<Highlight
+						code={interfaces
+							.map((int) => "export " + int)
+							.join("\n\n")
+							.trim()}
+						language="typescript"
+						theme={themes.okaidia}
+					>
+						{({ style, tokens, getLineProps, getTokenProps }) => (
+							<pre style={style}>
+								{tokens.map((line, i) => (
+									<div key={i} {...getLineProps({ line })}>
+										<span>{i + 1}</span>
+										{line.map((token, key) => (
+											<span
+												key={key}
+												{...getTokenProps({ token })}
+											/>
+										))}
+									</div>
+								))}
+							</pre>
+						)}
+					</Highlight>
+				)}
+				<Space>
+					<Button
+						onClick={generateInterfaces}
+						disabled={json.length === 0}
+					>
+						Convert
+					</Button>
+					<Clipboard
+						clipboardComponent={ClipboardButton}
+						text={
+							json.length === 0
+								? ""
+								: interfaces.toString().replace(/,/g, "\n\n")
+						}
+					/>
+				</Space>
+			</Form>
+		</Card>
 	);
 };
 

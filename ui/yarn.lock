@@ -2164,7 +2164,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/codemirror@npm:^5.60.4, @types/codemirror@npm:~5.60.5":
+"@types/codemirror@npm:^5.60.4":
   version: 5.60.8
   resolution: "@types/codemirror@npm:5.60.8"
   dependencies:
@@ -2727,7 +2727,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uiw/react-md-editor@npm:3.23.5":
+"@uiw/react-md-editor@npm:^3.23.5":
   version: 3.23.5
   resolution: "@uiw/react-md-editor@npm:3.23.5"
   dependencies:
@@ -3613,7 +3613,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^6.0.0
     "@typescript-eslint/parser": ^6.2.1
     "@uiw/react-markdown-editor": ^5.11.2
-    "@uiw/react-md-editor": 3.23.5
+    "@uiw/react-md-editor": ^3.23.5
     "@vitejs/plugin-react": ^4.0.3
     antd: ^5.4.7
     buffer: ^6.0.3
@@ -3639,7 +3639,6 @@ __metadata:
     react-markdown: 6
     react-quill: ^2.0.0
     react-router-dom: ^6.11.1
-    react-simplemde-editor: ^5.2.0
     sass: ^1.62.1
     tinycolor2: ^1.6.0
     typescript: ^5.0.2
@@ -8816,19 +8815,6 @@ __metadata:
   peerDependencies:
     react: ">=16.8"
   checksum: 345b29277e13997f2625f0037f537eaf1955bb9f44ebfea80dd3ff83fc06273f7b64e1be944bfc75945fd2af5af917874133a8a93ed5ecaca523be8f045ae166
-  languageName: node
-  linkType: hard
-
-"react-simplemde-editor@npm:^5.2.0":
-  version: 5.2.0
-  resolution: "react-simplemde-editor@npm:5.2.0"
-  dependencies:
-    "@types/codemirror": ~5.60.5
-  peerDependencies:
-    easymde: ">= 2.0.0 < 3.0.0"
-    react: ">=16.8.2"
-    react-dom: ">=16.8.2"
-  checksum: 3e47019f8ca47875fd750b7af975c0a485372d494434d8b251a0222aab810f94fda6807916d7aac3be82fbd8173d2c1a116ec91ac6fd2033f635f053297ed266
   languageName: node
   linkType: hard
 

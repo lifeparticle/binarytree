@@ -2,21 +2,4 @@
 	max-width: var(--bt-converter-width);
 	display: flex;
 	flex-direction: column;
-	gap: var(--bt-size-16);
-
-	&__textarea {
-		position: relative;
-
-		&__validator {
-			position: absolute;
-			top: var(--bt-size-10);
-			right: var(--bt-size-10);
-
-			button {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
-		}
-	}
 }
