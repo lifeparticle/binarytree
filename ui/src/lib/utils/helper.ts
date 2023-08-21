@@ -28,7 +28,7 @@ const getTextColor = (value: string): string => {
 };
 
 const isTransparent = (value: string): boolean => {
-	if (tinycolor(value).getAlpha() === 0) {
+	if (tinycolor(value).getAlpha() < 1) {
 		return true;
 	}
 	return false;
