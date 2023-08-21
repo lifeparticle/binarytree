@@ -11,6 +11,7 @@
 		"@mantine/hooks": "^6.0.10",
 		"@tabler/icons": "^2.17.0",
 		"@tanstack/react-query": "^4.29.25",
+		"@tinymce/tinymce-react": "^4.3.0",
 		"@types/file-saver": "^2.0.5",
 		"@types/jest": "^29.5.1",
 		"@types/react-router-dom": "^5.3.3",
@@ -20,6 +21,7 @@
 		"buffer": "^6.0.3",
 		"easymde": "^2.18.0",
 		"file-saver": "^2.0.5",
+		"fs-extra": "^11.1.1",
 		"html-to-image": "^1.11.11",
 		"json-to-ts": "^1.7.0",
 		"jspdf": "^2.5.1",
@@ -33,10 +35,10 @@
 		"react-dom": "^18.2.0",
 		"react-error-boundary": "^4.0.10",
 		"react-markdown": "6",
-		"react-quill": "^2.0.0",
 		"react-router-dom": "^6.11.1",
 		"sass": "^1.62.1",
 		"tinycolor2": "^1.6.0",
+		"tinymce": "^6.6.2",
 		"web-vitals": "^3.3.1"
 	},
 	"scripts": {
@@ -45,7 +47,8 @@
 		"build": "tsc && vite build",
 		"test": "vitest",
 		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"postinstall": "node ./postinstall.js"
 	},
 	"eslintConfig": {
 		"extends": [

@@ -1,84 +1,133 @@
+import React, { useState, useRef } from "react";
 import { Badge, Button, Card, Col, Row, Space } from "antd";
-import { useEffect, useState } from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
-import style from "./TextEditor.module.scss";
-import "./quill.css";
+import { Editor } from "@tinymce/tinymce-react";
+import { Editor as TinyMCEEditor } from "tinymce";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
+import style from "./TextEditor.module.scss";
 
 const TextEditor: React.FC = () => {
-	const [value, onChange] = useState("");
 	const [wordCount, setWordCount] = useState(0);
 	const [charCount, setCharCount] = useState(0);
 	const [charCountWithoutSpace, setCharCountWithoutSpace] = useState(0);
 
-	useEffect(() => {
-		const cleanValue = value.replace(/(<([^>]+)>)/gi, " ").trim();
-		if (cleanValue === "") {
+	const editorRef = useRef<TinyMCEEditor | null>(null);
+
+	const updateCounts = (content: string) => {
+		if (content.length === 0) {
 			setWordCount(0);
 			setCharCount(0);
 			setCharCountWithoutSpace(0);
 			return;
 		}
+		const cleanValue = content.replace(/(<([^>]+)>)/gi, "").trim();
 		setWordCount(cleanValue.split(/[\s]+/g).length);
 		setCharCount(cleanValue.replace(/[\s]+/g, " ").length);
 		setCharCountWithoutSpace(cleanValue.replace(/[\s]+/g, "").length);
-	}, [value]);
+	};
+
+	const handleClear = () => {
+		if (editorRef.current) {
+			editorRef.current.setContent("");
+			updateCounts("");
+		}
+	};
+
+	const handleLog = () => {
+		if (editorRef.current) {
+			const content = editorRef.current.getContent();
+			updateCounts(content);
+		}
+	};
 
 	return (
 		<Card>
 			<div className={style.te}>
-				<Row gutter={16}>
-					<Col span={20}>
-						<ReactQuill
-							id="quill"
-							theme="snow"
-							value={value}
-							onChange={onChange}
+				<Row gutter={[16, 16]}>
+					<Col xs={24} lg={20}>
+						<Editor
+							tinymceScriptSrc="/tinymce/tinymce.min.js"
+							onInit={(editor) => {
+								editorRef.current = editor.target;
+							}}
+							initialValue="<p>This is the initial content of the editor.</p>"
+							init={{
+								height: 500,
+								menubar: false,
+								plugins: [
+									"advlist",
+									"autolink",
+									"lists",
+									"link",
+									"image",
+									"charmap",
+									"anchor",
+									"searchreplace",
+									"visualblocks",
+									"code",
+									"fullscreen",
+									"insertdatetime",
+									"media",
+									"table",
+									"preview",
+									"help",
+								],
+								toolbar:
+									"undo redo | blocks | " +
+									"bold italic forecolor | alignleft aligncenter " +
+									"alignright alignjustify | bullist numlist outdent indent | " +
+									"removeformat | help",
+								content_style:
+									"body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
+							}}
 						/>
 					</Col>
 
-					<Col span={4}>
+					<Col xs={24} lg={4}>
 						<Card>
-							<div>
-								<span>Word count:</span>
-								<Badge
-									count={wordCount}
-									style={{ backgroundColor: "#52c41a" }}
-								/>{" "}
-							</div>
-							<div>
-								<span>Character with space: </span>
-								<Badge
-									count={charCount}
-									style={{ backgroundColor: "#52c41a" }}
-									overflowCount={999}
-								/>{" "}
-							</div>
-							<div>
-								<span>Character without space: </span>
-								<Badge
-									count={charCountWithoutSpace}
-									style={{ backgroundColor: "#52c41a" }}
-									overflowCount={999}
-								/>
-							</div>
+							<Space direction="vertical">
+								<Space>
+									<span>Word count </span>
+									<Badge
+										count={wordCount}
+										showZero
+										style={{ backgroundColor: "#52c41a" }}
+									/>
+								</Space>
+								<Space>
+									<span>Character </span>
+									<Badge
+										count={charCount}
+										style={{ backgroundColor: "#52c41a" }}
+										showZero
+										overflowCount={999}
+									/>
+								</Space>
+								<Space>
+									<span>Character without space </span>
+									<Badge
+										count={charCountWithoutSpace}
+										style={{ backgroundColor: "#52c41a" }}
+										showZero
+										overflowCount={999}
+									/>
+								</Space>
+
+								<Space>
+									<Button onClick={handleLog}>
+										Show Count
+									</Button>
+								</Space>
+							</Space>
 						</Card>
 					</Col>
 				</Row>
 
 				<Space>
-					<Button
-						onClick={() => {
-							onChange("");
-						}}
-					>
-						Clear
-					</Button>
+					<Button onClick={handleClear}>Clear</Button>
 
 					<Clipboard
-						text={value}
+						text={editorRef.current?.getContent() || " "}
 						clipboardComponent={ClipboardButton}
 					/>
 				</Space>
