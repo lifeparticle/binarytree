@@ -21,37 +21,25 @@ const ColorDisplay: React.FC<ColorDisplayProps> = ({
 	value,
 	format,
 }) => {
-	console.log(isTransparent(value));
-
-	const bg = label.toLocaleLowerCase() === format ? value : "";
-
-	console.log("bg", bg);
+	const isLabelMatchingFormat = label.toLocaleLowerCase() === format;
+	const backgroundColor = isLabelMatchingFormat ? value : "";
+	const textColor = isLabelMatchingFormat ? getTextColor(value) : "";
+	const border = isLabelMatchingFormat ? `1px solid ${textColor}` : "";
 
 	const classes = classNames(
 		style.cd,
-		isTransparent(bg) ? style.cd__checkered : undefined
+		isTransparent(backgroundColor) ? style.cd__checkered : undefined
 	);
 
 	return (
 		<div
 			className={classes}
 			style={{
-				backgroundColor: bg,
-				border:
-					label.toLocaleLowerCase() === format
-						? `1px solid ${getTextColor(value)}`
-						: "",
+				backgroundColor,
+				border,
 			}}
 		>
-			<Title
-				level={5}
-				style={{
-					color:
-						label.toLocaleLowerCase() === format
-							? getTextColor(value)
-							: "",
-				}}
-			>
+			<Title level={5} style={{ color: textColor }}>
 				{customLabel}: {customValue}
 			</Title>
 			<Clipboard text={value} clipboardComponent={ClipboardButton} />
