@@ -25,7 +25,7 @@ const InputComponent: React.FC<InputComponentPropsType> = (props) => {
 	return props.type === "number" ? (
 		<InputNumber size="large" style={{ width: "100%" }} {...props} />
 	) : (
-		<Input allowClear size="large" style={{ width: "100%" }} />
+		<Input allowClear size="large" style={{ width: "100%" }} {...props} />
 	);
 };
 
