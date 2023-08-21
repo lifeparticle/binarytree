@@ -3,6 +3,7 @@ import { EXTENDED_DATA_OPTIONS } from "pages/Colors/ColorPicker/utils/constant";
 import ColorDisplay from "pages/Colors/ColorPicker/components/ColorDisplay/ColorDisplay";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
+import style from "./DisplayColors.module.scss";
 
 interface DisplayProps {
 	colors: {
@@ -56,7 +57,7 @@ const DisplayColors: React.FC<DisplayProps> = ({
 
 	return (
 		<Card bordered={false} title={title}>
-			<Space direction="vertical">
+			<Space direction="vertical" className={style.dp}>
 				{EXTENDED_DATA_OPTIONS.map(({ value, label }) => (
 					<ColorDisplay
 						key={value}
