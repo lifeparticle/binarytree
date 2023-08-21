@@ -1,7 +1,7 @@
 import { Button, Space } from "antd";
 import { Check, X } from "lucide-react";
 import React from "react";
-import style from "../textareavalidation.module.scss";
+import style from "components/General/TextareaWithValidation/TextareaWithValidation.module.scss";
 
 interface ValidateStatusProps {
 	status: string;

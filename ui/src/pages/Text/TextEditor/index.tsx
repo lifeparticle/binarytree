@@ -1,9 +1,11 @@
-import { Button, Card } from "antd";
+import { Badge, Button, Card, Col, Row, Space } from "antd";
 import { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import style from "./TextEditor.module.scss";
 import "./quill.css";
+import Clipboard from "components/RenderProps/Clipboard";
+import ClipboardButton from "components/General/ClipboardButton";
 
 const TextEditor: React.FC = () => {
 	const [value, onChange] = useState("");
@@ -27,22 +29,59 @@ const TextEditor: React.FC = () => {
 	return (
 		<Card>
 			<div className={style.te}>
-				<ReactQuill theme="snow" value={value} onChange={onChange} />
-				<div className={style.te__footer}>
-					<h4>Word count: {wordCount}</h4>
-					<h4>Character count with space: {charCount}</h4>
-					<h4>
-						Character count without space: {charCountWithoutSpace}
-					</h4>
-				</div>
+				<Row gutter={16}>
+					<Col span={20}>
+						<ReactQuill
+							id="quill"
+							theme="snow"
+							value={value}
+							onChange={onChange}
+						/>
+					</Col>
 
-				<Button
-					onClick={() => {
-						onChange("");
-					}}
-				>
-					Clear
-				</Button>
+					<Col span={4}>
+						<Card>
+							<div>
+								<span>Word count:</span>
+								<Badge
+									count={wordCount}
+									style={{ backgroundColor: "#52c41a" }}
+								/>{" "}
+							</div>
+							<div>
+								<span>Character with space: </span>
+								<Badge
+									count={charCount}
+									style={{ backgroundColor: "#52c41a" }}
+									overflowCount={999}
+								/>{" "}
+							</div>
+							<div>
+								<span>Character without space: </span>
+								<Badge
+									count={charCountWithoutSpace}
+									style={{ backgroundColor: "#52c41a" }}
+									overflowCount={999}
+								/>
+							</div>
+						</Card>
+					</Col>
+				</Row>
+
+				<Space>
+					<Button
+						onClick={() => {
+							onChange("");
+						}}
+					>
+						Clear
+					</Button>
+
+					<Clipboard
+						text={value}
+						clipboardComponent={ClipboardButton}
+					/>
+				</Space>
 			</div>
 		</Card>
 	);

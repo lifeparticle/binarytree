@@ -1,6 +1,6 @@
 import { Form } from "antd";
 import ValidationStatus from "./components/ValidateStatus";
-import style from "./textareavalidation.module.scss";
+import style from "./TextareaWithValidation.module.scss";
 import { Input } from "antd";
 
 const { TextArea } = Input;
