@@ -19,6 +19,12 @@
 			display: grid;
 			column-gap: 10px;
 			grid-template-columns: 1fr 1fr 1fr;
+
+			div {
+				display: flex;
+				flex-direction: column;
+				gap: var(--bt-size-10);
+			}
 		}
 	}
 
