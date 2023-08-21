@@ -21,15 +21,19 @@ const { Title } = Typography;
 const Shades: React.FC = () => {
 	const [color, setColor] = useState<string>(DEFAULT_COLOR);
 	const [shades, setShades] = useState<string[]>([]);
-	const [numberOfShades, setNumberOfShades] = useState<number>(0);
+	const [numberOfShades, setNumberOfShades] =
+		useState<number>(DEFAULT_NUM_SHADES);
 	const [isPending, startTransition] = useTransition();
-	const [mode, setMode] = useState("darkest"); // Add this state for switch
+	const [mode, setMode] = useState("darkest");
 
 	useCombinedKeyPress(
 		() => setInputs(DEFAULT_COLOR, DEFAULT_NUM_SHADES),
 		["ControlLeft", "KeyE"]
 	);
-	useCombinedKeyPress(() => setInputs("", 0), ["ControlLeft", "KeyR"]);
+	useCombinedKeyPress(
+		() => setInputs(DEFAULT_COLOR, DEFAULT_NUM_SHADES),
+		["ControlLeft", "KeyR"]
+	);
 
 	const setInputs = (color: string, numberOfShades: number) => {
 		setColor(color);

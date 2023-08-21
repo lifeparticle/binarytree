@@ -44,7 +44,7 @@ h5 {
 
 .ant-layout-sider,
 .ant-layout-content {
-	max-height: calc(100dvh - 5dvh);
+	/* max-height: calc(100dvh - 5dvh); */
 	&::-webkit-scrollbar {
 		width: var(--bt-size-8);
 	}
@@ -67,7 +67,7 @@ h5 {
 .ant-layout-content {
 	overflow-x: auto;
 	overflow-y: auto;
-	max-height: calc(100dvh - 5dvh);
+	max-height: 100dvh;
 	padding: var(--bt-size-10);
 	scroll-behavior: smooth;
 }
@@ -82,13 +82,18 @@ h5 {
 	padding-inline: 0px;
 }
 
-/* .ant-layout-footer {
-	background-color: red;
-	width: 100%;
-	padding: var(--bt-size-10);
-	color: red;
-} */
+.app__menu_bottom {
+	/* background-color: red; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
 
 .ant-layout-footer > a > img {
 	height: var(--bt-size-40);
+}
+
+.ant-menu {
+	flex-grow: 1;
 }

@@ -1,12 +1,5 @@
-import { Button, Layout, Switch, theme } from "antd";
-import {
-	ArrowLeftFromLine,
-	ArrowRightFromLine,
-	Hexagon,
-	Moon,
-	Sun,
-	Github,
-} from "lucide-react";
+import { Button, Layout, theme } from "antd";
+import { ArrowLeftFromLine, ArrowRightFromLine, Hexagon } from "lucide-react";
 import { Link } from "react-router-dom";
 import style from "./header.module.scss";
 const { Header: AntHeader } = Layout;
@@ -18,12 +11,7 @@ interface HeaderProps {
 	handleMenuCollapse: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({
-	handleThemeChange,
-	collapsed,
-	handleMenuCollapse,
-	isDarkMode,
-}) => {
+const Header: React.FC<HeaderProps> = ({ collapsed, handleMenuCollapse }) => {
 	const {
 		token: { colorBgContainer, colorText },
 	} = theme.useToken();
@@ -50,29 +38,6 @@ const Header: React.FC<HeaderProps> = ({
 					) : (
 						<ArrowLeftFromLine color={colorText} />
 					)}
-				</Button>
-			</div>
-			<div className={style.header_right}>
-				<Switch
-					className={style.header_switch}
-					checkedChildren={
-						<Moon size={16} color={colorBgContainer} />
-					}
-					unCheckedChildren={<Sun size={16} />}
-					onChange={handleThemeChange}
-					style={{ backgroundColor: colorText }}
-					checked={isDarkMode}
-				/>
-				<Button
-					type="text"
-					onClick={() =>
-						window.open(
-							"https://github.com/lifeparticle/binarytree",
-							"_blank"
-						)
-					}
-				>
-					<Github color={colorText} />
 				</Button>
 			</div>
 		</AntHeader>
