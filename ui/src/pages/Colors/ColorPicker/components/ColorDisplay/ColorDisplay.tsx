@@ -2,7 +2,7 @@ import { Typography } from "antd";
 import style from "./ColorDisplay.module.scss";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
-import { getTextColor } from "lib/utils/helper";
+import { classNames, getTextColor, isTransparent } from "lib/utils/helper";
 
 const { Title } = Typography;
 
@@ -21,12 +21,22 @@ const ColorDisplay: React.FC<ColorDisplayProps> = ({
 	value,
 	format,
 }) => {
+	console.log(isTransparent(value));
+
+	const bg = label.toLocaleLowerCase() === format ? value : "";
+
+	console.log("bg", bg);
+
+	const classes = classNames(
+		style.cd,
+		isTransparent(bg) ? style.cd__checkered : undefined
+	);
+
 	return (
 		<div
-			className={style.cd}
+			className={classes}
 			style={{
-				backgroundColor:
-					label.toLocaleLowerCase() === format ? value : "",
+				backgroundColor: bg,
 				border:
 					label.toLocaleLowerCase() === format
 						? `1px solid ${getTextColor(value)}`

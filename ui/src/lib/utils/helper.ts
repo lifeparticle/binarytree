@@ -27,8 +27,21 @@ const getTextColor = (value: string): string => {
 	return tinycolor(value).isDark() ? "white" : "black";
 };
 
+const isTransparent = (value: string): boolean => {
+	if (tinycolor(value).getAlpha() === 0) {
+		return true;
+	}
+	return false;
+};
+
 const classNames = (...args: (string | undefined)[]) => {
 	return args.filter(Boolean).join(" ");
 };
 
-export { setLocalstorageValue, getLocalstorageValue, classNames, getTextColor };
+export {
+	setLocalstorageValue,
+	getLocalstorageValue,
+	classNames,
+	getTextColor,
+	isTransparent,
+};
