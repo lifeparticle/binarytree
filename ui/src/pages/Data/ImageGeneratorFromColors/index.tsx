@@ -14,6 +14,9 @@ import InputComponent from "components/General/InputComponent";
 const { Title } = Typography;
 const { TextArea } = Input;
 
+const PLACE_HOLDER_TEXT =
+	"Paste colors separated by Space or comma or new line";
+
 const ImageGeneratorFromColors: React.FC = () => {
 	const [colors, setColors] = useState<Array<string>>([]);
 	const [value, setValue] = useState("");
@@ -57,14 +60,15 @@ const ImageGeneratorFromColors: React.FC = () => {
 	return (
 		<Form layout="vertical">
 			<div className={style.igfc}>
-				<Form.Item label="Enter Comma separated pixel value">
+				<Form.Item label={PLACE_HOLDER_TEXT}>
 					<TextArea
-						placeholder="Paste colors separated by commas or new line"
+						placeholder={"Enter " + PLACE_HOLDER_TEXT}
 						rows={12}
 						onChange={(event) =>
 							onTextAreaChange(event.currentTarget.value)
 						}
 						value={value}
+						data-gramm={false}
 					/>
 				</Form.Item>
 				<div className={style.igfc__inputs}>

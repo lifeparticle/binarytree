@@ -42,6 +42,7 @@ const Base64: React.FC = () => {
 						}}
 						placeholder="Input"
 						rows={4}
+						data-gramm={false}
 					/>
 				</Form.Item>
 

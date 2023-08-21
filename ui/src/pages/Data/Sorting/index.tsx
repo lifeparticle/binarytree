@@ -35,6 +35,7 @@ const Sorting: React.FC = () => {
 								onChange={(event) => {
 									setInput(event.currentTarget.value);
 								}}
+								data-gramm={false}
 							/>
 						</Form.Item>
 
@@ -66,6 +67,7 @@ const Sorting: React.FC = () => {
 								value={output}
 								rows={10}
 								readOnly
+								data-gramm={false}
 							/>
 						</Form.Item>
 
