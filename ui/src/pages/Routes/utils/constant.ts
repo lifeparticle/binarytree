@@ -77,6 +77,10 @@ const ROUTES: Route[] = [
 		title: "TV Series",
 	},
 	{
+		path: "/list/ui-ux",
+		title: "UI/UX",
+	},
+	{
 		path: "/list/youtube",
 		title: "Youtube",
 	},

@@ -13,17 +13,18 @@ const ImageGeneratorFromColors = lazy(
 );
 const Sorting = lazy(() => import("pages/Data/Sorting"));
 
-const Blog = lazy(() => import("pages/List/Blog/Blog"));
-const Book = lazy(() => import("pages/List/Book/Book"));
-const Course = lazy(() => import("pages/List/Course/Course"));
-const Github = lazy(() => import("pages/List/Github/Github"));
-const Icon = lazy(() => import("pages/List/Icon/Icon"));
-const Movie = lazy(() => import("pages/List/Movie/Movie"));
-const Platform = lazy(() => import("pages/List/Platform/Platform"));
-const Plugin = lazy(() => import("pages/List/Plugin/Plugin"));
-const Tool = lazy(() => import("pages/List/Tool/Tool"));
-const TvSeries = lazy(() => import("pages/List/TvSeries/TvSeries"));
-const YouTube = lazy(() => import("pages/List/YouTube/Youtube"));
+const Blog = lazy(() => import("pages/List/Blog"));
+const Book = lazy(() => import("pages/List/Book"));
+const Course = lazy(() => import("pages/List/Course"));
+const Github = lazy(() => import("pages/List/Github"));
+const Icon = lazy(() => import("pages/List/Icon"));
+const Movie = lazy(() => import("pages/List/Movie"));
+const Platform = lazy(() => import("pages/List/Platform"));
+const Plugin = lazy(() => import("pages/List/Plugin"));
+const Tool = lazy(() => import("pages/List/Tool"));
+const TvSeries = lazy(() => import("pages/List/TvSeries"));
+const UiUx = lazy(() => import("pages/List/UiUx"));
+const YouTube = lazy(() => import("pages/List/YouTube"));
 
 const MarkdownEditor = lazy(() => import("pages/Markdown/MarkdownEditor"));
 const TableGenerator = lazy(() => import("pages/Markdown/MdTableGenerator"));
@@ -57,5 +58,6 @@ export {
 	TextEditor,
 	Tool,
 	TvSeries,
+	UiUx,
 	YouTube,
 };

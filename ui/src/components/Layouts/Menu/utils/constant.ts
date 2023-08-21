@@ -19,6 +19,7 @@ import {
 	Replace,
 	Table,
 	Youtube,
+	BrushIcon,
 	GraduationCap,
 	Clapperboard,
 	Tv,
@@ -166,6 +167,12 @@ export const MENU_ITEMS = [
 				name: "TV Series",
 				url: "/list/tv-series",
 				icon: Tv,
+				show: true,
+			},
+			{
+				name: "UI/UX",
+				url: "/list/ui-ux",
+				icon: BrushIcon,
 				show: true,
 			},
 			{

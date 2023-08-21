@@ -21,6 +21,7 @@ import {
 	Plugin,
 	Tool,
 	TvSeries,
+	UiUx,
 	YouTube,
 	MarkdownEditor,
 	TableGenerator,
@@ -70,6 +71,7 @@ const Routes: React.FC = () => {
 						<Route path="plugin" element={<Plugin />} />
 						<Route path="tool" element={<Tool />} />
 						<Route path="tv-series" element={<TvSeries />} />
+						<Route path="ui-ux" element={<UiUx />} />
 						<Route path="youtube" element={<YouTube />} />
 					</Route>
 					<Route path="/markdown">

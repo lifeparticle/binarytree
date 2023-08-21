@@ -1,5 +1,5 @@
-import { formatLabels } from "./constant";
+import { FORMAT_LABELS } from "./constant";
 
-type FormatType = Lowercase<(typeof formatLabels)[number]>;
+type FormatType = Lowercase<(typeof FORMAT_LABELS)[number]>;
 
 export type { FormatType };

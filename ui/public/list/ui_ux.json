@@ -1,0 +1,37 @@
+[
+	{
+		"name": "Behance",
+		"category": "UI/UX",
+		"subCategory": "UI/UX",
+		"url": "https://www.behance.net/",
+		"socials": []
+	},
+	{
+		"name": "Dribbble",
+		"category": "UI/UX",
+		"subCategory": "UI/UX",
+		"url": "https://dribbble.com/",
+		"socials": []
+	},
+	{
+		"name": "Awwwards",
+		"category": "UI/UX",
+		"subCategory": "UI/UX",
+		"url": "https://www.awwwards.com/",
+		"socials": []
+	},
+	{
+		"name": "UI Movement",
+		"category": "UI/UX",
+		"subCategory": "UI/UX",
+		"url": "https://uimovement.com/",
+		"socials": []
+	},
+	{
+		"name": "Smashing Magazine",
+		"category": "UI/UX",
+		"subCategory": "UI/UX",
+		"url": "https://www.smashingmagazine.com/",
+		"socials": []
+	}
+]
