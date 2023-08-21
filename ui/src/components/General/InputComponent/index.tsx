@@ -21,6 +21,7 @@ type InputComponentPropsType = {
 	tooltip?: string;
 	placeholder?: string;
 } & (NumberType | TextType);
+
 const InputComponent: React.FC<InputComponentPropsType> = (props) => {
 	return props.type === "number" ? (
 		<InputNumber size="large" style={{ width: "100%" }} {...props} />

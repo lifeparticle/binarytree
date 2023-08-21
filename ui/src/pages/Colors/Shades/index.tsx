@@ -74,8 +74,8 @@ const Shades: React.FC = () => {
 		setColor(e.target.value);
 	};
 
-	const handleNumberOfShadesChange = (num: number) => {
-		setNumberOfShades(num);
+	const handleNumberOfShadesChange = (num: number | null) => {
+		if (num) setNumberOfShades(num);
 	};
 
 	return (
