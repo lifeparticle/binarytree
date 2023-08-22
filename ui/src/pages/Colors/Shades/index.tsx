@@ -1,6 +1,6 @@
 import { useState, useEffect, useTransition } from "react";
 import styles from "./Shades.module.scss";
-import { Button, Card, Form, Space, Switch, Typography } from "antd";
+import { Button, Card, Form, Select, Space, Switch, Typography } from "antd";
 import tinycolor from "tinycolor2";
 import { getTextColor } from "lib/utils/helper";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
@@ -12,9 +12,12 @@ import {
 	DEFAULT_NUM_SHADES,
 	MAX_SHADES,
 	MIN_SHADES,
+	OUTPUT_FORMAT,
 } from "./utils/constants";
 import InputComponent from "components/General/InputComponent";
 import CopyInput from "components/Layouts/CopyInput";
+import { formatShades } from "./utils/helper";
+import { SelectOption } from "./utils/types";
 
 const { Title } = Typography;
 
@@ -25,6 +28,8 @@ const Shades: React.FC = () => {
 		useState<number>(DEFAULT_NUM_SHADES);
 	const [isPending, startTransition] = useTransition();
 	const [mode, setMode] = useState("darkest");
+	const [output, setOutput] = useState("");
+	const [option, setOption] = useState<SelectOption>(OUTPUT_FORMAT[0]);
 
 	useCombinedKeyPress(
 		() => setInputs(DEFAULT_COLOR, DEFAULT_NUM_SHADES),
@@ -69,10 +74,19 @@ const Shades: React.FC = () => {
 				];
 			}
 		};
+
 		startTransition(() => {
 			setShades(generateShadesForColor(color, numberOfShades));
 		});
 	}, [color, numberOfShades, mode]);
+
+	const handleOutputFormatChange = (option: SelectOption) => {
+		setOption(option);
+	};
+
+	useEffect(() => {
+		setOutput(formatShades(shades, option));
+	}, [option, shades]);
 
 	const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setColor(e.target.value);
@@ -83,106 +97,125 @@ const Shades: React.FC = () => {
 	};
 
 	return (
-		<Card className={styles.shades}>
-			<Space className={styles.shades__inputs}>
-				<Form layout="vertical">
-					<Space>
-						<CopyInput>
-							<InputComponent
-								label="Color"
-								placeholder="Color"
-								value={color}
-								onChange={handleColorChange}
-								type="text"
-							/>
-						</CopyInput>
-
-						<div className={styles.cardContainer}>
-							<Card
-								size="small"
-								style={{ background: color }}
-							></Card>
-							<div className={styles.colorPickerDropdown}>
-								<CP
-									format="hex"
+		<div className={styles.shades}>
+			<Card>
+				<Space className={styles.shades__inputs}>
+					<Form layout="vertical">
+						<Space className={styles.shades__inputs}>
+							<CopyInput>
+								<InputComponent
+									label="Color"
+									placeholder="Color"
 									value={color}
-									onChange={setColor}
-									size="xl"
+									onChange={handleColorChange}
+									type="text"
 								/>
-							</div>
-						</div>
+							</CopyInput>
 
-						<CopyInput>
-							<InputComponent
-								value={numberOfShades}
-								label="Number of shades"
-								onChange={handleNumberOfShadesChange}
-								placeholder="Number of shades"
-								precision={0}
-								step={1}
-								min={MIN_SHADES}
-								max={MAX_SHADES}
-								type="number"
-							/>
-						</CopyInput>
-						<Switch
-							checkedChildren="Darkest"
-							unCheckedChildren="Lightest"
-							defaultChecked
-							onChange={(checked) =>
-								setMode(checked ? "darkest" : "lightest")
-							}
-						/>
-
-						<Button
-							onClick={() => setInputs("", 0)}
-							disabled={!color && !numberOfShades}
-						>
-							Clear
-						</Button>
-
-						<Clipboard
-							text={shades.join(" ")}
-							clipboardComponent={ClipboardButton}
-						/>
-					</Space>
-				</Form>
-			</Space>
-
-			{color && !!numberOfShades && (
-				<Card className={styles.shades__container}>
-					<div className={styles.shades__container_shade}>
-						{isPending ? (
-							<Title level={4}>Generating shades...</Title>
-						) : (
-							shades.map((shade, index) => (
+							<div className={styles.cardContainer}>
 								<Card
-									key={index}
-									style={{
-										backgroundColor: shade,
-										color: getTextColor(shade),
-									}}
-								>
-									{index + 1}
-									<Title
-										level={4}
+									size="small"
+									style={{ background: color }}
+								></Card>
+								<div className={styles.colorPickerDropdown}>
+									<CP
+										format="hex"
+										value={color}
+										onChange={setColor}
+										size="xl"
+									/>
+								</div>
+							</div>
+
+							<CopyInput>
+								<InputComponent
+									value={numberOfShades}
+									label="Number of shades"
+									onChange={handleNumberOfShadesChange}
+									placeholder="Number of shades"
+									precision={0}
+									step={1}
+									min={MIN_SHADES}
+									max={MAX_SHADES}
+									type="number"
+								/>
+							</CopyInput>
+							<Switch
+								checkedChildren="Darkest"
+								unCheckedChildren="Lightest"
+								defaultChecked
+								onChange={(checked) =>
+									setMode(checked ? "darkest" : "lightest")
+								}
+							/>
+						</Space>
+					</Form>
+				</Space>
+				<Space className={styles.shades__inputs}>
+					<Form layout="vertical">
+						<Space>
+							<Button
+								onClick={() => setInputs("", 0)}
+								disabled={!color && !numberOfShades}
+							>
+								Clear
+							</Button>
+
+							<Form.Item label="Output Format">
+								<Select
+									value={option}
+									defaultActiveFirstOption
+									style={{ width: "100%" }}
+									onSelect={(_, option) =>
+										handleOutputFormatChange(option)
+									}
+									options={OUTPUT_FORMAT}
+								/>
+							</Form.Item>
+							<Clipboard
+								text={output}
+								clipboardComponent={ClipboardButton}
+							/>
+						</Space>
+					</Form>
+				</Space>
+			</Card>
+			<Card>
+				{color && !!numberOfShades && (
+					<Card className={styles.shades__container}>
+						<div className={styles.shades__container_shade}>
+							{isPending ? (
+								<Title level={4}>Generating shades...</Title>
+							) : (
+								shades.map((shade, index) => (
+									<Card
+										key={index}
 										style={{
+											backgroundColor: shade,
 											color: getTextColor(shade),
 										}}
 									>
-										{shade}
-									</Title>
-									<Clipboard
-										text={shade}
-										clipboardComponent={ClipboardButton}
-									/>
-								</Card>
-							))
-						)}
-					</div>
-				</Card>
-			)}
-		</Card>
+										{index + 1}
+										<Title
+											level={4}
+											style={{
+												color: getTextColor(shade),
+											}}
+										>
+											{shade}
+										</Title>
+										<Clipboard
+											text={shade}
+											clipboardComponent={ClipboardButton}
+										/>
+									</Card>
+								))
+							)}
+						</div>
+					</Card>
+				)}
+			</Card>
+		</div>
 	);
 };
 

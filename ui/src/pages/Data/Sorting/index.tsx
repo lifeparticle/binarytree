@@ -6,6 +6,7 @@ import { Button, Input, Space, Segmented, Select, Form, Card } from "antd";
 const { TextArea } = Input;
 
 import { Typography } from "antd";
+import { OUTPUT_FORMAT } from "./utils/constants";
 
 const { Title } = Typography;
 
@@ -77,23 +78,10 @@ const Sorting: React.FC = () => {
 						<Form.Item label="Output Format">
 							<Select
 								defaultActiveFirstOption
-								placeholder="Separate results by line breaks"
+								placeholder="Separate results by new lines"
 								style={{ width: "100%" }}
 								onChange={(value) => setOutputFormat(value)}
-								options={[
-									{
-										value: "\n",
-										label: "Separate results by line breaks",
-									},
-									{
-										value: " ",
-										label: "Separate results by line commas",
-									},
-									{
-										value: ",",
-										label: "Separate results by line spaces",
-									},
-								]}
+								options={OUTPUT_FORMAT}
 							/>
 						</Form.Item>
 
