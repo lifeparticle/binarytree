@@ -1,13 +1,7 @@
 import { Button } from "antd";
 import { Check, Copy } from "lucide-react";
 import style from "./clipboardButton.module.scss";
-
-export interface ClipboardButtonProps {
-	copyToClipboard: (text: string) => void;
-	copied: boolean;
-	text: string;
-	label?: boolean;
-}
+import { ClipboardButtonProps } from "./utils/types";
 
 const ClipboardButton: React.FC<ClipboardButtonProps> = ({
 	copyToClipboard,

@@ -84,6 +84,9 @@ h5 {
 
 .app__menu_bottom {
 	/* background-color: red; */
+	height: 100px;
+	width: 100%;
+
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

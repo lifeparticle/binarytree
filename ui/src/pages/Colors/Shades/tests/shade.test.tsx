@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, test } from "vitest";
-import Shades from "..";
+import Shades from "pages/Colors/Shades";
 
 describe("Shade", () => {
 	test("renders the component correctly.", () => {

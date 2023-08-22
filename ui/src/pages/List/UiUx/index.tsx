@@ -1,9 +1,7 @@
 import Resource from "components/General/ListItems/Resource/Resource";
-import ListSearchResults from "components/RenderProps/ListSearchResults/ListSearchResults";
+import ListSearchResults from "components/RenderProps/ListSearchResults";
 import useFetchList from "lib/utils/hooks/useFetchList";
-
-const URL = `./ui_ux.json`;
-const QUERY_KEY = "ui_ux";
+import { QUERY_KEY, URL } from "./utils/contant";
 
 const UiUx: React.FC = () => {
 	const { data, isLoading, isError } = useFetchList(QUERY_KEY, URL);
