@@ -107,6 +107,7 @@ const TableOfContent: React.FC = () => {
 							type="text"
 						/>
 						<Button
+							size="large"
 							onClick={() => {
 								setMarkdown("");
 								setUrl("");
@@ -130,7 +131,10 @@ const TableOfContent: React.FC = () => {
 			</Card>
 			<Card>
 				<Form layout="vertical" className={style.toc__output}>
-					<Button onClick={() => clipboard.copy(tableOfContents)}>
+					<Button
+						onClick={() => clipboard.copy(tableOfContents)}
+						size="large"
+					>
 						{clipboard.copied ? "Copied" : "Copy"}
 					</Button>
 					<Form.Item label="Output">

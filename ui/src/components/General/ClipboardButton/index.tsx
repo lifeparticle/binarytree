@@ -11,6 +11,7 @@ const ClipboardButton: React.FC<ClipboardButtonProps> = ({
 }) => {
 	return (
 		<Button
+			size="large"
 			disabled={text === ""}
 			className={style.button}
 			onClick={() => copyToClipboard(text)}
