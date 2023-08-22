@@ -2,14 +2,8 @@ import { Button, Layout, theme } from "antd";
 import { ArrowLeftFromLine, ArrowRightFromLine, Hexagon } from "lucide-react";
 import { Link } from "react-router-dom";
 import style from "./header.module.scss";
+import { HeaderProps } from "./utils/types";
 const { Header: AntHeader } = Layout;
-
-interface HeaderProps {
-	handleThemeChange: () => void;
-	isDarkMode: boolean;
-	collapsed: boolean;
-	handleMenuCollapse: () => void;
-}
 
 const Header: React.FC<HeaderProps> = ({ collapsed, handleMenuCollapse }) => {
 	const {

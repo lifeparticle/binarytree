@@ -1,6 +1,6 @@
 import { Avatar, Card, Skeleton, Space, Tag, Typography } from "antd";
 import style from "./Resource.module.scss";
-import { ResourceType } from "./types/types";
+import { ResourceType } from "./utils/types";
 import { ListItemProps } from "components/RenderProps/List/utils/types";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";

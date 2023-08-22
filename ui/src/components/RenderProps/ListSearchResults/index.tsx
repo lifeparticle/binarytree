@@ -1,9 +1,9 @@
 import { useSearchParams } from "react-router-dom";
 import style from "./ListSearchResults.module.scss";
-import { ResourceType } from "components/General/ListItems/Resource/types/types";
+import { ResourceType } from "components/General/ListItems/Resource/utils/types";
 import { QUERY_KEY_NEWS } from "pages/News";
-import Search from "components/General/Search/Search";
-import { getCategories } from "components/General/Search/CategoryTags/helper";
+import Search from "components/General/Search";
+import { getCategories } from "components/General/Search/CategoryTags/utils/helper";
 import { ListSearchResultsProps } from "./utils/types";
 import List from "components/RenderProps/List";
 import { API_ERROR, API_NO_DATA } from "lib/utils/constant";

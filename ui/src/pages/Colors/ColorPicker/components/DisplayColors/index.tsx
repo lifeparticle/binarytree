@@ -1,6 +1,6 @@
 import { Card, Space } from "antd";
 import { EXTENDED_DATA_OPTIONS } from "pages/Colors/ColorPicker/utils/constant";
-import ColorDisplay from "pages/Colors/ColorPicker/components/ColorDisplay/ColorDisplay";
+import ColorDisplay from "pages/Colors/ColorPicker/components/ColorDisplay";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import style from "./DisplayColors.module.scss";
