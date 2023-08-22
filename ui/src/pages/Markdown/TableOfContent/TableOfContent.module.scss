@@ -1,5 +1,17 @@
 .toc {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-gap: 20px;
+	grid-gap: var(--bt-size-16);
+	min-height: calc(100dvh - 20dvh);
+	max-height: calc(100dvh - 20dvh);
+
+	&__output {
+		padding-top: var(--bt-size-30);
+		display: grid;
+		gap: var(--bt-size-35);
+	}
+
+	@media screen and (max-width: 1000px) {
+		grid-template-columns: 1fr;
+	}
 }
