@@ -1,8 +1,8 @@
 import { renderHook, waitFor } from "@testing-library/react";
 import useFetchList from "lib/utils/hooks/useFetchList";
 import { describe, test } from "vitest";
-import { QUERY_KEY, URL } from "..";
 import { wrapper } from "test/wrapper";
+import { QUERY_KEY, URL } from "pages/List/Icon/utils/contant";
 
 describe("Icon List component check", () => {
 	test("Test async call", async () => {

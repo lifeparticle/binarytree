@@ -4,7 +4,7 @@ import { downloadPDFFile, downloadTextFile } from "lib/utils/files";
 import { useContext, useState } from "react";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 import style from "./MarkdownEditor.module.scss";
-import { DarkModeContext } from "lib/utils/context/DarkModeProvider/DarkModeProvider";
+import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 import MDEditor from "@uiw/react-md-editor";
 
 const MarkdownEditor: React.FC = () => {

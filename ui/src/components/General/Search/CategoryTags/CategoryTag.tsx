@@ -1,12 +1,5 @@
 import { Tag } from "antd";
-
-export interface CategoryTagProps {
-	label: string;
-	selected: boolean;
-	onClick: (label: string) => void;
-	className?: string;
-	key?: string | number;
-}
+import { CategoryTagProps } from "./utils/types";
 
 const CategoryTag: React.FC<CategoryTagProps> = ({
 	label,

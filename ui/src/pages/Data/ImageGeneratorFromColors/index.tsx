@@ -60,62 +60,69 @@ const ImageGeneratorFromColors: React.FC = () => {
 	return (
 		<Form layout="vertical">
 			<div className={style.igfc}>
-				<Form.Item label={PLACE_HOLDER_TEXT}>
-					<TextArea
-						placeholder={"Enter " + PLACE_HOLDER_TEXT}
-						rows={12}
-						onChange={(event) =>
-							onTextAreaChange(event.currentTarget.value)
-						}
-						value={value}
-						data-gramm={false}
-					/>
-				</Form.Item>
-				<div className={style.igfc__inputs}>
-					<CopyInput>
-						<InputComponent
-							label="Image width"
-							placeholder="Image Height"
-							value={height}
-							onChange={(val) => val && setHeight(val)}
-							min={0}
-							type="number"
+				<Card>
+					<Form.Item label={PLACE_HOLDER_TEXT}>
+						<TextArea
+							placeholder={"Enter " + PLACE_HOLDER_TEXT}
+							rows={12}
+							onChange={(event) =>
+								onTextAreaChange(event.currentTarget.value)
+							}
+							value={value}
+							data-gramm={false}
 						/>
-					</CopyInput>
+					</Form.Item>
+				</Card>
 
-					<CopyInput>
-						<InputComponent
-							label="Image Height"
-							placeholder="Image Width"
-							value={width}
-							onChange={(val) => val && setWidth(val)}
-							min={0}
-							type="number"
-						/>
-					</CopyInput>
+				<Card>
+					<div className={style.igfc__inputs}>
+						<CopyInput>
+							<InputComponent
+								label="Image width"
+								placeholder="Image Height"
+								value={height}
+								onChange={(val) => val && setHeight(val)}
+								min={0}
+								type="number"
+							/>
+						</CopyInput>
 
-					<CopyInput>
-						<InputComponent
-							label="Image Border Radius"
-							placeholder="Image Border Radius"
-							value={rounded}
-							onChange={(val) => val && setRounded(val)}
-							min={0}
-							type="number"
-						/>
-					</CopyInput>
-					<Space>
-						<Button onClick={onButtonClick}>Download Zip</Button>
-						<Button
-							onClick={() => {
-								setValue("");
-								setColors([]);
-							}}
-						>
-							Clear
-						</Button>
-					</Space>
-				</div>
+						<CopyInput>
+							<InputComponent
+								label="Image Height"
+								placeholder="Image Width"
+								value={width}
+								onChange={(val) => val && setWidth(val)}
+								min={0}
+								type="number"
+							/>
+						</CopyInput>
+
+						<CopyInput>
+							<InputComponent
+								label="Image Border Radius"
+								placeholder="Image Border Radius"
+								value={rounded}
+								onChange={(val) => val && setRounded(val)}
+								min={0}
+								type="number"
+							/>
+						</CopyInput>
+						<Space>
+							<Button onClick={onButtonClick}>
+								Download Zip
+							</Button>
+							<Button
+								onClick={() => {
+									setValue("");
+									setColors([]);
+								}}
+							>
+								Clear
+							</Button>
+						</Space>
+					</div>
+				</Card>
 				{colors.length > 0 && (
 					<Card className={style.igfc__colors}>
 						{colors.map((color: string, index: number) => {
