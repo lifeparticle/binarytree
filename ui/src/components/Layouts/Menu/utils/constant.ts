@@ -75,7 +75,7 @@ export const MENU_ITEMS = [
 				name: "JSON To TypeScript",
 				url: "/converter/jtt",
 				icon: FileOutput,
-				show: IN_DEV,
+				show: true,
 			},
 		],
 	},
