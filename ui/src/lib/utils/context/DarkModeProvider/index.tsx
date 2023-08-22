@@ -1,18 +1,11 @@
-import { MapToken, SeedToken } from "antd/es/theme/interface";
-import useDarkMode from "lib/utils/context/DarkModeProvider/hooks/useDarkMode";
+import useDarkMode from "lib/utils/context/DarkModeProvider/utils/hooks/useDarkMode";
 import { ReactNode, createContext } from "react";
-
-interface DarkModeContextType {
-	isDarkMode: boolean;
-	toggleTheme: () => void;
-	algorithm: (token: SeedToken) => MapToken;
-}
+import { DarkModeContextType } from "./utils/types";
+import { DARK_MODE_STORAGE_KEY } from "./utils/constant";
 
 const DarkModeContext = createContext<DarkModeContextType>(
 	{} as DarkModeContextType
 );
-
-const DARK_MODE_STORAGE_KEY = "darkMode";
 
 const DarkModeProvider = ({ children }: { children: ReactNode }) => {
 	const { isDarkMode, algorithm, toggleTheme } = useDarkMode(

@@ -1,9 +1,6 @@
 import { Row, Col, Form } from "antd";
 import React from "react";
-
-interface CopyInputProps {
-	children: React.ReactNode;
-}
+import { CopyInputProps } from "./utils/types";
 
 const CopyInput: React.FC<CopyInputProps> = ({ children }) => {
 	const [children1, children2] = React.Children.toArray(children);

@@ -23,10 +23,10 @@ const Sorting: React.FC = () => {
 	}, [input, order, outputFormat]);
 
 	return (
-		<Card>
-			<Form layout="vertical">
-				<div className={style.sort}>
-					<Space direction="vertical">
+		<Form layout="vertical">
+			<div className={style.sort}>
+				<Space direction="vertical">
+					<Card>
 						<Form.Item label="Number or string for sorting">
 							<TextArea
 								placeholder="Enter number or character by space or comma or new Line"
@@ -46,11 +46,14 @@ const Sorting: React.FC = () => {
 
 							<Button onClick={() => setInput("")}>Clear</Button>
 						</Space>
-					</Space>
-					<Space direction="vertical">
+					</Card>
+				</Space>
+
+				<Space direction="vertical">
+					<Card>
 						<Title level={4}>Order</Title>
 						<Segmented
-							className={style.base__buttons_segment}
+							className={style.sort__segment}
 							value={order}
 							onChange={(value: string | number) =>
 								setOrder(value as string)
@@ -99,10 +102,10 @@ const Sorting: React.FC = () => {
 								{clipboard.copied ? "Copied" : "Copy"}
 							</Button>
 						</Space>
-					</Space>
-				</div>
-			</Form>
-		</Card>
+					</Card>
+				</Space>
+			</div>
+		</Form>
 	);
 };
 

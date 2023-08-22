@@ -1,4 +1,4 @@
-import { NewsType } from "./types/types";
+import { NewsType } from "./utils/types";
 import { Card, Skeleton, Typography } from "antd";
 import { ListItemProps } from "components/RenderProps/List/utils/types";
 const { Title } = Typography;

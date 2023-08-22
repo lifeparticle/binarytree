@@ -1,3 +1,9 @@
+### [4.7.0] - 2023-08-22
+
+-   Refactor Pages & components
+-   Fix Path according to one Rule
+-   Fix Sidebar & code spliting
+
 ### [4.6.0] - 2023-08-18
 
 -   Update Tests
