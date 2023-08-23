@@ -94,5 +94,17 @@
 				"name": "github"
 			}
 		]
+	},
+	{
+		"name": "Radix-ui icons",
+		"category": "Icons",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://www.radix-ui.com/icons",
+		"socials": [
+			{
+				"url": "https://github.com/radix-ui/icons",
+				"name": "github"
+			}
+		]
 	}
 ]

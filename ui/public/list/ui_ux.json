@@ -33,5 +33,12 @@
 		"subCategory": "UI/UX",
 		"url": "https://www.smashingmagazine.com/",
 		"socials": []
+	},
+	{
+		"name": "Design Principles",
+		"category": "UI/UX",
+		"subCategory": "UI/UX",
+		"url": "https://principles.design/",
+		"socials": []
 	}
 ]
