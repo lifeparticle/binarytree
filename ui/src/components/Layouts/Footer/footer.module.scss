@@ -1,13 +1,9 @@
 .footer {
 	display: flex;
-	align-items: center;
-	justify-content: end;
-	display: flex;
 	flex-direction: column;
 
 	&__monogram {
 		display: flex;
-		justify-content: end;
 		aspect-ratio: 3/2;
 		width: 100%;
 		padding: var(--bt-size-5);
