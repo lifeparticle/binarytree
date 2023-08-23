@@ -1,14 +1,15 @@
-import { Button, Dropdown, MenuProps, theme, Switch, Divider } from "antd";
+import { Button, Dropdown, MenuProps, theme, Switch } from "antd";
 import style from "./footer.module.scss";
 import { Github, Moon, Settings, Sun } from "lucide-react";
 import { classNames } from "lib/utils/helper";
+import { FooterProps } from "./utils/types";
+import Monogram from "assets/netlify-monogram.png";
 
-interface FooterProps {
-	handleThemeChange: () => void;
-	isDarkMode: boolean;
-}
-
-const Footer: React.FC<FooterProps> = ({ handleThemeChange, isDarkMode }) => {
+const Footer: React.FC<FooterProps> = ({
+	handleThemeChange,
+	isDarkMode,
+	collapsed,
+}) => {
 	const {
 		token: { colorBgContainer, colorText },
 	} = theme.useToken();
@@ -57,7 +58,12 @@ const Footer: React.FC<FooterProps> = ({ handleThemeChange, isDarkMode }) => {
 			</Dropdown>
 			<a href="https://www.netlify.com">
 				<img
-					src="https://www.netlify.com/v3/img/components/netlify-dark.svg"
+					src={
+						collapsed
+							? Monogram
+							: "https://www.netlify.com/v3/img/components/netlify-dark.svg"
+					}
+					className={style.footer__monogram}
 					alt="Deploys by Netlify"
 				/>
 			</a>

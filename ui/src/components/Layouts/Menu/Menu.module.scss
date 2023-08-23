@@ -7,4 +7,16 @@
 	&__dark {
 		background-color: rgb(20, 20, 20);
 	}
+	&::-webkit-scrollbar {
+		width: var(--bt-size-8);
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: var(--bt-color-scrollbar-track);
+	}
+
+	&::-webkit-scrollbar-thumb {
+		// border-radius: var(--bt-border-radius-4);
+		background-color: var(--bt-color-scrollbar-thumb);
+	}
 }
