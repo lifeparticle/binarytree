@@ -1,10 +1,4 @@
 .menu {
-	height: calc(100dvh - 164px);
+	height: calc(100dvh - 180px);
 	overflow-y: auto;
-
-	background-color: rgb(255, 255, 255);
-
-	&__dark {
-		background-color: rgb(20, 20, 20);
-	}
 }

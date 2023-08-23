@@ -99,7 +99,7 @@ const DataGenerator: React.FC = () => {
 
 							<CopyInput>
 								<InputComponent
-									label="Column Type"
+									label="Total Column Number"
 									placeholder="NumberInput with custom layout"
 									value={colNum}
 									min={0}
@@ -123,7 +123,7 @@ const DataGenerator: React.FC = () => {
 
 							<CopyInput>
 								<InputComponent
-									label="Column Name"
+									label="Generate total Row Data (Output)"
 									placeholder="NumberInput with custom layout"
 									value={rowNum}
 									min={0}
@@ -133,11 +133,14 @@ const DataGenerator: React.FC = () => {
 							</CopyInput>
 						</div>
 
-						<div className={style.dg__left_bottom}>
+						<div className={style.dg__left__bottom}>
 							{/* Fix the warning */}
 							<div>
 								{Array.from({ length: colNum }, (_, k) => (
 									<AutoComplete
+										className={
+											style.dg__left__bottom__autocomplete
+										}
 										size="large"
 										key={`faker-data-type-${k}`}
 										value={fakeDataTypes[k] || ""}
@@ -152,23 +155,16 @@ const DataGenerator: React.FC = () => {
 								))}
 							</div>
 							<div>
-								{Array.from({ length: colNum }, (_, k) => (
+								{[...Array(colNum).keys()].map((col) => (
 									<Select
+										key={`data-type-${col}`}
+										className={
+											style.dg__left__bottom__select
+										}
 										size="large"
-										key={`data-type-${k}`}
-										placeholder="Data type"
-										// value={
-										// 	dataTypes[k] === undefined
-										// 		? (dataTypes[k] =
-										// 				MYSQL_DATA_TYPES[0].value)
-										// 		: dataTypes[k]
-
-										// 		// MYSQL_DATA_TYPES[]
-										// }
-										defaultValue={dataTypes[k]}
 										options={MYSQL_DATA_TYPES}
 										onChange={(e) =>
-											onDataTypesChange(e, k)
+											onDataTypesChange(e, col)
 										}
 									/>
 								))}
@@ -176,18 +172,21 @@ const DataGenerator: React.FC = () => {
 							<div>
 								{Array.from({ length: colNum }, (_, k) => (
 									<Input
+										className={
+											style.dg__left__bottom__input
+										}
 										size="large"
 										key={`col-name-${k}`}
 										placeholder="Column name"
+										onChange={(e) =>
+											onColNamesChange(e.target.value, k)
+										}
+										autoComplete="nope"
 										value={
 											colNames[k] === undefined
 												? (colNames[k] = "")
 												: colNames[k]
 										}
-										onChange={(e) =>
-											onColNamesChange(e.target.value, k)
-										}
-										autoComplete="nope"
 									/>
 								))}
 							</div>

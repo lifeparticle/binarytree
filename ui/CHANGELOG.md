@@ -1,3 +1,12 @@
+### [4.8.0] - 2023-08-23
+
+-   Change Footer color
+-   Small Collapse menu when window is small
+-   Fix Data Generator Label and select menu
+-   Add Netlify monogram
+-   Remove unused css
+-   Apply Dark mode in Text Editor
+
 ### [4.7.0] - 2023-08-22
 
 -   Refactor Pages & components

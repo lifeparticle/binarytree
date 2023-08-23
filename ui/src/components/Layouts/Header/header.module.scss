@@ -1,21 +1,6 @@
 .header {
-	justify-content: space-between;
 	display: flex;
 	align-items: center;
-
-	&_left {
-		display: flex;
-		align-items: center;
-
-		&_collapseBtn {
-			@media (max-width: 768px) {
-				display: none;
-			}
-		}
-	}
-
-	&_switch {
-		// fix this
-		padding-top: 2px;
-	}
+	justify-content: center;
+	height: var(--bt-size-64);
 }

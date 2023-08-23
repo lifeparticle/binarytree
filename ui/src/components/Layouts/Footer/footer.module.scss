@@ -2,14 +2,15 @@
 	display: flex;
 	align-items: center;
 	justify-content: end;
-	height: var(--bt-size-100);
-	background-color: aliceblue;
 	display: flex;
 	flex-direction: column;
-	gap: var(--bt-size-10);
-	background-color: rgb(255, 255, 255);
 
-	&__dark {
-		background-color: rgb(29, 27, 27);
+	&__monogram {
+		display: flex;
+		justify-content: end;
+		aspect-ratio: 3/2;
+		width: 100%;
+		padding: var(--bt-size-5);
+		object-fit: contain;
 	}
 }

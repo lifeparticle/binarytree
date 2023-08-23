@@ -7,7 +7,7 @@ import { classNames } from "lib/utils/helper";
 
 const { Sider } = Layout;
 
-const Menu: React.FC<MenuProps> = ({ collapsed, isDarkMode }) => {
+const Menu: React.FC<MenuProps> = ({ collapsed }) => {
 	const navigate = useNavigate();
 
 	const onClick = (e: { key: To }) => {
@@ -17,10 +17,7 @@ const Menu: React.FC<MenuProps> = ({ collapsed, isDarkMode }) => {
 	return (
 		<Sider trigger={null} collapsible collapsed={collapsed}>
 			<AntdMenu
-				className={classNames(
-					style.menu,
-					isDarkMode ? style.menu__dark : undefined
-				)}
+				className={classNames(style.menu)}
 				mode="inline"
 				onClick={onClick}
 				items={ITEMS}
