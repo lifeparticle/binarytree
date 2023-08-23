@@ -46,6 +46,16 @@ h5 {
 	border-inline-end: none !important;
 }
 
+.ant-menu-submenu {
+	/* can we do better? */
+	padding-left: 20px !important;
+	padding-right: 20px !important;
+}
+.ant-menu-item {
+	/* can we do better? */
+	padding-left: 32px !important;
+}
+
 .ant-layout-content,
 .ant-menu {
 	&::-webkit-scrollbar {
@@ -78,9 +88,4 @@ h5 {
 	display: flex;
 	align-items: center;
 	padding-inline: 0px;
-}
-
-.ant-menu-item {
-	/* can we do better? */
-	padding-left: 32px !important;
 }
