@@ -22,8 +22,7 @@ const Menu: React.FC<MenuProps> = ({ collapsed }) => {
 				onClick={onClick}
 				items={ITEMS}
 				style={{
-					minWidth: collapsed ? 0 : 230,
-					paddingLeft: collapsed ? 0 : 20,
+					minWidth: collapsed ? 0 : 250,
 				}}
 			/>
 		</Sider>
