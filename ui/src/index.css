@@ -82,21 +82,11 @@ h5 {
 	padding-inline: 0px;
 }
 
-.app__menu_bottom {
-	/* background-color: red; */
-	height: 100px;
-	width: 100%;
-
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
 .ant-layout-footer > a > img {
 	height: var(--bt-size-40);
 }
 
-.ant-menu {
-	flex-grow: 1;
+.ant-menu-item {
+	/* can we do better? */
+	padding-left: 32px !important;
 }

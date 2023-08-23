@@ -12,9 +12,9 @@ const CopyInput: React.FC<CopyInputProps> = ({ children }) => {
 			label={firstChildProps.label}
 			tooltip={firstChildProps.tooltip}
 		>
-			<Row gutter={[16, 0]}>
+			<Row gutter={[8, 0]}>
 				<Col span={22}>{children1}</Col>
-				<Col span={2}>{children2}</Col>
+				{children2 && <Col span={2}>{children2}</Col>}
 			</Row>
 		</Form.Item>
 	);
