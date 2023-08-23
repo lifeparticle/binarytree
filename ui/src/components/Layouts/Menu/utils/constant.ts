@@ -228,7 +228,6 @@ export type IconComponentType =
 	| undefined;
 
 const ITEMS: MenuProps["items"] = [
-	{ type: "divider" },
 	...MENU_ITEMS.filter((rootItem) => rootItem.show).map((item) => {
 		return getItem(
 			item.name,

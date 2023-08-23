@@ -26,7 +26,10 @@ const Sidebar = () => {
 			collapsible
 			collapsed={collapsed}
 			className={style.sidebar}
-			style={{ backgroundColor: colorBgContainer }}
+			style={{
+				backgroundColor: colorBgContainer,
+			}}
+			width={250}
 		>
 			<Header
 				handleThemeChange={toggleTheme}
