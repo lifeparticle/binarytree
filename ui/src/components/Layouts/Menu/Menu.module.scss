@@ -1,4 +1,6 @@
 .menu {
 	height: calc(100dvh - 180px);
 	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
 }

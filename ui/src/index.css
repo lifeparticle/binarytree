@@ -42,6 +42,10 @@ h5 {
 	margin-bottom: 0 !important;
 }
 
+.ant-menu {
+	border-inline-end: none !important;
+}
+
 .ant-layout-content,
 .ant-menu {
 	&::-webkit-scrollbar {

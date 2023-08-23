@@ -21,6 +21,10 @@ const Menu: React.FC<MenuProps> = ({ collapsed }) => {
 				mode="inline"
 				onClick={onClick}
 				items={ITEMS}
+				style={{
+					minWidth: collapsed ? 0 : 230,
+					paddingLeft: collapsed ? 0 : 20,
+				}}
 			/>
 		</Sider>
 	);
