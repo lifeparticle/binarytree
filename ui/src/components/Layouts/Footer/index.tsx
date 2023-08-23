@@ -1,4 +1,4 @@
-import { Button, Dropdown, MenuProps, theme, Switch } from "antd";
+import { Button, Dropdown, MenuProps, theme, Switch, Divider } from "antd";
 import style from "./footer.module.scss";
 import { Github, Moon, Settings, Sun } from "lucide-react";
 import { classNames } from "lib/utils/helper";
