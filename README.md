@@ -8,6 +8,7 @@
   <summary>Colors</summary>
 
 - <kbd>[Color Picker](https://binarytree.dev/cp)</kbd>
+- <kbd>[Shades](https://binarytree.dev/colors/shades)</kbd>
 
 </details>
 
