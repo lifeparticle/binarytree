@@ -42,16 +42,10 @@ h5 {
 	margin-bottom: 0 !important;
 }
 
-.ant-layout-sider,
-.ant-layout-content {
-	/* max-height: calc(100dvh - 5dvh); */
+.ant-layout-content,
+.ant-menu {
 	&::-webkit-scrollbar {
 		width: var(--bt-size-8);
-	}
-
-	&::-webkit-scrollbar-button {
-		display: block;
-		height: var(--bt-size-4);
 	}
 
 	&::-webkit-scrollbar-track {
@@ -80,10 +74,6 @@ h5 {
 	display: flex;
 	align-items: center;
 	padding-inline: 0px;
-}
-
-.ant-layout-footer > a > img {
-	height: var(--bt-size-40);
 }
 
 .ant-menu-item {

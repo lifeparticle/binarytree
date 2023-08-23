@@ -1,14 +1,16 @@
-import { Button, Dropdown, MenuProps, theme, Switch } from "antd";
+import { Button, Dropdown, MenuProps, theme, Switch, Space } from "antd";
 import style from "./footer.module.scss";
 import { Github, Moon, Settings, Sun } from "lucide-react";
 import { classNames } from "lib/utils/helper";
+import { FooterProps } from "./utils/types";
+import Monogram from "assets/netlify-monogram.png";
+import Logo from "assets/netlify-dark.svg";
 
-interface FooterProps {
-	handleThemeChange: () => void;
-	isDarkMode: boolean;
-}
-
-const Footer: React.FC<FooterProps> = ({ handleThemeChange, isDarkMode }) => {
+const Footer: React.FC<FooterProps> = ({
+	handleThemeChange,
+	isDarkMode,
+	collapsed,
+}) => {
 	const {
 		token: { colorBgContainer, colorText },
 	} = theme.useToken();
@@ -46,22 +48,21 @@ const Footer: React.FC<FooterProps> = ({ handleThemeChange, isDarkMode }) => {
 		},
 	];
 	return (
-		<div
-			className={classNames(
-				style.footer,
-				isDarkMode ? style.footer__dark : undefined
-			)}
+		<Space
+			className={classNames(style.footer)}
+			style={{ backgroundColor: colorBgContainer }}
 		>
 			<Dropdown menu={{ items }} placement="topLeft">
 				<Button>{<Settings />}</Button>
 			</Dropdown>
 			<a href="https://www.netlify.com">
 				<img
-					src="https://www.netlify.com/v3/img/components/netlify-dark.svg"
+					src={collapsed ? Monogram : Logo}
+					className={style.footer__monogram}
 					alt="Deploys by Netlify"
 				/>
 			</a>
-		</div>
+		</Space>
 	);
 };
 
