@@ -1,6 +1,6 @@
 import { useState, useEffect, useTransition } from "react";
 import styles from "./Shades.module.scss";
-import { Button, Card, Form, Select, Space, Switch, Typography } from "antd";
+import { Button, Card, Checkbox, Form, Select, Space, Typography } from "antd";
 import tinycolor from "tinycolor2";
 import { getTextColor } from "lib/utils/helper";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
@@ -18,6 +18,7 @@ import InputComponent from "components/General/InputComponent";
 import CopyInput from "components/Layouts/CopyInput";
 import { formatShades } from "./utils/helper";
 import { SelectOption } from "./utils/types";
+import { CheckboxChangeEvent } from "antd/es/checkbox";
 
 const { Title } = Typography;
 
@@ -99,101 +100,117 @@ const Shades: React.FC = () => {
 	return (
 		<div className={styles.shades}>
 			<Card>
-				<Space className={styles.shades__inputs}>
-					<Form layout="vertical">
-						<Space className={styles.shades__inputs}>
-							<CopyInput>
-								<InputComponent
-									label="Color"
-									placeholder="Color"
-									value={color}
-									onChange={handleColorChange}
-									type="text"
-								/>
-							</CopyInput>
-
-							<div className={styles.cardContainer}>
-								<Card
-									size="small"
-									style={{ background: color }}
-								></Card>
-								<div className={styles.colorPickerDropdown}>
-									<CP
-										format="hex"
-										value={color}
-										onChange={setColor}
-										size="xl"
-									/>
-								</div>
-							</div>
-
-							<CopyInput>
-								<InputComponent
-									value={numberOfShades}
-									label="Number of shades"
-									onChange={handleNumberOfShadesChange}
-									placeholder="Number of shades"
-									precision={0}
-									step={1}
-									min={MIN_SHADES}
-									max={MAX_SHADES}
-									type="number"
-								/>
-							</CopyInput>
-							<Switch
-								checkedChildren="Darkest"
-								unCheckedChildren="Lightest"
-								defaultChecked
-								onChange={(checked) =>
-									setMode(checked ? "darkest" : "lightest")
+				<Form layout="vertical">
+					<Space>
+						<CopyInput>
+							<InputComponent
+								label="Color"
+								placeholder="Color"
+								value={color}
+								onChange={handleColorChange}
+								type="text"
+								style={{ width: 250 }}
+								addonBefore={
+									<div className={styles.cardContainer}>
+										<Card
+											size="small"
+											style={{ background: color }}
+										/>
+										<div
+											className={
+												styles.colorPickerDropdown
+											}
+										>
+											<CP
+												format="hex"
+												value={color}
+												onChange={setColor}
+												size="xl"
+											/>
+										</div>
+									</div>
+								}
+								addonAfter={
+									<Checkbox
+										onChange={(e: CheckboxChangeEvent) =>
+											setMode(
+												e.target.checked
+													? "darkest"
+													: "lightest"
+											)
+										}
+										defaultChecked
+									>
+										Darkest
+									</Checkbox>
 								}
 							/>
-						</Space>
-					</Form>
-				</Space>
-				<Space className={styles.shades__inputs}>
-					<Form layout="vertical">
-						<Space>
-							<Button
-								onClick={() => setInputs("", 0)}
-								disabled={!color && !numberOfShades}
-							>
-								Clear
-							</Button>
+						</CopyInput>
 
-							<Form.Item label="Output Format">
-								<Select
-									value={option}
-									defaultActiveFirstOption
-									style={{ width: "100%" }}
-									onSelect={(_, option) =>
-										handleOutputFormatChange(option)
-									}
-									options={OUTPUT_FORMAT}
-								/>
-							</Form.Item>
-							<Clipboard
-								text={output}
-								clipboardComponent={ClipboardButton}
+						<CopyInput>
+							<InputComponent
+								value={numberOfShades}
+								label="Shades"
+								onChange={handleNumberOfShadesChange}
+								placeholder="Shades"
+								precision={0}
+								step={1}
+								min={MIN_SHADES}
+								max={MAX_SHADES}
+								type="number"
+								style={{ width: 90 }}
 							/>
-						</Space>
-					</Form>
-				</Space>
+						</CopyInput>
+					</Space>
+				</Form>
+
+				<Form layout="vertical">
+					<Space>
+						<Form.Item label="Output Format">
+							<Select
+								size="large"
+								value={option}
+								defaultActiveFirstOption
+								style={{ width: "100%" }}
+								onSelect={(_, option) =>
+									handleOutputFormatChange(option)
+								}
+								options={OUTPUT_FORMAT}
+							/>
+						</Form.Item>
+						<Clipboard
+							text={output}
+							clipboardComponent={ClipboardButton}
+						/>
+						<Button
+							size="large"
+							onClick={() => setInputs("", 0)}
+							disabled={!color && !numberOfShades}
+						>
+							Clear
+						</Button>
+					</Space>
+				</Form>
 			</Card>
-			<Card>
-				{color && !!numberOfShades && (
-					<Card className={styles.shades__container}>
-						<div className={styles.shades__container_shade}>
-							{isPending ? (
-								<Title level={4}>Generating shades...</Title>
-							) : (
-								shades.map((shade, index) => (
-									<Card
-										key={index}
-										style={{
-											backgroundColor: shade,
-											color: getTextColor(shade),
-										}}
+
+			{color && !!numberOfShades && (
+				<Card className={styles.shades__container}>
+					<div className={styles.shades__container_shades}>
+						{isPending ? (
+							<Title level={4}>Generating shades...</Title>
+						) : (
+							shades.map((shade, index) => (
+								<Card
+									key={index}
+									style={{
+										backgroundColor: shade,
+										color: getTextColor(shade),
+									}}
+								>
+									<div
+										className={
+											styles.shades__container_shades_shade
+										}
 									>
 										{index + 1}
 										<Title
@@ -208,13 +225,13 @@ const Shades: React.FC = () => {
 											text={shade}
 											clipboardComponent={ClipboardButton}
 										/>
-									</Card>
-								))
-							)}
-						</div>
-					</Card>
-				)}
-			</Card>
+									</div>
+								</Card>
+							))
+						)}
+					</div>
+				</Card>
+			)}
 		</div>
 	);
 };

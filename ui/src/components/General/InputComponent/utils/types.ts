@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 type NumberType = {
 	type: "number";
 	value: number;
@@ -18,6 +20,9 @@ type InputComponentPropsType = {
 	step?: number;
 	tooltip?: string;
 	placeholder?: string;
+	addonBefore?: ReactNode;
+	addonAfter?: ReactNode;
+	style?: React.CSSProperties;
 } & (NumberType | TextType);
 
 export type { InputComponentPropsType };
