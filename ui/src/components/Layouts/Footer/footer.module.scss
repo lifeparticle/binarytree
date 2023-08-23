@@ -9,7 +9,16 @@
 	gap: var(--bt-size-10);
 	background-color: rgb(255, 255, 255);
 
+	@media (max-width: 768px) {
+		&__monogram {
+			width: var(--bt-size-40);
+			object-fit: cover;
+			object-position: center;
+			overflow: hidden;
+		}
+	}
+
 	&__dark {
-		background-color: rgb(29, 27, 27);
+		background-color: rgb(20, 20, 20);
 	}
 }
