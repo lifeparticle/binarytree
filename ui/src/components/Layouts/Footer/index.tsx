@@ -3,7 +3,8 @@ import style from "./footer.module.scss";
 import { Github, Moon, Settings, Sun } from "lucide-react";
 import { classNames } from "lib/utils/helper";
 import { FooterProps } from "./utils/types";
-import Monogram from "assets/netlify-monogram.png";
+import MonogramDark from "assets/netlify-monogram-dark.svg";
+import MonogramLight from "assets/netlify-monogram-light.svg";
 import Logo from "assets/netlify-dark.svg";
 
 const Footer: React.FC<FooterProps> = ({
@@ -57,7 +58,13 @@ const Footer: React.FC<FooterProps> = ({
 			</Dropdown>
 			<a href="https://www.netlify.com">
 				<img
-					src={collapsed ? Monogram : Logo}
+					src={
+						collapsed
+							? isDarkMode
+								? MonogramDark
+								: MonogramLight
+							: Logo
+					}
 					className={style.footer__monogram}
 					alt="Deploys by Netlify"
 				/>
