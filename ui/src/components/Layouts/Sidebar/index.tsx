@@ -34,7 +34,11 @@ const Sidebar = () => {
 			/>
 			<Menu isDarkMode={isDarkMode} collapsed={collapsed} />
 
-			<Footer handleThemeChange={toggleTheme} isDarkMode={isDarkMode} />
+			<Footer
+				collapsed={collapsed}
+				handleThemeChange={toggleTheme}
+				isDarkMode={isDarkMode}
+			/>
 		</Sider>
 	);
 };

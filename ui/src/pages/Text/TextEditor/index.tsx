@@ -1,15 +1,17 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import { Badge, Button, Card, Col, Row, Space } from "antd";
 import { Editor } from "@tinymce/tinymce-react";
 import { Editor as TinyMCEEditor } from "tinymce";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import style from "./TextEditor.module.scss";
+import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 
 const TextEditor: React.FC = () => {
 	const [wordCount, setWordCount] = useState(0);
 	const [charCount, setCharCount] = useState(0);
 	const [charCountWithoutSpace, setCharCountWithoutSpace] = useState(0);
+	const { isDarkMode } = useContext(DarkModeContext);
 
 	const editorRef = useRef<TinyMCEEditor | null>(null);
 
@@ -41,10 +43,10 @@ const TextEditor: React.FC = () => {
 	};
 
 	return (
-		<Card>
-			<div className={style.te}>
-				<Row gutter={[16, 16]}>
-					<Col xs={24} lg={20}>
+		<div className={style.te}>
+			<Row gutter={[16, 16]}>
+				<Col xs={24} lg={20}>
+					<Card>
 						<Editor
 							tinymceScriptSrc="/tinymce/tinymce.min.js"
 							onInit={(editor) => {
@@ -72,6 +74,9 @@ const TextEditor: React.FC = () => {
 									"preview",
 									"help",
 								],
+
+								skin: isDarkMode ? "oxide-dark" : "oxide",
+								content_css: isDarkMode ? "dark" : "default",
 								toolbar:
 									"undo redo | blocks | " +
 									"bold italic forecolor | alignleft aligncenter " +
@@ -81,58 +86,56 @@ const TextEditor: React.FC = () => {
 									"body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
 							}}
 						/>
-					</Col>
+					</Card>
+				</Col>
 
-					<Col xs={24} lg={4}>
-						<Card>
-							<Space direction="vertical">
-								<Space>
-									<span>Word count </span>
-									<Badge
-										count={wordCount}
-										showZero
-										style={{ backgroundColor: "#52c41a" }}
-									/>
-								</Space>
-								<Space>
-									<span>Character </span>
-									<Badge
-										count={charCount}
-										style={{ backgroundColor: "#52c41a" }}
-										showZero
-										overflowCount={999}
-									/>
-								</Space>
-								<Space>
-									<span>Character without space </span>
-									<Badge
-										count={charCountWithoutSpace}
-										style={{ backgroundColor: "#52c41a" }}
-										showZero
-										overflowCount={999}
-									/>
-								</Space>
-
-								<Space>
-									<Button onClick={handleLog}>
-										Show Count
-									</Button>
-								</Space>
+				<Col xs={24} lg={4}>
+					<Card>
+						<Space direction="vertical">
+							<Space>
+								<span>Word count </span>
+								<Badge
+									count={wordCount}
+									showZero
+									style={{ backgroundColor: "#52c41a" }}
+								/>
 							</Space>
-						</Card>
-					</Col>
-				</Row>
+							<Space>
+								<span>Character </span>
+								<Badge
+									count={charCount}
+									style={{ backgroundColor: "#52c41a" }}
+									showZero
+									overflowCount={999}
+								/>
+							</Space>
+							<Space>
+								<span>Character without space </span>
+								<Badge
+									count={charCountWithoutSpace}
+									style={{ backgroundColor: "#52c41a" }}
+									showZero
+									overflowCount={999}
+								/>
+							</Space>
 
-				<Space>
-					<Button onClick={handleClear}>Clear</Button>
+							<Space>
+								<Button onClick={handleLog}>Show Count</Button>
+							</Space>
+						</Space>
+					</Card>
+				</Col>
+			</Row>
 
-					<Clipboard
-						text={editorRef.current?.getContent() || " "}
-						clipboardComponent={ClipboardButton}
-					/>
-				</Space>
-			</div>
-		</Card>
+			<Space>
+				<Button onClick={handleClear}>Clear</Button>
+
+				<Clipboard
+					text={editorRef.current?.getContent() || " "}
+					clipboardComponent={ClipboardButton}
+				/>
+			</Space>
+		</div>
 	);
 };
 
