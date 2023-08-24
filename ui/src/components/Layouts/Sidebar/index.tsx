@@ -31,12 +31,7 @@ const Sidebar = () => {
 			}}
 			width={250}
 		>
-			<Header
-				handleThemeChange={toggleTheme}
-				isDarkMode={isDarkMode}
-				collapsed={collapsed}
-				handleMenuCollapse={toggleCollapse}
-			/>
+			<Header collapsed={collapsed} handleMenuCollapse={toggleCollapse} />
 			<Menu isDarkMode={isDarkMode} collapsed={collapsed} />
 
 			<Footer

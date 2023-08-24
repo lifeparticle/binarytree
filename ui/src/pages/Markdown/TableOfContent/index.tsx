@@ -40,7 +40,7 @@ const TableOfContent: React.FC = () => {
 		].map((el) => {
 			return {
 				tag: el.tagName as TocItem["tag"],
-				text: el.textContent?.trim() || "",
+				text: el.textContent?.trim() ?? "",
 			};
 		});
 
