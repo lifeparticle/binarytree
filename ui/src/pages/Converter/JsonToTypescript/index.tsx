@@ -73,7 +73,10 @@ const JsonToTypescript: React.FC = () => {
 						{({ style, tokens, getLineProps, getTokenProps }) => (
 							<pre style={style}>
 								{tokens.map((line, i) => (
-									<div key={i} {...getLineProps({ line })}>
+									<div
+										key={`line-${i}`}
+										{...getLineProps({ line })}
+									>
 										<span>{i + 1}</span>
 										{line.map((token, key) => (
 											<span

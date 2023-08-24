@@ -39,7 +39,8 @@ const Footer: React.FC<FooterProps> = ({
 					onClick={() =>
 						window.open(
 							"https://github.com/lifeparticle/binarytree",
-							"_blank"
+							"_blank",
+							"noopener"
 						)
 					}
 				>
@@ -48,6 +49,8 @@ const Footer: React.FC<FooterProps> = ({
 			),
 		},
 	];
+
+	const darkModeMonogram = isDarkMode ? MonogramDark : MonogramLight;
 	return (
 		<Space
 			className={classNames(style.footer)}
@@ -58,13 +61,7 @@ const Footer: React.FC<FooterProps> = ({
 			</Dropdown>
 			<a href="https://www.netlify.com">
 				<img
-					src={
-						collapsed
-							? isDarkMode
-								? MonogramDark
-								: MonogramLight
-							: Logo
-					}
+					src={collapsed ? darkModeMonogram : Logo}
 					className={style.footer__monogram}
 					alt="Deploys by Netlify"
 				/>
