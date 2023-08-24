@@ -108,10 +108,11 @@ const ImageGeneratorFromColors: React.FC = () => {
 							/>
 						</CopyInput>
 						<Space>
-							<Button onClick={onButtonClick}>
+							<Button size="large" onClick={onButtonClick}>
 								Download Zip
 							</Button>
 							<Button
+								size="large"
 								onClick={() => {
 									setValue("");
 									setColors([]);

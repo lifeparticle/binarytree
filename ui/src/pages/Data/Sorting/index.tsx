@@ -47,11 +47,16 @@ const Sorting: React.FC = () => {
 						</Form.Item>
 
 						<Space>
-							<Button onClick={() => inputClipBoard.copy(input)}>
+							<Button
+								size="large"
+								onClick={() => inputClipBoard.copy(input)}
+							>
 								{inputClipBoard.copied ? "Copied" : "Copy"}
 							</Button>
 
-							<Button onClick={() => setInput("")}>Clear</Button>
+							<Button size="large" onClick={() => setInput("")}>
+								Clear
+							</Button>
 						</Space>
 					</Card>
 				</Space>
@@ -92,7 +97,10 @@ const Sorting: React.FC = () => {
 						</Form.Item>
 
 						<Space>
-							<Button onClick={() => clipboard.copy(output)}>
+							<Button
+								size="large"
+								onClick={() => clipboard.copy(output)}
+							>
 								{clipboard.copied ? "Copied" : "Copy"}
 							</Button>
 						</Space>
