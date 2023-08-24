@@ -8,9 +8,13 @@ interface ValidateStatusProps {
 }
 
 const ValidateStatus: React.FC<ValidateStatusProps> = ({ status }) => {
+	if (status.length === 0) {
+		return null;
+	}
+
 	return (
 		<Space className={style.textareaContainer__validator}>
-			{status.length === 0 ? null : status === "valid" ? (
+			{status === "valid" ? (
 				<Button size="small" style={{ borderColor: "green" }}>
 					<Check color="green" size={16} />
 				</Button>

@@ -41,7 +41,7 @@ const ListSearchResults = <T,>({
 			? filteredNews(searchQuery, items)
 			: filteredResource(searchQuery, categoryQuery, items);
 
-	const list = filteredList ? filteredList : [...Array(20).keys()];
+	const list = filteredList || [...Array(20).keys()];
 
 	const categories = getCategories(items as ResourceType[], resourceName);
 
@@ -53,7 +53,7 @@ const ListSearchResults = <T,>({
 				isLoading={isLoading}
 			/>
 			<List
-				items={list as T[]}
+				items={list}
 				itemComponent={itemComponent}
 				isLoading={isLoading}
 			/>
