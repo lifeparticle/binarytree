@@ -51,7 +51,7 @@ const Footer: React.FC<FooterProps> = ({
 		},
 	];
 
-	const darkModeMonogram = isDarkMode ? MonogramDark : MonogramLight;
+	const monogram = isDarkMode ? MonogramDark : MonogramLight;
 	return (
 		<Space
 			className={classNames(style.footer)}
@@ -62,7 +62,7 @@ const Footer: React.FC<FooterProps> = ({
 			</Dropdown>
 			<a href="https://www.netlify.com">
 				<img
-					src={collapsed ? darkModeMonogram : Logo}
+					src={collapsed ? monogram : Logo}
 					className={style.footer__monogram}
 					alt="Deploys by Netlify"
 				/>
