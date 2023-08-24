@@ -13,8 +13,14 @@ const CopyInput: React.FC<CopyInputProps> = ({ children }) => {
 			tooltip={firstChildProps.tooltip}
 		>
 			<Row gutter={[8, 0]}>
-				<Col span={22}>{children1}</Col>
-				{children2 && <Col span={2}>{children2}</Col>}
+				<Col sm={22} lg={21}>
+					{children1}
+				</Col>
+				{children2 && (
+					<Col sm={2} lg={3}>
+						{children2}
+					</Col>
+				)}
 			</Row>
 		</Form.Item>
 	);

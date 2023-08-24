@@ -1,5 +1,12 @@
 ### [4.8.0] - 2023-08-23
 
+-   Fix sonar cloud bug
+-   Remove necessary code-smell
+-   Make button big
+-   Removed unused css and variable
+
+### [4.8.0] - 2023-08-23
+
 -   Change Footer color
 -   Small Collapse menu when window is small
 -   Fix Data Generator Label and select menu

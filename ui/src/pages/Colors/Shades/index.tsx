@@ -201,7 +201,7 @@ const Shades: React.FC = () => {
 						) : (
 							shades.map((shade, index) => (
 								<Card
-									key={index}
+									key={shade}
 									style={{
 										backgroundColor: shade,
 										color: getTextColor(shade),

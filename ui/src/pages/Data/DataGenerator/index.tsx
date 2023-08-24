@@ -155,16 +155,21 @@ const DataGenerator: React.FC = () => {
 								))}
 							</div>
 							<div>
-								{[...Array(colNum).keys()].map((col) => (
+								{Array.from({ length: colNum }, (_, k) => (
 									<Select
-										key={`data-type-${col}`}
+										key={`data-type-${k}`}
 										className={
 											style.dg__left__bottom__select
+										}
+										value={
+											dataTypes[k] === undefined
+												? ""
+												: dataTypes[k]
 										}
 										size="large"
 										options={MYSQL_DATA_TYPES}
 										onChange={(e) =>
-											onDataTypesChange(e, col)
+											onDataTypesChange(e, k)
 										}
 									/>
 								))}
@@ -184,7 +189,7 @@ const DataGenerator: React.FC = () => {
 										autoComplete="nope"
 										value={
 											colNames[k] === undefined
-												? (colNames[k] = "")
+												? ""
 												: colNames[k]
 										}
 									/>

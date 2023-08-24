@@ -2,12 +2,18 @@ import style from "./Sorting.module.scss";
 import { useClipboard } from "@mantine/hooks";
 import { useEffect, useState } from "react";
 import { sortData } from "./utils/helper";
-import { Button, Input, Space, Segmented, Select, Form, Card } from "antd";
-const { TextArea } = Input;
-
-import { Typography } from "antd";
+import {
+	Button,
+	Input,
+	Space,
+	Segmented,
+	Select,
+	Form,
+	Card,
+	Typography,
+} from "antd";
 import { OUTPUT_FORMAT } from "./utils/constants";
-
+const { TextArea } = Input;
 const { Title } = Typography;
 
 const Sorting: React.FC = () => {

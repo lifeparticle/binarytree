@@ -30,7 +30,7 @@ export const updateHeader = (prevTable: string, colNum: number) => {
 		return `${lines[0]}\n${lines[1]}`;
 	}
 
-	const isColNumInc = prevColNum < colNum ? true : false;
+	const isColNumInc = prevColNum < colNum;
 	let tableHeader = ``;
 	let tableHeaderDivider = ``;
 
@@ -99,7 +99,7 @@ export const updateRows = (
 	let appendRows = ``;
 	let result = ``;
 
-	const isColNumInc = prevColNum < colNum ? true : false;
+	const isColNumInc = prevColNum < colNum;
 
 	if (rowNum === 0) return "";
 
@@ -139,7 +139,7 @@ export const updateRows = (
 		return result;
 	}
 
-	const isRowNumInc = prevRowNum < rowNum ? true : false;
+	const isRowNumInc = prevRowNum < rowNum;
 
 	if (isRowNumInc) {
 		const rows =

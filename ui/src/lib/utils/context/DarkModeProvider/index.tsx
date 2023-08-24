@@ -1,5 +1,5 @@
 import useDarkMode from "lib/utils/context/DarkModeProvider/utils/hooks/useDarkMode";
-import { ReactNode, createContext } from "react";
+import { ReactNode, createContext, useMemo } from "react";
 import { DarkModeContextType } from "./utils/types";
 import { DARK_MODE_STORAGE_KEY } from "./utils/constant";
 
@@ -11,10 +11,13 @@ const DarkModeProvider = ({ children }: { children: ReactNode }) => {
 	const { isDarkMode, algorithm, toggleTheme } = useDarkMode(
 		DARK_MODE_STORAGE_KEY
 	);
+
+	const contextValue = useMemo(() => {
+		return { isDarkMode, algorithm, toggleTheme };
+	}, [isDarkMode, algorithm, toggleTheme]);
+
 	return (
-		<DarkModeContext.Provider
-			value={{ isDarkMode, algorithm, toggleTheme }}
-		>
+		<DarkModeContext.Provider value={contextValue}>
 			{children}
 		</DarkModeContext.Provider>
 	);

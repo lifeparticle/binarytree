@@ -2,10 +2,11 @@ import { Button, Dropdown, MenuProps, theme, Switch, Space } from "antd";
 import style from "./footer.module.scss";
 import { Github, Moon, Settings, Sun } from "lucide-react";
 import { classNames } from "lib/utils/helper";
-import { FooterProps } from "./utils/types";
+
 import MonogramDark from "assets/netlify-monogram-dark.svg";
 import MonogramLight from "assets/netlify-monogram-light.svg";
 import Logo from "assets/netlify-dark.svg";
+import { FooterProps } from "./utils/types";
 
 const Footer: React.FC<FooterProps> = ({
 	handleThemeChange,
@@ -39,7 +40,8 @@ const Footer: React.FC<FooterProps> = ({
 					onClick={() =>
 						window.open(
 							"https://github.com/lifeparticle/binarytree",
-							"_blank"
+							"_blank",
+							"noopener"
 						)
 					}
 				>
@@ -48,6 +50,8 @@ const Footer: React.FC<FooterProps> = ({
 			),
 		},
 	];
+
+	const monogram = isDarkMode ? MonogramDark : MonogramLight;
 	return (
 		<Space
 			className={classNames(style.footer)}
@@ -58,13 +62,7 @@ const Footer: React.FC<FooterProps> = ({
 			</Dropdown>
 			<a href="https://www.netlify.com">
 				<img
-					src={
-						collapsed
-							? isDarkMode
-								? MonogramDark
-								: MonogramLight
-							: Logo
-					}
+					src={collapsed ? monogram : Logo}
 					className={style.footer__monogram}
 					alt="Deploys by Netlify"
 				/>

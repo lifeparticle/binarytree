@@ -1,10 +1,9 @@
 import JSZip from "jszip";
-import { Card, Form, Typography } from "antd";
+import { Card, Form, Typography, Button, Input, Space } from "antd";
 import { saveAs } from "file-saver";
 import JSZipUtils from "jszip-utils";
 import { toPng } from "html-to-image";
 import { useRef, useState } from "react";
-import { Button, Input, Space } from "antd";
 import style from "./ImageGeneratorFromColors.module.scss";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 import { extractColors } from "./utils/helper";
@@ -125,7 +124,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 				</Card>
 				{colors.length > 0 && (
 					<Card className={style.igfc__colors}>
-						{colors.map((color: string, index: number) => {
+						{colors.map((color: string) => {
 							return (
 								<div
 									className={style.colors__color}
@@ -137,7 +136,6 @@ const ImageGeneratorFromColors: React.FC = () => {
 												domEl.current.push(ref);
 											}
 										}}
-										key={`${index}-${color}`}
 										style={{
 											backgroundColor: color,
 											height: `${height}px`,
