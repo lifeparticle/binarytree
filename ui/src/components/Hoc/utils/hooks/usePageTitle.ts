@@ -6,7 +6,7 @@ const usePageTitle = () => {
 	const pageTitle = ROUTES.find(
 		(route) => route.path === location.pathname
 	)?.title;
-	return pageTitle ? pageTitle : "Page Not Found";
+	return pageTitle ?? "Page Not Found";
 };
 
 export default usePageTitle;

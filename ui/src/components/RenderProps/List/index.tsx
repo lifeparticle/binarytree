@@ -14,7 +14,7 @@ const List = <T,>({
 			{items?.map((item, i) => (
 				<ItemComponent
 					key={i}
-					resource={item as T}
+					resource={item}
 					handleOnClick={handleOnClick}
 					isLoading={isLoading}
 				/>

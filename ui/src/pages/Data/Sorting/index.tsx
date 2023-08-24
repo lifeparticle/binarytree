@@ -8,8 +8,6 @@ const { TextArea } = Input;
 import { Typography } from "antd";
 import { OUTPUT_FORMAT } from "./utils/constants";
 
-const { Title } = Typography;
-
 const Sorting: React.FC = () => {
 	const [input, setInput] = useState("");
 	const [output, setOutput] = useState("");
@@ -52,7 +50,7 @@ const Sorting: React.FC = () => {
 
 				<Space direction="vertical">
 					<Card>
-						<Title level={4}>Order</Title>
+						<Typography.Title level={4}>Order</Typography.Title>
 						<Segmented
 							className={style.sort__segment}
 							value={order}

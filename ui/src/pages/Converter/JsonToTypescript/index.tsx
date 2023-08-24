@@ -5,10 +5,11 @@ import style from "./JsonToTypescript.module.scss";
 import { Button, Card, Form, Space } from "antd";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
-import { isJsonValid } from "./utils/helper";
+
 import TextareaWithValidation from "components/General/TextareaWithValidation";
 import CopyInput from "components/Layouts/CopyInput";
 import InputComponent from "components/General/InputComponent";
+import { isJsonValid } from "./utils/helper";
 
 const JsonToTypescript: React.FC = () => {
 	const [json, setJson] = useState("");
@@ -78,9 +79,9 @@ const JsonToTypescript: React.FC = () => {
 										{...getLineProps({ line })}
 									>
 										<span>{i + 1}</span>
-										{line.map((token, key) => (
+										{line.map((token) => (
 											<span
-												key={key}
+												key={token.content}
 												{...getTokenProps({ token })}
 											/>
 										))}

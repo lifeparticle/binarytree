@@ -32,8 +32,6 @@ import {
 } from "lucide-react";
 import { getItem } from "components/Layouts/Menu/utils/helper";
 
-// const IN_DEV = import.meta.env.DEV;
-
 export const MENU_ITEMS = [
 	{
 		name: "Colors",

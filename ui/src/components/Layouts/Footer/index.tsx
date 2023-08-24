@@ -2,10 +2,11 @@ import { Button, Dropdown, MenuProps, theme, Switch, Space } from "antd";
 import style from "./footer.module.scss";
 import { Github, Moon, Settings, Sun } from "lucide-react";
 import { classNames } from "lib/utils/helper";
-import { FooterProps } from "./utils/types";
+
 import MonogramDark from "assets/netlify-monogram-dark.svg";
 import MonogramLight from "assets/netlify-monogram-light.svg";
 import Logo from "assets/netlify-dark.svg";
+import { FooterProps } from "./utils/types";
 
 const Footer: React.FC<FooterProps> = ({
 	handleThemeChange,
