@@ -22,7 +22,7 @@ const TextEditor: React.FC = () => {
 			setCharCountWithoutSpace(0);
 			return;
 		}
-		const cleanValue = content.replace(/(<([^>]+)>)/gi, "").trim();
+		const cleanValue = content.replace(/<[^>]+>/gi, "").trim();
 		setWordCount(cleanValue.split(/[\s]+/g).length);
 		setCharCount(cleanValue.replace(/[\s]+/g, " ").length);
 		setCharCountWithoutSpace(cleanValue.replace(/[\s]+/g, "").length);
@@ -73,6 +73,7 @@ const TextEditor: React.FC = () => {
 									"table",
 									"preview",
 									"help",
+									"wordcount",
 								],
 
 								skin: isDarkMode ? "oxide-dark" : "oxide",
