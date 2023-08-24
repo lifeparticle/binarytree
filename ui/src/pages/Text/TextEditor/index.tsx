@@ -22,10 +22,9 @@ const TextEditor: React.FC = () => {
 			setCharCountWithoutSpace(0);
 			return;
 		}
-		const cleanValue = content.replace(/<[^>]+>/gi, "").trim();
-		setWordCount(cleanValue.split(/[\s]+/g).length);
-		setCharCount(cleanValue.replace(/[\s]+/g, " ").length);
-		setCharCountWithoutSpace(cleanValue.replace(/[\s]+/g, "").length);
+		setWordCount(content.split(/[\s]+/g).length);
+		setCharCount(content.replace(/[\s]+/g, " ").length);
+		setCharCountWithoutSpace(content.replace(/[\s]+/g, "").trim().length);
 	};
 
 	const handleClear = () => {
@@ -37,7 +36,7 @@ const TextEditor: React.FC = () => {
 
 	const handleLog = () => {
 		if (editorRef.current) {
-			const content = editorRef.current.getContent();
+			const content = editorRef.current.getContent({ format: "text" });
 			updateCounts(content);
 		}
 	};
