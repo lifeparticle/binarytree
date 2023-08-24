@@ -95,6 +95,7 @@ const JsonToTypescript: React.FC = () => {
 					<Button
 						onClick={generateInterfaces}
 						disabled={json.length === 0}
+						size="large"
 					>
 						Convert
 					</Button>

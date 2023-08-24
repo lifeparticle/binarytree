@@ -72,7 +72,6 @@ const TextEditor: React.FC = () => {
 									"table",
 									"preview",
 									"help",
-									"wordcount",
 								],
 
 								skin: isDarkMode ? "oxide-dark" : "oxide",
@@ -128,7 +127,9 @@ const TextEditor: React.FC = () => {
 			</Row>
 
 			<Space>
-				<Button onClick={handleClear}>Clear</Button>
+				<Button size="large" onClick={handleClear}>
+					Clear
+				</Button>
 
 				<Clipboard
 					text={editorRef.current?.getContent() || " "}
