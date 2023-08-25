@@ -16,8 +16,6 @@ const Sidebar = () => {
 	);
 	const { toggleTheme, isDarkMode } = useContext(DarkModeContext);
 
-	console.log("collapsed", collapsed);
-
 	const {
 		token: { colorBgContainer },
 	} = theme.useToken();
@@ -34,6 +32,7 @@ const Sidebar = () => {
 			width={250}
 		>
 			<Header />
+
 			<Menu isDarkMode={isDarkMode} collapsed={collapsed} />
 
 			<Footer
