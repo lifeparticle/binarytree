@@ -50,9 +50,9 @@ const Footer: React.FC<FooterProps> = ({
 				className={style.footer__menuCollapse}
 			>
 				{collapsed ? (
-					<ChevronsRight color={colorText} />
+					<ChevronsRight color={colorText} strokeWidth="1.3" />
 				) : (
-					<ChevronsLeft color={colorText} />
+					<ChevronsLeft color={colorText} strokeWidth="1.3" />
 				)}
 			</Button>
 		</Space>

@@ -16,11 +16,11 @@ const ValidateStatus: React.FC<ValidateStatusProps> = ({ status }) => {
 		<Space className={style.textareaContainer__validator}>
 			{status === "valid" ? (
 				<Button size="small" style={{ borderColor: "green" }}>
-					<Check color="green" size={16} />
+					<Check color="green" size={16} strokeWidth="1.3" />
 				</Button>
 			) : (
 				<Button size="small" danger>
-					<X size={16} />
+					<X size={16} strokeWidth="1.3" />
 				</Button>
 			)}
 		</Space>
