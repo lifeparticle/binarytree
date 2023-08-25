@@ -5,6 +5,7 @@ import MonogramDark from "assets/netlify-monogram-dark.svg";
 import MonogramLight from "assets/netlify-monogram-light.svg";
 import Logo from "assets/netlify-dark.svg";
 import { FooterProps } from "./utils/types";
+import { classNames } from "lib/utils/helper";
 
 const Footer: React.FC<FooterProps> = ({
 	handleThemeChange,
@@ -25,7 +26,12 @@ const Footer: React.FC<FooterProps> = ({
 			<a href="https://www.netlify.com">
 				<img
 					src={collapsed ? monogram : Logo}
-					className={style.footer__monogram}
+					className={classNames(
+						style.footer__monogram,
+						isDarkMode
+							? style.footer__monogram_dark
+							: style.footer__monogram_light
+					)}
 					alt="Deploys by Netlify"
 				/>
 			</a>
