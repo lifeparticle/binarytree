@@ -6,9 +6,12 @@ import useWindowWidth from "./useWindowWidth";
 export const useMenuCollapsed = (storageKey: string) => {
 	const { windowWidth } = useWindowWidth(MOBILE_WIDTH);
 	const initialCollapsedValue = getLocalstorageValue<boolean>(storageKey);
-	const [collapsed, setCollapsed] = useState(
-		initialCollapsedValue ?? windowWidth <= MOBILE_WIDTH
-	);
+
+	const isMobileWidth = windowWidth <= MOBILE_WIDTH;
+	const initialState =
+		isMobileWidth || (initialCollapsedValue ?? isMobileWidth);
+
+	const [collapsed, setCollapsed] = useState(initialState);
 
 	const toggleCollapse = () => {
 		setLocalstorageValue<boolean>(storageKey, !collapsed);

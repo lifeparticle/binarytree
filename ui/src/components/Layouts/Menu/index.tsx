@@ -17,7 +17,10 @@ const Menu: React.FC<MenuProps> = ({ collapsed }) => {
 	return (
 		<Sider trigger={null} collapsible collapsed={collapsed}>
 			<AntdMenu
-				className={classNames(style.menu)}
+				className={classNames(
+					style.menu,
+					collapsed ? style.menu__collapsed : ""
+				)}
 				mode="inline"
 				onClick={onClick}
 				items={ITEMS}

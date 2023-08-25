@@ -1,8 +1,6 @@
-import { Button, Dropdown, MenuProps, theme, Switch, Space } from "antd";
+import { theme, Switch, Space, Button } from "antd";
 import style from "./footer.module.scss";
-import { Github, Moon, Settings, Sun } from "lucide-react";
-import { classNames } from "lib/utils/helper";
-
+import { ChevronsLeft, ChevronsRight, Moon, Sun } from "lucide-react";
 import MonogramDark from "assets/netlify-monogram-dark.svg";
 import MonogramLight from "assets/netlify-monogram-light.svg";
 import Logo from "assets/netlify-dark.svg";
@@ -12,54 +10,18 @@ const Footer: React.FC<FooterProps> = ({
 	handleThemeChange,
 	isDarkMode,
 	collapsed,
+	handleMenuCollapse,
 }) => {
 	const {
 		token: { colorBgContainer, colorText },
 	} = theme.useToken();
 
-	const items: MenuProps["items"] = [
-		{
-			key: "1",
-			label: (
-				<Switch
-					checkedChildren={
-						<Moon size={16} color={colorBgContainer} />
-					}
-					unCheckedChildren={<Sun size={16} />}
-					onChange={handleThemeChange}
-					style={{ backgroundColor: colorText }}
-					checked={isDarkMode}
-				/>
-			),
-		},
-		{
-			key: "2",
-			label: (
-				<Button
-					type="text"
-					onClick={() =>
-						window.open(
-							"https://github.com/lifeparticle/binarytree",
-							"_blank",
-							"noopener"
-						)
-					}
-				>
-					<Github color={colorText} />
-				</Button>
-			),
-		},
-	];
-
 	const monogram = isDarkMode ? MonogramDark : MonogramLight;
 	return (
 		<Space
-			className={classNames(style.footer)}
+			className={style.footer}
 			style={{ backgroundColor: colorBgContainer }}
 		>
-			<Dropdown menu={{ items }} placement="topLeft">
-				<Button>{<Settings />}</Button>
-			</Dropdown>
 			<a href="https://www.netlify.com">
 				<img
 					src={collapsed ? monogram : Logo}
@@ -67,6 +29,26 @@ const Footer: React.FC<FooterProps> = ({
 					alt="Deploys by Netlify"
 				/>
 			</a>
+
+			<Switch
+				checkedChildren={<Moon size={16} color={colorBgContainer} />}
+				unCheckedChildren={<Sun size={16} />}
+				onChange={handleThemeChange}
+				style={{ backgroundColor: colorText }}
+				checked={isDarkMode}
+			/>
+
+			<Button
+				onClick={handleMenuCollapse}
+				type="text"
+				className={style.footer__menuCollapse}
+			>
+				{collapsed ? (
+					<ChevronsRight color={colorText} />
+				) : (
+					<ChevronsLeft color={colorText} />
+				)}
+			</Button>
 		</Space>
 	);
 };

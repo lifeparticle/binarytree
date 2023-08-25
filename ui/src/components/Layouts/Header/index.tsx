@@ -1,10 +1,9 @@
 import { Button, Space, theme } from "antd";
-import { ArrowLeftFromLine, ArrowRightFromLine, Hexagon } from "lucide-react";
+import { Hexagon } from "lucide-react";
 import { Link } from "react-router-dom";
 import style from "./header.module.scss";
-import { HeaderProps } from "./utils/types";
 
-const Header: React.FC<HeaderProps> = ({ collapsed, handleMenuCollapse }) => {
+const Header: React.FC = () => {
 	const {
 		token: { colorBgContainer, colorText },
 	} = theme.useToken();
@@ -21,17 +20,6 @@ const Header: React.FC<HeaderProps> = ({ collapsed, handleMenuCollapse }) => {
 						color={colorText}
 					/>
 				</Link>
-			</Button>
-
-			<Button onClick={handleMenuCollapse} type="text">
-				{collapsed ? (
-					<ArrowRightFromLine
-						size={collapsed ? 14 : 18}
-						color={colorText}
-					/>
-				) : (
-					<ArrowLeftFromLine color={colorText} />
-				)}
 			</Button>
 		</Space>
 	);

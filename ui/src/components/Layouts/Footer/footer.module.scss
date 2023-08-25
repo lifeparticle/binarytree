@@ -4,9 +4,14 @@
 
 	&__monogram {
 		display: flex;
-		aspect-ratio: 3/2;
+		aspect-ratio: auto;
 		width: 100%;
 		padding: var(--bt-size-5);
-		object-fit: contain;
+	}
+
+	&__menuCollapse {
+		@media (max-width: 768px) {
+			display: none;
+		}
 	}
 }

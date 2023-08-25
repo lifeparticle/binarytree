@@ -9,6 +9,7 @@ describe("Footer", () => {
 				collapsed={false}
 				isDarkMode={false}
 				handleThemeChange={vi.fn}
+				handleMenuCollapse={vi.fn}
 			/>
 		);
 
