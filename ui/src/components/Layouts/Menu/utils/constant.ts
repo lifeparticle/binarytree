@@ -1,6 +1,6 @@
 import { MenuProps } from "antd";
 import {
-	AlignEndHorizontal,
+	List,
 	ArrowUpNarrowWide,
 	Baseline,
 	Brush,
@@ -104,7 +104,7 @@ export const MENU_ITEMS = [
 	},
 	{
 		name: "List",
-		icon: AlignEndHorizontal,
+		icon: List,
 		show: true,
 		children: [
 			{
@@ -222,7 +222,7 @@ export const MENU_ITEMS = [
 ];
 
 export type IconComponentType =
-	| React.ComponentType<{ size: number }>
+	| React.ComponentType<{ size: number; strokeWidth: string }>
 	| undefined;
 
 const ITEMS: MenuProps["items"] = [

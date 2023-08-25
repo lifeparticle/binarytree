@@ -12,7 +12,9 @@ export function getItem(
 ): MenuItem {
 	return {
 		key,
-		icon: IconComponent ? <IconComponent size={16} /> : undefined,
+		icon: IconComponent ? (
+			<IconComponent size={16} strokeWidth="1.3" />
+		) : undefined,
 		children,
 		label,
 		type,
