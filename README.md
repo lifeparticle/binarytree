@@ -69,7 +69,7 @@ Press key <kbd> <br> ControlLeft + e <br> </kbd> for example input and p
 
 | Name       | Status                                                                                                                                                                         |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UI         | [![Netlify Status](https://api.netlify.com/api/v1/badges/304f7283-52f9-4f01-918a-9d35c3257fb0/deploy-status)](https://app.netlify.com/sites/binarytree-dev/deploys)            |
+| UI Netlify | [![Netlify Status](https://api.netlify.com/api/v1/badges/304f7283-52f9-4f01-918a-9d35c3257fb0/deploy-status)](https://app.netlify.com/sites/binarytree-dev/deploys)            |
 | Fetch News | [![Fetch News](https://github.com/lifeparticle/binarytree/actions/workflows/news.yml/badge.svg)](https://github.com/lifeparticle/binarytree/actions/workflows/news.yml)        |
 | UI PR      | [![UI PR](https://github.com/lifeparticle/binarytree/actions/workflows/ui-pr.yml/badge.svg)](https://github.com/lifeparticle/binarytree/actions/workflows/ui-pr.yml)           |
 | CodeQL     | [![CodeQL](https://github.com/lifeparticle/binarytree/actions/workflows/codeql.yml/badge.svg)](https://github.com/lifeparticle/binarytree/actions/workflows/codeql.yml)        |
