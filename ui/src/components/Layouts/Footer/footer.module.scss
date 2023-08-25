@@ -10,7 +10,14 @@
 		height: auto;
 		padding-bottom: var(--bt-size-10);
 		margin-bottom: var(--bt-size-10);
-		border-bottom: var(--bt-border-solid);
+
+		&_dark {
+			border-bottom: var(--bt-border-solid-light);
+		}
+
+		&_light {
+			border-bottom: var(--bt-border-solid-dark);
+		}
 	}
 
 	&__menuCollapse {

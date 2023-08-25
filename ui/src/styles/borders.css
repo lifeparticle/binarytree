@@ -1,6 +1,7 @@
 :where(html) {
 	--bt-border-dashed: 1px dashed var(--bt-color-border);
-	--bt-border-solid: 1px solid var(--bt-color-border-solid);
+	--bt-border-solid-dark: 1px solid var(--bt-color-border-solid-dark);
+	--bt-border-solid-light: 1px solid var(--bt-color-border-solid-light);
 	--bt-border-radius-4: 4px;
 	--bt-border-radius-8: 8px;
 }
