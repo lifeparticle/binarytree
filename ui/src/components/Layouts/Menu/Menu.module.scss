@@ -1,6 +1,14 @@
 .menu {
-	height: calc(100dvh - 180px);
+	height: calc(100dvh - 23dvh);
 	overflow-y: auto;
 	display: flex;
 	flex-direction: column;
+
+	&__collapsed {
+		height: calc(100dvh - 24.5dvh);
+	}
+
+	@media (max-width: 768px) {
+		height: calc(100dvh - 20dvh);
+	}
 }
