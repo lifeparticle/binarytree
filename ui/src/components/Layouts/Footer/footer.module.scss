@@ -3,10 +3,14 @@
 	flex-direction: column;
 
 	&__monogram {
-		display: flex;
-		aspect-ratio: auto;
-		width: 100%;
-		padding: var(--bt-size-5);
+		display: block;
+		max-width: 130px;
+		max-height: 55px;
+		width: auto;
+		height: auto;
+		padding-bottom: var(--bt-size-10);
+		margin-bottom: var(--bt-size-10);
+		border-bottom: var(--bt-border-solid);
 	}
 
 	&__menuCollapse {
