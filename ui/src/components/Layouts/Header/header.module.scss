@@ -3,4 +3,12 @@
 	align-items: center;
 	justify-content: center;
 	height: var(--bt-size-64);
+
+	&_dark {
+		border-bottom: var(--bt-border-solid-light);
+	}
+
+	&_light {
+		border-bottom: var(--bt-border-solid-dark);
+	}
 }
