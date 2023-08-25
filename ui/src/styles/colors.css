@@ -1,6 +1,6 @@
 :where(html) {
 	--bt-color-border: #ddd;
-
+	--bt-color-border-solid: rgba(5, 5, 5, 0.06);
 	--bt-color-scrollbar-thumb: #707070;
 	--bt-color-scrollbar-track: #c9c8c8;
 }
