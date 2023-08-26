@@ -1,5 +1,7 @@
 import { lazy } from "react";
 
+const About = lazy(() => import("pages/About"));
+
 const ColorPicker = lazy(() => import("pages/Colors/ColorPicker"));
 const Shades = lazy(() => import("pages/Colors/Shades"));
 
@@ -35,6 +37,7 @@ const TextEditor = lazy(() => import("pages/Text/TextEditor"));
 const News = lazy(() => import("pages/News"));
 
 export {
+	About,
 	Base64,
 	Blog,
 	Book,

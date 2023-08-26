@@ -1,11 +1,10 @@
 import { useContext } from "react";
-
 import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 import { ConfigProvider, Layout } from "antd";
-
 import { ErrorBoundary } from "react-error-boundary";
 import RoutesWithPageTitle from "pages/Routes";
 import Sidebar from "components/Layouts/Sidebar";
+import FloatingHeader from "components/Layouts/FloatingHeader";
 
 const { Content } = Layout;
 
@@ -20,6 +19,7 @@ const App: React.FC = () => {
 						<Sidebar />
 						<Layout>
 							<Content>
+								<FloatingHeader />
 								<RoutesWithPageTitle />
 							</Content>
 						</Layout>

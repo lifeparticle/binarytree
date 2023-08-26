@@ -1,5 +1,5 @@
 import { theme, Switch, Space, Button } from "antd";
-import style from "./footer.module.scss";
+import style from "./Footer.module.scss";
 import { ChevronsLeft, ChevronsRight, Moon, Sun } from "lucide-react";
 import MonogramDark from "assets/netlify-monogram-dark.svg";
 import MonogramLight from "assets/netlify-monogram-light.svg";
