@@ -105,6 +105,10 @@ const ROUTES: Route[] = [
 		title: "Dashboard",
 	},
 	{
+		path: "/about",
+		title: "About",
+	},
+	{
 		path: "*",
 		title: "Page Not Found",
 	},

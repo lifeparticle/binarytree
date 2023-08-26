@@ -3,6 +3,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import { Navigate, Route, Routes as RRDRoutes } from "react-router-dom";
 
 import {
+	About,
 	News,
 	ColorPicker,
 	Shades,
@@ -39,6 +40,7 @@ const Routes: React.FC = () => {
 			<Suspense fallback={<Text text={API_LOADING} />}>
 				<RRDRoutes>
 					<Route path="/" element={<News />} />
+					<Route path="/about" element={<About />} />
 					<Route path="/colors">
 						<Route index element={<Navigate to={"cp"} />} />
 						<Route path="cp" element={<ColorPicker />} />
