@@ -89,3 +89,7 @@ h5 {
 	align-items: center;
 	padding-inline: 0px;
 }
+
+.ant-menu-title-content {
+	margin-inline-start: 10px;
+}

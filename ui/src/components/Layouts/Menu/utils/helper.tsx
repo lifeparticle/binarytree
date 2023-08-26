@@ -1,20 +1,19 @@
 import { MenuProps } from "antd";
-import { IconComponentType } from "./constant";
+import Icon from "components/General/Icon";
+import { IconName } from "components/General/Icon/types";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
 export function getItem(
 	label: React.ReactNode,
 	key: React.Key,
-	IconComponent?: IconComponentType,
+	name: IconName,
 	children?: MenuItem[],
 	type?: "group"
 ): MenuItem {
 	return {
 		key,
-		icon: IconComponent ? (
-			<IconComponent size={16} strokeWidth="1.3" />
-		) : undefined,
+		icon: <Icon name={name} size={16} />,
 		children,
 		label,
 		type,

@@ -1,7 +1,7 @@
 import { Avatar, Dropdown, Space, theme } from "antd";
-import { BellIcon } from "lucide-react";
 import style from "./FloatingHeader.module.scss";
 import { items } from "./utils/constants";
+import Icon from "components/General/Icon";
 
 const FloatingHeader = () => {
 	const {
@@ -15,7 +15,7 @@ const FloatingHeader = () => {
 				backgroundColor: colorBgContainer,
 			}}
 		>
-			<BellIcon size={20} color={colorText} strokeWidth="1.3" />
+			<Icon name="Bell" size={20} color={colorText} />
 			<Dropdown menu={{ items }} placement="bottomLeft">
 				<Avatar size="small" />
 			</Dropdown>
