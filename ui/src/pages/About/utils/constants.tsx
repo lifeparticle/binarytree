@@ -1,13 +1,48 @@
 import { Space, Tag } from "antd";
 import type { ColumnsType } from "antd/es/table";
+import { Link } from "react-router-dom";
 
 interface DataType {
 	key: string;
 	name: string;
-	age: number;
-	address: string;
-	tags: string[];
+	description: string;
+	link: string;
+	library: { name: string; url: string }[];
 }
+
+interface ApiInterfaceType {
+	name: string;
+	key: string;
+	api: string;
+}
+
+const apiColumns: ColumnsType<ApiInterfaceType> = [
+	{
+		title: "Page Name",
+		dataIndex: "name",
+		key: "name",
+	},
+	{
+		title: "Url",
+		dataIndex: "api",
+		key: "api",
+		render: (_, record) => (
+			<Space size="middle">
+				<a href={record.api} target="_blank">
+					{record.api}
+				</a>
+			</Space>
+		),
+	},
+];
+
+const apiData: ApiInterfaceType[] = [
+	{
+		name: "News",
+		api: "https://newsapi.org",
+		key: "news",
+	},
+];
 
 const columns: ColumnsType<DataType> = [
 	{
@@ -17,43 +52,34 @@ const columns: ColumnsType<DataType> = [
 		render: (text) => <a>{text}</a>,
 	},
 	{
-		title: "Age",
-		dataIndex: "age",
-		key: "age",
+		title: "Description",
+		dataIndex: "description",
+		key: "description",
 	},
 	{
-		title: "Address",
-		dataIndex: "address",
-		key: "address",
-	},
-	{
-		title: "Tags",
-		key: "tags",
-		dataIndex: "tags",
-		render: (_, { tags }) => (
-			<>
-				{tags.map((tag) => {
-					let color = tag.length > 5 ? "geekblue" : "green";
-					if (tag === "loser") {
-						color = "volcano";
-					}
-					return (
-						<Tag color={color} key={tag}>
-							{tag.toUpperCase()}
-						</Tag>
-					);
-				})}
-			</>
+		title: "Link",
+		dataIndex: "link",
+		key: "link",
+		render: (_, { link }) => (
+			<Link to={link} key={link}>
+				Visit
+			</Link>
 		),
 	},
 	{
-		title: "Action",
-		key: "action",
-		render: (_, record) => (
-			<Space size="middle">
-				<a>Invite {record.name}</a>
-				<a>Delete</a>
-			</Space>
+		title: "Library",
+		key: "library",
+		dataIndex: "library",
+		render: (_, { library }) => (
+			<>
+				{library.map((lib) => {
+					return (
+						<a key={lib.url} href={lib.url}>
+							{lib.name}
+						</a>
+					);
+				})}
+			</>
 		),
 	},
 ];
@@ -61,25 +87,54 @@ const columns: ColumnsType<DataType> = [
 const data: DataType[] = [
 	{
 		key: "1",
-		name: "John Brown",
-		age: 32,
-		address: "New York No. 1 Lake Park",
-		tags: ["nice", "developer"],
+		name: "Color Picker",
+		description: "choose your desired color",
+		link: "/colors/cp",
+		library: [
+			{
+				name: "tinycolor2",
+				url: "https://www.npmjs.com/package/tinycolor2",
+			},
+		],
 	},
 	{
 		key: "2",
-		name: "Jim Green",
-		age: 42,
-		address: "London No. 1 Lake Park",
-		tags: ["loser"],
+		name: "Shades Generator",
+		description: "choose your desired Shades",
+		link: "/colors/shades",
+		library: [
+			{
+				name: "tinycolor2",
+				url: "https://www.npmjs.com/package/tinycolor2",
+			},
+		],
 	},
 	{
 		key: "3",
-		name: "Joe Black",
-		age: 32,
-		address: "Sydney No. 1 Lake Park",
-		tags: ["cool", "teacher"],
+		name: "Base 64 Converter",
+		description: "Convert text to base64",
+		link: "/converter/base-64",
+		library: [],
+	},
+	{
+		key: "4",
+		name: "Pixel converter",
+		description: "Convert pixel to rem",
+		link: "/converter/pixel",
+		library: [],
+	},
+	{
+		key: "4",
+		name: "Json to typescript converter",
+		description: "Convert Json to typescript",
+		link: "/converter/jtt",
+		library: [
+			{
+				name: "prism-react-renderer",
+				url: "https://www.npmjs.com/package/prism-react-renderer",
+			},
+		],
 	},
 ];
 
-export { columns, data };
+export { columns, data, apiData, apiColumns };

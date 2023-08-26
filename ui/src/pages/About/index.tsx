@@ -1,25 +1,27 @@
-import { Space, Table } from "antd";
-import { columns, data } from "./utils/constants";
+import { Table, Typography } from "antd";
+import { apiColumns, apiData, columns, data } from "./utils/constants";
 import style from "./About.module.scss";
 
 const About = () => {
 	return (
-		<Space direction="vertical" className={style.about}>
-			binarytree.dev offers a range of developer productivity tools to
-			save time
+		<div className={style.about}>
+			<Typography.Title level={3}>
+				binarytree.dev offers a range of developer productivity tools to
+				save time
+			</Typography.Title>
 			<Table
-				columns={columns}
-				dataSource={data}
+				columns={apiColumns}
+				dataSource={apiData}
 				pagination={false}
-				title={() => "API"}
+				title={() => "API's"}
 			/>
 			<Table
 				columns={columns}
 				dataSource={data}
 				pagination={false}
-				title={() => "Library"}
+				title={() => "Features"}
 			/>
-		</Space>
+		</div>
 	);
 };
 

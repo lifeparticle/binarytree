@@ -2,10 +2,10 @@ import { useState } from "react";
 import style from "./TableOfContent.module.scss";
 import { useClipboard } from "@mantine/hooks";
 import { marked } from "marked";
-import { Input, Button, Form, Card } from "antd";
+import { Input, Button, Form, Card, Row, Col } from "antd";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 import { TocItem } from "./utils/types";
-import { indentMap } from "./utils/constant";
+import { indentMap } from "./utils/constants";
 import CopyInput from "components/Layouts/CopyInput";
 import InputComponent from "components/General/InputComponent";
 const { TextArea } = Input;
@@ -93,59 +93,64 @@ const TableOfContent: React.FC = () => {
 	};
 
 	return (
-		<div className={style.toc}>
-			<Card>
-				<Form layout="vertical">
-					<CopyInput>
-						<InputComponent
-							label="Provide URL"
-							placeholder="URL"
-							value={url}
-							onChange={(event) =>
-								fetchData(event.currentTarget.value)
-							}
-							type="text"
-						/>
+		<Row gutter={16}>
+			<Col sm={24} md={24} lg={12}>
+				<Card>
+					<Form layout="vertical">
+						<CopyInput>
+							<InputComponent
+								label="Provide URL"
+								placeholder="URL"
+								value={url}
+								onChange={(event) =>
+									fetchData(event.currentTarget.value)
+								}
+								type="text"
+							/>
+							<Button
+								size="large"
+								onClick={() => {
+									setMarkdown("");
+									setUrl("");
+								}}
+								role="clear_text"
+							>
+								Clear
+							</Button>
+						</CopyInput>
+						<Form.Item label="Content">
+							<TextArea
+								placeholder=""
+								value={markdown}
+								onChange={(event) =>
+									onMarkdownChange(event.currentTarget.value)
+								}
+								autoSize={{ maxRows: 48, minRows: 48 }}
+							/>
+						</Form.Item>
+					</Form>
+				</Card>
+			</Col>
+
+			<Col sm={24} md={24} lg={12}>
+				<Card>
+					<Form layout="vertical" className={style.toc__output}>
 						<Button
+							onClick={() => clipboard.copy(tableOfContents)}
 							size="large"
-							onClick={() => {
-								setMarkdown("");
-								setUrl("");
-							}}
-							role="clear_text"
 						>
-							Clear
+							{clipboard.copied ? "Copied" : "Copy"}
 						</Button>
-					</CopyInput>
-					<Form.Item label="Content">
-						<TextArea
-							placeholder=""
-							value={markdown}
-							onChange={(event) =>
-								onMarkdownChange(event.currentTarget.value)
-							}
-							autoSize={{ maxRows: 48, minRows: 48 }}
-						/>
-					</Form.Item>
-				</Form>
-			</Card>
-			<Card>
-				<Form layout="vertical" className={style.toc__output}>
-					<Button
-						onClick={() => clipboard.copy(tableOfContents)}
-						size="large"
-					>
-						{clipboard.copied ? "Copied" : "Copy"}
-					</Button>
-					<Form.Item label="Output">
-						<TextArea
-							value={tableOfContents}
-							autoSize={{ maxRows: 48, minRows: 48 }}
-						/>
-					</Form.Item>
-				</Form>
-			</Card>
-		</div>
+						<Form.Item label="Output">
+							<TextArea
+								value={tableOfContents}
+								autoSize={{ maxRows: 48, minRows: 48 }}
+							/>
+						</Form.Item>
+					</Form>
+				</Card>
+			</Col>
+		</Row>
 	);
 };
 

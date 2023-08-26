@@ -4,11 +4,11 @@ import JsonToTypescript from "pages/Converter/JsonToTypescript";
 
 describe("JsonToTs", () => {
 	test("render component without crash", () => {
-		render(<JsonToTypescript />);
+		render(<JsonToTypescript key={101} />);
 	});
 
 	test("render json textfield", () => {
-		render(<JsonToTypescript />);
+		render(<JsonToTypescript key={101} />);
 
 		const JsonTextbox = screen.getByPlaceholderText("JSON");
 		expect(JsonTextbox).toBeInTheDocument();
@@ -20,7 +20,7 @@ describe("JsonToTs", () => {
 	});
 
 	test("generates interfaces on button click", () => {
-		render(<JsonToTypescript />);
+		render(<JsonToTypescript key={101} />);
 
 		const jsonTextarea = screen.getByPlaceholderText("JSON");
 		fireEvent.change(jsonTextarea, {

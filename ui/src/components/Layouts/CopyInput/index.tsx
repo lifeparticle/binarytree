@@ -1,6 +1,7 @@
-import { Row, Col, Form } from "antd";
+import { Form } from "antd";
 import React from "react";
 import { CopyInputProps } from "./utils/types";
+import style from "./CopyInput.module.scss";
 
 const CopyInput: React.FC<CopyInputProps> = ({ children }) => {
 	const [children1, children2] = React.Children.toArray(children);
@@ -12,16 +13,10 @@ const CopyInput: React.FC<CopyInputProps> = ({ children }) => {
 			label={firstChildProps.label}
 			tooltip={firstChildProps.tooltip}
 		>
-			<Row gutter={[8, 0]}>
-				<Col sm={22} lg={21}>
-					{children1}
-				</Col>
-				{children2 && (
-					<Col sm={2} lg={3}>
-						{children2}
-					</Col>
-				)}
-			</Row>
+			<div className={style.copyinput}>
+				<div className={style.copyinput__input}>{children1}</div>
+				{children2 ? <div>{children2}</div> : null}
+			</div>
 		</Form.Item>
 	);
 };

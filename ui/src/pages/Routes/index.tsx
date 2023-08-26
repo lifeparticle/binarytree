@@ -32,7 +32,7 @@ import {
 } from "pages/pages";
 import withPageTitle from "components/Hoc/withPageTitle";
 import Text from "components/General/Text/Text";
-import { API_LOADING } from "lib/utils/constant";
+import { API_LOADING } from "lib/utils/constants";
 
 const Routes: React.FC = () => {
 	return (
