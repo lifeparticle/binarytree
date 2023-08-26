@@ -125,29 +125,28 @@ const ImageGeneratorFromColors: React.FC = () => {
 				</Card>
 				{colors.length > 0 && (
 					<Card className={style.igfc__colors}>
-						{colors.map((color: string) => {
-							return (
-								<div
-									className={style.colors__color}
-									key={color}
-								>
-									<div
-										ref={(ref) => {
-											if (ref) {
-												domEl.current.push(ref);
-											}
-										}}
-										style={{
-											backgroundColor: color,
-											height: `${height}px`,
-											width: `${width}px`,
-											borderRadius: `${rounded}px`,
-										}}
-									/>
-									<Title level={5}>{color}</Title>
-								</div>
-							);
-						})}
+						<div className={style.igfc__image__container}>
+							{colors.map((color: string) => {
+								return (
+									<div key={color}>
+										<div
+											ref={(ref) => {
+												if (ref) {
+													domEl.current.push(ref);
+												}
+											}}
+											style={{
+												backgroundColor: color,
+												height: `${height}px`,
+												width: `${width}px`,
+												borderRadius: `${rounded}px`,
+											}}
+										/>
+										<Title level={5}>{color}</Title>
+									</div>
+								);
+							})}
+						</div>
 					</Card>
 				)}
 			</div>

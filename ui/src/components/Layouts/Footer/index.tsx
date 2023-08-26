@@ -37,8 +37,16 @@ const Footer: React.FC<FooterProps> = ({
 			</a>
 
 			<Switch
-				checkedChildren={<Moon size={16} color={colorBgContainer} />}
-				unCheckedChildren={<Sun size={16} />}
+				checkedChildren={
+					<Moon
+						style={{ marginTop: "3px" }}
+						size={16}
+						color={colorBgContainer}
+					/>
+				}
+				unCheckedChildren={
+					<Sun style={{ alignContent: "center" }} size={16} />
+				}
 				onChange={handleThemeChange}
 				style={{ backgroundColor: colorText }}
 				checked={isDarkMode}

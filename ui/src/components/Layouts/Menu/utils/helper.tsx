@@ -1,5 +1,5 @@
 import { MenuProps } from "antd";
-import { IconComponentType } from "./constant";
+import { IconComponentType } from "./constants";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
