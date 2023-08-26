@@ -1,243 +1,209 @@
 import { MenuProps } from "antd";
-import {
-	List,
-	ArrowUpNarrowWide,
-	Baseline,
-	Brush,
-	ClipboardEdit,
-	Code2,
-	Database,
-	DatabaseBackup,
-	Dice5,
-	FileEdit,
-	FileOutput,
-	Github,
-	Image,
-	Layers,
-	Pencil,
-	Repeat,
-	Replace,
-	Table,
-	Youtube,
-	BrushIcon,
-	GraduationCap,
-	Clapperboard,
-	Tv,
-	Server,
-	Plug,
-	Wrench,
-	BookOpen,
-	Keyboard,
-	Square,
-} from "lucide-react";
+import { IconName } from "components/General/Icon/types";
 import { getItem } from "components/Layouts/Menu/utils/helper";
 
 export const MENU_ITEMS = [
 	{
 		name: "Colors",
-		icon: Brush,
+		icon: "Brush",
 		show: true,
 		children: [
 			{
 				name: "Color Picker",
 				url: "/colors/cp",
-				icon: Baseline,
+				icon: "Baseline",
 				show: true,
 			},
 			{
 				name: "Shade Generator",
 				url: "/colors/shades",
-				icon: Layers,
+				icon: "Layers",
 				show: true,
 			},
 		],
 	},
 	{
 		name: "Converter",
-		icon: Repeat,
+		icon: "Repeat",
 		show: true,
 		children: [
 			{
 				name: "Base 64",
 				url: "/converter/base-64",
-				icon: Replace,
+				icon: "Replace",
 				show: true,
 			},
 			{
 				name: "Pixel",
 				url: "/converter/pixel",
-				icon: FileOutput,
+				icon: "FileOutput",
 				show: true,
 			},
 			{
 				name: "JSON To TypeScript",
 				url: "/converter/jtt",
-				icon: FileOutput,
+				icon: "FileOutput",
 				show: true,
 			},
 		],
 	},
 	{
 		name: "Data",
-		icon: Database,
+		icon: "Database",
 		show: true,
 		children: [
 			{
 				name: "Data Generator",
 				url: "/data/data-gen",
-				icon: DatabaseBackup,
+				icon: "DatabaseBackup",
 				show: true,
 			},
 			{
 				name: "Image Generator From Colors",
 				url: "/data/igfc",
-				icon: Image,
+				icon: "Image",
 				show: true,
 			},
 			{
 				name: "Sorting",
 				url: "/data/sorting",
-				icon: ArrowUpNarrowWide,
+				icon: "ArrowUpNarrowWide",
 				show: true,
 			},
 		],
 	},
 	{
 		name: "List",
-		icon: List,
+		icon: "List",
 		show: true,
 		children: [
 			{
 				name: "Blog",
 				url: "/list/blog",
-				icon: Keyboard,
+				icon: "Keyboard",
 				show: true,
 			},
 			{
 				name: "Book",
 				url: "/list/book",
-				icon: BookOpen,
+				icon: "BookOpen",
 				show: true,
 			},
 			{
 				name: "Course",
 				url: "/list/course",
-				icon: GraduationCap,
+				icon: "GraduationCap",
 				show: true,
 			},
 			{
 				name: "Github",
 				url: "/list/github",
-				icon: Github,
+				icon: "Github",
 				show: true,
 			},
 			{
 				name: "Icon",
 				url: "/list/icon",
-				icon: Square,
+				icon: "Square",
 				show: true,
 			},
 			{
 				name: "Movie",
 				url: "/list/movie",
-				icon: Clapperboard,
+				icon: "Clapperboard",
 				show: true,
 			},
 			{
 				name: "Platform",
 				url: "/list/platform",
-				icon: Server,
+				icon: "Server",
 				show: true,
 			},
 			{
 				name: "Plugin",
 				url: "/list/plugin",
-				icon: Plug,
+				icon: "Plug",
 				show: true,
 			},
 			{
 				name: "Tool",
 				url: "/list/tool",
-				icon: Wrench,
+				icon: "Wrench",
 				show: true,
 			},
 			{
 				name: "TV Series",
 				url: "/list/tv-series",
-				icon: Tv,
+				icon: "Tv",
 				show: true,
 			},
 			{
 				name: "UI/UX",
 				url: "/list/ui-ux",
-				icon: BrushIcon,
+				icon: "Brush",
 				show: true,
 			},
 			{
 				name: "Youtube",
 				url: "/list/youtube",
-				icon: Youtube,
+				icon: "Youtube",
 				show: true,
 			},
 		],
 	},
 	{
 		name: "Markdown",
-		icon: Code2,
+		icon: "Code2",
 		show: true,
 		children: [
 			{
 				name: "Markdown Editor",
 				url: "/markdown/me",
-				icon: FileEdit,
+				icon: "FileEdit",
 				show: true,
 			},
 			{
 				name: "MD Table Generator",
 				url: "/markdown/md-table-generator",
-				icon: Dice5,
+				icon: "Dice5",
 				show: true,
 			},
 			{
 				name: "Table Of Content",
 				url: "/markdown/toc",
-				icon: Table,
+				icon: "Table",
 				show: true,
 			},
 		],
 	},
 	{
 		name: "Text",
-		icon: Pencil,
+		icon: "Pencil",
 		show: true,
 		children: [
 			{
 				name: "Text Editor",
 				url: "/text/te",
-				icon: ClipboardEdit,
+				icon: "ClipboardEdit",
 				show: true,
 			},
 		],
 	},
 ];
 
-export type IconComponentType =
-	| React.ComponentType<{ size: number; strokeWidth: string }>
-	| undefined;
-
 const ITEMS: MenuProps["items"] = [
 	...MENU_ITEMS.filter((rootItem) => rootItem.show).map((item) => {
 		return getItem(
 			item.name,
 			item.name as React.Key,
-			item.icon as IconComponentType,
+			item.icon as IconName,
 			item.children
 				.filter((item) => item.show)
 				.map((child) =>
 					getItem(
 						child.name,
 						child.url as React.Key,
-						child.icon as IconComponentType
+						child.icon as IconName
 					)
 				)
 		);
