@@ -140,7 +140,7 @@ export const MENU_ITEMS = [
 			{
 				name: "UI/UX",
 				url: "/list/ui-ux",
-				icon: "BrushIcon",
+				icon: "Brush",
 				show: true,
 			},
 			{
