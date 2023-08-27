@@ -1,11 +1,11 @@
 import { apiColumns, apiData, columns, data } from "./utils/constants";
-import { Button, Table, Typography } from "antd";
+import { Button, Space, Table, Typography } from "antd";
 import style from "./About.module.scss";
 import Icon from "components/General/Icon";
 
 const About = () => {
 	return (
-		<div className={style.about}>
+		<Space direction="vertical" className={style.about}>
 			<Typography.Title level={3}>
 				binarytree.dev offers a range of developer productivity tools to
 				save time
@@ -36,7 +36,7 @@ const About = () => {
 			>
 				<Icon name="Github" />
 			</Button>
-		</div>
+		</Space>
 	);
 };
 
