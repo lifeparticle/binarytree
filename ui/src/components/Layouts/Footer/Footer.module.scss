@@ -26,4 +26,12 @@
 			display: none;
 		}
 	}
+
+	&__moon {
+		margin-top: var(--bt-size-3);
+	}
+
+	&__sun {
+		margin-top: var(--bt-size-minus-1);
+	}
 }

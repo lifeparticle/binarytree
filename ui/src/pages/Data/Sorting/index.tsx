@@ -1,5 +1,4 @@
 import style from "./Sorting.module.scss";
-import { useClipboard } from "@mantine/hooks";
 import { useEffect, useState } from "react";
 import { sortData } from "./utils/helper";
 import {
@@ -13,6 +12,8 @@ import {
 	Typography,
 } from "antd";
 import { OUTPUT_FORMAT } from "./utils/constants";
+import Clipboard from "components/RenderProps/Clipboard";
+import ClipboardButton from "components/General/ClipboardButton";
 const { TextArea } = Input;
 const { Title } = Typography;
 
@@ -21,8 +22,6 @@ const Sorting: React.FC = () => {
 	const [output, setOutput] = useState("");
 	const [outputFormat, setOutputFormat] = useState("\n");
 	const [order, setOrder] = useState("Ascending");
-	const clipboard = useClipboard({ timeout: 500 });
-	const inputClipBoard = useClipboard({ timeout: 500 });
 
 	useEffect(() => {
 		const sortedData = sortData(input, order);
@@ -47,14 +46,16 @@ const Sorting: React.FC = () => {
 						</Form.Item>
 
 						<Space>
-							<Button
-								size="large"
-								onClick={() => inputClipBoard.copy(input)}
-							>
-								{inputClipBoard.copied ? "Copied" : "Copy"}
-							</Button>
+							<Clipboard
+								text={input}
+								clipboardComponent={ClipboardButton}
+							/>
 
-							<Button size="large" onClick={() => setInput("")}>
+							<Button
+								disabled={input.length === 0}
+								size="large"
+								onClick={() => setInput("")}
+							>
 								Clear
 							</Button>
 						</Space>
@@ -97,12 +98,10 @@ const Sorting: React.FC = () => {
 						</Form.Item>
 
 						<Space>
-							<Button
-								size="large"
-								onClick={() => clipboard.copy(output)}
-							>
-								{clipboard.copied ? "Copied" : "Copy"}
-							</Button>
+							<Clipboard
+								text={output}
+								clipboardComponent={ClipboardButton}
+							/>
 						</Space>
 					</Card>
 				</Space>

@@ -1,11 +1,11 @@
 import { theme, Switch, Space, Button } from "antd";
 import style from "./Footer.module.scss";
-import { ChevronsLeft, ChevronsRight, Moon, Sun } from "lucide-react";
 import MonogramDark from "assets/netlify-monogram-dark.svg";
 import MonogramLight from "assets/netlify-monogram-light.svg";
 import Logo from "assets/netlify-dark.svg";
 import { FooterProps } from "./utils/types";
 import { classNames } from "lib/utils/helper";
+import Icon from "components/General/Icon";
 
 const Footer: React.FC<FooterProps> = ({
 	handleThemeChange,
@@ -37,8 +37,16 @@ const Footer: React.FC<FooterProps> = ({
 			</a>
 
 			<Switch
-				checkedChildren={<Moon size={16} color={colorBgContainer} />}
-				unCheckedChildren={<Sun size={16} />}
+				checkedChildren={
+					<div className={style.footer__moon}>
+						<Icon size={16} color={colorBgContainer} name="Moon" />
+					</div>
+				}
+				unCheckedChildren={
+					<div className={style.footer__sun}>
+						<Icon name="Sun" size={16} color={colorBgContainer} />
+					</div>
+				}
 				onChange={handleThemeChange}
 				style={{ backgroundColor: colorText }}
 				checked={isDarkMode}
@@ -50,9 +58,9 @@ const Footer: React.FC<FooterProps> = ({
 				className={style.footer__menuCollapse}
 			>
 				{collapsed ? (
-					<ChevronsRight color={colorText} strokeWidth="1.3" />
+					<Icon name="ChevronsRight" color={colorText} />
 				) : (
-					<ChevronsLeft color={colorText} strokeWidth="1.3" />
+					<Icon name="ChevronsLeft" color={colorText} />
 				)}
 			</Button>
 		</Space>

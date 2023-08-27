@@ -1,13 +1,29 @@
-import { Button, Space, Table } from "antd";
-import { columns, data } from "./utils/constants";
+import { apiColumns, apiData, columns, data } from "./utils/constants";
+import { Button, Space, Table, Typography } from "antd";
 import style from "./About.module.scss";
 import Icon from "components/General/Icon";
 
 const About = () => {
 	return (
 		<Space direction="vertical" className={style.about}>
-			binarytree.dev offers a range of developer productivity tools to
-			save time
+			<Typography.Title level={3}>
+				binarytree.dev offers a range of developer productivity tools to
+				save time
+			</Typography.Title>
+
+			<Table
+				columns={apiColumns}
+				dataSource={apiData}
+				pagination={false}
+				title={() => "API's"}
+			/>
+			<Table
+				columns={columns}
+				dataSource={data}
+				pagination={false}
+				title={() => "Features"}
+			/>
+
 			<Button
 				type="text"
 				onClick={() =>
@@ -20,18 +36,6 @@ const About = () => {
 			>
 				<Icon name="Github" />
 			</Button>
-			<Table
-				columns={columns}
-				dataSource={data}
-				pagination={false}
-				title={() => "API"}
-			/>
-			<Table
-				columns={columns}
-				dataSource={data}
-				pagination={false}
-				title={() => "Library"}
-			/>
 		</Space>
 	);
 };

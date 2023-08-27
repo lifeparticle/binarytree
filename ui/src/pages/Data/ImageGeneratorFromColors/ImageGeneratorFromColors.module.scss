@@ -11,14 +11,12 @@
 	}
 
 	&__colors {
-		display: flex;
-		flex-direction: row;
 		grid-column: 1 / -1;
+	}
+
+	&__image__container {
+		display: flex;
+		flex-wrap: wrap;
 		gap: var(--bt-size-16);
-		justify-content: center;
-		&__color {
-			display: grid;
-			justify-items: center;
-		}
 	}
 }

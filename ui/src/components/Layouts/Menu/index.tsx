@@ -1,6 +1,6 @@
 import { Menu as AntdMenu, Layout } from "antd";
 import { To, useNavigate } from "react-router-dom";
-import { ITEMS } from "./utils/constant";
+import { ITEMS } from "./utils/constants";
 import { MenuProps } from "./utils/types";
 import style from "./Menu.module.scss";
 import { classNames } from "lib/utils/helper";
