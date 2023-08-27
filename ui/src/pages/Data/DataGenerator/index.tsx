@@ -1,5 +1,15 @@
 import { useClipboard } from "@mantine/hooks";
-import { AutoComplete, Button, Card, Form, Input, Select, Space } from "antd";
+import {
+	AutoComplete,
+	Button,
+	Card,
+	Col,
+	Form,
+	Input,
+	Row,
+	Select,
+	Space,
+} from "antd";
 import { downloadTextFile } from "lib/utils/files";
 import { useState } from "react";
 import style from "./DataGenerator.module.scss";
@@ -7,8 +17,7 @@ import { FAKER_DATA_TYPES, MYSQL_DATA_TYPES } from "./utils/constants";
 import { convertToJSON } from "./utils/utils";
 import CopyInput from "components/Layouts/CopyInput";
 import InputComponent from "components/General/InputComponent";
-
-const { TextArea } = Input;
+import Output from "./components/Output";
 
 const DataGenerator: React.FC = () => {
 	const [tableName, setTableName] = useState("");
@@ -81,174 +90,190 @@ const DataGenerator: React.FC = () => {
 
 	return (
 		<Form layout="vertical">
-			<div className={style.dg}>
-				<Card>
-					<div className={style.dg__left}>
-						<div className={style.dg__left_top}>
-							<CopyInput>
-								<InputComponent
-									label="Table Name"
-									placeholder="Table name"
-									value={tableName}
-									onChange={(event) =>
-										setTableName(event.currentTarget.value)
-									}
-									type="text"
-								/>
-							</CopyInput>
-
-							<CopyInput>
-								<InputComponent
-									label="Total Column Number"
-									placeholder="NumberInput with custom layout"
-									value={colNum}
-									min={0}
-									onChange={(val) => {
-										if (val) {
-											setColNum(val);
-											setColNames((p: string[]) => [
-												...p.slice(0, val),
-											]);
-											setDataTypes((p: string[]) => [
-												...p.slice(0, val),
-											]);
-											setFakeDataTypes((p: string[]) => [
-												...p.slice(0, val),
-											]);
+			<Row gutter={[16, 16]} className={style.dg}>
+				<Col xs={24} sm={24} md={24} lg={12}>
+					<Card>
+						<div className={style.dg__left}>
+							<div className={style.dg__left_top}>
+								<CopyInput>
+									<InputComponent
+										label="Table Name"
+										placeholder="Table name"
+										value={tableName}
+										onChange={(event) =>
+											setTableName(
+												event.currentTarget.value
+											)
 										}
-									}}
-									type="number"
-								/>
-							</CopyInput>
+										type="text"
+									/>
+								</CopyInput>
 
-							<CopyInput>
-								<InputComponent
-									label="Generate total Row Data (Output)"
-									placeholder="NumberInput with custom layout"
-									value={rowNum}
-									min={0}
-									onChange={(val) => val && setRowNum(val)}
-									type="number"
-								/>
-							</CopyInput>
+								<CopyInput>
+									<InputComponent
+										label="Total Column Number"
+										placeholder="NumberInput with custom layout"
+										value={colNum}
+										min={0}
+										onChange={(val) => {
+											if (val) {
+												setColNum(val);
+												setColNames((p: string[]) => [
+													...p.slice(0, val),
+												]);
+												setDataTypes((p: string[]) => [
+													...p.slice(0, val),
+												]);
+												setFakeDataTypes(
+													(p: string[]) => [
+														...p.slice(0, val),
+													]
+												);
+											}
+										}}
+										type="number"
+									/>
+								</CopyInput>
+
+								<CopyInput>
+									<InputComponent
+										label="Generate total Row Data (Output)"
+										placeholder="NumberInput with custom layout"
+										value={rowNum}
+										min={0}
+										onChange={(val) =>
+											val && setRowNum(val)
+										}
+										type="number"
+									/>
+								</CopyInput>
+							</div>
+
+							<div className={style.dg__left__bottom}>
+								{/* Fix the warning */}
+								<div>
+									{Array.from({ length: colNum }, (_, k) => (
+										<AutoComplete
+											className={
+												style.dg__left__bottom__autocomplete
+											}
+											size="large"
+											key={`faker-data-type-${k}`}
+											value={fakeDataTypes[k] || ""}
+											placeholder="Pick one"
+											options={FAKER_DATA_TYPES}
+											onChange={(e) => {
+												onFakeDataTypesChange(e, k);
+												onColNamesChange(e, k);
+											}}
+											style={{ width: "100%" }}
+										/>
+									))}
+								</div>
+								<div>
+									{Array.from({ length: colNum }, (_, k) => (
+										<Select
+											key={`data-type-${k}`}
+											className={
+												style.dg__left__bottom__select
+											}
+											value={
+												dataTypes[k] === undefined
+													? ""
+													: dataTypes[k]
+											}
+											size="large"
+											options={MYSQL_DATA_TYPES}
+											onChange={(e) =>
+												onDataTypesChange(e, k)
+											}
+										/>
+									))}
+								</div>
+								<div>
+									{Array.from({ length: colNum }, (_, k) => (
+										<Input
+											className={
+												style.dg__left__bottom__input
+											}
+											size="large"
+											key={`col-name-${k}`}
+											placeholder="Column name"
+											onChange={(e) =>
+												onColNamesChange(
+													e.target.value,
+													k
+												)
+											}
+											autoComplete="nope"
+											value={
+												colNames[k] === undefined
+													? ""
+													: colNames[k]
+											}
+										/>
+									))}
+								</div>
+							</div>
 						</div>
 
-						<div className={style.dg__left__bottom}>
-							{/* Fix the warning */}
-							<div>
-								{Array.from({ length: colNum }, (_, k) => (
-									<AutoComplete
-										className={
-											style.dg__left__bottom__autocomplete
-										}
-										size="large"
-										key={`faker-data-type-${k}`}
-										value={fakeDataTypes[k] || ""}
-										placeholder="Pick one"
-										options={FAKER_DATA_TYPES}
-										onChange={(e) => {
-											onFakeDataTypesChange(e, k);
-											onColNamesChange(e, k);
-										}}
-										style={{ width: "100%" }}
-									/>
-								))}
-							</div>
-							<div>
-								{Array.from({ length: colNum }, (_, k) => (
-									<Select
-										key={`data-type-${k}`}
-										className={
-											style.dg__left__bottom__select
-										}
-										value={
-											dataTypes[k] === undefined
-												? ""
-												: dataTypes[k]
-										}
-										size="large"
-										options={MYSQL_DATA_TYPES}
-										onChange={(e) =>
-											onDataTypesChange(e, k)
-										}
-									/>
-								))}
-							</div>
-							<div>
-								{Array.from({ length: colNum }, (_, k) => (
-									<Input
-										className={
-											style.dg__left__bottom__input
-										}
-										size="large"
-										key={`col-name-${k}`}
-										placeholder="Column name"
-										onChange={(e) =>
-											onColNamesChange(e.target.value, k)
-										}
-										autoComplete="nope"
-										value={
-											colNames[k] === undefined
-												? ""
-												: colNames[k]
-										}
-									/>
-								))}
-							</div>
-						</div>
-					</div>
-				</Card>
+						<Button
+							disabled={tableName && colNum > 0 ? false : true}
+							onClick={onButtonClick}
+						>
+							Generate
+						</Button>
+					</Card>
+				</Col>
 
-				<Card>
-					<div className={style.dg__right}>
-						{colNum > 0 ? (
-							<>
-								<Space>
-									<Button onClick={onButtonClick}>
-										Generate
-									</Button>
-									<Button
-										onClick={() => {
-											downloadTextFile(
-												result,
-												"data.sql"
-											);
-										}}
-									>
-										Download SQL
-									</Button>
-									<Button
-										onClick={() => {
-											downloadTextFile(
-												convertToJSON(
-													colNames,
-													rowNum,
-													result
-												),
-												"data.json"
-											);
-										}}
-									>
-										Download JSON
-									</Button>
-									<Button
-										onClick={() => clipboard.copy(result)}
-									>
-										{clipboard.copied ? "Copied" : "Copy"}
-									</Button>
-								</Space>
-								<TextArea
-									placeholder=""
-									value={result}
-									rows={30}
-									maxLength={30}
-									readOnly
-								/>
-							</>
-						) : null}
-					</div>
-				</Card>
-			</div>
+				{result.length > 0 ? (
+					<Col xs={24} sm={24} md={24} lg={12}>
+						<Card>
+							<div className={style.dg__right}>
+								<>
+									<Space>
+										<Button
+											onClick={() => {
+												downloadTextFile(
+													result,
+													"data.sql"
+												);
+											}}
+										>
+											Download SQL
+										</Button>
+										<Button
+											onClick={() => {
+												downloadTextFile(
+													convertToJSON(
+														colNames,
+														rowNum,
+														result
+													),
+													"data.json"
+												);
+											}}
+										>
+											Download JSON
+										</Button>
+										<Button
+											onClick={() =>
+												clipboard.copy(result)
+											}
+										>
+											{clipboard.copied
+												? "Copied"
+												: "Copy"}
+										</Button>
+									</Space>
+
+									<Output sql={result} json="" />
+								</>
+							</div>
+						</Card>
+					</Col>
+				) : null}
+			</Row>
 		</Form>
 	);
 };

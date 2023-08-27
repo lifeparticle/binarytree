@@ -1,7 +1,7 @@
 import { Layout, theme } from "antd";
 import Header from "components/Layouts/Header";
 import Menu from "components/Layouts/Menu";
-import { MENU_COLLAPSED_STORAGE_KEY } from "./utils/constant";
+import { MENU_COLLAPSED_STORAGE_KEY } from "./utils/constants";
 import useMenuCollapsed from "lib/utils/hooks/useMenuCollapsed";
 import { useContext } from "react";
 import { DarkModeContext } from "lib/utils/context/DarkModeProvider";

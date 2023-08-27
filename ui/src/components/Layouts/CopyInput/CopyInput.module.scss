@@ -1,0 +1,10 @@
+.copyinput {
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	gap: var(--bt-size-5);
+
+	&__input {
+		flex: 1;
+	}
+}

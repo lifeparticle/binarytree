@@ -6,7 +6,7 @@ import Search from "components/General/Search";
 import { getCategories } from "components/General/Search/CategoryTags/utils/helper";
 import { ListSearchResultsProps } from "./utils/types";
 import List from "components/RenderProps/List";
-import { API_ERROR, API_NO_DATA } from "lib/utils/constant";
+import { API_ERROR, API_NO_DATA } from "lib/utils/constants";
 import Text from "components/General/Text/Text";
 import { Typography } from "antd";
 import { filteredNews, filteredResource } from "./utils/helper";
