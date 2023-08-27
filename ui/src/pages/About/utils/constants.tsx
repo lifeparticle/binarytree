@@ -1,4 +1,4 @@
-import { Space } from "antd";
+import { Space, Tag } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import { Link } from "react-router-dom";
 
@@ -16,43 +16,22 @@ interface ApiInterfaceType {
 	api: string;
 }
 
-const library_lists = {
-	"tiny-color-2": {
-		name: "Tiny color",
-		url: "https://www.npmjs.com/package/tinycolor2",
-	},
-	"prism-react-renderer": {
-		name: "Prism react renderer",
-		url: "https://www.npmjs.com/package/prism-react-renderer",
-	},
-	"faker-js": {
-		name: "faker js",
-		url: "https://www.npmjs.com/package/@faker-js/faker",
-	},
-	marked: {
-		name: "Marked",
-		url: "https://www.npmjs.com/package/marked",
-	},
-	"file-saver": {
-		name: "File saver",
-		url: "https://www.npmjs.com/package/file-saver",
-	},
-	"jszip-utils": {
-		name: "jszip utils",
-		url: "https://www.npmjs.com/package/jszip-utils",
-	},
-	"html-to-image": {
-		name: "HTML to image",
-		url: "https://www.npmjs.com/package/html-to-image",
-	},
-	"@uiw/react-md-editor": {
-		name: "React md editor",
-		url: "https://www.npmjs.com/package/@uiw/react-md-editor",
-	},
-	tinymce: {
-		name: "Tiny Mce",
-		url: "https://www.npmjs.com/package/@tinymce/tinymce-react",
-	},
+interface LibraryList {
+	[key: string]: string;
+}
+
+const library_lists: LibraryList = {
+	"tiny-color-2": "https://www.npmjs.com/package/tinycolor2",
+	"prism-react-renderer":
+		"https://www.npmjs.com/package/prism-react-renderer",
+	"faker-js": "https://www.npmjs.com/package/@faker-js/faker",
+	marked: "https://www.npmjs.com/package/marked",
+	"file-saver": "https://www.npmjs.com/package/file-saver",
+	"jszip-utils": "https://www.npmjs.com/package/jszip-utils",
+	"html-to-image": "https://www.npmjs.com/package/html-to-image",
+	"@uiw/react-md-editor":
+		"https://www.npmjs.com/package/@uiw/react-md-editor",
+	tinymce: "https://www.npmjs.com/package/@tinymce/tinymce-react",
 };
 
 const apiColumns: ColumnsType<ApiInterfaceType> = [
@@ -119,7 +98,7 @@ const columns: ColumnsType<DataType> = [
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							{lib.name}
+							<Tag>{lib.name}</Tag>
 						</a>
 					);
 				})}
@@ -127,49 +106,63 @@ const columns: ColumnsType<DataType> = [
 		),
 	},
 ];
-
+function generateLibraryWithName(name: string) {
+	if (!name) {
+		return {
+			name: "Vanila JS",
+			url: "",
+		};
+	}
+	return {
+		name,
+		url: library_lists[name],
+	};
+}
 const data: DataType[] = [
 	{
 		key: "1",
 		name: "Color Picker",
 		description: "choose your desired color",
 		link: "/colors/cp",
-		library: [library_lists["tiny-color-2"]],
+		library: [generateLibraryWithName("tiny-color-2")],
 	},
 	{
 		key: "2",
 		name: "Shades Generator",
 		description: "choose your desired Shades",
 		link: "/colors/shades",
-		library: [library_lists["tiny-color-2"]],
+		library: [generateLibraryWithName("tiny-color-2")],
 	},
 	{
 		key: "3",
 		name: "Base 64 Converter",
 		description: "Convert text to base64",
 		link: "/converter/base-64",
-		library: [],
+		library: [generateLibraryWithName("")],
 	},
 	{
 		key: "4",
 		name: "Pixel converter",
 		description: "Convert pixel to rem",
 		link: "/converter/pixel",
-		library: [],
+		library: [generateLibraryWithName("")],
 	},
 	{
 		key: "4",
 		name: "Json to typescript converter",
 		description: "Convert Json to typescript",
 		link: "/converter/jtt",
-		library: [library_lists["prism-react-renderer"]],
+		library: [generateLibraryWithName("prism-react-renderer")],
 	},
 	{
 		key: "5",
 		name: "Data Generator",
 		description: "generate any type of data",
 		link: "/data/data-gen",
-		library: [library_lists["faker-js"], library_lists["marked"]],
+		library: [
+			generateLibraryWithName("faker-js"),
+			generateLibraryWithName("marked"),
+		],
 	},
 	{
 		key: "6",
@@ -177,9 +170,9 @@ const data: DataType[] = [
 		description: "generate image from color code",
 		link: "/data/igfc",
 		library: [
-			library_lists["file-saver"],
-			library_lists["jszip-utils"],
-			library_lists["html-to-image"],
+			generateLibraryWithName("file-saver"),
+			generateLibraryWithName("jszip-utils"),
+			generateLibraryWithName("html-to-image"),
 		],
 	},
 	{
@@ -187,35 +180,35 @@ const data: DataType[] = [
 		name: "Sorting numbers or character",
 		description: "Sort number or character",
 		link: "/data/sorting",
-		library: [],
+		library: [generateLibraryWithName("")],
 	},
 	{
 		key: "8",
 		name: "Markdown Editor",
 		description: "Write markdown and download",
 		link: "/markdown/me",
-		library: [library_lists["@uiw/react-md-editor"]],
+		library: [generateLibraryWithName("@uiw/react-md-editor")],
 	},
 	{
 		key: "9",
 		name: "Markdown table generator",
 		description: "Generate table from markdown",
 		link: "/markdown/md-table-generator",
-		library: [library_lists["@uiw/react-md-editor"]],
+		library: [generateLibraryWithName("@uiw/react-md-editor")],
 	},
 	{
 		key: "10",
 		name: "Markdown table of content",
 		description: "Generate table from markdown",
 		link: "/markdown/toc",
-		library: [library_lists["marked"]],
+		library: [generateLibraryWithName("marked")],
 	},
 	{
 		key: "11",
 		name: "Text Editor",
 		description: "Generate rich text",
 		link: "/text/te",
-		library: [library_lists["marked"]],
+		library: [generateLibraryWithName("marked")],
 	},
 ];
 
