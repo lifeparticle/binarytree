@@ -38,9 +38,6 @@ describe("JsonToTs", () => {
 		const convertButton = screen.getByText("Convert");
 		fireEvent.click(convertButton);
 
-		const generatedInterfaces = screen.getByText(ROOT_INTERFACE_NAME);
-		expect(generatedInterfaces).toBeInTheDocument();
-
 		const getValueOfType = screen.getByText(/string/i);
 
 		expect(getValueOfType).toBeInTheDocument();

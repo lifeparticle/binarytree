@@ -1,0 +1,9 @@
+.codeHighlight {
+	position: relative;
+
+	&__copy__button {
+		position: absolute;
+		top: var(--bt-size-10);
+		right: var(--bt-size-10);
+	}
+}

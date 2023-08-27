@@ -17,8 +17,7 @@ import { FAKER_DATA_TYPES, MYSQL_DATA_TYPES } from "./utils/constants";
 import { convertToJSON } from "./utils/utils";
 import CopyInput from "components/Layouts/CopyInput";
 import InputComponent from "components/General/InputComponent";
-
-const { TextArea } = Input;
+import Output from "./components/Output";
 
 const DataGenerator: React.FC = () => {
 	const [tableName, setTableName] = useState("");
@@ -92,7 +91,7 @@ const DataGenerator: React.FC = () => {
 	return (
 		<Form layout="vertical">
 			<Row gutter={[16, 16]} className={style.dg}>
-				<Col xs={24} sm={24} md={12} lg={12}>
+				<Col xs={24} sm={24} md={24} lg={12}>
 					<Card>
 						<div className={style.dg__left}>
 							<div className={style.dg__left_top}>
@@ -217,18 +216,17 @@ const DataGenerator: React.FC = () => {
 								</div>
 							</div>
 						</div>
+
+						<Button onClick={onButtonClick}>Generate</Button>
 					</Card>
 				</Col>
 
-				{colNum > 0 ? (
-					<Col xs={24} sm={24} md={12} lg={12}>
+				{result.length > 0 ? (
+					<Col xs={24} sm={24} md={24} lg={12}>
 						<Card>
 							<div className={style.dg__right}>
 								<>
 									<Space>
-										<Button onClick={onButtonClick}>
-											Generate
-										</Button>
 										<Button
 											onClick={() => {
 												downloadTextFile(
@@ -263,13 +261,8 @@ const DataGenerator: React.FC = () => {
 												: "Copy"}
 										</Button>
 									</Space>
-									<TextArea
-										placeholder=""
-										value={result}
-										rows={30}
-										maxLength={30}
-										readOnly
-									/>
+
+									<Output sql={result} json="" />
 								</>
 							</div>
 						</Card>
