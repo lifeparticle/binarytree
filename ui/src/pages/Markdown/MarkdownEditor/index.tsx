@@ -1,4 +1,3 @@
-import { useClipboard } from "@mantine/hooks";
 import { Button, Card, Space } from "antd";
 import { downloadPDFFile, downloadTextFile } from "lib/utils/files";
 import { useContext, useState } from "react";
@@ -6,10 +5,12 @@ import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 import style from "./MarkdownEditor.module.scss";
 import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 import MDEditor from "@uiw/react-md-editor";
+import Clipboard from "components/RenderProps/Clipboard";
+import ClipboardButton from "components/General/ClipboardButton";
 
 const MarkdownEditor: React.FC = () => {
 	const [markdown, setMarkdown] = useState("");
-	const clipboard = useClipboard({ timeout: 500 });
+
 	const { isDarkMode } = useContext(DarkModeContext);
 
 	useCombinedKeyPress(
@@ -42,12 +43,11 @@ const MarkdownEditor: React.FC = () => {
 					>
 						Download HTML
 					</Button>
-					<Button
-						disabled={IS_MARKDOWN_EMPTY}
-						onClick={() => clipboard.copy(markdown)}
-					>
-						{clipboard.copied ? "Copied" : "Copy"}
-					</Button>
+
+					<Clipboard
+						text={markdown}
+						clipboardComponent={ClipboardButton}
+					/>
 				</Space>
 
 				<div data-color-mode={isDarkMode ? "dark" : "light"}>

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import style from "./TableOfContent.module.scss";
-import { useClipboard } from "@mantine/hooks";
 import { marked } from "marked";
 import { Input, Button, Form, Card, Row, Col } from "antd";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
@@ -8,13 +7,14 @@ import { TocItem } from "./utils/types";
 import { indentMap } from "./utils/constants";
 import CopyInput from "components/Layouts/CopyInput";
 import InputComponent from "components/General/InputComponent";
+import Clipboard from "components/RenderProps/Clipboard";
+import ClipboardButton from "components/General/ClipboardButton";
 const { TextArea } = Input;
 
 const TableOfContent: React.FC = () => {
 	const [url, setUrl] = useState("");
 	const [markdown, setMarkdown] = useState("");
 	const [tableOfContents, setTableOfContents] = useState<string>("");
-	const clipboard = useClipboard({ timeout: 500 });
 
 	useCombinedKeyPress(
 		() =>
@@ -135,12 +135,11 @@ const TableOfContent: React.FC = () => {
 			<Col sm={24} md={24} lg={12}>
 				<Card>
 					<Form layout="vertical" className={style.toc__output}>
-						<Button
-							onClick={() => clipboard.copy(tableOfContents)}
-							size="large"
-						>
-							{clipboard.copied ? "Copied" : "Copy"}
-						</Button>
+						<Clipboard
+							text={tableOfContents}
+							clipboardComponent={ClipboardButton}
+						/>
+
 						<Form.Item label="Output">
 							<TextArea
 								value={tableOfContents}
