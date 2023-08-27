@@ -1,6 +1,6 @@
 | Page Name                   | Status |
 | --------------------------- | ------ |
-| Hedaer                      | yes    |
+| Hedaer                      | No     |
 | Footer                      | yes    |
 | Menu                        | yes    |
 | Color Picker                | yes    |

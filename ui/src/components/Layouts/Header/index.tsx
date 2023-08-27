@@ -11,13 +11,7 @@ const Header: React.FC = () => {
 		token: { colorBgContainer, colorText },
 	} = theme.useToken();
 
-	const contextValue = useContext(DarkModeContext);
-
-	if (!contextValue) {
-		return null;
-	}
-
-	const { isDarkMode } = contextValue;
+	const { isDarkMode } = useContext(DarkModeContext);
 
 	return (
 		<Space
