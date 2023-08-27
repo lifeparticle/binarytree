@@ -217,7 +217,12 @@ const DataGenerator: React.FC = () => {
 							</div>
 						</div>
 
-						<Button onClick={onButtonClick}>Generate</Button>
+						<Button
+							disabled={tableName && colNum > 0 ? false : true}
+							onClick={onButtonClick}
+						>
+							Generate
+						</Button>
 					</Card>
 				</Col>
 
