@@ -1,6 +1,6 @@
 import { MenuProps } from "antd";
 import Icon from "components/General/Icon";
-import { IconName } from "components/General/Icon/types";
+import { IconName } from "components/General/Icon/utils/types";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
