@@ -1,4 +1,4 @@
-import { apiColumns, apiData, columns, data } from "./utils/constants";
+import { API_COLUMNS, API_DATA, DATA_COLUMNS, data } from "./utils/constants";
 import { Button, Space, Table, Typography } from "antd";
 import style from "./About.module.scss";
 import Icon from "components/General/Icon";
@@ -6,19 +6,21 @@ import Icon from "components/General/Icon";
 const About = () => {
 	return (
 		<Space direction="vertical" className={style.about}>
-			<Typography.Title level={3}>
+			<Typography.Title level={3}>Binary Tree</Typography.Title>
+
+			<Typography.Paragraph>
 				binarytree.dev offers a range of developer productivity tools to
-				save time
-			</Typography.Title>
+				save time.
+			</Typography.Paragraph>
 
 			<Table
-				columns={apiColumns}
-				dataSource={apiData}
+				columns={API_COLUMNS}
+				dataSource={API_DATA}
 				pagination={false}
 				title={() => "API's"}
 			/>
 			<Table
-				columns={columns}
+				columns={DATA_COLUMNS}
 				dataSource={data}
 				pagination={false}
 				title={() => "Features"}
