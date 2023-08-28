@@ -2,7 +2,7 @@ import { Typography } from "antd";
 import style from "./text.module.scss";
 import { useLocation } from "react-router-dom";
 import { TextProps } from "./utils/types";
-import { LIST_PAGE_COMMON_PATH } from "./utils/constant";
+import { LIST_PAGE_COMMON_PATH } from "./utils/constants";
 const { Title } = Typography;
 
 const Text: React.FC<TextProps> = ({ text, level = 4 }) => {

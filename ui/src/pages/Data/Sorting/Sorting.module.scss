@@ -1,8 +1,4 @@
 .sort {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: var(--bt-size-16);
-
 	&__segment {
 		margin: var(--bt-size-10) 0px;
 	}

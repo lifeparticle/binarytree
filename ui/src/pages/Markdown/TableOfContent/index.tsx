@@ -1,20 +1,21 @@
 import { useState } from "react";
 import style from "./TableOfContent.module.scss";
-import { useClipboard } from "@mantine/hooks";
 import { marked } from "marked";
-import { Input, Button, Form, Card } from "antd";
+import { Input, Form, Card } from "antd";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 import { TocItem } from "./utils/types";
-import { indentMap } from "./utils/constant";
+import { indentMap } from "./utils/constants";
 import CopyInput from "components/Layouts/CopyInput";
 import InputComponent from "components/General/InputComponent";
+import Clipboard from "components/RenderProps/Clipboard";
+import ClipboardButton from "components/General/ClipboardButton";
+import PageGrid from "components/Layouts/PageGrid";
 const { TextArea } = Input;
 
 const TableOfContent: React.FC = () => {
 	const [url, setUrl] = useState("");
 	const [markdown, setMarkdown] = useState("");
 	const [tableOfContents, setTableOfContents] = useState<string>("");
-	const clipboard = useClipboard({ timeout: 500 });
 
 	useCombinedKeyPress(
 		() =>
@@ -93,7 +94,7 @@ const TableOfContent: React.FC = () => {
 	};
 
 	return (
-		<div className={style.toc}>
+		<PageGrid>
 			<Card>
 				<Form layout="vertical">
 					<CopyInput>
@@ -106,16 +107,11 @@ const TableOfContent: React.FC = () => {
 							}
 							type="text"
 						/>
-						<Button
-							size="large"
-							onClick={() => {
-								setMarkdown("");
-								setUrl("");
-							}}
-							role="clear_text"
-						>
-							Clear
-						</Button>
+
+						<Clipboard
+							text={url}
+							clipboardComponent={ClipboardButton}
+						/>
 					</CopyInput>
 					<Form.Item label="Content">
 						<TextArea
@@ -129,14 +125,14 @@ const TableOfContent: React.FC = () => {
 					</Form.Item>
 				</Form>
 			</Card>
+
 			<Card>
 				<Form layout="vertical" className={style.toc__output}>
-					<Button
-						onClick={() => clipboard.copy(tableOfContents)}
-						size="large"
-					>
-						{clipboard.copied ? "Copied" : "Copy"}
-					</Button>
+					<Clipboard
+						text={tableOfContents}
+						clipboardComponent={ClipboardButton}
+					/>
+
 					<Form.Item label="Output">
 						<TextArea
 							value={tableOfContents}
@@ -145,7 +141,7 @@ const TableOfContent: React.FC = () => {
 					</Form.Item>
 				</Form>
 			</Card>
-		</div>
+		</PageGrid>
 	);
 };
 

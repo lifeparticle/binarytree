@@ -1,16 +1,5 @@
 .dg {
-	display: grid;
-	column-gap: 20px;
-	grid-template-columns: 0.8fr 1fr;
-	row-gap: 20px;
-
 	&__left {
-		// &_top {
-		// 	display: grid;
-		// 	column-gap: 10px;
-		// 	grid-template-columns: 1fr 1fr 1fr;
-		// }
-
 		&__bottom {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);

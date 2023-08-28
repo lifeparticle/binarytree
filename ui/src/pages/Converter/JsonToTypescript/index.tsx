@@ -1,15 +1,14 @@
 import JsonToTS from "json-to-ts";
 import { useEffect, useState } from "react";
-import { Highlight, themes } from "prism-react-renderer";
 import style from "./JsonToTypescript.module.scss";
 import { Button, Card, Form, Space } from "antd";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
-
 import TextareaWithValidation from "components/General/TextareaWithValidation";
-import CopyInput from "components/Layouts/CopyInput";
 import InputComponent from "components/General/InputComponent";
 import { isJsonValid } from "./utils/helper";
+import CodeHighlightWithCopy from "components/General/CodeHighlightWithCopy";
+import PageGrid from "components/Layouts/PageGrid";
 
 const JsonToTypescript: React.FC = () => {
 	const [json, setJson] = useState("");
@@ -39,20 +38,20 @@ const JsonToTypescript: React.FC = () => {
 	}, [json]);
 
 	return (
-		<Card className={style.json}>
-			<Form layout="vertical">
-				<TextareaWithValidation
-					value={json}
-					onChange={(e) => {
-						setJson(e.target.value);
-					}}
-					label="Provide Json Input"
-					placeholder="JSON"
-					rows={8}
-					status={status}
-				/>
+		<PageGrid>
+			<Card className={style.json}>
+				<Form layout="vertical">
+					<TextareaWithValidation
+						value={json}
+						onChange={(e) => {
+							setJson(e.target.value);
+						}}
+						label="Provide Json Input"
+						placeholder="JSON"
+						rows={8}
+						status={status}
+					/>
 
-				<CopyInput>
 					<InputComponent
 						label="Root Interface Name"
 						placeholder="Enter Interface name"
@@ -60,56 +59,38 @@ const JsonToTypescript: React.FC = () => {
 						onChange={(e) => setRootName(e.target.value)}
 						type="text"
 					/>
-				</CopyInput>
 
-				{interfaces.length > 0 && (
-					<Highlight
-						code={interfaces
-							.map((int) => "export " + int)
-							.join("\n\n")
-							.trim()}
+					<Space>
+						<Button
+							onClick={generateInterfaces}
+							disabled={json.length === 0}
+							size="large"
+						>
+							Convert
+						</Button>
+						<Clipboard
+							clipboardComponent={ClipboardButton}
+							text={
+								json.length === 0
+									? ""
+									: interfaces
+											.toString()
+											.replace(/,/g, "\n\n")
+							}
+						/>
+					</Space>
+				</Form>
+			</Card>
+
+			{interfaces.length > 0 && (
+				<Card>
+					<CodeHighlightWithCopy
+						codeString={interfaces.toString()}
 						language="typescript"
-						theme={themes.okaidia}
-					>
-						{({ style, tokens, getLineProps, getTokenProps }) => (
-							<pre style={style}>
-								{tokens.map((line, i) => (
-									<div
-										key={`line-${i}`}
-										{...getLineProps({ line })}
-									>
-										<span>{i + 1}</span>
-										{line.map((token) => (
-											<span
-												key={token.content}
-												{...getTokenProps({ token })}
-											/>
-										))}
-									</div>
-								))}
-							</pre>
-						)}
-					</Highlight>
-				)}
-				<Space>
-					<Button
-						onClick={generateInterfaces}
-						disabled={json.length === 0}
-						size="large"
-					>
-						Convert
-					</Button>
-					<Clipboard
-						clipboardComponent={ClipboardButton}
-						text={
-							json.length === 0
-								? ""
-								: interfaces.toString().replace(/,/g, "\n\n")
-						}
 					/>
-				</Space>
-			</Form>
-		</Card>
+				</Card>
+			)}
+		</PageGrid>
 	);
 };
 
