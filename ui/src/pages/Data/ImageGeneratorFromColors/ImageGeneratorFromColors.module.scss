@@ -1,15 +1,4 @@
 .igfc {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: var(--bt-size-16);
-
-	&__inputs {
-		padding-left: var(--bt-size-16);
-		grid-column: 2 / 3;
-		display: flex;
-		flex-direction: column;
-	}
-
 	&__colors {
 		grid-column: 1 / -1;
 	}
