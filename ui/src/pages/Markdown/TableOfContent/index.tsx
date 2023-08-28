@@ -1,7 +1,7 @@
 import { useState } from "react";
 import style from "./TableOfContent.module.scss";
 import { marked } from "marked";
-import { Input, Button, Form, Card, Row, Col } from "antd";
+import { Input, Form, Card } from "antd";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 import { TocItem } from "./utils/types";
 import { indentMap } from "./utils/constants";
@@ -9,6 +9,7 @@ import CopyInput from "components/Layouts/CopyInput";
 import InputComponent from "components/General/InputComponent";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
+import PageGrid from "components/Layouts/PageGrid";
 const { TextArea } = Input;
 
 const TableOfContent: React.FC = () => {
@@ -93,63 +94,54 @@ const TableOfContent: React.FC = () => {
 	};
 
 	return (
-		<Row gutter={16}>
-			<Col sm={24} md={24} lg={12}>
-				<Card>
-					<Form layout="vertical">
-						<CopyInput>
-							<InputComponent
-								label="Provide URL"
-								placeholder="URL"
-								value={url}
-								onChange={(event) =>
-									fetchData(event.currentTarget.value)
-								}
-								type="text"
-							/>
-							<Button
-								size="large"
-								onClick={() => {
-									setMarkdown("");
-									setUrl("");
-								}}
-								role="clear_text"
-							>
-								Clear
-							</Button>
-						</CopyInput>
-						<Form.Item label="Content">
-							<TextArea
-								placeholder=""
-								value={markdown}
-								onChange={(event) =>
-									onMarkdownChange(event.currentTarget.value)
-								}
-								autoSize={{ maxRows: 48, minRows: 48 }}
-							/>
-						</Form.Item>
-					</Form>
-				</Card>
-			</Col>
-
-			<Col sm={24} md={24} lg={12}>
-				<Card>
-					<Form layout="vertical" className={style.toc__output}>
-						<Clipboard
-							text={tableOfContents}
-							clipboardComponent={ClipboardButton}
+		<PageGrid>
+			<Card>
+				<Form layout="vertical">
+					<CopyInput>
+						<InputComponent
+							label="Provide URL"
+							placeholder="URL"
+							value={url}
+							onChange={(event) =>
+								fetchData(event.currentTarget.value)
+							}
+							type="text"
 						/>
 
-						<Form.Item label="Output">
-							<TextArea
-								value={tableOfContents}
-								autoSize={{ maxRows: 48, minRows: 48 }}
-							/>
-						</Form.Item>
-					</Form>
-				</Card>
-			</Col>
-		</Row>
+						<Clipboard
+							text={url}
+							clipboardComponent={ClipboardButton}
+						/>
+					</CopyInput>
+					<Form.Item label="Content">
+						<TextArea
+							placeholder=""
+							value={markdown}
+							onChange={(event) =>
+								onMarkdownChange(event.currentTarget.value)
+							}
+							autoSize={{ maxRows: 48, minRows: 48 }}
+						/>
+					</Form.Item>
+				</Form>
+			</Card>
+
+			<Card>
+				<Form layout="vertical" className={style.toc__output}>
+					<Clipboard
+						text={tableOfContents}
+						clipboardComponent={ClipboardButton}
+					/>
+
+					<Form.Item label="Output">
+						<TextArea
+							value={tableOfContents}
+							autoSize={{ maxRows: 48, minRows: 48 }}
+						/>
+					</Form.Item>
+				</Form>
+			</Card>
+		</PageGrid>
 	);
 };
 

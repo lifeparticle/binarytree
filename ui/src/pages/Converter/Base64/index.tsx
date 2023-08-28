@@ -1,11 +1,11 @@
 import { Button, Card, Form, Space, Input } from "antd";
 import { useEffect, useState } from "react";
 import { Buffer } from "buffer";
-import style from "./Base64.module.scss";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import { isBase64Valid } from "./utils/helper";
 import TextareaWithValidation from "components/General/TextareaWithValidation";
+import PageGrid from "components/Layouts/PageGrid";
 
 const { TextArea } = Input;
 
@@ -31,64 +31,66 @@ const Base64: React.FC = () => {
 	}, [result]);
 
 	return (
-		<Card>
-			<Form layout="vertical" className={style.base}>
-				<Form.Item label="Text input">
-					<TextArea
-						value={input}
+		<PageGrid>
+			<Card>
+				<Form layout="vertical">
+					<Form.Item label="Text input">
+						<TextArea
+							value={input}
+							onChange={(currentValue) => {
+								setInput(currentValue.target.value);
+								onClick("encode", currentValue.target.value);
+							}}
+							placeholder="Input"
+							rows={4}
+							data-gramm={false}
+						/>
+					</Form.Item>
+
+					<Space>
+						<Button
+							disabled={IS_INPUT_EMPTY}
+							onClick={() => setInput("")}
+							role="clear_text"
+							size="large"
+						>
+							Clear
+						</Button>
+						<Clipboard
+							text={input}
+							clipboardComponent={ClipboardButton}
+						/>
+					</Space>
+
+					<TextareaWithValidation
+						value={result}
 						onChange={(currentValue) => {
-							setInput(currentValue.target.value);
-							onClick("encode", currentValue.target.value);
+							const value = currentValue.target.value;
+							setResult(value);
+							onClick("decode", value);
 						}}
-						placeholder="Input"
-						rows={4}
-						data-gramm={false}
+						placeholder="Result"
+						status={status}
+						label="Base 64 output"
 					/>
-				</Form.Item>
 
-				<Space>
-					<Button
-						disabled={IS_INPUT_EMPTY}
-						onClick={() => setInput("")}
-						role="clear_text"
-						size="large"
-					>
-						Clear
-					</Button>
-					<Clipboard
-						text={input}
-						clipboardComponent={ClipboardButton}
-					/>
-				</Space>
-
-				<TextareaWithValidation
-					value={result}
-					onChange={(currentValue) => {
-						const value = currentValue.target.value;
-						setResult(value);
-						onClick("decode", value);
-					}}
-					placeholder="Result"
-					status={status}
-					label="Base 64 output"
-				/>
-
-				<Space>
-					<Button
-						disabled={IS_RESULT_EMPTY}
-						onClick={() => setResult("")}
-						role="clear_base64"
-						size="large"
-					>
-						Clear
-					</Button>
-					<Clipboard
-						text={result}
-						clipboardComponent={ClipboardButton}
-					/>
-				</Space>
-			</Form>
-		</Card>
+					<Space>
+						<Button
+							disabled={IS_RESULT_EMPTY}
+							onClick={() => setResult("")}
+							role="clear_base64"
+							size="large"
+						>
+							Clear
+						</Button>
+						<Clipboard
+							text={result}
+							clipboardComponent={ClipboardButton}
+						/>
+					</Space>
+				</Form>
+			</Card>
+		</PageGrid>
 	);
 };
 
