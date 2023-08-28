@@ -15,7 +15,6 @@ import {
 	OUTPUT_FORMAT,
 } from "./utils/constants";
 import InputComponent from "components/General/InputComponent";
-import CopyInput from "components/Layouts/CopyInput";
 import { formatShades } from "./utils/helper";
 import { SelectOption } from "./utils/types";
 import { CheckboxChangeEvent } from "antd/es/checkbox";
@@ -102,65 +101,57 @@ const Shades: React.FC = () => {
 			<Card>
 				<Form layout="vertical">
 					<Space>
-						<CopyInput>
-							<InputComponent
-								label="Color"
-								placeholder="Color"
-								value={color}
-								onChange={handleColorChange}
-								type="text"
-								style={{ width: 250 }}
-								addonBefore={
-									<div className={styles.cardContainer}>
-										<Card
-											size="small"
-											style={{ background: color }}
+						<InputComponent
+							label="Color"
+							placeholder="Color"
+							value={color}
+							onChange={handleColorChange}
+							type="text"
+							style={{ width: 250 }}
+							addonBefore={
+								<div className={styles.cardContainer}>
+									<Card
+										size="small"
+										style={{ background: color }}
+									/>
+									<div className={styles.colorPickerDropdown}>
+										<CP
+											format="hex"
+											value={color}
+											onChange={setColor}
+											size="xl"
 										/>
-										<div
-											className={
-												styles.colorPickerDropdown
-											}
-										>
-											<CP
-												format="hex"
-												value={color}
-												onChange={setColor}
-												size="xl"
-											/>
-										</div>
 									</div>
-								}
-								addonAfter={
-									<Checkbox
-										onChange={(e: CheckboxChangeEvent) =>
-											setMode(
-												e.target.checked
-													? "darkest"
-													: "lightest"
-											)
-										}
-										defaultChecked
-									>
-										Darkest
-									</Checkbox>
-								}
-							/>
-						</CopyInput>
+								</div>
+							}
+							addonAfter={
+								<Checkbox
+									onChange={(e: CheckboxChangeEvent) =>
+										setMode(
+											e.target.checked
+												? "darkest"
+												: "lightest"
+										)
+									}
+									defaultChecked
+								>
+									Darkest
+								</Checkbox>
+							}
+						/>
 
-						<CopyInput>
-							<InputComponent
-								value={numberOfShades}
-								label="Shades"
-								onChange={handleNumberOfShadesChange}
-								placeholder="Shades"
-								precision={0}
-								step={1}
-								min={MIN_SHADES}
-								max={MAX_SHADES}
-								type="number"
-								style={{ width: 90 }}
-							/>
-						</CopyInput>
+						<InputComponent
+							value={numberOfShades}
+							label="Shades"
+							onChange={handleNumberOfShadesChange}
+							placeholder="Shades"
+							precision={0}
+							step={1}
+							min={MIN_SHADES}
+							max={MAX_SHADES}
+							type="number"
+							style={{ width: 90 }}
+						/>
 					</Space>
 				</Form>
 
