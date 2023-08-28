@@ -98,7 +98,13 @@ const DATA_COLUMNS: ColumnsType<DataType> = [
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<Tag>{lib.name}</Tag>
+							<Tag
+								color={
+									lib.name === "Vanilla JS" ? "green" : "gold"
+								}
+							>
+								{lib.name}
+							</Tag>
 						</a>
 					);
 				})}

@@ -25,9 +25,10 @@ const About = () => {
 				pagination={false}
 				title={() => "Features"}
 			/>
-
 			<Button
-				type="text"
+				type="primary"
+				shape="circle"
+				icon={<Icon name="Github" />}
 				onClick={() =>
 					window.open(
 						"https://github.com/lifeparticle/binarytree",
@@ -35,9 +36,7 @@ const About = () => {
 						"noopener"
 					)
 				}
-			>
-				<Icon name="Github" />
-			</Button>
+			/>
 		</Space>
 	);
 };
