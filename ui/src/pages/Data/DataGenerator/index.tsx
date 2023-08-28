@@ -5,10 +5,9 @@ import { useState } from "react";
 import style from "./DataGenerator.module.scss";
 import { FAKER_DATA_TYPES, MYSQL_DATA_TYPES } from "./utils/constants";
 import { convertToJSON } from "./utils/utils";
-import CopyInput from "components/Layouts/CopyInput";
 import InputComponent from "components/General/InputComponent";
-
-const { TextArea } = Input;
+import Output from "./components/Output";
+import PageGrid from "components/Layouts/PageGrid";
 
 const DataGenerator: React.FC = () => {
 	const [tableName, setTableName] = useState("");
@@ -80,61 +79,54 @@ const DataGenerator: React.FC = () => {
 	};
 
 	return (
-		<Form layout="vertical">
-			<div className={style.dg}>
+		<Form layout="vertical" className={style.dg}>
+			<PageGrid>
 				<Card>
 					<div className={style.dg__left}>
 						<div className={style.dg__left_top}>
-							<CopyInput>
-								<InputComponent
-									label="Table Name"
-									placeholder="Table name"
-									value={tableName}
-									onChange={(event) =>
-										setTableName(event.currentTarget.value)
+							<InputComponent
+								label="Table Name"
+								placeholder="Table name"
+								value={tableName}
+								onChange={(event) =>
+									setTableName(event.currentTarget.value)
+								}
+								type="text"
+							/>
+
+							<InputComponent
+								label="Total Column Number"
+								placeholder="NumberInput with custom layout"
+								value={colNum}
+								min={0}
+								onChange={(val) => {
+									if (val) {
+										setColNum(val);
+										setColNames((p: string[]) => [
+											...p.slice(0, val),
+										]);
+										setDataTypes((p: string[]) => [
+											...p.slice(0, val),
+										]);
+										setFakeDataTypes((p: string[]) => [
+											...p.slice(0, val),
+										]);
 									}
-									type="text"
-								/>
-							</CopyInput>
+								}}
+								type="number"
+							/>
 
-							<CopyInput>
-								<InputComponent
-									label="Total Column Number"
-									placeholder="NumberInput with custom layout"
-									value={colNum}
-									min={0}
-									onChange={(val) => {
-										if (val) {
-											setColNum(val);
-											setColNames((p: string[]) => [
-												...p.slice(0, val),
-											]);
-											setDataTypes((p: string[]) => [
-												...p.slice(0, val),
-											]);
-											setFakeDataTypes((p: string[]) => [
-												...p.slice(0, val),
-											]);
-										}
-									}}
-									type="number"
-								/>
-							</CopyInput>
-
-							<CopyInput>
-								<InputComponent
-									label="Generate total Row Data (Output)"
-									placeholder="NumberInput with custom layout"
-									value={rowNum}
-									min={0}
-									onChange={(val) => val && setRowNum(val)}
-									type="number"
-								/>
-							</CopyInput>
+							<InputComponent
+								label="Generate total Row Data (Output)"
+								placeholder="NumberInput with custom layout"
+								value={rowNum}
+								min={0}
+								onChange={(val) => val && setRowNum(val)}
+								type="number"
+							/>
 						</div>
 
 						<div className={style.dg__left__bottom}>
-							{/* Fix the warning */}
 							<div>
 								{Array.from({ length: colNum }, (_, k) => (
 									<AutoComplete
@@ -197,16 +189,20 @@ const DataGenerator: React.FC = () => {
 							</div>
 						</div>
 					</div>
+
+					<Button
+						disabled={tableName && colNum > 0 ? false : true}
+						onClick={onButtonClick}
+					>
+						Generate
+					</Button>
 				</Card>
 
-				<Card>
-					<div className={style.dg__right}>
-						{colNum > 0 ? (
+				{result.length > 0 ? (
+					<Card>
+						<div className={style.dg__right}>
 							<>
 								<Space>
-									<Button onClick={onButtonClick}>
-										Generate
-									</Button>
 									<Button
 										onClick={() => {
 											downloadTextFile(
@@ -237,18 +233,13 @@ const DataGenerator: React.FC = () => {
 										{clipboard.copied ? "Copied" : "Copy"}
 									</Button>
 								</Space>
-								<TextArea
-									placeholder=""
-									value={result}
-									rows={30}
-									maxLength={30}
-									readOnly
-								/>
+
+								<Output sql={result} json="" />
 							</>
-						) : null}
-					</div>
-				</Card>
-			</div>
+						</div>
+					</Card>
+				) : null}
+			</PageGrid>
 		</Form>
 	);
 };

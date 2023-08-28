@@ -7,8 +7,8 @@ import { useRef, useState } from "react";
 import style from "./ImageGeneratorFromColors.module.scss";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 import { extractColors } from "./utils/helper";
-import CopyInput from "components/Layouts/CopyInput";
 import InputComponent from "components/General/InputComponent";
+import PageGrid from "components/Layouts/PageGrid";
 
 const { Title } = Typography;
 const { TextArea } = Input;
@@ -57,8 +57,8 @@ const ImageGeneratorFromColors: React.FC = () => {
 	};
 
 	return (
-		<Form layout="vertical">
-			<div className={style.igfc}>
+		<Form layout="vertical" className={style.igfc}>
+			<PageGrid>
 				<Card>
 					<Form.Item label={PLACE_HOLDER_TEXT}>
 						<TextArea
@@ -74,63 +74,55 @@ const ImageGeneratorFromColors: React.FC = () => {
 				</Card>
 
 				<Card>
-					<div className={style.igfc__inputs}>
-						<CopyInput>
-							<InputComponent
-								label="Image width"
-								placeholder="Image Height"
-								value={height}
-								onChange={(val) => val && setHeight(val)}
-								min={0}
-								type="number"
-							/>
-						</CopyInput>
+					<InputComponent
+						label="Image width"
+						placeholder="Image Height"
+						value={height}
+						onChange={(val) => val && setHeight(val)}
+						min={0}
+						type="number"
+					/>
 
-						<CopyInput>
-							<InputComponent
-								label="Image Height"
-								placeholder="Image Width"
-								value={width}
-								onChange={(val) => val && setWidth(val)}
-								min={0}
-								type="number"
-							/>
-						</CopyInput>
+					<InputComponent
+						label="Image Height"
+						placeholder="Image Width"
+						value={width}
+						onChange={(val) => val && setWidth(val)}
+						min={0}
+						type="number"
+					/>
 
-						<CopyInput>
-							<InputComponent
-								label="Image Border Radius"
-								placeholder="Image Border Radius"
-								value={rounded}
-								onChange={(val) => val && setRounded(val)}
-								min={0}
-								type="number"
-							/>
-						</CopyInput>
-						<Space>
-							<Button size="large" onClick={onButtonClick}>
-								Download Zip
-							</Button>
-							<Button
-								size="large"
-								onClick={() => {
-									setValue("");
-									setColors([]);
-								}}
-							>
-								Clear
-							</Button>
-						</Space>
-					</div>
+					<InputComponent
+						label="Image Border Radius"
+						placeholder="Image Border Radius"
+						value={rounded}
+						onChange={(val) => val && setRounded(val)}
+						min={0}
+						type="number"
+					/>
+
+					<Space>
+						<Button size="large" onClick={onButtonClick}>
+							Download Zip
+						</Button>
+						<Button
+							size="large"
+							onClick={() => {
+								setValue("");
+								setColors([]);
+							}}
+						>
+							Clear
+						</Button>
+					</Space>
 				</Card>
-				{colors.length > 0 && (
-					<Card className={style.igfc__colors}>
+			</PageGrid>
+			{colors.length > 0 && (
+				<Card className={style.igfc__colors}>
+					<div className={style.igfc__image__container}>
 						{colors.map((color: string) => {
 							return (
-								<div
-									className={style.colors__color}
-									key={color}
-								>
+								<div key={color}>
 									<div
 										ref={(ref) => {
 											if (ref) {
@@ -148,9 +140,9 @@ const ImageGeneratorFromColors: React.FC = () => {
 								</div>
 							);
 						})}
-					</Card>
-				)}
-			</div>
+					</div>
+				</Card>
+			)}
 		</Form>
 	);
 };

@@ -3,7 +3,7 @@ import tinycolor from "tinycolor2";
 import style from "./ColorPicker.module.scss";
 import { Card, Form, Space } from "antd";
 import { ColorPicker as CP } from "@mantine/core";
-import { INITIAL_COLOR, INITIAL_FORMAT } from "./utils/constant";
+import { INITIAL_COLOR, INITIAL_FORMAT } from "./utils/constants";
 import ColorFormatTags from "./components/ColorFormatTags";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";

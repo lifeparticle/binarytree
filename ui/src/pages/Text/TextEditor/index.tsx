@@ -45,47 +45,45 @@ const TextEditor: React.FC = () => {
 		<div className={style.te}>
 			<Row gutter={[16, 16]}>
 				<Col xs={24} lg={20}>
-					<Card>
-						<Editor
-							tinymceScriptSrc="/tinymce/tinymce.min.js"
-							onInit={(editor) => {
-								editorRef.current = editor.target;
-							}}
-							initialValue="<p>This is the initial content of the editor.</p>"
-							init={{
-								height: 500,
-								menubar: false,
-								plugins: [
-									"advlist",
-									"autolink",
-									"lists",
-									"link",
-									"image",
-									"charmap",
-									"anchor",
-									"searchreplace",
-									"visualblocks",
-									"code",
-									"fullscreen",
-									"insertdatetime",
-									"media",
-									"table",
-									"preview",
-									"help",
-								],
+					<Editor
+						tinymceScriptSrc="/tinymce/tinymce.min.js"
+						onInit={(editor) => {
+							editorRef.current = editor.target;
+						}}
+						initialValue="<p>This is the initial content of the editor.</p>"
+						init={{
+							height: "80dvh",
+							menubar: false,
+							plugins: [
+								"advlist",
+								"autolink",
+								"lists",
+								"link",
+								"image",
+								"charmap",
+								"anchor",
+								"searchreplace",
+								"visualblocks",
+								"code",
+								"fullscreen",
+								"insertdatetime",
+								"media",
+								"table",
+								"preview",
+								"help",
+							],
 
-								skin: isDarkMode ? "oxide-dark" : "oxide",
-								content_css: isDarkMode ? "dark" : "default",
-								toolbar:
-									"undo redo | blocks | " +
-									"bold italic forecolor | alignleft aligncenter " +
-									"alignright alignjustify | bullist numlist outdent indent | " +
-									"removeformat | help",
-								content_style:
-									"body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
-							}}
-						/>
-					</Card>
+							skin: isDarkMode ? "oxide-dark" : "oxide",
+							content_css: isDarkMode ? "dark" : "default",
+							toolbar:
+								"undo redo | blocks | " +
+								"bold italic forecolor | alignleft aligncenter " +
+								"alignright alignjustify | bullist numlist outdent indent | " +
+								"removeformat | help",
+							content_style:
+								"body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
+						}}
+					/>
 				</Col>
 
 				<Col xs={24} lg={4}>
