@@ -1,8 +1,7 @@
 import React from "react";
 import { icons } from "lucide-react";
-import { IconProps } from "./types";
-
-const DEFAULT_ICON_NAME = "AlertCircle";
+import { IconProps } from "./utils/types";
+import { DEFAULT_ICON_NAME } from "./utils/constants";
 
 const Icon: React.FC<IconProps> = ({ name, size = 18, color }) => {
 	let LucideIcon = icons[name];

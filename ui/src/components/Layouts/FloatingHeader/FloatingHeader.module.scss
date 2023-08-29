@@ -5,8 +5,8 @@
 	padding: 10px;
 	border-radius: 10px;
 
-	&__item {
-		display: inline-block;
-		margin-top: 5px;
-	}
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: var(--bt-z-index-dropdown);
 }
