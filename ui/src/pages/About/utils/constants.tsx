@@ -72,13 +72,13 @@ const DATA_COLUMNS: ColumnsType<DataType> = [
 				{text}
 			</Link>
 		),
-		width: 50,
+		width: 100,
 	},
 	{
 		title: "Description",
 		dataIndex: "description",
 		key: "description",
-		width: 100,
+		width: 150,
 	},
 	{
 		title: "Library",
