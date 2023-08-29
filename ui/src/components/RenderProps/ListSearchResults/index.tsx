@@ -10,6 +10,7 @@ import { API_ERROR, API_NO_DATA } from "lib/utils/constants";
 import Text from "components/General/Text/Text";
 import { Typography } from "antd";
 import { filteredNews, filteredResource } from "./utils/helper";
+import { ReactElement } from "react";
 
 const { Title } = Typography;
 
@@ -20,7 +21,7 @@ const ListSearchResults = <T,>({
 	isLoading,
 	isError,
 	source = "",
-}: ListSearchResultsProps<T>): JSX.Element => {
+}: ListSearchResultsProps<T>): ReactElement => {
 	const [searchParams] = useSearchParams();
 
 	if (isError) {
@@ -32,8 +33,8 @@ const ListSearchResults = <T,>({
 	}
 
 	const { q: searchQuery, cat: categoryQuery } = {
-		q: searchParams.get("q") || "",
-		cat: searchParams.get("cat") || "",
+		q: searchParams.get("q") ?? "",
+		cat: searchParams.get("cat") ?? "",
 	};
 
 	const filteredList =
