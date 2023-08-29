@@ -1,5 +1,5 @@
 import { MenuProps } from "antd";
-import { IconName } from "components/General/Icon/types";
+import { IconName } from "components/General/Icon/utils/types";
 import { getItem } from "components/Layouts/Menu/utils/helper";
 
 export const MENU_ITEMS = [
