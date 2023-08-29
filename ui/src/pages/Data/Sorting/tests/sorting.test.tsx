@@ -13,11 +13,11 @@ describe("Sorting", () => {
 		const orderByLabel = screen.getByText(/order/i);
 		expect(orderByLabel).toBeInTheDocument();
 
-		const clearButton = screen.getByRole("button", {
+		const clearButton = screen.queryByRole("button", {
 			name: /clear/i,
 		});
 
-		expect(clearButton).toBeInTheDocument();
+		expect(clearButton).not.toBeInTheDocument();
 	});
 
 	test("check input & ouput textbox and copy button", () => {

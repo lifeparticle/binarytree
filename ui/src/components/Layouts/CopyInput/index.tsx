@@ -8,7 +8,6 @@ const CopyInput: React.FC<CopyInputProps> = ({ children }) => {
 	return (
 		<div className={style.copyinput}>
 			<div className={style.copyinput__input}>{children1}</div>
-
 			{children2 ? <div>{children2}</div> : null}
 		</div>
 	);
