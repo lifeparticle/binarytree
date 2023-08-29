@@ -78,7 +78,7 @@ const DATA_COLUMNS: ColumnsType<DataType> = [
 		title: "Description",
 		dataIndex: "description",
 		key: "description",
-		width: 50,
+		width: 100,
 	},
 	{
 		title: "Library",
@@ -106,7 +106,7 @@ const DATA_COLUMNS: ColumnsType<DataType> = [
 				})}
 			</>
 		),
-		width: 50,
+		width: 150,
 	},
 ];
 
