@@ -2,4 +2,14 @@
 	display: grid;
 	align-items: center;
 	justify-content: center;
+
+	&__socials {
+		display: flex;
+		justify-content: center;
+		&_button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
 }
