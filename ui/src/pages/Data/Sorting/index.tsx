@@ -1,16 +1,7 @@
 import style from "./Sorting.module.scss";
 import { useEffect, useState } from "react";
 import { sortData } from "./utils/helper";
-import {
-	Button,
-	Input,
-	Space,
-	Segmented,
-	Select,
-	Form,
-	Card,
-	Typography,
-} from "antd";
+import { Input, Segmented, Select, Form, Card, Typography } from "antd";
 import { OUTPUT_FORMAT } from "./utils/constants";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
