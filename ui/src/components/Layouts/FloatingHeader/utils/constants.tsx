@@ -1,5 +1,6 @@
 import { MenuProps } from "antd";
 import { Link } from "react-router-dom";
+import Notification from "components/Layouts/FloatingHeader/components/Notification";
 
 const items: MenuProps["items"] = [
 	{
@@ -8,4 +9,11 @@ const items: MenuProps["items"] = [
 	},
 ];
 
-export { items };
+const NotificationItems: MenuProps["items"] = [
+	{
+		key: "1",
+		label: <Notification />,
+	},
+];
+
+export { items, NotificationItems };
