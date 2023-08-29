@@ -1,11 +1,10 @@
-import { Card } from "antd";
-import PageGrid from "components/Layouts/PageGrid";
 import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 import { marked } from "marked";
 import React, { useState, useEffect, useContext } from "react";
 import style from "./Notification.module.scss";
+import { classNames } from "lib/utils/helper";
 
-const ChangelogComponent: React.FC = () => {
+const Notification: React.FC = () => {
 	const { isDarkMode } = useContext(DarkModeContext);
 	const [html, setHtml] = useState("");
 
@@ -21,16 +20,12 @@ const ChangelogComponent: React.FC = () => {
 	}, []);
 
 	return (
-		<PageGrid>
-			<Card>
-				<div
-					className={style.notification}
-					style={{ color: isDarkMode ? "white" : "red" }}
-					dangerouslySetInnerHTML={{ __html: html }}
-				/>
-			</Card>
-		</PageGrid>
+		<div
+			className={classNames("notification-dropdown", style.notification)}
+			style={{ color: isDarkMode ? "white" : "" }}
+			dangerouslySetInnerHTML={{ __html: html }}
+		/>
 	);
 };
 
-export default ChangelogComponent;
+export default Notification;

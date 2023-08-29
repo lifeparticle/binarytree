@@ -1,8 +1,7 @@
-import { Avatar, Dropdown, Space, theme } from "antd";
+import { Avatar, Button, Dropdown, Space, theme } from "antd";
 import style from "./FloatingHeader.module.scss";
-import { items } from "./utils/constants";
 import Icon from "components/General/Icon";
-import { Link } from "react-router-dom";
+import { NotificationItems, items } from "./utils/constants";
 
 const FloatingHeader = () => {
 	const {
@@ -16,11 +15,23 @@ const FloatingHeader = () => {
 				backgroundColor: colorBgContainer,
 			}}
 		>
-			<Link to={"/notification"} className={style.fb__item}>
-				<Icon name="Bell" size={20} color={colorText} />
-			</Link>
+			<Dropdown
+				menu={{ items: NotificationItems }}
+				placement="bottomRight"
+				arrow={{ pointAtCenter: true }}
+				className={style.fb__notification}
+			>
+				<Button>
+					<Icon name="Bell" size={20} color={colorText} />
+				</Button>
+			</Dropdown>
 
-			<Dropdown menu={{ items }} placement="bottomLeft">
+			<Dropdown
+				menu={{ items }}
+				placement="bottomLeft"
+				arrow={{ pointAtCenter: true }}
+				className={style.fb__about}
+			>
 				<Avatar size="small" />
 			</Dropdown>
 		</Space>
