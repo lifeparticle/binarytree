@@ -68,16 +68,6 @@ const JsonToTypescript: React.FC = () => {
 						>
 							Convert
 						</Button>
-						<Clipboard
-							clipboardComponent={ClipboardButton}
-							text={
-								json.length === 0
-									? ""
-									: interfaces
-											.toString()
-											.replace(/,/g, "\n\n")
-							}
-						/>
 					</Space>
 				</Form>
 			</Card>

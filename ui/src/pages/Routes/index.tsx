@@ -29,6 +29,7 @@ import {
 	TableOfContent,
 	TextEditor,
 	JsonToTypescript,
+	Notification,
 } from "pages/pages";
 import withPageTitle from "components/Hoc/withPageTitle";
 import Text from "components/General/Text/Text";
@@ -41,6 +42,7 @@ const Routes: React.FC = () => {
 				<RRDRoutes>
 					<Route path="/" element={<News />} />
 					<Route path="/about" element={<About />} />
+					<Route path="/Notification" element={<Notification />} />
 					<Route path="/colors">
 						<Route index element={<Navigate to={"cp"} />} />
 						<Route path="cp" element={<ColorPicker />} />
