@@ -1,6 +1,7 @@
 import { lazy } from "react";
 
 const About = lazy(() => import("pages/About"));
+const Notification = lazy(() => import("pages/Notification"));
 
 const ColorPicker = lazy(() => import("pages/Colors/ColorPicker"));
 const Shades = lazy(() => import("pages/Colors/Shades"));
@@ -63,4 +64,5 @@ export {
 	TvSeries,
 	UiUx,
 	YouTube,
+	Notification,
 };

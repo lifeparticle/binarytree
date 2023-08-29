@@ -1,12 +1,12 @@
 .fb {
 	position: absolute;
-	top: 0;
-	right: 0;
-	margin-right: 20px;
-	margin-top: 10px;
+	top: 20px;
+	right: 20px;
 	padding: 10px;
 	border-radius: 10px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+
+	&__item {
+		display: inline-block;
+		margin-top: 5px;
+	}
 }

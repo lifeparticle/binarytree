@@ -28,16 +28,19 @@ const MarkdownEditor: React.FC = () => {
 					<Button
 						disabled={IS_MARKDOWN_EMPTY}
 						onClick={() => setMarkdown("")}
+						size="large"
 					>
 						Clear
 					</Button>
 					<Button
+						size="large"
 						disabled={IS_MARKDOWN_EMPTY}
 						onClick={() => downloadTextFile(markdown, "README.md")}
 					>
 						Download Markdown
 					</Button>
 					<Button
+						size="large"
 						disabled={IS_MARKDOWN_EMPTY}
 						onClick={() => downloadPDFFile(markdown, "README.html")}
 					>
@@ -54,7 +57,7 @@ const MarkdownEditor: React.FC = () => {
 					<MDEditor
 						value={markdown}
 						onChange={(value) => value && setMarkdown(value)}
-						height={500}
+						height="800px"
 					/>
 				</div>
 			</div>
