@@ -39,7 +39,7 @@ const About = () => {
 						pagination={false}
 						title={() => "Features"}
 						bordered
-						scroll={{ x: "calc(50%)", y: 800 }}
+						scroll={{ x: "calc(50%)", y: 1200 }}
 					/>
 
 					<Table
