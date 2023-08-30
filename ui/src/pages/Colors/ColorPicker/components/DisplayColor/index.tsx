@@ -1,20 +1,13 @@
 import { Typography } from "antd";
-import style from "./ColorDisplay.module.scss";
+import style from "./DisplayColor.module.scss";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import { classNames, getTextColor, isTransparent } from "lib/utils/helper";
+import { DisplayColorProps } from "pages/Colors/ColorPicker/utils/types";
 
 const { Title } = Typography;
 
-interface ColorDisplayProps {
-	customLabel: string;
-	label: string;
-	customValue: string;
-	value: string;
-	format: string;
-}
-
-const ColorDisplay: React.FC<ColorDisplayProps> = ({
+const DisplayColor: React.FC<DisplayColorProps> = ({
 	customLabel,
 	label,
 	customValue,
@@ -47,4 +40,4 @@ const ColorDisplay: React.FC<ColorDisplayProps> = ({
 	);
 };
 
-export default ColorDisplay;
+export default DisplayColor;

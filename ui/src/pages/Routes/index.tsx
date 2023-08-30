@@ -6,7 +6,7 @@ import {
 	About,
 	News,
 	ColorPicker,
-	Shades,
+	ShadesAndTints,
 	Base64,
 	Pixel,
 	DataGenerator,
@@ -44,7 +44,10 @@ const Routes: React.FC = () => {
 					<Route path="/colors">
 						<Route index element={<Navigate to={"cp"} />} />
 						<Route path="cp" element={<ColorPicker />} />
-						<Route path="shades" element={<Shades />} />
+						<Route
+							path="shades-tints"
+							element={<ShadesAndTints />}
+						/>
 					</Route>
 					<Route path="/converter">
 						<Route index element={<Navigate to={"base-64"} />} />

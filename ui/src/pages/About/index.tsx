@@ -51,7 +51,6 @@ const About = () => {
 					/>
 					<div className={style.about__socials}>
 						<Button
-							className={style.about__socials_button}
 							key="Github"
 							type="primary"
 							shape="circle"

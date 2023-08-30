@@ -9,8 +9,8 @@ const ROUTES: Route[] = [
 		title: "Color Picker",
 	},
 	{
-		path: "/colors/shades",
-		title: "Shades",
+		path: "/colors/shades-tints",
+		title: "Shades & Tints",
 	},
 	{
 		path: "/converter/base-64",

@@ -93,3 +93,9 @@ h5 {
 .ant-menu-title-content {
 	margin-inline-start: 10px;
 }
+
+.ant-btn-icon-only {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

@@ -1,0 +1,19 @@
+.ci {
+	&__color {
+		position: relative;
+		display: inline-block;
+
+		&_dp {
+			position: absolute;
+			top: 100%;
+			right: 10;
+			left: 1000;
+			z-index: var(--bt-z-index-dropdown);
+			display: none;
+		}
+
+		&:hover &_dp {
+			display: block;
+		}
+	}
+}
