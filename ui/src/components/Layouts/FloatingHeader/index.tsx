@@ -29,9 +29,9 @@ const FloatingHeader = () => {
 				arrow={{ pointAtCenter: true }}
 				className={style.fb__notification}
 			>
-				<Button>
-					<Icon name="Bell" size={20} color={colorText} />
-				</Button>
+				<Button
+					icon={<Icon name="Bell" size={20} color={colorText} />}
+				/>
 			</Dropdown>
 
 			<Dropdown
