@@ -1,4 +1,4 @@
-import { Button, Card, Space } from "antd";
+import { Button, Space } from "antd";
 import { downloadPDFFile, downloadTextFile } from "lib/utils/files";
 import { useContext, useState } from "react";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
@@ -22,43 +22,47 @@ const MarkdownEditor: React.FC = () => {
 	const IS_MARKDOWN_EMPTY = markdown.length === 0;
 
 	return (
-		<Card>
-			<div className={style.me}>
-				<Space>
-					<Button
-						disabled={IS_MARKDOWN_EMPTY}
-						onClick={() => setMarkdown("")}
-					>
-						Clear
-					</Button>
-					<Button
-						disabled={IS_MARKDOWN_EMPTY}
-						onClick={() => downloadTextFile(markdown, "README.md")}
-					>
-						Download Markdown
-					</Button>
-					<Button
-						disabled={IS_MARKDOWN_EMPTY}
-						onClick={() => downloadPDFFile(markdown, "README.html")}
-					>
-						Download HTML
-					</Button>
+		<div className={style.me}>
+			<Space>
+				<Button
+					disabled={IS_MARKDOWN_EMPTY}
+					onClick={() => setMarkdown("")}
+					size="large"
+				>
+					Clear
+				</Button>
+				<Button
+					size="large"
+					disabled={IS_MARKDOWN_EMPTY}
+					onClick={() => downloadTextFile(markdown, "README.md")}
+				>
+					Download Markdown
+				</Button>
+				<Button
+					size="large"
+					disabled={IS_MARKDOWN_EMPTY}
+					onClick={() => downloadPDFFile(markdown, "README.html")}
+				>
+					Download HTML
+				</Button>
 
-					<Clipboard
-						text={markdown}
-						clipboardComponent={ClipboardButton}
-					/>
-				</Space>
+				<Clipboard
+					text={markdown}
+					clipboardComponent={ClipboardButton}
+				/>
+			</Space>
 
-				<div data-color-mode={isDarkMode ? "dark" : "light"}>
-					<MDEditor
-						value={markdown}
-						onChange={(value) => value && setMarkdown(value)}
-						height={500}
-					/>
-				</div>
+			<div
+				className={style.me__editor}
+				data-color-mode={isDarkMode ? "dark" : "light"}
+			>
+				<MDEditor
+					value={markdown}
+					onChange={(value) => value && setMarkdown(value)}
+					height="100%"
+				/>
 			</div>
-		</Card>
+		</div>
 	);
 };
 
