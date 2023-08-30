@@ -1,3 +1,10 @@
+### [4.9.0] - 2023-08-23
+
+-   Create Notifcation modal
+-   Create About page
+-   Fix Maekdown editor dyamic height
+-   Fix design and maintain design consistancy
+
 ### [4.8.0] - 2023-08-23
 
 -   Fix sonar cloud bug

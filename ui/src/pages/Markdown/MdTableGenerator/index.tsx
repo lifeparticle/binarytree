@@ -1,10 +1,11 @@
 import MDEditor from "@uiw/react-md-editor";
-import { Card, Form } from "antd";
+import { Form } from "antd";
 import { useContext, useState, useTransition } from "react";
 import { generateTable } from "./util/utils";
 import InputComponent from "components/General/InputComponent";
 import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 import PageGrid from "components/Layouts/PageGrid";
+import style from "./MdTableGenerator.module.scss";
 
 const TableGenerator: React.FC = () => {
 	const [row, setRow] = useState(10);
@@ -17,7 +18,7 @@ const TableGenerator: React.FC = () => {
 	const [isPending, startTransition] = useTransition();
 
 	return (
-		<Card bordered={false}>
+		<div className={style.md}>
 			<Form layout="vertical">
 				<PageGrid>
 					<InputComponent
@@ -56,16 +57,19 @@ const TableGenerator: React.FC = () => {
 						}}
 					/>
 				</PageGrid>
-				<div data-color-mode={isDarkMode ? "dark" : "light"}>
-					<MDEditor
-						value={isPending ? "Generating table..." : output}
-						onChange={(val) => val && setOutput(val)}
-						height="800px"
-						style={{ fontSize: "52" }}
-					/>
-				</div>
 			</Form>
-		</Card>
+			<div
+				className={style.md__editor}
+				data-color-mode={isDarkMode ? "dark" : "light"}
+			>
+				<MDEditor
+					value={isPending ? "Generating table..." : output}
+					onChange={(val) => val && setOutput(val)}
+					height="100%"
+					style={{ fontSize: "52" }}
+				/>
+			</div>
+		</div>
 	);
 };
 
