@@ -4,6 +4,7 @@ import { ITEMS } from "./utils/constants";
 import { MenuProps } from "./utils/types";
 import style from "./Menu.module.scss";
 import { classNames } from "lib/utils/helper";
+import Icon from "components/General/Icon";
 
 const { Sider } = Layout;
 
@@ -17,6 +18,7 @@ const Menu: React.FC<MenuProps> = ({ collapsed }) => {
 	return (
 		<Sider trigger={null} collapsible collapsed={collapsed}>
 			<AntdMenu
+				expandIcon={<Icon name="ChevronDown" />}
 				className={classNames(
 					style.menu,
 					collapsed ? style.menu__collapsed : ""

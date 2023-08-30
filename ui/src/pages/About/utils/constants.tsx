@@ -67,22 +67,18 @@ const DATA_COLUMNS: ColumnsType<DataType> = [
 		title: "Name",
 		dataIndex: "name",
 		key: "name",
-		render: (text) => <a>{text}</a>,
+		render: (text, record) => (
+			<Link to={record.link} key={record.key}>
+				{text}
+			</Link>
+		),
+		width: 80,
 	},
 	{
 		title: "Description",
 		dataIndex: "description",
 		key: "description",
-	},
-	{
-		title: "Link",
-		dataIndex: "link",
-		key: "link",
-		render: (_, { link }) => (
-			<Link to={link} key={link}>
-				Visit
-			</Link>
-		),
+		width: 90,
 	},
 	{
 		title: "Library",
@@ -110,6 +106,7 @@ const DATA_COLUMNS: ColumnsType<DataType> = [
 				})}
 			</>
 		),
+		width: 150,
 	},
 ];
 
@@ -117,14 +114,14 @@ const data: DataType[] = [
 	{
 		key: "1",
 		name: "Color Picker",
-		description: "choose your desired color",
+		description: "Choose your desired color",
 		link: "/colors/cp",
 		library: [{ name: "tiny-color-2", url: LIBRARY_URLS["tiny-color-2"] }],
 	},
 	{
 		key: "2",
 		name: "Shades Generator",
-		description: "choose your desired Shades",
+		description: "Choose your desired Shades",
 		link: "/colors/shades",
 		library: [{ name: "tiny-color-2", url: LIBRARY_URLS["tiny-color-2"] }],
 	},
@@ -143,7 +140,7 @@ const data: DataType[] = [
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
-		key: "4",
+		key: "5",
 		name: "Json to typescript converter",
 		description: "Convert Json to typescript",
 		link: "/converter/jtt",
@@ -155,9 +152,9 @@ const data: DataType[] = [
 		],
 	},
 	{
-		key: "5",
+		key: "6",
 		name: "Data Generator",
-		description: "generate any type of data",
+		description: "Generate any type of data",
 		link: "/data/data-gen",
 		library: [
 			{
@@ -171,9 +168,9 @@ const data: DataType[] = [
 		],
 	},
 	{
-		key: "6",
+		key: "7",
 		name: "Image generate from colors",
-		description: "generate image from color code",
+		description: "Generate image from color code",
 		link: "/data/igfc",
 		library: [
 			{
@@ -191,14 +188,21 @@ const data: DataType[] = [
 		],
 	},
 	{
-		key: "7",
-		name: "Sorting numbers or character",
-		description: "Sort number or character",
+		key: "8",
+		name: "Sorting",
+		description: "Sort numbers or strings",
 		link: "/data/sorting",
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
-		key: "8",
+		key: "9",
+		name: "List",
+		description: "List of things",
+		link: "/list",
+		library: [{ name: "Vanilla JS", url: "" }],
+	},
+	{
+		key: "10",
 		name: "Markdown Editor",
 		description: "Write markdown and download",
 		link: "/markdown/me",
@@ -210,7 +214,7 @@ const data: DataType[] = [
 		],
 	},
 	{
-		key: "9",
+		key: "11",
 		name: "Markdown table generator",
 		description: "Generate table from markdown",
 		link: "/markdown/md-table-generator",
@@ -222,7 +226,7 @@ const data: DataType[] = [
 		],
 	},
 	{
-		key: "10",
+		key: "12",
 		name: "Markdown table of content",
 		description: "Generate table from markdown",
 		link: "/markdown/toc",
@@ -234,7 +238,7 @@ const data: DataType[] = [
 		],
 	},
 	{
-		key: "11",
+		key: "13",
 		name: "Text Editor",
 		description: "Generate rich text",
 		link: "/text/te",
