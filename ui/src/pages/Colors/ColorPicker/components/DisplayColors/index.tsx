@@ -1,75 +1,37 @@
 import { Card, Space } from "antd";
 import { EXTENDED_DATA_OPTIONS } from "pages/Colors/ColorPicker/utils/constants";
-import ColorDisplay from "pages/Colors/ColorPicker/components/ColorDisplay";
+import DisplayColor from "pages/Colors/ColorPicker/components/DisplayColor";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import style from "./DisplayColors.module.scss";
+import { DisplayColorsProps } from "pages/Colors/ColorPicker/utils/types";
+import {
+	determineLabel,
+	determineValue,
+	generateClipboardText,
+} from "pages/Colors/ColorPicker/utils/helper";
 
-interface DisplayProps {
-	colors: {
-		[key: string]: string;
-	};
-	format: string;
-	displayType: "variables" | "colors" | "use-variables";
-	title: string;
-}
-
-const DisplayColors: React.FC<DisplayProps> = ({
+const DisplayColors: React.FC<DisplayColorsProps> = ({
 	colors,
 	displayType,
 	format,
 	title,
 }) => {
-	const determineLabel = (optionValue: string, optionLabel: string) => {
-		switch (displayType) {
-			case "variables":
-				return `--color-${optionValue}`;
-			case "use-variables":
-				return "background-color";
-			default:
-				return optionLabel;
-		}
-	};
-
-	const determineValue = (optionValue: string) => {
-		return displayType === "use-variables"
-			? `var(--color-${optionValue})`
-			: colors[optionValue];
-	};
-
-	const generateClipboardText = () => {
-		switch (displayType) {
-			case "variables":
-				return EXTENDED_DATA_OPTIONS.map(
-					(option) =>
-						`--color-${option.value}: ${colors[option.value]};`
-				).join("\n");
-
-			case "use-variables":
-				return EXTENDED_DATA_OPTIONS.map(
-					(option) => `var(--color-${option.value})`
-				).join("\n");
-
-			default:
-				return Object.values(colors).join("\n");
-		}
-	};
-
 	return (
 		<Card bordered={false} title={title}>
 			<Space direction="vertical" className={style.dp}>
 				{EXTENDED_DATA_OPTIONS.map(({ value, label }) => (
-					<ColorDisplay
+					<DisplayColor
 						key={value}
-						customLabel={determineLabel(value, label)}
+						customLabel={determineLabel(value, label, displayType)}
 						label={label}
-						customValue={determineValue(value)}
+						customValue={determineValue(value, displayType, colors)}
 						value={colors[value]}
 						format={format}
 					/>
 				))}
 				<Clipboard
-					text={generateClipboardText()}
+					text={generateClipboardText(displayType, colors)}
 					label="Copy All"
 					clipboardComponent={ClipboardButton}
 				/>

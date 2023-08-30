@@ -32,6 +32,7 @@ const LIBRARY_URLS: LibraryList = {
 	"@uiw/react-md-editor":
 		"https://www.npmjs.com/package/@uiw/react-md-editor",
 	tinymce: "https://www.npmjs.com/package/@tinymce/tinymce-react",
+	"values.js": "https://www.npmjs.com/package/values.js",
 };
 
 const API_COLUMNS: ColumnsType<ApiInterfaceType> = [
@@ -120,10 +121,10 @@ const data: DataType[] = [
 	},
 	{
 		key: "2",
-		name: "Shades Generator",
-		description: "Choose your desired Shades",
+		name: "Shades & Tints Generator",
+		description: "Choose your desired Shades and Tints",
 		link: "/colors/shades",
-		library: [{ name: "tiny-color-2", url: LIBRARY_URLS["tiny-color-2"] }],
+		library: [{ name: "values.js", url: LIBRARY_URLS["values.js"] }],
 	},
 	{
 		key: "3",

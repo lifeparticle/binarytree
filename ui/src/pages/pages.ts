@@ -3,7 +3,7 @@ import { lazy } from "react";
 const About = lazy(() => import("pages/About"));
 
 const ColorPicker = lazy(() => import("pages/Colors/ColorPicker"));
-const Shades = lazy(() => import("pages/Colors/Shades"));
+const ShadesAndTints = lazy(() => import("pages/Colors/ShadesAndTints"));
 
 const Base64 = lazy(() => import("pages/Converter/Base64"));
 const Pixel = lazy(() => import("pages/Converter/Pixel"));
@@ -54,7 +54,7 @@ export {
 	Pixel,
 	Platform,
 	Plugin,
-	Shades,
+	ShadesAndTints,
 	Sorting,
 	TableGenerator,
 	TableOfContent,

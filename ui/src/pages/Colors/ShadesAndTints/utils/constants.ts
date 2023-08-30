@@ -1,6 +1,6 @@
 const DEFAULT_COLOR = "#ffffff";
 const DEFAULT_NUM_SHADES = 10;
-const MAX_SHADES = 256;
+const MAX_SHADES = 100;
 const MIN_SHADES = 0;
 
 const OUTPUT_FORMAT = [
