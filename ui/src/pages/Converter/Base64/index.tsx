@@ -61,7 +61,11 @@ const Base64: React.FC = () => {
 							clipboardComponent={ClipboardButton}
 						/>
 					</Space>
+				</Form>
+			</Card>
 
+			<Card>
+				<Form layout="vertical">
 					<TextareaWithValidation
 						value={result}
 						onChange={(currentValue) => {
@@ -69,6 +73,7 @@ const Base64: React.FC = () => {
 							setResult(value);
 							onClick("decode", value);
 						}}
+						rows={4}
 						placeholder="Result"
 						status={status}
 						label="Base 64 output"

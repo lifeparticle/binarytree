@@ -1,4 +1,4 @@
-.me {
+.md {
 	height: calc(100dvh - 65px);
 	overflow: hidden;
 	display: flex;
@@ -6,6 +6,5 @@
 
 	&__editor {
 		flex: 1;
-		margin-top: 20px;
 	}
 }

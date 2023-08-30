@@ -3,7 +3,11 @@ import { AutoComplete, Button, Card, Form, Input, Select, Space } from "antd";
 import { downloadTextFile } from "lib/utils/files";
 import { useState } from "react";
 import style from "./DataGenerator.module.scss";
-import { FAKER_DATA_TYPES, MYSQL_DATA_TYPES } from "./utils/constants";
+import {
+	FAKER_DATA_TYPES,
+	JSON_DATA_TYPES,
+	MYSQL_DATA_TYPES,
+} from "./utils/constants";
 import { convertToJSON } from "./utils/utils";
 import InputComponent from "components/General/InputComponent";
 import Output from "./components/Output";
@@ -159,7 +163,10 @@ const DataGenerator: React.FC = () => {
 												: dataTypes[k]
 										}
 										size="large"
-										options={MYSQL_DATA_TYPES}
+										options={[
+											...MYSQL_DATA_TYPES,
+											...JSON_DATA_TYPES,
+										]}
 										onChange={(e) =>
 											onDataTypesChange(e, k)
 										}
