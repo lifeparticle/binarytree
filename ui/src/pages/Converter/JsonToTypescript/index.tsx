@@ -2,8 +2,6 @@ import JsonToTS from "json-to-ts";
 import { useEffect, useState } from "react";
 import style from "./JsonToTypescript.module.scss";
 import { Button, Card, Form, Space } from "antd";
-import Clipboard from "components/RenderProps/Clipboard";
-import ClipboardButton from "components/General/ClipboardButton";
 import TextareaWithValidation from "components/General/TextareaWithValidation";
 import InputComponent from "components/General/InputComponent";
 import { isJsonValid } from "./utils/helper";
@@ -68,16 +66,6 @@ const JsonToTypescript: React.FC = () => {
 						>
 							Convert
 						</Button>
-						<Clipboard
-							clipboardComponent={ClipboardButton}
-							text={
-								json.length === 0
-									? ""
-									: interfaces
-											.toString()
-											.replace(/,/g, "\n\n")
-							}
-						/>
 					</Space>
 				</Form>
 			</Card>

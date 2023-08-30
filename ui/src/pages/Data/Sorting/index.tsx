@@ -1,16 +1,7 @@
 import style from "./Sorting.module.scss";
 import { useEffect, useState } from "react";
 import { sortData } from "./utils/helper";
-import {
-	Button,
-	Input,
-	Space,
-	Segmented,
-	Select,
-	Form,
-	Card,
-	Typography,
-} from "antd";
+import { Input, Segmented, Select, Form, Card, Typography } from "antd";
 import { OUTPUT_FORMAT } from "./utils/constants";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
@@ -38,28 +29,13 @@ const Sorting: React.FC = () => {
 						<TextArea
 							placeholder="Enter number or character by space or comma or new Line"
 							value={input}
-							rows={10}
+							rows={18}
 							onChange={(event) => {
 								setInput(event.currentTarget.value);
 							}}
 							data-gramm={false}
 						/>
 					</Form.Item>
-
-					<Space>
-						<Clipboard
-							text={input}
-							clipboardComponent={ClipboardButton}
-						/>
-
-						<Button
-							disabled={input.length === 0}
-							size="large"
-							onClick={() => setInput("")}
-						>
-							Clear
-						</Button>
-					</Space>
 				</Card>
 
 				<Card>

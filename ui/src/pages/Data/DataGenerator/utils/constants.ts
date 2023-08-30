@@ -1,8 +1,46 @@
 import { faker } from "@faker-js/faker";
 
 export const MYSQL_DATA_TYPES = [
-	{ value: "TEXT", label: "String" },
+	{ value: "BIGINT", label: "Big Integer" },
+	{ value: "BINARY", label: "Binary" },
+	{ value: "BIT", label: "Bit" },
+	{ value: "BLOB", label: "Binary Large Object (BLOB)" },
+	{ value: "BOOLEAN", label: "Boolean" },
+	{ value: "CHAR", label: "Character (CHAR)" },
+	{ value: "DATE", label: "Date" },
+	{ value: "DATETIME", label: "Date and Time" },
+	{ value: "DECIMAL", label: "Decimal" },
+	{ value: "DOUBLE", label: "Double Precision" },
+	{ value: "ENUM", label: "Enumeration" },
+	{ value: "FLOAT", label: "Floating-Point (FLOAT)" },
+	{ value: "GEOMETRY", label: "Geometry" },
 	{ value: "INT", label: "Integer" },
+	{ value: "JSON", label: "JSON" },
+	{ value: "LINESTRING", label: "Line String" },
+	{ value: "LONGTEXT", label: "Long Text" },
+	{ value: "MEDIUMINT", label: "Medium Integer" },
+	{ value: "MEDIUMTEXT", label: "Medium Text" },
+	{ value: "NUMERIC", label: "Numeric" },
+	{ value: "POINT", label: "Point" },
+	{ value: "POLYGON", label: "Polygon" },
+	{ value: "REAL", label: "Real" },
+	{ value: "SET", label: "Set" },
+	{ value: "SMALLINT", label: "Small Integer" },
+	{ value: "TEXT", label: "Text" },
+	{ value: "TIME", label: "Time" },
+	{ value: "TIMESTAMP", label: "Timestamp" },
+	{ value: "TINYINT", label: "Tiny Integer" },
+	{ value: "VARBINARY", label: "Variable Binary" },
+	{ value: "VARCHAR", label: "Variable Character (VARCHAR)" },
+];
+
+export const JSON_DATA_TYPES = [
+	{ value: "STRING", label: "String" },
+	{ value: "NUMBER", label: "Number" },
+	{ value: "BOOLEAN", label: "Boolean" },
+	{ value: "ARRAY", label: "Array" },
+	{ value: "OBJECT", label: "Object" },
+	{ value: "NULL", label: "Null" },
 ];
 
 export const FAKER_DATA_TYPES = [

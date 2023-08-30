@@ -1,13 +1,17 @@
 .fb {
 	position: absolute;
-	top: 0;
-	right: 0;
-	margin-right: 20px;
-	margin-top: 10px;
-	padding: 10px;
-	border-radius: 10px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	top: var(--bt-size-20);
+	right: var(--bt-size-20);
+	padding: var(--bt-size-10);
+	border-radius: var(--bt-size-10);
 	z-index: var(--bt-z-index-dropdown);
+
+	&__notification {
+		margin-top: 5px;
+		border: none;
+	}
+
+	&__about {
+		cursor: pointer;
+	}
 }

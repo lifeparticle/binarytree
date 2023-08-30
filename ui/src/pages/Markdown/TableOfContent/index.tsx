@@ -120,7 +120,7 @@ const TableOfContent: React.FC = () => {
 							onChange={(event) =>
 								onMarkdownChange(event.currentTarget.value)
 							}
-							autoSize={{ maxRows: 48, minRows: 48 }}
+							rows={20}
 						/>
 					</Form.Item>
 				</Form>
@@ -134,10 +134,7 @@ const TableOfContent: React.FC = () => {
 					/>
 
 					<Form.Item label="Output">
-						<TextArea
-							value={tableOfContents}
-							autoSize={{ maxRows: 48, minRows: 48 }}
-						/>
+						<TextArea value={tableOfContents} rows={20} />
 					</Form.Item>
 				</Form>
 			</Card>
