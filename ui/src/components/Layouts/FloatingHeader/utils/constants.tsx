@@ -1,7 +1,13 @@
 import { MenuProps } from "antd";
 import { Link } from "react-router-dom";
-import Notification from "components/Layouts/FloatingHeader/components/Notification";
 
+const DEFAULT_RECORD = [
+	{
+		date: "01.01.23",
+		version: "1.1.1",
+		features: ["start"],
+	},
+];
 const items: MenuProps["items"] = [
 	{
 		key: "1",
@@ -9,11 +15,4 @@ const items: MenuProps["items"] = [
 	},
 ];
 
-const NotificationItems: MenuProps["items"] = [
-	{
-		key: "1",
-		label: <Notification />,
-	},
-];
-
-export { items, NotificationItems };
+export { items, DEFAULT_RECORD };
