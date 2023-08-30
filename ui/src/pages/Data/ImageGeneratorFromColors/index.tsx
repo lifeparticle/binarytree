@@ -102,17 +102,12 @@ const ImageGeneratorFromColors: React.FC = () => {
 					/>
 
 					<Space>
-						<Button size="large" onClick={onButtonClick}>
-							Download Zip
-						</Button>
 						<Button
+							disabled={value.length <= 0}
 							size="large"
-							onClick={() => {
-								setValue("");
-								setColors([]);
-							}}
+							onClick={onButtonClick}
 						>
-							Clear
+							Download Zip
 						</Button>
 					</Space>
 				</Card>
