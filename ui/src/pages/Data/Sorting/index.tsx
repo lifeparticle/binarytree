@@ -7,6 +7,8 @@ import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import PageGrid from "components/Layouts/PageGrid";
 import CopyInput from "components/Layouts/CopyInput";
+import useGetSize from "lib/utils/hooks/useGetSize";
+
 const { TextArea } = Input;
 const { Title } = Typography;
 
@@ -14,6 +16,7 @@ const Sorting: React.FC = () => {
 	const [input, setInput] = useState("");
 	const [output, setOutput] = useState("");
 	const [outputFormat, setOutputFormat] = useState("\n");
+	const { size } = useGetSize();
 	const [order, setOrder] = useState("Ascending");
 
 	useEffect(() => {
@@ -63,14 +66,14 @@ const Sorting: React.FC = () => {
 					</Form.Item>
 
 					<CopyInput>
-						<Form.Item label="output format">
+						<Form.Item label="Output format">
 							<Select
 								defaultActiveFirstOption
 								placeholder="Separate results by new lines"
 								style={{ width: "100%" }}
 								onChange={(value) => setOutputFormat(value)}
 								options={OUTPUT_FORMAT}
-								size="large"
+								size={size}
 							/>
 						</Form.Item>
 

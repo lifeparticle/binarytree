@@ -1,4 +1,4 @@
-import { Button, Space } from "antd";
+import { Space } from "antd";
 import { downloadPDFFile, downloadTextFile } from "lib/utils/files";
 import { useContext, useState } from "react";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
@@ -7,6 +7,7 @@ import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 import MDEditor from "@uiw/react-md-editor";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
+import Button from "components/General/Button";
 
 const MarkdownEditor: React.FC = () => {
 	const [markdown, setMarkdown] = useState("");
@@ -27,19 +28,18 @@ const MarkdownEditor: React.FC = () => {
 				<Button
 					disabled={IS_MARKDOWN_EMPTY}
 					onClick={() => setMarkdown("")}
-					size="large"
 				>
 					Clear
 				</Button>
+
 				<Button
-					size="large"
 					disabled={IS_MARKDOWN_EMPTY}
 					onClick={() => downloadTextFile(markdown, "README.md")}
 				>
 					Download Markdown
 				</Button>
+
 				<Button
-					size="large"
 					disabled={IS_MARKDOWN_EMPTY}
 					onClick={() => downloadPDFFile(markdown, "README.html")}
 				>

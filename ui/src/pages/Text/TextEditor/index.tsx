@@ -1,11 +1,12 @@
 import React, { useState, useRef, useContext } from "react";
-import { Badge, Button, Card, Col, Row, Space } from "antd";
+import { Badge, Card, Col, Row, Space } from "antd";
 import { Editor } from "@tinymce/tinymce-react";
 import { Editor as TinyMCEEditor } from "tinymce";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import style from "./TextEditor.module.scss";
 import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
+import Button from "components/General/Button";
 
 const TextEditor: React.FC = () => {
 	const [wordCount, setWordCount] = useState(0);
@@ -125,9 +126,7 @@ const TextEditor: React.FC = () => {
 			</Row>
 
 			<Space>
-				<Button size="large" onClick={handleClear}>
-					Clear
-				</Button>
+				<Button onClick={handleClear}>Clear</Button>
 
 				<Clipboard
 					text={editorRef.current?.getContent() || " "}
