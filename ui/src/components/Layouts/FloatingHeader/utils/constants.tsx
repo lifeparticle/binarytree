@@ -13,6 +13,10 @@ const items: MenuProps["items"] = [
 		key: "1",
 		label: <Link to="/about">About</Link>,
 	},
+	{
+		key: "2",
+		label: <Link to="/feedback">Feedback</Link>,
+	},
 ];
 
 export { items, DEFAULT_RECORD };
