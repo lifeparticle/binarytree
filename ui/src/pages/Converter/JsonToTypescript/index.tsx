@@ -1,12 +1,13 @@
 import JsonToTS from "json-to-ts";
 import { useEffect, useState } from "react";
 import style from "./JsonToTypescript.module.scss";
-import { Button, Card, Form, Space } from "antd";
+import { Card, Form, Space } from "antd";
 import TextareaWithValidation from "components/General/TextareaWithValidation";
 import InputComponent from "components/General/InputComponent";
 import { isJsonValid } from "./utils/helper";
 import CodeHighlightWithCopy from "components/General/CodeHighlightWithCopy";
 import PageGrid from "components/Layouts/PageGrid";
+import Button from "components/General/Button";
 
 const JsonToTypescript: React.FC = () => {
 	const [json, setJson] = useState("");
@@ -62,7 +63,6 @@ const JsonToTypescript: React.FC = () => {
 						<Button
 							onClick={generateInterfaces}
 							disabled={json.length === 0}
-							size="large"
 						>
 							Convert
 						</Button>

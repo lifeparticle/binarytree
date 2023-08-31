@@ -1,4 +1,4 @@
-import { Button, Card, Form, Space, Input } from "antd";
+import { Card, Form, Space, Input } from "antd";
 import { useEffect, useState } from "react";
 import { Buffer } from "buffer";
 import Clipboard from "components/RenderProps/Clipboard";
@@ -6,6 +6,7 @@ import ClipboardButton from "components/General/ClipboardButton";
 import { isBase64Valid } from "./utils/helper";
 import TextareaWithValidation from "components/General/TextareaWithValidation";
 import PageGrid from "components/Layouts/PageGrid";
+import Button from "components/General/Button";
 
 const { TextArea } = Input;
 
@@ -51,8 +52,6 @@ const Base64: React.FC = () => {
 						<Button
 							disabled={IS_INPUT_EMPTY}
 							onClick={() => setInput("")}
-							role="clear_text"
-							size="large"
 						>
 							Clear
 						</Button>
@@ -83,8 +82,6 @@ const Base64: React.FC = () => {
 						<Button
 							disabled={IS_RESULT_EMPTY}
 							onClick={() => setResult("")}
-							role="clear_base64"
-							size="large"
 						>
 							Clear
 						</Button>

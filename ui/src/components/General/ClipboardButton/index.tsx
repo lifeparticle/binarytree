@@ -1,7 +1,7 @@
-import { Button } from "antd";
 import style from "./clipboardButton.module.scss";
 import { ClipboardButtonProps } from "./utils/types";
 import Icon from "components/General/Icon";
+import Button from "components/General/Button";
 
 const ClipboardButton: React.FC<ClipboardButtonProps> = ({
 	copyToClipboard,
@@ -11,7 +11,6 @@ const ClipboardButton: React.FC<ClipboardButtonProps> = ({
 }) => {
 	return (
 		<Button
-			size="large"
 			disabled={text === ""}
 			className={style.button}
 			onClick={() => copyToClipboard(text)}
