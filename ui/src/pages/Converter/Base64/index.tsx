@@ -52,6 +52,7 @@ const Base64: React.FC = () => {
 						<Button
 							disabled={IS_INPUT_EMPTY}
 							onClick={() => setInput("")}
+							role="clear_text"
 						>
 							Clear
 						</Button>
@@ -82,6 +83,7 @@ const Base64: React.FC = () => {
 						<Button
 							disabled={IS_RESULT_EMPTY}
 							onClick={() => setResult("")}
+							role="clear_base64"
 						>
 							Clear
 						</Button>

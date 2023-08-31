@@ -3,14 +3,23 @@ import ColorPicker from "pages/Colors/ColorPicker";
 import "@testing-library/jest-dom/extend-expect";
 import { render, fireEvent, screen } from "@testing-library/react";
 import { FORMAT_LABELS } from "pages/Colors/ColorPicker/utils/constants";
+import { MemoryRouter } from "react-router-dom";
 
 describe("ColorPicker Component", () => {
 	test("renders without crashing", () => {
-		render(<ColorPicker />);
+		render(
+			<MemoryRouter>
+				<ColorPicker />
+			</MemoryRouter>
+		);
 	});
 
 	test("displays color format options", () => {
-		render(<ColorPicker />);
+		render(
+			<MemoryRouter>
+				<ColorPicker />
+			</MemoryRouter>
+		);
 
 		FORMAT_LABELS.forEach((label) => {
 			const tagElement = screen.getByText(label);

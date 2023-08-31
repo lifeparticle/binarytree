@@ -8,6 +8,7 @@ interface ButtonPropsType {
 	onClick?: () => void;
 	className?: string;
 	icon?: React.ReactNode;
+	role?: string;
 }
 
 const Button: React.FC<ButtonPropsType> = ({ children, ...props }) => {
