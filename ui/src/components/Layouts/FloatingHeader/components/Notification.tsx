@@ -14,7 +14,7 @@ const Notification: React.FC = () => {
 	useEffect(() => {
 		async function fetchChangelog() {
 			try {
-				const response = await fetch("/changelog.md");
+				const response = await fetch("/CHANGELOG.md");
 				const content = await response.text();
 
 				const entries = parsedMarkdown(content);
