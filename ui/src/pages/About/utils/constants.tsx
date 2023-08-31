@@ -1,6 +1,58 @@
-import { Space, Tag } from "antd";
+import { Space, Tag, Typography } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import { Link } from "react-router-dom";
+
+const APP_VALUES = [
+	<>
+		<Typography.Text strong>Easily Shareable Links:</Typography.Text>{" "}
+		Sharing information should be as straightforward as possible. That's why
+		we provide easily shareable links for{" "}
+		<a
+			href="colors/shades-tints?color=%23559D81&numShades=10"
+			target="_blank"
+		>
+			color codes
+		</a>
+		,{" "}
+		<a href="list/course?q=&cat=React" target="_blank">
+			lists
+		</a>
+		, and more. This feature not only enhances collaboration but also
+		improves overall productivity.
+	</>,
+	<>
+		<Typography.Text strong>Data Verification:</Typography.Text> Data
+		integrity is crucial in software development. Our platform allows you to
+		verify essential data such as{" "}
+		<a href="converter/base-64" target="_blank">
+			Base64
+		</a>
+		,{" "}
+		<a href="converter/jtt" target="_blank">
+			JSON
+		</a>
+		, and others, ensuring accuracy and reliability in your projects.
+	</>,
+	<>
+		<Typography.Text strong>Smart Data Detection:</Typography.Text> Our
+		platform is equipped with intelligent data detection capabilities to
+		simplify your tasks. With smart data detection, it can automatically{" "}
+		<a href="data/sorting" target="_blank">
+			sort
+		</a>{" "}
+		your data, saving you time and the hassle.
+	</>,
+];
+
+const APP_SUPPORT = [
+	<>
+		Consider supporting this project by using{" "}
+		<a href="https://github.com/sponsors/lifeparticle">GitHub Sponsors.</a>{" "}
+		Show your appreciation and help ensure the sustainability of the project
+		by making monthly recurring or one-time payments. Your contribution
+		makes a difference!
+	</>,
+];
 
 interface DataType {
 	key: string;
@@ -111,7 +163,7 @@ const DATA_COLUMNS: ColumnsType<DataType> = [
 	},
 ];
 
-const data: DataType[] = [
+const FEATURE_DATA: DataType[] = [
 	{
 		key: "1",
 		name: "Color Picker",
@@ -252,4 +304,12 @@ const data: DataType[] = [
 	},
 ];
 
-export { LIBRARY_URLS, DATA_COLUMNS, data, API_DATA, API_COLUMNS };
+export {
+	LIBRARY_URLS,
+	DATA_COLUMNS,
+	FEATURE_DATA,
+	API_DATA,
+	API_COLUMNS,
+	APP_VALUES,
+	APP_SUPPORT,
+};
