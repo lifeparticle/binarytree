@@ -4,7 +4,7 @@ import { getLocalstorageValue, setLocalstorageValue } from "lib/utils/helper";
 import useWindowWidth from "./useWindowWidth";
 
 export const useMenuCollapsed = (storageKey: string) => {
-	const { windowWidth } = useWindowWidth(MOBILE_WIDTH);
+	const { windowWidth } = useWindowWidth();
 	const initialCollapsedValue = getLocalstorageValue<boolean>(storageKey);
 
 	const isMobileWidth = windowWidth <= MOBILE_WIDTH;

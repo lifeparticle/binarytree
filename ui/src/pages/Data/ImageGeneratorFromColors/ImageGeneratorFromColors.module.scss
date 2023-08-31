@@ -1,6 +1,10 @@
 .igfc {
+	&__button_container {
+		margin-bottom: var(--bt-size-7);
+	}
 	&__colors {
 		grid-column: 1 / -1;
+		margin-top: var(--bt-size-16);
 	}
 
 	&__image__container {
