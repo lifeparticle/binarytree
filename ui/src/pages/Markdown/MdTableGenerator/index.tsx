@@ -6,6 +6,8 @@ import InputComponent from "components/General/InputComponent";
 import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 import PageGrid from "components/Layouts/PageGrid";
 import style from "./MdTableGenerator.module.scss";
+import Clipboard from "components/RenderProps/Clipboard";
+import ClipboardButton from "components/General/ClipboardButton";
 
 const TableGenerator: React.FC = () => {
 	const [row, setRow] = useState(10);
@@ -19,6 +21,7 @@ const TableGenerator: React.FC = () => {
 
 	return (
 		<div className={style.md}>
+			<Clipboard text={output} clipboardComponent={ClipboardButton} />
 			<Form layout="vertical">
 				<PageGrid>
 					<InputComponent

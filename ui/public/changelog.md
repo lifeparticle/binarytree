@@ -1,4 +1,4 @@
-### [4.9.0] - 2023-08-23
+### [4.9.0] - 2023-08-30
 
 -   Create Notifcation modal
 -   Create About page

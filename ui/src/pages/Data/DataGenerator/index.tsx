@@ -1,5 +1,5 @@
 import { useClipboard } from "@mantine/hooks";
-import { AutoComplete, Button, Card, Form, Input, Select, Space } from "antd";
+import { AutoComplete, Card, Form, Input, Select, Space } from "antd";
 import { downloadTextFile } from "lib/utils/files";
 import { useState } from "react";
 import style from "./DataGenerator.module.scss";
@@ -12,6 +12,7 @@ import { convertToJSON } from "./utils/utils";
 import InputComponent from "components/General/InputComponent";
 import Output from "./components/Output";
 import PageGrid from "components/Layouts/PageGrid";
+import Button from "components/General/Button";
 
 const DataGenerator: React.FC = () => {
 	const [tableName, setTableName] = useState("");

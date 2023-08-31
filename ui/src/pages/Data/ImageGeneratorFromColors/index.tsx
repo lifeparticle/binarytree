@@ -1,5 +1,5 @@
 import JSZip from "jszip";
-import { Card, Form, Typography, Button, Input, Space } from "antd";
+import { Card, Form, Typography, Input, Space } from "antd";
 import { saveAs } from "file-saver";
 import JSZipUtils from "jszip-utils";
 import { toPng } from "html-to-image";
@@ -9,6 +9,7 @@ import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 import { extractColors } from "./utils/helper";
 import InputComponent from "components/General/InputComponent";
 import PageGrid from "components/Layouts/PageGrid";
+import Button from "components/General/Button";
 
 const { Title } = Typography;
 const { TextArea } = Input;
@@ -101,10 +102,9 @@ const ImageGeneratorFromColors: React.FC = () => {
 						type="number"
 					/>
 
-					<Space>
+					<Space className={style.igfc__button_container}>
 						<Button
 							disabled={value.length <= 0}
-							size="large"
 							onClick={onButtonClick}
 						>
 							Download Zip
