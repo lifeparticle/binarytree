@@ -82,7 +82,7 @@ const About = () => {
 					/>
 
 					<List
-						header={<div>Suport</div>}
+						header={<div>Support</div>}
 						bordered
 						dataSource={APP_SUPPORT}
 						renderItem={(item) => (

@@ -40,17 +40,17 @@ const APP_VALUES = [
 		<a href="data/sorting" target="_blank">
 			sort
 		</a>{" "}
-		your data, saving you time and the hassle.
+		your data, saving you time and hassle.
 	</>,
 ];
 
 const APP_SUPPORT = [
 	<>
-		Consider supporting this project by using{" "}
+		Consider supporting this project using{" "}
 		<a href="https://github.com/sponsors/lifeparticle">GitHub Sponsors.</a>{" "}
-		Show your appreciation and help ensure the sustainability of the project
-		by making monthly recurring or one-time payments. Your contribution
-		makes a difference!
+		Show your appreciation and help ensure the project's sustainability by
+		making monthly, recurring, or one-time payments. Your contribution makes
+		a difference!
 	</>,
 ];
 
@@ -269,7 +269,7 @@ const FEATURE_DATA: DataType[] = [
 	{
 		key: "11",
 		name: "Markdown table generator",
-		description: "Generate table from markdown",
+		description: "Generate a table from the markdown",
 		link: "/markdown/md-table-generator",
 		library: [
 			{
