@@ -1,4 +1,4 @@
-import style from "./clipboardButton.module.scss";
+import style from "./ClipboardButton.module.scss";
 import { ClipboardButtonProps } from "./utils/types";
 import Icon from "components/General/Icon";
 import Button from "components/General/Button";
