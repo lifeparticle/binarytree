@@ -28,10 +28,19 @@ const About = () => {
 					<Typography.Paragraph>
 						At binarytree.dev, we provide an array of developer
 						productivity tools designed to help you save time. With
-						an ever-growing number of features (currently{" "}
-						<b>{data.length}</b>), our platform is constantly
-						evolving to meet the needs of developers like you.
+						an{" "}
+						<a
+							href="https://github.com/users/lifeparticle/projects/2"
+							target="_blank"
+						>
+							ever-growing number of features
+						</a>{" "}
+						(currently <b>{data.length}</b>), our platform is
+						constantly evolving to meet the needs of developers like
+						you.
 					</Typography.Paragraph>
+
+					<Typography.Paragraph>Why</Typography.Paragraph>
 
 					<Table
 						columns={DATA_COLUMNS}
@@ -64,6 +73,8 @@ const About = () => {
 							}
 						/>
 					</div>
+
+					<Typography.Paragraph>Support</Typography.Paragraph>
 				</Space>
 			</Card>
 		</Space>

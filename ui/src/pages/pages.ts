@@ -1,6 +1,7 @@
 import { lazy } from "react";
 
 const About = lazy(() => import("pages/About"));
+const Feedback = lazy(() => import("pages/Feedback"));
 
 const ColorPicker = lazy(() => import("pages/Colors/ColorPicker"));
 const ShadesAndTints = lazy(() => import("pages/Colors/ShadesAndTints"));
@@ -44,6 +45,7 @@ export {
 	ColorPicker,
 	Course,
 	DataGenerator,
+	Feedback,
 	Github,
 	Icon,
 	ImageGeneratorFromColors,

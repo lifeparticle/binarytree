@@ -30,7 +30,7 @@ const FloatingHeader = () => {
 				className={style.fb__notification}
 			>
 				<Button
-					icon={<Icon name="Bell" size={20} color={colorText} />}
+					icon={<Icon name="Bell" size={24} color={colorText} />}
 				/>
 			</Dropdown>
 

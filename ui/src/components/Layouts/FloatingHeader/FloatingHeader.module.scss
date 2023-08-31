@@ -1,6 +1,6 @@
 .fb {
 	position: absolute;
-	top: var(--bt-size-10);
+	top: var(--bt-size-8);
 	right: var(--bt-size-20);
 	padding: var(--bt-size-4) var(--bt-size-15) var(--bt-size-4)
 		var(--bt-size-10);
@@ -8,7 +8,6 @@
 	z-index: var(--bt-z-index-dropdown);
 
 	&__notification {
-		margin-top: var(--bt-size-5);
 		border: none;
 		box-shadow: none;
 		background-color: none;
