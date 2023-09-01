@@ -8,30 +8,24 @@ const AirtableEmbed = () => {
 	return (
 		<div className={style.feedback}>
 			{loading && (
-				<div className={style.feedback__skeleton}>
-					<Skeleton title paragraph={{ rows: 10 }} />
-					<Skeleton.Input />
-					<Skeleton title />
-					<Skeleton paragraph={{ rows: 10 }} />
-					<Skeleton.Input />
-					<Skeleton paragraph={{ rows: 10 }} />
-					<Skeleton.Input />
-					<Skeleton paragraph={{ rows: 10 }} />
-					<Skeleton.Input />
-					<Skeleton.Button />
+				<div className={style.feedback__skeletons}>
+					<Skeleton active title paragraph={{ rows: 10 }} />
+					<Skeleton.Input active />
+					<Skeleton title active />
+					<Skeleton active paragraph={{ rows: 10 }} />
+					<Skeleton.Input active />
+					<Skeleton active paragraph={{ rows: 10 }} />
+					<Skeleton.Input active />
+					<Skeleton active paragraph={{ rows: 10 }} />
+					<Skeleton.Input active />
+					<Skeleton.Button active />
 				</div>
 			)}
 
 			<iframe
-				className="airtable-embed airtable-dynamic-height"
+				className={`airtable-embed airtable-dynamic-height ${style.iframe}`}
 				src="https://airtable.com/embed/appbcH1EyjqD8PXkK/shrm5RlUHdworbgSz?backgroundColor=blue"
 				height="1949.375"
-				width="85%"
-				style={{
-					background: "transparent",
-					border: "1px solid #ccc",
-					display: loading ? "none" : "block",
-				}}
 				onLoad={() => setLoading(false)}
 			></iframe>
 		</div>
