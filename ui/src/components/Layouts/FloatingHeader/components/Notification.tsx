@@ -34,18 +34,26 @@ const Notification: React.FC = () => {
 	return (
 		<div className={style.notification}>
 			{notifications.map((notification) => (
-				<div key={notification.date} className={style.notificationItem}>
-					<div className={style.notificationItem__title}>
+				<div
+					key={notification.date}
+					className={style.notification__item}
+				>
+					<div className={style.notification__item_title}>
 						<Title level={5}>{notification.date}</Title>
 						<Tag color="green">{notification.version}</Tag>
 					</div>
-					<div className={style.features}>
+					<ul className={style.notification__item_features}>
 						{notification.features.map((feature) => (
-							<div key={feature} className={style.feature}>
+							<li
+								key={feature}
+								className={
+									style.notification__item_features_feature
+								}
+							>
 								{feature}
-							</div>
+							</li>
 						))}
-					</div>
+					</ul>
 				</div>
 			))}
 		</div>

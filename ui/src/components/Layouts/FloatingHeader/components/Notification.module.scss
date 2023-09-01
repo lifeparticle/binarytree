@@ -4,23 +4,19 @@
 	overflow-y: auto;
 	overflow-x: hidden;
 
-	.notificationItem {
-		padding: 12px;
+	&__item {
 		border-bottom: 1px solid #eee;
+		padding-top: 8px;
 
-		&__title {
+		&_title {
 			display: flex;
 			justify-content: space-between;
 		}
-	}
 
-	.features {
-		margin-top: 8px;
-	}
-
-	.feature {
-		font-size: 14px;
-		line-height: 1.4;
-		margin-bottom: 4px;
+		&_features {
+			padding-top: 8px;
+			margin-left: -25px;
+			padding-bottom: 8px;
+		}
 	}
 }
