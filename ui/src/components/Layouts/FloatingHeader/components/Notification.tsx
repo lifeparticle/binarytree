@@ -1,15 +1,14 @@
-import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import style from "./Notification.module.scss";
-import { classNames } from "lib/utils/helper";
-import { markdownType } from "../utils/types";
-import { parsedMarkdown } from "../utils/utils";
-import { DEFAULT_RECORD } from "../utils/constants";
-import { Tag } from "antd";
+import { Markdown } from "components/Layouts/FloatingHeader/utils/types";
+import { parsedMarkdown } from "components/Layouts/FloatingHeader/utils/helper";
+import { DEFAULT_RECORD } from "components/Layouts/FloatingHeader/utils/constants";
+import { Typography, Tag } from "antd";
+
+const { Title } = Typography;
 
 const Notification: React.FC = () => {
-	const { isDarkMode } = useContext(DarkModeContext);
-	const [records, setRecords] = useState<markdownType[]>([]);
+	const [notifications, setNotifications] = useState<Markdown[]>([]);
 
 	useEffect(() => {
 		async function fetchChangelog() {
@@ -19,31 +18,32 @@ const Notification: React.FC = () => {
 
 				const entries = parsedMarkdown(content);
 
-				setRecords(entries);
+				setNotifications(entries);
 			} catch (error) {
 				console.error("Error fetching changelog:", error);
 			}
 		}
 
 		if (import.meta.env.MODE === "development") {
-			setRecords(DEFAULT_RECORD);
+			setNotifications(DEFAULT_RECORD);
 		} else {
 			fetchChangelog();
 		}
 	}, []);
 
 	return (
-		<div
-			className={classNames("notification-dropdown", style.notification)}
-			style={{ color: isDarkMode ? "white" : "" }}
-		>
-			{records.map((record) => (
-				<div key={record.date}>
-					<h3>{record.version}</h3>
-					<Tag color="green">{record.date}</Tag>
-					<div>
-						{record.features.map((feature) => (
-							<div key={feature}>{feature}</div>
+		<div className={style.notification}>
+			{notifications.map((notification) => (
+				<div key={notification.date} className={style.notificationItem}>
+					<div className={style.notificationItem__title}>
+						<Title level={5}>{notification.date}</Title>
+						<Tag color="green">{notification.version}</Tag>
+					</div>
+					<div className={style.features}>
+						{notification.features.map((feature) => (
+							<div key={feature} className={style.feature}>
+								{feature}
+							</div>
 						))}
 					</div>
 				</div>

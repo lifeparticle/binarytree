@@ -1,17 +1,26 @@
 .notification {
 	height: 300px;
 	width: 200px;
-	overflow-y: scroll;
+	overflow-y: auto;
 	overflow-x: hidden;
-	h3 {
-		font-size: 16px;
+
+	.notificationItem {
+		padding: 12px;
+		border-bottom: 1px solid #eee;
+
+		&__title {
+			display: flex;
+			justify-content: space-between;
+		}
 	}
 
-	ul {
-		margin-bottom: 10px;
+	.features {
+		margin-top: 8px;
+	}
 
-		li {
-			font-size: 12px;
-		}
+	.feature {
+		font-size: 14px;
+		line-height: 1.4;
+		margin-bottom: 4px;
 	}
 }

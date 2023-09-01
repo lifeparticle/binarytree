@@ -57,7 +57,6 @@ h5 {
 }
 
 .ant-layout-content,
-.notification-dropdown,
 .ant-menu {
 	&::-webkit-scrollbar {
 		width: var(--bt-size-8);
