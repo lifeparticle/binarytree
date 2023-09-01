@@ -3,15 +3,20 @@ import {
 	MAX_SHADES,
 	MIN_SHADES,
 	OUTPUT_FORMAT,
+	SEGMENTED_OPTIONS,
 } from "pages/Colors/ShadesAndTints/utils/constants";
-import { Button, Card, Form, Select, Space } from "antd";
+import { Button, Card, Form, Segmented, Select, Space } from "antd";
 import { ColorPicker as CP } from "@mantine/core";
 import styles from "./ColorInputs.module.scss";
 import { ColorInputsProps } from "pages/Colors/ShadesAndTints/utils/types";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
-import { formatShades, generateRandomColor } from "../../utils/helper";
+import {
+	formatShades,
+	generateRandomColor,
+} from "pages/Colors/ShadesAndTints/utils/helper";
 import Icon from "components/General/Icon";
+import { useEffect, useState } from "react";
 
 const ColorInputs: React.FC<ColorInputsProps> = ({
 	color,
@@ -22,7 +27,25 @@ const ColorInputs: React.FC<ColorInputsProps> = ({
 	handleOutputFormatChange,
 	option,
 	shades,
+	tints,
 }) => {
+	const [order, setOrder] = useState(SEGMENTED_OPTIONS[0].value);
+	const [clipboardText, setClipboardText] = useState("");
+
+	useEffect(() => {
+		const generateClipboardText = () => {
+			if (order === "Shades") {
+				setClipboardText(formatShades(shades, option));
+			} else if (order === "Tints") {
+				setClipboardText(formatShades(tints, option));
+			} else if (order === "All") {
+				setClipboardText(formatShades([...shades, ...tints], option));
+			}
+		};
+
+		generateClipboardText();
+	}, [order, option, shades, tints]);
+
 	return (
 		<Card className={styles.ci}>
 			<Form layout="vertical">
@@ -74,8 +97,16 @@ const ColorInputs: React.FC<ColorInputsProps> = ({
 							options={OUTPUT_FORMAT}
 						/>
 					</Form.Item>
+					<Segmented
+						size="large"
+						value={order}
+						onChange={(value: string | number) =>
+							setOrder(value as string)
+						}
+						options={SEGMENTED_OPTIONS}
+					/>
 					<Clipboard
-						text={formatShades(shades, option)}
+						text={clipboardText}
 						clipboardComponent={ClipboardButton}
 					/>
 					<Button

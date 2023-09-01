@@ -12,8 +12,10 @@ const useUrlParams = (initialParams: Params) => {
 	useEffect(() => {
 		let updated = false;
 		const newParams = { ...params };
+
 		Object.keys(initialParams).forEach((key) => {
 			const value = searchParams.get(key);
+
 			if (value !== null && params[key] !== value) {
 				newParams[key] = value;
 				updated = true;
@@ -31,7 +33,7 @@ const useUrlParams = (initialParams: Params) => {
 		setParams((prevParams) => ({ ...prevParams, [key]: value }));
 	};
 
-	return [params, updateUrlParam] as const;
+	return [params, updateUrlParam, searchParams] as const;
 };
 
 export default useUrlParams;

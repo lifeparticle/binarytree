@@ -1,7 +1,7 @@
 import React from "react";
 import { Tabs, type TabsProps } from "antd";
 import CodeHighlightWithCopy from "components/General/CodeHighlightWithCopy";
-import { OutputPropsType } from "../utils/types";
+import { OutputPropsType } from "pages/Data/DataGenerator/utils/types";
 
 const Output: React.FC<OutputPropsType> = ({ json, sql }) => {
 	const items: TabsProps["items"] = [

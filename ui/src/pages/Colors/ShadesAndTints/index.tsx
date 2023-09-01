@@ -14,28 +14,26 @@ import ColorInputs from "./components/ColorInputs";
 import useUrlParams from "lib/utils/hooks/useUrlParams";
 
 const ShadesAndTints: React.FC = () => {
-	const [params, updateUrlParam] = useUrlParams({
+	const [params, updateUrlParam, searchParams] = useUrlParams({
 		color: DEFAULT_COLOR,
 		numShades: DEFAULT_NUM_SHADES,
 	});
 
-	const [color, setColor] = useState<string>(params.color as string);
+	const [color, setColor] = useState<string>(
+		searchParams.get("color") || (params.color as string)
+	);
 	const [shades, setShades] = useState<string[]>([]);
 	const [tints, setTints] = useState<string[]>([]);
 	const [numberOfShades, setNumberOfShades] = useState<number>(
-		Number(params.numShades)
+		Number(searchParams.get("numShades")) || Number(params.numShades)
 	);
 
 	const [option, setOption] = useState<SelectOption>(OUTPUT_FORMAT[0]);
 	const [isPending, startTransition] = useTransition();
 
 	const resetInputs = () => {
-		setInputs(DEFAULT_COLOR, DEFAULT_NUM_SHADES);
-	};
-
-	const setInputs = (color: string, numberOfShades: number) => {
-		setColor(color);
-		setNumberOfShades(numberOfShades);
+		setColor(DEFAULT_COLOR);
+		setNumberOfShades(DEFAULT_NUM_SHADES);
 	};
 
 	useCombinedKeyPress(resetInputs, ["ControlLeft", "KeyE"]);
@@ -70,6 +68,7 @@ const ShadesAndTints: React.FC = () => {
 				handleOutputFormatChange={setOption}
 				option={option}
 				shades={shades}
+				tints={tints}
 			/>
 			<PageGrid>
 				<Colors
