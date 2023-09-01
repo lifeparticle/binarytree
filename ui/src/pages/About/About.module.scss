@@ -3,10 +3,10 @@
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
+	padding: 20px;
 
 	&__intro {
 		position: relative;
-
 		&_wrapper {
 			position: absolute;
 			top: 0;
@@ -23,6 +23,8 @@
 				padding: var(--bt-size-10);
 				text-align: center;
 				color: white;
+				max-width: 80vw;
+				box-sizing: border-box;
 			}
 		}
 
@@ -35,5 +37,6 @@
 	&__socials {
 		display: flex;
 		justify-content: center;
+		margin-top: 20px;
 	}
 }
