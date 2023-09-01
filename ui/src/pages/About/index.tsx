@@ -80,6 +80,7 @@ const About = () => {
 						dataSource={API_DATA}
 						pagination={false}
 						title={() => "API's"}
+						scroll={{ x: "calc(50%)" }}
 						bordered
 					/>
 
@@ -88,6 +89,7 @@ const About = () => {
 						dataSource={OTHER_DATA}
 						pagination={false}
 						title={() => "Others"}
+						scroll={{ x: "calc(50%)" }}
 						bordered
 					/>
 
