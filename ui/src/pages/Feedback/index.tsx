@@ -25,8 +25,8 @@ const AirtableEmbed = () => {
 			<iframe
 				className="airtable-embed airtable-dynamic-height"
 				src="https://airtable.com/embed/appbcH1EyjqD8PXkK/shrm5RlUHdworbgSz?backgroundColor=blue"
-				width="50%"
 				height="1949.375"
+				width="85%"
 				style={{
 					background: "transparent",
 					border: "1px solid #ccc",

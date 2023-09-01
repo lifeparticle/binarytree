@@ -1,10 +1,12 @@
 import {
 	API_COLUMNS,
 	API_DATA,
-	DATA_COLUMNS,
+	FEATURE_COLUMNS,
 	FEATURE_DATA,
 	APP_VALUES,
 	APP_SUPPORT,
+	OTHER_COLUMNS,
+	OTHER_DATA,
 } from "./utils/constants";
 import { Button, Card, List, Space, Table, Typography } from "antd";
 import style from "./About.module.scss";
@@ -65,7 +67,7 @@ const About = () => {
 					/>
 
 					<Table
-						columns={DATA_COLUMNS}
+						columns={FEATURE_COLUMNS}
 						dataSource={FEATURE_DATA}
 						pagination={false}
 						title={() => "Features"}
@@ -78,6 +80,14 @@ const About = () => {
 						dataSource={API_DATA}
 						pagination={false}
 						title={() => "API's"}
+						bordered
+					/>
+
+					<Table
+						columns={OTHER_COLUMNS}
+						dataSource={OTHER_DATA}
+						pagination={false}
+						title={() => "Others"}
 						bordered
 					/>
 

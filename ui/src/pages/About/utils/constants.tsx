@@ -1,6 +1,7 @@
 import { Space, Tag, Typography } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import { Link } from "react-router-dom";
+import { Api, Feature, LibraryList, Other } from "./types";
 
 const APP_VALUES = [
 	<>
@@ -54,24 +55,6 @@ const APP_SUPPORT = [
 	</>,
 ];
 
-interface DataType {
-	key: string;
-	name: string;
-	description: string;
-	link: string;
-	library: { name: string; url: string }[];
-}
-
-interface ApiInterfaceType {
-	name: string;
-	key: string;
-	api: string;
-}
-
-interface LibraryList {
-	[key: string]: string;
-}
-
 const LIBRARY_URLS: LibraryList = {
 	"tiny-color-2": "https://www.npmjs.com/package/tinycolor2",
 	"prism-react-renderer":
@@ -87,7 +70,7 @@ const LIBRARY_URLS: LibraryList = {
 	"values.js": "https://www.npmjs.com/package/values.js",
 };
 
-const API_COLUMNS: ColumnsType<ApiInterfaceType> = [
+const API_COLUMNS: ColumnsType<Api> = [
 	{
 		title: "Page Name",
 		dataIndex: "name",
@@ -107,7 +90,7 @@ const API_COLUMNS: ColumnsType<ApiInterfaceType> = [
 	},
 ];
 
-const API_DATA: ApiInterfaceType[] = [
+const API_DATA: Api[] = [
 	{
 		name: "News",
 		api: "https://newsapi.org",
@@ -115,7 +98,28 @@ const API_DATA: ApiInterfaceType[] = [
 	},
 ];
 
-const DATA_COLUMNS: ColumnsType<DataType> = [
+const OTHER_COLUMNS: ColumnsType<Other> = [
+	{
+		title: "Name",
+		dataIndex: "name",
+		key: "name",
+		render: (text, record) => (
+			<Link to={record.url} key={record.name}>
+				{text}
+			</Link>
+		),
+	},
+];
+
+const OTHER_DATA: Other[] = [
+	{
+		key: "1",
+		name: "Avatar",
+		url: "https://www.dicebear.com/styles/adventurer-neutral",
+	},
+];
+
+const FEATURE_COLUMNS: ColumnsType<Feature> = [
 	{
 		title: "Name",
 		dataIndex: "name",
@@ -163,7 +167,7 @@ const DATA_COLUMNS: ColumnsType<DataType> = [
 	},
 ];
 
-const FEATURE_DATA: DataType[] = [
+const FEATURE_DATA: Feature[] = [
 	{
 		key: "1",
 		name: "Color Picker",
@@ -306,10 +310,12 @@ const FEATURE_DATA: DataType[] = [
 
 export {
 	LIBRARY_URLS,
-	DATA_COLUMNS,
+	FEATURE_COLUMNS,
 	FEATURE_DATA,
 	API_DATA,
 	API_COLUMNS,
 	APP_VALUES,
 	APP_SUPPORT,
+	OTHER_COLUMNS,
+	OTHER_DATA,
 };

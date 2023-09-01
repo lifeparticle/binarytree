@@ -4,7 +4,6 @@ import Icon from "components/General/Icon";
 import { items } from "./utils/constants";
 import { MenuProps } from "antd";
 import Notification from "./components/Notification";
-
 import avatar1 from "assets/avatars/avatar-1.svg";
 import avatar2 from "assets/avatars/avatar-2.svg";
 import avatar3 from "assets/avatars/avatar-3.svg";
@@ -38,7 +37,7 @@ const FloatingHeader = () => {
 				className={style.fb__notification}
 			>
 				<Button
-					icon={<Icon name="Bell" size={24} color={colorText} />}
+					icon={<Icon name="Bell" size={20} color={colorText} />}
 				/>
 			</Dropdown>
 
@@ -48,7 +47,17 @@ const FloatingHeader = () => {
 				arrow={{ pointAtCenter: true }}
 				className={style.fb__about}
 			>
-				<Avatar size="small" src={randomAvatar} />
+				<Avatar
+					size={{
+						xs: 38,
+						sm: 38,
+						md: 38,
+						lg: 38,
+						xl: 38,
+						xxl: 38,
+					}}
+					src={randomAvatar}
+				/>
 			</Dropdown>
 		</Space>
 	);
