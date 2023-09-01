@@ -16,6 +16,7 @@ const FloatingHeader = () => {
 	const {
 		token: { colorBgContainer, colorText },
 	} = theme.useToken();
+
 	const NotificationItems: MenuProps["items"] = [
 		{
 			key: "1",
