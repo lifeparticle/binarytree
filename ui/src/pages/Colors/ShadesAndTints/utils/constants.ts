@@ -3,6 +3,12 @@ const DEFAULT_NUM_SHADES = 10;
 const MAX_SHADES = 100;
 const MIN_SHADES = 0;
 
+const SEGMENTED_OPTIONS = [
+	{ label: "Shades", value: "Shades" },
+	{ label: "Tints", value: "Tints" },
+	{ label: "All", value: "All" },
+];
+
 const OUTPUT_FORMAT = [
 	{
 		value: "\n",
@@ -30,4 +36,5 @@ export {
 	MAX_SHADES,
 	MIN_SHADES,
 	OUTPUT_FORMAT,
+	SEGMENTED_OPTIONS,
 };

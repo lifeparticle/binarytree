@@ -14,11 +14,13 @@ import InputComponent from "components/General/InputComponent";
 import useUrlParams from "lib/utils/hooks/useUrlParams";
 
 const ColorPicker: React.FC = () => {
-	const [params, updateUrlParam] = useUrlParams({
+	const [params, updateUrlParam, searchParams] = useUrlParams({
 		color: INITIAL_COLOR,
 	});
 
-	const [color, setColor] = useState(params.color as string);
+	const [color, setColor] = useState(
+		searchParams.get("color") || (params.color as string)
+	);
 	const [format, setFormat] = useState<FormatType>(
 		determineFormat(color) || INITIAL_FORMAT
 	);
