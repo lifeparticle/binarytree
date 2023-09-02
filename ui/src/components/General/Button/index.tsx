@@ -3,7 +3,7 @@ import { Button as AntButton } from "antd";
 import useGetSize from "lib/utils/hooks/useGetSize";
 
 interface ButtonPropsType {
-	children: React.ReactNode;
+	children?: React.ReactNode;
 	disabled?: boolean;
 	onClick?: () => void;
 	className?: string;

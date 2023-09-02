@@ -1,13 +1,13 @@
 import style from "./Sorting.module.scss";
 import { useEffect, useState } from "react";
 import { detectData, sortData } from "./utils/helper";
-import { Input, Segmented, Select, Form, Card, Typography } from "antd";
+import { Input, Segmented, Form, Card, Typography } from "antd";
 import { OUTPUT_FORMAT } from "./utils/constants";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import PageGrid from "components/Layouts/PageGrid";
 import CopyInput from "components/Layouts/CopyInput";
-import useGetSize from "lib/utils/hooks/useGetSize";
+import SelectComponent from "components/General/SelectComponent";
 
 const { TextArea } = Input;
 const { Title } = Typography;
@@ -15,14 +15,13 @@ const { Title } = Typography;
 const Sorting: React.FC = () => {
 	const [input, setInput] = useState("");
 	const [output, setOutput] = useState("");
-	const [outputFormat, setOutputFormat] = useState("\n");
-	const { size } = useGetSize();
+	const [outputFormat, setOutputFormat] = useState(OUTPUT_FORMAT[0]);
 	const [order, setOrder] = useState("Ascending");
 	const [dataType, setDataType] = useState("");
 
 	useEffect(() => {
 		const sortedData = sortData(input, order);
-		setOutput(sortedData.join(outputFormat));
+		setOutput(sortedData.join(outputFormat.value));
 		setDataType(detectData(input));
 	}, [input, order, outputFormat]);
 
@@ -68,16 +67,14 @@ const Sorting: React.FC = () => {
 					</Form.Item>
 
 					<CopyInput>
-						<Form.Item label="Output format">
-							<Select
-								defaultActiveFirstOption
-								placeholder="Separate results by new lines"
-								style={{ width: "100%" }}
-								onChange={(value) => setOutputFormat(value)}
-								options={OUTPUT_FORMAT}
-								size={size}
-							/>
-						</Form.Item>
+						<SelectComponent
+							value={outputFormat.value}
+							onSelect={(_, option) => {
+								setOutputFormat(option);
+							}}
+							options={OUTPUT_FORMAT}
+							defaultActiveFirstOption
+						/>
 
 						<Clipboard
 							text={output}
