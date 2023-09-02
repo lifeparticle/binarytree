@@ -78,8 +78,8 @@ const ImageGeneratorFromColors: React.FC = () => {
 				<Card className={style.igfc__card}>
 					<PageGrid>
 						<ResponsiveInputWithLabel
-							label="Image width"
-							placeholder="Image Height"
+							label="Image height"
+							placeholder="Height"
 							value={height}
 							onChange={(val) => val && setHeight(val)}
 							min={0}
@@ -87,8 +87,8 @@ const ImageGeneratorFromColors: React.FC = () => {
 						/>
 
 						<ResponsiveInputWithLabel
-							label="Image Height"
-							placeholder="Image Width"
+							label="Image width"
+							placeholder="Width"
 							value={width}
 							onChange={(val) => val && setWidth(val)}
 							min={0}
@@ -97,8 +97,8 @@ const ImageGeneratorFromColors: React.FC = () => {
 					</PageGrid>
 
 					<ResponsiveInputWithLabel
-						label="Image Border Radius"
-						placeholder="Image Border Radius"
+						label="Image border radius"
+						placeholder="Border radius"
 						value={rounded}
 						onChange={(val) => val && setRounded(val)}
 						min={0}

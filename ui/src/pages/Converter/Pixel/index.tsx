@@ -66,7 +66,7 @@ const Pixel: React.FC = () => {
 					</CopyInput>
 
 					<ResponsiveInputWithLabel
-						label="Base Font Size"
+						label="Base font size"
 						tooltip="This is a required field"
 						placeholder="Enter base font size"
 						value={base}

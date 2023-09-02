@@ -92,7 +92,7 @@ const DataGenerator: React.FC = () => {
 					<div className={style.dg__left}>
 						<div className={style.dg__left_top}>
 							<ResponsiveInputWithLabel
-								label="Table Name"
+								label="Table name"
 								placeholder="Table name"
 								value={tableName}
 								onChange={(event) =>
@@ -102,7 +102,7 @@ const DataGenerator: React.FC = () => {
 							/>
 
 							<ResponsiveInputWithLabel
-								label="Total Column Number"
+								label="Column number"
 								placeholder="NumberInput with custom layout"
 								value={colNum}
 								min={0}
@@ -124,7 +124,7 @@ const DataGenerator: React.FC = () => {
 							/>
 
 							<ResponsiveInputWithLabel
-								label="Generate total Row Data (Output)"
+								label="Row number"
 								placeholder="NumberInput with custom layout"
 								value={rowNum}
 								min={0}

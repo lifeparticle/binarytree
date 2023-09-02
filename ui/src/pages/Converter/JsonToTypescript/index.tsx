@@ -47,14 +47,14 @@ const JsonToTypescript: React.FC = () => {
 						onChange={(e) => {
 							setJson(e.target.value);
 						}}
-						label="Provide Json Input"
+						label="JSON Input"
 						placeholder="JSON"
 						rows={8}
 						status={status}
 					/>
 
 					<ResponsiveInputWithLabel
-						label="Root Interface Name"
+						label="Root Interface name"
 						placeholder="Enter Interface name"
 						value={rootName}
 						onChange={(e) => setRootName(e.target.value)}
