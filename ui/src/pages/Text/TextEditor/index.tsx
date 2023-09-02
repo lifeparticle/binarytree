@@ -4,6 +4,8 @@ import { Editor } from "@tinymce/tinymce-react";
 import { Editor as TinyMCEEditor } from "tinymce";
 import style from "./TextEditor.module.scss";
 import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
+import { API_LOADING } from "lib/utils/constants";
+import Text from "components/General/Text/Text";
 
 const TextEditor: React.FC = () => {
 	const { isDarkMode } = useContext(DarkModeContext);
@@ -19,10 +21,13 @@ const TextEditor: React.FC = () => {
 	const [selectedCharCountWithoutSpaces, setSelectedCharCountWithoutSpaces] =
 		useState(0);
 
+	const [isLoading, setIsLoading] = useState(true);
+
 	return (
 		<div className={style.te}>
 			<Row gutter={[16, 16]}>
 				<Col xs={24} lg={24}>
+					{isLoading ? <Text text={API_LOADING} /> : null}
 					<Editor
 						onEditorChange={(_, editor) => {
 							const wordcount = editor.plugins.wordcount;
@@ -35,6 +40,7 @@ const TextEditor: React.FC = () => {
 						tinymceScriptSrc="/tinymce/tinymce.min.js"
 						onInit={(editor) => {
 							editorRef.current = editor.target;
+							setIsLoading(false);
 						}}
 						initialValue=""
 						init={{
@@ -110,19 +116,21 @@ const TextEditor: React.FC = () => {
 								"body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
 						}}
 					/>
-					<div className={style.te__footer}>
-						<span>{wordCount} Words </span>
-						<span>{charCount} Characters</span>
-						<span>
-							{charCountWithoutSpaces} Characters (No spaces)
-						</span>
-						<span>{selectedWordCount} Selected Words</span>
-						<span>{selectedCharCount} Selected Characters</span>
-						<span>
-							{selectedCharCountWithoutSpaces} Selected Characters
-							(No spaces)
-						</span>
-					</div>
+					{!isLoading && (
+						<div className={style.te__footer}>
+							<span>{wordCount} Words </span>
+							<span>{charCount} Characters</span>
+							<span>
+								{charCountWithoutSpaces} Characters (No spaces)
+							</span>
+							<span>{selectedWordCount} Selected Words</span>
+							<span>{selectedCharCount} Selected Characters</span>
+							<span>
+								{selectedCharCountWithoutSpaces} Selected
+								Characters (No spaces)
+							</span>
+						</div>
+					)}
 				</Col>
 			</Row>
 		</div>
