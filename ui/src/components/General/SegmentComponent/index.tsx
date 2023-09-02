@@ -6,7 +6,7 @@ import useGetSize from "lib/utils/hooks/useGetSize";
 const SegmentComponent: React.FC<SegmentComponentPropsType> = (props) => {
 	const { size } = useGetSize();
 	return (
-		<Form.Item>
+		<Form.Item label={props?.label}>
 			<Segmented size={size} {...props} />
 		</Form.Item>
 	);

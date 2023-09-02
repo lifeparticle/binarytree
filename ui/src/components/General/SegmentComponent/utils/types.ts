@@ -4,6 +4,7 @@ interface Option {
 }
 
 interface SegmentComponentPropsType {
+	label?: string;
 	value: string;
 	onChange: (value: string | number) => void;
 	options: Option[];

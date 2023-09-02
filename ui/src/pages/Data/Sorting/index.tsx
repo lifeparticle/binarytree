@@ -1,16 +1,16 @@
 import style from "./Sorting.module.scss";
 import { useEffect, useState } from "react";
 import { detectData, sortData } from "./utils/helper";
-import { Input, Segmented, Form, Card, Typography } from "antd";
+import { Input, Form, Card, Badge } from "antd";
 import { OUTPUT_FORMAT } from "./utils/constants";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import PageGrid from "components/Layouts/PageGrid";
 import CopyInput from "components/Layouts/CopyInput";
 import SelectComponent from "components/General/SelectComponent";
+import SegmentComponent from "components/General/SegmentComponent";
 
 const { TextArea } = Input;
-const { Title } = Typography;
 
 const Sorting: React.FC = () => {
 	const [input, setInput] = useState("");
@@ -26,10 +26,24 @@ const Sorting: React.FC = () => {
 	}, [input, order, outputFormat]);
 
 	return (
-		<Form layout="vertical">
+		<Form layout="vertical" className={style.sort}>
 			<PageGrid>
-				<Card>
-					<Form.Item label={`Input data ${dataType} detected`}>
+				<Card className={style.sort__input}>
+					<Form.Item
+						label={
+							<div className={style.sort__input_label}>
+								<p>{`Input data`}</p>
+								<Badge
+									text={`${dataType} detected`}
+									color={
+										dataType === "No data"
+											? "yellow"
+											: "green"
+									}
+								/>
+							</div>
+						}
+					>
 						<TextArea
 							placeholder="Enter data separated by space or comma or new line"
 							value={input}
@@ -42,10 +56,9 @@ const Sorting: React.FC = () => {
 					</Form.Item>
 				</Card>
 
-				<Card>
-					<Title level={4}>Order</Title>
-					<Segmented
-						className={style.sort__segment}
+				<Card className={style.sort__ouput}>
+					<SegmentComponent
+						label={"Order"}
 						value={order}
 						onChange={(value: string | number) =>
 							setOrder(value as string)
