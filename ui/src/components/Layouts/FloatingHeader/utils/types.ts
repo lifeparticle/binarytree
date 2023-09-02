@@ -1,7 +1,7 @@
-interface markdownType {
-	date: string;
+interface Markdown {
 	version: string;
+	date: string;
 	features: string[];
 }
 
-export type { markdownType };
+export type { Markdown };

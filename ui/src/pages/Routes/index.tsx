@@ -4,31 +4,32 @@ import { Navigate, Route, Routes as RRDRoutes } from "react-router-dom";
 
 import {
 	About,
-	News,
-	ColorPicker,
-	ShadesAndTints,
 	Base64,
-	Pixel,
-	DataGenerator,
-	ImageGeneratorFromColors,
-	Sorting,
 	Blog,
 	Book,
+	ColorPicker,
 	Course,
+	DataGenerator,
+	Feedback,
 	Github,
 	Icon,
+	ImageGeneratorFromColors,
+	JsonToTypescript,
+	MarkdownEditor,
 	Movie,
+	News,
+	Pixel,
 	Platform,
 	Plugin,
+	ShadesAndTints,
+	Sorting,
+	TableGenerator,
+	TableOfContent,
+	TextEditor,
 	Tool,
 	TvSeries,
 	UiUx,
 	YouTube,
-	MarkdownEditor,
-	TableGenerator,
-	TableOfContent,
-	TextEditor,
-	JsonToTypescript,
 } from "pages/pages";
 import withPageTitle from "components/Hoc/withPageTitle";
 import Text from "components/General/Text/Text";
@@ -41,6 +42,7 @@ const Routes: React.FC = () => {
 				<RRDRoutes>
 					<Route path="/" element={<News />} />
 					<Route path="/about" element={<About />} />
+					<Route path="/feedback" element={<Feedback />} />
 					<Route path="/colors">
 						<Route index element={<Navigate to={"cp"} />} />
 						<Route path="cp" element={<ColorPicker />} />

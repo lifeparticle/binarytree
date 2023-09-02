@@ -1,6 +1,6 @@
-import { markdownType } from "./types";
+import { Markdown } from "./types";
 
-function parsedMarkdown(markdown: string) {
+const parsedMarkdown = (markdown: string): Markdown[] => {
 	const entries = markdown.split("\n### ");
 
 	const parsedEntries = entries
@@ -20,10 +20,10 @@ function parsedMarkdown(markdown: string) {
 				version: output?.[1],
 				date: output?.[2],
 				features,
-			} as markdownType;
+			} as Markdown;
 		});
 
 	return parsedEntries;
-}
+};
 
 export { parsedMarkdown };

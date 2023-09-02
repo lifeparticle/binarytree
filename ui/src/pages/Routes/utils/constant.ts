@@ -109,6 +109,10 @@ const ROUTES: Route[] = [
 		title: "About",
 	},
 	{
+		path: "/feedback",
+		title: "Feedback",
+	},
+	{
 		path: "*",
 		title: "Page Not Found",
 	},

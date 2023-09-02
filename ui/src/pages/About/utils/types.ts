@@ -1,4 +1,4 @@
-interface DataType {
+interface Feature {
 	key: string;
 	name: string;
 	description: string;
@@ -6,14 +6,20 @@ interface DataType {
 	library: { name: string; url: string }[];
 }
 
-interface ApiInterfaceType {
-	name: string;
+interface Api {
 	key: string;
+	name: string;
 	api: string;
+}
+
+interface Other {
+	key: string;
+	name: string;
+	url: string;
 }
 
 interface LibraryList {
 	[key: string]: string;
 }
 
-export type { DataType, ApiInterfaceType, LibraryList };
+export type { Feature, Api, LibraryList, Other };

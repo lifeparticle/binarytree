@@ -1,51 +1,19 @@
-import React, { useState, useRef, useContext } from "react";
-import { Badge, Card, Col, Row, Space } from "antd";
+import React, { useRef, useContext } from "react";
+import { Col, Row } from "antd";
 import { Editor } from "@tinymce/tinymce-react";
 import { Editor as TinyMCEEditor } from "tinymce";
-import Clipboard from "components/RenderProps/Clipboard";
-import ClipboardButton from "components/General/ClipboardButton";
 import style from "./TextEditor.module.scss";
 import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
-import Button from "components/General/Button";
 
 const TextEditor: React.FC = () => {
-	const [wordCount, setWordCount] = useState(0);
-	const [charCount, setCharCount] = useState(0);
-	const [charCountWithoutSpace, setCharCountWithoutSpace] = useState(0);
 	const { isDarkMode } = useContext(DarkModeContext);
 
 	const editorRef = useRef<TinyMCEEditor | null>(null);
 
-	const updateCounts = (content: string) => {
-		if (content.length === 0) {
-			setWordCount(0);
-			setCharCount(0);
-			setCharCountWithoutSpace(0);
-			return;
-		}
-		setWordCount(content.split(/[\s]+/g).length);
-		setCharCount(content.replace(/[\s]+/g, " ").length);
-		setCharCountWithoutSpace(content.replace(/[\s]+/g, "").trim().length);
-	};
-
-	const handleClear = () => {
-		if (editorRef.current) {
-			editorRef.current.setContent("");
-			updateCounts("");
-		}
-	};
-
-	const handleLog = () => {
-		if (editorRef.current) {
-			const content = editorRef.current.getContent({ format: "text" });
-			updateCounts(content);
-		}
-	};
-
 	return (
 		<div className={style.te}>
 			<Row gutter={[16, 16]}>
-				<Col xs={24} lg={20}>
+				<Col xs={24} lg={24}>
 					<Editor
 						tinymceScriptSrc="/tinymce/tinymce.min.js"
 						onInit={(editor) => {
@@ -53,7 +21,8 @@ const TextEditor: React.FC = () => {
 						}}
 						initialValue="<p>This is the initial content of the editor.</p>"
 						init={{
-							height: "80dvh",
+							height: "calc(100dvh - 70px)",
+							wordcount_countcharacters: true,
 							menubar: false,
 							plugins: [
 								"advlist",
@@ -72,67 +41,71 @@ const TextEditor: React.FC = () => {
 								"table",
 								"preview",
 								"help",
+								"wordcount",
+								"charcount",
 							],
 
 							skin: isDarkMode ? "oxide-dark" : "oxide",
 							content_css: isDarkMode ? "dark" : "default",
+							setup: function (editor) {
+								editor.ui.registry.addButton("clearbutton", {
+									text: "Clear",
+									onAction: function () {
+										editor.setContent("");
+									},
+								});
+								editor.ui.registry.addButton(
+									"copytoclipboard",
+									{
+										text: "Copy to Clipboard",
+										onAction: function () {
+											const content = editor.getContent();
+											navigator.clipboard.writeText(
+												content
+											);
+										},
+									}
+								);
+								editor.ui.registry.addButton("showcounts", {
+									text: "Show Counts",
+									onAction: function () {
+										const wordcount =
+											editor.plugins.wordcount;
+
+										console.log(
+											wordcount.body.getWordCount()
+										);
+										console.log(
+											wordcount.body.getCharacterCount()
+										);
+										console.log(
+											wordcount.body.getCharacterCountWithoutSpaces()
+										);
+
+										console.log(
+											wordcount.selection.getWordCount()
+										);
+										console.log(
+											wordcount.selection.getCharacterCount()
+										);
+										console.log(
+											wordcount.selection.getCharacterCountWithoutSpaces()
+										);
+									},
+								});
+							},
+
 							toolbar:
 								"undo redo | blocks | " +
 								"bold italic forecolor | alignleft aligncenter " +
 								"alignright alignjustify | bullist numlist outdent indent | " +
-								"removeformat | help",
+								"removeformat  | help | clearbutton | copytoclipboard | showcounts",
 							content_style:
 								"body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
 						}}
 					/>
 				</Col>
-
-				<Col xs={24} lg={4}>
-					<Card>
-						<Space direction="vertical">
-							<Space>
-								<span>Word count </span>
-								<Badge
-									count={wordCount}
-									showZero
-									style={{ backgroundColor: "#52c41a" }}
-								/>
-							</Space>
-							<Space>
-								<span>Character </span>
-								<Badge
-									count={charCount}
-									style={{ backgroundColor: "#52c41a" }}
-									showZero
-									overflowCount={999}
-								/>
-							</Space>
-							<Space>
-								<span>Character without space </span>
-								<Badge
-									count={charCountWithoutSpace}
-									style={{ backgroundColor: "#52c41a" }}
-									showZero
-									overflowCount={999}
-								/>
-							</Space>
-
-							<Space>
-								<Button onClick={handleLog}>Show Count</Button>
-							</Space>
-						</Space>
-					</Card>
-				</Col>
 			</Row>
-
-			<Space>
-				<Button onClick={handleClear}>Clear</Button>
-
-				<Clipboard
-					text={editorRef.current?.getContent() || " "}
-					clipboardComponent={ClipboardButton}
-				/>
-			</Space>
 		</div>
 	);
 };
