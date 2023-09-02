@@ -7,7 +7,7 @@ import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 import MDEditor from "@uiw/react-md-editor";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
-import Button from "components/General/Button";
+import { ResponsiveButton } from "components/General/FormComponents";
 
 const MarkdownEditor: React.FC = () => {
 	const [markdown, setMarkdown] = useState("");
@@ -25,26 +25,26 @@ const MarkdownEditor: React.FC = () => {
 	return (
 		<div className={style.me}>
 			<Space>
-				<Button
+				<ResponsiveButton
 					disabled={IS_MARKDOWN_EMPTY}
 					onClick={() => setMarkdown("")}
 				>
 					Clear
-				</Button>
+				</ResponsiveButton>
 
-				<Button
+				<ResponsiveButton
 					disabled={IS_MARKDOWN_EMPTY}
 					onClick={() => downloadTextFile(markdown, "README.md")}
 				>
 					Download Markdown
-				</Button>
+				</ResponsiveButton>
 
-				<Button
+				<ResponsiveButton
 					disabled={IS_MARKDOWN_EMPTY}
 					onClick={() => downloadPDFFile(markdown, "README.html")}
 				>
 					Download HTML
-				</Button>
+				</ResponsiveButton>
 
 				<Clipboard
 					text={markdown}

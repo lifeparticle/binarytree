@@ -1,7 +1,8 @@
-import { Button, Space } from "antd";
+import { Space } from "antd";
 import React from "react";
 import style from "components/General/TextareaWithValidation/TextareaWithValidation.module.scss";
 import Icon from "components/General/Icon";
+import { ResponsiveButton } from "components/General/FormComponents";
 
 interface ValidateStatusProps {
 	status: string;
@@ -15,13 +16,13 @@ const ValidateStatus: React.FC<ValidateStatusProps> = ({ status }) => {
 	return (
 		<Space className={style.textareaContainer__validator}>
 			{status === "valid" ? (
-				<Button size="small" style={{ borderColor: "green" }}>
+				<ResponsiveButton size="small" style={{ borderColor: "green" }}>
 					<Icon name="Check" color="green" />
-				</Button>
+				</ResponsiveButton>
 			) : (
-				<Button size="small" danger>
+				<ResponsiveButton size="small" danger>
 					<Icon name="X" />
-				</Button>
+				</ResponsiveButton>
 			)}
 		</Space>
 	);
