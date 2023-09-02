@@ -19,6 +19,7 @@ interface ColorInputsProps {
 	handleOutputFormatChange: (option: SelectOption) => void;
 	option: SelectOption;
 	shades: string[];
+	tints: string[];
 }
 
 interface ExtendedColorsProps extends ColorsProps {

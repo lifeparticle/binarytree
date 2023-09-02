@@ -2,64 +2,9 @@
 
 <kbd> <br> [binarytree.dev](https://binarytree.dev) <br> </kbd> offers a range of developer productivity tools to save time.
 
-### Features
+### [About](https://binarytree.dev/about)
 
-<details>
-  <summary>Colors</summary>
-
-- <kbd>[Color Picker](https://binarytree.dev/cp)</kbd>
-- <kbd>[Shades](https://binarytree.dev/colors/shades)</kbd>
-
-</details>
-
-<details>
-  <summary>Converter</summary>
-
-- <kbd>[Base64](https://binarytree.dev/base_64)</kbd>
-- <kbd>[Pixel Converter](https://binarytree.dev/pixel_converter)</kbd>
-
-</details>
-
-<details>
-  <summary>Data</summary>
-
-- <kbd>[Data Generator](https://binarytree.dev/data_gen)</kbd>
-- <kbd>[Image Generator From Colors](https://binarytree.dev/igfc)</kbd>
-- <kbd>[Sorting](https://binarytree.dev/sorting)</kbd>
-
-</details>
-
-<details>
-  <summary>List</summary>
-
-- <kbd>[Blog](https://binarytree.dev/list/blog)</kbd>
-- <kbd>[Book](https://binarytree.dev/list/book)</kbd>
-- <kbd>[Course](https://binarytree.dev/list/course)</kbd>
-- <kbd>[Github](https://binarytree.dev/list/github)</kbd>
-- <kbd>[Icon](https://binarytree.dev/icon)</kbd>
-- <kbd>[Movie](https://binarytree.dev/list/movie)</kbd>
-- <kbd>[Plugin](https://binarytree.dev/list/plugin)</kbd>
-- <kbd>[Tool](https://binarytree.dev/list/tool)</kbd>
-- <kbd>[TV Series](https://binarytree.dev/list/tv-series)</kbd>
-- <kbd>[Youtube](https://binarytree.dev/list/youtube)</kbd>
-
-</details>
-
-<details>
-  <summary>Markdown</summary>
-
-- <kbd>[Markdown Editor](https://binarytree.dev/me)</kbd>
-- <kbd>[Table Of Content](https://binarytree.dev/toc)</kbd>
-- <kbd>[Markdown Table Generator](https://binarytree.dev/md_table_generator)</kbd>
-
-</details>
-
-<details>
-  <summary>Text</summary>
-
-- <kbd>[Text Editor](https://binarytree.dev/te)</kbd>
-
-</details>
+### [Feedback](https://binarytree.dev/feedback)
 
 #### Tips
 

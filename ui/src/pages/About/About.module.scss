@@ -3,9 +3,40 @@
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
+	padding: 20px;
+
+	&__intro {
+		position: relative;
+		&_wrapper {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 10%;
+			right: 10%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			z-index: 1;
+
+			&_text {
+				background-color: var(--bt-color-bg);
+				padding: var(--bt-size-10);
+				text-align: center;
+				color: white;
+				max-width: 80vw;
+				box-sizing: border-box;
+			}
+		}
+
+		&_img {
+			width: 100%;
+			height: auto;
+		}
+	}
 
 	&__socials {
 		display: flex;
 		justify-content: center;
+		margin-top: 20px;
 	}
 }

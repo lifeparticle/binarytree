@@ -1,0 +1,42 @@
+.feedback {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+
+	.iframe,
+	&__skeletons {
+		width: 55%;
+		max-width: 1400px;
+	}
+
+	&__skeletons {
+		padding: var(--bt-size-50);
+		height: 1949.375px;
+		border: 1px solid #ccc;
+		background: white;
+		display: flex;
+		flex-direction: column;
+		gap: var(--bt-size-20);
+	}
+
+	.iframe {
+		border: 1px solid #ccc;
+		display: block;
+		background: transparent;
+	}
+
+	@media (max-width: 1300px) {
+		.iframe,
+		&__skeletons {
+			width: 70%;
+		}
+	}
+
+	@media (max-width: 1000px) {
+		.iframe,
+		&__skeletons {
+			width: 95%;
+		}
+	}
+}
