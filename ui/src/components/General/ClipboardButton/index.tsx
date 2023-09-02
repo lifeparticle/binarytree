@@ -1,7 +1,7 @@
+import { ResponsiveButton } from "../FormComponents";
 import style from "./ClipboardButton.module.scss";
 import { ClipboardButtonProps } from "./utils/types";
 import Icon from "components/General/Icon";
-import Button from "components/General/Button";
 
 const ClipboardButton: React.FC<ClipboardButtonProps> = ({
 	copyToClipboard,
@@ -10,14 +10,14 @@ const ClipboardButton: React.FC<ClipboardButtonProps> = ({
 	label = "",
 }) => {
 	return (
-		<Button
+		<ResponsiveButton
 			disabled={text === ""}
 			className={style.button}
 			onClick={() => copyToClipboard(text)}
 			icon={copied ? <Icon name="Check" /> : <Icon name="Copy" />}
 		>
 			{label}
-		</Button>
+		</ResponsiveButton>
 	);
 };
 

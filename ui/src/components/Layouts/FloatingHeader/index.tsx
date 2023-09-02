@@ -1,4 +1,4 @@
-import { Avatar, Button, Dropdown, Space, theme } from "antd";
+import { Avatar, Dropdown, Space, theme } from "antd";
 import style from "./FloatingHeader.module.scss";
 import Icon from "components/General/Icon";
 import { items } from "./utils/constants";
@@ -7,6 +7,7 @@ import Notification from "./components/Notification";
 import avatar1 from "assets/avatars/avatar-1.svg";
 import avatar2 from "assets/avatars/avatar-2.svg";
 import avatar3 from "assets/avatars/avatar-3.svg";
+import { ResponsiveButton } from "components/General/FormComponents";
 
 const avatars = [avatar1, avatar2, avatar3];
 const randomIndex = Math.floor(Math.random() * avatars.length);
@@ -37,7 +38,7 @@ const FloatingHeader = () => {
 				arrow={{ pointAtCenter: true }}
 				className={style.fb__notification}
 			>
-				<Button
+				<ResponsiveButton
 					icon={<Icon name="Bell" size={20} color={colorText} />}
 				/>
 			</Dropdown>

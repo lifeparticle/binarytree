@@ -7,9 +7,11 @@ import { useRef, useState } from "react";
 import style from "./ImageGeneratorFromColors.module.scss";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 import { extractColors } from "./utils/helper";
-import InputComponent from "components/General/InputComponent";
 import PageGrid from "components/Layouts/PageGrid";
-import Button from "components/General/Button";
+import {
+	ResponsiveButton,
+	ResponsiveInputWithLabel,
+} from "components/General/FormComponents";
 
 const { Title } = Typography;
 const { TextArea } = Input;
@@ -60,11 +62,11 @@ const ImageGeneratorFromColors: React.FC = () => {
 	return (
 		<Form layout="vertical" className={style.igfc}>
 			<PageGrid>
-				<Card>
+				<Card className={style.igfc__card}>
 					<Form.Item label={PLACE_HOLDER_TEXT}>
 						<TextArea
 							placeholder={"Enter " + PLACE_HOLDER_TEXT}
-							rows={12}
+							rows={7}
 							onChange={(event) =>
 								onTextAreaChange(event.currentTarget.value)
 							}
@@ -74,26 +76,28 @@ const ImageGeneratorFromColors: React.FC = () => {
 					</Form.Item>
 				</Card>
 
-				<Card>
-					<InputComponent
-						label="Image width"
-						placeholder="Image Height"
-						value={height}
-						onChange={(val) => val && setHeight(val)}
-						min={0}
-						type="number"
-					/>
+				<Card className={style.igfc__card}>
+					<PageGrid>
+						<ResponsiveInputWithLabel
+							label="Image width"
+							placeholder="Image Height"
+							value={height}
+							onChange={(val) => val && setHeight(val)}
+							min={0}
+							type="number"
+						/>
 
-					<InputComponent
-						label="Image Height"
-						placeholder="Image Width"
-						value={width}
-						onChange={(val) => val && setWidth(val)}
-						min={0}
-						type="number"
-					/>
+						<ResponsiveInputWithLabel
+							label="Image Height"
+							placeholder="Image Width"
+							value={width}
+							onChange={(val) => val && setWidth(val)}
+							min={0}
+							type="number"
+						/>
+					</PageGrid>
 
-					<InputComponent
+					<ResponsiveInputWithLabel
 						label="Image Border Radius"
 						placeholder="Image Border Radius"
 						value={rounded}
@@ -103,12 +107,12 @@ const ImageGeneratorFromColors: React.FC = () => {
 					/>
 
 					<Space className={style.igfc__button_container}>
-						<Button
+						<ResponsiveButton
 							disabled={value.length <= 0}
 							onClick={onButtonClick}
 						>
 							Download Zip
-						</Button>
+						</ResponsiveButton>
 					</Space>
 				</Card>
 			</PageGrid>

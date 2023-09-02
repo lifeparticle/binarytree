@@ -1,6 +1,7 @@
 :where(html) {
 	--bt-list-card-container: 600px;
 	--bt-converter-width: 800px;
+	--bt-card-height: 279px;
 
 	--bt-size-minus-1: -1px;
 
