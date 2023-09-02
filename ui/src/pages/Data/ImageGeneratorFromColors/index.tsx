@@ -7,9 +7,11 @@ import { useRef, useState } from "react";
 import style from "./ImageGeneratorFromColors.module.scss";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 import { extractColors } from "./utils/helper";
-import InputComponent from "components/General/InputComponent";
 import PageGrid from "components/Layouts/PageGrid";
-import Button from "components/General/Button";
+import {
+	ResponsiveButton,
+	ResponsiveInputWithLabel,
+} from "components/General/FormComponents";
 
 const { Title } = Typography;
 const { TextArea } = Input;
@@ -76,7 +78,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 
 				<Card className={style.igfc__card}>
 					<PageGrid>
-						<InputComponent
+						<ResponsiveInputWithLabel
 							label="Image width"
 							placeholder="Image Height"
 							value={height}
@@ -85,7 +87,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 							type="number"
 						/>
 
-						<InputComponent
+						<ResponsiveInputWithLabel
 							label="Image Height"
 							placeholder="Image Width"
 							value={width}
@@ -95,7 +97,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 						/>
 					</PageGrid>
 
-					<InputComponent
+					<ResponsiveInputWithLabel
 						label="Image Border Radius"
 						placeholder="Image Border Radius"
 						value={rounded}
@@ -105,12 +107,12 @@ const ImageGeneratorFromColors: React.FC = () => {
 					/>
 
 					<Space className={style.igfc__button_container}>
-						<Button
+						<ResponsiveButton
 							disabled={value.length <= 0}
 							onClick={onButtonClick}
 						>
 							Download Zip
-						</Button>
+						</ResponsiveButton>
 					</Space>
 				</Card>
 			</PageGrid>

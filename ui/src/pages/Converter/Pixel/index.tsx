@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Card, Form } from "antd";
-import InputComponent from "components/General/InputComponent";
 import CopyInput from "components/Layouts/CopyInput";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import PageGrid from "components/Layouts/PageGrid";
+import { ResponsiveInputWithLabel } from "components/General/FormComponents";
 
 const Pixel: React.FC = () => {
 	const [pixel, setPixel] = useState(0);
@@ -16,7 +16,7 @@ const Pixel: React.FC = () => {
 			<Card bordered={false}>
 				<Form layout="vertical">
 					<CopyInput>
-						<InputComponent
+						<ResponsiveInputWithLabel
 							label="Pixels"
 							tooltip="This is a required field"
 							value={pixel}
@@ -41,7 +41,7 @@ const Pixel: React.FC = () => {
 					</CopyInput>
 
 					<CopyInput>
-						<InputComponent
+						<ResponsiveInputWithLabel
 							label="REM"
 							placeholder="Enter rem value"
 							tooltip="This is a required field"
@@ -65,7 +65,7 @@ const Pixel: React.FC = () => {
 						/>
 					</CopyInput>
 
-					<InputComponent
+					<ResponsiveInputWithLabel
 						label="Base Font Size"
 						tooltip="This is a required field"
 						placeholder="Enter base font size"

@@ -8,10 +8,11 @@ import {
 	OTHER_COLUMNS,
 	OTHER_DATA,
 } from "./utils/constants";
-import { Button, Card, List, Space, Table, Typography } from "antd";
+import { Card, List, Space, Table, Typography } from "antd";
 import style from "./About.module.scss";
 import Icon from "components/General/Icon";
 import about from "assets/about.jpg";
+import { ResponsiveButton } from "components/General/FormComponents";
 
 const About = () => {
 	return (
@@ -105,7 +106,7 @@ const About = () => {
 					/>
 
 					<div className={style.about__socials}>
-						<Button
+						<ResponsiveButton
 							key="Github"
 							type="primary"
 							shape="circle"
