@@ -1,7 +1,7 @@
 import style from "./Sorting.module.scss";
 import { useEffect, useState } from "react";
 import { detectData, sortData } from "./utils/helper";
-import { Input, Segmented, Select, Form, Card, Typography } from "antd";
+import { Input, Segmented, Select, Form, Card, Badge } from "antd";
 import { OUTPUT_FORMAT } from "./utils/constants";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
@@ -10,7 +10,6 @@ import CopyInput from "components/Layouts/CopyInput";
 import useGetSize from "lib/utils/hooks/useGetSize";
 
 const { TextArea } = Input;
-const { Title } = Typography;
 
 const Sorting: React.FC = () => {
 	const [input, setInput] = useState("");
@@ -27,10 +26,24 @@ const Sorting: React.FC = () => {
 	}, [input, order, outputFormat]);
 
 	return (
-		<Form layout="vertical">
+		<Form layout="vertical" className={style.sort}>
 			<PageGrid>
-				<Card>
-					<Form.Item label={`Input data ${dataType} detected`}>
+				<Card className={style.sort__input}>
+					<Form.Item
+						label={
+							<div className={style.sort__input_label}>
+								<p>{`Input data`}</p>
+								<Badge
+									text={`${dataType} detected`}
+									color={
+										dataType === "No data"
+											? "yellow"
+											: "green"
+									}
+								/>
+							</div>
+						}
+					>
 						<TextArea
 							placeholder="Enter data separated by space or comma or new line"
 							value={input}
@@ -43,19 +56,19 @@ const Sorting: React.FC = () => {
 					</Form.Item>
 				</Card>
 
-				<Card>
-					<Title level={4}>Order</Title>
-					<Segmented
-						className={style.sort__segment}
-						value={order}
-						onChange={(value: string | number) =>
-							setOrder(value as string)
-						}
-						options={[
-							{ label: "Ascending", value: "Ascending" },
-							{ label: "Descending", value: "Descending" },
-						]}
-					/>
+				<Card className={style.sort__ouput}>
+					<Form.Item label="Order">
+						<Segmented
+							value={order}
+							onChange={(value: string | number) =>
+								setOrder(value as string)
+							}
+							options={[
+								{ label: "Ascending", value: "Ascending" },
+								{ label: "Descending", value: "Descending" },
+							]}
+						/>
+					</Form.Item>
 
 					<Form.Item label="Sorted output">
 						<TextArea
@@ -72,7 +85,6 @@ const Sorting: React.FC = () => {
 							<Select
 								defaultActiveFirstOption
 								placeholder="Separate results by new lines"
-								style={{ width: "100%" }}
 								onChange={(value) => setOutputFormat(value)}
 								options={OUTPUT_FORMAT}
 								size={size}

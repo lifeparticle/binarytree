@@ -13,7 +13,13 @@ const formatData = (data: string): string[] => {
 };
 
 const detectData = (data: string): string => {
-	return isNumberArray(formatData(data)) ? "Number" : "String";
+	const formattedStringArray = formatData(data);
+
+	if (formattedStringArray.length === 0) {
+		return "No data";
+	}
+
+	return isNumberArray(formattedStringArray) ? "Number" : "String";
 };
 
 const sortData = (data: string, order: string) => {
