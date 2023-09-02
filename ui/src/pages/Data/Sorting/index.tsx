@@ -1,6 +1,6 @@
 import style from "./Sorting.module.scss";
 import { useEffect, useState } from "react";
-import { sortData } from "./utils/helper";
+import { detectData, sortData } from "./utils/helper";
 import { Input, Segmented, Select, Form, Card, Typography } from "antd";
 import { OUTPUT_FORMAT } from "./utils/constants";
 import Clipboard from "components/RenderProps/Clipboard";
@@ -18,19 +18,21 @@ const Sorting: React.FC = () => {
 	const [outputFormat, setOutputFormat] = useState("\n");
 	const { size } = useGetSize();
 	const [order, setOrder] = useState("Ascending");
+	const [dataType, setDataType] = useState("");
 
 	useEffect(() => {
 		const sortedData = sortData(input, order);
 		setOutput(sortedData.join(outputFormat));
+		setDataType(detectData(input));
 	}, [input, order, outputFormat]);
 
 	return (
 		<Form layout="vertical">
 			<PageGrid>
 				<Card>
-					<Form.Item label="Number or string for sorting">
+					<Form.Item label={`Input data ${dataType} detected`}>
 						<TextArea
-							placeholder="Enter number or character by space or comma or new Line"
+							placeholder="Enter data separated by space or comma or new line"
 							value={input}
 							rows={18}
 							onChange={(event) => {
@@ -55,7 +57,7 @@ const Sorting: React.FC = () => {
 						]}
 					/>
 
-					<Form.Item label="Sorted Output">
+					<Form.Item label="Sorted output">
 						<TextArea
 							placeholder="output"
 							value={output}

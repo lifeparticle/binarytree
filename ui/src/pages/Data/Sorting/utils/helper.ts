@@ -1,28 +1,30 @@
-function areAllCharsNumbers(inputString: string): boolean {
-	return /^\d+(\.\d+)?$/.test(inputString);
+function isNumberArray(data: string[]): boolean {
+	return data.every((value) => /^\d+(\.\d+)?$/.test(value));
 }
 
-export const sortData = (data: string, order: string) => {
+const sortNumbers = (a: number, b: number, order: string) =>
+	order === "Ascending" ? a - b : b - a;
+const sortStrings = (a: string, b: string, order: string) =>
+	order === "Ascending" ? a.localeCompare(b) : b.localeCompare(a);
+
+const formatData = (data: string): string[] => {
 	const delimitersRegex = /[,\s\n]+/;
+	return data.split(delimitersRegex).filter((entry) => entry.length > 0);
+};
 
-	const formattedStringArray = data
-		.split(delimitersRegex)
-		.filter((entry) => entry.length > 0);
-	const isNumberArray = formattedStringArray.every((value) =>
-		areAllCharsNumbers(value)
-	);
+const detectData = (data: string): string => {
+	return isNumberArray(formatData(data)) ? "Number" : "String";
+};
 
-	if (isNumberArray) {
-		const numberArray = formattedStringArray.map((value) => Number(value));
+const sortData = (data: string, order: string) => {
+	const formattedStringArray = formatData(data);
 
-		return numberArray.sort((a, b) =>
-			order === "Ascending" ? a - b : b - a
-		);
+	if (isNumberArray(formattedStringArray)) {
+		const numberArray = formattedStringArray.map(Number);
+		return numberArray.sort((a, b) => sortNumbers(a, b, order));
 	}
 
-	return formattedStringArray.sort(
-		order === "Ascending"
-			? (a, b) => a.localeCompare(b)
-			: (a, b) => b.localeCompare(a)
-	);
+	return formattedStringArray.sort((a, b) => sortStrings(a, b, order));
 };
+
+export { sortData, detectData };
