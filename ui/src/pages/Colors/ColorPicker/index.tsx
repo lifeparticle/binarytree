@@ -10,8 +10,9 @@ import DisplayColors from "./components/DisplayColors";
 import { FormatType } from "./utils/types";
 import { calculateColors, determineFormat } from "./utils/helper";
 import CopyInput from "components/Layouts/CopyInput";
-import InputComponent from "components/General/InputComponent";
+
 import useUrlParams from "lib/utils/hooks/useUrlParams";
+import { ResponsiveInputWithLabel } from "components/General/FormComponents";
 
 const ColorPicker: React.FC = () => {
 	const [params, updateUrlParam, searchParams] = useUrlParams({
@@ -43,7 +44,7 @@ const ColorPicker: React.FC = () => {
 				<Card bordered={false}>
 					<Space size="large" direction="vertical" wrap>
 						<CopyInput>
-							<InputComponent
+							<ResponsiveInputWithLabel
 								label="Color Code"
 								value={color}
 								onChange={onInputChange}

@@ -6,7 +6,7 @@ import ClipboardButton from "components/General/ClipboardButton";
 import { isBase64Valid } from "./utils/helper";
 import TextareaWithValidation from "components/General/TextareaWithValidation";
 import PageGrid from "components/Layouts/PageGrid";
-import Button from "components/General/Button";
+import { ResponsiveButton } from "components/General/FormComponents";
 
 const { TextArea } = Input;
 
@@ -49,13 +49,13 @@ const Base64: React.FC = () => {
 					</Form.Item>
 
 					<Space>
-						<Button
+						<ResponsiveButton
 							disabled={IS_INPUT_EMPTY}
 							onClick={() => setInput("")}
 							role="clear_text"
 						>
 							Clear
-						</Button>
+						</ResponsiveButton>
 						<Clipboard
 							text={input}
 							clipboardComponent={ClipboardButton}
@@ -80,13 +80,13 @@ const Base64: React.FC = () => {
 					/>
 
 					<Space>
-						<Button
+						<ResponsiveButton
 							disabled={IS_RESULT_EMPTY}
 							onClick={() => setResult("")}
 							role="clear_base64"
 						>
 							Clear
-						</Button>
+						</ResponsiveButton>
 						<Clipboard
 							text={result}
 							clipboardComponent={ClipboardButton}

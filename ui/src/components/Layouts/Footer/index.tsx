@@ -1,4 +1,4 @@
-import { theme, Switch, Space, Button } from "antd";
+import { theme, Switch, Space } from "antd";
 import style from "./Footer.module.scss";
 import MonogramDark from "assets/netlify-monogram-dark.svg";
 import MonogramLight from "assets/netlify-monogram-light.svg";
@@ -6,6 +6,7 @@ import Logo from "assets/netlify-dark.svg";
 import { FooterProps } from "./utils/types";
 import { classNames } from "lib/utils/helper";
 import Icon from "components/General/Icon";
+import { ResponsiveButton } from "components/General/FormComponents";
 
 const Footer: React.FC<FooterProps> = ({
 	handleThemeChange,
@@ -52,7 +53,7 @@ const Footer: React.FC<FooterProps> = ({
 				checked={isDarkMode}
 			/>
 
-			<Button
+			<ResponsiveButton
 				onClick={handleMenuCollapse}
 				type="text"
 				className={style.footer__menuCollapse}
@@ -62,7 +63,7 @@ const Footer: React.FC<FooterProps> = ({
 				) : (
 					<Icon name="ChevronsLeft" color={colorText} />
 				)}
-			</Button>
+			</ResponsiveButton>
 		</Space>
 	);
 };

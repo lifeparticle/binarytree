@@ -1,4 +1,3 @@
-import InputComponent from "components/General/InputComponent";
 import {
 	MAX_SHADES,
 	MIN_SHADES,
@@ -17,9 +16,12 @@ import {
 } from "pages/Colors/ShadesAndTints/utils/helper";
 import Icon from "components/General/Icon";
 import { useEffect, useState } from "react";
-import SelectComponent from "components/General/SelectComponent";
-import Button from "components/General/Button";
-import SegmentComponent from "components/General/SegmentComponent";
+import {
+	ResponsiveButton,
+	ResponsiveInputWithLabel,
+	ResponsiveSegementWithLabel,
+	ResponsiveSelectWithLabel,
+} from "components/General/FormComponents";
 
 const ColorInputs: React.FC<ColorInputsProps> = ({
 	color,
@@ -53,7 +55,7 @@ const ColorInputs: React.FC<ColorInputsProps> = ({
 		<Card className={styles.ci}>
 			<Form layout="vertical">
 				<Space align="end">
-					<InputComponent
+					<ResponsiveInputWithLabel
 						label="Color"
 						placeholder="Color"
 						value={color}
@@ -77,7 +79,7 @@ const ColorInputs: React.FC<ColorInputsProps> = ({
 							</div>
 						}
 					/>
-					<InputComponent
+					<ResponsiveInputWithLabel
 						value={numberOfShades}
 						label="Shades"
 						onChange={handleNumberOfShadesChange}
@@ -90,7 +92,7 @@ const ColorInputs: React.FC<ColorInputsProps> = ({
 						style={{ width: 90 }}
 					/>
 
-					<SelectComponent
+					<ResponsiveSelectWithLabel
 						value={option.value}
 						onSelect={(_, option) =>
 							handleOutputFormatChange(option)
@@ -99,7 +101,7 @@ const ColorInputs: React.FC<ColorInputsProps> = ({
 						defaultActiveFirstOption
 					/>
 
-					<SegmentComponent
+					<ResponsiveSegementWithLabel
 						value={order}
 						onChange={(value: string | number) =>
 							setOrder(value as string)
@@ -115,7 +117,7 @@ const ColorInputs: React.FC<ColorInputsProps> = ({
 					</Form.Item>
 
 					<Form.Item>
-						<Button
+						<ResponsiveButton
 							icon={<Icon name="RefreshCcw" />}
 							onClick={() => setColor(generateRandomColor())}
 						/>

@@ -6,7 +6,7 @@ import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 import { TocItem } from "./utils/types";
 import { indentMap } from "./utils/constants";
 import CopyInput from "components/Layouts/CopyInput";
-import InputComponent from "components/General/InputComponent";
+import { ResponsiveInputWithLabel } from "components/General/FormComponents";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import PageGrid from "components/Layouts/PageGrid";
@@ -98,7 +98,7 @@ const TableOfContent: React.FC = () => {
 			<Card>
 				<Form layout="vertical">
 					<CopyInput>
-						<InputComponent
+						<ResponsiveInputWithLabel
 							label="Provide URL"
 							placeholder="URL"
 							value={url}

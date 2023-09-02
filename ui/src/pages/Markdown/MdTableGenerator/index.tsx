@@ -2,7 +2,7 @@ import MDEditor from "@uiw/react-md-editor";
 import { Form } from "antd";
 import { useContext, useState, useTransition } from "react";
 import { generateTable } from "./util/utils";
-import InputComponent from "components/General/InputComponent";
+import { ResponsiveInputWithLabel } from "components/General/FormComponents";
 import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 import PageGrid from "components/Layouts/PageGrid";
 import style from "./MdTableGenerator.module.scss";
@@ -24,7 +24,7 @@ const TableGenerator: React.FC = () => {
 			<Clipboard text={output} clipboardComponent={ClipboardButton} />
 			<Form layout="vertical">
 				<PageGrid>
-					<InputComponent
+					<ResponsiveInputWithLabel
 						label="Number of ROW"
 						value={row}
 						placeholder="Row"
@@ -42,7 +42,7 @@ const TableGenerator: React.FC = () => {
 						type="number"
 					/>
 
-					<InputComponent
+					<ResponsiveInputWithLabel
 						label="Number of Column"
 						type="number"
 						value={column}

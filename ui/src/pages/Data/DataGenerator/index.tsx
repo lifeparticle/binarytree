@@ -9,10 +9,12 @@ import {
 	MYSQL_DATA_TYPES,
 } from "./utils/constants";
 import { convertToJSON } from "./utils/utils";
-import InputComponent from "components/General/InputComponent";
 import Output from "./components/Output";
 import PageGrid from "components/Layouts/PageGrid";
-import Button from "components/General/Button";
+import {
+	ResponsiveButton,
+	ResponsiveInputWithLabel,
+} from "components/General/FormComponents";
 
 const DataGenerator: React.FC = () => {
 	const [tableName, setTableName] = useState("");
@@ -89,7 +91,7 @@ const DataGenerator: React.FC = () => {
 				<Card>
 					<div className={style.dg__left}>
 						<div className={style.dg__left_top}>
-							<InputComponent
+							<ResponsiveInputWithLabel
 								label="Table Name"
 								placeholder="Table name"
 								value={tableName}
@@ -99,7 +101,7 @@ const DataGenerator: React.FC = () => {
 								type="text"
 							/>
 
-							<InputComponent
+							<ResponsiveInputWithLabel
 								label="Total Column Number"
 								placeholder="NumberInput with custom layout"
 								value={colNum}
@@ -121,7 +123,7 @@ const DataGenerator: React.FC = () => {
 								type="number"
 							/>
 
-							<InputComponent
+							<ResponsiveInputWithLabel
 								label="Generate total Row Data (Output)"
 								placeholder="NumberInput with custom layout"
 								value={rowNum}
@@ -198,12 +200,12 @@ const DataGenerator: React.FC = () => {
 						</div>
 					</div>
 
-					<Button
+					<ResponsiveButton
 						disabled={tableName && colNum > 0 ? false : true}
 						onClick={onButtonClick}
 					>
 						Generate
-					</Button>
+					</ResponsiveButton>
 				</Card>
 
 				{result.length > 0 ? (
@@ -211,7 +213,7 @@ const DataGenerator: React.FC = () => {
 						<div className={style.dg__right}>
 							<>
 								<Space>
-									<Button
+									<ResponsiveButton
 										onClick={() => {
 											downloadTextFile(
 												result,
@@ -220,8 +222,8 @@ const DataGenerator: React.FC = () => {
 										}}
 									>
 										Download SQL
-									</Button>
-									<Button
+									</ResponsiveButton>
+									<ResponsiveButton
 										onClick={() => {
 											downloadTextFile(
 												convertToJSON(
@@ -234,12 +236,12 @@ const DataGenerator: React.FC = () => {
 										}}
 									>
 										Download JSON
-									</Button>
-									<Button
+									</ResponsiveButton>
+									<ResponsiveButton
 										onClick={() => clipboard.copy(result)}
 									>
 										{clipboard.copied ? "Copied" : "Copy"}
-									</Button>
+									</ResponsiveButton>
 								</Space>
 
 								<Output sql={result} json="" />

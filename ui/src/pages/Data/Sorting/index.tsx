@@ -7,8 +7,10 @@ import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import PageGrid from "components/Layouts/PageGrid";
 import CopyInput from "components/Layouts/CopyInput";
-import SelectComponent from "components/General/SelectComponent";
-import SegmentComponent from "components/General/SegmentComponent";
+import {
+	ResponsiveSegementWithLabel,
+	ResponsiveSelectWithLabel,
+} from "components/General/FormComponents";
 
 const { TextArea } = Input;
 
@@ -57,7 +59,7 @@ const Sorting: React.FC = () => {
 				</Card>
 
 				<Card className={style.sort__ouput}>
-					<SegmentComponent
+					<ResponsiveSegementWithLabel
 						label={"Order"}
 						value={order}
 						onChange={(value: string | number) =>
@@ -80,7 +82,8 @@ const Sorting: React.FC = () => {
 					</Form.Item>
 
 					<CopyInput>
-						<SelectComponent
+						<ResponsiveSelectWithLabel
+							label="Output Format"
 							value={outputFormat.value}
 							onSelect={(_, option) => {
 								setOutputFormat(option);
