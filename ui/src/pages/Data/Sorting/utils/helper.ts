@@ -31,6 +31,7 @@ const detectData = (rawData: string, formattedData?: string[]): string => {
 	return isNumberArray(formattedStringArray) ? "Number" : "String";
 };
 
+// todo: json obejcts, json array, js array
 const sortData = (data: string, order: string) => {
 	const formattedStringArray = formatData(data);
 	const dataType = detectData(data, formattedStringArray);

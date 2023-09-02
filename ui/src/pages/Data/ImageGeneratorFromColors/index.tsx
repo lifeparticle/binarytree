@@ -16,9 +16,6 @@ import {
 const { Title } = Typography;
 const { TextArea } = Input;
 
-const PLACE_HOLDER_TEXT =
-	"Paste colors separated by Space or comma or new line";
-
 const ImageGeneratorFromColors: React.FC = () => {
 	const [colors, setColors] = useState<Array<string>>([]);
 	const [value, setValue] = useState("");
@@ -63,9 +60,11 @@ const ImageGeneratorFromColors: React.FC = () => {
 		<Form layout="vertical" className={style.igfc}>
 			<PageGrid>
 				<Card className={style.igfc__card}>
-					<Form.Item label={PLACE_HOLDER_TEXT}>
+					<Form.Item label="Input">
 						<TextArea
-							placeholder={"Enter " + PLACE_HOLDER_TEXT}
+							placeholder={
+								"Enter colors separated by space or comma or new line"
+							}
 							rows={7}
 							onChange={(event) =>
 								onTextAreaChange(event.currentTarget.value)
