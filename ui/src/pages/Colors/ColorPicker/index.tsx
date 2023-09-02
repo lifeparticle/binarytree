@@ -45,7 +45,7 @@ const ColorPicker: React.FC = () => {
 					<Space size="large" direction="vertical" wrap>
 						<CopyInput>
 							<ResponsiveInputWithLabel
-								label="Color Code"
+								label="Color code"
 								value={color}
 								onChange={onInputChange}
 								type="text"

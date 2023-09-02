@@ -99,7 +99,7 @@ const TableOfContent: React.FC = () => {
 				<Form layout="vertical">
 					<CopyInput>
 						<ResponsiveInputWithLabel
-							label="Provide URL"
+							label="Input URL"
 							placeholder="URL"
 							value={url}
 							onChange={(event) =>

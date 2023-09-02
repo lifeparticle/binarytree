@@ -76,7 +76,7 @@ const Base64: React.FC = () => {
 						rows={4}
 						placeholder="Result"
 						status={status}
-						label="Base 64 output"
+						label="Base64 output"
 					/>
 
 					<Space>

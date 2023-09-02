@@ -12,11 +12,11 @@ const APP_VALUES = [
 			href="colors/shades-tints?color=%23559D81&numShades=10"
 			target="_blank"
 		>
-			color codes
+			Shades & Tints
 		</a>
 		,{" "}
 		<a href="list/course?q=&cat=React" target="_blank">
-			lists
+			Lists
 		</a>
 		, and more. This feature not only enhances collaboration but also
 		improves overall productivity.
@@ -39,7 +39,7 @@ const APP_VALUES = [
 		platform is equipped with intelligent data detection capabilities to
 		simplify your tasks. With smart data detection, it can automatically{" "}
 		<a href="data/sorting" target="_blank">
-			sort
+			Sort
 		</a>{" "}
 		your data, saving you time and hassle.
 	</>,

@@ -25,7 +25,7 @@ const TableGenerator: React.FC = () => {
 			<Form layout="vertical">
 				<PageGrid>
 					<ResponsiveInputWithLabel
-						label="Number of ROW"
+						label="Number of rows"
 						value={row}
 						placeholder="Row"
 						min={0}
@@ -43,7 +43,7 @@ const TableGenerator: React.FC = () => {
 					/>
 
 					<ResponsiveInputWithLabel
-						label="Number of Column"
+						label="Number of columns"
 						type="number"
 						value={column}
 						placeholder="Column"
