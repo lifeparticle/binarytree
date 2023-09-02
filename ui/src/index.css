@@ -99,3 +99,8 @@ h5 {
 	align-items: center;
 	justify-content: center;
 }
+
+.tox-tinymce {
+	/* can we do better? */
+	border-radius: 10px 10px 0px 0px !important;
+}

@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from "react";
+import React, { useRef, useContext, useState } from "react";
 import { Col, Row } from "antd";
 import { Editor } from "@tinymce/tinymce-react";
 import { Editor as TinyMCEEditor } from "tinymce";
@@ -10,20 +10,40 @@ const TextEditor: React.FC = () => {
 
 	const editorRef = useRef<TinyMCEEditor | null>(null);
 
+	const [wordCount, setWordCount] = useState(0);
+	const [charCount, setCharCount] = useState(0);
+	const [charCountWithoutSpaces, setCharCountWithoutSpaces] = useState(0);
+
+	const [selectedWordCount, setSelectedWordCount] = useState(0);
+	const [selectedCharCount, setSelectedCharCount] = useState(0);
+	const [selectedCharCountWithoutSpaces, setSelectedCharCountWithoutSpaces] =
+		useState(0);
+
 	return (
 		<div className={style.te}>
 			<Row gutter={[16, 16]}>
 				<Col xs={24} lg={24}>
 					<Editor
+						onEditorChange={(_, editor) => {
+							const wordcount = editor.plugins.wordcount;
+							setWordCount(wordcount.body.getWordCount());
+							setCharCount(wordcount.body.getCharacterCount());
+							setCharCountWithoutSpaces(
+								wordcount.body.getCharacterCountWithoutSpaces()
+							);
+						}}
 						tinymceScriptSrc="/tinymce/tinymce.min.js"
 						onInit={(editor) => {
 							editorRef.current = editor.target;
 						}}
-						initialValue="<p>This is the initial content of the editor.</p>"
+						initialValue=""
 						init={{
-							height: "calc(100dvh - 70px)",
+							height: "calc(100dvh - 98px)",
 							wordcount_countcharacters: true,
-							menubar: false,
+							menubar: true,
+							resize: false,
+							statusbar: false,
+							promotion: false,
 							plugins: [
 								"advlist",
 								"autolink",
@@ -66,32 +86,18 @@ const TextEditor: React.FC = () => {
 										},
 									}
 								);
-								editor.ui.registry.addButton("showcounts", {
-									text: "Show Counts",
-									onAction: function () {
-										const wordcount =
-											editor.plugins.wordcount;
+								editor.on("NodeChange", function () {
+									const wordcount = editor.plugins.wordcount;
 
-										console.log(
-											wordcount.body.getWordCount()
-										);
-										console.log(
-											wordcount.body.getCharacterCount()
-										);
-										console.log(
-											wordcount.body.getCharacterCountWithoutSpaces()
-										);
-
-										console.log(
-											wordcount.selection.getWordCount()
-										);
-										console.log(
-											wordcount.selection.getCharacterCount()
-										);
-										console.log(
-											wordcount.selection.getCharacterCountWithoutSpaces()
-										);
-									},
+									setSelectedWordCount(
+										wordcount.selection.getWordCount()
+									);
+									setSelectedCharCount(
+										wordcount.selection.getCharacterCount()
+									);
+									setSelectedCharCountWithoutSpaces(
+										wordcount.selection.getCharacterCountWithoutSpaces()
+									);
 								});
 							},
 
@@ -104,6 +110,19 @@ const TextEditor: React.FC = () => {
 								"body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
 						}}
 					/>
+					<div className={style.te__footer}>
+						<span>{wordCount} Words </span>
+						<span>{charCount} Characters</span>
+						<span>
+							{charCountWithoutSpaces} Characters (No spaces)
+						</span>
+						<span>{selectedWordCount} Selected Words</span>
+						<span>{selectedCharCount} Selected Characters</span>
+						<span>
+							{selectedCharCountWithoutSpaces} Selected Characters
+							(No spaces)
+						</span>
+					</div>
 				</Col>
 			</Row>
 		</div>
