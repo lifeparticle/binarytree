@@ -1,5 +1,14 @@
 .sort {
-	&__segment {
-		margin: var(--bt-size-10) 0px;
+	&__input {
+		min-height: 530px;
+		&_label {
+			display: flex;
+			width: 100vw;
+			justify-content: space-between;
+		}
+	}
+
+	&__ouput {
+		min-height: 530px;
 	}
 }
