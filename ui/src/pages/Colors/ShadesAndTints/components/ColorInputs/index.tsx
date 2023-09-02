@@ -5,7 +5,7 @@ import {
 	OUTPUT_FORMAT,
 	SEGMENTED_OPTIONS,
 } from "pages/Colors/ShadesAndTints/utils/constants";
-import { Button, Card, Form, Segmented, Select, Space } from "antd";
+import { Card, Form, Space } from "antd";
 import { ColorPicker as CP } from "@mantine/core";
 import styles from "./ColorInputs.module.scss";
 import { ColorInputsProps } from "pages/Colors/ShadesAndTints/utils/types";
@@ -17,6 +17,9 @@ import {
 } from "pages/Colors/ShadesAndTints/utils/helper";
 import Icon from "components/General/Icon";
 import { useEffect, useState } from "react";
+import SelectComponent from "components/General/SelectComponent";
+import Button from "components/General/Button";
+import SegmentComponent from "components/General/SegmentComponent";
 
 const ColorInputs: React.FC<ColorInputsProps> = ({
 	color,
@@ -49,7 +52,7 @@ const ColorInputs: React.FC<ColorInputsProps> = ({
 	return (
 		<Card className={styles.ci}>
 			<Form layout="vertical">
-				<Space>
+				<Space align="end">
 					<InputComponent
 						label="Color"
 						placeholder="Color"
@@ -86,34 +89,37 @@ const ColorInputs: React.FC<ColorInputsProps> = ({
 						type="number"
 						style={{ width: 90 }}
 					/>
-					<Form.Item label="Output Format">
-						<Select
-							size="large"
-							value={option}
-							defaultActiveFirstOption
-							onSelect={(_, option) =>
-								handleOutputFormatChange(option)
-							}
-							options={OUTPUT_FORMAT}
-						/>
-					</Form.Item>
-					<Segmented
-						size="large"
+
+					<SelectComponent
+						value={option.value}
+						onSelect={(_, option) =>
+							handleOutputFormatChange(option)
+						}
+						options={OUTPUT_FORMAT}
+						defaultActiveFirstOption
+					/>
+
+					<SegmentComponent
 						value={order}
 						onChange={(value: string | number) =>
 							setOrder(value as string)
 						}
 						options={SEGMENTED_OPTIONS}
 					/>
-					<Clipboard
-						text={clipboardText}
-						clipboardComponent={ClipboardButton}
-					/>
-					<Button
-						icon={<Icon name="RefreshCcw" />}
-						size="large"
-						onClick={() => setColor(generateRandomColor())}
-					/>
+
+					<Form.Item>
+						<Clipboard
+							text={clipboardText}
+							clipboardComponent={ClipboardButton}
+						/>
+					</Form.Item>
+
+					<Form.Item>
+						<Button
+							icon={<Icon name="RefreshCcw" />}
+							onClick={() => setColor(generateRandomColor())}
+						/>
+					</Form.Item>
 				</Space>
 			</Form>
 		</Card>

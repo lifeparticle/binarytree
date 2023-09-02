@@ -60,11 +60,11 @@ const ImageGeneratorFromColors: React.FC = () => {
 	return (
 		<Form layout="vertical" className={style.igfc}>
 			<PageGrid>
-				<Card>
+				<Card className={style.igfc__card}>
 					<Form.Item label={PLACE_HOLDER_TEXT}>
 						<TextArea
 							placeholder={"Enter " + PLACE_HOLDER_TEXT}
-							rows={12}
+							rows={7}
 							onChange={(event) =>
 								onTextAreaChange(event.currentTarget.value)
 							}
@@ -74,24 +74,26 @@ const ImageGeneratorFromColors: React.FC = () => {
 					</Form.Item>
 				</Card>
 
-				<Card>
-					<InputComponent
-						label="Image width"
-						placeholder="Image Height"
-						value={height}
-						onChange={(val) => val && setHeight(val)}
-						min={0}
-						type="number"
-					/>
+				<Card className={style.igfc__card}>
+					<PageGrid>
+						<InputComponent
+							label="Image width"
+							placeholder="Image Height"
+							value={height}
+							onChange={(val) => val && setHeight(val)}
+							min={0}
+							type="number"
+						/>
 
-					<InputComponent
-						label="Image Height"
-						placeholder="Image Width"
-						value={width}
-						onChange={(val) => val && setWidth(val)}
-						min={0}
-						type="number"
-					/>
+						<InputComponent
+							label="Image Height"
+							placeholder="Image Width"
+							value={width}
+							onChange={(val) => val && setWidth(val)}
+							min={0}
+							type="number"
+						/>
+					</PageGrid>
 
 					<InputComponent
 						label="Image Border Radius"
