@@ -1,4 +1,4 @@
-const DEFAULT_COLOR = "#ffffff";
+const DEFAULT_COLOR = "#559D81";
 const DEFAULT_NUM_SHADES = 10;
 const MAX_SHADES = 100;
 const MIN_SHADES = 0;
