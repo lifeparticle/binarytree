@@ -1,6 +1,10 @@
 import { MenuProps } from "antd";
 import { Link } from "react-router-dom";
 
+const NOTIFICATION_KEY = "notification";
+const NOTIFICATION_URL = "/changelog.md";
+const NOTIFICATION_RED_FLAG_KEY = "feature-date";
+
 const DEFAULT_RECORD = [
 	{
 		date: "01.01.23",
@@ -44,4 +48,10 @@ const items: MenuProps["items"] = [
 	},
 ];
 
-export { items, DEFAULT_RECORD };
+export {
+	items,
+	DEFAULT_RECORD,
+	NOTIFICATION_KEY,
+	NOTIFICATION_URL,
+	NOTIFICATION_RED_FLAG_KEY,
+};

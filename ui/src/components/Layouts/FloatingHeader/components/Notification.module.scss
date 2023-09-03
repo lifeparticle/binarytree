@@ -3,20 +3,41 @@
 	width: 200px;
 	overflow-y: auto;
 	overflow-x: hidden;
+	border-radius: 8px;
+
+	&__button {
+		border: none;
+		box-shadow: none;
+		background-color: transparent;
+		cursor: pointer;
+		position: relative;
+
+		&__status {
+			width: var(--bt-size-7);
+			height: var(--bt-size-7);
+			background-color: red;
+			position: absolute;
+			border-radius: 100%;
+			top: var(--bt-size-5);
+			right: var(--bt-size-15);
+		}
+	}
 
 	&__item {
-		border-bottom: 1px solid #eee;
-		padding-top: 8px;
-
 		&_title {
 			display: flex;
 			justify-content: space-between;
 		}
 
 		&_features {
-			padding-top: 8px;
-			margin-left: -25px;
-			padding-bottom: 8px;
+			padding-top: var(--bt-size-8);
+			margin-left: var(--bt-size-minus-25);
+			padding-bottom: var(--bt-size-8);
+			list-style-type: square;
+
+			&_feature {
+				font-size: var(--bt-size-11);
+			}
 		}
 	}
 }
