@@ -1,9 +1,12 @@
 .about {
-	display: grid;
-	align-items: center;
-	justify-content: center;
-	overflow: hidden;
-	padding: 20px;
+	margin: 0 auto;
+	max-width: var(--bt-converter-width);
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		gap: var(--bt-size-20);
+	}
 
 	&__intro {
 		position: relative;
@@ -30,13 +33,13 @@
 
 		&_img {
 			width: 100%;
-			height: auto;
+			min-height: 250px;
 		}
 	}
 
 	&__socials {
 		display: flex;
 		justify-content: center;
-		margin-top: 20px;
+		margin-top: var(--bt-size-20);
 	}
 }
