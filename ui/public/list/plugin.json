@@ -1,231 +1,302 @@
 [
-    {
-        "name": "Prettier-vscode",
-        "category": "VSCode Extension",
-        "subCategory": "Code Quality",
-        "url": "https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode",
-        "socials": [
-            {
-                "url": "https://marketplace.visualstudio.com",
-                "name": "VSCode Marketplace"
-            }
-        ]
-    },
-    {
-        "name": "Eslint",
-        "category": "VSCode Extension",
-        "subCategory": "Code Quality",
-        "url": "https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint",
-        "socials": [
-            {
-                "url": "https://marketplace.visualstudio.com",
-                "name": "VSCode Marketplace"
-            }
-        ]
-    },
-    {
-        "name": "Stylelint",
-        "category": "VSCode Extension",
-        "subCategory": "Code Quality",
-        "url": "https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint",
-        "socials": [
-            {
-                "url": "https://marketplace.visualstudio.com",
-                "name": "VSCode Marketplace"
-            }
-        ]
-    },
-    {
-        "name": "SonarLint",
-        "category": "VSCode Extension",
-        "subCategory": "Code Quality",
-        "url": "https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode",
-        "socials": [
-            {
-                "url": "https://marketplace.visualstudio.com",
-                "name": "VSCode Marketplace"
-            }
-        ]
-    },
-    {
-        "name": "Console-ninja",
-        "category": "VSCode Extension",
-        "subCategory": "Debug",
-        "url": "https://marketplace.visualstudio.com/items?itemName=WallabyJs.console-ninja",
-        "socials": [
-            {
-                "url": "https://marketplace.visualstudio.com",
-                "name": "VSCode Marketplace"
-            }
-        ]
-    },
-    {
-        "name": "Errorlens",
-        "category": "VSCode Extension",
-        "subCategory": "Debug",
-        "url": "https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens",
-        "socials": [
-            {
-                "url": "https://marketplace.visualstudio.com",
-                "name": "VSCode Marketplace"
-            }
-        ]
-    },
-    {
-        "name": "Image preview",
-        "category": "VSCode Extension",
-        "subCategory": "Debug",
-        "url": "https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview",
-        "socials": [
-            {
-                "url": "https://marketplace.visualstudio.com",
-                "name": "VSCode Marketplace"
-            }
-        ]
-    },
-    {
-        "name": "Total TypeScript",
-        "category": "VSCode Extension",
-        "subCategory": "Debug",
-        "url": "https://marketplace.visualstudio.com/items?itemName=mattpocock.ts-error-translator",
-        "socials": [
-            {
-                "url": "https://marketplace.visualstudio.com",
-                "name": "VSCode Marketplace"
-            }
-        ]
-    },
-    {
-        "name": "Material-icon-theme",
-        "category": "VSCode Extension",
-        "subCategory": "Editor",
-        "url": "https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme",
-        "socials": [
-            {
-                "url": "https://marketplace.visualstudio.com",
-                "name": "VSCode Marketplace"
-            }
-        ]
-    },
-    {
-        "name": "Auto-rename-tag",
-        "category": "VSCode Extension",
-        "subCategory": "Automation",
-        "url": "https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag",
-        "socials": [
-            {
-                "url": "https://marketplace.visualstudio.com",
-                "name": "VSCode Marketplace"
-            }
-        ]
-    },
-    {
-        "name": "GitHub Copilot",
-        "category": "VSCode Extension",
-        "subCategory": "Automation",
-        "url": "https://marketplace.visualstudio.com/items?itemName=GitHub.copilot",
-        "socials": [
-            {
-                "url": "https://marketplace.visualstudio.com",
-                "name": "VSCode Marketplace"
-            }
-        ]
-    },
-    {
-        "name": "Vscode-docker",
-        "category": "VSCode Extension",
-        "subCategory": "Others",
-        "url": "https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker",
-        "socials": [
-            {
-                "url": "https://marketplace.visualstudio.com",
-                "name": "VSCode Marketplace"
-            }
-        ]
-    },
-    {
-        "name": "Quokka-vscode",
-        "category": "VSCode Extension",
-        "subCategory": "Others",
-        "url": "https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode",
-        "socials": [
-            {
-                "url": "https://marketplace.visualstudio.com",
-                "name": "VSCode Marketplace"
-            }
-        ]
-    },
-    {
-        "name": "Markdown Preview Enhanced",
-        "category": "VSCode Extension",
-        "subCategory": "Others",
-        "url": "https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced",
-        "socials": [
-            {
-                "url": "https://marketplace.visualstudio.com",
-                "name": "VSCode Marketplace"
-            }
-        ]
-    },
-    {
-        "name": "GitHub Actions",
-        "category": "VSCode Extension",
-        "subCategory": "Others",
-        "url": "https://marketplace.visualstudio.com/items?itemName=github.vscode-github-actions",
-        "socials": [
-            {
-                "url": "https://marketplace.visualstudio.com",
-                "name": "VSCode Marketplace"
-            }
-        ]
-    },
-    {
-        "name": "Live Server",
-        "category": "VSCode Extension",
-        "subCategory": "Others",
-        "url": "https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer",
-        "socials": [
-            {
-                "url": "https://marketplace.visualstudio.com",
-                "name": "VSCode Marketplace"
-            }
-        ]
-    },
-    {
-        "name": "Git File History",
-        "category": "VSCode Extension",
-        "subCategory": "Others",
-        "url": "https://marketplace.visualstudio.com/items?itemName=pomber.git-file-history",
-        "socials": [
-            {
-                "url": "https://marketplace.visualstudio.com",
-                "name": "VSCode Marketplace"
-            }
-        ]
-    },
-    {
-        "name": "vscode-pets",
-        "category": "VSCode Extension",
-        "subCategory": "Others",
-        "url": "https://marketplace.visualstudio.com/items?itemName=tonybaloney.vscode-pets",
-        "socials": [
-            {
-                "url": "https://marketplace.visualstudio.com",
-                "name": "VSCode Marketplace"
-            }
-        ]
-    },
-    {
-        "name": "Import Cost",
-        "category": "VSCode Extension",
-        "subCategory": "Performance",
-        "url": "https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost",
-        "socials": [
-            {
-                "url": "https://marketplace.visualstudio.com",
-                "name": "VSCode Marketplace"
-            }
-        ]
-    }
+	{
+		"name": "Prettier-vscode",
+		"category": "VSCode Extension",
+		"subCategory": "Code Quality",
+		"url": "https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
+		"name": "Eslint",
+		"category": "VSCode Extension",
+		"subCategory": "Code Quality",
+		"url": "https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
+		"name": "Stylelint",
+		"category": "VSCode Extension",
+		"subCategory": "Code Quality",
+		"url": "https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
+		"name": "SonarLint",
+		"category": "VSCode Extension",
+		"subCategory": "Code Quality",
+		"url": "https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
+		"name": "Console-ninja",
+		"category": "VSCode Extension",
+		"subCategory": "Debug",
+		"url": "https://marketplace.visualstudio.com/items?itemName=WallabyJs.console-ninja",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
+		"name": "Errorlens",
+		"category": "VSCode Extension",
+		"subCategory": "Debug",
+		"url": "https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
+		"name": "Image preview",
+		"category": "VSCode Extension",
+		"subCategory": "Debug",
+		"url": "https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
+		"name": "Total TypeScript",
+		"category": "VSCode Extension",
+		"subCategory": "Debug",
+		"url": "https://marketplace.visualstudio.com/items?itemName=mattpocock.ts-error-translator",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
+		"name": "Material-icon-theme",
+		"category": "VSCode Extension",
+		"subCategory": "Editor",
+		"url": "https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
+		"name": "Auto-rename-tag",
+		"category": "VSCode Extension",
+		"subCategory": "Automation",
+		"url": "https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
+		"name": "GitHub Copilot",
+		"category": "VSCode Extension",
+		"subCategory": "Automation",
+		"url": "https://marketplace.visualstudio.com/items?itemName=GitHub.copilot",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
+		"name": "Vscode-docker",
+		"category": "VSCode Extension",
+		"subCategory": "Others",
+		"url": "https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
+		"name": "Quokka-vscode",
+		"category": "VSCode Extension",
+		"subCategory": "Others",
+		"url": "https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
+		"name": "Markdown Preview Enhanced",
+		"category": "VSCode Extension",
+		"subCategory": "Others",
+		"url": "https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
+		"name": "GitHub Actions",
+		"category": "VSCode Extension",
+		"subCategory": "Others",
+		"url": "https://marketplace.visualstudio.com/items?itemName=github.vscode-github-actions",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
+		"name": "Live Server",
+		"category": "VSCode Extension",
+		"subCategory": "Others",
+		"url": "https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
+		"name": "Git File History",
+		"category": "VSCode Extension",
+		"subCategory": "Others",
+		"url": "https://marketplace.visualstudio.com/items?itemName=pomber.git-file-history",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
+		"name": "vscode-pets",
+		"category": "VSCode Extension",
+		"subCategory": "Others",
+		"url": "https://marketplace.visualstudio.com/items?itemName=tonybaloney.vscode-pets",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
+		"name": "Import Cost",
+		"category": "VSCode Extension",
+		"subCategory": "Performance",
+		"url": "https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
+		"name": "Wappalyzer",
+		"category": "Google Chrome Extensions",
+		"subCategory": "Profiler",
+		"url": "https://chrome.google.com/webstore/detail/wappalyzer-technology-pro/gppongmhjkpfnbhagpmjfkannfbllamg",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
+	},
+	{
+		"name": "JSON Formatter",
+		"category": "Google Chrome Extensions",
+		"subCategory": "Formatter",
+		"url": "https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
+	},
+	{
+		"name": "User-Agent Switcher for Chrome",
+		"category": "Google Chrome Extensions",
+		"subCategory": "Spoofing",
+		"url": "https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
+	},
+	{
+		"name": "EditThisCookie",
+		"category": "Google Chrome Extensions",
+		"subCategory": "Cookie",
+		"url": "https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
+	},
+	{
+		"name": "Change Timezone (Time Shift)",
+		"category": "Google Chrome Extensions",
+		"subCategory": "Timezone",
+		"url": "https://chrome.google.com/webstore/detail/change-timezone-time-shif/nbofeaabhknfdcpoddmfckpokmncimpj",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
+	},
+	{
+		"name": "Layout Debugger",
+		"category": "Google Chrome Extensions",
+		"subCategory": "Layout",
+		"url": "https://chrome.google.com/webstore/detail/layout-debugger/gkamnoiedmidgolhlihkamjpfccohilb?hl=en-GB",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
+	}
 ]
-

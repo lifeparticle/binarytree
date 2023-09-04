@@ -106,5 +106,53 @@
 				"name": "github"
 			}
 		]
+	},
+	{
+		"name": "Futicons",
+		"category": "Icons",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://futicons.com/",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
+	},
+	{
+		"name": "Iconbuddy",
+		"category": "Icons",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://iconbuddy.app/",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
+	},
+	{
+		"name": "Unicornicons",
+		"category": "Icons",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://unicornicons.com/",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
+	},
+	{
+		"name": "Iconer",
+		"category": "Icons",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://iconer.app/",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
 	}
 ]

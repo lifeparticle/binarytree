@@ -6,6 +6,8 @@ const Feedback = lazy(() => import("pages/Feedback"));
 const ColorPicker = lazy(() => import("pages/Colors/ColorPicker"));
 const ShadesAndTints = lazy(() => import("pages/Colors/ShadesAndTints"));
 
+const BorderRadius = lazy(() => import("pages/CSS/BorderRadius"));
+
 const Base64 = lazy(() => import("pages/Converter/Base64"));
 const Pixel = lazy(() => import("pages/Converter/Pixel"));
 const JsonToTypescript = lazy(() => import("pages/Converter/JsonToTypescript"));
@@ -19,6 +21,7 @@ const Sorting = lazy(() => import("pages/Data/Sorting"));
 const Blog = lazy(() => import("pages/List/Blog"));
 const Book = lazy(() => import("pages/List/Book"));
 const Course = lazy(() => import("pages/List/Course"));
+const DesignSystem = lazy(() => import("pages/List/DesignSystem"));
 const Github = lazy(() => import("pages/List/Github"));
 const Icon = lazy(() => import("pages/List/Icon"));
 const Movie = lazy(() => import("pages/List/Movie"));
@@ -42,8 +45,10 @@ export {
 	Base64,
 	Blog,
 	Book,
+	BorderRadius,
 	ColorPicker,
 	Course,
+	DesignSystem,
 	DataGenerator,
 	Feedback,
 	Github,

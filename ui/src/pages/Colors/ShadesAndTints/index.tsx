@@ -19,12 +19,12 @@ const ShadesAndTints: React.FC = () => {
 		numShades: DEFAULT_NUM_SHADES,
 	});
 
-	const [color, setColor] = useState<string>(
+	const [color, setColor] = useState(
 		searchParams.get("color") || (params.color as string)
 	);
 	const [shades, setShades] = useState<string[]>([]);
 	const [tints, setTints] = useState<string[]>([]);
-	const [numberOfShades, setNumberOfShades] = useState<number>(
+	const [numberOfShades, setNumberOfShades] = useState(
 		Number(searchParams.get("numShades")) || Number(params.numShades)
 	);
 

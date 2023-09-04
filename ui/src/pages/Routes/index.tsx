@@ -7,8 +7,10 @@ import {
 	Base64,
 	Blog,
 	Book,
+	BorderRadius,
 	ColorPicker,
 	Course,
+	DesignSystem,
 	DataGenerator,
 	Feedback,
 	Github,
@@ -51,6 +53,10 @@ const Routes: React.FC = () => {
 							element={<ShadesAndTints />}
 						/>
 					</Route>
+					<Route path="/css">
+						<Route index element={<Navigate to={"br"} />} />
+						<Route path="br" element={<BorderRadius />} />
+					</Route>
 					<Route path="/converter">
 						<Route index element={<Navigate to={"base-64"} />} />
 						<Route path="base-64" element={<Base64 />} />
@@ -70,6 +76,10 @@ const Routes: React.FC = () => {
 						<Route index element={<Navigate to={"icon"} />} />
 						<Route path="blog" element={<Blog />} />
 						<Route path="book" element={<Book />} />
+						<Route
+							path="design-system"
+							element={<DesignSystem />}
+						/>
 						<Route path="course" element={<Course />} />
 						<Route path="github" element={<Github />} />
 						<Route path="icon" element={<Icon />} />

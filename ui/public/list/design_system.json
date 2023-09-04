@@ -1,0 +1,86 @@
+[
+	{
+		"name": "Material UI",
+		"category": "Design System",
+		"subCategory": "Web & Mobile",
+		"url": "https://mui.com/",
+		"socials": []
+	},
+	{
+		"name": "Ant Design",
+		"category": "Design System",
+		"subCategory": "Web & Mobile",
+		"url": "https://ant.design/",
+		"socials": []
+	},
+	{
+		"name": "Bulma",
+		"category": "Design System",
+		"subCategory": "Web",
+		"url": "https://bulma.io/",
+		"socials": []
+	},
+	{
+		"name": "Adobe Spectrum",
+		"category": "Design System",
+		"subCategory": "Web & Desktop",
+		"url": "https://spectrum.adobe.com/",
+		"socials": []
+	},
+	{
+		"name": "Carbon Design System",
+		"category": "Design System",
+		"subCategory": "Web & Mobile",
+		"url": "https://www.carbondesignsystem.com/",
+		"socials": []
+	},
+	{
+		"name": "Polaris",
+		"category": "Design System",
+		"subCategory": "Web",
+		"url": "https://polaris.shopify.com/",
+		"socials": []
+	},
+	{
+		"name": "NEXT UI",
+		"category": "Design System",
+		"subCategory": "Web",
+		"url": "https://nextui.org/",
+		"socials": []
+	},
+	{
+		"name": "Lightning Design System",
+		"category": "Design System",
+		"subCategory": "Web",
+		"url": "https://www.lightningdesignsystem.com/",
+		"socials": []
+	},
+	{
+		"name": "WFP-UI",
+		"category": "Design System",
+		"subCategory": "Web",
+		"url": "https://uikit.wfp.org/docs/index.html?path=/story/getting-started-intro--page",
+		"socials": []
+	},
+	{
+		"name": "Audi UI",
+		"category": "Design System",
+		"subCategory": "Web",
+		"url": "https://www.audi.com/ci/en/renewed-brand.html",
+		"socials": []
+	},
+	{
+		"name": "Mantine",
+		"category": "Design System",
+		"subCategory": "Web",
+		"url": "https://mantine.dev/",
+		"socials": []
+	},
+	{
+		"name": "Chakra UI",
+		"category": "Design System",
+		"subCategory": "Web",
+		"url": "https://chakra-ui.com/",
+		"socials": []
+	}
+]
