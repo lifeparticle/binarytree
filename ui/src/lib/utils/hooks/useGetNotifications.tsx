@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { DEFAULT_RECORD } from "components/Layouts/FloatingHeader/utils/constants";
-import { parsedMarkdown } from "components/Layouts/FloatingHeader/utils/helper";
+import { DEFAULT_RECORD } from "components/General/Notification/utils/constants";
+import { parsedMarkdown } from "components/General/Notification/utils/helper";
 
 const useGetNotifications = (key: string, url: string) => {
 	const {

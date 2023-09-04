@@ -5,6 +5,11 @@
 	overflow-x: hidden;
 	border-radius: 8px;
 
+	&__error {
+		text-align: center;
+		color: red;
+	}
+
 	&__button {
 		border: none;
 		box-shadow: none;

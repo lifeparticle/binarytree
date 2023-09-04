@@ -1,4 +1,4 @@
-import { ResponsiveButton } from "../FormComponents";
+import { ResponsiveButton } from "components/General/FormComponents";
 import style from "./ClipboardButton.module.scss";
 import { ClipboardButtonProps } from "./utils/types";
 import Icon from "components/General/Icon";
