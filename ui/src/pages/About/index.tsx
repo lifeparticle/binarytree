@@ -8,7 +8,7 @@ import {
 	OTHER_COLUMNS,
 	OTHER_DATA,
 } from "./utils/constants";
-import { Card, List, Space, Table, Typography } from "antd";
+import { Card, List, Table, Typography } from "antd";
 import style from "./About.module.scss";
 import Icon from "components/General/Icon";
 import about from "assets/about.jpg";
