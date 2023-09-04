@@ -58,7 +58,7 @@ const MarkdownEditor: React.FC = () => {
 			>
 				<MDEditor
 					value={markdown}
-					onChange={(value) => value && setMarkdown(value)}
+					onChange={(value) => setMarkdown(value || "")}
 					height="100%"
 				/>
 			</div>

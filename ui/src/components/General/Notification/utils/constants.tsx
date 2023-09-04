@@ -1,6 +1,3 @@
-import { MenuProps } from "antd";
-import { Link } from "react-router-dom";
-
 const NOTIFICATION_KEY = "notification";
 const NOTIFICATION_URL = "/changelog.md";
 const NOTIFICATION_RED_FLAG_KEY = "feature-date";
@@ -37,19 +34,8 @@ const DEFAULT_RECORD = [
 		],
 	},
 ];
-const items: MenuProps["items"] = [
-	{
-		key: "1",
-		label: <Link to="/about">About</Link>,
-	},
-	{
-		key: "2",
-		label: <Link to="/feedback">Feedback</Link>,
-	},
-];
 
 export {
-	items,
 	DEFAULT_RECORD,
 	NOTIFICATION_KEY,
 	NOTIFICATION_URL,
