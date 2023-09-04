@@ -23,6 +23,19 @@ export const MENU_ITEMS = [
 		],
 	},
 	{
+		name: "CSS",
+		icon: "Code",
+		show: true,
+		children: [
+			{
+				name: "Border Radius",
+				url: "/css/br",
+				icon: "Square",
+				show: true,
+			},
+		],
+	},
+	{
 		name: "Converter",
 		icon: "Repeat",
 		show: true,
@@ -93,6 +106,12 @@ export const MENU_ITEMS = [
 				name: "Course",
 				url: "/list/course",
 				icon: "GraduationCap",
+				show: true,
+			},
+			{
+				name: "Design System",
+				url: "/list/design-system",
+				icon: "LayoutDashboard",
 				show: true,
 			},
 			{

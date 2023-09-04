@@ -13,6 +13,10 @@ const ROUTES: Route[] = [
 		title: "Shades & Tints",
 	},
 	{
+		path: "/css/br",
+		title: "Border Radius",
+	},
+	{
 		path: "/converter/base-64",
 		title: "Base64",
 	},
@@ -47,6 +51,10 @@ const ROUTES: Route[] = [
 	{
 		path: "/list/course",
 		title: "Course",
+	},
+	{
+		path: "/list/design-system",
+		title: "Design System",
 	},
 	{
 		path: "/list/github",

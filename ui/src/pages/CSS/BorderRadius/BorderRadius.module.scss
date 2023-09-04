@@ -1,0 +1,16 @@
+.br {
+	&__output {
+		display: flex;
+		justify-content: center;
+
+		&_text,
+		&_img {
+			width: 500px;
+			height: 200px;
+		}
+
+		&_text {
+			overflow: hidden;
+		}
+	}
+}
