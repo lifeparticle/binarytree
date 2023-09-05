@@ -119,7 +119,7 @@ const TextEditor: React.FC = () => {
 					{!isLoading && (
 						<div className={style.te__footer}>
 							<span>
-								<b>{wordCount}</b>sd Words{" "}
+								<b>{wordCount}</b> Words{" "}
 							</span>
 							<span>
 								<b>{charCount}</b> Characters
