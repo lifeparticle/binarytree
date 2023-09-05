@@ -1,3 +1,8 @@
+### [4.9.1] - 2023-09-03
+
+-   Enhance notification
+-   Add Notification alert icon
+
 ### [4.9.0] - 2023-08-30
 
 -   Create Notifcation modal
