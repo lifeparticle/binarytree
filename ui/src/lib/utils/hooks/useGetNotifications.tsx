@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { getData } from "api/API";
 import { DEFAULT_RECORD } from "components/General/Notification/utils/constants";
 import { parsedMarkdown } from "components/General/Notification/utils/helper";
 
@@ -13,15 +14,12 @@ const useGetNotifications = (key: string, url: string) => {
 			if (import.meta.env.MODE === "development") {
 				return DEFAULT_RECORD;
 			} else {
-				const response = await fetch(url);
-				const content = await response.text();
-
-				const entries = parsedMarkdown(content);
-
-				return entries;
+				const data = await getData(url);
+				return parsedMarkdown(data);
 			}
 		},
 	});
+
 	return {
 		notifications,
 		isLoading,
