@@ -22,7 +22,7 @@ const BorderRadius = () => {
 	const [borderRadiusBottomRight, setBorderRadiusBottomRight] = useState(0);
 
 	const [borderWidth, setBorderWidth] = useState(0);
-	const [borderStyle, setBorderStyle] = useState(BORDER_STYLES[0].value);
+	const [borderStyle, setBorderStyle] = useState(BORDER_STYLES[5].value);
 	const [borderColor, setBorderColor] = useState("rgba(0, 0, 0, 1)");
 
 	const [borderType, setBorderType] = useState("rgba(0, 0, 0, 1)");
