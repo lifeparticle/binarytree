@@ -8,9 +8,7 @@ async function makeRequest(url: string, method = "GET", data = null) {
 		const response = await fetch(url, options);
 
 		if (!response.ok) {
-			throw new Error(
-				`HTTP Error: ${response.status} - ${response.statusText}`
-			);
+			throw new Error(`HTTP Error: Something went wrong`);
 		}
 
 		const contentType = response.headers.get("content-type");
