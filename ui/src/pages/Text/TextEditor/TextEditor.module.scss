@@ -4,6 +4,7 @@
 
 	&__footer {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		background-color: white;
 		padding: 5px;
@@ -12,5 +13,13 @@
 		border-left: 2px solid #eee;
 		border-bottom: 2px solid #eee;
 		border-right: 2px solid #eee;
+	}
+
+	@media (max-width: 768px) {
+		&__footer span {
+			flex-basis: calc(33.333% - 10px);
+			margin-bottom: 5px;
+			text-align: center;
+		}
 	}
 }

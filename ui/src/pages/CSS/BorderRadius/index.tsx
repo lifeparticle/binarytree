@@ -5,8 +5,11 @@ import CodeHighlightWithCopy from "components/General/CodeHighlightWithCopy";
 import about from "assets/about.jpg";
 import style from "./BorderRadius.module.scss";
 import { faker } from "@faker-js/faker";
-import { ResponsiveSelectWithLabel } from "components/General/FormComponents";
-import { BORDER_STYLES } from "./utils/constants";
+import {
+	ResponsiveSegementWithLabel,
+	ResponsiveSelectWithLabel,
+} from "components/General/FormComponents";
+import { BORDER_STYLES, SEGMENTED_OPTIONS } from "./utils/constants";
 import ColorPickerWithInput from "components/General/ColorPickerWithInput";
 
 const PARAGRAPHS = faker.lorem.paragraph(7);
@@ -21,6 +24,8 @@ const BorderRadius = () => {
 	const [borderWidth, setBorderWidth] = useState(0);
 	const [borderStyle, setBorderStyle] = useState(BORDER_STYLES[0].value);
 	const [borderColor, setBorderColor] = useState("rgba(0, 0, 0, 1)");
+
+	const [borderType, setBorderType] = useState("rgba(0, 0, 0, 1)");
 
 	const generateCSSCodeString = () => {
 		const borderRadiusString = `border-radius: ${borderRadiusTopLeft}px ${borderRadiusTopRight}px ${borderRadiusBottomRight}px ${borderRadiusBottomLeft}px;`;
@@ -54,6 +59,14 @@ const BorderRadius = () => {
 							/>
 						</Form.Item>
 					</PageGrid>
+
+					<ResponsiveSegementWithLabel
+						value={borderType}
+						onChange={(value: string | number) =>
+							setBorderType(value as string)
+						}
+						options={SEGMENTED_OPTIONS}
+					/>
 					<Form.Item label="Border">
 						<Slider
 							defaultValue={0}
@@ -69,7 +82,6 @@ const BorderRadius = () => {
 							}}
 						/>
 					</Form.Item>
-
 					<Form.Item label="Top left border">
 						<Slider
 							defaultValue={0}
@@ -112,7 +124,6 @@ const BorderRadius = () => {
 						<Slider
 							defaultValue={0}
 							value={borderWidth}
-							tooltip={{ open: true }}
 							onChange={(value) =>
 								value !== null && setBorderWidth(value)
 							}

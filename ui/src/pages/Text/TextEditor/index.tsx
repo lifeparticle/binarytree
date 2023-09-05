@@ -118,15 +118,24 @@ const TextEditor: React.FC = () => {
 					/>
 					{!isLoading && (
 						<div className={style.te__footer}>
-							<span>{wordCount} Words </span>
-							<span>{charCount} Characters</span>
 							<span>
-								{charCountWithoutSpaces} Characters (No spaces)
+								<b>{wordCount}</b>sd Words{" "}
 							</span>
-							<span>{selectedWordCount} Selected Words</span>
-							<span>{selectedCharCount} Selected Characters</span>
 							<span>
-								{selectedCharCountWithoutSpaces} Selected
+								<b>{charCount}</b> Characters
+							</span>
+							<span>
+								<b>{charCountWithoutSpaces}</b> Characters (No
+								spaces)
+							</span>
+							<span>
+								<b>{selectedWordCount}</b> Selected Words
+							</span>
+							<span>
+								<b>{selectedCharCount}</b> Selected Characters
+							</span>
+							<span>
+								<b>{selectedCharCountWithoutSpaces}</b> Selected
 								Characters (No spaces)
 							</span>
 						</div>

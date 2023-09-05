@@ -298,5 +298,41 @@
 				"name": ""
 			}
 		]
+	},
+	{
+		"name": "VisBug",
+		"category": "Google Chrome Extensions",
+		"subCategory": "Debugger",
+		"url": "https://chrome.google.com/webstore/detail/visbug/cdockenadnadldjbbgcallicgledbeoc",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
+	},
+	{
+		"name": "Web Vitals",
+		"category": "Google Chrome Extensions",
+		"subCategory": "Profiler",
+		"url": "https://chrome.google.com/webstore/detail/visbug/cdockenadnadldjbbgcallicgledbeoc",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
+	},
+	{
+		"name": "React Developer Tools",
+		"category": "Google Chrome Extensions",
+		"subCategory": "Profiler",
+		"url": "https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
 	}
 ]
