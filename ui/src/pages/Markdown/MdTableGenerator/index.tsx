@@ -67,7 +67,7 @@ const TableGenerator: React.FC = () => {
 			>
 				<MDEditor
 					value={isPending ? "Generating table..." : output}
-					onChange={(val) => val && setOutput(val)}
+					onChange={(val) => setOutput(val || "")}
 					height="100%"
 					style={{ fontSize: "52" }}
 				/>

@@ -6,13 +6,19 @@ async function makeRequest(url: string, method = "GET", data = null) {
 
 	try {
 		const response = await fetch(url, options);
-		const responseData = await response.json();
 
 		if (!response.ok) {
-			throw new Error(responseData.message);
+			throw new Error(`HTTP Error: Something went wrong`);
 		}
 
-		return responseData;
+		const contentType = response.headers.get("content-type");
+		if (contentType && contentType.includes("application/json")) {
+			const responseData = await response.json();
+			return responseData;
+		} else {
+			const responseText = await response.text();
+			return responseText;
+		}
 	} catch (error) {
 		if (error instanceof Error) {
 			throw new Error(error.message);

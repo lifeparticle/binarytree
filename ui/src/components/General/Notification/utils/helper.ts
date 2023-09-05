@@ -26,4 +26,15 @@ const parsedMarkdown = (markdown: string): Markdown[] => {
 	return parsedEntries;
 };
 
-export { parsedMarkdown };
+const compareDate = (latestDate: string, localeStorageDate?: string | null) => {
+	if (!localeStorageDate) {
+		return true;
+	}
+
+	const formatLatestDate = new Date(latestDate);
+	const formatlocaleStorageDate = new Date(localeStorageDate);
+
+	return formatLatestDate > formatlocaleStorageDate;
+};
+
+export { parsedMarkdown, compareDate };
