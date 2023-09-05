@@ -12,12 +12,14 @@ async function makeRequest(url: string, method = "GET", data = null) {
 		}
 
 		const contentType = response.headers.get("content-type");
+
+		if (url.includes(".json")) {
+			return await response.json();
+		}
 		if (contentType && contentType.includes("application/json")) {
-			const responseData = await response.json();
-			return responseData;
+			return await response.json();
 		} else {
-			const responseText = await response.text();
-			return responseText;
+			return await response.text();
 		}
 	} catch (error) {
 		if (error instanceof Error) {

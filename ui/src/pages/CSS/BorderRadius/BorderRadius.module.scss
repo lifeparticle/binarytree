@@ -5,8 +5,11 @@
 
 		&_text,
 		&_img {
-			width: 500px;
-			height: 200px;
+			width: 100%;
+			aspect-ratio: 7 / 3;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 
 		&_text {

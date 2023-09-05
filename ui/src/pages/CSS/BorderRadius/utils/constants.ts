@@ -1,16 +1,50 @@
 const BORDER_STYLES = [
 	{
-		value: "solid",
-		label: "solid",
+		value: "none",
+		label: "none",
+	},
+	{
+		value: "hidden",
+		label: "hidden",
+	},
+	{
+		value: "dotted",
+		label: "dotted",
 	},
 	{
 		value: "dashed",
 		label: "dashed",
 	},
 	{
-		value: "dotted",
-		label: "dotted",
+		value: "solid",
+		label: "solid",
+	},
+	{
+		value: "double",
+		label: "double",
+	},
+	{
+		value: "groove",
+		label: "groove",
+	},
+	{
+		value: "ridge",
+		label: "ridge",
+	},
+	{
+		value: "inset",
+		label: "inset",
+	},
+	{
+		value: "outset",
+		label: "outset",
 	},
 ];
 
-export { BORDER_STYLES };
+const SEGMENTED_OPTIONS = [
+	{ label: "Rounded", value: "rounded" },
+	{ label: "Circular", value: "circle" },
+	{ label: "Blob", value: "blob" },
+];
+
+export { BORDER_STYLES, SEGMENTED_OPTIONS };
