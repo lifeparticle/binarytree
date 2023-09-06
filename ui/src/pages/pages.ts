@@ -13,6 +13,7 @@ const Pixel = lazy(() => import("pages/Converter/Pixel"));
 const JsonToTypescript = lazy(() => import("pages/Converter/JsonToTypescript"));
 
 const DataGenerator = lazy(() => import("pages/Data/DataGenerator"));
+const Avatar = lazy(() => import("pages/Data/Avatar"));
 const ImageGeneratorFromColors = lazy(
 	() => import("pages/Data/ImageGeneratorFromColors")
 );
@@ -54,6 +55,7 @@ export {
 	Github,
 	Icon,
 	ImageGeneratorFromColors,
+	Avatar,
 	JsonToTypescript,
 	MarkdownEditor,
 	Movie,
