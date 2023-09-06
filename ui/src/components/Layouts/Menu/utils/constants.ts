@@ -41,7 +41,7 @@ export const MENU_ITEMS = [
 		show: true,
 		children: [
 			{
-				name: "Base 64",
+				name: "Base64",
 				url: "/converter/base-64",
 				icon: "Replace",
 				show: true,
