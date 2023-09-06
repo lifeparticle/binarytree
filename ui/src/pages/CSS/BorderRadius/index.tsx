@@ -44,6 +44,7 @@ const BorderRadius = () => {
 				<Form layout="vertical">
 					<PageGrid>
 						<ColorPickerWithInput
+							label="Color"
 							value={borderColor}
 							setValue={(e) => setBorderColor(e.target.value)}
 							setColor={setBorderColor}

@@ -61,25 +61,31 @@ export const MENU_ITEMS = [
 		],
 	},
 	{
-		name: "Data",
+		name: "Generator",
 		icon: "Database",
 		show: true,
 		children: [
 			{
-				name: "Data Generator",
-				url: "/data/data-gen",
+				name: "Data",
+				url: "/generator/data",
 				icon: "DatabaseBackup",
 				show: true,
 			},
 			{
-				name: "Image Generator From Colors",
-				url: "/data/igfc",
+				name: "Image",
+				url: "/generator/igfc",
 				icon: "Image",
 				show: true,
 			},
 			{
+				name: "Avatar",
+				url: "/generator/avatar",
+				icon: "BadgeHelp",
+				show: true,
+			},
+			{
 				name: "Sorting",
-				url: "/data/sorting",
+				url: "/generator/sorting",
 				icon: "ArrowUpNarrowWide",
 				show: true,
 			},

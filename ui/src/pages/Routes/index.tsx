@@ -32,6 +32,7 @@ import {
 	TvSeries,
 	UiUx,
 	YouTube,
+	Avatar,
 } from "pages/pages";
 import withPageTitle from "components/Hoc/withPageTitle";
 import Text from "components/General/Text/Text";
@@ -63,13 +64,14 @@ const Routes: React.FC = () => {
 						<Route path="pixel" element={<Pixel />} />
 						<Route path="jtt" element={<JsonToTypescript />} />
 					</Route>
-					<Route path="/data">
+					<Route path="/generator">
 						<Route index element={<Navigate to={"igfc"} />} />
 						<Route
 							path="igfc"
 							element={<ImageGeneratorFromColors />}
 						/>
-						<Route path="data-gen" element={<DataGenerator />} />
+						<Route path="data" element={<DataGenerator />} />
+						<Route path="avatar" element={<Avatar />} />
 						<Route path="sorting" element={<Sorting />} />
 					</Route>
 					<Route path="/list">

@@ -58,6 +58,7 @@ const ColorInputs: React.FC<ColorInputsProps> = ({
 						value={color}
 						setValue={handleColorChange}
 						setColor={setColor}
+						label="Color"
 					/>
 					<ResponsiveInputWithLabel
 						value={numberOfShades}

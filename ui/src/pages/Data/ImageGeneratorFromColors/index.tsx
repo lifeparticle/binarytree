@@ -12,6 +12,7 @@ import {
 	ResponsiveButton,
 	ResponsiveInputWithLabel,
 } from "components/General/FormComponents";
+import InputGrid from "components/Layouts/InputGrid";
 
 const { Title } = Typography;
 const { TextArea } = Input;
@@ -76,7 +77,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 				</Card>
 
 				<Card className={style.igfc__card}>
-					<PageGrid>
+					<InputGrid>
 						<ResponsiveInputWithLabel
 							label="Image height"
 							placeholder="Height"
@@ -94,7 +95,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 							min={0}
 							type="number"
 						/>
-					</PageGrid>
+					</InputGrid>
 
 					<ResponsiveInputWithLabel
 						label="Image border radius"
