@@ -29,15 +29,19 @@ const ROUTES: Route[] = [
 		title: "Json To Typescript Converter",
 	},
 	{
-		path: "/data/data-gen",
+		path: "/generator/data",
 		title: "Data Generator",
 	},
 	{
-		path: "/data/igfc",
+		path: "/generator/avatar",
+		title: "Avatar Generator",
+	},
+	{
+		path: "/generator/igfc",
 		title: "Image Generator From Colors",
 	},
 	{
-		path: "/data/sorting",
+		path: "/generator/sorting",
 		title: "Sorting",
 	},
 	{
