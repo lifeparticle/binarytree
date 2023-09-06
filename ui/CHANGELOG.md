@@ -1,3 +1,9 @@
+### [4.9.2] - 2023-09-06
+
+-   Add avatar generator
+-   Add test on avatar generator
+-   Fix css for input grid (replace pagegrid for input)
+
 ### [4.9.1] - 2023-09-03
 
 -   Enhance notification
