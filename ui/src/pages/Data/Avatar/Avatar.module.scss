@@ -1,9 +1,8 @@
 .avatar {
 	&__output {
+		min-height: 330px;
 		display: flex;
-		justify-items: center;
 		align-items: center;
-		flex-direction: column;
-		gap: var(--bt-size-20);
+		justify-content: center;
 	}
 }

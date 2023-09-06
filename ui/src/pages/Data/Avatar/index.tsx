@@ -1,6 +1,6 @@
 import { saveAs } from "file-saver";
 import { toPng } from "html-to-image";
-import { Card, Form, Slider, Avatar as AntAvatar } from "antd";
+import { Card, Form, Slider, Avatar as AntAvatar, Space } from "antd";
 import ColorPickerWithInput from "components/General/ColorPickerWithInput";
 import {
 	ResponsiveButton,
@@ -95,8 +95,8 @@ const Avatar = () => {
 				</Form>
 			</Card>
 
-			<Card>
-				<div className={style.avatar__output}>
+			<Card className={style.avatar__output}>
+				<Space direction="vertical" align="center" size={"large"}>
 					<AntAvatar
 						ref={domEl}
 						size={size}
@@ -118,7 +118,7 @@ const Avatar = () => {
 					<ResponsiveButton onClick={onButtonClick}>
 						Download avatar
 					</ResponsiveButton>
-				</div>
+				</Space>
 			</Card>
 		</PageGrid>
 	);
