@@ -1,0 +1,9 @@
+.avatar {
+	&__output {
+		display: flex;
+		justify-items: center;
+		align-items: center;
+		flex-direction: column;
+		gap: var(--bt-size-20);
+	}
+}
