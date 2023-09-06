@@ -1,12 +1,12 @@
 import { Col, Row } from "antd";
 import React from "react";
-import { PageGridPropsType } from "./utils/types";
+import { InputGridPropsType } from "./utils/types";
 
-const PageGrid: React.FC<PageGridPropsType> = ({ children, className }) => {
+const InputGrid: React.FC<InputGridPropsType> = ({ children, className }) => {
 	const [children1, children2] = React.Children.toArray(children);
 
 	return (
-		<Row gutter={[16, 16]} className={className}>
+		<Row gutter={[16, 0]} className={className}>
 			<Col xs={24} sm={24} md={24} lg={12}>
 				{children1}
 			</Col>
@@ -17,4 +17,4 @@ const PageGrid: React.FC<PageGridPropsType> = ({ children, className }) => {
 	);
 };
 
-export default PageGrid;
+export default InputGrid;

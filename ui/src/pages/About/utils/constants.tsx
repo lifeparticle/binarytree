@@ -212,7 +212,7 @@ const FEATURE_DATA: Feature[] = [
 		key: "6",
 		name: "Data Generator",
 		description: "Generate any type of data",
-		link: "/data/data-gen",
+		link: "/generator/data",
 		library: [
 			{
 				name: "faker-js",
@@ -228,7 +228,7 @@ const FEATURE_DATA: Feature[] = [
 		key: "7",
 		name: "Image generate from colors",
 		description: "Generate image from color code",
-		link: "/data/igfc",
+		link: "/generator/igfc",
 		library: [
 			{
 				name: "file-saver",
@@ -245,10 +245,26 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
+		key: "14",
+		name: "Avatar generator",
+		description: "Generate avatar from text",
+		link: "/generator/avatar",
+		library: [
+			{
+				name: "file-saver",
+				url: LIBRARY_URLS["file-saver"],
+			},
+			{
+				name: "html-to-image",
+				url: LIBRARY_URLS["html-to-image"],
+			},
+		],
+	},
+	{
 		key: "8",
 		name: "Sorting",
 		description: "Sort numbers or strings",
-		link: "/data/sorting",
+		link: "/generator/sorting",
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
