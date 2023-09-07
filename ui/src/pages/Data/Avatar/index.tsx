@@ -9,16 +9,25 @@ import {
 } from "components/General/FormComponents";
 import PageGrid from "components/Layouts/PageGrid";
 import { useRef, useState } from "react";
-import { AVATAR_SHAPE_SEGMENTED_OPTIONS, AvatarShape } from "./utils/constants";
+import {
+	AVATAR_SHAPE_SEGMENTED_OPTIONS,
+	AvatarShape,
+	AvatarShapeType,
+} from "./utils/constants";
 import InputGrid from "components/Layouts/InputGrid";
 import style from "./Avatar.module.scss";
 
 const Avatar = () => {
 	const [text, setText] = useState<string>("AR");
-	const [textColor, setTextColor] = useState<string>("");
-	const [bgColor, setBgColor] = useState<string>("");
-	const [shapeType, setShapeType] = useState<AvatarShape>(AvatarShape.Circle);
-	const [size, setSize] = useState<number>(50);
+	const [textColor, setTextColor] = useState<string>(
+		"rgba(255, 255, 255, 1)"
+	);
+	const [bgColor, setBgColor] = useState<string>("rgba(0, 0, 0, 0.25)");
+	const [shapeType, setShapeType] = useState<AvatarShapeType>(
+		AvatarShape.Circle
+	);
+	const [avatarSize, setAvatarSize] = useState<number>(200);
+	const [fontSize, setFontSize] = useState<number>(50);
 	const [customBorderRadius, setCustomBorderRadius] = useState<number>(0);
 
 	const domEl = useRef<HTMLDivElement>(null);
@@ -58,24 +67,31 @@ const Avatar = () => {
 							setColor={setBgColor}
 						/>
 					</InputGrid>
+					<ResponsiveSegementWithLabel
+						value={shapeType}
+						label="Avatar shape"
+						options={AVATAR_SHAPE_SEGMENTED_OPTIONS}
+						onChange={(value) => {
+							if (value) {
+								setShapeType(value as AvatarShapeType);
+							}
+						}}
+					/>
 
 					<InputGrid>
-						<ResponsiveSegementWithLabel
-							value={shapeType}
-							label="Avatar shape"
-							options={AVATAR_SHAPE_SEGMENTED_OPTIONS}
-							onChange={(value) => {
-								if (value) {
-									setShapeType(value as AvatarShape);
-								}
-							}}
-						/>
-
 						<ResponsiveInputWithLabel
 							label="Avatar size"
 							placeholder="Enter avatar size"
-							value={size}
-							onChange={(val) => setSize(val || 0)}
+							value={avatarSize}
+							onChange={(val) => setAvatarSize(val || 0)}
+							type="number"
+						/>
+
+						<ResponsiveInputWithLabel
+							label="Font size"
+							placeholder="Enter font size"
+							value={fontSize}
+							onChange={(val) => setFontSize(val || 0)}
 							type="number"
 						/>
 					</InputGrid>
@@ -99,10 +115,8 @@ const Avatar = () => {
 				<Space direction="vertical" align="center" size={"large"}>
 					<AntAvatar
 						ref={domEl}
-						size={size}
-						shape={
-							shapeType as AvatarShape.Circle | AvatarShape.Square
-						}
+						size={avatarSize}
+						shape={shapeType as "circle" | "square"}
 						style={{
 							backgroundColor: bgColor,
 							color: textColor,
@@ -110,6 +124,7 @@ const Avatar = () => {
 								shapeType === "custom"
 									? `${customBorderRadius}px`
 									: "",
+							fontSize,
 						}}
 					>
 						{text}
