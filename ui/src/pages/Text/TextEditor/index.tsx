@@ -69,6 +69,7 @@ const TextEditor: React.FC = () => {
 								"help",
 								"wordcount",
 								"charcount",
+								"fullscreen",
 							],
 
 							skin: isDarkMode ? "oxide-dark" : "oxide",
@@ -105,13 +106,18 @@ const TextEditor: React.FC = () => {
 										wordcount.selection.getCharacterCountWithoutSpaces()
 									);
 								});
+								editor.on("keydown", function (e) {
+									if (e.key === "Escape") {
+										editor.execCommand("mceFullScreen");
+									}
+								});
 							},
 
 							toolbar:
 								"undo redo | blocks | " +
 								"bold italic forecolor | alignleft aligncenter " +
 								"alignright alignjustify | bullist numlist outdent indent | " +
-								"removeformat  | help | clearbutton | copytoclipboard | showcounts",
+								"removeformat  | help | clearbutton | copytoclipboard | showcounts | fullscreen",
 							content_style:
 								"body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
 						}}

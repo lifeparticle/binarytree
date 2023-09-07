@@ -22,11 +22,11 @@ const Header: React.FC = () => {
 				isDarkMode ? style.header_dark : style.header_light
 			)}
 		>
-			<ResponsiveButton type="text">
-				<Link to={"/"}>
+			<Link to={"/"}>
+				<ResponsiveButton type="text">
 					<Icon name="Hexagon" color={colorText} size={24} />
-				</Link>
-			</ResponsiveButton>
+				</ResponsiveButton>
+			</Link>
 		</Space>
 	);
 };
