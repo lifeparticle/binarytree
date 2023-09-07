@@ -11,6 +11,7 @@ import {
 } from "components/General/FormComponents";
 import { BORDER_STYLES, SEGMENTED_OPTIONS } from "./utils/constants";
 import ColorPickerWithInput from "components/General/ColorPickerWithInput";
+import InputGrid from "components/Layouts/InputGrid";
 
 const PARAGRAPHS = faker.lorem.paragraph(7);
 
@@ -42,7 +43,7 @@ const BorderRadius = () => {
 		<PageGrid className={style.br}>
 			<Card>
 				<Form layout="vertical">
-					<PageGrid>
+					<InputGrid>
 						<ColorPickerWithInput
 							label="Color"
 							value={borderColor}
@@ -59,9 +60,10 @@ const BorderRadius = () => {
 								options={BORDER_STYLES}
 							/>
 						</Form.Item>
-					</PageGrid>
+					</InputGrid>
 
 					<ResponsiveSegementWithLabel
+						label="Radius type"
 						value={borderType}
 						onChange={(value: string | number) =>
 							setBorderType(value as string)

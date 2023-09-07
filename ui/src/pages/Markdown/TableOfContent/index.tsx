@@ -94,7 +94,7 @@ const TableOfContent: React.FC = () => {
 	};
 
 	return (
-		<PageGrid>
+		<PageGrid className={style.toc}>
 			<Card>
 				<Form layout="vertical">
 					<CopyInput>
@@ -120,7 +120,7 @@ const TableOfContent: React.FC = () => {
 							onChange={(event) =>
 								onMarkdownChange(event.currentTarget.value)
 							}
-							rows={20}
+							rows={10}
 						/>
 					</Form.Item>
 				</Form>
@@ -134,7 +134,7 @@ const TableOfContent: React.FC = () => {
 					/>
 
 					<Form.Item label="Output">
-						<TextArea value={tableOfContents} rows={20} />
+						<TextArea value={tableOfContents} rows={10} />
 					</Form.Item>
 				</Form>
 			</Card>
