@@ -108,7 +108,11 @@ const TextEditor: React.FC = () => {
 								});
 								editor.on("keydown", function (e) {
 									if (e.key === "Escape") {
-										editor.execCommand("mceFullScreen");
+										if (
+											editor.plugins.fullscreen.isFullscreen()
+										) {
+											editor.execCommand("mceFullScreen");
+										}
 									}
 								});
 							},
