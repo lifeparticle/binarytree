@@ -98,10 +98,7 @@ const Avatar = () => {
 							}}
 						/>
 						{shapeType === AvatarShape.Custom && (
-							<Form.Item
-								label="Avatar border radius"
-								style={{ paddingLeft: "10px" }}
-							>
+							<Form.Item label="Avatar border radius">
 								<Slider
 									defaultValue={0}
 									value={customBorderRadius}
