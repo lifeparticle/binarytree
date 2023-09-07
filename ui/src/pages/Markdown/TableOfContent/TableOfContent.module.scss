@@ -1,10 +1,16 @@
 .toc {
-	height: calc(100dvh - 70px);
 	overflow: hidden;
 
+	&__output,
+	&__input {
+		height: calc(100dvh - 75px);
+	}
+
 	&__output {
-		display: grid;
-		gap: var(--bt-size-30);
-		margin-top: var(--bt-size-24);
+		&_form {
+			display: grid;
+			gap: var(--bt-size-30);
+			margin-top: var(--bt-size-24);
+		}
 	}
 }
