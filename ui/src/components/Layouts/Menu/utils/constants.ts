@@ -2,6 +2,8 @@ import { MenuProps } from "antd";
 import { IconName } from "components/General/Icon/utils/types";
 import { getItem } from "components/Layouts/Menu/utils/helper";
 
+const IN_DEVELOPMENT = import.meta.env.DEV;
+
 export const MENU_ITEMS = [
 	{
 		name: "Colors",
@@ -32,6 +34,12 @@ export const MENU_ITEMS = [
 				url: "/css/br",
 				icon: "Square",
 				show: true,
+			},
+			{
+				name: "Border Shadow",
+				url: "/css/bs",
+				icon: "Box",
+				show: IN_DEVELOPMENT,
 			},
 		],
 	},
