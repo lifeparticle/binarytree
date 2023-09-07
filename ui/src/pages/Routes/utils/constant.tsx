@@ -5,6 +5,7 @@ import {
 	Blog,
 	Book,
 	BorderRadius,
+	BoxShadow,
 	ColorPicker,
 	Course,
 	DesignSystem,
@@ -48,6 +49,11 @@ const routes: Route[] = [
 		path: "/css/br",
 		title: "Border Radius",
 		component: BorderRadius,
+	},
+	{
+		path: "/css/bs",
+		title: "Border Shadow",
+		component: BoxShadow,
 	},
 	{
 		path: "/converter/base-64",

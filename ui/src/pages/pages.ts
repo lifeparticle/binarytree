@@ -7,6 +7,7 @@ const ColorPicker = lazy(() => import("pages/Colors/ColorPicker"));
 const ShadesAndTints = lazy(() => import("pages/Colors/ShadesAndTints"));
 
 const BorderRadius = lazy(() => import("pages/CSS/BorderRadius"));
+const BoxShadow = lazy(() => import("pages/CSS/BoxShadow"));
 
 const Base64 = lazy(() => import("pages/Converter/Base64"));
 const Pixel = lazy(() => import("pages/Converter/Pixel"));
@@ -49,6 +50,7 @@ export {
 	Blog,
 	Book,
 	BorderRadius,
+	BoxShadow,
 	ColorPicker,
 	Course,
 	DesignSystem,
