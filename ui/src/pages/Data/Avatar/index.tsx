@@ -86,29 +86,33 @@ const Avatar = () => {
 						/>
 					</InputGrid>
 
-					<ResponsiveSegementWithLabel
-						value={shapeType}
-						label="Avatar shape"
-						options={AVATAR_SHAPE_SEGMENTED_OPTIONS}
-						onChange={(value) => {
-							if (value) {
-								setShapeType(value as AvatarShapeType);
-							}
-						}}
-					/>
-
-					{shapeType === AvatarShape.Custom && (
-						<Form.Item label="Avatar border radius">
-							<Slider
-								defaultValue={0}
-								value={customBorderRadius}
-								onChange={(value) =>
-									value !== null &&
-									setCustomBorderRadius(value)
+					<InputGrid>
+						<ResponsiveSegementWithLabel
+							value={shapeType}
+							label="Avatar shape"
+							options={AVATAR_SHAPE_SEGMENTED_OPTIONS}
+							onChange={(value) => {
+								if (value) {
+									setShapeType(value as AvatarShapeType);
 								}
-							/>
-						</Form.Item>
-					)}
+							}}
+						/>
+						{shapeType === AvatarShape.Custom && (
+							<Form.Item
+								label="Avatar border radius"
+								style={{ paddingLeft: "10px" }}
+							>
+								<Slider
+									defaultValue={0}
+									value={customBorderRadius}
+									onChange={(value) =>
+										value !== null &&
+										setCustomBorderRadius(value)
+									}
+								/>
+							</Form.Item>
+						)}
+					</InputGrid>
 				</Form>
 			</Card>
 
