@@ -95,7 +95,7 @@ const TableOfContent: React.FC = () => {
 
 	return (
 		<PageGrid className={style.toc}>
-			<Card>
+			<Card className={style.toc__input}>
 				<Form layout="vertical">
 					<CopyInput>
 						<ResponsiveInputWithLabel
@@ -115,26 +115,35 @@ const TableOfContent: React.FC = () => {
 					</CopyInput>
 					<Form.Item label="Content">
 						<TextArea
+							style={{
+								height: "calc(100dvh - 250px)",
+							}}
 							placeholder=""
 							value={markdown}
 							onChange={(event) =>
 								onMarkdownChange(event.currentTarget.value)
 							}
-							rows={10}
+							autoSize={false}
 						/>
 					</Form.Item>
 				</Form>
 			</Card>
 
-			<Card>
-				<Form layout="vertical" className={style.toc__output}>
+			<Card className={style.toc__output}>
+				<Form layout="vertical" className={style.toc__output_form}>
 					<Clipboard
 						text={tableOfContents}
 						clipboardComponent={ClipboardButton}
 					/>
 
 					<Form.Item label="Output">
-						<TextArea value={tableOfContents} rows={10} />
+						<TextArea
+							value={tableOfContents}
+							style={{
+								height: "calc(100dvh - 250px)",
+							}}
+							autoSize={false}
+						/>
 					</Form.Item>
 				</Form>
 			</Card>
