@@ -67,16 +67,6 @@ const Avatar = () => {
 							setColor={setBgColor}
 						/>
 					</InputGrid>
-					<ResponsiveSegementWithLabel
-						value={shapeType}
-						label="Avatar shape"
-						options={AVATAR_SHAPE_SEGMENTED_OPTIONS}
-						onChange={(value) => {
-							if (value) {
-								setShapeType(value as AvatarShapeType);
-							}
-						}}
-					/>
 
 					<InputGrid>
 						<ResponsiveInputWithLabel
@@ -95,6 +85,17 @@ const Avatar = () => {
 							type="number"
 						/>
 					</InputGrid>
+
+					<ResponsiveSegementWithLabel
+						value={shapeType}
+						label="Avatar shape"
+						options={AVATAR_SHAPE_SEGMENTED_OPTIONS}
+						onChange={(value) => {
+							if (value) {
+								setShapeType(value as AvatarShapeType);
+							}
+						}}
+					/>
 
 					{shapeType === AvatarShape.Custom && (
 						<Form.Item label="Avatar border radius">
