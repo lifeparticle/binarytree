@@ -13,7 +13,7 @@ import { BORDER_STYLES, SEGMENTED_OPTIONS } from "./utils/constants";
 import ColorPickerWithInput from "components/General/ColorPickerWithInput";
 import InputGrid from "components/Layouts/InputGrid";
 
-const PARAGRAPHS = faker.lorem.paragraph(7);
+const PARAGRAPHS = faker.lorem.lines(7);
 
 const BorderRadius = () => {
 	const [border, setBorder] = useState(5);
