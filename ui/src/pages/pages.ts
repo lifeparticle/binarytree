@@ -41,6 +41,8 @@ const TextEditor = lazy(() => import("pages/Text/TextEditor"));
 
 const News = lazy(() => import("pages/News"));
 
+const PageNotFound = lazy(() => import("pages/PageNotFound"));
+
 export {
 	About,
 	Base64,
@@ -72,4 +74,5 @@ export {
 	TvSeries,
 	UiUx,
 	YouTube,
+	PageNotFound,
 };
