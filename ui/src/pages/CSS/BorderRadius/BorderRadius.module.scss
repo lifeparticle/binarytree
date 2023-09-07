@@ -1,16 +1,18 @@
 .br {
 	&__input,
 	&__output {
-		min-height: 550px;
+		min-height: 500px;
+		max-height: 500px;
 	}
 	&__output {
 		display: flex;
 		justify-content: center;
+		overflow-y: scroll;
+		gap: 16px;
 
 		&_text,
 		&_img {
 			width: 100%;
-			aspect-ratio: 7 / 3;
 			display: flex;
 			align-items: center;
 			justify-content: center;
