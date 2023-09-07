@@ -20,11 +20,14 @@
 		&__status {
 			width: var(--bt-size-7);
 			height: var(--bt-size-7);
-			background-color: red;
+			background-color: #c83939;
 			position: absolute;
 			border-radius: 100%;
 			top: var(--bt-size-5);
-			right: var(--bt-size-15);
+			right: 17px;
+			border-color: white;
+			border-width: 1px;
+			border-style: solid;
 		}
 	}
 
