@@ -105,3 +105,7 @@ h5 {
 	/* can we do better? */
 	border-radius: 10px 10px 0px 0px !important;
 }
+
+.ant-select-selection-search-input {
+	font-size: 16px;
+}

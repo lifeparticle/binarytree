@@ -183,6 +183,13 @@ const FEATURE_DATA: Feature[] = [
 		library: [{ name: "values.js", url: LIBRARY_URLS["values.js"] }],
 	},
 	{
+		key: "15",
+		name: "Border Radius",
+		description: "Choose your desired border radius",
+		link: "/css/br",
+		library: [{ name: "faker.js", url: LIBRARY_URLS["faker-js"] }],
+	},
+	{
 		key: "3",
 		name: "Base 64 Converter",
 		description: "Convert text to base64",
