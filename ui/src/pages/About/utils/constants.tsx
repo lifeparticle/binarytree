@@ -183,28 +183,28 @@ const FEATURE_DATA: Feature[] = [
 		library: [{ name: "values.js", url: LIBRARY_URLS["values.js"] }],
 	},
 	{
-		key: "15",
+		key: "3",
 		name: "Border Radius",
 		description: "Choose your desired border radius",
 		link: "/css/br",
 		library: [{ name: "faker.js", url: LIBRARY_URLS["faker-js"] }],
 	},
 	{
-		key: "3",
+		key: "4",
 		name: "Base 64 Converter",
 		description: "Convert text to base64",
 		link: "/converter/base-64",
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
-		key: "4",
+		key: "5",
 		name: "Pixel converter",
 		description: "Convert pixel to rem",
 		link: "/converter/pixel",
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
-		key: "5",
+		key: "6",
 		name: "Json to typescript converter",
 		description: "Convert Json to typescript",
 		link: "/converter/jtt",
@@ -216,7 +216,7 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "6",
+		key: "7",
 		name: "Data Generator",
 		description: "Generate any type of data",
 		link: "/generator/data",
@@ -232,7 +232,7 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "7",
+		key: "8",
 		name: "Image generate from colors",
 		description: "Generate image from color code",
 		link: "/generator/igfc",
@@ -252,7 +252,7 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "14",
+		key: "9",
 		name: "Avatar generator",
 		description: "Generate avatar from text",
 		link: "/generator/avatar",
@@ -268,21 +268,21 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "8",
+		key: "10",
 		name: "Sorting",
 		description: "Sort numbers or strings",
 		link: "/generator/sorting",
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
-		key: "9",
+		key: "11",
 		name: "List",
 		description: "List of things",
 		link: "/list",
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
-		key: "10",
+		key: "12",
 		name: "Markdown Editor",
 		description: "Write markdown and download",
 		link: "/markdown/me",
@@ -294,7 +294,7 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "11",
+		key: "13",
 		name: "Markdown table generator",
 		description: "Generate a table from the markdown",
 		link: "/markdown/md-table-generator",
@@ -306,7 +306,7 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "12",
+		key: "14",
 		name: "Markdown table of content",
 		description: "Generate table from markdown",
 		link: "/markdown/toc",
@@ -318,7 +318,7 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "13",
+		key: "15",
 		name: "Text Editor",
 		description: "Generate rich text",
 		link: "/text/te",
@@ -328,6 +328,13 @@ const FEATURE_DATA: Feature[] = [
 				url: LIBRARY_URLS["marked"],
 			},
 		],
+	},
+	{
+		key: "16",
+		name: "News",
+		description: "Tech news",
+		link: "/",
+		library: [{ name: "Vanilla JS", url: "" }],
 	},
 ];
 
