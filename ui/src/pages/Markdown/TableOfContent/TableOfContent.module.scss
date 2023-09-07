@@ -1,4 +1,7 @@
 .toc {
+	height: calc(100dvh - 70px);
+	overflow: hidden;
+
 	&__output {
 		display: grid;
 		gap: var(--bt-size-30);
