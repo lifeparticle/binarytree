@@ -11,6 +11,7 @@
 | 7   | Avatar             | Yes    |
 | 8   | Sorting            | Yes    |
 | 9   | Text Editor        | Yes    |
+| 10  | News               | Yes    |
 
 | No  | Name                     | Status |
 | --- | ------------------------ | ------ |
@@ -28,6 +29,7 @@
 | 1   | Footer | Yes    |
 | 2   | Menu   | Yes    |
 
-| No  | Name   | Status |
-| --- | ------ | ------ |
-| 3   | Hedaer | No     |
+| No  | Name             | Status |
+| --- | ---------------- | ------ |
+| 3   | Hedaer           | No     |
+| 4   | ListSearchResult | Yes    |
