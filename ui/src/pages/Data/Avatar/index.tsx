@@ -18,7 +18,7 @@ import InputGrid from "components/Layouts/InputGrid";
 import style from "./Avatar.module.scss";
 
 const Avatar = () => {
-	const [text, setText] = useState<string>("AR");
+	const [text, setText] = useState<string>("BT");
 	const [textColor, setTextColor] = useState<string>(
 		"rgba(255, 255, 255, 1)"
 	);

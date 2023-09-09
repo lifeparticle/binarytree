@@ -108,7 +108,7 @@ const About = () => {
 				<div className={style.about__socials}>
 					<ResponsiveButton
 						key="Github"
-						type="primary"
+						type="default"
 						shape="circle"
 						icon={<Icon name="Github" />}
 						onClick={() =>

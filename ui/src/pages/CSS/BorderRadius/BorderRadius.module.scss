@@ -4,10 +4,7 @@
 		height: 100%;
 	}
 	&__output {
-		display: flex;
-		justify-content: center;
 		overflow-y: scroll;
-		gap: 16px;
 
 		&_text,
 		&_img {
@@ -15,6 +12,10 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			height: 220px;
+		}
+		&_img {
+			object-fit: cover;
 		}
 
 		&_text {
