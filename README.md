@@ -4,15 +4,9 @@
   <img src="https://github.com/lifeparticle/lifeparticle/blob/master/gh_social.png" alt="binary tree logo" height="130" align="right"/>
 </a>
 
-<kbd> <br> [binarytree.dev](https://binarytree.dev) <br> </kbd> offers a range of developer productivity tools to save time.
+At [binarytree.dev](https://binarytree.dev/about), we provide an array of developer productivity tools designed to help you save time. With an ever-growing number of features (currently <b>16</b>), our platform is constantly evolving to meet the needs of developers like you.
 
-### [About](https://binarytree.dev/about)
-
-### [Feedback](https://binarytree.dev/feedback)
-
-#### Tips
-
-Press key <kbd> <br> ControlLeft + e <br> </kbd> for example input and press key <kbd> <br> ControlLeft + r <br> </kbd> to reset the example input.
+Your [opinions and feedback](https://binarytree.dev/feedback) about our service are highly valuable to us. We eagerly look forward to hearing from you.
 
 ### Status
 
