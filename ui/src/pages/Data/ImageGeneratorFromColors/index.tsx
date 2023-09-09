@@ -72,6 +72,7 @@ const ImageGeneratorFromColors: React.FC = () => {
 							}
 							value={value}
 							data-gramm={false}
+							allowClear
 						/>
 					</Form.Item>
 				</Card>
