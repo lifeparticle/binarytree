@@ -116,13 +116,7 @@ h5 {
 }
 
 /* collapmenu align center */
-:where(.css-dev-only-do-not-override-1jglot0).ant-menu-submenu-popup
-	.ant-menu-vertical
-	> .ant-menu-item,
-:where(.css-dev-only-do-not-override-1jglot0).ant-menu-submenu-popup
-	.ant-menu-vertical
-	> .ant-menu-submenu
-	> .ant-menu-submenu-title {
+.ant-menu-submenu-popup .ant-menu-vertical > .ant-menu-item {
 	display: flex;
 	align-items: center;
 }
