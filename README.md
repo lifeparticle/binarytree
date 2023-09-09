@@ -1,5 +1,9 @@
 ## Binary Tree
 
+<a href="https://binarytree.dev/" target="_blank">
+  <img src="https://github.com/lifeparticle/binarytree/assets/1612112/6f63be18-2c59-4713-91a4-260c3a4e12fe" alt="binary tree logo" height="200" align="right"/>
+</a>
+
 <kbd> <br> [binarytree.dev](https://binarytree.dev) <br> </kbd> offers a range of developer productivity tools to save time.
 
 ### [About](https://binarytree.dev/about)
