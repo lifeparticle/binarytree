@@ -44,7 +44,7 @@ const DisplayColor: React.FC<DisplayColorProps> = ({
 	return (
 		<div className={classes} style={containerStyle}>
 			<Title level={5} style={titleStyle}>
-				{customLabel}: {customValue}
+				{customLabel}: {color ? customValue : ""}
 			</Title>
 			<Clipboard text={value} clipboardComponent={ClipboardButton} />
 		</div>
