@@ -4,12 +4,11 @@ import style from "./header.module.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 import { classNames } from "lib/utils/helper";
-import Icon from "components/General/Icon";
-import { ResponsiveButton } from "components/General/FormComponents";
+import logo_light from "assets/logo_light.svg";
 
 const Header: React.FC = () => {
 	const {
-		token: { colorBgContainer, colorText },
+		token: { colorBgContainer },
 	} = theme.useToken();
 
 	const { isDarkMode } = useContext(DarkModeContext);
@@ -23,9 +22,11 @@ const Header: React.FC = () => {
 			)}
 		>
 			<Link to={"/"}>
-				<ResponsiveButton type="text">
-					<Icon name="Hexagon" color={colorText} size={24} />
-				</ResponsiveButton>
+				<img
+					src={isDarkMode ? logo_light : logo_light}
+					height={60}
+					width={60}
+				/>
 			</Link>
 		</Space>
 	);
