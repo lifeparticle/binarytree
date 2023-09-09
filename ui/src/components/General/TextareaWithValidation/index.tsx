@@ -12,7 +12,7 @@ const TextareaWithValidation: React.FC<TextareaWithValidationProps> = (
 	return (
 		<div className={style.textareaContainer}>
 			<Form.Item label={label}>
-				<TextArea data-gramm={false} {...textareaProps} />
+				<TextArea data-gramm={false} {...textareaProps} allowClear />
 			</Form.Item>
 
 			<ValidationStatus status={status} />

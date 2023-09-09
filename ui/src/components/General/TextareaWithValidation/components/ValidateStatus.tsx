@@ -1,28 +1,31 @@
-import { Space } from "antd";
+import { Space, theme } from "antd";
 import React from "react";
 import style from "components/General/TextareaWithValidation/TextareaWithValidation.module.scss";
 import Icon from "components/General/Icon";
-import { ResponsiveButton } from "components/General/FormComponents";
+import { ValidateStatusPropsType } from "./utils/types";
 
-interface ValidateStatusProps {
-	status: string;
-}
-
-const ValidateStatus: React.FC<ValidateStatusProps> = ({ status }) => {
+const ValidateStatus: React.FC<ValidateStatusPropsType> = ({ status }) => {
 	if (status.length === 0) {
 		return null;
 	}
 
+	const {
+		token: { colorBgContainer },
+	} = theme.useToken();
+
 	return (
-		<Space className={style.textareaContainer__validator}>
+		<Space
+			className={style.textareaContainer__validator}
+			style={{ backgroundColor: colorBgContainer }}
+		>
 			{status === "valid" ? (
-				<ResponsiveButton size="small" style={{ borderColor: "green" }}>
+				<span className={style.textareaContainer__validator__success}>
 					<Icon name="Check" color="green" />
-				</ResponsiveButton>
+				</span>
 			) : (
-				<ResponsiveButton size="small" danger>
-					<Icon name="X" />
-				</ResponsiveButton>
+				<span className={style.textareaContainer__validator__failed}>
+					<Icon name="X" color="red" />
+				</span>
 			)}
 		</Space>
 	);
