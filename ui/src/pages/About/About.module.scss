@@ -10,6 +10,8 @@
 
 	&__intro {
 		position: relative;
+		min-height: 250px;
+
 		&_wrapper {
 			position: absolute;
 			top: 0;
@@ -27,13 +29,14 @@
 				text-align: center;
 				color: white;
 				max-width: 80vw;
-				box-sizing: border-box;
 			}
 		}
 
 		&_img {
 			width: 100%;
 			height: 250px;
+			object-fit: cover;
+			background-color: #71727e;
 		}
 	}
 

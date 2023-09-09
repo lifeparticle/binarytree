@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 import { classNames } from "lib/utils/helper";
 import logo_light from "assets/logo_light.svg";
+import logo_dark from "assets/logo_dark.svg";
 
 const Header: React.FC = () => {
 	const {
@@ -23,7 +24,7 @@ const Header: React.FC = () => {
 		>
 			<Link to={"/"}>
 				<img
-					src={isDarkMode ? logo_light : logo_light}
+					src={isDarkMode ? logo_dark : logo_light}
 					height={60}
 					width={60}
 				/>

@@ -41,6 +41,7 @@ const About = () => {
 						</Typography.Paragraph>
 					</div>
 					<img
+						loading="lazy"
 						alt="about"
 						src={about}
 						className={style.about__intro_img}

@@ -109,3 +109,8 @@ h5 {
 .ant-select-selection-search-input {
 	font-size: 16px;
 }
+
+.ant-card-cover img {
+	/* can we do better? */
+	border-radius: 0 0 0 0 !important;
+}
