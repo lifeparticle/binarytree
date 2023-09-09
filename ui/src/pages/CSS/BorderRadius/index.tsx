@@ -51,16 +51,16 @@ const BorderRadius = () => {
 								setValue={(e) => setBorderColor(e.target.value)}
 								setColor={setBorderColor}
 							/>
-							<Form.Item label="Border style">
-								<ResponsiveSelectWithLabel
-									value={borderStyle}
-									defaultActiveFirstOption
-									onSelect={(_, option) =>
-										setBorderStyle(option.value)
-									}
-									options={BORDER_STYLES}
-								/>
-							</Form.Item>
+
+							<ResponsiveSelectWithLabel
+								label="Border style"
+								value={borderStyle}
+								defaultActiveFirstOption
+								onSelect={(_, option) =>
+									setBorderStyle(option.value)
+								}
+								options={BORDER_STYLES}
+							/>
 						</InputGrid>
 
 						<ResponsiveSegementWithLabel
@@ -146,7 +146,7 @@ const BorderRadius = () => {
 					</Form>
 				</Card>
 
-				<Card className={style.br__output}>
+				<Card className={style.br__output} style={{ overflow: "auto" }}>
 					<Space direction="vertical">
 						<img
 							src={about}
