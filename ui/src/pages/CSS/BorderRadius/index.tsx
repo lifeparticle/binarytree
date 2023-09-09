@@ -36,7 +36,7 @@ const BorderRadius = () => {
 
 		const borderShorthandString = `border: ${borderWidth}px ${borderStyle} ${borderColor};`;
 
-		return `${borderRadiusString}\n${borderWidthString}\n${borderColorString}\n${borderStyleString}\n\n// Shorthand Property\n${borderRadiusString}\n${borderShorthandString}`;
+		return `${borderRadiusString}\n${borderWidthString}\n${borderColorString}\n${borderStyleString}\n\n// Shorthand Property\n// top left, top right, bottom right, bottom left\n${borderRadiusString}\n${borderShorthandString}`;
 	};
 
 	return (
