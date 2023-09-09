@@ -114,3 +114,15 @@ h5 {
 	/* can we do better? */
 	border-radius: 0 0 0 0 !important;
 }
+
+/* collapmenu align center */
+:where(.css-dev-only-do-not-override-1jglot0).ant-menu-submenu-popup
+	.ant-menu-vertical
+	> .ant-menu-item,
+:where(.css-dev-only-do-not-override-1jglot0).ant-menu-submenu-popup
+	.ant-menu-vertical
+	> .ant-menu-submenu
+	> .ant-menu-submenu-title {
+	display: flex;
+	align-items: center;
+}
