@@ -4,6 +4,7 @@ import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import { classNames, getTextColor, isTransparent } from "lib/utils/helper";
 import { DisplayColorProps } from "pages/Colors/ColorPicker/utils/types";
+import { useSearchParams } from "react-router-dom";
 
 const { Title } = Typography;
 
@@ -14,6 +15,9 @@ const DisplayColor: React.FC<DisplayColorProps> = ({
 	value,
 	format,
 }) => {
+	const colorSearchParams = useSearchParams();
+	const color = colorSearchParams?.[0].get("color");
+
 	const isLabelMatchingFormat = label.toLocaleLowerCase() === format;
 	const backgroundColor = isLabelMatchingFormat ? value : "";
 	const textColor = isLabelMatchingFormat ? getTextColor(value) : "";
@@ -24,15 +28,18 @@ const DisplayColor: React.FC<DisplayColorProps> = ({
 		isTransparent(backgroundColor) ? style.cd__checkered : undefined
 	);
 
+	const containerStyle = {
+		backgroundColor: color ? backgroundColor : "#fff",
+		border: color ? border : "1px solid #ddd",
+	};
+
+	const titleStyle = {
+		color: color ? textColor : "#000",
+	};
+
 	return (
-		<div
-			className={classes}
-			style={{
-				backgroundColor,
-				border,
-			}}
-		>
-			<Title level={5} style={{ color: textColor }}>
+		<div className={classes} style={containerStyle}>
+			<Title level={5} style={titleStyle}>
 				{customLabel}: {customValue}
 			</Title>
 			<Clipboard text={value} clipboardComponent={ClipboardButton} />

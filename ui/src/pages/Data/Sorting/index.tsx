@@ -54,6 +54,7 @@ const Sorting: React.FC = () => {
 								setInput(event.currentTarget.value);
 							}}
 							data-gramm={false}
+							allowClear
 						/>
 					</Form.Item>
 				</Card>

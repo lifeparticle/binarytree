@@ -1,5 +1,5 @@
 .md {
-	height: calc(100dvh - 75px);
+	height: var(--bt-full-page-height);
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
