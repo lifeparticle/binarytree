@@ -1,4 +1,4 @@
-import { Typography } from "antd";
+import { Typography, theme } from "antd";
 import style from "./DisplayColor.module.scss";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
@@ -15,6 +15,10 @@ const DisplayColor: React.FC<DisplayColorProps> = ({
 	value,
 	format,
 }) => {
+	const {
+		token: { colorBgContainer, colorText },
+	} = theme.useToken();
+
 	const colorSearchParams = useSearchParams();
 	const color = colorSearchParams?.[0].get("color");
 
@@ -29,12 +33,12 @@ const DisplayColor: React.FC<DisplayColorProps> = ({
 	);
 
 	const containerStyle = {
-		backgroundColor: color ? backgroundColor : "#fff",
-		border: color ? border : "1px solid #ddd",
+		backgroundColor: color ? backgroundColor : colorBgContainer,
+		border: color ? border : "none",
 	};
 
 	const titleStyle = {
-		color: color ? textColor : "#000",
+		color: color ? textColor : colorText,
 	};
 
 	return (
