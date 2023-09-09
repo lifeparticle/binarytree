@@ -4,7 +4,7 @@
   <img src="https://github.com/lifeparticle/lifeparticle/blob/master/gh_social.png" alt="binary tree logo" height="130" align="right"/>
 </a>
 
-At binarytree.dev, we provide an array of developer productivity tools designed to help you save time. With an ever-growing number of features (currently <b>16</b>), our platform is constantly evolving to meet the needs of developers like you.
+At [binarytree.dev](https://binarytree.dev/about), we provide an array of developer productivity tools designed to help you save time. With an ever-growing number of features (currently <b>16</b>), our platform is constantly evolving to meet the needs of developers like you.
 
 Your [opinions and feedback](https://binarytree.dev/feedback) about our service are highly valuable to us. We eagerly look forward to hearing from you.
 
