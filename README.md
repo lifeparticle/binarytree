@@ -1,7 +1,7 @@
 ## Binary Tree
 
 <a href="https://binarytree.dev/" target="_blank">
-  <img src="https://github.com/lifeparticle/binarytree/assets/1612112/ff46286b-3a39-4510-9e4c-2794330bd024" alt="binary tree logo" height="130" align="right"/>
+  <img src="https://github.com/lifeparticle/lifeparticle/blob/master/gh_social.png" alt="binary tree logo" height="130" align="right"/>
 </a>
 
 <kbd> <br> [binarytree.dev](https://binarytree.dev) <br> </kbd> offers a range of developer productivity tools to save time.
