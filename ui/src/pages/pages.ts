@@ -40,6 +40,8 @@ const TableOfContent = lazy(() => import("pages/Markdown/TableOfContent"));
 
 const TextEditor = lazy(() => import("pages/Text/TextEditor"));
 
+const Mimetype = lazy(() => import("pages/info/Mimetype"));
+
 const News = lazy(() => import("pages/News"));
 
 const PageNotFound = lazy(() => import("pages/PageNotFound"));
@@ -76,5 +78,6 @@ export {
 	TvSeries,
 	UiUx,
 	YouTube,
+	Mimetype,
 	PageNotFound,
 };
