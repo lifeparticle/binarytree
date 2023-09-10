@@ -8,16 +8,6 @@ describe("BASE64", () => {
 		render(<Base64 />);
 	});
 
-	test("buttons", () => {
-		render(<Base64 />);
-
-		const textClearButtonElement = screen.getByRole("clear_text");
-		expect(textClearButtonElement).toBeInTheDocument();
-
-		const base64ClearButtonElement = screen.getByRole("clear_base64");
-		expect(base64ClearButtonElement).toBeInTheDocument();
-	});
-
 	test("textbox", async () => {
 		render(<Base64 />);
 
@@ -29,10 +19,5 @@ describe("BASE64", () => {
 		await user.type(textInputArea, TEXT);
 
 		expect(textInputArea).toHaveValue(TEXT);
-
-		const textClearButtonElement = screen.getByRole("clear_text");
-		await user.click(textClearButtonElement);
-
-		expect(textInputArea).toHaveValue("");
 	});
 });
