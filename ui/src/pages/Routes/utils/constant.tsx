@@ -32,6 +32,7 @@ import {
 	YouTube,
 	Avatar,
 	PageNotFound,
+	Mimetype,
 } from "pages/pages";
 
 const routes: Route[] = [
@@ -174,6 +175,11 @@ const routes: Route[] = [
 		path: "/text/te",
 		title: "Text Editor",
 		component: TextEditor,
+	},
+	{
+		path: "/info/mimetype",
+		title: "Mimetype",
+		component: Mimetype,
 	},
 	{
 		path: "/",

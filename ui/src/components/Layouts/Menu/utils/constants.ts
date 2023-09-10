@@ -222,6 +222,19 @@ export const MENU_ITEMS = [
 			},
 		],
 	},
+	{
+		name: "Info",
+		icon: "BadgeInfo",
+		show: true,
+		children: [
+			{
+				name: "Mimetype",
+				url: "/info/mimetype",
+				icon: "ArrowLeftRight",
+				show: true,
+			},
+		],
+	},
 ];
 
 const ITEMS: MenuProps["items"] = [
