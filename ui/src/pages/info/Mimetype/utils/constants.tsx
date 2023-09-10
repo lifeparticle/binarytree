@@ -1,15 +1,23 @@
 import { ColumnsType } from "antd/es/table";
 import { MIME_TABLE_TYPE } from "./types";
-import imageJpg from "assets/about.jpg";
 
 // Define a function to render different MIME types
 const renderMIMEType = (value: string) => {
-	if (value.endsWith(".jpg")) {
+	if (
+		value.endsWith(".jpg") ||
+		value.endsWith(".jpeg") ||
+		value.endsWith(".png") ||
+		value.endsWith(".avif")
+	) {
 		return (
 			<div>
 				<img
-					style={{ width: "80px", height: "50px" }}
-					src={imageJpg}
+					style={{
+						width: "80px",
+						height: "50px",
+						objectFit: "contain",
+					}}
+					src={value}
 					alt=""
 				/>
 			</div>
@@ -26,7 +34,7 @@ const renderMIMEType = (value: string) => {
 	if (value.endsWith(".mp4")) {
 		return (
 			<div>
-				<video width={250} height={100} src={value} controls></video>
+				<video width={200} height={100} src={value} controls></video>
 			</div>
 		);
 	}
@@ -64,7 +72,7 @@ const MIME_DATA: MIME_TABLE_TYPE[] = [
 	{
 		key: "2",
 		name: ".jpeg or .jpg",
-		example: `/bg.jpg`,
+		example: `/mime/image.jpg`,
 		code: "image/jpeg",
 	},
 	{
@@ -83,6 +91,18 @@ const MIME_DATA: MIME_TABLE_TYPE[] = [
 		key: "5",
 		name: ".mp4",
 		example: `/mime/video.mp4`,
+		code: "video/mp4",
+	},
+	{
+		key: "6",
+		name: ".avif",
+		example: `/mime/avif.avif`,
+		code: "video/mp4",
+	},
+	{
+		key: "7",
+		name: ".mp4",
+		example: `/mime/pdf.png`,
 		code: "video/mp4",
 	},
 ];
