@@ -3,17 +3,21 @@
 	&__output {
 		height: 100%;
 	}
+
 	&__output {
-		overflow-y: scroll;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 		&_text,
 		&_img {
-			width: 100%;
+			aspect-ratio: 1 / 1;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			height: 220px;
 		}
+
 		&_img {
 			object-fit: cover;
 		}
