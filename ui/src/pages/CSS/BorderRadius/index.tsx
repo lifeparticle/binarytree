@@ -14,6 +14,7 @@ import ColorPickerWithInput from "components/General/ColorPickerWithInput";
 import InputGrid from "components/Layouts/InputGrid";
 
 const PARAGRAPHS = faker.lorem.lines(7);
+const RADIUS_ROUND = 1e5;
 
 const BorderRadius = () => {
 	const [border, setBorder] = useState(5);
@@ -66,9 +67,30 @@ const BorderRadius = () => {
 						<ResponsiveSegementWithLabel
 							label="Border type"
 							value={borderType}
-							onChange={(value: string | number) =>
-								setBorderType(value as string)
-							}
+							onChange={(value: string | number) => {
+								setBorderType(value as string);
+								if (value === SEGMENTED_OPTIONS[1].value) {
+									setBorder(RADIUS_ROUND);
+									setBorderRadiusTopLeft(RADIUS_ROUND);
+									setBorderRadiusTopRight(RADIUS_ROUND);
+									setBorderRadiusBottomLeft(RADIUS_ROUND);
+									setBorderRadiusBottomRight(RADIUS_ROUND);
+								} else if (
+									value === SEGMENTED_OPTIONS[2].value
+								) {
+									setBorder(0);
+									setBorderRadiusTopLeft(0);
+									setBorderRadiusTopRight(0);
+									setBorderRadiusBottomLeft(0);
+									setBorderRadiusBottomRight(0);
+								} else {
+									setBorder(0);
+									setBorderRadiusTopLeft(0);
+									setBorderRadiusTopRight(0);
+									setBorderRadiusBottomLeft(0);
+									setBorderRadiusBottomRight(0);
+								}
+							}}
 							options={SEGMENTED_OPTIONS}
 						/>
 						<InputGrid>
@@ -146,8 +168,8 @@ const BorderRadius = () => {
 					</Form>
 				</Card>
 
-				<Card className={style.br__output} style={{ overflow: "auto" }}>
-					<Space direction="vertical">
+				<Card className={style.br__output}>
+					<Space direction="horizontal">
 						<img
 							src={about}
 							onClick={() =>
