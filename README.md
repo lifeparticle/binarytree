@@ -17,3 +17,14 @@ Your [opinions and feedback](https://binarytree.dev/feedback) about our service 
 | UI PR      | [![UI PR](https://github.com/lifeparticle/binarytree/actions/workflows/ui-pr.yml/badge.svg)](https://github.com/lifeparticle/binarytree/actions/workflows/ui-pr.yml)           |
 | CodeQL     | [![CodeQL](https://github.com/lifeparticle/binarytree/actions/workflows/codeql.yml/badge.svg)](https://github.com/lifeparticle/binarytree/actions/workflows/codeql.yml)        |
 | Sonarcloud | [![Build](https://github.com/lifeparticle/binarytree/actions/workflows/sonarcloud.yml/badge.svg)](https://github.com/lifeparticle/binarytree/actions/workflows/sonarcloud.yml) |
+
+
+## License
+
+### Code
+
+The code in this project is licensed under the Apache-2.0 license. See the [LICENSE](LICENSE) file for details.
+
+### Logo
+
+The project logo is copyrighted and may not be used without explicit permission.
