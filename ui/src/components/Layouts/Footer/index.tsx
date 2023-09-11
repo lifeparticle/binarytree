@@ -24,7 +24,7 @@ const Footer: React.FC<FooterProps> = ({
 			className={style.footer}
 			style={{ backgroundColor: colorBgContainer }}
 		>
-			<a href="https://www.netlify.com">
+			<a href="https://www.netlify.com" target="_blank">
 				<img
 					src={collapsed ? monogram : Logo}
 					className={classNames(
