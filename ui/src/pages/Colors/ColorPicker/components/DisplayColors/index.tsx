@@ -18,7 +18,17 @@ const DisplayColors: React.FC<DisplayColorsProps> = ({
 	title,
 }) => {
 	return (
-		<Card bordered={false} title={title}>
+		<Card
+			bordered={false}
+			title={title}
+			extra={
+				<Clipboard
+					text={generateClipboardText(displayType, colors)}
+					label="Copy All"
+					clipboardComponent={ClipboardButton}
+				/>
+			}
+		>
 			<Space direction="vertical" className={style.dp}>
 				{EXTENDED_DATA_OPTIONS.map(({ value, label }) => (
 					<DisplayColor
@@ -30,11 +40,6 @@ const DisplayColors: React.FC<DisplayColorsProps> = ({
 						format={format}
 					/>
 				))}
-				<Clipboard
-					text={generateClipboardText(displayType, colors)}
-					label="Copy All"
-					clipboardComponent={ClipboardButton}
-				/>
 			</Space>
 		</Card>
 	);

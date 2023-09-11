@@ -42,7 +42,7 @@ const ColorPicker: React.FC = () => {
 		<Form layout="vertical">
 			<div className={style.cp}>
 				<Card bordered={false}>
-					<Space size="large" direction="vertical" wrap>
+					<Space direction="vertical" wrap>
 						<CopyInput>
 							<ResponsiveInputWithLabel
 								label="Color code"
@@ -55,12 +55,12 @@ const ColorPicker: React.FC = () => {
 								clipboardComponent={ClipboardButton}
 							/>
 						</CopyInput>
-						<Space size="small" direction="horizontal" wrap>
-							<ColorFormatTags
-								currentFormat={format}
-								onSelect={setFormat}
-							/>
-						</Space>
+
+						<ColorFormatTags
+							currentFormat={format}
+							onSelect={setFormat}
+						/>
+
 						<CP
 							format={format}
 							value={color}
