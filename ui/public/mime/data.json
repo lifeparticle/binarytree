@@ -1,0 +1,400 @@
+[
+	{
+		"name": ".aac",
+		"example": "AAC audio",
+		"code": { "content-type": "audio/aac" }
+	},
+	{
+		"name": ".abw",
+		"example": "AbiWord document",
+		"code": { "content-type": "application/x-abiword" }
+	},
+	{
+		"name": ".arc",
+		"example": "Archive document (multiple files embedded)",
+		"code": { "content-type": "application/x-freearc" }
+	},
+	{
+		"name": ".avif",
+		"example": "AVIF image",
+		"code": { "content-type": "image/avif" }
+	},
+	{
+		"name": ".avi",
+		"example": "AVI: Audio Video Interleave",
+		"code": { "content-type": "video/x-msvideo" }
+	},
+	{
+		"name": ".azw",
+		"example": "Amazon Kindle eBook format",
+		"code": { "content-type": "application/vnd.amazon.ebook" }
+	},
+	{
+		"name": ".bin",
+		"example": "Any kind of binary data",
+		"code": { "content-type": "application/octet-stream" }
+	},
+	{
+		"name": ".bmp",
+		"example": "Windows OS/2 Bitmap Graphics",
+		"code": { "content-type": "image/bmp" }
+	},
+	{
+		"name": ".bz",
+		"example": "BZip archive",
+		"code": { "content-type": "application/x-bzip" }
+	},
+	{
+		"name": ".bz2",
+		"example": "BZip2 archive",
+		"code": { "content-type": "application/x-bzip2" }
+	},
+	{
+		"name": ".cda",
+		"example": "CD audio",
+		"code": { "content-type": "application/x-cdf" }
+	},
+	{
+		"name": ".csh",
+		"example": "C-Shell script",
+		"code": { "content-type": "application/x-csh" }
+	},
+	{
+		"name": ".css",
+		"example": "Cascading Style Sheets (CSS)",
+		"code": { "content-type": "text/css" }
+	},
+	{
+		"name": ".csv",
+		"example": "Comma-separated values (CSV)",
+		"code": { "content-type": "text/csv" }
+	},
+	{
+		"name": ".doc",
+		"example": "Microsoft Word",
+		"code": { "content-type": "application/msword" }
+	},
+	{
+		"name": ".docx",
+		"example": "Microsoft Word (OpenXML)",
+		"code": {
+			"content-type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+		}
+	},
+	{
+		"name": ".eot",
+		"example": "MS Embedded OpenType fonts",
+		"code": { "content-type": "application/vnd.ms-fontobject" }
+	},
+	{
+		"name": ".epub",
+		"example": "Electronic publication (EPUB)",
+		"code": { "content-type": "application/epub+zip" }
+	},
+	{
+		"name": ".gz",
+		"example": "GZip Compressed Archive",
+		"code": { "content-type": "application/gzip" }
+	},
+	{
+		"name": ".gif",
+		"example": "Graphics Interchange Format (GIF)",
+		"code": { "content-type": "image/gif" }
+	},
+	{
+		"name": ".htm",
+		"example": "HyperText Markup Language (HTML)",
+		"code": { "content-type": "text/html" }
+	},
+	{
+		"name": ".html",
+		"example": "HyperText Markup Language (HTML)",
+		"code": { "content-type": "text/html" }
+	},
+	{
+		"name": ".ico",
+		"example": "Icon format",
+		"code": { "content-type": "image/vnd.microsoft.icon" }
+	},
+	{
+		"name": ".ics",
+		"example": "iCalendar format",
+		"code": { "content-type": "text/calendar" }
+	},
+	{
+		"name": ".jar",
+		"example": "Java Archive (JAR)",
+		"code": { "content-type": "application/java-archive" }
+	},
+	{
+		"name": ".jpeg",
+		"example": "JPEG images",
+		"code": { "content-type": "image/jpeg" }
+	},
+	{
+		"name": ".jpg",
+		"example": "JPEG images",
+		"code": { "content-type": "image/jpeg" }
+	},
+	{
+		"name": ".js",
+		"example": "JavaScript",
+		"code": {
+			"content-type": "text/javascript (Specifications: HTML and RFC 9239)"
+		}
+	},
+	{
+		"name": ".json",
+		"example": "JSON format",
+		"code": { "content-type": "application/json" }
+	},
+	{
+		"name": ".jsonld",
+		"example": "JSON-LD format",
+		"code": { "content-type": "application/ld+json" }
+	},
+	{
+		"name": ".mid",
+		"example": "Musical Instrument Digital Interface (MIDI)",
+		"code": { "content-type": "audio/midi, audio/x-midi" }
+	},
+	{
+		"name": ".midi",
+		"example": "Musical Instrument Digital Interface (MIDI)",
+		"code": { "content-type": "audio/midi, audio/x-midi" }
+	},
+	{
+		"name": ".mjs",
+		"example": "JavaScript module",
+		"code": { "content-type": "text/javascript" }
+	},
+	{
+		"name": ".mp3",
+		"example": "MP3 audio",
+		"code": { "content-type": "audio/mpeg" }
+	},
+	{
+		"name": ".mp4",
+		"example": "MP4 video",
+		"code": { "content-type": "video/mp4" }
+	},
+	{
+		"name": ".mpeg",
+		"example": "MPEG Video",
+		"code": { "content-type": "video/mpeg" }
+	},
+	{
+		"name": ".mpkg",
+		"example": "Apple Installer Package",
+		"code": { "content-type": "application/vnd.apple.installer+xml" }
+	},
+	{
+		"name": ".odp",
+		"example": "OpenDocument presentation document",
+		"code": {
+			"content-type": "application/vnd.oasis.opendocument.presentation"
+		}
+	},
+	{
+		"name": ".ods",
+		"example": "OpenDocument spreadsheet document",
+		"code": {
+			"content-type": "application/vnd.oasis.opendocument.spreadsheet"
+		}
+	},
+	{
+		"name": ".odt",
+		"example": "OpenDocument text document",
+		"code": { "content-type": "application/vnd.oasis.opendocument.text" }
+	},
+	{
+		"name": ".oga",
+		"example": "OGG audio",
+		"code": { "content-type": "audio/ogg" }
+	},
+	{
+		"name": ".ogv",
+		"example": "OGG video",
+		"code": { "content-type": "video/ogg" }
+	},
+	{
+		"name": ".ogx",
+		"example": "OGG",
+		"code": { "content-type": "application/ogg" }
+	},
+	{
+		"name": ".opus",
+		"example": "Opus audio",
+		"code": { "content-type": "audio/opus" }
+	},
+	{
+		"name": ".otf",
+		"example": "OpenType font",
+		"code": { "content-type": "font/otf" }
+	},
+	{
+		"name": ".png",
+		"example": "Portable Network Graphics",
+		"code": { "content-type": "image/png" }
+	},
+	{
+		"name": ".pdf",
+		"example": "Adobe Portable Document Format (PDF)",
+		"code": { "content-type": "application/pdf" }
+	},
+	{
+		"name": ".php",
+		"example": "Hypertext Preprocessor (Personal Home Page)",
+		"code": { "content-type": "application/x-httpd-php" }
+	},
+	{
+		"name": ".ppt",
+		"example": "Microsoft PowerPoint",
+		"code": { "content-type": "application/vnd.ms-powerpoint" }
+	},
+	{
+		"name": ".pptx",
+		"example": "Microsoft PowerPoint (OpenXML)",
+		"code": {
+			"content-type": "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+		}
+	},
+	{
+		"name": ".rar",
+		"example": "RAR archive",
+		"code": { "content-type": "application/vnd.rar" }
+	},
+	{
+		"name": ".rtf",
+		"example": "Rich Text Format (RTF)",
+		"code": { "content-type": "application/rtf" }
+	},
+	{
+		"name": ".sh",
+		"example": "Bourne shell script",
+		"code": { "content-type": "application/x-sh" }
+	},
+	{
+		"name": ".svg",
+		"example": "Scalable Vector Graphics (SVG)",
+		"code": { "content-type": "image/svg+xml" }
+	},
+	{
+		"name": ".tar",
+		"example": "Tape Archive (TAR)",
+		"code": { "content-type": "application/x-tar" }
+	},
+	{
+		"name": ".tif",
+		"example": "Tagged Image File Format (TIFF)",
+		"code": { "content-type": "image/tiff" }
+	},
+	{
+		"name": ".tiff",
+		"example": "Tagged Image File Format (TIFF)",
+		"code": { "content-type": "image/tiff" }
+	},
+	{
+		"name": ".ts",
+		"example": "MPEG transport stream",
+		"code": { "content-type": "video/mp2t" }
+	},
+	{
+		"name": ".ttf",
+		"example": "TrueType Font",
+		"code": { "content-type": "font/ttf" }
+	},
+	{
+		"name": ".txt",
+		"example": "Text, (generally ASCII or ISO 8859-n)",
+		"code": { "content-type": "text/plain" }
+	},
+	{
+		"name": ".vsd",
+		"example": "Microsoft Visio",
+		"code": { "content-type": "application/vnd.visio" }
+	},
+	{
+		"name": ".wav",
+		"example": "Waveform Audio Format",
+		"code": { "content-type": "audio/wav" }
+	},
+	{
+		"name": ".weba",
+		"example": "WEBM audio",
+		"code": { "content-type": "audio/webm" }
+	},
+	{
+		"name": ".webm",
+		"example": "WEBM video",
+		"code": { "content-type": "video/webm" }
+	},
+	{
+		"name": ".webp",
+		"example": "WEBP image",
+		"code": { "content-type": "image/webp" }
+	},
+	{
+		"name": ".woff",
+		"example": "Web Open Font Format (WOFF)",
+		"code": { "content-type": "font/woff" }
+	},
+	{
+		"name": ".woff2",
+		"example": "Web Open Font Format (WOFF)",
+		"code": { "content-type": "font/woff2" }
+	},
+	{
+		"name": ".xhtml",
+		"example": "XHTML",
+		"code": { "content-type": "application/xhtml+xml" }
+	},
+	{
+		"name": ".xls",
+		"example": "Microsoft Excel",
+		"code": { "content-type": "application/vnd.ms-excel" }
+	},
+	{
+		"name": ".xlsx",
+		"example": "Microsoft Excel (OpenXML)",
+		"code": {
+			"content-type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+		}
+	},
+	{
+		"name": ".xml",
+		"example": "XML",
+		"code": {
+			"content-type": "application/xml"
+		}
+	},
+	{
+		"name": ".xul",
+		"example": "XUL",
+		"code": { "content-type": "application/vnd.mozilla.xul+xml" }
+	},
+	{
+		"name": ".zip",
+		"example": "ZIP archive",
+		"code": { "content-type": "application/zip" }
+	},
+	{
+		"name": ".3gp",
+		"example": "3GPP audio/video container",
+		"code": {
+			"content-type": "video/3gpp; audio/3gpp if it doesn't contain video"
+		}
+	},
+	{
+		"name": ".3g2",
+		"example": "3GPP2 audio/video container",
+		"code": {
+			"content-type": "video/3gpp2; audio/3gpp2 if it doesn't contain video"
+		}
+	},
+	{
+		"name": ".7z",
+		"example": "7-zip archive",
+		"code": { "content-type": "application/x-7z-compressed" }
+	}
+]
