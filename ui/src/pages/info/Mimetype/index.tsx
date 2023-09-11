@@ -1,19 +1,16 @@
-import { Table } from "antd";
 import React from "react";
-import { MIME_COLUMNS, MIME_DATA } from "./utils/constants";
+
+import useFetchList from "lib/utils/hooks/useFetchList";
+import MimeSearchResult from "./components/MimeSearchResult";
 
 const Mimetype: React.FC = () => {
+	const { data, isError, isLoading } = useFetchList(
+		"mime",
+		"/mime/data.json"
+	);
+
 	return (
-		<div>
-			<Table
-				columns={MIME_COLUMNS}
-				dataSource={MIME_DATA}
-				pagination={false}
-				title={() => "Features"}
-				bordered
-				scroll={{ x: "calc(50%)" }}
-			/>
-		</div>
+		<MimeSearchResult isError={isError} isLoading={isLoading} data={data} />
 	);
 };
 

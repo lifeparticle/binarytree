@@ -1,8 +1,13 @@
-interface MIME_TABLE_TYPE {
-	key: string;
+interface MimeTableDataType {
 	name: string;
 	example: string;
-	code: string;
+	code: { "content-type": string };
 }
 
-export type { MIME_TABLE_TYPE };
+interface MimeSearchResultPropsType {
+	data: MimeTableDataType[];
+	isLoading: boolean;
+	isError: boolean;
+}
+
+export type { MimeTableDataType, MimeSearchResultPropsType };
