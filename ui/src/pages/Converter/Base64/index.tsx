@@ -39,7 +39,7 @@ const Base64: React.FC = () => {
 								onClick("encode", currentValue.target.value);
 							}}
 							placeholder="Input"
-							rows={4}
+							rows={10}
 							data-gramm={false}
 							allowClear
 						/>
@@ -61,7 +61,7 @@ const Base64: React.FC = () => {
 							setResult(value);
 							onClick("decode", value);
 						}}
-						rows={4}
+						rows={10}
 						placeholder="Result"
 						status={status}
 						label="Base64 output"

@@ -16,6 +16,12 @@ import InputGrid from "components/Layouts/InputGrid";
 const PARAGRAPHS = faker.lorem.lines(7);
 const RADIUS_ROUND = 1e5;
 
+// --radius-blob-1: 30% 70% 70% 30% / 53% 30% 70% 47%;
+// --radius-blob-2: 53% 47% 34% 66% / 63% 46% 54% 37%;
+// --radius-blob-3: 37% 63% 56% 44% / 49% 56% 44% 51%;
+// --radius-blob-4: 63% 37% 37% 63% / 43% 37% 63% 57%;
+// --radius-blob-5: 49% 51% 48% 52% / 57% 44% 56% 43%;
+
 const BorderRadius = () => {
 	const [border, setBorder] = useState(5);
 	const [borderRadiusTopLeft, setBorderRadiusTopLeft] = useState(0);

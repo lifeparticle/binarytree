@@ -75,7 +75,7 @@ const JsonToTypescript: React.FC = () => {
 			{interfaces.length > 0 && (
 				<Card>
 					<CodeHighlightWithCopy
-						codeString={interfaces.toString()}
+						codeString={interfaces.toString().replace(/,/g, "\n\n")}
 						language="typescript"
 					/>
 				</Card>
