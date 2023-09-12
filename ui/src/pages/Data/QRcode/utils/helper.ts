@@ -11,14 +11,32 @@ function isValidUrl(url: string) {
 	return pattern.test(url);
 }
 
+const isNumberArray = (data: string[]): boolean => {
+	return data.every((value) => /^\d+(\.\d+)?$/.test(value));
+};
+const isStringArray = (data: any[]): boolean => {
+	return data.every((value) => !/^\d+(\.\d+)?$/.test(value));
+};
+
+const formatData = (data: string): string[] => {
+	const delimitersRegex = /[,\s\n]+/;
+	return data.split(delimitersRegex).filter((entry) => entry.length > 0);
+};
+
 function detectQrData(data: string) {
-	if (data.length === 0) {
+	const formattedStringArray = formatData(data);
+
+	if (formattedStringArray.length === 0) {
 		return "No data";
 	}
 
 	if (isValidUrl(data)) return "Url";
 
-	return typeof data;
+	if (isNumberArray(formattedStringArray)) return "Number";
+
+	if (isStringArray(formattedStringArray)) return "String";
+
+	return "Mixed value";
 }
 
 const downloadQRCode = () => {
