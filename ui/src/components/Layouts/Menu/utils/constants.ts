@@ -41,6 +41,12 @@ export const MENU_ITEMS = [
 				icon: "Box",
 				show: IN_DEVELOPMENT,
 			},
+			{
+				name: "Svg Formatter",
+				url: "/css/svg-formatter",
+				icon: "Command",
+				show: IN_DEVELOPMENT,
+			},
 		],
 	},
 	{
@@ -89,6 +95,12 @@ export const MENU_ITEMS = [
 				name: "Avatar",
 				url: "/generator/avatar",
 				icon: "BadgeHelp",
+				show: true,
+			},
+			{
+				name: "QR Code",
+				url: "/generator/qrcode",
+				icon: "QrCode",
 				show: true,
 			},
 			{

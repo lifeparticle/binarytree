@@ -33,6 +33,8 @@ import {
 	Avatar,
 	PageNotFound,
 	Mimetype,
+	QRcode,
+	SvgFormatter,
 } from "pages/pages";
 
 const routes: Route[] = [
@@ -55,6 +57,11 @@ const routes: Route[] = [
 		path: "/css/bs",
 		title: "Border Shadow",
 		component: BoxShadow,
+	},
+	{
+		path: "/css/svg-formatter",
+		title: "SVG Formatter",
+		component: SvgFormatter,
 	},
 	{
 		path: "/converter/base-64",
@@ -85,6 +92,11 @@ const routes: Route[] = [
 		path: "/generator/igfc",
 		title: "Image Generator From Colors",
 		component: ImageGeneratorFromColors,
+	},
+	{
+		path: "/generator/qrcode",
+		title: "QR Code Generator",
+		component: QRcode,
 	},
 	{
 		path: "/generator/sorting",
