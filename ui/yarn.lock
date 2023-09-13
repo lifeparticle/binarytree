@@ -2507,6 +2507,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/webfontloader@npm:^1.6.35":
+  version: 1.6.35
+  resolution: "@types/webfontloader@npm:1.6.35"
+  checksum: 8a809e1f8041fc9f7ec1df82d6e841bfc51732a3aa0b56a4e3d2abab86a8abce1b0db90dc9d2c594fd0d77034e2670cae3cfb714a902a0112985fa04fd4a61c8
+  languageName: node
+  linkType: hard
+
 "@types/yargs-parser@npm:*":
   version: 21.0.0
   resolution: "@types/yargs-parser@npm:21.0.0"
@@ -3655,6 +3662,7 @@ __metadata:
     "@types/react-dom": ^18.2.7
     "@types/react-router-dom": ^5.3.3
     "@types/react-syntax-highlighter": ^15.5.7
+    "@types/webfontloader": ^1.6.35
     "@typescript-eslint/eslint-plugin": ^6.0.0
     "@typescript-eslint/parser": ^6.2.1
     "@uiw/react-markdown-editor": ^5.11.2
@@ -3694,6 +3702,7 @@ __metadata:
     vite-tsconfig-paths: ^4.2.0
     vitest: ^0.34.1
     web-vitals: ^3.3.1
+    webfontloader: ^1.6.28
   languageName: unknown
   linkType: soft
 
@@ -10888,6 +10897,13 @@ __metadata:
   version: 3.4.0
   resolution: "web-vitals@npm:3.4.0"
   checksum: 6baac515035a82f05623aa6592654af3b5fd8ca0359e368388e147c1376ca00e5f1b2256130f8e96249ee793a437b55615db21ae699d6d400bf2800f676e0114
+  languageName: node
+  linkType: hard
+
+"webfontloader@npm:^1.6.28":
+  version: 1.6.28
+  resolution: "webfontloader@npm:1.6.28"
+  checksum: cbebbe593cb0d27dbb4d418f7f96bd9893024f1f2062e858af76209b6524e25d766964b6e2a724f3b694fadef661dd3a01065455a96df05337b3281ca09ab656
   languageName: node
   linkType: hard
 

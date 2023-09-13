@@ -47,7 +47,7 @@ const BorderRadius = () => {
 	};
 
 	return (
-		<Space direction="vertical">
+		<>
 			<PageGrid className={style.br}>
 				<Card className={style.br__input}>
 					<Form layout="vertical">
@@ -206,13 +206,13 @@ const BorderRadius = () => {
 					</Space>
 				</Card>
 			</PageGrid>
-			<Card>
+			<Card style={{ marginTop: "20px" }}>
 				<CodeHighlightWithCopy
 					codeString={generateCSSCodeString()}
 					language="css"
 				/>
 			</Card>
-		</Space>
+		</>
 	);
 };
 
