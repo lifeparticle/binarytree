@@ -55,11 +55,12 @@ const ColorPicker: React.FC = () => {
 								clipboardComponent={ClipboardButton}
 							/>
 						</CopyInput>
-
-						<ColorFormatTags
-							currentFormat={format}
-							onSelect={setFormat}
-						/>
+						<Form.Item label="Color format">
+							<ColorFormatTags
+								currentFormat={format}
+								onSelect={setFormat}
+							/>
+						</Form.Item>
 
 						<CP
 							format={format}
