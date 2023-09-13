@@ -68,6 +68,7 @@ const LIBRARY_URLS: LibraryList = {
 		"https://www.npmjs.com/package/@uiw/react-md-editor",
 	tinymce: "https://www.npmjs.com/package/@tinymce/tinymce-react",
 	"values.js": "https://www.npmjs.com/package/values.js",
+	webfontloader: "https://www.npmjs.com/package/webfontloader",
 };
 
 const API_COLUMNS: ColumnsType<Api> = [
@@ -190,6 +191,13 @@ const FEATURE_DATA: Feature[] = [
 		library: [{ name: "faker.js", url: LIBRARY_URLS["faker-js"] }],
 	},
 	{
+		key: "3",
+		name: "SVG Formatter",
+		description: "Merge svg path",
+		link: "/css/svg-formatter",
+		library: [{ name: "Vanilla JS", url: "" }],
+	},
+	{
 		key: "4",
 		name: "Base 64 Converter",
 		description: "Convert text to base64",
@@ -265,7 +273,18 @@ const FEATURE_DATA: Feature[] = [
 				name: "html-to-image",
 				url: LIBRARY_URLS["html-to-image"],
 			},
+			{
+				name: "webfontloader",
+				url: LIBRARY_URLS["webfontloader"],
+			},
 		],
+	},
+	{
+		key: "17",
+		name: "QR code generator",
+		description: "Generate QR code from text",
+		link: "/generator/qrcode",
+		library: [],
 	},
 	{
 		key: "10",

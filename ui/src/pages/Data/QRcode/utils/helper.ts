@@ -14,7 +14,7 @@ function isValidUrl(url: string) {
 const isNumberArray = (data: string[]): boolean => {
 	return data.every((value) => /^\d+(\.\d+)?$/.test(value));
 };
-const isStringArray = (data: any[]): boolean => {
+const isStringArray = (data: string[]): boolean => {
 	return data.every((value) => !/^\d+(\.\d+)?$/.test(value));
 };
 

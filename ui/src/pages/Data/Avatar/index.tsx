@@ -2,10 +2,12 @@ import { saveAs } from "file-saver";
 import { toPng } from "html-to-image";
 import { Card, Form, Slider, Avatar as AntAvatar, Space } from "antd";
 import ColorPickerWithInput from "components/General/ColorPickerWithInput";
+import WebFont from "webfontloader";
 import {
 	ResponsiveButton,
 	ResponsiveInputWithLabel,
 	ResponsiveSegementWithLabel,
+	ResponsiveSelectWithLabel,
 } from "components/General/FormComponents";
 import PageGrid from "components/Layouts/PageGrid";
 import { useRef, useState } from "react";
@@ -13,12 +15,14 @@ import {
 	AVATAR_SHAPE_SEGMENTED_OPTIONS,
 	AvatarShape,
 	AvatarShapeType,
+	FONTS,
 } from "./utils/constants";
 import InputGrid from "components/Layouts/InputGrid";
 import style from "./Avatar.module.scss";
 
 const Avatar = () => {
 	const [text, setText] = useState<string>("BT");
+	const [avatarFont, setAvatarFont] = useState(FONTS[0].value);
 	const [textColor, setTextColor] = useState<string>(
 		"rgba(255, 255, 255, 1)"
 	);
@@ -41,6 +45,12 @@ const Avatar = () => {
 		saveAs(blob, `image-${Date.now()}.png`);
 	};
 
+	// Load the selected font when it changes
+	WebFont.load({
+		google: {
+			families: [avatarFont],
+		},
+	});
 	return (
 		<PageGrid>
 			<Card>
@@ -69,12 +79,13 @@ const Avatar = () => {
 					</InputGrid>
 
 					<InputGrid>
-						<ResponsiveInputWithLabel
-							label="Avatar size"
-							placeholder="Enter avatar size"
-							value={avatarSize}
-							onChange={(val) => setAvatarSize(val || 0)}
-							type="number"
+						<ResponsiveSelectWithLabel
+							label="Font family"
+							value={avatarFont}
+							options={FONTS}
+							onSelect={(_, info) => {
+								setAvatarFont(info.value);
+							}}
 						/>
 
 						<ResponsiveInputWithLabel
@@ -87,6 +98,13 @@ const Avatar = () => {
 					</InputGrid>
 
 					<InputGrid>
+						<ResponsiveInputWithLabel
+							label="Avatar size"
+							placeholder="Enter avatar size"
+							value={avatarSize}
+							onChange={(val) => setAvatarSize(val || 0)}
+							type="number"
+						/>
 						<ResponsiveSegementWithLabel
 							value={shapeType}
 							label="Avatar shape"
@@ -97,6 +115,8 @@ const Avatar = () => {
 								}
 							}}
 						/>
+					</InputGrid>
+					<div>
 						{shapeType === AvatarShape.Custom && (
 							<Form.Item label="Avatar border radius">
 								<Slider
@@ -109,7 +129,7 @@ const Avatar = () => {
 								/>
 							</Form.Item>
 						)}
-					</InputGrid>
+					</div>
 				</Form>
 			</Card>
 
@@ -127,6 +147,7 @@ const Avatar = () => {
 									? `${customBorderRadius}px`
 									: "",
 							fontSize,
+							fontFamily: avatarFont,
 						}}
 					>
 						{text}

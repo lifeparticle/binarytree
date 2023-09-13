@@ -8,14 +8,14 @@ const { TextArea } = Input;
 
 const SvgFormatter: React.FC = () => {
 	const [value, setValue] = useState("");
-	const [combinedSVG, setCombinedSVG] = useState<string>("");
+	const [outputSVG, setOutputSVG] = useState<string>("");
 
 	const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
 		const newValue = e.target.value;
 		setValue(newValue);
 
 		const combinedSvgOutput = combineSVGPaths(newValue);
-		setCombinedSVG(combinedSvgOutput);
+		setOutputSVG(combinedSvgOutput);
 	};
 	return (
 		<PageGrid>
@@ -33,12 +33,15 @@ const SvgFormatter: React.FC = () => {
 					</Form.Item>
 				</Form>
 			</Card>
-			<Card>
-				<CodeHighlightWithCopy
-					language="css"
-					codeString={combinedSVG}
-				/>
-			</Card>
+
+			{outputSVG && (
+				<Card>
+					<CodeHighlightWithCopy
+						language="css"
+						codeString={outputSVG}
+					/>
+				</Card>
+			)}
 		</PageGrid>
 	);
 };
