@@ -19,6 +19,8 @@ const ImageGeneratorFromColors = lazy(
 	() => import("pages/Data/ImageGeneratorFromColors")
 );
 const Sorting = lazy(() => import("pages/Data/Sorting"));
+const QRcode = lazy(() => import("pages/Data/QRcode"));
+const SvgFormatter = lazy(() => import("pages/CSS/SvgFormatter"));
 
 const Blog = lazy(() => import("pages/List/Blog"));
 const Book = lazy(() => import("pages/List/Book"));
@@ -62,6 +64,7 @@ export {
 	Icon,
 	ImageGeneratorFromColors,
 	Avatar,
+	QRcode,
 	JsonToTypescript,
 	MarkdownEditor,
 	Movie,
@@ -79,5 +82,6 @@ export {
 	UiUx,
 	YouTube,
 	Mimetype,
+	SvgFormatter,
 	PageNotFound,
 };
