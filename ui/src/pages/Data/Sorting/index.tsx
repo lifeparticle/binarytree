@@ -84,7 +84,7 @@ const Sorting: React.FC = () => {
 
 					<CopyInput>
 						<ResponsiveSelectWithLabel
-							label="Output Format"
+							label="Output separator"
 							value={outputFormat.value}
 							onSelect={(_, option) => {
 								setOutputFormat(option);
