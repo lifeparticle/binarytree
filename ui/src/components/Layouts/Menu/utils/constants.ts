@@ -9,6 +9,7 @@ export const MENU_ITEMS = [
 		name: "Newsfeed",
 		icon: "Newspaper",
 		show: true,
+		url: "/newsfeed",
 		children: [],
 	},
 	{
@@ -259,7 +260,7 @@ const ITEMS: MenuProps["items"] = [
 	...MENU_ITEMS.filter((rootItem) => rootItem.show).map((item) => {
 		return getItem(
 			item.name,
-			item.name as React.Key,
+			item?.url ?? (item.name as React.Key),
 			item.icon as IconName,
 			item.children.length > 0
 				? item.children
