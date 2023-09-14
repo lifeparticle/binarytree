@@ -1,42 +1,67 @@
 import { useState } from "react";
-import { Card, Form, Slider, Space } from "antd";
+import { Card, Form, Slider } from "antd";
 import PageGrid from "components/Layouts/PageGrid";
 import CodeHighlightWithCopy from "components/General/CodeHighlightWithCopy";
 import about from "assets/about.jpg";
 import style from "./BorderRadius.module.scss";
-import { faker } from "@faker-js/faker";
 import {
+	ResponsiveInputWithLabel,
 	ResponsiveSegementWithLabel,
 	ResponsiveSelectWithLabel,
 } from "components/General/FormComponents";
-import { BORDER_STYLES, SEGMENTED_OPTIONS } from "./utils/constants";
+import {
+	BLOB_SHAPE,
+	BORDER_RADIUS,
+	BORDER_STYLES,
+	INIT_BORDER,
+	INIT_BORDER_WIDTH,
+	INIT_COLOR,
+	PARAGRAPHS,
+	RADIUS_ROUND,
+	SEGMENTED_OPTIONS,
+} from "./utils/constants";
 import ColorPickerWithInput from "components/General/ColorPickerWithInput";
 import InputGrid from "components/Layouts/InputGrid";
 
-const PARAGRAPHS = faker.lorem.lines(7);
-const RADIUS_ROUND = 1e5;
-
-// --radius-blob-1: 30% 70% 70% 30% / 53% 30% 70% 47%;
-// --radius-blob-2: 53% 47% 34% 66% / 63% 46% 54% 37%;
-// --radius-blob-3: 37% 63% 56% 44% / 49% 56% 44% 51%;
-// --radius-blob-4: 63% 37% 37% 63% / 43% 37% 63% 57%;
-// --radius-blob-5: 49% 51% 48% 52% / 57% 44% 56% 43%;
-
 const BorderRadius = () => {
-	const [border, setBorder] = useState(5);
-	const [borderRadiusTopLeft, setBorderRadiusTopLeft] = useState(0);
-	const [borderRadiusTopRight, setBorderRadiusTopRight] = useState(0);
-	const [borderRadiusBottomLeft, setBorderRadiusBottomLeft] = useState(0);
-	const [borderRadiusBottomRight, setBorderRadiusBottomRight] = useState(0);
-
-	const [borderWidth, setBorderWidth] = useState(5);
+	const [border, setBorder] = useState(INIT_BORDER);
+	const [borderWidth, setBorderWidth] = useState(INIT_BORDER_WIDTH);
 	const [borderStyle, setBorderStyle] = useState(BORDER_STYLES[4].value);
-	const [borderColor, setBorderColor] = useState("rgba(158, 158, 158, 1)");
+	const [borderColor, setBorderColor] = useState(INIT_COLOR);
+	const [borderType, setBorderType] = useState(BORDER_RADIUS.rounded);
 
-	const [borderType, setBorderType] = useState("");
+	const updateBorderByIndex = (value: string, index: number) => {
+		if (index === -1) {
+			setBorder(value);
+			return;
+		}
+		const values = border.split(" ");
+		values[index] = value;
+		setBorder(values.join(" "));
+	};
+
+	const getBorderRadiusString = (border: string) => {
+		if (border.includes("%")) {
+			return border;
+		}
+
+		const [topLeft, topRight, bottomRight, bottomLeft] = border.split(" ");
+
+		if (
+			topLeft === topRight &&
+			topLeft === bottomRight &&
+			topLeft === bottomLeft
+		) {
+			return `${topLeft}px`;
+		}
+
+		return `${topLeft}px ${topRight}px ${bottomRight}px ${bottomLeft}px`;
+	};
 
 	const generateCSSCodeString = () => {
-		const borderRadiusString = `border-radius: ${borderRadiusTopLeft}px ${borderRadiusTopRight}px ${borderRadiusBottomRight}px ${borderRadiusBottomLeft}px;`;
+		const borderRadiusString = `border-radius: ${getBorderRadiusString(
+			border
+		)};`;
 		const borderWidthString = `border-width: ${borderWidth}px;`;
 		const borderColorString = `border-color: ${borderColor};`;
 		const borderStyleString = `border-style: ${borderStyle};`;
@@ -75,42 +100,42 @@ const BorderRadius = () => {
 							value={borderType}
 							onChange={(value: string | number) => {
 								setBorderType(value as string);
-								if (value === SEGMENTED_OPTIONS[1].value) {
-									setBorder(RADIUS_ROUND);
-									setBorderRadiusTopLeft(RADIUS_ROUND);
-									setBorderRadiusTopRight(RADIUS_ROUND);
-									setBorderRadiusBottomLeft(RADIUS_ROUND);
-									setBorderRadiusBottomRight(RADIUS_ROUND);
-								} else if (
-									value === SEGMENTED_OPTIONS[2].value
-								) {
-									setBorder(0);
-									setBorderRadiusTopLeft(0);
-									setBorderRadiusTopRight(0);
-									setBorderRadiusBottomLeft(0);
-									setBorderRadiusBottomRight(0);
+								if (value === BORDER_RADIUS.circle) {
+									setBorder(
+										`${RADIUS_ROUND} ${RADIUS_ROUND} ${RADIUS_ROUND} ${RADIUS_ROUND}`
+									);
+								} else if (value === BORDER_RADIUS.blob) {
+									setBorder(BLOB_SHAPE);
 								} else {
-									setBorder(0);
-									setBorderRadiusTopLeft(0);
-									setBorderRadiusTopRight(0);
-									setBorderRadiusBottomLeft(0);
-									setBorderRadiusBottomRight(0);
+									setBorder("0 0 0 0");
 								}
 							}}
 							options={SEGMENTED_OPTIONS}
 						/>
+
+						{borderType === BORDER_RADIUS.blob && (
+							<ResponsiveInputWithLabel
+								label="Blob shape"
+								value={border}
+								onChange={(e) => {
+									updateBorderByIndex(e.target.value, -1);
+								}}
+								type="text"
+							/>
+						)}
+
 						<InputGrid>
 							<Form.Item label="Border">
 								<Slider
-									defaultValue={0}
-									value={border}
+									disabled={
+										borderType === BORDER_RADIUS.circle ||
+										borderType === BORDER_RADIUS.blob
+									}
 									onChange={(value: number) => {
 										if (value) {
-											setBorder(value);
-											setBorderRadiusTopLeft(value);
-											setBorderRadiusTopRight(value);
-											setBorderRadiusBottomLeft(value);
-											setBorderRadiusBottomRight(value);
+											setBorder(
+												`${value} ${value} ${value} ${value}`
+											);
 										}
 									}}
 								/>
@@ -119,9 +144,10 @@ const BorderRadius = () => {
 							<Form.Item label="Border width">
 								<Slider
 									defaultValue={0}
-									value={borderWidth}
+									value={parseInt(borderWidth, 10)}
 									onChange={(value) =>
-										value !== null && setBorderWidth(value)
+										value !== null &&
+										setBorderWidth(String(value))
 									}
 								/>
 							</Form.Item>
@@ -130,44 +156,68 @@ const BorderRadius = () => {
 						<InputGrid>
 							<Form.Item label="Top left border">
 								<Slider
-									defaultValue={0}
-									value={borderRadiusTopLeft}
-									onChange={(value) =>
-										value !== null &&
-										setBorderRadiusTopLeft(value)
+									disabled={
+										borderType === BORDER_RADIUS.circle ||
+										borderType === BORDER_RADIUS.blob
 									}
+									onChange={(value) => {
+										if (value !== null) {
+											updateBorderByIndex(
+												String(value),
+												0
+											);
+										}
+									}}
 								/>
 							</Form.Item>
 							<Form.Item label="Top right border">
 								<Slider
-									defaultValue={0}
-									value={borderRadiusTopRight}
-									onChange={(value) =>
-										value !== null &&
-										setBorderRadiusTopRight(value)
+									disabled={
+										borderType === BORDER_RADIUS.circle ||
+										borderType === BORDER_RADIUS.blob
 									}
+									onChange={(value) => {
+										if (value !== null) {
+											updateBorderByIndex(
+												String(value),
+												1
+											);
+										}
+									}}
 								/>
 							</Form.Item>
 						</InputGrid>
 						<InputGrid>
 							<Form.Item label="Bottom left border">
 								<Slider
-									defaultValue={0}
-									value={borderRadiusBottomLeft}
-									onChange={(value) =>
-										value !== null &&
-										setBorderRadiusBottomLeft(value)
+									disabled={
+										borderType === BORDER_RADIUS.circle ||
+										borderType === BORDER_RADIUS.blob
 									}
+									onChange={(value) => {
+										if (value !== null) {
+											updateBorderByIndex(
+												String(value),
+												3
+											);
+										}
+									}}
 								/>
 							</Form.Item>
 							<Form.Item label="Bottom right border">
 								<Slider
-									defaultValue={0}
-									value={borderRadiusBottomRight}
-									onChange={(value) =>
-										value !== null &&
-										setBorderRadiusBottomRight(value)
+									disabled={
+										borderType === BORDER_RADIUS.circle ||
+										borderType === BORDER_RADIUS.blob
 									}
+									onChange={(value) => {
+										if (value !== null) {
+											updateBorderByIndex(
+												String(value),
+												2
+											);
+										}
+									}}
 								/>
 							</Form.Item>
 						</InputGrid>
@@ -175,7 +225,7 @@ const BorderRadius = () => {
 				</Card>
 
 				<Card className={style.br__output}>
-					<Space direction="horizontal">
+					<div className={style.br__output_container}>
 						<img
 							src={about}
 							onClick={() =>
@@ -185,17 +235,17 @@ const BorderRadius = () => {
 								)
 							}
 							style={{
-								borderRadius: `${borderRadiusTopLeft}px ${borderRadiusTopRight}px ${borderRadiusBottomRight}px ${borderRadiusBottomLeft}px`,
+								borderRadius: getBorderRadiusString(border),
 								borderWidth: `${borderWidth}px`,
 								borderColor: `${borderColor}`,
 								borderStyle: `${borderStyle}`,
 							}}
-							className={style.br__output_img}
+							className={style.br__output_container_img}
 						/>
 						<Card
-							className={style.br__output_text}
+							className={style.br__output_container_text}
 							style={{
-								borderRadius: `${borderRadiusTopLeft}px ${borderRadiusTopRight}px ${borderRadiusBottomRight}px ${borderRadiusBottomLeft}px`,
+								borderRadius: getBorderRadiusString(border),
 								borderWidth: `${borderWidth}px`,
 								borderColor: `${borderColor}`,
 								borderStyle: `${borderStyle}`,
@@ -203,7 +253,7 @@ const BorderRadius = () => {
 						>
 							{PARAGRAPHS}
 						</Card>
-					</Space>
+					</div>
 				</Card>
 			</PageGrid>
 			<Card>
