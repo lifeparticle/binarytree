@@ -8,16 +8,14 @@ import {
 	OTHER_COLUMNS,
 	OTHER_DATA,
 } from "./utils/constants";
-import { Card, List, Table, Typography, Layout } from "antd";
+import { Card, List, Table, Typography } from "antd";
 import style from "./About.module.scss";
-import Icon from "components/General/Icon";
 import about from "assets/about.jpg";
-import { ResponsiveButton } from "components/General/FormComponents";
-const { Footer } = Layout;
+import Footer from "./components/Footer";
 
 const About = () => {
 	return (
-		<Layout>
+		<>
 			<Card
 				className={style.about}
 				title="Binary Tree"
@@ -106,33 +104,11 @@ const About = () => {
 							</List.Item>
 						)}
 					/>
-
-					<div className={style.about__socials}>
-						<ResponsiveButton
-							key="Github"
-							type="default"
-							shape="circle"
-							icon={<Icon name="Github" />}
-							onClick={() =>
-								window.open(
-									"https://github.com/lifeparticle/binarytree",
-									"_blank",
-									"noopener"
-								)
-							}
-						/>
-					</div>
 				</div>
 			</Card>
-			<Footer>
-				<a
-					href="https://github.com/lifeparticle/binarytree/blob/main/CODE_OF_CONDUCT.md"
-					target="_blank"
-				>
-					Code of Conduct
-				</a>
-			</Footer>
-		</Layout>
+
+			<Footer />
+		</>
 	);
 };
 
