@@ -86,22 +86,22 @@ const routes: Route[] = [
 	},
 	{
 		path: "/generator/data",
-		title: "Data Generator",
+		title: "Data",
 		component: DataGenerator,
 	},
 	{
 		path: "/generator/avatar",
-		title: "Avatar Generator",
+		title: "Avatar",
 		component: Avatar,
 	},
 	{
 		path: "/generator/igfc",
-		title: "Image Generator From Colors",
+		title: "Image",
 		component: ImageGeneratorFromColors,
 	},
 	{
 		path: "/generator/qrcode",
-		title: "QR Code Generator",
+		title: "QR Code",
 		component: QRcode,
 	},
 	{

@@ -1,3 +1,9 @@
+### [5.0.0] - 2023-09-14
+
+-   Add QR code generator
+-   Add SVG formatter
+-   Fix css for UI
+
 ### [4.9.2] - 2023-09-06
 
 -   Add avatar generator
