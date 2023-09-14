@@ -1,6 +1,7 @@
 import { Route } from "./types";
 import {
 	About,
+	Avatar,
 	Base64,
 	Blog,
 	Book,
@@ -8,21 +9,26 @@ import {
 	BoxShadow,
 	ColorPicker,
 	Course,
-	DesignSystem,
 	DataGenerator,
+	DesignSystem,
 	Feedback,
 	Github,
+	Home,
 	Icon,
 	ImageGeneratorFromColors,
 	JsonToTypescript,
 	MarkdownEditor,
+	Mimetype,
 	Movie,
 	News,
+	PageNotFound,
 	Pixel,
 	Platform,
 	Plugin,
+	QRcode,
 	ShadesAndTints,
 	Sorting,
+	SvgFormatter,
 	TableGenerator,
 	TableOfContent,
 	TextEditor,
@@ -30,14 +36,14 @@ import {
 	TvSeries,
 	UiUx,
 	YouTube,
-	Avatar,
-	PageNotFound,
-	Mimetype,
-	QRcode,
-	SvgFormatter,
 } from "pages/pages";
 
 const routes: Route[] = [
+	{
+		path: "/newsfeed",
+		title: "Newsfeed",
+		component: News,
+	},
 	{
 		path: "/colors/cp",
 		title: "Color Picker",
@@ -55,7 +61,7 @@ const routes: Route[] = [
 	},
 	{
 		path: "/css/bs",
-		title: "Border Shadow",
+		title: "Box Shadow",
 		component: BoxShadow,
 	},
 	{
@@ -195,8 +201,8 @@ const routes: Route[] = [
 	},
 	{
 		path: "/",
-		title: "Dashboard",
-		component: News,
+		title: "",
+		component: Home,
 	},
 	{
 		path: "/about",

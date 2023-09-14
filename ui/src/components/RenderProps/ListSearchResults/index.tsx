@@ -1,7 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import style from "./ListSearchResults.module.scss";
 import { ResourceType } from "components/General/ListItems/Resource/utils/types";
-import { QUERY_KEY_NEWS } from "pages/News";
+import { QUERY_KEY_NEWS } from "pages/Newsfeed";
 import Search from "components/General/Search";
 import { getCategories } from "components/General/Search/CategoryTags/utils/helper";
 import { ListSearchResultsProps } from "./utils/types";
