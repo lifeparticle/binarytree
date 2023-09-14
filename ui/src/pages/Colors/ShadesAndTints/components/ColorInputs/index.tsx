@@ -74,6 +74,7 @@ const ColorInputs: React.FC<ColorInputsProps> = ({
 					/>
 
 					<ResponsiveSelectWithLabel
+						label="Output separator"
 						value={option.value}
 						onSelect={(_, option) =>
 							handleOutputFormatChange(option)
