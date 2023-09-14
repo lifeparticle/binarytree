@@ -1,6 +1,6 @@
 import { Input } from "antd";
 import style from "./search.module.scss";
-import { QUERY_KEY_NEWS } from "pages/News";
+import { QUERY_KEY_NEWS } from "pages/Newsfeed";
 import { useSearchParams } from "react-router-dom";
 import CategoryTags from "./CategoryTags";
 import { useState, useEffect, ChangeEvent } from "react";

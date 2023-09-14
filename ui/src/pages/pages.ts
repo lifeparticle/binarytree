@@ -1,26 +1,29 @@
 import { lazy } from "react";
 
+const Home = lazy(() => import("pages/Home"));
+const News = lazy(() => import("pages/Newsfeed"));
 const About = lazy(() => import("pages/About"));
 const Feedback = lazy(() => import("pages/Feedback"));
+const PageNotFound = lazy(() => import("pages/PageNotFound"));
 
 const ColorPicker = lazy(() => import("pages/Colors/ColorPicker"));
 const ShadesAndTints = lazy(() => import("pages/Colors/ShadesAndTints"));
 
 const BorderRadius = lazy(() => import("pages/CSS/BorderRadius"));
 const BoxShadow = lazy(() => import("pages/CSS/BoxShadow"));
+const SvgFormatter = lazy(() => import("pages/CSS/SvgFormatter"));
 
 const Base64 = lazy(() => import("pages/Converter/Base64"));
 const Pixel = lazy(() => import("pages/Converter/Pixel"));
 const JsonToTypescript = lazy(() => import("pages/Converter/JsonToTypescript"));
 
 const DataGenerator = lazy(() => import("pages/Data/DataGenerator"));
-const Avatar = lazy(() => import("pages/Data/Avatar"));
 const ImageGeneratorFromColors = lazy(
 	() => import("pages/Data/ImageGeneratorFromColors")
 );
-const Sorting = lazy(() => import("pages/Data/Sorting"));
+const Avatar = lazy(() => import("pages/Data/Avatar"));
 const QRcode = lazy(() => import("pages/Data/QRcode"));
-const SvgFormatter = lazy(() => import("pages/CSS/SvgFormatter"));
+const Sorting = lazy(() => import("pages/Data/Sorting"));
 
 const Blog = lazy(() => import("pages/List/Blog"));
 const Book = lazy(() => import("pages/List/Book"));
@@ -42,14 +45,11 @@ const TableOfContent = lazy(() => import("pages/Markdown/TableOfContent"));
 
 const TextEditor = lazy(() => import("pages/Text/TextEditor"));
 
-const Mimetype = lazy(() => import("pages/info/Mimetype"));
-
-const News = lazy(() => import("pages/News"));
-
-const PageNotFound = lazy(() => import("pages/PageNotFound"));
+const Mimetype = lazy(() => import("pages/Info/Mimetype"));
 
 export {
 	About,
+	Avatar,
 	Base64,
 	Blog,
 	Book,
@@ -57,23 +57,26 @@ export {
 	BoxShadow,
 	ColorPicker,
 	Course,
-	DesignSystem,
 	DataGenerator,
+	DesignSystem,
 	Feedback,
 	Github,
+	Home,
 	Icon,
 	ImageGeneratorFromColors,
-	Avatar,
-	QRcode,
 	JsonToTypescript,
 	MarkdownEditor,
+	Mimetype,
 	Movie,
 	News,
+	PageNotFound,
 	Pixel,
 	Platform,
 	Plugin,
+	QRcode,
 	ShadesAndTints,
 	Sorting,
+	SvgFormatter,
 	TableGenerator,
 	TableOfContent,
 	TextEditor,
@@ -81,7 +84,4 @@ export {
 	TvSeries,
 	UiUx,
 	YouTube,
-	Mimetype,
-	SvgFormatter,
-	PageNotFound,
 };

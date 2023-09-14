@@ -27,13 +27,13 @@ const useUrlParams = (initialParams: Params) => {
 		}
 	}, [searchParams, initialParams, params]);
 
-	const updateUrlParam = (key: string, value: string | number) => {
+	const updateParams = (key: string, value: string | number) => {
 		searchParams.set(key, String(value));
 		setSearchParams(searchParams);
 		setParams((prevParams) => ({ ...prevParams, [key]: value }));
 	};
 
-	return [params, updateUrlParam, searchParams] as const;
+	return [params, updateParams, searchParams] as const;
 };
 
 export default useUrlParams;

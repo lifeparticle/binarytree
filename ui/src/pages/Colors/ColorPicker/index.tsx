@@ -15,13 +15,14 @@ import useUrlParams from "lib/utils/hooks/useUrlParams";
 import { ResponsiveInputWithLabel } from "components/General/FormComponents";
 
 const ColorPicker: React.FC = () => {
-	const [params, updateUrlParam, searchParams] = useUrlParams({
+	const [params, updateParams, searchParams] = useUrlParams({
 		color: INITIAL_COLOR,
 	});
 
 	const [color, setColor] = useState(
 		searchParams.get("color") || (params.color as string)
 	);
+
 	const [format, setFormat] = useState<FormatType>(
 		determineFormat(color) || INITIAL_FORMAT
 	);
@@ -35,7 +36,7 @@ const ColorPicker: React.FC = () => {
 	};
 
 	useEffect(() => {
-		updateUrlParam("color", color);
+		updateParams("color", color);
 	}, [color]);
 
 	return (
