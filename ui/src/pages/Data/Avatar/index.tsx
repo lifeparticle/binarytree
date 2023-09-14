@@ -31,7 +31,7 @@ const Avatar = () => {
 		AvatarShape.Circle
 	);
 	const [avatarSize, setAvatarSize] = useState<number>(200);
-	const [fontSize, setFontSize] = useState<number>(50);
+	const [fontSize, setFontSize] = useState<number>(90);
 	const [customBorderRadius, setCustomBorderRadius] = useState<number>(0);
 
 	const domEl = useRef<HTMLDivElement>(null);
