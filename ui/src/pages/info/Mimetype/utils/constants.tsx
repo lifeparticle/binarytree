@@ -4,7 +4,7 @@ import { Tag } from "antd";
 import CodeHighlightWithCopy from "components/General/CodeHighlightWithCopy";
 const MIME_URL = "/mime/data.json";
 const MIME_KEY = "mimetype";
-// Column
+
 const MIME_COLUMNS: ColumnsType<MimeTableDataType> = [
 	{
 		title: "Name",
@@ -27,7 +27,7 @@ const MIME_COLUMNS: ColumnsType<MimeTableDataType> = [
 		},
 	},
 	{
-		title: "Code",
+		title: "JavaScript code",
 		dataIndex: "code",
 		key: "code",
 		width: 200,

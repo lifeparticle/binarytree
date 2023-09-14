@@ -5,7 +5,7 @@ import ListSearchResults from "components/RenderProps/ListSearchResults";
 const URL = `https://raw.githubusercontent.com/lifeparticle/binarytree/main/api/news.json`;
 export const QUERY_KEY_NEWS = "news";
 
-const NewsPage = () => {
+const Newsfeed = () => {
 	const { data, isLoading, isError } = useFetchList(QUERY_KEY_NEWS, URL);
 
 	return (
@@ -19,4 +19,4 @@ const NewsPage = () => {
 	);
 };
 
-export default NewsPage;
+export default Newsfeed;

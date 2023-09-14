@@ -6,6 +6,12 @@ const IN_DEVELOPMENT = import.meta.env.DEV;
 
 export const MENU_ITEMS = [
 	{
+		name: "Newsfeed",
+		icon: "Newspaper",
+		show: true,
+		children: [],
+	},
+	{
 		name: "Colors",
 		icon: "Brush",
 		show: true,
@@ -36,7 +42,7 @@ export const MENU_ITEMS = [
 				show: true,
 			},
 			{
-				name: "Border Shadow",
+				name: "Box Shadow",
 				url: "/css/bs",
 				icon: "Box",
 				show: IN_DEVELOPMENT,
@@ -255,15 +261,17 @@ const ITEMS: MenuProps["items"] = [
 			item.name,
 			item.name as React.Key,
 			item.icon as IconName,
-			item.children
-				.filter((item) => item.show)
-				.map((child) =>
-					getItem(
-						child.name,
-						child.url as React.Key,
-						child.icon as IconName
-					)
-				)
+			item.children.length > 0
+				? item.children
+						.filter((childItem) => childItem.show)
+						.map((child) =>
+							getItem(
+								child.name,
+								child.url as React.Key,
+								child.icon as IconName
+							)
+						)
+				: undefined
 		);
 	}),
 ];
