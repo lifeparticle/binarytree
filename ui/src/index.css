@@ -51,9 +51,10 @@ h5 {
 	padding-left: 20px !important;
 	padding-right: 20px !important;
 }
+
 .ant-menu-item {
 	/* can we do better? */
-	padding-left: 32px !important;
+	padding-left: 42px !important;
 }
 
 .ant-layout-content,
