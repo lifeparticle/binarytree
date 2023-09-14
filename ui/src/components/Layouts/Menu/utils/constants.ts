@@ -209,13 +209,13 @@ export const MENU_ITEMS = [
 		show: true,
 		children: [
 			{
-				name: "Markdown Editor",
+				name: "Editor",
 				url: "/markdown/me",
 				icon: "FileEdit",
 				show: true,
 			},
 			{
-				name: "MD Table Generator",
+				name: "Table",
 				url: "/markdown/md-table-generator",
 				icon: "Dice5",
 				show: true,

@@ -1,15 +1,23 @@
 import React from "react";
 import style from "./Footer.module.scss";
 import Icon from "components/General/Icon";
-import { Typography } from "antd";
+import { Typography, theme } from "antd";
 import { ResponsiveButton } from "components/General/FormComponents";
 
 const Footer: React.FC = () => {
-	return (
-		<div className={style.footer}>
-			<div className={style.footer__left}>
-				<Typography.Text>&copy; 2023 Binarytree.</Typography.Text>
+	const {
+		token: { colorBgContainer },
+	} = theme.useToken();
 
+	return (
+		<div
+			className={style.footer}
+			style={{ backgroundColor: colorBgContainer }}
+		>
+			<div className={style.footer__left}>
+				<Typography.Text>
+					&copy; {new Date().getFullYear()}
+				</Typography.Text>
 				<ul>
 					<li>
 						<a
@@ -21,10 +29,15 @@ const Footer: React.FC = () => {
 					</li>
 
 					<li>
-						<a href="#">Privacy policy</a>
+						<a href="#">Privacy</a>
 					</li>
 					<li>
-						<a href="#">Terms </a>
+						<a href="#">Terms</a>
+					</li>
+					<li>
+						<a href="https://github.com/lifeparticle/binarytree#status">
+							Status
+						</a>
 					</li>
 				</ul>
 			</div>

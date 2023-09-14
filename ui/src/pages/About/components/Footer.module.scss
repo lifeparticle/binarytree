@@ -1,7 +1,8 @@
 .footer {
 	margin-top: var(--bt-size-20);
+	margin-left: calc(var(--bt-size-10) * -1);
+	margin-right: calc(var(--bt-size-10) * -1);
 	padding: var(--bt-size-10);
-	border-top: 1px dashed #969696;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
