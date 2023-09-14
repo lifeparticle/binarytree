@@ -1,0 +1,19 @@
+.footer {
+	margin-top: var(--bt-size-20);
+	padding: var(--bt-size-10);
+	border-top: 1px dashed #969696;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__left {
+		display: flex;
+		align-items: center;
+
+		ul {
+			list-style-type: none;
+			display: flex;
+			gap: var(--bt-size-10);
+		}
+	}
+}
