@@ -45,7 +45,7 @@ export const MENU_ITEMS = [
 				name: "Svg Formatter",
 				url: "/css/svg-formatter",
 				icon: "Command",
-				show: IN_DEVELOPMENT,
+				show: true,
 			},
 		],
 	},

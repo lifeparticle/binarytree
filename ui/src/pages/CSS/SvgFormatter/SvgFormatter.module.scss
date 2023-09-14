@@ -1,0 +1,12 @@
+.svgformatter {
+	&__left,
+	&__right {
+		display: flex;
+		flex-direction: column;
+		gap: var(--bt-size-20);
+
+		&__code {
+			min-height: 335px;
+		}
+	}
+}
