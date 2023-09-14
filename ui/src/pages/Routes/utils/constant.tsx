@@ -81,7 +81,7 @@ const routes: Route[] = [
 	},
 	{
 		path: "/converter/jtt",
-		title: "Json To Typescript Converter",
+		title: "Json To Typescript",
 		component: JsonToTypescript,
 	},
 	{
@@ -176,12 +176,12 @@ const routes: Route[] = [
 	},
 	{
 		path: "/markdown/me",
-		title: "Markdown Editor",
+		title: "Editor",
 		component: MarkdownEditor,
 	},
 	{
 		path: "/markdown/md-table-generator",
-		title: "Markdown Table Generator",
+		title: "Table",
 		component: TableGenerator,
 	},
 	{

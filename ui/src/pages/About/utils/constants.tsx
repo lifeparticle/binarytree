@@ -171,49 +171,63 @@ const FEATURE_COLUMNS: ColumnsType<Feature> = [
 const FEATURE_DATA: Feature[] = [
 	{
 		key: "1",
+		name: "Newsfeed",
+		description: "Tech news",
+		link: "/",
+		library: [{ name: "Vanilla JS", url: "" }],
+	},
+	{
+		key: "2",
 		name: "Color Picker",
 		description: "Choose your desired color",
 		link: "/colors/cp",
 		library: [{ name: "tiny-color-2", url: LIBRARY_URLS["tiny-color-2"] }],
 	},
 	{
-		key: "2",
-		name: "Shades & Tints Generator",
+		key: "3",
+		name: "Shades & Tints",
 		description: "Choose your desired Shades and Tints",
 		link: "/colors/shades",
 		library: [{ name: "values.js", url: LIBRARY_URLS["values.js"] }],
 	},
 	{
-		key: "3",
+		key: "4",
 		name: "Border Radius",
 		description: "Choose your desired border radius",
 		link: "/css/br",
 		library: [{ name: "faker.js", url: LIBRARY_URLS["faker-js"] }],
 	},
+	// {
+	// 	key: "5",
+	// 	name: "Border Shadow",
+	// 	description: "Choose your desired border radius",
+	// 	link: "/css/br",
+	// 	library: [{ name: "faker.js", url: LIBRARY_URLS["faker-js"] }],
+	// },
 	{
-		key: "3",
+		key: "6",
 		name: "SVG Formatter",
 		description: "Merge svg path",
 		link: "/css/svg-formatter",
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
-		key: "4",
-		name: "Base 64 Converter",
+		key: "7",
+		name: "Base64",
 		description: "Convert text to base64",
 		link: "/converter/base-64",
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
-		key: "5",
-		name: "Pixel converter",
+		key: "8",
+		name: "Pixel",
 		description: "Convert pixel to rem",
 		link: "/converter/pixel",
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
-		key: "6",
-		name: "Json to typescript converter",
+		key: "9",
+		name: "Json To Typescript",
 		description: "Convert Json to typescript",
 		link: "/converter/jtt",
 		library: [
@@ -224,8 +238,8 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "7",
-		name: "Data Generator",
+		key: "10",
+		name: "Data",
 		description: "Generate any type of data",
 		link: "/generator/data",
 		library: [
@@ -240,8 +254,8 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "8",
-		name: "Image generate from colors",
+		key: "11",
+		name: "Image",
 		description: "Generate image from color code",
 		link: "/generator/igfc",
 		library: [
@@ -260,8 +274,8 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "9",
-		name: "Avatar generator",
+		key: "12",
+		name: "Avatar",
 		description: "Generate avatar from text",
 		link: "/generator/avatar",
 		library: [
@@ -280,29 +294,29 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "17",
-		name: "QR code generator",
+		key: "13",
+		name: "QR Code",
 		description: "Generate QR code from text",
 		link: "/generator/qrcode",
 		library: [],
 	},
 	{
-		key: "10",
+		key: "14",
 		name: "Sorting",
 		description: "Sort numbers or strings",
 		link: "/generator/sorting",
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
-		key: "11",
+		key: "15",
 		name: "List",
 		description: "List of things",
 		link: "/list/blog",
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
-		key: "12",
-		name: "Markdown Editor",
+		key: "16",
+		name: "Editor",
 		description: "Write markdown and download",
 		link: "/markdown/me",
 		library: [
@@ -313,8 +327,8 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "13",
-		name: "Markdown table generator",
+		key: "17",
+		name: "Table",
 		description: "Generate a table from the markdown",
 		link: "/markdown/md-table-generator",
 		library: [
@@ -325,8 +339,8 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "14",
-		name: "Markdown table of content",
+		key: "18",
+		name: "Table of content",
 		description: "Generate table from markdown",
 		link: "/markdown/toc",
 		library: [
@@ -337,7 +351,7 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "15",
+		key: "19",
 		name: "Text Editor",
 		description: "Generate rich text",
 		link: "/text/te",
@@ -349,10 +363,10 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "16",
-		name: "News",
-		description: "Tech news",
-		link: "/",
+		key: "20",
+		name: "Mimetype",
+		description: "Search mimetype",
+		link: "/info/mimetype",
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 ];

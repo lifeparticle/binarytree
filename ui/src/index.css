@@ -78,7 +78,7 @@ h5 {
 	overflow-x: auto;
 	overflow-y: auto;
 	max-height: 100dvh;
-	padding: var(--bt-size-10);
+	padding: var(--bt-size-10) var(--bt-size-10) 0 var(--bt-size-10);
 	scroll-behavior: smooth;
 }
 
