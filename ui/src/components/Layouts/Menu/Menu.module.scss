@@ -1,8 +1,6 @@
 .menu {
 	height: calc(100dvh - 204px);
 	overflow-y: auto;
-	display: flex;
-	flex-direction: column;
 
 	&__collapsed {
 		height: calc(100dvh - 202px);
