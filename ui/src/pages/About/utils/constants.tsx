@@ -16,7 +16,7 @@ const APP_VALUES = [
 		</a>
 		,{" "}
 		<a href="resource/course?q=&cat=React" target="_blank">
-			Lists
+			Resources
 		</a>
 		, and more. This feature not only enhances collaboration but also
 		improves overall productivity.
