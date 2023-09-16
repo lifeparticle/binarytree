@@ -16,6 +16,8 @@
 		background-color: transparent;
 		cursor: pointer;
 		position: relative;
+		align-items: center;
+		display: flex;
 
 		&__status {
 			width: var(--bt-size-7);
