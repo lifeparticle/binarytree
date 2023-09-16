@@ -8,7 +8,7 @@ import style from "./QRcode.module.scss";
 const { TextArea } = Input;
 
 const QRcode: React.FC = () => {
-	const [value, setValue] = useState("Generate QR code ...");
+	const [value, setValue] = useState("");
 	const [dataType, setDataType] = useState("");
 
 	useEffect(() => {
