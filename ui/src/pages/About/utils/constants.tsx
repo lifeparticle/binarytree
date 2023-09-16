@@ -15,7 +15,7 @@ const APP_VALUES = [
 			Shades & Tints
 		</a>
 		,{" "}
-		<a href="list/course?q=&cat=React" target="_blank">
+		<a href="resource/course?q=&cat=React" target="_blank">
 			Lists
 		</a>
 		, and more. This feature not only enhances collaboration but also
@@ -315,7 +315,7 @@ const FEATURE_DATA: Feature[] = [
 	},
 	{
 		key: "15",
-		name: "List",
+		name: "Resource",
 		description: "List of things",
 		link: "/resource/blog",
 		library: [{ name: "Vanilla JS", url: "" }],
