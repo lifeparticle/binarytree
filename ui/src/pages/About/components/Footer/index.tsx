@@ -15,31 +15,36 @@ const Footer: React.FC = () => {
 			style={{ backgroundColor: colorBgContainer }}
 		>
 			<div className={style.footer__left}>
-				<Typography.Text>
-					&copy; {new Date().getFullYear()}
-				</Typography.Text>
-				<ul>
-					<li>
-						<a
-							href="https://github.com/lifeparticle/binarytree/blob/main/CODE_OF_CONDUCT.md"
-							target="_blank"
-						>
-							Code of Conduct
-						</a>
-					</li>
+				<div className={style.footer__left_year}>
+					<Typography.Text>
+						&copy; {new Date().getFullYear()}
+					</Typography.Text>
+				</div>
 
-					<li>
-						<a href="#">Privacy</a>
-					</li>
-					<li>
-						<a href="#">Terms</a>
-					</li>
-					<li>
-						<a href="https://github.com/lifeparticle/binarytree#status">
-							Status
-						</a>
-					</li>
-				</ul>
+				<div className={style.footer__left_legal}>
+					<ul>
+						<li>
+							<a
+								href="https://github.com/lifeparticle/binarytree/blob/main/CODE_OF_CONDUCT.md"
+								target="_blank"
+							>
+								Code of Conduct
+							</a>
+						</li>
+
+						<li>
+							<a href="#">Privacy</a>
+						</li>
+						<li>
+							<a href="#">Terms</a>
+						</li>
+						<li>
+							<a href="https://github.com/lifeparticle/binarytree#status">
+								Status
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 
 			<ResponsiveButton
