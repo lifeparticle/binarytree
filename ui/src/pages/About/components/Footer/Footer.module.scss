@@ -10,12 +10,12 @@
 	&__left {
 		display: flex;
 		align-items: center;
-		&_legal {
-			ul {
-				list-style-type: none;
-				display: flex;
-				gap: var(--bt-size-10);
-			}
+		gap: var(--bt-size-20);
+		&_list {
+			list-style-type: none;
+			display: flex;
+			gap: var(--bt-size-10);
+			padding: 0px;
 		}
 	}
 
@@ -23,10 +23,13 @@
 		gap: var(--bt-size-10);
 		flex-direction: column;
 		align-items: center;
+		justify-items: center;
 
 		&__left {
 			display: flex;
 			flex-direction: column;
+			justify-items: center;
+			align-items: center;
 			gap: var(--bt-size-10);
 		}
 	}

@@ -15,7 +15,7 @@
 		"@types/file-saver": "^2.0.5",
 		"@types/jest": "^29.5.1",
 		"@types/react-router-dom": "^5.3.3",
-		"@uiw/react-markdown-editor": "^5.11.2",
+		"@uiw/react-markdown-preview": "^4.1.15",
 		"@uiw/react-md-editor": "^3.23.5",
 		"antd": "^5.4.7",
 		"buffer": "^6.0.3",
