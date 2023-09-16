@@ -13,7 +13,7 @@ export const MENU_ITEMS = [
 			{
 				name: "News",
 				url: "/newsfeed",
-				icon: "Baseline",
+				icon: "Mailbox",
 				show: true,
 			},
 		],
