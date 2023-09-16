@@ -76,6 +76,7 @@ const API_COLUMNS: ColumnsType<Api> = [
 		title: "Page Name",
 		dataIndex: "name",
 		key: "name",
+		align: "center",
 	},
 	{
 		title: "Url",
@@ -88,6 +89,7 @@ const API_COLUMNS: ColumnsType<Api> = [
 				</a>
 			</Space>
 		),
+		align: "center",
 	},
 ];
 
@@ -109,6 +111,7 @@ const OTHER_COLUMNS: ColumnsType<Other> = [
 				{text}
 			</Link>
 		),
+		align: "center",
 	},
 ];
 
@@ -131,12 +134,14 @@ const FEATURE_COLUMNS: ColumnsType<Feature> = [
 			</Link>
 		),
 		width: 80,
+		align: "center",
 	},
 	{
 		title: "Description",
 		dataIndex: "description",
 		key: "description",
 		width: 90,
+		align: "center",
 	},
 	{
 		title: "Library",
@@ -165,6 +170,7 @@ const FEATURE_COLUMNS: ColumnsType<Feature> = [
 			</>
 		),
 		width: 150,
+		align: "center",
 	},
 ];
 
