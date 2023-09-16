@@ -5,11 +5,12 @@ const withPageTitle = <T extends object>(
 	WrappedComponent: React.ComponentType<T>
 ) => {
 	const WithPageTitle = (props: T) => {
-		const title = usePageTitle();
+		const [title, description] = usePageTitle();
 
 		return (
 			<>
 				<Text text={title} level={3} />
+				<Text text={description} level={5} />
 				<br />
 				<WrappedComponent {...props} />
 			</>

@@ -4,7 +4,7 @@ import style from "./Home.module.scss";
 const Home = () => {
 	return (
 		<div className={style.home}>
-			<Text text="Next-generation developer tools" level={1} />
+			<Text text="Your Mate in Software Development" level={1} />
 		</div>
 	);
 };

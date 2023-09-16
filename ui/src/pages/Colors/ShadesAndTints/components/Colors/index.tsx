@@ -15,35 +15,31 @@ const Colors: React.FC<ExtendedColorsProps> = ({
 }) => {
 	if (colors.length === 0) return null;
 	return (
-		<Card className={styles.colors}>
+		<Card className={styles.colors} title={isPending ? title : type}>
 			<div className={styles.colors__list}>
-				{isPending ? (
-					<Title level={4}>{title}</Title>
-				) : (
-					colors.map((color, index) => (
-						<Card
-							key={`${index}-${type}-${color}`}
-							style={{
-								backgroundColor: color,
-								color: getTextColor(color),
-							}}
-						>
-							<div className={styles.colors__list_item}>
-								{index + 1}
-								<Title
-									level={4}
-									style={{ color: getTextColor(color) }}
-								>
-									{color}
-								</Title>
-								<Clipboard
-									text={color}
-									clipboardComponent={ClipboardButton}
-								/>
-							</div>
-						</Card>
-					))
-				)}
+				{colors.map((color, index) => (
+					<Card
+						key={`${index}-${type}-${color}`}
+						style={{
+							backgroundColor: color,
+							color: getTextColor(color),
+						}}
+					>
+						<div className={styles.colors__list_item}>
+							{index + 1}
+							<Title
+								level={4}
+								style={{ color: getTextColor(color) }}
+							>
+								{color}
+							</Title>
+							<Clipboard
+								text={color}
+								clipboardComponent={ClipboardButton}
+							/>
+						</div>
+					</Card>
+				))}
 			</div>
 		</Card>
 	);
