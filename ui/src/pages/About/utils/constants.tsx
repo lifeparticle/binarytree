@@ -311,7 +311,7 @@ const FEATURE_DATA: Feature[] = [
 		key: "15",
 		name: "List",
 		description: "List of things",
-		link: "/list/blog",
+		link: "/resource/blog",
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
