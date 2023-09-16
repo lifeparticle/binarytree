@@ -179,7 +179,7 @@ const FEATURE_DATA: Feature[] = [
 		key: "1",
 		name: "Newsfeed",
 		description: "Tech news",
-		link: "/",
+		link: "/newsfeed",
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
