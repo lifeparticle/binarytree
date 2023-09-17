@@ -152,5 +152,12 @@
 		"subCategory": "Illustrations",
 		"url": "https://app.eraser.io/",
 		"socials": []
+	},
+	{
+		"name": "{JSON} Placeholder",
+		"category": "API",
+		"subCategory": "Programming",
+		"url": "https://jsonplaceholder.typicode.com/",
+		"socials": []
 	}
 ]
