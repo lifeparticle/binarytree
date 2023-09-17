@@ -5,6 +5,7 @@ import {
 	Select,
 	Button as AntButton,
 	ButtonProps,
+	Dropdown,
 } from "antd";
 import React from "react";
 import withLabelSize from "components/Hoc/withLabelSize";
@@ -14,6 +15,7 @@ import {
 	SelectComponentPropsType,
 } from "./utils/types";
 import withSize from "components/Hoc/withSize";
+import { DropdownButtonProps } from "antd/es/dropdown";
 
 const ResponsiveSelect: React.FC<SelectComponentPropsType> = (props) => {
 	return <Select {...props} />;
@@ -35,14 +37,22 @@ const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
 	return <AntButton {...props}>{children}</AntButton>;
 };
 
+const DropdownButton: React.FC<DropdownButtonProps> = ({
+	children,
+	...props
+}) => {
+	return <Dropdown.Button {...props}>{children}</Dropdown.Button>;
+};
 const ResponsiveSelectWithLabel = withLabelSize(ResponsiveSelect);
 const ResponsiveSegementWithLabel = withLabelSize(ResponsiveSegment);
 const ResponsiveInputWithLabel = withLabelSize(ResponsiveInput);
 const ResponsiveButton = withSize(Button);
+const ResponsiveDropdownButton = withSize(DropdownButton);
 
 export {
 	ResponsiveSelectWithLabel,
 	ResponsiveSegementWithLabel,
 	ResponsiveInputWithLabel,
 	ResponsiveButton,
+	ResponsiveDropdownButton,
 };

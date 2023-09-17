@@ -121,3 +121,8 @@ h5 {
 	display: flex;
 	align-items: center;
 }
+
+/* collapsible menu scroll */
+.ant-menu-submenu-popup .ant-menu-vertical {
+	max-height: 300px !important;
+}

@@ -117,12 +117,14 @@ const ImageGeneratorFromColors: React.FC = () => {
 					</Space>
 				</Card>
 			</PageGrid>
+
 			{colors.length > 0 && (
 				<Card className={style.igfc__colors}>
+					<div className={style.igfc__background}></div>
 					<div className={style.igfc__image__container}>
 						{colors.map((color: string) => {
 							return (
-								<div key={color}>
+								<div key={color} className={style.igfc__image}>
 									<div
 										ref={(ref) => {
 											if (ref) {
@@ -136,7 +138,12 @@ const ImageGeneratorFromColors: React.FC = () => {
 											borderRadius: `${rounded}px`,
 										}}
 									/>
-									<Title level={5}>{color}</Title>
+									<Title
+										className={style.igfc__image__title}
+										level={5}
+									>
+										{color}
+									</Title>
 								</div>
 							);
 						})}
