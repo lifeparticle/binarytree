@@ -31,14 +31,14 @@ const Base64: React.FC = () => {
 		<PageGrid>
 			<Card>
 				<Form layout="vertical">
-					<Form.Item label="Text input">
+					<Form.Item label="Text">
 						<TextArea
 							value={input}
 							onChange={(currentValue) => {
 								setInput(currentValue.target.value);
 								onClick("encode", currentValue.target.value);
 							}}
-							placeholder="Input"
+							placeholder="Decoded text"
 							rows={10}
 							data-gramm={false}
 							allowClear
@@ -62,9 +62,9 @@ const Base64: React.FC = () => {
 							onClick("decode", value);
 						}}
 						rows={10}
-						placeholder="Result"
+						placeholder="Encoded text"
 						status={status}
-						label="Base64 output"
+						label="Base64"
 					/>
 
 					<Clipboard
