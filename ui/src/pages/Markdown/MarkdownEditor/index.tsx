@@ -1,4 +1,4 @@
-import { Space } from "antd";
+import { Card, Space } from "antd";
 import { downloadPDFFile, downloadTextFile } from "lib/utils/files";
 import { useContext, useState } from "react";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
@@ -24,33 +24,35 @@ const MarkdownEditor: React.FC = () => {
 
 	return (
 		<div className={style.me}>
-			<Space>
-				<ResponsiveButton
-					disabled={IS_MARKDOWN_EMPTY}
-					onClick={() => setMarkdown("")}
-				>
-					Clear
-				</ResponsiveButton>
+			<Card>
+				<Space>
+					<ResponsiveButton
+						disabled={IS_MARKDOWN_EMPTY}
+						onClick={() => setMarkdown("")}
+					>
+						Clear
+					</ResponsiveButton>
 
-				<ResponsiveButton
-					disabled={IS_MARKDOWN_EMPTY}
-					onClick={() => downloadTextFile(markdown, "README.md")}
-				>
-					Download Markdown
-				</ResponsiveButton>
+					<ResponsiveButton
+						disabled={IS_MARKDOWN_EMPTY}
+						onClick={() => downloadTextFile(markdown, "README.md")}
+					>
+						Download Markdown
+					</ResponsiveButton>
 
-				<ResponsiveButton
-					disabled={IS_MARKDOWN_EMPTY}
-					onClick={() => downloadPDFFile(markdown, "README.html")}
-				>
-					Download HTML
-				</ResponsiveButton>
+					<ResponsiveButton
+						disabled={IS_MARKDOWN_EMPTY}
+						onClick={() => downloadPDFFile(markdown, "README.html")}
+					>
+						Download HTML
+					</ResponsiveButton>
 
-				<Clipboard
-					text={markdown}
-					clipboardComponent={ClipboardButton}
-				/>
-			</Space>
+					<Clipboard
+						text={markdown}
+						clipboardComponent={ClipboardButton}
+					/>
+				</Space>
+			</Card>
 
 			<div
 				className={style.me__editor}

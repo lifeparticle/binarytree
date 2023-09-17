@@ -121,6 +121,11 @@ const OTHER_DATA: Other[] = [
 		name: "Avatar",
 		url: "https://www.dicebear.com/styles/adventurer-neutral",
 	},
+	{
+		key: "2",
+		name: "Open Props",
+		url: "https://github.com/argyleink/open-props",
+	},
 ];
 
 const FEATURE_COLUMNS: ColumnsType<Feature> = [
