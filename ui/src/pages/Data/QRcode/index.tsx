@@ -1,4 +1,4 @@
-import { Card, Form, QRCode, Input, Badge } from "antd";
+import { Card, Form, QRCode, Input, Badge, Space } from "antd";
 import PageGrid from "components/Layouts/PageGrid";
 import React, { useEffect, useState } from "react";
 import { detectQrData, downloadQRCode } from "./utils/helper";
@@ -47,18 +47,12 @@ const QRcode: React.FC = () => {
 			</Card>
 			<Card className={style.qrcode__output}>
 				{value.length > 0 ? (
-					<div id="myqrcode" className={style.qrcode__output__result}>
-						<QRCode
-							value={value}
-							bgColor="#fff"
-							style={{ marginBottom: 16 }}
+					<Space direction="vertical" align="center" size={"large"}>
+						<QRCode value={value} />
+						<DropdownDownloadButton
+							handleDownload={downloadQRCode}
 						/>
-						<div>
-							<DropdownDownloadButton
-								handleDownload={downloadQRCode}
-							/>
-						</div>
-					</div>
+					</Space>
 				) : (
 					<Warning
 						text="There is no data for generating QR code, please provide data

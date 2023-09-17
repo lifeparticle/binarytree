@@ -134,9 +134,14 @@ const FEATURE_COLUMNS: ColumnsType<Feature> = [
 		dataIndex: "name",
 		key: "name",
 		render: (text, record) => (
-			<Link to={record.link} key={record.key}>
+			<a
+				href={record.link}
+				target="_blank"
+				rel="noopener noreferrer"
+				key={record.key}
+			>
 				{text}
-			</Link>
+			</a>
 		),
 		width: 80,
 		align: "center",

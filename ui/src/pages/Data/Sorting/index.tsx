@@ -50,7 +50,9 @@ const Sorting: React.FC = () => {
 						<TextArea
 							placeholder="Enter data separated by space or comma or new line"
 							value={input}
-							rows={18}
+							style={{
+								height: "calc(100dvh - 210px)",
+							}}
 							onChange={(event) => {
 								setInput(event.currentTarget.value);
 							}}
@@ -60,52 +62,57 @@ const Sorting: React.FC = () => {
 					</Form.Item>
 				</Card>
 
-				<Card className={style.sort__ouput}>
+				<Card className={style.sort__output}>
 					{output === "" ? (
 						<Warning text="There is no data for sorting, please provide data first." />
 					) : (
 						<>
-							<ResponsiveSegementWithLabel
-								label={"Order"}
-								value={order}
-								onChange={(value: string | number) =>
-									setOrder(value as string)
-								}
-								options={[
-									{ label: "Ascending", value: "Ascending" },
-									{
-										label: "Descending",
-										value: "Descending",
-									},
-								]}
-							/>
+							<PageGrid>
+								<ResponsiveSegementWithLabel
+									label={"Order"}
+									value={order}
+									onChange={(value: string | number) =>
+										setOrder(value as string)
+									}
+									options={[
+										{
+											label: "Ascending",
+											value: "Ascending",
+										},
+										{
+											label: "Descending",
+											value: "Descending",
+										},
+									]}
+								/>
+								<CopyInput>
+									<ResponsiveSelectWithLabel
+										label="Output separator"
+										value={outputFormat.value}
+										onSelect={(_, option) => {
+											setOutputFormat(option);
+										}}
+										options={OUTPUT_FORMAT}
+										defaultActiveFirstOption
+									/>
 
+									<Clipboard
+										text={output}
+										clipboardComponent={ClipboardButton}
+									/>
+								</CopyInput>
+							</PageGrid>
 							<Form.Item label="Sorted output">
 								<TextArea
 									placeholder="output"
 									value={output}
-									rows={10}
+									style={{
+										height: "calc(100dvh - 300px)",
+									}}
 									readOnly
 									data-gramm={false}
 								/>
 							</Form.Item>
-
-							<CopyInput>
-								<ResponsiveSelectWithLabel
-									label="Output separator"
-									value={outputFormat.value}
-									onSelect={(_, option) => {
-										setOutputFormat(option);
-									}}
-									options={OUTPUT_FORMAT}
-									defaultActiveFirstOption
-								/>
-
-								<Clipboard
-									text={output}
-									clipboardComponent={ClipboardButton}
-								/>
-							</CopyInput>
 						</>
 					)}
 				</Card>
