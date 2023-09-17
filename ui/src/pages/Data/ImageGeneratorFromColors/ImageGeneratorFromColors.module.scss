@@ -6,11 +6,29 @@
 	&__colors {
 		grid-column: 1 / -1;
 		margin-top: var(--bt-size-16);
+		position: relative;
+		background-color: rgba(255, 255, 255, 0.212);
+	}
+
+	&__background {
+		background: url("../../../assets/grid.svg") repeat;
+		position: absolute;
+		inset: 0;
 	}
 
 	&__image__container {
 		display: flex;
 		flex-wrap: wrap;
 		gap: var(--bt-size-16);
+		position: relative;
+	}
+
+	&__image {
+		display: flex;
+		flex-direction: column;
+		gap: var(--bt-size-16);
+		&__title {
+			text-align: center;
+		}
 	}
 }

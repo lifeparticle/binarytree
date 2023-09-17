@@ -1,9 +1,10 @@
-import { Button, Card, Form, QRCode, Input, Badge } from "antd";
+import { Card, Form, QRCode, Input, Badge } from "antd";
 import PageGrid from "components/Layouts/PageGrid";
 import React, { useEffect, useState } from "react";
 import { detectQrData, downloadQRCode } from "./utils/helper";
 import Icon from "components/General/Icon";
 import style from "./QRcode.module.scss";
+import DropdownDownloadButton from "components/General/DropdownDownloadButton";
 
 const { TextArea } = Input;
 
@@ -52,7 +53,11 @@ const QRcode: React.FC = () => {
 							bgColor="#fff"
 							style={{ marginBottom: 16 }}
 						/>
-						<Button onClick={downloadQRCode}>Download</Button>
+						<div>
+							<DropdownDownloadButton
+								handleDownload={downloadQRCode}
+							/>
+						</div>
 					</div>
 				) : (
 					<div className={style.qrcode__output__notfound}>
