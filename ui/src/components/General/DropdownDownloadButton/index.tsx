@@ -1,7 +1,7 @@
 import { MenuProps } from "antd";
 import React from "react";
-import { ResponsiveDropdownButton } from "../FormComponents";
-import Icon from "../Icon";
+import { ResponsiveDropdownButton } from "components/General/FormComponents";
+import Icon from "components/General/Icon";
 import { DropdownDownloadButtonPropsType } from "./utils/types";
 const imageType = {
 	jpeg: ".jpeg",
