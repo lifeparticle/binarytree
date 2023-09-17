@@ -2,8 +2,8 @@ import { Button, Card, Form, QRCode, Input, Badge } from "antd";
 import PageGrid from "components/Layouts/PageGrid";
 import React, { useEffect, useState } from "react";
 import { detectQrData, downloadQRCode } from "./utils/helper";
-import Icon from "components/General/Icon";
 import style from "./QRcode.module.scss";
+import Warning from "components/General/Warning";
 
 const { TextArea } = Input;
 
@@ -55,16 +55,10 @@ const QRcode: React.FC = () => {
 						<Button onClick={downloadQRCode}>Download</Button>
 					</div>
 				) : (
-					<div className={style.qrcode__output__notfound}>
-						<span>
-							<Icon name="AlertTriangle" size={30} />
-						</span>
-
-						<p>
-							There is no data for generating QR code, please
-							provide data first.
-						</p>
-					</div>
+					<Warning
+						text="There is no data for generating QR code, please provide data
+					first."
+					/>
 				)}
 			</Card>
 		</PageGrid>
