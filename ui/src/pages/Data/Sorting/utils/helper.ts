@@ -50,7 +50,7 @@ const sortData = (data: string, order: string) => {
 			);
 		}
 		default: {
-			return ["There is no data for sorting, please provide data first."];
+			return [""];
 		}
 	}
 };
