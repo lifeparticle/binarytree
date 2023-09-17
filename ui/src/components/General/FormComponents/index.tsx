@@ -41,7 +41,7 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
 	children,
 	...props
 }) => {
-	return <Dropdown.Button {...props}>Download</Dropdown.Button>;
+	return <Dropdown.Button {...props}>{children}</Dropdown.Button>;
 };
 const ResponsiveSelectWithLabel = withLabelSize(ResponsiveSelect);
 const ResponsiveSegementWithLabel = withLabelSize(ResponsiveSegment);
