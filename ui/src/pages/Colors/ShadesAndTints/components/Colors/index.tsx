@@ -1,4 +1,4 @@
-import { Card, Typography } from "antd";
+import { Card, Tag, Typography } from "antd";
 import { getTextColor } from "lib/utils/helper";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
@@ -27,12 +27,9 @@ const Colors: React.FC<ExtendedColorsProps> = ({
 					>
 						<div className={styles.colors__list_item}>
 							{index + 1}
-							<Title
-								level={4}
-								style={{ color: getTextColor(color) }}
-							>
+							<Tag style={{ color: getTextColor(color) }}>
 								{color}
-							</Title>
+							</Tag>
 							<Clipboard
 								text={color}
 								clipboardComponent={ClipboardButton}
