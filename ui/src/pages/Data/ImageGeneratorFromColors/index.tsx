@@ -1,5 +1,5 @@
 import JSZip from "jszip";
-import { Card, Form, Typography, Input, Space } from "antd";
+import { Card, Form, Input, Space, Tag } from "antd";
 import { saveAs } from "file-saver";
 import JSZipUtils from "jszip-utils";
 import { toPng } from "html-to-image";
@@ -14,7 +14,6 @@ import {
 } from "components/General/FormComponents";
 import InputGrid from "components/Layouts/InputGrid";
 
-const { Title } = Typography;
 const { TextArea } = Input;
 
 const ImageGeneratorFromColors: React.FC = () => {
@@ -124,7 +123,10 @@ const ImageGeneratorFromColors: React.FC = () => {
 					<div className={style.igfc__image__container}>
 						{colors.map((color: string) => {
 							return (
-								<div key={color} className={style.igfc__image}>
+								<Space
+									key={color}
+									className={style.igfc__image}
+								>
 									<div
 										ref={(ref) => {
 											if (ref) {
@@ -138,13 +140,10 @@ const ImageGeneratorFromColors: React.FC = () => {
 											borderRadius: `${rounded}px`,
 										}}
 									/>
-									<Title
-										className={style.igfc__image__title}
-										level={5}
-									>
+									<Tag className={style.igfc__image__title}>
 										{color}
-									</Title>
-								</div>
+									</Tag>
+								</Space>
 							);
 						})}
 					</div>

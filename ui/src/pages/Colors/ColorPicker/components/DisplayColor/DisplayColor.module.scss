@@ -6,6 +6,7 @@
 	justify-content: space-between;
 	transition: var(--animation-fade-in);
 	border-radius: var(--bt-border-radius-4);
+	width: 100%;
 
 	&__checkered {
 		background-image: linear-gradient(
