@@ -2,15 +2,8 @@
 
 /* Style for the Warning component */
 .warning {
-	display: flex; /* Use flexbox to center content */
-	align-items: center; /* Center vertically */
-	justify-content: center; /* Center horizontally */
-	height: auto; /* Allow the component to adjust its height based on content */
-	padding: 16px; /* Add padding for spacing */
-	// background-color: #ffec3d; /* Set background color */
-	// color: #000; /* Set text color */
-	// border: 1px solid #f0d500; /* Add a border */
-	border-radius: 4px; /* Add border-radius for rounded corners */
-	font-size: 16px; /* Set font size */
-	text-align: center; /* Center text */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }

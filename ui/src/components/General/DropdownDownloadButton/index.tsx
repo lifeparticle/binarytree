@@ -17,11 +17,11 @@ const DropdownDownloadButton: React.FC<DropdownDownloadButtonPropsType> = ({
 
 	const items: MenuProps["items"] = [
 		{
-			label: "Download Jpeg",
+			label: "Download JPEG",
 			key: imageType.jpeg,
 		},
 		{
-			label: "Download Png",
+			label: "Download PNG",
 			key: imageType.png,
 		},
 	];
@@ -42,7 +42,5 @@ const DropdownDownloadButton: React.FC<DropdownDownloadButtonPropsType> = ({
 		</ResponsiveDropdownButton>
 	);
 };
-
-export { imageType };
 
 export default DropdownDownloadButton;

@@ -5,13 +5,11 @@ import style from "./Warning.module.scss";
 const Warning: React.FC<WarningProps> = ({ text }) => {
 	return (
 		<div className={style.warning}>
-			<div>
-				<span>
-					<Icon name="AlertTriangle" size={30} />
-				</span>
+			<span>
+				<Icon name="AlertTriangle" size={30} />
+			</span>
 
-				<p>{text}</p>
-			</div>
+			<p>{text}</p>
 		</div>
 	);
 };

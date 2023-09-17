@@ -1,13 +1,5 @@
-import { saveAs } from "file-saver";
-import { toPng, toJpeg, toSvg } from "html-to-image";
-import {
-	Card,
-	Form,
-	Slider,
-	Avatar as AntAvatar,
-	Space,
-	MenuProps,
-} from "antd";
+import { toPng, toJpeg } from "html-to-image";
+import { Card, Form, Slider, Avatar as AntAvatar, Space } from "antd";
 import ColorPickerWithInput from "components/General/ColorPickerWithInput";
 import WebFont from "webfontloader";
 import {
@@ -25,9 +17,7 @@ import {
 } from "./utils/constants";
 import InputGrid from "components/Layouts/InputGrid";
 import style from "./Avatar.module.scss";
-import DropdownDownloadButton, {
-	imageType,
-} from "components/General/DropdownDownloadButton";
+import DropdownDownloadButton from "components/General/DropdownDownloadButton";
 
 const Avatar = () => {
 	const [text, setText] = useState<string>("BT");
@@ -49,14 +39,18 @@ const Avatar = () => {
 		if (!domEl.current || text.length === 0) return;
 		let dataUrl;
 
-		if (ext === imageType.jpeg) {
+		if (ext === ".jpeg") {
 			dataUrl = await toJpeg(domEl.current);
 		} else {
 			dataUrl = await toPng(domEl.current);
 		}
 
-		const blob = await fetch(dataUrl).then((res) => res.blob());
-		saveAs(blob, `image-${Date.now()}${ext}`);
+		const a = document.createElement("a");
+		a.download = `image-${Date.now()}${ext}`;
+		a.href = dataUrl;
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
 	};
 
 	// Load the selected font when it changes
