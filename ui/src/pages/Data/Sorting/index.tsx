@@ -61,7 +61,7 @@ const Sorting: React.FC = () => {
 				</Card>
 
 				<Card className={style.sort__ouput}>
-					{output === "No data" ? (
+					{output === "" ? (
 						<Warning text="There is no data for sorting, please provide data first." />
 					) : (
 						<>
