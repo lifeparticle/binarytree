@@ -126,3 +126,7 @@ h5 {
 .ant-menu-submenu-popup .ant-menu-vertical {
 	max-height: 300px !important;
 }
+
+.ant-spin-dot-item {
+	background-color: rgba(0, 0, 0, 0.8) !important;
+}

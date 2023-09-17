@@ -45,7 +45,7 @@ const TableOfContent = lazy(() => import("pages/Markdown/TableOfContent"));
 
 const TextEditor = lazy(() => import("pages/Text/TextEditor"));
 
-const Mimetype = lazy(() => import("pages/Info/Mimetype"));
+const Mimetype = lazy(() => import("pages/Information/Mimetype"));
 
 export {
 	About,
