@@ -3,6 +3,7 @@
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
+	gap: var(--bt-size-16);
 
 	&__editor {
 		flex: 1;

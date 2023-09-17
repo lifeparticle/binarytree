@@ -11,6 +11,7 @@ import {
 	ResponsiveSegementWithLabel,
 	ResponsiveSelectWithLabel,
 } from "components/General/FormComponents";
+import Warning from "components/General/Warning";
 
 const { TextArea } = Input;
 
@@ -60,44 +61,53 @@ const Sorting: React.FC = () => {
 				</Card>
 
 				<Card className={style.sort__ouput}>
-					<ResponsiveSegementWithLabel
-						label={"Order"}
-						value={order}
-						onChange={(value: string | number) =>
-							setOrder(value as string)
-						}
-						options={[
-							{ label: "Ascending", value: "Ascending" },
-							{ label: "Descending", value: "Descending" },
-						]}
-					/>
+					{output === "" ? (
+						<Warning text="There is no data for sorting, please provide data first." />
+					) : (
+						<>
+							<ResponsiveSegementWithLabel
+								label={"Order"}
+								value={order}
+								onChange={(value: string | number) =>
+									setOrder(value as string)
+								}
+								options={[
+									{ label: "Ascending", value: "Ascending" },
+									{
+										label: "Descending",
+										value: "Descending",
+									},
+								]}
+							/>
 
-					<Form.Item label="Sorted output">
-						<TextArea
-							placeholder="output"
-							value={output}
-							rows={10}
-							readOnly
-							data-gramm={false}
-						/>
-					</Form.Item>
+							<Form.Item label="Sorted output">
+								<TextArea
+									placeholder="output"
+									value={output}
+									rows={10}
+									readOnly
+									data-gramm={false}
+								/>
+							</Form.Item>
 
-					<CopyInput>
-						<ResponsiveSelectWithLabel
-							label="Output separator"
-							value={outputFormat.value}
-							onSelect={(_, option) => {
-								setOutputFormat(option);
-							}}
-							options={OUTPUT_FORMAT}
-							defaultActiveFirstOption
-						/>
+							<CopyInput>
+								<ResponsiveSelectWithLabel
+									label="Output separator"
+									value={outputFormat.value}
+									onSelect={(_, option) => {
+										setOutputFormat(option);
+									}}
+									options={OUTPUT_FORMAT}
+									defaultActiveFirstOption
+								/>
 
-						<Clipboard
-							text={output}
-							clipboardComponent={ClipboardButton}
-						/>
-					</CopyInput>
+								<Clipboard
+									text={output}
+									clipboardComponent={ClipboardButton}
+								/>
+							</CopyInput>
+						</>
+					)}
 				</Card>
 			</PageGrid>
 		</Form>
