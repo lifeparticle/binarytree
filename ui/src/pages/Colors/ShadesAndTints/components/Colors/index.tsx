@@ -1,11 +1,9 @@
-import { Card, Tag, Typography } from "antd";
+import { Card, Tag } from "antd";
 import { getTextColor } from "lib/utils/helper";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import { ExtendedColorsProps } from "pages/Colors/ShadesAndTints/utils/types";
 import styles from "./Colors.module.scss";
-
-const { Title } = Typography;
 
 const Colors: React.FC<ExtendedColorsProps> = ({
 	colors,
