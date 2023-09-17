@@ -7,17 +7,11 @@
 
 	&__output {
 		height: 266px;
-		&__result,
-		&__notfound {
+		&__result {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-		}
-
-		&__notfound {
-			height: 200px;
-			text-align: center;
 		}
 	}
 }
