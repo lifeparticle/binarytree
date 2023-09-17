@@ -1,10 +1,10 @@
 import { Card, Table } from "antd";
 import React from "react";
 import MimeSearch from "./SearchBar";
-import { MIME_COLUMNS } from "pages/Info/Mimetype/utils/constants";
-import { MimeSearchResultPropsType } from "pages/Info/Mimetype/utils/types";
+import { MIME_COLUMNS } from "pages/Information/Mimetype/utils/constants";
+import { MimeSearchResultPropsType } from "pages/Information/Mimetype/utils/types";
 import { useSearchParams } from "react-router-dom";
-import { filteredMimeType } from "pages/Info/Mimetype/utils/helper";
+import { filteredMimeType } from "pages/Information/Mimetype/utils/helper";
 
 const MimeSearchResult: React.FC<MimeSearchResultPropsType> = ({
 	data,
