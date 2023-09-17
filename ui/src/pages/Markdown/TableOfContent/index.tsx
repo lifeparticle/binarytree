@@ -116,7 +116,7 @@ const TableOfContent: React.FC = () => {
 					<Form.Item label="Content">
 						<TextArea
 							style={{
-								height: "calc(100dvh - 250px)",
+								height: "calc(100dvh - 290px)",
 							}}
 							placeholder=""
 							value={markdown}
@@ -140,7 +140,7 @@ const TableOfContent: React.FC = () => {
 						<TextArea
 							value={tableOfContents}
 							style={{
-								height: "calc(100dvh - 250px)",
+								height: "calc(100dvh - 290px)",
 							}}
 							autoSize={false}
 						/>

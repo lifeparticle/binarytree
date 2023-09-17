@@ -1,14 +1,20 @@
 .sort {
+	overflow: hidden;
+
+	&__output {
+		display: grid;
+	}
+
+	&__input,
+	&__output {
+		height: var(--bt-full-page-height);
+	}
+
 	&__input {
-		min-height: 530px;
 		&_label {
 			display: flex;
 			width: 100vw;
 			justify-content: space-between;
 		}
-	}
-
-	&__ouput {
-		min-height: 530px;
 	}
 }
