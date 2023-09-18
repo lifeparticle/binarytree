@@ -2,14 +2,13 @@ import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { Route, Routes as RRDRoutes } from "react-router-dom";
 import withPageTitle from "components/Hoc/withPageTitle";
-import Text from "components/General/Text/Text";
-import { API_LOADING } from "lib/utils/constants";
 import { routes } from "./utils/constant";
+import { Spin } from "antd";
 
 const Routes: React.FC = () => {
 	return (
 		<ErrorBoundary fallback={<p>Something went wrong</p>}>
-			<Suspense fallback={<Text text={API_LOADING} />}>
+			<Suspense fallback={<Spin />}>
 				<RRDRoutes>
 					{routes.map((route) => (
 						<Route

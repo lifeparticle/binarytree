@@ -4,7 +4,7 @@ interface Option {
 	label: string;
 }
 
-interface SelectComponentPropsType {
+interface SelectComponentProps {
 	label?: string;
 	value?: string;
 	defaultActiveFirstOption?: boolean;
@@ -12,7 +12,7 @@ interface SelectComponentPropsType {
 	options: Option[];
 }
 
-interface SegmentComponentPropsType {
+interface SegmentComponentProps {
 	label?: string;
 	value: string;
 	onChange: (value: string | number) => void;
@@ -31,7 +31,7 @@ type TextType = {
 	onChange: (value: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-type InputComponentPropsType = {
+type InputComponentProps = {
 	label: string;
 	precision?: number;
 	min?: number;
@@ -44,7 +44,7 @@ type InputComponentPropsType = {
 	style?: React.CSSProperties;
 } & (NumberType | TextType);
 
-interface ButtonPropsType {
+interface ButtonProps {
 	children?: React.ReactNode;
 	disabled?: boolean;
 	onClick?: () => void;
@@ -54,8 +54,8 @@ interface ButtonPropsType {
 }
 
 export type {
-	SegmentComponentPropsType,
-	SelectComponentPropsType,
-	InputComponentPropsType,
-	ButtonPropsType,
+	SegmentComponentProps,
+	SelectComponentProps,
+	InputComponentProps,
+	ButtonProps,
 };

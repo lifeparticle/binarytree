@@ -2,9 +2,9 @@ import { Space, theme } from "antd";
 import React from "react";
 import style from "components/General/TextareaWithValidation/TextareaWithValidation.module.scss";
 import Icon from "components/General/Icon";
-import { ValidateStatusPropsType } from "./utils/types";
+import { ValidateStatusProps } from "./utils/types";
 
-const ValidateStatus: React.FC<ValidateStatusPropsType> = ({ status }) => {
+const ValidateStatus: React.FC<ValidateStatusProps> = ({ status }) => {
 	if (status.length === 0) {
 		return null;
 	}

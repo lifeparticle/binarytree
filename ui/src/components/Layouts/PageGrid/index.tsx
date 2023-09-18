@@ -1,8 +1,8 @@
 import { Col, Row } from "antd";
 import React from "react";
-import { PageGridPropsType } from "./utils/types";
+import { PageGridProps } from "./utils/types";
 
-const PageGrid: React.FC<PageGridPropsType> = ({ children, className }) => {
+const PageGrid: React.FC<PageGridProps> = ({ children, className }) => {
 	const [children1, children2] = React.Children.toArray(children);
 
 	return (

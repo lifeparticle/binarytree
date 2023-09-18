@@ -10,22 +10,22 @@ import {
 import React from "react";
 import withLabelSize from "components/Hoc/withLabelSize";
 import {
-	InputComponentPropsType,
-	SegmentComponentPropsType,
-	SelectComponentPropsType,
+	InputComponentProps,
+	SegmentComponentProps,
+	SelectComponentProps,
 } from "./utils/types";
 import withSize from "components/Hoc/withSize";
 import { DropdownButtonProps } from "antd/es/dropdown";
 
-const ResponsiveSelect: React.FC<SelectComponentPropsType> = (props) => {
+const ResponsiveSelect: React.FC<SelectComponentProps> = (props) => {
 	return <Select {...props} />;
 };
 
-const ResponsiveSegment: React.FC<SegmentComponentPropsType> = (props) => {
+const ResponsiveSegment: React.FC<SegmentComponentProps> = (props) => {
 	return <Segmented {...props} />;
 };
 
-const ResponsiveInput: React.FC<InputComponentPropsType> = (props) => {
+const ResponsiveInput: React.FC<InputComponentProps> = (props) => {
 	return props.type === "number" ? (
 		<InputNumber style={{ width: "100%" }} {...props} />
 	) : (

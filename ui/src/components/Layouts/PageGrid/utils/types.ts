@@ -1,6 +1,6 @@
-interface PageGridPropsType {
+interface PageGridProps {
 	children: React.ReactNode;
 	className?: string;
 }
 
-export type { PageGridPropsType };
+export type { PageGridProps };

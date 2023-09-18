@@ -10,6 +10,7 @@ import { ResponsiveInputWithLabel } from "components/General/FormComponents";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import PageGrid from "components/Layouts/PageGrid";
+import Warning from "components/General/Warning";
 const { TextArea } = Input;
 
 const TableOfContent: React.FC = () => {
@@ -130,22 +131,25 @@ const TableOfContent: React.FC = () => {
 			</Card>
 
 			<Card className={style.toc__output}>
-				<Form layout="vertical" className={style.toc__output_form}>
-					<Clipboard
-						text={tableOfContents}
-						clipboardComponent={ClipboardButton}
-					/>
-
-					<Form.Item label="Output">
-						<TextArea
-							value={tableOfContents}
-							style={{
-								height: "calc(100dvh - 290px)",
-							}}
-							autoSize={false}
+				{tableOfContents.length > 0 ? (
+					<Form layout="vertical" className={style.toc__output_form}>
+						<Clipboard
+							text={tableOfContents}
+							clipboardComponent={ClipboardButton}
 						/>
-					</Form.Item>
-				</Form>
+						<Form.Item label="Output">
+							<TextArea
+								value={tableOfContents}
+								style={{
+									height: "calc(100vh - 290px)", // corrected "100dvh" to "100vh"
+								}}
+								autoSize={false}
+							/>
+						</Form.Item>
+					</Form>
+				) : (
+					<Warning text="There is no data for TOC, please provide data first." />
+				)}
 			</Card>
 		</PageGrid>
 	);

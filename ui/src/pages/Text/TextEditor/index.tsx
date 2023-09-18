@@ -1,11 +1,9 @@
 import React, { useRef, useContext, useState } from "react";
-import { Col, Row } from "antd";
+import { Col, Row, Spin } from "antd";
 import { Editor } from "@tinymce/tinymce-react";
 import { Editor as TinyMCEEditor } from "tinymce";
 import style from "./TextEditor.module.scss";
 import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
-import { API_LOADING } from "lib/utils/constants";
-import Text from "components/General/Text/Text";
 
 const TextEditor: React.FC = () => {
 	const { isDarkMode } = useContext(DarkModeContext);
@@ -27,7 +25,7 @@ const TextEditor: React.FC = () => {
 		<div className={style.te}>
 			<Row gutter={[16, 16]}>
 				<Col xs={24} lg={24}>
-					{isLoading ? <Text text={API_LOADING} /> : null}
+					{isLoading ? <Spin /> : null}
 					<Editor
 						onEditorChange={(_, editor) => {
 							const wordcount = editor.plugins.wordcount;
@@ -44,7 +42,7 @@ const TextEditor: React.FC = () => {
 						}}
 						initialValue=""
 						init={{
-							height: "calc(100dvh - 98px)",
+							height: "calc(100dvh - 135px)",
 							wordcount_countcharacters: true,
 							menubar: true,
 							resize: false,
