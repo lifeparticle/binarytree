@@ -235,7 +235,7 @@ const routes: Route[] = [
 	{
 		path: "/",
 		title: "",
-		description: "Welcome home!",
+		description: "",
 		component: Home,
 	},
 	{
@@ -253,7 +253,7 @@ const routes: Route[] = [
 	{
 		path: "*",
 		title: "Page Not Found",
-		description: "Oops! We've seemed to misplace this page.",
+		description: "",
 		component: PageNotFound,
 	},
 ];

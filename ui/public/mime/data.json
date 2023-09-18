@@ -1,80 +1,96 @@
 [
 	{
+		"key": ".aac",
 		"name": ".aac",
 		"example": "AAC audio",
 		"code": { "content-type": "audio/aac" }
 	},
 	{
+		"key": ".abw",
 		"name": ".abw",
 		"example": "AbiWord document",
 		"code": { "content-type": "application/x-abiword" }
 	},
 	{
+		"key": ".arc",
 		"name": ".arc",
 		"example": "Archive document (multiple files embedded)",
 		"code": { "content-type": "application/x-freearc" }
 	},
 	{
+		"key": ".avif",
 		"name": ".avif",
 		"example": "AVIF image",
 		"code": { "content-type": "image/avif" }
 	},
 	{
+		"key": ".avi",
 		"name": ".avi",
 		"example": "AVI: Audio Video Interleave",
 		"code": { "content-type": "video/x-msvideo" }
 	},
 	{
+		"key": ".azw",
 		"name": ".azw",
 		"example": "Amazon Kindle eBook format",
 		"code": { "content-type": "application/vnd.amazon.ebook" }
 	},
 	{
+		"key": ".bin",
 		"name": ".bin",
 		"example": "Any kind of binary data",
 		"code": { "content-type": "application/octet-stream" }
 	},
 	{
+		"key": ".bmp",
 		"name": ".bmp",
 		"example": "Windows OS/2 Bitmap Graphics",
 		"code": { "content-type": "image/bmp" }
 	},
 	{
+		"key": ".bz",
 		"name": ".bz",
 		"example": "BZip archive",
 		"code": { "content-type": "application/x-bzip" }
 	},
 	{
+		"key": ".bz2",
 		"name": ".bz2",
 		"example": "BZip2 archive",
 		"code": { "content-type": "application/x-bzip2" }
 	},
 	{
+		"key": ".cda",
 		"name": ".cda",
 		"example": "CD audio",
 		"code": { "content-type": "application/x-cdf" }
 	},
 	{
+		"key": ".csh",
 		"name": ".csh",
 		"example": "C-Shell script",
 		"code": { "content-type": "application/x-csh" }
 	},
 	{
+		"key": ".css",
 		"name": ".css",
 		"example": "Cascading Style Sheets (CSS)",
 		"code": { "content-type": "text/css" }
 	},
 	{
+		"key": ".csv",
 		"name": ".csv",
 		"example": "Comma-separated values (CSV)",
 		"code": { "content-type": "text/csv" }
 	},
 	{
+		"key": ".doc",
 		"name": ".doc",
 		"example": "Microsoft Word",
 		"code": { "content-type": "application/msword" }
 	},
 	{
+		"key": ".docx",
 		"name": ".docx",
 		"example": "Microsoft Word (OpenXML)",
 		"code": {
@@ -82,61 +98,73 @@
 		}
 	},
 	{
+		"key": ".eot",
 		"name": ".eot",
 		"example": "MS Embedded OpenType fonts",
 		"code": { "content-type": "application/vnd.ms-fontobject" }
 	},
 	{
+		"key": ".epub",
 		"name": ".epub",
 		"example": "Electronic publication (EPUB)",
 		"code": { "content-type": "application/epub+zip" }
 	},
 	{
+		"key": ".gz",
 		"name": ".gz",
 		"example": "GZip Compressed Archive",
 		"code": { "content-type": "application/gzip" }
 	},
 	{
+		"key": ".gif",
 		"name": ".gif",
 		"example": "Graphics Interchange Format (GIF)",
 		"code": { "content-type": "image/gif" }
 	},
 	{
+		"key": ".htm",
 		"name": ".htm",
 		"example": "HyperText Markup Language (HTML)",
 		"code": { "content-type": "text/html" }
 	},
 	{
+		"key": ".html",
 		"name": ".html",
 		"example": "HyperText Markup Language (HTML)",
 		"code": { "content-type": "text/html" }
 	},
 	{
+		"key": ".ico",
 		"name": ".ico",
 		"example": "Icon format",
 		"code": { "content-type": "image/vnd.microsoft.icon" }
 	},
 	{
+		"key": ".ics",
 		"name": ".ics",
 		"example": "iCalendar format",
 		"code": { "content-type": "text/calendar" }
 	},
 	{
+		"key": ".jar",
 		"name": ".jar",
 		"example": "Java Archive (JAR)",
 		"code": { "content-type": "application/java-archive" }
 	},
 	{
+		"key": ".jpeg",
 		"name": ".jpeg",
 		"example": "JPEG images",
 		"code": { "content-type": "image/jpeg" }
 	},
 	{
+		"key": ".jpg",
 		"name": ".jpg",
 		"example": "JPEG images",
 		"code": { "content-type": "image/jpeg" }
 	},
 	{
+		"key": ".js",
 		"name": ".js",
 		"example": "JavaScript",
 		"code": {
@@ -144,51 +172,61 @@
 		}
 	},
 	{
+		"key": ".json",
 		"name": ".json",
 		"example": "JSON format",
 		"code": { "content-type": "application/json" }
 	},
 	{
+		"key": ".jsonld",
 		"name": ".jsonld",
 		"example": "JSON-LD format",
 		"code": { "content-type": "application/ld+json" }
 	},
 	{
+		"key": ".mid",
 		"name": ".mid",
 		"example": "Musical Instrument Digital Interface (MIDI)",
 		"code": { "content-type": "audio/midi, audio/x-midi" }
 	},
 	{
+		"key": ".midi",
 		"name": ".midi",
 		"example": "Musical Instrument Digital Interface (MIDI)",
 		"code": { "content-type": "audio/midi, audio/x-midi" }
 	},
 	{
+		"key": ".mjs",
 		"name": ".mjs",
 		"example": "JavaScript module",
 		"code": { "content-type": "text/javascript" }
 	},
 	{
+		"key": ".mp3",
 		"name": ".mp3",
 		"example": "MP3 audio",
 		"code": { "content-type": "audio/mpeg" }
 	},
 	{
+		"key": ".mp4",
 		"name": ".mp4",
 		"example": "MP4 video",
 		"code": { "content-type": "video/mp4" }
 	},
 	{
+		"key": ".mpeg",
 		"name": ".mpeg",
 		"example": "MPEG Video",
 		"code": { "content-type": "video/mpeg" }
 	},
 	{
+		"key": ".mpkg",
 		"name": ".mpkg",
 		"example": "Apple Installer Package",
 		"code": { "content-type": "application/vnd.apple.installer+xml" }
 	},
 	{
+		"key": ".odp",
 		"name": ".odp",
 		"example": "OpenDocument presentation document",
 		"code": {
@@ -196,6 +234,7 @@
 		}
 	},
 	{
+		"key": ".ods",
 		"name": ".ods",
 		"example": "OpenDocument spreadsheet document",
 		"code": {
@@ -203,56 +242,67 @@
 		}
 	},
 	{
+		"key": ".odt",
 		"name": ".odt",
 		"example": "OpenDocument text document",
 		"code": { "content-type": "application/vnd.oasis.opendocument.text" }
 	},
 	{
+		"key": ".oga",
 		"name": ".oga",
 		"example": "OGG audio",
 		"code": { "content-type": "audio/ogg" }
 	},
 	{
+		"key": ".ogv",
 		"name": ".ogv",
 		"example": "OGG video",
 		"code": { "content-type": "video/ogg" }
 	},
 	{
+		"key": ".ogx",
 		"name": ".ogx",
 		"example": "OGG",
 		"code": { "content-type": "application/ogg" }
 	},
 	{
+		"key": ".opus",
 		"name": ".opus",
 		"example": "Opus audio",
 		"code": { "content-type": "audio/opus" }
 	},
 	{
+		"key": ".otf",
 		"name": ".otf",
 		"example": "OpenType font",
 		"code": { "content-type": "font/otf" }
 	},
 	{
+		"key": ".png",
 		"name": ".png",
 		"example": "Portable Network Graphics",
 		"code": { "content-type": "image/png" }
 	},
 	{
+		"key": ".pdf",
 		"name": ".pdf",
 		"example": "Adobe Portable Document Format (PDF)",
 		"code": { "content-type": "application/pdf" }
 	},
 	{
+		"key": ".php",
 		"name": ".php",
 		"example": "Hypertext Preprocessor (Personal Home Page)",
 		"code": { "content-type": "application/x-httpd-php" }
 	},
 	{
+		"key": ".ppt",
 		"name": ".ppt",
 		"example": "Microsoft PowerPoint",
 		"code": { "content-type": "application/vnd.ms-powerpoint" }
 	},
 	{
+		"key": ".pptx",
 		"name": ".pptx",
 		"example": "Microsoft PowerPoint (OpenXML)",
 		"code": {
@@ -260,101 +310,121 @@
 		}
 	},
 	{
+		"key": ".rar",
 		"name": ".rar",
 		"example": "RAR archive",
 		"code": { "content-type": "application/vnd.rar" }
 	},
 	{
+		"key": ".rtf",
 		"name": ".rtf",
 		"example": "Rich Text Format (RTF)",
 		"code": { "content-type": "application/rtf" }
 	},
 	{
+		"key": ".sh",
 		"name": ".sh",
 		"example": "Bourne shell script",
 		"code": { "content-type": "application/x-sh" }
 	},
 	{
+		"key": ".svg",
 		"name": ".svg",
 		"example": "Scalable Vector Graphics (SVG)",
 		"code": { "content-type": "image/svg+xml" }
 	},
 	{
+		"key": ".tar",
 		"name": ".tar",
 		"example": "Tape Archive (TAR)",
 		"code": { "content-type": "application/x-tar" }
 	},
 	{
+		"key": ".tif",
 		"name": ".tif",
 		"example": "Tagged Image File Format (TIFF)",
 		"code": { "content-type": "image/tiff" }
 	},
 	{
+		"key": ".tiff",
 		"name": ".tiff",
 		"example": "Tagged Image File Format (TIFF)",
 		"code": { "content-type": "image/tiff" }
 	},
 	{
+		"key": ".ts",
 		"name": ".ts",
 		"example": "MPEG transport stream",
 		"code": { "content-type": "video/mp2t" }
 	},
 	{
+		"key": ".ttf",
 		"name": ".ttf",
 		"example": "TrueType Font",
 		"code": { "content-type": "font/ttf" }
 	},
 	{
+		"key": ".txt",
 		"name": ".txt",
 		"example": "Text, (generally ASCII or ISO 8859-n)",
 		"code": { "content-type": "text/plain" }
 	},
 	{
+		"key": ".vsd",
 		"name": ".vsd",
 		"example": "Microsoft Visio",
 		"code": { "content-type": "application/vnd.visio" }
 	},
 	{
+		"key": ".wav",
 		"name": ".wav",
 		"example": "Waveform Audio Format",
 		"code": { "content-type": "audio/wav" }
 	},
 	{
+		"key": ".weba",
 		"name": ".weba",
 		"example": "WEBM audio",
 		"code": { "content-type": "audio/webm" }
 	},
 	{
+		"key": ".webm",
 		"name": ".webm",
 		"example": "WEBM video",
 		"code": { "content-type": "video/webm" }
 	},
 	{
+		"key": ".webp",
 		"name": ".webp",
 		"example": "WEBP image",
 		"code": { "content-type": "image/webp" }
 	},
 	{
+		"key": ".woff",
 		"name": ".woff",
 		"example": "Web Open Font Format (WOFF)",
 		"code": { "content-type": "font/woff" }
 	},
 	{
+		"key": ".woff2",
 		"name": ".woff2",
 		"example": "Web Open Font Format (WOFF)",
 		"code": { "content-type": "font/woff2" }
 	},
 	{
+		"key": ".xhtml",
 		"name": ".xhtml",
 		"example": "XHTML",
 		"code": { "content-type": "application/xhtml+xml" }
 	},
 	{
+		"key": ".xls",
 		"name": ".xls",
 		"example": "Microsoft Excel",
 		"code": { "content-type": "application/vnd.ms-excel" }
 	},
 	{
+		"key": ".xlsx",
 		"name": ".xlsx",
 		"example": "Microsoft Excel (OpenXML)",
 		"code": {
@@ -362,6 +432,7 @@
 		}
 	},
 	{
+		"key": ".xml",
 		"name": ".xml",
 		"example": "XML",
 		"code": {
@@ -369,16 +440,19 @@
 		}
 	},
 	{
+		"key": ".xul",
 		"name": ".xul",
 		"example": "XUL",
 		"code": { "content-type": "application/vnd.mozilla.xul+xml" }
 	},
 	{
+		"key": ".zip",
 		"name": ".zip",
 		"example": "ZIP archive",
 		"code": { "content-type": "application/zip" }
 	},
 	{
+		"key": ".3gp",
 		"name": ".3gp",
 		"example": "3GPP audio/video container",
 		"code": {
@@ -386,6 +460,7 @@
 		}
 	},
 	{
+		"key": ".3g2",
 		"name": ".3g2",
 		"example": "3GPP2 audio/video container",
 		"code": {
@@ -393,6 +468,7 @@
 		}
 	},
 	{
+		"key": ".7z",
 		"name": ".7z",
 		"example": "7-zip archive",
 		"code": { "content-type": "application/x-7z-compressed" }

@@ -1,6 +1,6 @@
-interface CodeHighlightWithCopyPropsType {
+interface CodeHighlightWithCopyProps {
 	codeString: string;
 	language: string;
 }
 
-export type { CodeHighlightWithCopyPropsType };
+export type { CodeHighlightWithCopyProps };

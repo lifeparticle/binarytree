@@ -23,9 +23,9 @@ const MimeSearch: React.FC = () => {
 	return (
 		<Form layout="vertical">
 			<ResponsiveInputWithLabel
-				label="Search bar"
+				label="Search Table"
 				type="text"
-				placeholder="Search by Mimetype..."
+				placeholder="Search by Name or Content-type..."
 				value={searchQuery}
 				onChange={handleSearchChange}
 			/>

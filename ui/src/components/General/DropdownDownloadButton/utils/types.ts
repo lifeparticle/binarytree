@@ -1,5 +1,5 @@
-interface DropdownDownloadButtonPropsType {
+interface DropdownDownloadButtonProps {
 	handleDownload: (val: string) => void;
 }
 
-export type { DropdownDownloadButtonPropsType };
+export type { DropdownDownloadButtonProps };

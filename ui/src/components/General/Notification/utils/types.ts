@@ -4,11 +4,11 @@ interface Markdown {
 	features: string[];
 }
 
-interface NotificationPropsType {
+interface NotificationProps {
 	colorText: string;
 }
 
-interface NotificationListPropsType {
+interface NotificationListProps {
 	notifications: Markdown[] | undefined;
 	showRedFlag: boolean;
 	colorText: string;
@@ -17,4 +17,4 @@ interface NotificationListPropsType {
 	handleRedFlagNotification: () => void;
 }
 
-export type { Markdown, NotificationPropsType, NotificationListPropsType };
+export type { Markdown, NotificationProps, NotificationListProps };

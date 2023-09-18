@@ -13,9 +13,9 @@ interface ColorsProps {
 interface ColorInputsProps {
 	color: string;
 	handleColorChange: (event: ChangeEvent<HTMLInputElement>) => void;
-	handleNumberOfShadesChange: (value: number | null) => void;
+	handlePercentageChange: (value: number | null) => void;
 	setColor: (color: string) => void;
-	numberOfShades: number;
+	percentage: number;
 	handleOutputFormatChange: (option: SelectOption) => void;
 	option: SelectOption;
 	shades: string[];

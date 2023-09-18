@@ -4,6 +4,7 @@ import PageGrid from "components/Layouts/PageGrid";
 import React, { ChangeEvent, useState } from "react";
 import { combineSVGPaths } from "./utils/helper";
 import style from "./SvgFormatter.module.scss";
+import Warning from "components/General/Warning";
 
 const { TextArea } = Input;
 
@@ -36,27 +37,40 @@ const SvgFormatter: React.FC = () => {
 					</Form>
 				</Card>
 
-				{inputSVG && (
-					<Card>
+				<Card>
+					{inputSVG.length > 0 ? (
 						<div dangerouslySetInnerHTML={{ __html: inputSVG }} />
-					</Card>
-				)}
+					) : (
+						<Warning text="There is no data for SVG, please provide data first." />
+					)}
+				</Card>
 			</div>
 
-			{inputSVG && outputSVG && (
-				<div className={style.svgformatter__right}>
-					<Card className={style.svgformatter__right__code}>
+			<div className={style.svgformatter__right}>
+				<Card className={style.svgformatter__right__code}>
+					{outputSVG.length > 0 &&
+					outputSVG !== "Error combining SVG paths." ? (
 						<CodeHighlightWithCopy
 							language="css"
-							codeString={outputSVG}
+							codeString={
+								outputSVG.split(">").slice(0, -1).join(">\n") +
+								">" +
+								outputSVG.split(">").slice(-1)
+							}
 						/>
-					</Card>
-
-					<Card>
+					) : (
+						<Warning text="There is no data for SVG, please provide data first." />
+					)}
+				</Card>
+				<Card>
+					{outputSVG.length > 0 &&
+					outputSVG !== "Error combining SVG paths." ? (
 						<div dangerouslySetInnerHTML={{ __html: outputSVG }} />
-					</Card>
-				</div>
-			)}
+					) : (
+						<Warning text="There is no data for SVG, please provide data first." />
+					)}
+				</Card>
+			</div>
 		</PageGrid>
 	);
 };

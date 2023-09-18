@@ -16,7 +16,7 @@ import useUrlParams from "lib/utils/hooks/useUrlParams";
 const ShadesAndTints: React.FC = () => {
 	const [params, updateUrlParam, searchParams] = useUrlParams({
 		color: DEFAULT_COLOR,
-		numShades: DEFAULT_NUM_SHADES,
+		percentage: DEFAULT_NUM_SHADES,
 	});
 
 	const [color, setColor] = useState(
@@ -24,8 +24,8 @@ const ShadesAndTints: React.FC = () => {
 	);
 	const [shades, setShades] = useState<string[]>([]);
 	const [tints, setTints] = useState<string[]>([]);
-	const [numberOfShades, setNumberOfShades] = useState(
-		Number(searchParams.get("numShades")) || Number(params.numShades)
+	const [percentage, setPercentage] = useState(
+		Number(searchParams.get("percentage")) || Number(params.percentage)
 	);
 
 	const [option, setOption] = useState<SelectOption>(OUTPUT_FORMAT[0]);
@@ -33,7 +33,7 @@ const ShadesAndTints: React.FC = () => {
 
 	const resetInputs = () => {
 		setColor(DEFAULT_COLOR);
-		setNumberOfShades(DEFAULT_NUM_SHADES);
+		setPercentage(DEFAULT_NUM_SHADES);
 	};
 
 	useCombinedKeyPress(resetInputs, ["ControlLeft", "KeyE"]);
@@ -41,30 +41,25 @@ const ShadesAndTints: React.FC = () => {
 
 	useEffect(() => {
 		startTransition(() => {
-			const { shades, tints } = generateShadesForColor(
-				color,
-				numberOfShades
-			);
+			const { shades, tints } = generateShadesForColor(color, percentage);
 			setShades(shades);
 			setTints(tints);
 		});
-	}, [color, numberOfShades]);
+	}, [color, percentage]);
 
 	useEffect(() => {
 		updateUrlParam("color", color);
-		updateUrlParam("numShades", String(numberOfShades));
-	}, [color, numberOfShades]);
+		updateUrlParam("percentage", String(percentage));
+	}, [color, percentage]);
 
 	return (
 		<div className={styles.st}>
 			<ColorInputs
 				color={color}
 				handleColorChange={(e) => setColor(e.target.value)}
-				handleNumberOfShadesChange={(num) =>
-					num && setNumberOfShades(num)
-				}
+				handlePercentageChange={(num) => num && setPercentage(num)}
 				setColor={setColor}
-				numberOfShades={numberOfShades}
+				percentage={percentage}
 				handleOutputFormatChange={setOption}
 				option={option}
 				shades={shades}
