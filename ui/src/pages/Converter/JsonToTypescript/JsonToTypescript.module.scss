@@ -1,4 +1,12 @@
 .json {
-	display: flex;
-	flex-direction: column;
+	&__input {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__output {
+		min-height: 424px;
+		display: flex;
+		flex-direction: column;
+	}
 }

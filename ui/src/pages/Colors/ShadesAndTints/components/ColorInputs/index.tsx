@@ -25,9 +25,9 @@ import ColorPickerWithInput from "components/General/ColorPickerWithInput";
 const ColorInputs: React.FC<ColorInputsProps> = ({
 	color,
 	handleColorChange,
-	handleNumberOfShadesChange,
+	handlePercentageChange,
 	setColor,
-	numberOfShades,
+	percentage,
 	handleOutputFormatChange,
 	option,
 	shades,
@@ -61,9 +61,9 @@ const ColorInputs: React.FC<ColorInputsProps> = ({
 						label="Color"
 					/>
 					<ResponsiveInputWithLabel
-						value={numberOfShades}
-						label="Shades"
-						onChange={handleNumberOfShadesChange}
+						value={percentage}
+						label="Percentage"
+						onChange={handlePercentageChange}
 						placeholder="Shades"
 						precision={0}
 						step={1}

@@ -47,7 +47,12 @@ const QRcode: React.FC = () => {
 			</Card>
 			<Card className={style.qrcode__output}>
 				{value.length > 0 ? (
-					<Space direction="vertical" align="center" size={"large"}>
+					<Space
+						direction="vertical"
+						align="center"
+						size={"large"}
+						id="myqrcode"
+					>
 						<QRCode value={value} />
 						<DropdownDownloadButton
 							handleDownload={downloadQRCode}

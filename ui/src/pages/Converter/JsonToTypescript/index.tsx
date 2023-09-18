@@ -10,6 +10,7 @@ import {
 	ResponsiveButton,
 	ResponsiveInputWithLabel,
 } from "components/General/FormComponents";
+import Warning from "components/General/Warning";
 
 const JsonToTypescript: React.FC = () => {
 	const [json, setJson] = useState("");
@@ -39,13 +40,14 @@ const JsonToTypescript: React.FC = () => {
 	}, [json]);
 
 	return (
-		<PageGrid>
-			<Card className={style.json}>
+		<PageGrid className={style.json}>
+			<Card className={style.json__input}>
 				<Form layout="vertical">
 					<TextareaWithValidation
 						value={json}
 						onChange={(e) => {
 							setJson(e.target.value);
+							setInterfaces([]);
 						}}
 						label="JSON Input"
 						placeholder="JSON"
@@ -72,14 +74,16 @@ const JsonToTypescript: React.FC = () => {
 				</Form>
 			</Card>
 
-			{interfaces.length > 0 && (
-				<Card>
+			<Card>
+				{interfaces.toString().length > 0 ? (
 					<CodeHighlightWithCopy
 						codeString={interfaces.toString().replace(/,/g, "\n\n")}
 						language="typescript"
 					/>
-				</Card>
-			)}
+				) : (
+					<Warning text="There is no data for JSON, please provide data first." />
+				)}
+			</Card>
 		</PageGrid>
 	);
 };

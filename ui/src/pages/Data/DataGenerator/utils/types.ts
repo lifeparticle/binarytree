@@ -1,6 +1,6 @@
-interface OutputPropsType {
+interface OutputProps {
 	sql: string;
 	json: string;
 }
 
-export type { OutputPropsType };
+export type { OutputProps };

@@ -1,5 +1,5 @@
-interface ValidateStatusPropsType {
+interface ValidateStatusProps {
 	status: string;
 }
 
-export type { ValidateStatusPropsType };
+export type { ValidateStatusProps };
