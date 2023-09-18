@@ -1,8 +1,15 @@
 import { MenuProps } from "antd";
 import { IconName } from "components/General/Icon/utils/types";
 import { getItem } from "components/Layouts/Menu/utils/helper";
+import { routes } from "pages/Routes/utils/constant";
+import { Route, RouteId } from "pages/Routes/utils/types";
 
 const IN_DEVELOPMENT = import.meta.env.DEV;
+
+const routesById = routes.reduce((acc, route) => {
+	acc[route.id] = route;
+	return acc;
+}, {} as Record<RouteId, Route>);
 
 export const MENU_ITEMS = [
 	{
@@ -11,8 +18,8 @@ export const MENU_ITEMS = [
 		show: true,
 		children: [
 			{
-				name: "News",
-				url: "/newsfeed",
+				name: routesById.newsfeed.title,
+				url: routesById.newsfeed.path,
 				icon: "Mailbox",
 				show: true,
 			},
@@ -24,14 +31,14 @@ export const MENU_ITEMS = [
 		show: true,
 		children: [
 			{
-				name: "Color Picker",
-				url: "/colors/cp",
+				name: routesById.colorpicker.title,
+				url: routesById.colorpicker.path,
 				icon: "Baseline",
 				show: true,
 			},
 			{
-				name: "Shades & Tints",
-				url: "/colors/shades-tints",
+				name: routesById.shadesandtints.title,
+				url: routesById.shadesandtints.path,
 				icon: "Layers",
 				show: true,
 			},
@@ -43,20 +50,20 @@ export const MENU_ITEMS = [
 		show: true,
 		children: [
 			{
-				name: "Border Radius",
-				url: "/css/br",
+				name: routesById.borderradius.title,
+				url: routesById.borderradius.path,
 				icon: "Square",
 				show: true,
 			},
 			{
-				name: "Box Shadow",
-				url: "/css/bs",
+				name: routesById.boxshadow.title,
+				url: routesById.boxshadow.path,
 				icon: "Box",
 				show: IN_DEVELOPMENT,
 			},
 			{
-				name: "Svg Formatter",
-				url: "/css/svg-formatter",
+				name: routesById.svgformatter.title,
+				url: routesById.svgformatter.path,
 				icon: "Command",
 				show: true,
 			},
@@ -68,20 +75,20 @@ export const MENU_ITEMS = [
 		show: true,
 		children: [
 			{
-				name: "Base64",
-				url: "/converter/base-64",
+				name: routesById.base64.title,
+				url: routesById.base64.path,
 				icon: "Replace",
 				show: true,
 			},
 			{
-				name: "Pixel",
-				url: "/converter/pixel",
+				name: routesById.pixelconverter.title,
+				url: routesById.pixelconverter.path,
 				icon: "FileOutput",
 				show: true,
 			},
 			{
-				name: "JSON To TypeScript",
-				url: "/converter/jtt",
+				name: routesById.jsontotypescript.title,
+				url: routesById.jsontotypescript.path,
 				icon: "FileOutput",
 				show: true,
 			},
@@ -93,32 +100,32 @@ export const MENU_ITEMS = [
 		show: true,
 		children: [
 			{
-				name: "Data",
-				url: "/generator/data",
+				name: routesById.data.title,
+				url: routesById.data.path,
 				icon: "DatabaseBackup",
 				show: true,
 			},
 			{
-				name: "Image",
-				url: "/generator/igfc",
+				name: routesById.image.title,
+				url: routesById.image.path,
 				icon: "Image",
 				show: true,
 			},
 			{
-				name: "Avatar",
-				url: "/generator/avatar",
+				name: routesById.avatar.title,
+				url: routesById.avatar.path,
 				icon: "BadgeHelp",
 				show: true,
 			},
 			{
-				name: "QR Code",
-				url: "/generator/qrcode",
+				name: routesById.qrcode.title,
+				url: routesById.qrcode.path,
 				icon: "QrCode",
 				show: true,
 			},
 			{
-				name: "Sorting",
-				url: "/generator/sorting",
+				name: routesById.sorting.title,
+				url: routesById.sorting.path,
 				icon: "ArrowUpNarrowWide",
 				show: true,
 			},
@@ -130,20 +137,20 @@ export const MENU_ITEMS = [
 		show: true,
 		children: [
 			{
-				name: "Editor",
-				url: "/markdown/me",
+				name: routesById.editor.title,
+				url: routesById.editor.path,
 				icon: "FileEdit",
 				show: true,
 			},
 			{
-				name: "Table",
-				url: "/markdown/md-table-generator",
+				name: routesById.table.title,
+				url: routesById.table.path,
 				icon: "Dice5",
 				show: true,
 			},
 			{
-				name: "Table Of Content",
-				url: "/markdown/toc",
+				name: routesById.tableofcontent.title,
+				url: routesById.tableofcontent.path,
 				icon: "Table",
 				show: true,
 			},
@@ -155,8 +162,8 @@ export const MENU_ITEMS = [
 		show: true,
 		children: [
 			{
-				name: "Text Editor",
-				url: "/text/te",
+				name: routesById.texteditor.title,
+				url: routesById.texteditor.path,
 				icon: "ClipboardEdit",
 				show: true,
 			},
@@ -168,8 +175,8 @@ export const MENU_ITEMS = [
 		show: true,
 		children: [
 			{
-				name: "Mimetype",
-				url: "/information/mimetype",
+				name: routesById.mimetype.title,
+				url: routesById.mimetype.path,
 				icon: "ArrowLeftRight",
 				show: true,
 			},
@@ -181,80 +188,80 @@ export const MENU_ITEMS = [
 		show: true,
 		children: [
 			{
-				name: "Blog",
-				url: "/resource/blog",
+				name: routesById.blog.title,
+				url: routesById.blog.path,
 				icon: "Keyboard",
 				show: true,
 			},
 			{
-				name: "Book",
-				url: "/resource/book",
+				name: routesById.book.title,
+				url: routesById.book.path,
 				icon: "BookOpen",
 				show: true,
 			},
 			{
-				name: "Course",
-				url: "/resource/course",
+				name: routesById.course.title,
+				url: routesById.course.path,
 				icon: "GraduationCap",
 				show: true,
 			},
 			{
-				name: "Design System",
-				url: "/resource/design-system",
+				name: routesById.designsystem.title,
+				url: routesById.designsystem.path,
 				icon: "LayoutDashboard",
 				show: true,
 			},
 			{
-				name: "Github",
-				url: "/resource/github",
+				name: routesById.github.title,
+				url: routesById.github.path,
 				icon: "Github",
 				show: true,
 			},
 			{
-				name: "Icon",
-				url: "/resource/icon",
+				name: routesById.icon.title,
+				url: routesById.icon.path,
 				icon: "Square",
 				show: true,
 			},
 			{
-				name: "Movie",
-				url: "/resource/movie",
+				name: routesById.movie.title,
+				url: routesById.movie.path,
 				icon: "Clapperboard",
 				show: true,
 			},
 			{
-				name: "Platform",
-				url: "/resource/platform",
+				name: routesById.platform.title,
+				url: routesById.platform.path,
 				icon: "Server",
 				show: true,
 			},
 			{
-				name: "Plugin",
-				url: "/resource/plugin",
+				name: routesById.plugin.title,
+				url: routesById.plugin.path,
 				icon: "Plug",
 				show: true,
 			},
 			{
-				name: "Tool",
-				url: "/resource/tool",
+				name: routesById.tool.title,
+				url: routesById.tool.path,
 				icon: "Wrench",
 				show: true,
 			},
 			{
-				name: "TV Series",
-				url: "/resource/tv-series",
+				name: routesById.tvseries.title,
+				url: routesById.tvseries.path,
 				icon: "Tv",
 				show: true,
 			},
 			{
-				name: "UI/UX",
-				url: "/resource/ui-ux",
+				name: routesById.uiux.title,
+				url: routesById.uiux.path,
 				icon: "Brush",
 				show: true,
 			},
 			{
-				name: "Youtube",
-				url: "/resource/youtube",
+				name: routesById.youtube.title,
+				url: routesById.youtube.path,
 				icon: "Youtube",
 				show: true,
 			},

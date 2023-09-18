@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect, ChangeEvent } from "react";
+import React, { useState, useMemo, ChangeEvent, useEffect } from "react";
 import style from "./ColorPicker.module.scss";
 import { Card, Form, Space } from "antd";
 import { ColorPicker as CP } from "@mantine/core";
@@ -10,18 +10,12 @@ import DisplayColors from "./components/DisplayColors";
 import { FormatType } from "./utils/types";
 import { calculateColors, determineFormat } from "./utils/helper";
 import CopyInput from "components/Layouts/CopyInput";
-
-import useUrlParams from "lib/utils/hooks/useUrlParams";
 import { ResponsiveInputWithLabel } from "components/General/FormComponents";
+import { useSearchParams } from "react-router-dom";
 
 const ColorPicker: React.FC = () => {
-	const [params, updateParams, searchParams] = useUrlParams({
-		color: INITIAL_COLOR,
-	});
-
-	const [color, setColor] = useState(
-		searchParams.get("color") || (params.color as string)
-	);
+	const [searchParams, setSearchParams] = useSearchParams();
+	const color = String(searchParams.get("color") || INITIAL_COLOR);
 
 	const [format, setFormat] = useState<FormatType>(
 		determineFormat(color) || INITIAL_FORMAT
@@ -29,15 +23,24 @@ const ColorPicker: React.FC = () => {
 
 	const colors = useMemo(() => calculateColors(color), [color]);
 
+	const setColor = (color: string) => {
+		searchParams.set("color", color);
+		setSearchParams(searchParams);
+	};
+
 	const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
 		const input = e.target.value.trim();
-		setColor(input);
+		searchParams.set("color", input);
+		setSearchParams(searchParams);
 		setFormat(determineFormat(input));
 	};
 
 	useEffect(() => {
-		updateParams("color", color);
-	}, [color]);
+		if (!searchParams.get("color")) {
+			searchParams.set("color", INITIAL_COLOR);
+			setSearchParams(searchParams);
+		}
+	}, []);
 
 	return (
 		<Form layout="vertical">
