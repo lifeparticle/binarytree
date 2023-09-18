@@ -18,9 +18,10 @@ import {
 import InputGrid from "components/Layouts/InputGrid";
 import style from "./Avatar.module.scss";
 import DropdownDownloadButton from "components/General/DropdownDownloadButton";
+import Warning from "components/General/Warning";
 
 const Avatar = () => {
-	const [text, setText] = useState<string>("BT");
+	const [text, setText] = useState<string>("");
 	const [avatarFont, setAvatarFont] = useState(FONTS[0].value);
 	const [textColor, setTextColor] = useState<string>(
 		"rgba(255, 255, 255, 1)"
@@ -142,27 +143,35 @@ const Avatar = () => {
 			</Card>
 
 			<Card className={style.avatar__output}>
-				<Space direction="vertical" align="center" size={"large"}>
-					<AntAvatar
-						ref={domEl}
-						size={avatarSize}
-						shape={shapeType as "circle" | "square"}
-						style={{
-							backgroundColor: bgColor,
-							color: textColor,
-							borderRadius:
-								shapeType === "custom"
-									? `${customBorderRadius}px`
-									: "",
-							fontSize,
-							fontFamily: avatarFont,
-						}}
-					>
-						{text}
-					</AntAvatar>
-
-					<DropdownDownloadButton handleDownload={onButtonClick} />
-				</Space>
+				{text.length > 0 ? (
+					<Space direction="vertical" align="center" size={"large"}>
+						<AntAvatar
+							ref={domEl}
+							size={avatarSize}
+							shape={shapeType as "circle" | "square"}
+							style={{
+								backgroundColor: bgColor,
+								color: textColor,
+								borderRadius:
+									shapeType === "custom"
+										? `${customBorderRadius}px`
+										: "",
+								fontSize,
+								fontFamily: avatarFont,
+							}}
+						>
+							{text}
+						</AntAvatar>
+						<DropdownDownloadButton
+							handleDownload={onButtonClick}
+						/>
+					</Space>
+				) : (
+					<Warning
+						text="There is no text for generating Avatar, please provide text
+					first."
+					/>
+				)}
 			</Card>
 		</PageGrid>
 	);
