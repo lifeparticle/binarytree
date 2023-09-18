@@ -19,6 +19,7 @@ interface DisplayColorProps {
 	customValue: string;
 	value: string;
 	format: string;
+	title: string;
 }
 
 export type { FormatType, DisplayColorsProps, DisplayColorProps, colors };
