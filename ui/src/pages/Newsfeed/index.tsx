@@ -14,9 +14,7 @@ const Newsfeed: React.FC = () => {
 		url === SITE_OPTIONS["status-code"].value;
 	const { data, isLoading, isError } = useFetchList(
 		url,
-		isFeedUrl && import.meta.env.MODE === "development"
-			? corsProxyUrl + url
-			: url
+		isFeedUrl ? corsProxyUrl + url : url
 	);
 
 	return (
