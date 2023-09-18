@@ -2,6 +2,12 @@
 	display: flex;
 	flex-direction: column;
 
+	&__title {
+		display: flex;
+		align-items: center;
+		gap: var(--bt-size-10);
+	}
+
 	&__list {
 		display: flex;
 		flex-direction: column;

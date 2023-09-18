@@ -71,18 +71,8 @@ const ShadesAndTints: React.FC = () => {
 				tints={tints}
 			/>
 			<PageGrid>
-				<Colors
-					colors={shades}
-					isPending={isPending}
-					title="Generating shades..."
-					type="Shades"
-				/>
-				<Colors
-					colors={tints}
-					isPending={isPending}
-					title="Generating tints..."
-					type="Tints"
-				/>
+				<Colors colors={shades} isPending={isPending} type="Shades" />
+				<Colors colors={tints} isPending={isPending} type="Tints" />
 			</PageGrid>
 		</div>
 	);

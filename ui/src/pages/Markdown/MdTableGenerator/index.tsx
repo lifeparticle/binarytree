@@ -1,5 +1,5 @@
 import MDEditor from "@uiw/react-md-editor";
-import { Card, Form, Space } from "antd";
+import { Card, Form, Space, Spin } from "antd";
 import { useContext, useState, useTransition } from "react";
 import { generateTable } from "./util/utils";
 import { ResponsiveInputWithLabel } from "components/General/FormComponents";
@@ -76,8 +76,13 @@ const TableGenerator: React.FC = () => {
 				className={style.md__editor}
 				data-color-mode={isDarkMode ? "dark" : "light"}
 			>
+				{isPending && (
+					<div className={style.md__editor__spinner}>
+						<Spin />
+					</div>
+				)}
 				<MDEditor
-					value={isPending ? "Generating table..." : output}
+					value={output}
 					onChange={(val) => setOutput(val || "")}
 					height="100%"
 					style={{ fontSize: "52" }}

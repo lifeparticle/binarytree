@@ -24,7 +24,6 @@ interface ColorInputsProps {
 
 interface ExtendedColorsProps extends ColorsProps {
 	isPending: boolean;
-	title: string;
 	type: string;
 }
 
