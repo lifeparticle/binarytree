@@ -1,21 +1,41 @@
-import News from "components/General/ListItems/News/News";
+import React, { useState } from "react";
+import { SITE_OPTIONS, TAB_ITEMS } from "./utils/constants";
 import useFetchList from "lib/utils/hooks/useFetchList";
+import { Tabs } from "antd";
 import ListSearchResults from "components/RenderProps/ListSearchResults";
-
-const URL = `https://raw.githubusercontent.com/lifeparticle/binarytree/main/api/news.json`;
+import News from "components/General/ListItems/News/News";
+import { parseXML } from "./utils/helper";
 export const QUERY_KEY_NEWS = "news";
 
-const Newsfeed = () => {
-	const { data, isLoading, isError } = useFetchList(QUERY_KEY_NEWS, URL);
+const Newsfeed: React.FC = () => {
+	const corsProxyUrl = "https://cors-anywhere.herokuapp.com/";
+	const [url, setUrl] = useState(SITE_OPTIONS["frontend-focus"].value);
+	const isFeedUrl =
+		url === SITE_OPTIONS["frontend-focus"].value ||
+		url === SITE_OPTIONS["status-code"].value;
+	const { data, isLoading, isError } = useFetchList(
+		url,
+		isFeedUrl ? corsProxyUrl + url : url
+	);
 
 	return (
-		<ListSearchResults
-			items={data?.articles}
-			resourceName={QUERY_KEY_NEWS}
-			itemComponent={News}
-			isLoading={isLoading}
-			isError={isError}
-		/>
+		<>
+			<Tabs
+				defaultActiveKey={SITE_OPTIONS["frontend-focus"].value}
+				items={TAB_ITEMS}
+				onChange={(value) => {
+					setUrl(value);
+				}}
+			/>
+
+			<ListSearchResults
+				isError={isError}
+				isLoading={isLoading}
+				itemComponent={News}
+				resourceName={QUERY_KEY_NEWS}
+				items={isFeedUrl ? parseXML(data) : data?.articles}
+			/>
+		</>
 	);
 };
 
