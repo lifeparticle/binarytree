@@ -22,7 +22,7 @@ const ListSearchResults = <T,>({
 	isError,
 	source = "",
 }: ListSearchResultsProps<T>): ReactElement => {
-	const [searchParams] = useSearchParams();
+	const [searchParams, setSearchParams] = useSearchParams();
 
 	if (isError) {
 		return <Text text={API_ERROR} />;
@@ -46,12 +46,20 @@ const ListSearchResults = <T,>({
 
 	const categories = getCategories(items as ResourceType[], resourceName);
 
+	const onSearchCriteriaChange = (queryType: "q" | "cat", value: string) => {
+		searchParams.set(queryType, value);
+		setSearchParams(searchParams);
+	};
+
 	return (
 		<div className={style.container}>
 			<Search
 				categories={categories}
 				resourceName={resourceName}
 				isLoading={isLoading}
+				searchQuery={searchQuery}
+				categoryQuery={categoryQuery}
+				onSearchCriteriaChange={onSearchCriteriaChange}
 			/>
 			<List
 				items={list}
