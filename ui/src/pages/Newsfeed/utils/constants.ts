@@ -29,5 +29,6 @@ const TAB_ITEMS: TabsProps["items"] = [
 		label: SITE_OPTIONS["news"].label,
 	},
 ];
+const corsProxyUrl = "https://cors-anywhere.herokuapp.com/";
 
-export { SITE_OPTIONS, TAB_ITEMS };
+export { SITE_OPTIONS, TAB_ITEMS, corsProxyUrl };
