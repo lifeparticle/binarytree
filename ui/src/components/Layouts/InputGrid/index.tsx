@@ -1,8 +1,8 @@
 import { Col, Row } from "antd";
 import React from "react";
-import { InputGridPropsType } from "./utils/types";
+import { InputGridProps } from "./utils/types";
 
-const InputGrid: React.FC<InputGridPropsType> = ({ children, className }) => {
+const InputGrid: React.FC<InputGridProps> = ({ children, className }) => {
 	const [children1, children2] = React.Children.toArray(children);
 
 	return (

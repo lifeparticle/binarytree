@@ -4,10 +4,10 @@ interface MimeTableDataType {
 	code: { "content-type": string };
 }
 
-interface MimeSearchResultPropsType {
+interface MimeSearchResultProps {
 	data: MimeTableDataType[];
 	isLoading: boolean;
 	isError: boolean;
 }
 
-export type { MimeTableDataType, MimeSearchResultPropsType };
+export type { MimeTableDataType, MimeSearchResultProps };

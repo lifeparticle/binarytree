@@ -7,6 +7,7 @@
 	}
 
 	&__output {
+		display: grid;
 		&_form {
 			display: grid;
 			gap: var(--bt-size-30);

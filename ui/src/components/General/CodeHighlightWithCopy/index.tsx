@@ -7,10 +7,10 @@ import {
 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { useContext } from "react";
 import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
-import { CodeHighlightWithCopyPropsType } from "./utils/types";
+import { CodeHighlightWithCopyProps } from "./utils/types";
 import style from "./CodeHighlightwithCopy.module.scss";
 
-const CodeHighlightWithCopy: React.FC<CodeHighlightWithCopyPropsType> = ({
+const CodeHighlightWithCopy: React.FC<CodeHighlightWithCopyProps> = ({
 	codeString,
 	language,
 }) => {

@@ -1,6 +1,6 @@
-interface InputGridPropsType {
+interface InputGridProps {
 	children: React.ReactNode;
 	className?: string;
 }
 
-export type { InputGridPropsType };
+export type { InputGridProps };

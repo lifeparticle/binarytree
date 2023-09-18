@@ -13,6 +13,7 @@ import {
 	ResponsiveInputWithLabel,
 } from "components/General/FormComponents";
 import InputGrid from "components/Layouts/InputGrid";
+import Warning from "components/General/Warning";
 
 const { TextArea } = Input;
 
@@ -117,15 +118,14 @@ const ImageGeneratorFromColors: React.FC = () => {
 				</Card>
 			</PageGrid>
 
-			{colors.length > 0 && (
-				<Card className={style.igfc__colors}>
-					<div className={style.igfc__background}></div>
-					<div className={style.igfc__image__container}>
+			<Card className={style.igfc__colors}>
+				{colors.length > 0 ? (
+					<div className={style.igfc__images}>
 						{colors.map((color: string) => {
 							return (
 								<Space
 									key={color}
-									className={style.igfc__image}
+									className={style.igfc__images_image}
 								>
 									<div
 										ref={(ref) => {
@@ -147,8 +147,10 @@ const ImageGeneratorFromColors: React.FC = () => {
 							);
 						})}
 					</div>
-				</Card>
-			)}
+				) : (
+					<Warning text="There is no data for Iamge, please provide data first." />
+				)}
+			</Card>
 		</Form>
 	);
 };

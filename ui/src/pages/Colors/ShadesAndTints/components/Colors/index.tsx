@@ -16,7 +16,7 @@ const Colors: React.FC<ExtendedColorsProps> = ({ colors, isPending, type }) => {
 	);
 
 	return (
-		<Card className={styles.colors} title={cardTitle}>
+		<Card className={styles.colors} title={cardTitle} extra={colors.length}>
 			<div className={styles.colors__list}>
 				{colors.map((color, index) => (
 					<Card
