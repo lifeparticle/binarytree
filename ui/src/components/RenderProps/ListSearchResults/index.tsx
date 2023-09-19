@@ -1,7 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 import style from "./ListSearchResults.module.scss";
 import { ResourceType } from "components/General/ListItems/Resource/utils/types";
-import { QUERY_KEY_NEWS } from "pages/Newsfeed";
 import Search from "components/General/Search";
 import { getCategories } from "components/General/Search/CategoryTags/utils/helper";
 import { ListSearchResultsProps } from "./utils/types";
@@ -11,6 +10,7 @@ import Text from "components/General/Text/Text";
 import { Typography } from "antd";
 import { filteredNews, filteredResource } from "./utils/helper";
 import { ReactElement } from "react";
+import { QUERY_KEY_NEWS } from "pages/Newsfeed/utils/constants";
 
 const { Title } = Typography;
 

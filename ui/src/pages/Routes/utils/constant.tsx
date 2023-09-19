@@ -32,6 +32,7 @@ import {
 	TableGenerator,
 	TableOfContent,
 	TextEditor,
+	Diffchecker,
 	Tool,
 	TvSeries,
 	UiUx,
@@ -76,7 +77,7 @@ export const routes: Route[] = [
 	},
 	{
 		id: "svgformatter",
-		path: "/css/svg-formatter",
+		path: "/tools/svg-formatter",
 		title: "SVG Formatter",
 		description: "Get your SVGs in shipshape.",
 		component: SvgFormatter,
@@ -132,7 +133,7 @@ export const routes: Route[] = [
 	},
 	{
 		id: "sorting",
-		path: "/generator/sorting",
+		path: "/tools/sorting",
 		title: "Sorting",
 		description: "Sort arrays like a boss.",
 		component: Sorting,
@@ -263,6 +264,13 @@ export const routes: Route[] = [
 		title: "Mimetype",
 		description: "Find out what type your file fancies itself as.",
 		component: Mimetype,
+	},
+	{
+		id: "diffchecker",
+		path: "/tools/textdiff",
+		title: "Diffchecker",
+		description: "Find out the difference between text",
+		component: Diffchecker,
 	},
 	{
 		id: "/",

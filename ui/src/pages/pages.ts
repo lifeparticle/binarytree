@@ -46,6 +46,7 @@ const TableOfContent = lazy(() => import("pages/Markdown/TableOfContent"));
 const TextEditor = lazy(() => import("pages/Text/TextEditor"));
 
 const Mimetype = lazy(() => import("pages/Information/Mimetype"));
+const Diffchecker = lazy(() => import("pages/Tools/Diffchecker"));
 
 export {
 	About,
@@ -84,4 +85,5 @@ export {
 	TvSeries,
 	UiUx,
 	YouTube,
+	Diffchecker,
 };

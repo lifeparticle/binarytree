@@ -1,21 +1,30 @@
-import News from "components/General/ListItems/News/News";
-import useFetchList from "lib/utils/hooks/useFetchList";
+import React from "react";
+import { QUERY_KEY_NEWS, TAB_ITEMS } from "./utils/constants";
+import { Tabs } from "antd";
 import ListSearchResults from "components/RenderProps/ListSearchResults";
+import News from "components/General/ListItems/News/News";
+import useNewsFeed from "./utils/hooks";
 
-const URL = `https://raw.githubusercontent.com/lifeparticle/binarytree/main/api/news.json`;
-export const QUERY_KEY_NEWS = "news";
-
-const Newsfeed = () => {
-	const { data, isLoading, isError } = useFetchList(QUERY_KEY_NEWS, URL);
+const Newsfeed: React.FC = () => {
+	const { data, isLoading, isError, setUrl } = useNewsFeed();
 
 	return (
-		<ListSearchResults
-			items={data?.articles}
-			resourceName={QUERY_KEY_NEWS}
-			itemComponent={News}
-			isLoading={isLoading}
-			isError={isError}
-		/>
+		<>
+			<Tabs
+				items={TAB_ITEMS}
+				onChange={(value) => {
+					setUrl(value);
+				}}
+			/>
+
+			<ListSearchResults
+				isError={isError}
+				isLoading={isLoading}
+				itemComponent={News}
+				resourceName={QUERY_KEY_NEWS}
+				items={data}
+			/>
+		</>
 	);
 };
 

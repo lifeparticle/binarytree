@@ -1,5 +1,5 @@
 import { NewsType } from "./utils/types";
-import { Card, Skeleton, Typography } from "antd";
+import { Card, Image, Skeleton, Space, Typography } from "antd";
 import { ListItemProps } from "components/RenderProps/List/utils/types";
 const { Title } = Typography;
 
@@ -8,13 +8,20 @@ const News: React.FC<ListItemProps<NewsType>> = ({
 	handleOnClick,
 	isLoading,
 }) => {
-	const { title, content, url } = resource || {};
+	const { title, content, url, image } = resource || {};
 
 	return (
 		<Card onClick={() => handleOnClick(url)} hoverable>
 			<Skeleton loading={isLoading}>
-				<Title level={4}>{title}</Title>
-				{content}
+				<Space size={"middle"} align="start">
+					{image && (
+						<Image width={200} preview={false} src={image} alt="" />
+					)}
+					<div>
+						<Title level={4}>{title}</Title>
+						{content}
+					</div>
+				</Space>
 			</Skeleton>
 		</Card>
 	);
