@@ -19,16 +19,19 @@ const TAB_ITEMS: TabsProps["items"] = [
 	{
 		key: SITE_OPTIONS["frontend-focus"].value,
 		label: SITE_OPTIONS["frontend-focus"].label,
+		show: true,
 	},
 	{
 		key: SITE_OPTIONS["status-code"].value,
 		label: SITE_OPTIONS["status-code"].label,
+		show: true,
 	},
 	{
 		key: SITE_OPTIONS["news"].value,
 		label: SITE_OPTIONS["news"].label,
+		show: true,
 	},
-];
+].filter((item) => item.show);
 const CORS_PROXY_URL = "https://cors-anywhere.herokuapp.com/";
 
 const QUERY_KEY_NEWS = "news";

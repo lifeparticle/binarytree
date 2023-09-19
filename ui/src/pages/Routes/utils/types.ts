@@ -31,7 +31,7 @@ type RouteId =
 	| "tableofcontent"
 	| "texteditor"
 	| "mimetype"
-	| "textdiff"
+	| "diffchecker"
 	| "/"
 	| "about"
 	| "feedback"

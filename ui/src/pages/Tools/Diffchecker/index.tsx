@@ -4,11 +4,11 @@ import React, { useState } from "react";
 
 import { diffChars, Change } from "diff";
 import { ResponsiveButton } from "components/General/FormComponents";
-import style from "./Textdiff.module.scss";
+import style from "./Diffchecker.module.scss";
 
 const { TextArea } = Input;
 
-const Textdiff: React.FC = () => {
+const Diffchecker: React.FC = () => {
 	const [text1, setText1] = useState("");
 	const [text2, setText2] = useState("");
 	const [differences, setDifferences] = useState<Change[]>([]);
@@ -48,7 +48,7 @@ const Textdiff: React.FC = () => {
 					</Form>
 				</Card>
 			</PageGrid>
-			<div className={style.textdiff__button}>
+			<div className={style.diffchecker__button}>
 				<ResponsiveButton onClick={calculateDiff}>
 					Find Difference
 				</ResponsiveButton>
@@ -79,4 +79,4 @@ const Textdiff: React.FC = () => {
 	);
 };
 
-export default Textdiff;
+export default Diffchecker;

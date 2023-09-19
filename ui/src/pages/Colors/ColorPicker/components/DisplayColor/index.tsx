@@ -44,19 +44,24 @@ const DisplayColor: React.FC<DisplayColorProps> = ({
 		color: color ? textColor : colorText,
 	};
 
-	return title === "Colors" ? (
-		<div className={classes} style={containerStyle}>
-			<Title level={5} style={titleStyle}>
-				{customLabel}: {color ? customValue : ""}
-			</Title>
-			<Clipboard text={value} clipboardComponent={ClipboardButton} />
-		</div>
-	) : (
+	return (
 		<div style={containerStyle}>
-			<CodeHighlightWithCopy
-				codeString={`${customLabel}: ${color ? customValue : ""}`}
-				language="css"
-			/>
+			{title === "Colors" ? (
+				<div className={classes} style={{ padding: "11px" }}>
+					<Title level={5} style={titleStyle}>
+						{customLabel}: {color ? customValue : ""}
+					</Title>
+					<Clipboard
+						text={value}
+						clipboardComponent={ClipboardButton}
+					/>
+				</div>
+			) : (
+				<CodeHighlightWithCopy
+					codeString={`${customLabel}: ${color ? customValue : ""}`}
+					language="css"
+				/>
+			)}
 		</div>
 	);
 };
