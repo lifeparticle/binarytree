@@ -61,12 +61,6 @@ export const MENU_ITEMS = [
 				icon: "Box",
 				show: IN_DEVELOPMENT,
 			},
-			{
-				name: routesById.svgformatter.title,
-				url: routesById.svgformatter.path,
-				icon: "Command",
-				show: true,
-			},
 		],
 	},
 	{
@@ -123,12 +117,6 @@ export const MENU_ITEMS = [
 				icon: "QrCode",
 				show: true,
 			},
-			{
-				name: routesById.sorting.title,
-				url: routesById.sorting.path,
-				icon: "ArrowUpNarrowWide",
-				show: true,
-			},
 		],
 	},
 	{
@@ -165,6 +153,25 @@ export const MENU_ITEMS = [
 				name: routesById.texteditor.title,
 				url: routesById.texteditor.path,
 				icon: "ClipboardEdit",
+				show: true,
+			},
+		],
+	},
+	{
+		name: "Tools",
+		icon: "Wrench",
+		show: true,
+		children: [
+			{
+				name: routesById.svgformatter.title,
+				url: routesById.svgformatter.path,
+				icon: "Command",
+				show: true,
+			},
+			{
+				name: routesById.sorting.title,
+				url: routesById.sorting.path,
+				icon: "ArrowUpNarrowWide",
 				show: true,
 			},
 		],
