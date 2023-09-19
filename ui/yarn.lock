@@ -1727,6 +1727,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/diff@npm:^5.0.4":
+  version: 5.0.4
+  resolution: "@types/diff@npm:5.0.4"
+  checksum: 58f8c3e9c8ed40e97fc8039af95d8f12a620e9facf351273906612ad795678c3f64309e0ce29b03bce8e04a2913f0e6bc5cf2289821bdd312b99f1220025f90a
+  languageName: node
+  linkType: hard
+
 "@types/estree@npm:*, @types/estree@npm:^1.0.0":
   version: 1.0.1
   resolution: "@types/estree@npm:1.0.1"
@@ -3074,6 +3081,7 @@ __metadata:
     "@testing-library/react": ^14.0.0
     "@testing-library/user-event": ^14.4.3
     "@tinymce/tinymce-react": ^4.3.0
+    "@types/diff": ^5.0.4
     "@types/file-saver": ^2.0.5
     "@types/jest": ^29.5.1
     "@types/markdown-it": ^13.0.0
@@ -3093,6 +3101,7 @@ __metadata:
     antd: ^5.4.7
     buffer: ^6.0.3
     danger: ^11.2.7
+    diff: ^5.1.0
     easymde: ^2.18.0
     eslint: ^8.45.0
     eslint-plugin-react-hooks: ^4.6.0
@@ -3572,7 +3581,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"diff@npm:^5.0.0":
+"diff@npm:^5.0.0, diff@npm:^5.1.0":
   version: 5.1.0
   resolution: "diff@npm:5.1.0"
   checksum: c7bf0df7c9bfbe1cf8a678fd1b2137c4fb11be117a67bc18a0e03ae75105e8533dbfb1cda6b46beb3586ef5aed22143ef9d70713977d5fb1f9114e21455fba90
