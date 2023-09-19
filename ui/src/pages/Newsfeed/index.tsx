@@ -1,11 +1,15 @@
 import React, { useState } from "react";
-import { SITE_OPTIONS, TAB_ITEMS, corsProxyUrl } from "./utils/constants";
+import {
+	QUERY_KEY_NEWS,
+	SITE_OPTIONS,
+	TAB_ITEMS,
+	CORS_PROXY_URL,
+} from "./utils/constants";
 import useFetchList from "lib/utils/hooks/useFetchList";
 import { Tabs } from "antd";
 import ListSearchResults from "components/RenderProps/ListSearchResults";
 import News from "components/General/ListItems/News/News";
 import { parseXML } from "./utils/helper";
-export const QUERY_KEY_NEWS = "news";
 
 const Newsfeed: React.FC = () => {
 	const [url, setUrl] = useState(SITE_OPTIONS["frontend-focus"].value);
@@ -14,7 +18,7 @@ const Newsfeed: React.FC = () => {
 		url === SITE_OPTIONS["status-code"].value;
 	const { data, isLoading, isError } = useFetchList(
 		url,
-		isFeedUrl ? corsProxyUrl + url : url
+		isFeedUrl ? CORS_PROXY_URL + url : url
 	);
 
 	return (
