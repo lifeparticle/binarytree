@@ -18,6 +18,8 @@ async function makeRequest(url: string, method = "GET", data = null) {
 		}
 		if (contentType && contentType.includes("application/json")) {
 			return await response.json();
+		} else if (contentType && contentType.includes("application/xml")) {
+			return await response.text();
 		} else {
 			return await response.text();
 		}

@@ -38,6 +38,7 @@ const DisplayColors: React.FC<DisplayColorsProps> = ({
 						customValue={determineValue(value, displayType, colors)}
 						value={colors[value]}
 						format={format}
+						title={title}
 					/>
 				))}
 			</Space>
