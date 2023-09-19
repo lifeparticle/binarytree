@@ -174,6 +174,12 @@ export const MENU_ITEMS = [
 				icon: "ArrowUpNarrowWide",
 				show: true,
 			},
+			{
+				name: routesById.diffchecker.title,
+				url: routesById.diffchecker.path,
+				icon: "Diff",
+				show: true,
+			},
 		],
 	},
 	{
@@ -185,12 +191,6 @@ export const MENU_ITEMS = [
 				name: routesById.mimetype.title,
 				url: routesById.mimetype.path,
 				icon: "ArrowLeftRight",
-				show: true,
-			},
-			{
-				name: routesById.textdiff.title,
-				url: routesById.textdiff.path,
-				icon: "Diff",
 				show: true,
 			},
 		],
