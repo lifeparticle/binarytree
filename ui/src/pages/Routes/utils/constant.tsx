@@ -77,7 +77,7 @@ export const routes: Route[] = [
 	},
 	{
 		id: "svgformatter",
-		path: "/css/svg-formatter",
+		path: "/tools/svg-formatter",
 		title: "SVG Formatter",
 		description: "Get your SVGs in shipshape.",
 		component: SvgFormatter,
@@ -133,7 +133,7 @@ export const routes: Route[] = [
 	},
 	{
 		id: "sorting",
-		path: "/generator/sorting",
+		path: "/tools/sorting",
 		title: "Sorting",
 		description: "Sort arrays like a boss.",
 		component: Sorting,
