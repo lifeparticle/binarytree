@@ -32,6 +32,7 @@ import {
 	TableGenerator,
 	TableOfContent,
 	TextEditor,
+	Textdiff,
 	Tool,
 	TvSeries,
 	UiUx,
@@ -263,6 +264,13 @@ export const routes: Route[] = [
 		title: "Mimetype",
 		description: "Find out what type your file fancies itself as.",
 		component: Mimetype,
+	},
+	{
+		id: "textdiff",
+		path: "/information/textdiff",
+		title: "Text difference",
+		description: "Find out the difference between text",
+		component: Textdiff,
 	},
 	{
 		id: "/",

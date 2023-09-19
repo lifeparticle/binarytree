@@ -180,6 +180,12 @@ export const MENU_ITEMS = [
 				icon: "ArrowLeftRight",
 				show: true,
 			},
+			{
+				name: routesById.textdiff.title,
+				url: routesById.textdiff.path,
+				icon: "Diff",
+				show: true,
+			},
 		],
 	},
 	{
