@@ -74,14 +74,16 @@ const JsonToTypescript: React.FC = () => {
 				</Form>
 			</Card>
 
-			<Card>
+			<Card className={style.json__output}>
 				{interfaces.toString().length > 0 ? (
 					<CodeHighlightWithCopy
 						codeString={interfaces.toString().replace(/,/g, "\n\n")}
 						language="typescript"
 					/>
 				) : (
-					<Warning text="There is no data for JSON, please provide data first." />
+					<div className={style.json__output_warning}>
+						<Warning text="There is no data for JSON, please provide data first." />
+					</div>
 				)}
 			</Card>
 		</PageGrid>

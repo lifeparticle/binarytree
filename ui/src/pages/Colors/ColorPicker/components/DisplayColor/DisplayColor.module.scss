@@ -1,22 +1,25 @@
 .cd {
-	display: flex;
-	gap: var(--bt-size-16);
-	align-items: center;
-	padding: var(--bt-size-4);
-	justify-content: space-between;
-	transition: var(--animation-fade-in);
-	border-radius: var(--bt-border-radius-4);
+	padding: var(--bt-size-5);
+	&__container {
+		display: flex;
+		gap: var(--bt-size-16);
+		align-items: center;
+		justify-content: space-between;
+		transition: var(--animation-fade-in);
+		border-radius: var(--bt-border-radius-4);
+		padding: var(--bt-size-11);
 
-	&__checkered {
-		background-image: linear-gradient(
-				45deg,
-				rgba(0, 0, 0, 0.6) 25%,
-				transparent 25%
-			),
-			linear-gradient(-45deg, rgba(0, 0, 0, 0.6) 25%, transparent 25%),
-			linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.6) 75%),
-			linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.6) 70%);
-		background-size: 20px 20px;
-		background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+		&_checkered {
+			background-image: linear-gradient(
+					45deg,
+					rgba(0, 0, 0, 0.6) 25%,
+					transparent 25%
+				),
+				linear-gradient(-45deg, rgba(0, 0, 0, 0.6) 25%, transparent 25%),
+				linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.6) 75%),
+				linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.6) 70%);
+			background-size: 20px 20px;
+			background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+		}
 	}
 }
