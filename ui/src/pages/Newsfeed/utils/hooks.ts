@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { parseXML } from "./helper";
-import { CORS_PROXY_URL, SITE_OPTIONS } from "./constants";
+import { ROOT_URL, SITE_OPTIONS } from "./constants";
 import useFetchList from "lib/utils/hooks/useFetchList";
 
 const useNewsFeed = () => {
@@ -9,7 +9,7 @@ const useNewsFeed = () => {
 
 	const { data, isLoading, isError } = useFetchList(
 		url,
-		isFeedUrl && import.meta.env.DEV ? CORS_PROXY_URL + url : url
+		isFeedUrl ? `${ROOT_URL}${url}` : url
 	);
 	let items = undefined;
 	if (data) {
