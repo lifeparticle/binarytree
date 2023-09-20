@@ -31,36 +31,6 @@ const TAB_ITEMS: TabsProps["items"] = [
 		label: SITE_OPTIONS["news"].label,
 		show: true,
 	},
-	{
-		key: SITE_OPTIONS["frontend-focus"].value,
-		label: SITE_OPTIONS["frontend-focus"].label,
-		show: true,
-	},
-	{
-		key: SITE_OPTIONS["status-code"].value,
-		label: SITE_OPTIONS["status-code"].label,
-		show: true,
-	},
-	{
-		key: SITE_OPTIONS["news"].value,
-		label: SITE_OPTIONS["news"].label,
-		show: true,
-	},
-	{
-		key: SITE_OPTIONS["frontend-focus"].value,
-		label: SITE_OPTIONS["frontend-focus"].label,
-		show: true,
-	},
-	{
-		key: SITE_OPTIONS["status-code"].value,
-		label: SITE_OPTIONS["status-code"].label,
-		show: true,
-	},
-	{
-		key: SITE_OPTIONS["news"].value,
-		label: SITE_OPTIONS["news"].label,
-		show: true,
-	},
 ].filter((item) => item.show);
 const ROOT_URL = import.meta.env.DEV
 	? "http://localhost:5000/rss?url="
