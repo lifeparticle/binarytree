@@ -11,7 +11,6 @@ const ShadesAndTints = lazy(() => import("pages/Colors/ShadesAndTints"));
 
 const BorderRadius = lazy(() => import("pages/CSS/BorderRadius"));
 const BoxShadow = lazy(() => import("pages/CSS/BoxShadow"));
-const SvgFormatter = lazy(() => import("pages/CSS/SvgFormatter"));
 
 const Base64 = lazy(() => import("pages/Converter/Base64"));
 const Pixel = lazy(() => import("pages/Converter/Pixel"));
@@ -23,7 +22,6 @@ const ImageGeneratorFromColors = lazy(
 );
 const Avatar = lazy(() => import("pages/Data/Avatar"));
 const QRcode = lazy(() => import("pages/Data/QRcode"));
-const Sorting = lazy(() => import("pages/Data/Sorting"));
 
 const Blog = lazy(() => import("pages/Resource/Blog"));
 const Book = lazy(() => import("pages/Resource/Book"));
@@ -43,10 +41,14 @@ const MarkdownEditor = lazy(() => import("pages/Markdown/MarkdownEditor"));
 const TableGenerator = lazy(() => import("pages/Markdown/MdTableGenerator"));
 const TableOfContent = lazy(() => import("pages/Markdown/TableOfContent"));
 
+const Diagramming = lazy(() => import("pages/Tools/Diagramming"));
+const Diffchecker = lazy(() => import("pages/Tools/Diffchecker"));
+const Sorting = lazy(() => import("pages/Tools/Sorting"));
+const SvgFormatter = lazy(() => import("pages/Tools/SvgFormatter"));
+
 const TextEditor = lazy(() => import("pages/Text/TextEditor"));
 
 const Mimetype = lazy(() => import("pages/Information/Mimetype"));
-const Diffchecker = lazy(() => import("pages/Tools/Diffchecker"));
 
 export {
 	About,
@@ -60,6 +62,8 @@ export {
 	Course,
 	DataGenerator,
 	DesignSystem,
+	Diagramming,
+	Diffchecker,
 	Feedback,
 	Github,
 	Home,
@@ -85,5 +89,4 @@ export {
 	TvSeries,
 	UiUx,
 	YouTube,
-	Diffchecker,
 };

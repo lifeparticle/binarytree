@@ -32,6 +32,7 @@ type RouteId =
 	| "texteditor"
 	| "mimetype"
 	| "diffchecker"
+	| "diagramming"
 	| "/"
 	| "about"
 	| "feedback"
