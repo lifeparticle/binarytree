@@ -1,0 +1,37 @@
+.footer {
+	display: flex;
+	flex-direction: column;
+
+	&__monogram {
+		display: block;
+		max-width: var(--bt-size-135);
+		max-height: var(--bt-size-55);
+		width: auto;
+		height: auto;
+		padding-top: var(--bt-size-10);
+		padding-bottom: var(--bt-size-10);
+		margin-bottom: var(--bt-size-10);
+
+		&_dark {
+			border-bottom: var(--bt-border-solid-light);
+		}
+
+		&_light {
+			border-bottom: var(--bt-border-solid-dark);
+		}
+	}
+
+	&__menuCollapse {
+		@media (max-width: 768px) {
+			display: none;
+		}
+	}
+
+	&__moon {
+		margin-top: var(--bt-size-3);
+	}
+
+	&__sun {
+		margin-top: var(--bt-size-minus-1);
+	}
+}

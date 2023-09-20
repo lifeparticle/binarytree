@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect } from "vitest";
-import Sorting from "pages/Data/Sorting";
+import Sorting from "pages/Tools/Sorting";
 
 describe("Sorting", () => {
 	test("render sorting component without crash", () => {

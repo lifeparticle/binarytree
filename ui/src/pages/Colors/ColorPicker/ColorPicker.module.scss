@@ -1,6 +1,6 @@
 .cp {
 	display: grid;
-	grid-template-columns: 380px 360px 425px 425px;
+	grid-template-columns: 380px 360px 435px 435px;
 	gap: var(--bt-size-16);
 	justify-content: center;
 
@@ -24,14 +24,14 @@
 	}
 
 	@media (max-width: 1900px) {
-		grid-template-columns: 380px 360px 400px;
+		grid-template-columns: 435px 360px 435px;
 	}
 
 	@media (max-width: 1500px) {
-		grid-template-columns: 400px 400px;
+		grid-template-columns: 435px 435px;
 	}
 
 	@media (max-width: 1100px) {
-		grid-template-columns: 400px;
+		grid-template-columns: 435px;
 	}
 }

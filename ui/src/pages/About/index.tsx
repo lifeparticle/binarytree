@@ -1,6 +1,4 @@
 import {
-	API_COLUMNS,
-	API_DATA,
 	FEATURE_COLUMNS,
 	FEATURE_DATA,
 	APP_VALUES,
@@ -11,7 +9,7 @@ import {
 import { Card, List, Table, Typography } from "antd";
 import style from "./About.module.scss";
 import about from "assets/about.jpg";
-import Footer from "./components/Footer";
+import Footer from "../../components/Layouts/Footer";
 
 const About = () => {
 	return (
@@ -74,15 +72,6 @@ const About = () => {
 						title={() => "Features"}
 						bordered
 						scroll={{ x: "calc(50%)" }}
-					/>
-
-					<Table
-						columns={API_COLUMNS}
-						dataSource={API_DATA}
-						pagination={false}
-						title={() => "API's"}
-						scroll={{ x: "calc(50%)" }}
-						bordered
 					/>
 
 					<Table
