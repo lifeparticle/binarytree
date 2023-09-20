@@ -5,6 +5,7 @@
 	"packageManager": "yarn@3.6.1",
 	"dependencies": {
 		"@emotion/react": "^11.11.0",
+		"@excalidraw/excalidraw": "^0.16.0",
 		"@faker-js/faker": "^7.6.0",
 		"@mantine/core": "^6.0.10",
 		"@mantine/ds": "^6.0.10",
@@ -28,7 +29,7 @@
 		"jspdf": "^2.5.1",
 		"jszip": "^3.10.1",
 		"jszip-utils": "^0.1.0",
-		"lucide-react": "^0.260.0",
+		"lucide-react": "^0.262.0",
 		"marked": "^7.0.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",

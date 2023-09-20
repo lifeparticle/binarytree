@@ -1,7 +1,6 @@
 import { Card, Form, Input } from "antd";
 import PageGrid from "components/Layouts/PageGrid";
 import React, { useState } from "react";
-
 import { diffChars, Change } from "diff";
 import { ResponsiveButton } from "components/General/FormComponents";
 import style from "./Diffchecker.module.scss";

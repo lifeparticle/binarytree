@@ -1,7 +1,7 @@
 import { Space, Tag, Typography } from "antd";
 import type { ColumnsType } from "antd/es/table";
-import { Link } from "react-router-dom";
 import { Api, Feature, LibraryList, Other } from "./types";
+import { routesById } from "pages/Routes/utils/constant";
 
 const APP_VALUES = [
 	<>
@@ -93,23 +93,15 @@ const API_COLUMNS: ColumnsType<Api> = [
 	},
 ];
 
-const API_DATA: Api[] = [
-	{
-		name: "News",
-		api: "https://newsapi.org",
-		key: "news",
-	},
-];
-
 const OTHER_COLUMNS: ColumnsType<Other> = [
 	{
 		title: "Name",
 		dataIndex: "name",
 		key: "name",
 		render: (text, record) => (
-			<Link to={record.url} key={record.name}>
+			<a href={record.url} target="_blank" rel="noopener noreferrer">
 				{text}
-			</Link>
+			</a>
 		),
 		align: "center",
 	},
@@ -125,6 +117,16 @@ const OTHER_DATA: Other[] = [
 		key: "2",
 		name: "Open Props",
 		url: "https://github.com/argyleink/open-props",
+	},
+	{
+		key: "3",
+		name: "News API",
+		url: "https://newsapi.org",
+	},
+	{
+		key: "4",
+		name: "unDraw",
+		url: "https://undraw.co/",
 	},
 ];
 
@@ -186,29 +188,29 @@ const FEATURE_COLUMNS: ColumnsType<Feature> = [
 
 const FEATURE_DATA: Feature[] = [
 	{
-		key: "1",
-		name: "Newsfeed",
+		key: routesById.newsfeed.id,
+		name: routesById.newsfeed.title,
 		description: "Tech news",
 		link: "/newsfeed",
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
-		key: "2",
-		name: "Color Picker",
+		key: routesById.colorpicker.id,
+		name: routesById.colorpicker.title,
 		description: "Choose your desired color",
 		link: "/colors/cp",
 		library: [{ name: "tiny-color-2", url: LIBRARY_URLS["tiny-color-2"] }],
 	},
 	{
-		key: "3",
-		name: "Shades & Tints",
+		key: routesById.shadesandtints.id,
+		name: routesById.shadesandtints.title,
 		description: "Choose your desired Shades and Tints",
 		link: "/colors/shades",
 		library: [{ name: "values.js", url: LIBRARY_URLS["values.js"] }],
 	},
 	{
-		key: "4",
-		name: "Border Radius",
+		key: routesById.borderradius.id,
+		name: routesById.borderradius.title,
 		description: "Choose your desired border radius",
 		link: "/css/br",
 		library: [{ name: "faker.js", url: LIBRARY_URLS["faker-js"] }],
@@ -221,29 +223,29 @@ const FEATURE_DATA: Feature[] = [
 	// 	library: [{ name: "faker.js", url: LIBRARY_URLS["faker-js"] }],
 	// },
 	{
-		key: "6",
-		name: "SVG Formatter",
+		key: routesById.svgformatter.id,
+		name: routesById.svgformatter.title,
 		description: "Merge svg path",
 		link: "/css/svg-formatter",
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
-		key: "7",
-		name: "Base64",
+		key: routesById.base64.id,
+		name: routesById.base64.title,
 		description: "Convert text to base64",
 		link: "/converter/base-64",
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
-		key: "8",
-		name: "Pixel",
+		key: routesById.pixelconverter.id,
+		name: routesById.pixelconverter.title,
 		description: "Convert pixel to rem",
 		link: "/converter/pixel",
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
-		key: "9",
-		name: "Json To Typescript",
+		key: routesById.jsontotypescript.id,
+		name: routesById.jsontotypescript.title,
 		description: "Convert Json to typescript",
 		link: "/converter/jtt",
 		library: [
@@ -254,8 +256,8 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "10",
-		name: "Data",
+		key: routesById.data.id,
+		name: routesById.data.title,
 		description: "Generate any type of data",
 		link: "/generator/data",
 		library: [
@@ -270,8 +272,8 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "11",
-		name: "Image",
+		key: routesById.image.id,
+		name: routesById.image.title,
 		description: "Generate image from color code",
 		link: "/generator/igfc",
 		library: [
@@ -290,8 +292,8 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "12",
-		name: "Avatar",
+		key: routesById.avatar.id,
+		name: routesById.avatar.title,
 		description: "Generate avatar from text",
 		link: "/generator/avatar",
 		library: [
@@ -310,15 +312,15 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "13",
-		name: "QR Code",
+		key: routesById.qrcode.id,
+		name: routesById.qrcode.title,
 		description: "Generate QR code from text",
 		link: "/generator/qrcode",
 		library: [],
 	},
 	{
-		key: "14",
-		name: "Sorting",
+		key: routesById.sorting.id,
+		name: routesById.sorting.title,
 		description: "Sort numbers or strings",
 		link: "/generator/sorting",
 		library: [{ name: "Vanilla JS", url: "" }],
@@ -331,8 +333,8 @@ const FEATURE_DATA: Feature[] = [
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
-		key: "16",
-		name: "Editor",
+		key: routesById.editor.id,
+		name: routesById.editor.title,
 		description: "Write markdown and download",
 		link: "/markdown/me",
 		library: [
@@ -343,8 +345,8 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "17",
-		name: "Table",
+		key: routesById.table.id,
+		name: routesById.table.title,
 		description: "Generate a table from the markdown",
 		link: "/markdown/md-table-generator",
 		library: [
@@ -355,8 +357,8 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "18",
-		name: "Table of content",
+		key: routesById.tableofcontent.id,
+		name: routesById.tableofcontent.title,
 		description: "Generate table from markdown",
 		link: "/markdown/toc",
 		library: [
@@ -367,8 +369,8 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "19",
-		name: "Text Editor",
+		key: routesById.texteditor.id,
+		name: routesById.texteditor.title,
 		description: "Generate rich text",
 		link: "/text/te",
 		library: [
@@ -379,8 +381,8 @@ const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: "20",
-		name: "Mimetype",
+		key: routesById.mimetype.id,
+		name: routesById.mimetype.title,
 		description: "Search mimetype",
 		link: "/info/mimetype",
 		library: [{ name: "Vanilla JS", url: "" }],
@@ -391,7 +393,6 @@ export {
 	LIBRARY_URLS,
 	FEATURE_COLUMNS,
 	FEATURE_DATA,
-	API_DATA,
 	API_COLUMNS,
 	APP_VALUES,
 	APP_SUPPORT,

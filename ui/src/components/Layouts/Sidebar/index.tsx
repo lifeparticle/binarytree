@@ -5,7 +5,7 @@ import { MENU_COLLAPSED_STORAGE_KEY } from "./utils/constants";
 import useMenuCollapsed from "lib/utils/hooks/useMenuCollapsed";
 import { useContext } from "react";
 import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
-import Footer from "components/Layouts/Footer";
+import Footer from "components/Layouts/Sidebar/Footer";
 import style from "./Sidebar.module.scss";
 
 const { Sider } = Layout;

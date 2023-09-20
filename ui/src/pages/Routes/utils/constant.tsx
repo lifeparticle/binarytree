@@ -1,4 +1,5 @@
-import { Route } from "./types";
+import Diagramming from "pages/Tools/Diagramming";
+import { Route, RouteId } from "./types";
 import {
 	About,
 	Avatar,
@@ -266,16 +267,25 @@ export const routes: Route[] = [
 		component: Mimetype,
 	},
 	{
+		id: "diagramming",
+		path: "/tools/diagramming",
+		title: "Diagramming",
+		description:
+			"Channel your inner Da Vinci of diagrams. Who said flowcharts can't be art?",
+		component: Diagramming,
+	},
+	{
 		id: "diffchecker",
 		path: "/tools/textdiff",
 		title: "Diffchecker",
-		description: "Find out the difference between text",
+		description:
+			"Ever wondered what’s different? We did too! Play spot the difference with text.",
 		component: Diffchecker,
 	},
 	{
 		id: "/",
 		path: "/",
-		title: "",
+		title: "Home",
 		description: "",
 		component: Home,
 	},
@@ -301,3 +311,8 @@ export const routes: Route[] = [
 		component: PageNotFound,
 	},
 ];
+
+export const routesById = routes.reduce((acc, route) => {
+	acc[route.id] = route;
+	return acc;
+}, {} as Record<RouteId, Route>);
