@@ -708,6 +708,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@excalidraw/excalidraw@npm:^0.16.0":
+  version: 0.16.0
+  resolution: "@excalidraw/excalidraw@npm:0.16.0"
+  peerDependencies:
+    react: ^17.0.2 || ^18.2.0
+    react-dom: ^17.0.2 || ^18.2.0
+  checksum: b3d321a802b7b5b86f65f2036cab59759904589cab131e6c2cf547d138f28b821d1aada3e4ec7c3d37bb37de45250231cd367b29f053f2ede1b6379d562368a5
+  languageName: node
+  linkType: hard
+
 "@faker-js/faker@npm:^7.6.0":
   version: 7.6.0
   resolution: "@faker-js/faker@npm:7.6.0"
@@ -3071,6 +3081,7 @@ __metadata:
   resolution: "code@workspace:."
   dependencies:
     "@emotion/react": ^11.11.0
+    "@excalidraw/excalidraw": ^0.16.0
     "@faker-js/faker": ^7.6.0
     "@mantine/core": ^6.0.10
     "@mantine/ds": ^6.0.10
@@ -3114,7 +3125,7 @@ __metadata:
     jspdf: ^2.5.1
     jszip: ^3.10.1
     jszip-utils: ^0.1.0
-    lucide-react: ^0.260.0
+    lucide-react: ^0.262.0
     marked: ^7.0.1
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -6038,12 +6049,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:^0.260.0":
-  version: 0.260.0
-  resolution: "lucide-react@npm:0.260.0"
+"lucide-react@npm:^0.262.0":
+  version: 0.262.0
+  resolution: "lucide-react@npm:0.262.0"
   peerDependencies:
     react: ^16.5.1 || ^17.0.0 || ^18.0.0
-  checksum: 27e1b44ed859988a939e750ddaf0d6f1a652b87cd104314c62ec7ee26b92cfc037b9d402ce8468a7c8b3883e174a85dedb18be39ec7cddd9d215b58512ff2dc7
+  checksum: ff64ced6f67de2674b41d775f7fd216d2bcf952a9c133a32e8838a349f2726deeb52885f6ecb221e12884ad12565b0516c2557712bf8800c88eb2f7e12182c4b
   languageName: node
   linkType: hard
 

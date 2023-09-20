@@ -1,15 +1,9 @@
 import { MenuProps } from "antd";
 import { IconName } from "components/General/Icon/utils/types";
 import { getItem } from "components/Layouts/Menu/utils/helper";
-import { routes } from "pages/Routes/utils/constant";
-import { Route, RouteId } from "pages/Routes/utils/types";
+import { routesById } from "pages/Routes/utils/constant";
 
 const IN_DEVELOPMENT = import.meta.env.DEV;
-
-const routesById = routes.reduce((acc, route) => {
-	acc[route.id] = route;
-	return acc;
-}, {} as Record<RouteId, Route>);
 
 export const MENU_ITEMS = [
 	{
@@ -162,6 +156,12 @@ export const MENU_ITEMS = [
 		icon: "Wrench",
 		show: true,
 		children: [
+			{
+				name: routesById.diagramming.title,
+				url: routesById.diagramming.path,
+				icon: "PencilRuler",
+				show: true,
+			},
 			{
 				name: routesById.svgformatter.title,
 				url: routesById.svgformatter.path,
