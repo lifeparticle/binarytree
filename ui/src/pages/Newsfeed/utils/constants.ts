@@ -37,7 +37,7 @@ const TAB_ITEMS: TabsProps["items"] = [
 ].filter((item) => item.show);
 const ROOT_URL = import.meta.env.DEV
 	? "http://localhost:5000/rss?name="
-	: "https://rssfeed-tree.vercel.app/rss?name=";
+	: "https://binarytree-rssfeed-api.vercel.app/rss?name=";
 
 const QUERY_KEY_NEWS = "news";
 
