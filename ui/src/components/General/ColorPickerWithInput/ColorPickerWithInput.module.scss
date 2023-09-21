@@ -4,9 +4,11 @@
 		display: inline-block;
 		display: flex;
 		align-items: center;
-		justify-content: center;
 
 		&_dp {
+			background-color: rgb(68, 68, 68);
+			padding: 10px;
+			border-radius: 10px;
 			position: absolute;
 			top: 100%;
 			right: 10;

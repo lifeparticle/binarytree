@@ -41,6 +41,9 @@ const Footer: React.FC = () => {
 							Status
 						</a>
 					</li>
+					<li>
+						<a href="/about">About</a>
+					</li>
 				</ul>
 			</div>
 

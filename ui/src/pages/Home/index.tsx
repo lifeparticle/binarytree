@@ -14,10 +14,7 @@ import Footer from "components/Layouts/Footer";
 import PageGrid from "components/Layouts/PageGrid";
 import { SEGMENTED_OPTIONS, DESCRIPTIONS } from "./utils/constants";
 import { useState } from "react";
-
-const onClick = (url: string) => {
-	window.open(url, "_blank", "noopener");
-};
+import { openLink } from "lib/utils/helper";
 
 const Home = () => {
 	const [feature, setFeature] = useState(SEGMENTED_OPTIONS[0].value);
@@ -131,13 +128,15 @@ const Home = () => {
 							<Space direction="horizontal">
 								<ResponsiveButton
 									type="primary"
-									onClick={() => onClick("converter/base-64")}
+									onClick={() =>
+										openLink("converter/base-64")
+									}
 								>
 									Base64 converter
 								</ResponsiveButton>
 								<ResponsiveButton
 									onClick={() =>
-										onClick(
+										openLink(
 											"https://github.com/lifeparticle/binarytree/issues"
 										)
 									}
