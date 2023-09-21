@@ -2,7 +2,6 @@ import Text from "components/General/Text/Text";
 import style from "./withPageTitle.module.scss";
 import HelpIcon from "components/General/HelpIcon";
 import { Space } from "antd";
-import { PAGES } from "./utils/constants";
 import usePageTitle from "./utils/hooks";
 
 const withPageTitle = <T extends object>(
@@ -17,9 +16,7 @@ const withPageTitle = <T extends object>(
 					<>
 						<Space align="center">
 							<Text text={title} level={3} />
-							{helpText && !PAGES.includes(title) && (
-								<HelpIcon helpText={helpText} />
-							)}
+							{helpText && <HelpIcon helpText={helpText} />}
 						</Space>
 						<Text text={description} level={5} />
 						<br />
