@@ -26,15 +26,16 @@ const Features: React.FC = () => {
 				<Row gutter={[16, 16]}>
 					{FEATURES.map((feature) => (
 						<Col xs={24} lg={8}>
-							<Card>
+							<Card style={{ minHeight: 220 }}>
 								<Icon name={feature.icon} size={40} />
-
-								<Typography.Title level={4}>
-									{feature.title}
-								</Typography.Title>
-								<Typography.Text>
-									{feature.description}
-								</Typography.Text>
+								<Space direction="vertical" size="middle">
+									<Typography.Title level={4}>
+										{feature.title}
+									</Typography.Title>
+									<Typography.Text>
+										{feature.description}
+									</Typography.Text>
+								</Space>
 							</Card>
 						</Col>
 					))}

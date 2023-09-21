@@ -15,16 +15,18 @@ const Values: React.FC = () => {
 			</Typography.Title>
 			<Row gutter={[16, 16]}>
 				<Col xs={24} lg={8}>
-					<Card cover={<img src={share} alt="logo" height={200} />}>
+					<Card
+						cover={<img src={share} alt="logo" />}
+						style={{ minHeight: 550 }}
+					>
 						{APP_VALUES[0]}
 					</Card>
 				</Col>
 
 				<Col xs={24} lg={8}>
 					<Card
-						cover={
-							<img src={verification} alt="logo" height={200} />
-						}
+						cover={<img src={verification} alt="logo" />}
+						style={{ minHeight: 550 }}
 					>
 						{APP_VALUES[1]}
 					</Card>
@@ -32,7 +34,8 @@ const Values: React.FC = () => {
 
 				<Col xs={24} lg={8}>
 					<Card
-						cover={<img src={detection} alt="logo" height={200} />}
+						cover={<img src={detection} alt="logo" />}
+						style={{ minHeight: 550 }}
 					>
 						{APP_VALUES[2]}
 					</Card>
