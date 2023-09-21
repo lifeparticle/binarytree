@@ -1,18 +1,26 @@
 import Text from "components/General/Text/Text";
-import usePageTitle from "components/Hoc/utils/hooks/usePageTitle";
 import style from "./withpagetitle.module.scss";
+import HelpIcon from "components/General/HelpIcon";
+import { Space } from "antd";
+import { PAGES } from "./utils/constants";
+import usePageTitle from "./utils/hooks";
 
 const withPageTitle = <T extends object>(
 	WrappedComponent: React.ComponentType<T>
 ) => {
 	const WithPageTitle = (props: T) => {
-		const [title, description] = usePageTitle();
+		const [title, description, helpText] = usePageTitle();
 
 		return (
 			<div className={title === "Home" ? "" : style.withpagetitle}>
 				{title !== "Home" && (
 					<>
-						<Text text={title} level={3} />
+						<Space align="center">
+							<Text text={title} level={3} />
+							{helpText && !PAGES.includes(title) && (
+								<HelpIcon helpText={helpText} />
+							)}
+						</Space>
 						<Text text={description} level={5} />
 						<br />
 					</>

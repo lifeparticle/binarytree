@@ -8,13 +8,13 @@ import {
 	Dropdown,
 } from "antd";
 import React from "react";
-import withLabelSize from "components/Hoc/withLabelSize";
+import withLabelSize from "components/Hoc/withLabelSize/withLabelSize";
 import {
 	InputComponentProps,
 	SegmentComponentProps,
 	SelectComponentProps,
 } from "./utils/types";
-import withSize from "components/Hoc/withSize";
+import withSize from "components/Hoc/withSize/withSize";
 import { DropdownButtonProps } from "antd/es/dropdown";
 
 const ResponsiveSelect: React.FC<SelectComponentProps> = (props) => {
