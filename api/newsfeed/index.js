@@ -32,6 +32,7 @@ app.get("/rss", async (req, res) => {
 			throw new Error("Failed to fetch the Medium RSS feed");
 		}
 
+		res.setHeader('Cache-Control', 's-max-age=86400, stale-while-revalidate');
 		res.set("Content-Type", "application/xml");
 
 		res.send(response.data);
