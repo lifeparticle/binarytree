@@ -3,6 +3,7 @@ import { QUERY_KEY_NEWS, TAB_ITEMS } from "./utils/constants";
 import { Tabs } from "antd";
 import ListSearchResults from "components/RenderProps/ListSearchResults";
 import News from "components/General/ListItems/News/News";
+import style from "./Newsfeed.module.scss";
 import useNewsFeed from "./utils/hooks";
 
 const Newsfeed: React.FC = () => {
@@ -15,6 +16,7 @@ const Newsfeed: React.FC = () => {
 				onChange={(value) => {
 					setUrl(value);
 				}}
+				className={style.newsfeed_tabs}
 			/>
 
 			<ListSearchResults

@@ -3,15 +3,18 @@ import { TabsProps } from "antd";
 const SITE_OPTIONS = {
 	"frontend-focus": {
 		label: "Frontend Focus",
-		value: "https://cprss.s3.amazonaws.com/frontendfoc.us.xml",
+		value: "frontend-focus",
+		isFeedItem: true,
 	},
 	"status-code": {
 		label: "Status Code",
-		value: "https://cprss.s3.amazonaws.com/react.statuscode.com.xml",
+		value: "status-code",
+		isFeedItem: true,
 	},
 	news: {
 		label: "News",
 		value: "https://raw.githubusercontent.com/lifeparticle/binarytree/main/api/news.json",
+		isFeedItem: false,
 	},
 };
 
@@ -32,8 +35,10 @@ const TAB_ITEMS: TabsProps["items"] = [
 		show: true,
 	},
 ].filter((item) => item.show);
-const CORS_PROXY_URL = "https://cors-anywhere.herokuapp.com/";
+const ROOT_URL = import.meta.env.DEV
+	? "http://localhost:5000/rss?name="
+	: "https://rssfeed-tree.vercel.app/rss?name=";
 
 const QUERY_KEY_NEWS = "news";
 
-export { SITE_OPTIONS, TAB_ITEMS, CORS_PROXY_URL, QUERY_KEY_NEWS };
+export { SITE_OPTIONS, TAB_ITEMS, ROOT_URL, QUERY_KEY_NEWS };
