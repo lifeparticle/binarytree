@@ -1,5 +1,5 @@
 import Text from "components/General/Text/Text";
-import style from "./withpagetitle.module.scss";
+import style from "./withPageTitle.module.scss";
 import HelpIcon from "components/General/HelpIcon";
 import { Space } from "antd";
 import { PAGES } from "./utils/constants";
