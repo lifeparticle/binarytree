@@ -19,8 +19,12 @@ app.get("/", (req, res) => {
 
 app.get("/rss", async (req, res) => {
 	try {
-		const siteUrl = req.query.url;
-		const response = await axios.get(siteUrl, {
+		const sitename = req.query.name;
+		const sites = {
+			"frontend-focus": "https://cprss.s3.amazonaws.com/frontendfoc.us.xml",
+			"status-code": "https://cprss.s3.amazonaws.com/react.statuscode.com.xml",
+		};
+		const response = await axios.get(sites[sitename], {
 			responseType: "arraybuffer",
 		});
 
