@@ -26,7 +26,7 @@ const Avatar = () => {
 	const [textColor, setTextColor] = useState<string>(
 		"rgba(255, 255, 255, 1)"
 	);
-	const [bgColor, setBgColor] = useState<string>("rgba(0, 0, 0, 0.25)");
+	const [bgColor, setBgColor] = useState<string>("rgba(0, 0, 0, 1)");
 	const [shapeType, setShapeType] = useState<AvatarShapeType>(
 		AvatarShape.Circle
 	);
