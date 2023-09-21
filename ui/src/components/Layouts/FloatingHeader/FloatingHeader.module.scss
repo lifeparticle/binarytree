@@ -2,12 +2,18 @@
 	position: absolute;
 	top: var(--bt-size-8);
 	right: var(--bt-size-20);
-	padding: var(--bt-size-4) var(--bt-size-15) var(--bt-size-4)
-		var(--bt-size-10);
+	padding: var(--bt-size-4) 0 var(--bt-size-4) 0;
 	border-radius: var(--bt-size-10);
 	z-index: var(--bt-z-index-dropdown);
+	display: flex;
 
-	&__about {
+	&__button {
+		border: none;
+		box-shadow: none;
+		background-color: transparent;
 		cursor: pointer;
+		position: relative;
+		align-items: center;
+		display: flex;
 	}
 }
