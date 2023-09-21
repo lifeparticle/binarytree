@@ -3,10 +3,10 @@ import { Button, Skeleton } from "antd";
 import { Typography, Tag, Dropdown } from "antd";
 import Icon from "components/General/Icon";
 import { classNames } from "lib/utils/helper";
-import { NotificationListPropsType } from "components/General/Notification/utils/types";
+import { NotificationListProps } from "components/General/Notification/utils/types";
 const { Title } = Typography;
 
-const NotificationList: React.FC<NotificationListPropsType> = ({
+const NotificationList: React.FC<NotificationListProps> = ({
 	notifications,
 	colorText,
 	isLoading,
