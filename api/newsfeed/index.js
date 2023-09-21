@@ -6,7 +6,7 @@ const app = express();
 app.use((req, res, next) => {
 	const environment = process.env.NODE_ENV || "development";
 	let origin =
-		environment === "development" ? "*" : "https://www.binarytree.dev";
+		environment === "development" ? "*" : "https://binarytree.dev";
 	res.header("Access-Control-Allow-Origin", origin);
 	next();
 });
