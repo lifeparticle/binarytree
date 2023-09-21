@@ -6,7 +6,12 @@
 
 	&__output {
 		min-height: 424px;
-		display: flex;
-		flex-direction: column;
+
+		&_warning {
+			min-height: 375px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
 	}
 }

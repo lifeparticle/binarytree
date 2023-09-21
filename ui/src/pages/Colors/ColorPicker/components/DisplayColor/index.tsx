@@ -30,14 +30,15 @@ const DisplayColor: React.FC<DisplayColorProps> = ({
 	const border = isLabelMatchingFormat ? `1px solid ${textColor}` : "";
 
 	const classes = classNames(
-		style.cd,
-		isTransparent(backgroundColor) ? style.cd__checkered : undefined
+		style.cd__container,
+		isTransparent(backgroundColor)
+			? style.cd__container_checkered
+			: undefined
 	);
 
 	const containerStyle = {
 		backgroundColor: color ? backgroundColor : colorBgContainer,
 		border: color ? border : "none",
-		padding: "5px",
 	};
 
 	const titleStyle = {
@@ -45,9 +46,9 @@ const DisplayColor: React.FC<DisplayColorProps> = ({
 	};
 
 	return (
-		<div style={containerStyle}>
+		<div style={containerStyle} className={style.cd}>
 			{title === "Colors" ? (
-				<div className={classes} style={{ padding: "11px" }}>
+				<div className={classes}>
 					<Title level={5} style={titleStyle}>
 						{customLabel}: {color ? customValue : ""}
 					</Title>
