@@ -15,7 +15,12 @@ const News: React.FC<ListItemProps<NewsType>> = ({
 			<Skeleton loading={isLoading}>
 				<Space size={"middle"} align="start">
 					{image && (
-						<Image width={200} preview={false} src={image} alt="" />
+						<Image
+							width="10vw"
+							preview={false}
+							src={image}
+							alt=""
+						/>
 					)}
 					<div>
 						<Title level={4}>{title}</Title>

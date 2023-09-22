@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../Home.module.scss";
+import style from "pages/Home/Home.module.scss";
 import { Space, Typography } from "antd";
 import { ResponsiveButton } from "components/General/FormComponents";
 

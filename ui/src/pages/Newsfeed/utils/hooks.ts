@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { parseXML } from "./helper";
-import { ROOT_URL, SITE_OPTIONS } from "./constants";
+import { BASE_URL, SITE_OPTIONS } from "./constants";
 import useFetchList from "lib/utils/hooks/useFetchList";
 
 const useNewsFeed = () => {
@@ -11,7 +11,7 @@ const useNewsFeed = () => {
 
 	const { data, isLoading, isError } = useFetchList(
 		url,
-		isFeedItem ? `${ROOT_URL}${url}` : url
+		isFeedItem ? `${BASE_URL}${url}` : url
 	);
 	let items = undefined;
 	if (data) {

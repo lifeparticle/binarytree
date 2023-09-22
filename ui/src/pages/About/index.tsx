@@ -9,7 +9,7 @@ import {
 import { Card, List, Table, Typography } from "antd";
 import style from "./About.module.scss";
 import about from "assets/about.jpg";
-import Footer from "../../components/Layouts/Footer";
+import Footer from "components/Layouts/Footer";
 
 const About = () => {
 	return (
