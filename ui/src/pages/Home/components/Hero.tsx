@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
 					ever-growing number of features
 				</a>{" "}
 				(currently <b>{FEATURE_DATA.length}</b>), our platform is
-				constantly evolving to meet the needs of developers like you.
+				constantly evolving to meet the needs of developers like you
 			</Typography.Paragraph>
 		</section>
 	);

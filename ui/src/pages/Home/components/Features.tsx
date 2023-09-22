@@ -10,12 +10,12 @@ const Features: React.FC = () => {
 			<Col xs={24} lg={8} className={style.home__features}>
 				<Space direction="vertical">
 					<Typography.Title>
-						Binary tree offers some cool feature
+						BinaryTree comes packed with some awesome features
 					</Typography.Title>
 					<p>
-						In daily uses you need some cool tools to develop modern
-						application, hope binary tree help you to develop
-						application smoothly
+						For everyday development of contemporary applications,
+						you might require some innovative tools. BinaryTree can
+						streamline your application development process
 					</p>
 
 					<Button>Get Started</Button>
