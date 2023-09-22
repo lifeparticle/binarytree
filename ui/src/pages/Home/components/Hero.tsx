@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../Home.module.scss";
+import style from "pages/Home/Home.module.scss";
 import { Typography } from "antd";
 import { FEATURE_DATA } from "pages/About/utils/constants";
 
