@@ -285,8 +285,9 @@ export const routes: Route[] = [
 	{
 		id: "/",
 		path: "/",
-		title: "Home",
-		description: "",
+		title: "BinaryTree: Developer Productivity Tools",
+		description:
+			"At binarytree.dev, we offer an array of developer productivity tools to help you save time. With 16 ever-growing features, our platform evolves to meet your needs.",
 		component: Home,
 	},
 	{
