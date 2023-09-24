@@ -1,0 +1,21 @@
+{
+  "name": "npm-packages",
+  "packageManager": "yarn@3.6.3",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "semver": "^7.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.3",
+    "@types/semver": "^7.5.2",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}

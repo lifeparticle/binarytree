@@ -1,0 +1,44 @@
+name: Fetch Latest packages
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  fetch-news:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: automation-scripts/npm-packages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.16.1"
+
+      - name: Install Yarn
+        run: |
+          corepack enable
+          corepack prepare yarn@stable --activate
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Run
+        run: yarn start
+
+      - name: Move packages.json
+        run: |-
+          git add news.json
+          git mv -f news.json ../../api/packages.json
+
+      - name: Commit and push if changed
+        run: |-
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git commit -m "Update packages.json" || true
+          git push
