@@ -1,4 +1,3 @@
-import { useSearchParams } from "react-router-dom";
 import style from "./ListSearchResults.module.scss";
 import { ResourceType } from "components/General/ListItems/Resource/utils/types";
 import Search from "components/General/Search";
@@ -11,6 +10,7 @@ import { Typography } from "antd";
 import { filteredNews, filteredResource } from "./utils/helper";
 import { ReactElement } from "react";
 import { QUERY_KEY_NEWS } from "pages/Newsfeed/utils/constants";
+import useParamsValue from "lib/utils/hooks/useParamsValue";
 
 const { Title } = Typography;
 
@@ -22,7 +22,7 @@ const ListSearchResults = <T,>({
 	isError,
 	source = "",
 }: ListSearchResultsProps<T>): ReactElement => {
-	const [searchParams, setSearchParams] = useSearchParams();
+	const { searchParams, updateParamsValue } = useParamsValue({});
 
 	if (isError) {
 		return <Text text={API_ERROR} />;
@@ -47,8 +47,7 @@ const ListSearchResults = <T,>({
 	const categories = getCategories(items as ResourceType[], resourceName);
 
 	const onSearchCriteriaChange = (queryType: "q" | "cat", value: string) => {
-		searchParams.set(queryType, value);
-		setSearchParams(searchParams);
+		updateParamsValue(queryType, value);
 	};
 
 	return (
