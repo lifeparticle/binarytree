@@ -193,6 +193,12 @@ export const MENU_ITEMS = [
 				icon: "ArrowLeftRight",
 				show: true,
 			},
+			{
+				name: routesById.npmpackages.title,
+				url: routesById.npmpackages.path,
+				icon: "PackageCheck",
+				show: true,
+			},
 		],
 	},
 	{
