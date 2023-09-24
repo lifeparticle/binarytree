@@ -38,6 +38,7 @@ import {
 	TvSeries,
 	UiUx,
 	YouTube,
+	Npmpackages,
 } from "pages/pages";
 
 export const routes: Route[] = [
@@ -265,6 +266,13 @@ export const routes: Route[] = [
 		title: "Mimetype",
 		description: "Find out what type your file fancies itself as.",
 		component: Mimetype,
+	},
+	{
+		id: "npmpackages",
+		path: "/information/npm-packages",
+		title: "Npm Packages",
+		description: "Find out the latest npm packages",
+		component: Npmpackages,
 	},
 	{
 		id: "diagramming",
