@@ -18,9 +18,7 @@ const Npmpackages = () => {
 		return <Text text={API_NO_DATA} />;
 	}
 
-	return (
-		<PackageList packages={data?.packages || []} isLoading={isLoading} />
-	);
+	return <PackageList packages={data?.packages} isLoading={isLoading} />;
 };
 
 export default Npmpackages;
