@@ -5,6 +5,7 @@ import { Space } from "antd";
 import usePageTitle from "./utils/hooks";
 import { HeadProvider, Title, Link, Meta } from "react-head";
 
+const NO_PADDING = ["BinaryTree: Developer Productivity Tools", "About"];
 const withPageTitle = <T extends object>(
 	WrappedComponent: React.ComponentType<T>
 ) => {
@@ -14,9 +15,7 @@ const withPageTitle = <T extends object>(
 		return (
 			<div
 				className={
-					title === "BinaryTree: Developer Productivity Tools"
-						? ""
-						: style.withpagetitle
+					NO_PADDING.includes(title) ? "" : style.withpagetitle
 				}
 			>
 				<HeadProvider>

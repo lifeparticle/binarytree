@@ -1,6 +1,9 @@
 .about {
 	margin: 0 auto;
 	max-width: var(--bt-converter-width);
+	margin-bottom: 100px;
+	padding-left: 10px;
+	padding-right: 10px;
 
 	&__container {
 		display: flex;

@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 
 interface Params {
@@ -7,6 +7,7 @@ interface Params {
 
 const useParamsValue = (initialParams: Params) => {
 	const [searchParams, setSearchParams] = useSearchParams(initialParams);
+	const count = useRef(0);
 
 	const updateParamsValue = useCallback(
 		(key: string, value: string) => {
@@ -22,10 +23,12 @@ const useParamsValue = (initialParams: Params) => {
 	);
 
 	useEffect(() => {
-		for (const key in initialParams) {
-			if (initialParams[key]) {
-				const element = initialParams[key];
-				updateParamsValue(key, element);
+		if (count.current === 0) {
+			for (const key in initialParams) {
+				if (initialParams[key]) {
+					const element = initialParams[key];
+					updateParamsValue(key, element);
+				}
 			}
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
