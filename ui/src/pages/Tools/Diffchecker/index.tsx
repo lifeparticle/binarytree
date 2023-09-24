@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { diffLines, Change } from "diff";
 import { ResponsiveButton } from "components/General/FormComponents";
 import style from "./Diffchecker.module.scss";
-import CodeHighlightWithCopy from "components/General/CodeHighlightWithCopy";
 
 const { TextArea } = Input;
 
