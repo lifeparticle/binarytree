@@ -1,21 +1,28 @@
 .footer {
 	padding: var(--bt-size-50);
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
 	&__left {
+		padding-right: 50px;
 		border-right: 1px solid #e8e8e8;
-		height: "100%";
+		margin-right: 50px;
 	}
 
 	&__list {
 		list-style-type: none;
 		li {
 			margin: var(--bt-size-10) 0px;
-			a {
-				text-decoration: none;
-				font-size: var(--bt-size-18);
-			}
 		}
-
 		padding: 0px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.footer {
+		&__left {
+			border-right: none;
+		}
+		grid-template-columns: 1fr;
 	}
 }

@@ -25,7 +25,7 @@ const Features: React.FC = () => {
 			<Col xs={23} lg={16}>
 				<Row gutter={[16, 16]}>
 					{FEATURES.map((feature) => (
-						<Col xs={24} lg={8}>
+						<Col xs={24} lg={8} key={feature.id}>
 							<Card style={{ minHeight: 220 }}>
 								<Icon name={feature.icon} size={40} />
 								<Space direction="vertical" size="middle">

@@ -1,4 +1,4 @@
-import React, { useMemo, ChangeEvent } from "react";
+import React, { useMemo } from "react";
 import style from "./ColorPicker.module.scss";
 import { Card, Form, Space } from "antd";
 import { ColorPicker as CP } from "@mantine/core";
@@ -7,7 +7,7 @@ import ColorFormatTags from "./components/ColorFormatTags";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import DisplayColors from "./components/DisplayColors";
-import { calculateColors } from "./utils/helper";
+import { calculateColors, determineFormat } from "./utils/helper";
 import CopyInput from "components/Layouts/CopyInput";
 import { ResponsiveInputWithLabel } from "components/General/FormComponents";
 import useParamsValue from "lib/utils/hooks/useParamsValue";
@@ -24,11 +24,6 @@ const ColorPicker: React.FC = () => {
 
 	const colors = useMemo(() => calculateColors(color), [color]);
 
-	const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-		const input = e.target.value.trim();
-		updateParamsValue("color", input);
-	};
-
 	return (
 		<Form layout="vertical">
 			<div className={style.cp}>
@@ -38,7 +33,13 @@ const ColorPicker: React.FC = () => {
 							<ResponsiveInputWithLabel
 								label="Color code"
 								value={color}
-								onChange={onInputChange}
+								onChange={(e) => {
+									updateParamsValue("color", e.target.value);
+									updateParamsValue(
+										"format",
+										determineFormat(e.target.value)
+									);
+								}}
 								type="text"
 							/>
 							<Clipboard
