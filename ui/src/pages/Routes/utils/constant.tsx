@@ -29,6 +29,7 @@ import {
 	Pixel,
 	Platform,
 	Plugin,
+	PrivacyPolicy,
 	QRcode,
 	ShadesAndTints,
 	Sorting,
@@ -42,7 +43,6 @@ import {
 	UiUx,
 	YouTube,
 } from "pages/pages";
-import PrivacyPolicy from "pages/PrivacyPolicy";
 
 export const routes: Route[] = [
 	{
@@ -314,6 +314,7 @@ export const routes: Route[] = [
 		title: "About",
 		description: "All the juicy details about us.",
 		component: About,
+		isFeature: false,
 	},
 	{
 		id: "feedback",
@@ -321,6 +322,7 @@ export const routes: Route[] = [
 		title: "Feedback",
 		description: "We're all ears for your cheers or jeers.",
 		component: Feedback,
+		isFeature: false,
 	},
 	{
 		id: "terms",
@@ -328,6 +330,7 @@ export const routes: Route[] = [
 		title: "",
 		description: "",
 		component: Terms,
+		isFeature: false,
 	},
 	{
 		id: "privacypolicy",
@@ -335,6 +338,7 @@ export const routes: Route[] = [
 		title: "",
 		description: "",
 		component: PrivacyPolicy,
+		isFeature: false,
 	},
 	{
 		id: "pagenotfound",
@@ -342,6 +346,7 @@ export const routes: Route[] = [
 		title: "Page Not Found",
 		description: "",
 		component: PageNotFound,
+		isFeature: false,
 	},
 ];
 

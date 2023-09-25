@@ -5,7 +5,7 @@ on:
     - cron: "0 0 * * *"
 
 jobs:
-  fetch-news:
+  npm-packages:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -33,8 +33,8 @@ jobs:
 
       - name: Move packages.json
         run: |-
-          git add news.json
-          git mv -f news.json ../../api/packages.json
+          git add npm-packages.json
+          git mv -f npm-packages.json ../../api/packages.json
 
       - name: Commit and push if changed
         run: |-
