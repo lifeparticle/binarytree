@@ -125,3 +125,13 @@ h5 {
 .ant-menu-submenu-popup .ant-menu-vertical {
 	max-height: 300px !important;
 }
+
+.ant-typography a,
+a {
+	color: grey;
+}
+
+.ant-typography a:hover,
+a:hover {
+	color: whitesmoke;
+}
