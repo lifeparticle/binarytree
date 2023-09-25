@@ -78,7 +78,6 @@ h5 {
 	overflow-x: auto;
 	overflow-y: auto;
 	max-height: 100dvh;
-	/* padding: var(--bt-size-10) var(--bt-size-10) 0 var(--bt-size-10); */
 	scroll-behavior: smooth;
 }
 
@@ -125,8 +124,4 @@ h5 {
 /* collapsible menu scroll */
 .ant-menu-submenu-popup .ant-menu-vertical {
 	max-height: 300px !important;
-}
-
-.ant-spin-dot-item {
-	background-color: rgba(0, 0, 0, 0.8) !important;
 }

@@ -14,7 +14,14 @@ const App: React.FC = () => {
 
 	return (
 		<ErrorBoundary fallback={<p>Something went wrong</p>}>
-			<ConfigProvider theme={{ algorithm }}>
+			<ConfigProvider
+				theme={{
+					algorithm,
+					token: {
+						colorPrimary: "#333333",
+					},
+				}}
+			>
 				<Layout>
 					<Layout hasSider>
 						<Sidebar />
