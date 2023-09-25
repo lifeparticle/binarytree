@@ -6,9 +6,9 @@ const SITE_OPTIONS = {
 		value: "frontend-focus",
 		isFeedItem: true,
 	},
-	"status-code": {
-		label: "Status Code",
-		value: "status-code",
+	"react-status": {
+		label: "React Status",
+		value: "react-status",
 		isFeedItem: true,
 	},
 	news: {
@@ -25,8 +25,8 @@ const TAB_ITEMS: TabsProps["items"] = [
 		show: true,
 	},
 	{
-		key: SITE_OPTIONS["status-code"].value,
-		label: SITE_OPTIONS["status-code"].label,
+		key: SITE_OPTIONS["react-status"].value,
+		label: SITE_OPTIONS["react-status"].label,
 		show: true,
 	},
 	{
