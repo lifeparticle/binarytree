@@ -11,12 +11,13 @@ const usePageTitle = () => {
 	};
 
 	const { title, description, id } = page;
-	return [
+
+	return {
 		title,
 		description,
-		HELP[id] || "",
-		`https://binarytree.dev${pathname}`,
-	];
+		helpText: HELP[id] || "",
+		url: `https://binarytree.dev${pathname}`,
+	};
 };
 
 export default usePageTitle;
