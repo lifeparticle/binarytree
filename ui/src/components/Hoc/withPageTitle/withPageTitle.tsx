@@ -10,7 +10,7 @@ const withPageTitle = <T extends object>(
 	WrappedComponent: React.ComponentType<T>
 ) => {
 	const WithPageTitle = (props: T) => {
-		const [title, description, helpText, url] = usePageTitle();
+		const { title, description, helpText, url } = usePageTitle();
 
 		return (
 			<div
