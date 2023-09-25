@@ -5,7 +5,14 @@ import { Space } from "antd";
 import usePageTitle from "./utils/hooks";
 import { HeadProvider, Title, Link, Meta } from "react-head";
 
-const NO_PADDING = ["BinaryTree: Developer Productivity Tools", "About"];
+const NO_PADDING = [
+	"BinaryTree: Developer Productivity Tools",
+	"About",
+	"Terms",
+];
+
+const NO_TITLE = ["BinaryTree: Developer Productivity Tools", "Terms"];
+
 const withPageTitle = <T extends object>(
 	WrappedComponent: React.ComponentType<T>
 ) => {
@@ -25,7 +32,7 @@ const withPageTitle = <T extends object>(
 						<Meta name="description" content={description} />
 					</div>
 				</HeadProvider>
-				{title !== "BinaryTree: Developer Productivity Tools" && (
+				{!NO_TITLE.includes(title) && (
 					<>
 						<Space align="center">
 							<Text text={title} level={3} />
