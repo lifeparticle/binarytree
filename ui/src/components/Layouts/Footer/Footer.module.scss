@@ -1,13 +1,13 @@
 .footer {
-	padding: var(--bt-size-20) var(--bt-size-20) var(--bt-size-50)
-		var(--bt-size-50);
+	padding: 30px 10% 30px 10%;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	box-shadow: inset 0px 1px 0px #e8e8e8;
 
 	&__left {
-		padding-right: 100px;
+		padding-right: 5vw;
 		border-right: 1px solid #e8e8e8;
-		margin-right: 120px;
+		margin-right: 6vw;
 	}
 
 	&__right {
@@ -25,6 +25,7 @@
 
 @media screen and (max-width: 768px) {
 	.footer {
+		text-align: center;
 		&__left {
 			border-right: none;
 			padding-right: 0px;

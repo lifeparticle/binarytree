@@ -9,7 +9,7 @@ const Contribution: React.FC = () => {
 	};
 	return (
 		<section className={style.home__contribution}>
-			<Space direction="vertical" align="center">
+			<Space direction="vertical">
 				<Typography.Title>Join our community</Typography.Title>
 				<Typography.Text>
 					Join our open-source community and help shape the future of

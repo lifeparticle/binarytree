@@ -30,6 +30,8 @@
 	&__contribution {
 		display: flex;
 		justify-content: center;
+		align-items: center;
+		text-align: center;
 	}
 
 	@media screen and (max-width: 768px) {
