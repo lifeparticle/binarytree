@@ -17,6 +17,7 @@ const Contribution: React.FC = () => {
 				</Typography.Text>
 				<Space direction="horizontal">
 					<ResponsiveButton
+						type="primary"
 						onClick={() =>
 							onClick(
 								"https://github.com/lifeparticle/binarytree"
