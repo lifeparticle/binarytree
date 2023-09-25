@@ -6,14 +6,16 @@ import Contribution from "./components/Contribution";
 
 const Home = () => {
 	return (
-		<div className={style.home}>
-			<div className={style.home__container}>
-				<Hero />
-				<Features />
-				<Contribution />
+		<>
+			<div className={style.home}>
+				<div className={style.home__container}>
+					<Hero />
+					<Features />
+					<Contribution />
+				</div>
 			</div>
 			<Footer />
-		</div>
+		</>
 	);
 };
 
