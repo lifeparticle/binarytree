@@ -1,48 +1,40 @@
 .home {
-	padding-left: 10px;
-	padding-right: 10px;
+	padding: 100px 10% 64px 10%;
 	background: url("/src/assets/grid.svg");
 
-	&__hero {
-		max-width: var(--bt-converter-width);
-		margin: 0 auto;
-		display: block;
-		text-align: center;
+	&__container {
+		display: flex;
 		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+		gap: 50px;
+	}
+
+	&__hero {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
 		gap: var(--bt-size-16);
-		button {
-			align-self: center;
+		&_text {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
 		}
 	}
 
 	&__features {
-		align-items: center;
 		display: flex;
+		align-items: center;
 	}
 
-	&__values {
-		text-align: center;
+	&__contribution {
 		display: flex;
 		justify-content: center;
-	}
-
-	&__container {
-		padding: 80px 200px;
-		display: flex;
-		flex-direction: column;
-
-		gap: 100px;
 	}
 
 	@media screen and (max-width: 768px) {
 		&__container {
 			padding: 50px 10px;
 		}
-	}
-	&__contribution {
-		max-width: var(--bt-converter-width);
-		margin: 0 auto;
 	}
 }
