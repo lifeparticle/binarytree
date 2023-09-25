@@ -1,20 +1,25 @@
 .footer {
-	padding: var(--bt-size-50);
+	padding: var(--bt-size-20) var(--bt-size-20) var(--bt-size-50)
+		var(--bt-size-50);
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
 	&__left {
-		padding-right: 50px;
+		padding-right: 100px;
 		border-right: 1px solid #e8e8e8;
-		margin-right: 50px;
+		margin-right: 120px;
+	}
+
+	&__right {
+		padding-top: var(--bt-size-20);
 	}
 
 	&__list {
+		padding: 0px;
 		list-style-type: none;
 		li {
 			margin: var(--bt-size-10) 0px;
 		}
-		padding: 0px;
 	}
 }
 
