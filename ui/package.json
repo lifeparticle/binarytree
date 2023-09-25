@@ -3,6 +3,16 @@
 	"version": "2.0.0",
 	"private": true,
 	"packageManager": "yarn@3.6.1",
+	"scripts": {
+		"dev": "vite",
+		"host": "vite --host",
+		"build": "tsc && vite build && cp CHANGELOG.md dist",
+		"test": "vitest",
+		"test:coverage": "vitest --coverage",
+		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+		"preview": "vite preview",
+		"postinstall": "node ./postinstall.js"
+	},
 	"dependencies": {
 		"@emotion/react": "^11.11.0",
 		"@excalidraw/excalidraw": "^0.16.0",
@@ -44,16 +54,6 @@
 		"values.js": "^2.1.1",
 		"web-vitals": "^3.3.1",
 		"webfontloader": "^1.6.28"
-	},
-	"scripts": {
-		"dev": "vite",
-		"host": "vite --host",
-		"build": "tsc && vite build && cp CHANGELOG.md dist",
-		"test": "vitest",
-		"test:coverage": "vitest --coverage",
-		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-		"preview": "vite preview",
-		"postinstall": "node ./postinstall.js"
 	},
 	"eslintConfig": {
 		"extends": [

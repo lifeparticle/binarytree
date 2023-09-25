@@ -12,6 +12,18 @@
 		]
 	},
 	{
+		"name": "htmltagwrap",
+		"category": "Automation",
+		"subCategory": "Code Quality",
+		"url": "https://marketplace.visualstudio.com/items?itemName=bradgashler.htmltagwrap",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
 		"name": "Eslint",
 		"category": "VSCode Extension",
 		"subCategory": "Code Quality",

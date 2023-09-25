@@ -3,7 +3,6 @@ import { Button, Card, Col, Row, Space, Typography } from "antd";
 import Icon from "components/General/Icon";
 import { FEATURES } from "pages/Home/utils/constants";
 import style from "pages/Home/Home.module.scss";
-
 const Features: React.FC = () => {
 	return (
 		<Row gutter={[16, 16]}>
@@ -12,11 +11,11 @@ const Features: React.FC = () => {
 					<Typography.Title>
 						BinaryTree comes packed with some awesome features
 					</Typography.Title>
-					<p>
+					<Typography.Paragraph>
 						For everyday development of contemporary applications,
 						you might require some innovative tools. BinaryTree can
 						streamline your application development process
-					</p>
+					</Typography.Paragraph>
 
 					<Button>Get Started</Button>
 				</Space>
