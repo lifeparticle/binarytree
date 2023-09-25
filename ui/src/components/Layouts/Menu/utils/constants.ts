@@ -237,6 +237,12 @@ export const MENU_ITEMS = [
 				show: true,
 			},
 			{
+				name: routesById.interview.title,
+				url: routesById.interview.path,
+				icon: "Users",
+				show: true,
+			},
+			{
 				name: routesById.movie.title,
 				url: routesById.movie.path,
 				icon: "Clapperboard",

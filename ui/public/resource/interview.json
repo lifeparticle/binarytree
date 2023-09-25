@@ -1,0 +1,23 @@
+[
+	{
+		"name": "LeetCode",
+		"category": "Interview",
+		"subCategory": [],
+		"url": "https://leetcode.com/",
+		"socials": []
+	},
+	{
+		"name": "HackerRank",
+		"category": "Interview",
+		"subCategory": [],
+		"url": "https://www.hackerrank.com/",
+		"socials": []
+	},
+	{
+		"name": "GeeksforGeeks",
+		"category": "Interview",
+		"subCategory": [],
+		"url": "https://www.geeksforgeeks.org/",
+		"socials": []
+	}
+]

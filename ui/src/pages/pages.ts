@@ -5,6 +5,8 @@ const News = lazy(() => import("pages/Newsfeed"));
 const About = lazy(() => import("pages/About"));
 const Feedback = lazy(() => import("pages/Feedback"));
 const PageNotFound = lazy(() => import("pages/PageNotFound"));
+const Terms = lazy(() => import("pages/Terms"));
+const PrivacyPolicy = lazy(() => import("pages/PrivacyPolicy"));
 
 const ColorPicker = lazy(() => import("pages/Colors/ColorPicker"));
 const ShadesAndTints = lazy(() => import("pages/Colors/ShadesAndTints"));
@@ -29,6 +31,7 @@ const Course = lazy(() => import("pages/Resource/Course"));
 const DesignSystem = lazy(() => import("pages/Resource/DesignSystem"));
 const Github = lazy(() => import("pages/Resource/Github"));
 const Icon = lazy(() => import("pages/Resource/Icon"));
+const Interview = lazy(() => import("pages/Resource/Interview"));
 const Movie = lazy(() => import("pages/Resource/Movie"));
 const Platform = lazy(() => import("pages/Resource/Platform"));
 const Plugin = lazy(() => import("pages/Resource/Plugin"));
@@ -69,6 +72,7 @@ export {
 	Home,
 	Icon,
 	ImageGeneratorFromColors,
+	Interview,
 	JsonToTypescript,
 	MarkdownEditor,
 	Mimetype,
@@ -78,12 +82,14 @@ export {
 	Pixel,
 	Platform,
 	Plugin,
+	PrivacyPolicy,
 	QRcode,
 	ShadesAndTints,
 	Sorting,
 	SvgFormatter,
 	TableGenerator,
 	TableOfContent,
+	Terms,
 	TextEditor,
 	Tool,
 	TvSeries,

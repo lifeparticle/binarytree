@@ -3,6 +3,7 @@ import style from "./Footer.module.scss";
 import Icon from "components/General/Icon";
 import { Typography, theme } from "antd";
 import { ResponsiveButton } from "components/General/FormComponents";
+import { openLink } from "lib/utils/helper";
 
 const Footer: React.FC = () => {
 	const {
@@ -23,21 +24,32 @@ const Footer: React.FC = () => {
 				<ul className={style.footer__left_list}>
 					<li>
 						<a
-							href="https://github.com/lifeparticle/binarytree/blob/main/CODE_OF_CONDUCT.md"
-							target="_blank"
+							onClick={() =>
+								openLink(
+									"https://github.com/lifeparticle/binarytree/blob/main/CODE_OF_CONDUCT.md"
+								)
+							}
 						>
 							Code of Conduct
 						</a>
 					</li>
 
 					<li>
-						<a href="#">Privacy</a>
+						<a onClick={() => openLink("/privacy-policy", false)}>
+							Privacy Policy
+						</a>
 					</li>
 					<li>
-						<a href="#">Terms</a>
+						<a onClick={() => openLink("/terms", false)}>Terms</a>
 					</li>
 					<li>
-						<a href="https://github.com/lifeparticle/binarytree#status">
+						<a
+							onClick={() =>
+								openLink(
+									"https://github.com/lifeparticle/binarytree#status"
+								)
+							}
+						>
 							Status
 						</a>
 					</li>
@@ -53,11 +65,7 @@ const Footer: React.FC = () => {
 				shape="circle"
 				icon={<Icon name="Github" />}
 				onClick={() =>
-					window.open(
-						"https://github.com/lifeparticle/binarytree",
-						"_blank",
-						"noopener"
-					)
+					openLink("https://github.com/lifeparticle/binarytree")
 				}
 			/>
 		</div>

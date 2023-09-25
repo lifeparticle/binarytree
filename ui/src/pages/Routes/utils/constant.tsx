@@ -16,6 +16,7 @@ import {
 	Github,
 	Home,
 	Icon,
+	Interview,
 	ImageGeneratorFromColors,
 	JsonToTypescript,
 	MarkdownEditor,
@@ -38,7 +39,9 @@ import {
 	TvSeries,
 	UiUx,
 	YouTube,
+	Terms,
 } from "pages/pages";
+import PrivacyPolicy from "pages/PrivacyPolicy";
 
 export const routes: Route[] = [
 	{
@@ -182,6 +185,13 @@ export const routes: Route[] = [
 		component: Icon,
 	},
 	{
+		id: "interview",
+		path: "/resource/interview",
+		title: "Interview",
+		description: "O(n!) to 0(1)",
+		component: Interview,
+	},
+	{
 		id: "movie",
 		path: "/resource/movie",
 		title: "Movie",
@@ -303,6 +313,20 @@ export const routes: Route[] = [
 		title: "Feedback",
 		description: "We're all ears for your cheers or jeers.",
 		component: Feedback,
+	},
+	{
+		id: "terms",
+		path: "/terms",
+		title: "",
+		description: "",
+		component: Terms,
+	},
+	{
+		id: "privacypolicy",
+		path: "/privacy-policy",
+		title: "",
+		description: "",
+		component: PrivacyPolicy,
 	},
 	{
 		id: "pagenotfound",
