@@ -25,10 +25,12 @@ const Hero: React.FC = () => {
 				</Typography.Paragraph>
 			</div>
 			<Image
+				style={{
+					display: "flex",
+				}}
 				src={hero}
 				alt="BinaryTree: Developer Productivity Tools"
 				className={style.home__hero_image}
-				height={400}
 				preview={false}
 			/>
 		</section>
