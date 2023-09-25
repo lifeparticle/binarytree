@@ -5,16 +5,19 @@ import CookiConsent, {
 } from "react-cookie-consent";
 import { Link } from "react-router-dom";
 import ReactGA from "react-ga4";
+import usePageTitle from "components/Hoc/withPageTitle/utils/hooks";
 
 const CookieConsent: React.FC = () => {
+	const { title, url } = usePageTitle();
+
 	const handleAcceptCookie = () => {
 		const GOOGLE_ANALYTICS_ID = "G-9K8N22TZZS";
 		if (GOOGLE_ANALYTICS_ID) {
 			ReactGA.initialize(GOOGLE_ANALYTICS_ID);
 			ReactGA.send({
 				hitType: "pageview",
-				page: window.location.pathname,
-				title: "Custom Title",
+				page: url,
+				title,
 			});
 		}
 	};
