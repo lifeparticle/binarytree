@@ -1,4 +1,4 @@
-import React, { useMemo, ChangeEvent } from "react";
+import React, { useMemo } from "react";
 import style from "./ColorPicker.module.scss";
 import { Card, Form, Space } from "antd";
 import { ColorPicker as CP } from "@mantine/core";
@@ -7,14 +7,14 @@ import ColorFormatTags from "./components/ColorFormatTags";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import DisplayColors from "./components/DisplayColors";
-import { FormatType } from "./utils/types";
 import { calculateColors, determineFormat } from "./utils/helper";
 import CopyInput from "components/Layouts/CopyInput";
 import { ResponsiveInputWithLabel } from "components/General/FormComponents";
-import { useSearchParams } from "react-router-dom";
+import useParamsValue from "lib/utils/hooks/useParamsValue";
+import { FormatType } from "./utils/types";
 
 const ColorPicker: React.FC = () => {
-	const [searchParams, setSearchParams] = useSearchParams({
+	const { searchParams, updateParamsValue } = useParamsValue({
 		color: INITIAL_COLOR,
 		format: INITIAL_FORMAT,
 	});
@@ -22,26 +22,7 @@ const ColorPicker: React.FC = () => {
 	const color = String(searchParams.get("color"));
 	const format = String(searchParams.get("format")) as FormatType;
 
-	console.log(color, format);
-
 	const colors = useMemo(() => calculateColors(color), [color]);
-	console.log(colors);
-
-	const setColor = (color: string) => {
-		setSearchParams(
-			(prev) => {
-				prev.set("color", color);
-				prev.set("format", determineFormat(color));
-				return prev;
-			},
-			{ replace: true }
-		);
-	};
-
-	const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-		const input = e.target.value.trim();
-		setColor(input);
-	};
 
 	return (
 		<Form layout="vertical">
@@ -52,7 +33,13 @@ const ColorPicker: React.FC = () => {
 							<ResponsiveInputWithLabel
 								label="Color code"
 								value={color}
-								onChange={onInputChange}
+								onChange={(e) => {
+									updateParamsValue("color", e.target.value);
+									updateParamsValue(
+										"format",
+										determineFormat(e.target.value)
+									);
+								}}
 								type="text"
 							/>
 							<Clipboard
@@ -64,13 +51,7 @@ const ColorPicker: React.FC = () => {
 							<ColorFormatTags
 								currentFormat={format}
 								onSelect={(format) =>
-									setSearchParams(
-										(prev) => {
-											prev.set("format", format);
-											return prev;
-										},
-										{ replace: true }
-									)
+									updateParamsValue("format", format)
 								}
 							/>
 						</Form.Item>
@@ -78,7 +59,9 @@ const ColorPicker: React.FC = () => {
 						<CP
 							format={format}
 							value={color}
-							onChange={setColor}
+							onChange={(value) =>
+								updateParamsValue("color", value)
+							}
 							size="xl"
 						/>
 					</Space>

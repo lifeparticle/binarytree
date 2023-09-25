@@ -52,6 +52,7 @@ const SvgFormatter = lazy(() => import("pages/Tools/SvgFormatter"));
 const TextEditor = lazy(() => import("pages/Text/TextEditor"));
 
 const Mimetype = lazy(() => import("pages/Information/Mimetype"));
+const Npmpackages = lazy(() => import("pages/Information/Npmpackages"));
 
 export {
 	About,
@@ -76,6 +77,7 @@ export {
 	JsonToTypescript,
 	MarkdownEditor,
 	Mimetype,
+	Npmpackages,
 	Movie,
 	News,
 	PageNotFound,
