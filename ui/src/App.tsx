@@ -1,27 +1,19 @@
-import { useContext } from "react";
-import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 import { ConfigProvider, Layout } from "antd";
 import { ErrorBoundary } from "react-error-boundary";
 import RoutesWithPageTitle from "pages/Routes";
 import Sidebar from "components/Layouts/Sidebar";
 import FloatingHeader from "components/Layouts/FloatingHeader";
 import CookieConsent from "pages/Footer/CookieConsent";
+import useTheme from "lib/utils/hooks/useTheme";
 
 const { Content } = Layout;
 
 const App: React.FC = () => {
-	const { algorithm } = useContext(DarkModeContext);
+	const theme = useTheme();
 
 	return (
 		<ErrorBoundary fallback={<p>Something went wrong</p>}>
-			<ConfigProvider
-				theme={{
-					algorithm,
-					token: {
-						colorPrimary: "#333333",
-					},
-				}}
-			>
+			<ConfigProvider theme={theme}>
 				<Layout>
 					<Layout hasSider>
 						<Sidebar />
