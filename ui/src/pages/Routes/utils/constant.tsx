@@ -325,7 +325,7 @@ export const routes: Route[] = [
 	{
 		id: "terms",
 		path: "/terms",
-		title: "",
+		title: "Terms",
 		description: "",
 		component: Terms,
 	},
