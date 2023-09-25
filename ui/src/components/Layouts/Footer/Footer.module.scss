@@ -22,6 +22,8 @@
 	.footer {
 		&__left {
 			border-right: none;
+			padding-right: 0px;
+			margin-right: 0px;
 		}
 		grid-template-columns: 1fr;
 	}

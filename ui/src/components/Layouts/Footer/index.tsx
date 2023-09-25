@@ -4,8 +4,8 @@ import Icon from "components/General/Icon";
 import { Space, Typography, theme } from "antd";
 import { ResponsiveButton } from "components/General/FormComponents";
 import { Link } from "react-router-dom";
-import logo_light from "assets/logo_light.svg";
-import logo_dark from "assets/logo_dark.svg";
+import bt_light from "assets/bt_light.png";
+import bt_dark from "assets/bt_dark.png";
 import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 import { openLink } from "lib/utils/helper";
 
@@ -28,13 +28,13 @@ const Footer: React.FC = () => {
 				<Space>
 					<Link to={"/"}>
 						<img
-							src={isDarkMode ? logo_dark : logo_light}
-							height={60}
-							width={60}
+							src={isDarkMode ? bt_dark : bt_light}
+							height={100}
+							// width={}
 						/>
 					</Link>
-					<Typography.Title level={4}>Binarytree</Typography.Title>
 				</Space>
+
 				<ResponsiveButton
 					key="Github"
 					type="default"
@@ -43,8 +43,9 @@ const Footer: React.FC = () => {
 					onClick={() =>
 						openLink("https://github.com/lifeparticle/binarytree")
 					}
+					style={{ marginLeft: "20px" }}
 				/>
-				<Typography.Text>
+				<Typography.Text style={{ marginLeft: "20px" }}>
 					&copy; {new Date().getFullYear()} BinaryTree
 				</Typography.Text>
 			</Space>
