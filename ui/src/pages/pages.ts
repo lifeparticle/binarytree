@@ -5,8 +5,8 @@ const News = lazy(() => import("pages/Newsfeed"));
 const About = lazy(() => import("pages/About"));
 const Feedback = lazy(() => import("pages/Feedback"));
 const PageNotFound = lazy(() => import("pages/PageNotFound"));
-const Terms = lazy(() => import("pages/Terms"));
-const PrivacyPolicy = lazy(() => import("pages/PrivacyPolicy"));
+const Terms = lazy(() => import("pages/Footer/Terms"));
+const PrivacyPolicy = lazy(() => import("pages/Footer/PrivacyPolicy"));
 
 const ColorPicker = lazy(() => import("pages/Colors/ColorPicker"));
 const ShadesAndTints = lazy(() => import("pages/Colors/ShadesAndTints"));

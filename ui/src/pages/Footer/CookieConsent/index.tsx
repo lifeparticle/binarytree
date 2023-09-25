@@ -3,29 +3,31 @@ import CookiConsent, {
 	Cookies,
 	getCookieConsentValue,
 } from "react-cookie-consent";
-import { Link } from "react-router-dom";
 import ReactGA from "react-ga4";
 import usePageTitle from "components/Hoc/withPageTitle/utils/hooks";
+import {
+	BUTTON_STYLES,
+	COOKIE_CONSENT_STYLES,
+	GOOGLE_ANALYTICS_COOKIES,
+	GOOGLE_ANALYTICS_ID,
+	HIT_TYPE,
+} from "./utils/constants";
+import CookieConsentText from "./components/CookieConsentText";
 
 const CookieConsent: React.FC = () => {
 	const { title, url } = usePageTitle();
 
 	const handleAcceptCookie = () => {
-		const GOOGLE_ANALYTICS_ID = "G-9K8N22TZZS";
-		if (GOOGLE_ANALYTICS_ID) {
-			ReactGA.initialize(GOOGLE_ANALYTICS_ID);
-			ReactGA.send({
-				hitType: "pageview",
-				page: url,
-				title,
-			});
-		}
+		ReactGA.initialize(GOOGLE_ANALYTICS_ID);
+		ReactGA.send({
+			hitType: HIT_TYPE,
+			page: url,
+			title,
+		});
 	};
 
 	const handleDeclineCookie = () => {
-		Cookies.remove("_ga");
-		Cookies.remove("_gat");
-		Cookies.remove("_gid");
+		GOOGLE_ANALYTICS_COOKIES.forEach((cookie) => Cookies.remove(cookie));
 	};
 
 	useEffect(() => {
@@ -34,40 +36,21 @@ const CookieConsent: React.FC = () => {
 			handleAcceptCookie();
 		}
 	}, []);
+
 	return (
 		<CookiConsent
 			onAccept={handleAcceptCookie}
 			onDecline={handleDeclineCookie}
 			enableDeclineButton
 			flipButtons={true}
-			style={{
-				maxWidth: "350px",
-				margin: "20px",
-				borderRadius: "10px",
-				fontSize: "17px",
-			}}
-			buttonStyle={{
-				padding: "8px 20px",
-				fontSize: "17px",
-				borderRadius: "2px",
-			}}
-			declineButtonStyle={{
-				padding: "8px 20px",
-				fontSize: "17px",
-				borderRadius: "2px",
-			}}
+			style={COOKIE_CONSENT_STYLES}
+			buttonStyle={BUTTON_STYLES}
+			declineButtonStyle={BUTTON_STYLES}
 			declineButtonClasses=""
 			declineButtonText="Decline"
 			buttonText="Accept"
 		>
-			<div>
-				This website uses cookies to enhance the user experience. if you
-				are interested to know about our cookie policy then{" "}
-				<Link to={"/cookie-policy"} style={{ color: "white" }}>
-					check out
-				</Link>{" "}
-				here
-			</div>
+			<CookieConsentText />
 		</CookiConsent>
 	);
 };
