@@ -3,6 +3,7 @@ import { Button, Card, Col, Row, Space, Typography } from "antd";
 import Icon from "components/General/Icon";
 import { FEATURES } from "pages/Home/utils/constants";
 import style from "pages/Home/Home.module.scss";
+import { openLink } from "lib/utils/helper";
 const Features: React.FC = () => {
 	return (
 		<Row gutter={[16, 16]}>
@@ -25,7 +26,10 @@ const Features: React.FC = () => {
 				<Row gutter={[16, 16]}>
 					{FEATURES.map((feature) => (
 						<Col xs={24} lg={8} key={feature.id}>
-							<Card style={{ minHeight: 220 }}>
+							<Card
+								onClick={() => openLink(feature.link, false)}
+								hoverable
+							>
 								<Icon name={feature.icon} size={40} />
 								<Space direction="vertical" size="middle">
 									<Typography.Title level={4}>

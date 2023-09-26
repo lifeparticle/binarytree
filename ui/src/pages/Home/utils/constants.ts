@@ -1,6 +1,7 @@
 import { FEATURE_DATA } from "pages/About/utils/constants";
 import base64 from "assets/home/avatar.gif";
 import { FeatureType } from "./types";
+import { routesById } from "pages/Routes/utils/constant";
 
 interface DescriptionType {
 	description: string;
@@ -37,40 +38,46 @@ const SEGMENTED_OPTIONS = VALUES.map((value) => ({
 
 const FEATURES: FeatureType[] = [
 	{
-		id: 1,
-		title: "Color Picker",
+		id: routesById.colorpicker.id,
+		title: routesById.colorpicker.title,
 		icon: "Baseline",
-		description: "Choose you desired color as per your choice",
+		description: routesById.colorpicker.description,
+		link: routesById.colorpicker.path,
 	},
 	{
-		id: 2,
-		title: "Shades and tints",
+		id: routesById.shadesandtints.id,
+		title: routesById.shadesandtints.title,
 		icon: "Layers",
-		description: "Choose your different types of shades",
+		description: routesById.shadesandtints.description,
+		link: routesById.shadesandtints.path,
 	},
 	{
-		id: 3,
-		title: "Border radius",
+		id: routesById.borderradius.id,
+		title: routesById.borderradius.title,
 		icon: "Square",
-		description: "Shape up your CSS with some smooth curves.",
+		description: routesById.borderradius.description,
+		link: routesById.borderradius.path,
 	},
 	{
-		id: 4,
-		title: "Box Shadow",
-		icon: "Box",
-		description: "Add drama to your box! Shadows included.",
+		id: routesById.tableofcontent.id,
+		title: routesById.tableofcontent.title,
+		icon: "Table",
+		description: routesById.tableofcontent.description,
+		link: routesById.tableofcontent.path,
 	},
 	{
-		id: 5,
-		title: "Base64 converter",
+		id: routesById.base64.id,
+		title: routesById.base64.title,
 		icon: "Replace",
-		description: "Encode, decode, and party in Base64 style.",
+		description: routesById.base64.description,
+		link: routesById.base64.path,
 	},
 	{
-		id: 6,
-		title: "Pixel converter",
+		id: routesById.pixelconverter.id,
+		title: routesById.pixelconverter.title,
 		icon: "FileOutput",
-		description: "Pixels to units - like magic, but real!",
+		description: routesById.pixelconverter.description,
+		link: routesById.pixelconverter.path,
 	},
 ];
 
