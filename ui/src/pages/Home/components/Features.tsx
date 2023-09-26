@@ -3,13 +3,16 @@ import { Button, Card, Col, Row, Space, Typography } from "antd";
 import Icon from "components/General/Icon";
 import { FEATURES } from "pages/Home/utils/constants";
 import style from "pages/Home/Home.module.scss";
-import { openLink } from "lib/utils/helper";
+import { useNavigate } from "react-router-dom";
+
 const Features: React.FC = () => {
+	const navigate = useNavigate();
+
 	return (
 		<Row gutter={[16, 16]}>
 			<Col xs={24} lg={8} className={style.home__features}>
 				<Space direction="vertical">
-					<Typography.Title>
+					<Typography.Title level={2}>
 						BinaryTree comes packed with some awesome features
 					</Typography.Title>
 					<Typography.Paragraph>
@@ -27,7 +30,7 @@ const Features: React.FC = () => {
 					{FEATURES.map((feature) => (
 						<Col xs={24} lg={8} key={feature.id}>
 							<Card
-								onClick={() => openLink(feature.link, false)}
+								onClick={() => navigate(feature.link)}
 								hoverable
 							>
 								<Icon name={feature.icon} size={40} />

@@ -113,18 +113,20 @@ const Footer: React.FC = () => {
 				<Typography.Title level={4}>Legal</Typography.Title>
 				<ul className={style.footer__list}>
 					<li>
-						<a onClick={() => openLink("/terms", false)}>Terms</a>
+						<Link to={"/terms"}>
+							<a>Terms</a>
+						</Link>
 					</li>
 					<li>
-						<a onClick={() => openLink("/privacy", false)}>
-							Privacy
-						</a>
+						<Link to={"/privacy"}>
+							<a>Privacy</a>
+						</Link>
 					</li>
 
 					<li>
-						<a onClick={() => openLink("//cookie-policy", false)}>
-							Cookie Policy
-						</a>
+						<Link to={"/cookie-policy"}>
+							<a>Cookie Policy</a>
+						</Link>
 					</li>
 				</ul>
 			</Space>

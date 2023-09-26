@@ -10,7 +10,9 @@ const Contribution: React.FC = () => {
 	return (
 		<section className={style.home__contribution}>
 			<Space direction="vertical">
-				<Typography.Title>Join our community</Typography.Title>
+				<Typography.Title level={2}>
+					Join our community
+				</Typography.Title>
 				<Typography.Text>
 					Join our open-source community and help shape the future of
 					Modern web
