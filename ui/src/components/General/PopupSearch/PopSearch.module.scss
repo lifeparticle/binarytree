@@ -1,0 +1,19 @@
+.popsearch {
+	&__container {
+		max-height: 200px;
+		overflow-y: auto;
+		margin-top: 10px;
+
+		&_item {
+			padding: 10px 5px;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+
+			&:hover {
+				background-color: aliceblue;
+			}
+		}
+	}
+}
