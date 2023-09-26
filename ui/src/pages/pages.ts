@@ -7,6 +7,7 @@ const Feedback = lazy(() => import("pages/Feedback"));
 const PageNotFound = lazy(() => import("pages/PageNotFound"));
 const Terms = lazy(() => import("pages/Footer/Terms"));
 const PrivacyPolicy = lazy(() => import("pages/Footer/PrivacyPolicy"));
+const CookiePolicy = lazy(() => import("pages/Footer/CookiePolicy"));
 
 const ColorPicker = lazy(() => import("pages/Colors/ColorPicker"));
 const ShadesAndTints = lazy(() => import("pages/Colors/ShadesAndTints"));
@@ -85,6 +86,7 @@ export {
 	Platform,
 	Plugin,
 	PrivacyPolicy,
+	CookiePolicy,
 	QRcode,
 	ShadesAndTints,
 	Sorting,
