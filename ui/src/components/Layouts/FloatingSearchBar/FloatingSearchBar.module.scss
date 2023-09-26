@@ -1,0 +1,9 @@
+.fsb {
+	position: absolute;
+	top: var(--bt-size-8);
+	right: 200px;
+	padding: var(--bt-size-4) 0 var(--bt-size-4) 0;
+	border-radius: var(--bt-size-10);
+	z-index: var(--bt-z-index-dropdown);
+	display: flex;
+}
