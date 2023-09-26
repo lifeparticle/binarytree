@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import CookiConsent, {
 	Cookies,
 	getCookieConsentValue,
@@ -17,14 +17,16 @@ import CookieConsentText from "./components/CookieConsentText";
 const CookieConsent: React.FC = () => {
 	const { title, url } = usePageTitle();
 
-	const handleAcceptCookie = () => {
-		ReactGA.initialize(GOOGLE_ANALYTICS_ID);
+	const handleAcceptCookie = useCallback(() => {
+		if (!ReactGA.isInitialized) {
+			ReactGA.initialize(GOOGLE_ANALYTICS_ID);
+		}
 		ReactGA.send({
 			hitType: HIT_TYPE,
 			page: url,
 			title,
 		});
-	};
+	}, [title, url]);
 
 	const handleDeclineCookie = () => {
 		GOOGLE_ANALYTICS_COOKIES.forEach((cookie) => Cookies.remove(cookie));
@@ -35,7 +37,7 @@ const CookieConsent: React.FC = () => {
 		if (isConsent === "true") {
 			handleAcceptCookie();
 		}
-	}, []);
+	}, [handleAcceptCookie]);
 
 	return (
 		<CookiConsent

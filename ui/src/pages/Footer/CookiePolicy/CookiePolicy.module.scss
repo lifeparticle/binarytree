@@ -1,0 +1,18 @@
+.privacypolicy {
+	padding: 64px 10% 64px 10%;
+	display: flex;
+
+	ul {
+		list-style-type: inherit;
+	}
+
+	&__header {
+		background-color: #c0c0c0;
+		border-radius: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 10%;
+		margin-bottom: 64px;
+	}
+}

@@ -9,6 +9,7 @@ import {
 	BorderRadius,
 	BoxShadow,
 	ColorPicker,
+	CookiePolicy,
 	Course,
 	DataGenerator,
 	DesignSystem,
@@ -335,6 +336,13 @@ export const routes: Route[] = [
 		title: "",
 		description: "",
 		component: PrivacyPolicy,
+	},
+	{
+		id: "cookiepolicy",
+		path: "/cookie-policy",
+		title: "",
+		description: "",
+		component: CookiePolicy,
 	},
 	{
 		id: "pagenotfound",

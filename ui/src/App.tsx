@@ -5,6 +5,7 @@ import Sidebar from "components/Layouts/Sidebar";
 import FloatingHeader from "components/Layouts/FloatingHeader";
 import CookieConsent from "pages/Footer/CookieConsent";
 import useTheme from "lib/utils/hooks/useTheme";
+import PopupSearch from "components/General/PopupSearch";
 
 const { Content } = Layout;
 
@@ -27,6 +28,7 @@ const App: React.FC = () => {
 				</Layout>
 			</ConfigProvider>
 			<CookieConsent />
+			<PopupSearch />
 		</ErrorBoundary>
 	);
 };
