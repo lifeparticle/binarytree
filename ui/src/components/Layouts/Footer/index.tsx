@@ -97,7 +97,9 @@ const Footer: React.FC = () => {
 				<Typography.Title level={4}>Company</Typography.Title>
 				<ul className={style.footer__list}>
 					<li>
-						<a onClick={() => openLink("/about", false)}>About</a>
+						<Link to={"/about"}>
+							<a>About</a>
+						</Link>
 					</li>
 					{/* <li>
 									<a

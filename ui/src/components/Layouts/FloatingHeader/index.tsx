@@ -2,7 +2,7 @@ import { Button, theme } from "antd";
 import style from "./FloatingHeader.module.scss";
 import Notification from "components/General/Notification";
 import Icon from "components/General/Icon";
-import { openLink } from "lib/utils/helper";
+import { Link } from "react-router-dom";
 
 const FloatingHeader = () => {
 	const {
@@ -17,12 +17,11 @@ const FloatingHeader = () => {
 			}}
 		>
 			<Notification colorText={colorText} />
-			<Button
-				className={style.fb__button}
-				onClick={() => openLink("/feedback", false)}
-			>
-				<Icon name="Megaphone" size={20} color={colorText} />
-			</Button>
+			<Link to="/feedback">
+				<Button className={style.fb__button}>
+					<Icon name="Megaphone" size={20} color={colorText} />
+				</Button>
+			</Link>
 		</div>
 	);
 };
