@@ -9,9 +9,14 @@ const NO_PADDING = [
 	"BinaryTree: Developer Productivity Tools",
 	"About",
 	"Terms",
+	"Cookie Policy",
 ];
 
-const NO_TITLE = ["BinaryTree: Developer Productivity Tools", "Terms"];
+const NO_TITLE = [
+	"BinaryTree: Developer Productivity Tools",
+	"Terms",
+	"Cookie Policy",
+];
 
 const withPageTitle = <T extends object>(
 	WrappedComponent: React.ComponentType<T>

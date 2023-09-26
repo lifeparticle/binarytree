@@ -340,7 +340,7 @@ export const routes: Route[] = [
 	{
 		id: "cookiepolicy",
 		path: "/cookie-policy",
-		title: "",
+		title: "Cookie Policy",
 		description: "",
 		component: CookiePolicy,
 	},

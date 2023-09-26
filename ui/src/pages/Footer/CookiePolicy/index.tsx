@@ -3,12 +3,12 @@ import Footer from "components/Layouts/Footer";
 import style from "./CookiePolicy.module.scss";
 import { TABLE_COLUMNS, TABLE_DATA } from "./utils/constants";
 
-const PrivacyPolicy = () => {
+const CookiePolicy = () => {
 	return (
 		<>
-			<Space direction="vertical" className={style.privacypolicy}>
-				<div className={style.privacypolicy__header}>
-					<Typography.Title level={1}>COOKIE POLICY</Typography.Title>
+			<Space direction="vertical" className={style.cookiepolicy}>
+				<div className={style.cookiepolicy__header}>
+					<Typography.Title level={1}>Cookie Policy</Typography.Title>
 				</div>
 				<Typography.Paragraph>
 					This Cookie Policy explains how BinaryTree
@@ -217,4 +217,4 @@ const PrivacyPolicy = () => {
 	);
 };
 
-export default PrivacyPolicy;
+export default CookiePolicy;
