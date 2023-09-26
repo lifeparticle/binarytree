@@ -34,6 +34,7 @@ type RouteId =
 	| "platform"
 	| "plugin"
 	| "privacypolicy"
+	| "cookiepolicy"
 	| "qrcode"
 	| "shadesandtints"
 	| "sorting"
