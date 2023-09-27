@@ -10,12 +10,17 @@ const NO_PADDING = [
 	"About",
 	"Terms",
 	"Cookie Policy",
+	"Privacy Policy",
+	"Feedback",
 ];
 
 const NO_TITLE = [
 	"BinaryTree: Developer Productivity Tools",
 	"Terms",
 	"Cookie Policy",
+	"Privacy Policy",
+	"About",
+	"Feedback",
 ];
 
 const withPageTitle = <T extends object>(
