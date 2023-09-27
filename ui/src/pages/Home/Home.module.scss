@@ -1,6 +1,7 @@
 .home {
 	padding: 100px 10% 64px 10%;
 	background: url("/src/assets/grid.svg");
+	min-height: calc(100dvh - 272px);
 
 	&__container {
 		display: flex;

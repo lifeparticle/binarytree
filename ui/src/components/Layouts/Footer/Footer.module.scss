@@ -3,6 +3,8 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	box-shadow: inset 0px 1px 0px #e8e8e8;
+	position: sticky;
+	width: 100%;
 
 	&__left {
 		padding-right: 5vw;
