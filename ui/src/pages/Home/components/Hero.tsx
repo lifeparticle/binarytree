@@ -8,9 +8,11 @@ const Hero: React.FC = () => {
 	return (
 		<section className={style.home__hero}>
 			<div className={style.home__hero_text}>
-				<Title>Your Mate in Software Development</Title>
+				<Title className={style.home__hero_text_title}>
+					Your Mate in Software Development
+				</Title>
 				<Typography.Paragraph
-					className={style.about__intro_wrapper_text}
+					className={style.home__hero_text_paragraph}
 				>
 					At binarytree.dev, we provide an array of developer
 					productivity tools designed to help you save time. With an{" "}
@@ -24,15 +26,14 @@ const Hero: React.FC = () => {
 					constantly evolving to meet the needs of developers like you
 				</Typography.Paragraph>
 			</div>
-			<Image
-				style={{
-					display: "flex",
-				}}
-				src={hero}
-				alt="BinaryTree: Developer Productivity Tools"
-				className={style.home__hero_image}
-				preview={false}
-			/>
+
+			<div className={style.home__hero_image}>
+				<Image
+					src={hero}
+					alt="BinaryTree: Developer Productivity Tools"
+					preview={false}
+				/>
+			</div>
 		</section>
 	);
 };
