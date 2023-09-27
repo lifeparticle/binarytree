@@ -30,8 +30,8 @@ const PrivacyPolicy = () => {
 					as well as any other media form, media channel, mobile
 					website or mobile application related, linked, or otherwise
 					connected thereto (hereinafter – Platform).
-				</Typography.Paragraph>
-				<Typography.Paragraph>
+					<br />
+					<br />
 					We strive to protect all personal information that we
 					receive or generate. This Privacy Policy (“Privacy Policy”
 					or “Policy”) explains our data protection practices for our
@@ -39,8 +39,8 @@ const PrivacyPolicy = () => {
 					the personal information we collect, the means by which we
 					collect it, the purposes for which we collect it, and how we
 					use, process, protect, and share it.
-				</Typography.Paragraph>
-				<Typography.Paragraph>
+					<br />
+					<br />
 					Please read this entire Privacy Policy before submitting
 					information to this Platform. By accessing or using this
 					Platform for any purpose and by submitting any of your
@@ -50,11 +50,10 @@ const PrivacyPolicy = () => {
 					this Privacy Policy or the Terms of Service, please do not
 					use this Platform or any of our other services and do not
 					share any personal information with us.
-				</Typography.Paragraph>
-				<Typography.Paragraph>
+					<br />
+					<br />
 					<b>Data Controller:</b> BinaryTree
-				</Typography.Paragraph>
-				<Typography.Paragraph>
+					<br />
 					<b>Contact information:</b> e-mail address:
 					hello@binarytree.dev
 				</Typography.Paragraph>
@@ -91,8 +90,8 @@ const PrivacyPolicy = () => {
 					otherwise specified, coincides with the Data Subject.
 				</Typography.Paragraph>
 				<Typography.Paragraph>
-					Data Subject - The natural person to whom the Personal Data
-					refers.
+					<b>Data Subject</b> - The natural person to whom the
+					Personal Data refers.
 				</Typography.Paragraph>
 				<Typography.Paragraph>
 					<b>Data Processor (or Data Supervisor)</b> - The natural or
@@ -126,7 +125,7 @@ const PrivacyPolicy = () => {
 					information.{" "}
 				</Typography.Paragraph>
 				<Typography.Paragraph>
-					<b>Contacting us</b> <br />
+					<b>3.1. Contacting us</b> <br />
 					If you contact us in relation to any of the Services (via
 					email, telephone, post or otherwise), We may collect and
 					retain your contact details and your communication for the
@@ -134,9 +133,11 @@ const PrivacyPolicy = () => {
 					communications.
 				</Typography.Paragraph>
 				<Typography.Paragraph>
-					<b>Other Means of Collection.</b>We collect personal
+					<b>3.2. Other Means of Collection. </b>We collect personal
 					information by a variety of means and methods, including the
 					following:
+					<br />
+					<br />
 					<ul>
 						<li>
 							When you submit personal information to us
@@ -170,14 +171,14 @@ const PrivacyPolicy = () => {
 					transaction, and purpose, but our primary purpose is the
 					efficient and satisfactory conduct of our business and for
 					related legal purposes.
-				</Typography.Paragraph>
-				<Typography.Paragraph>
+					<br />
+					<br />
 					Users are responsible for any third-party Personal Data
 					obtained, published or shared through this Platform and
 					confirm that they have the third party's consent to provide
 					the Data to the Owner.
-				</Typography.Paragraph>
-				<Typography.Paragraph>
+					<br />
+					<br />
 					The Data concerning the User is collected to allow the Owner
 					to provide its Service, comply with its legal obligations,
 					respond to enforcement requests, protect its rights and
@@ -186,50 +187,53 @@ const PrivacyPolicy = () => {
 					the User and sending emails using mailing list. Users who
 					are uncertain about which Personal Data is mandatory are
 					welcome to contact the Owner.
+					<br />
+					<br />
+					<b>
+						<u>Generally, we collect the following data:</u>
+					</b>
+					<ul>
+						<li>
+							Identification information such as name and contact
+							information such as phone number, e-mail address.
+						</li>
+						<li>
+							Information we obtain from a third party, such as a
+							site or platform provider, about use of our Platform
+							on third-party platforms or devices;
+						</li>
+						<li>
+							Location information, including location information
+							provided by a mobile or other device interacting
+							with our Platform (including through beacon
+							technologies), or associated with your IP address,
+							where we are permitted by law to process this
+							information;
+						</li>
+						<li>
+							Activity information about your use, and the use by
+							any person(s) you authorize through your account on
+							our Platform, such as the services you provide, how
+							often you use our services, and your preferences;
+							and
+						</li>
+						<li>
+							Usage, viewing, technical, and device data when you
+							visit our Platform on third-party sites or
+							platforms, or open emails we send, including your
+							browser or device type, unique device identifier,
+							and IP address
+						</li>
+					</ul>
+					<b>
+						<u>
+							We collect the following categories of Personal data
+							for the following activities:
+						</u>
+					</b>
+					<br />
 				</Typography.Paragraph>
-				<b className={style.privacypolicy_underline}>
-					Generally, we collect the following data:
-				</b>
-				<br />
-				<br />
-				<ul>
-					<li>
-						Identification information such as name and contact
-						information such as phone number, e-mail address.
-					</li>
-					<li>
-						Information we obtain from a third party, such as a site
-						or platform provider, about use of our Platform on
-						third-party platforms or devices;
-					</li>
-					<li>
-						Location information, including location information
-						provided by a mobile or other device interacting with
-						our Platform (including through beacon technologies), or
-						associated with your IP address, where we are permitted
-						by law to process this information;
-					</li>
-					<li>
-						Activity information about your use, and the use by any
-						person(s) you authorize through your account on our
-						Platform, such as the services you provide, how often
-						you use our services, and your preferences; and
-					</li>
-					<li>
-						Usage, viewing, technical, and device data when you
-						visit our Platform on third-party sites or platforms, or
-						open emails we send, including your browser or device
-						type, unique device identifier, and IP address
-					</li>
-				</ul>
-				<br />
-				<br />
-				<b className={style.privacypolicy_underline}>
-					We collect the following categories of Personal data for the
-					following activities:
-				</b>
-				<br />
-				<br />
+
 				<Table
 					columns={ACTIVITY_COLUMNS}
 					dataSource={ACTIVITY_DATA}
@@ -237,6 +241,7 @@ const PrivacyPolicy = () => {
 					bordered
 					scroll={{ x: "calc(50%)" }}
 				/>
+				<br />
 				<Typography.Title level={5}>
 					5. PURPOSE OF DATA COLLECTION
 				</Typography.Title>
@@ -247,97 +252,83 @@ const PrivacyPolicy = () => {
 					development, delivery, and performance of our services,
 					sharing with our affiliates for related business purposes,
 					and as follows:
+					<br />
+					<br />
+					<ul>
+						<li>
+							<u>To provide and maintain our Service,</u>{" "}
+							including to monitor the usage of our Service.
+						</li>
+						<li>
+							<u>To manage your Account:</u> to manage your
+							registration of the Service. The Personal Data you
+							provide can give you access to different
+							functionalities of the Service that are available to
+							you.
+						</li>
+						<li>
+							<u>For the performance of a contract:</u> the
+							development, compliance and undertaking of the
+							contract for the services or of any other contract
+							with us through the Service.
+						</li>
+						<li>
+							<u>To contact you:</u> To contact you by email,
+							telephone calls, SMS, or other equivalent forms of
+							electronic communication.
+						</li>
+						<li>
+							<u>To manage your requests:</u> To attend and manage
+							your requests to us.
+						</li>
+						<li>
+							<u>To respond to your requests and questions,</u>{" "}
+							resolve disputes, investigate and address your
+							concerns, and monitor and improve our responses;
+						</li>
+						<li>
+							<u>
+								To help maintain the safety, security, and
+								integrity of our Platform,
+							</u>{" "}
+							databases, and technology assets and to detect and
+							prevent transactional fraud;
+						</li>
+						<li>
+							<u>
+								For testing, research, analysis, and a product
+								and service development,
+							</u>{" "}
+							including to improve our Platform and services;
+						</li>
+						<li className={style.privacypolicy_underline}>
+							For facilitating and processing your transactions
+							with us and with our third party affiliates and
+							business partners;
+						</li>
+						<li>
+							<u>
+								To respond to law enforcement requests and as
+								required by applicable laws,
+							</u>{" "}
+							court orders, or governmental regulations;
+						</li>
+						<li>
+							<u>For other purposes:</u> We may use Your
+							information for other purposes, such as data
+							analysis, identifying usage trends, determining the
+							effectiveness of our promotional campaigns and to
+							evaluate and improve our Service, marketing and your
+							experience.
+						</li>
+					</ul>
+					<b className={style.privacypolicy_underline}>
+						We process personal data on the following legal basis
+						for the following purposes:
+					</b>
+					<br />
 				</Typography.Paragraph>
-				<ul>
-					<li>
-						<span className={style.privacypolicy_underline}>
-							To provide and maintain our Service,
-						</span>{" "}
-						including to monitor the usage of our Service.
-					</li>
-					<li>
-						<span className={style.privacypolicy_underline}>
-							To manage your Account:
-						</span>{" "}
-						to manage your registration of the Service. The Personal
-						Data you provide can give you access to different
-						functionalities of the Service that are available to
-						you.
-					</li>
-					<li>
-						<span className={style.privacypolicy_underline}>
-							For the performance of a contract:
-						</span>{" "}
-						the development, compliance and undertaking of the
-						contract for the services or of any other contract with
-						us through the Service.
-					</li>
-					<li>
-						<span className={style.privacypolicy_underline}>
-							To contact you:
-						</span>{" "}
-						To contact you by email, telephone calls, SMS, or other
-						equivalent forms of electronic communication.
-					</li>
-					<li>
-						<span className={style.privacypolicy_underline}>
-							To manage your requests:
-						</span>{" "}
-						To attend and manage your requests to us.
-					</li>
-					<li>
-						<span className={style.privacypolicy_underline}>
-							To respond to your requests and questions,
-						</span>{" "}
-						resolve disputes, investigate and address your concerns,
-						and monitor and improve our responses;
-					</li>
-					<li>
-						<span className={style.privacypolicy_underline}>
-							To help maintain the safety, security, and integrity
-							of our Platform,
-						</span>{" "}
-						databases, and technology assets and to detect and
-						prevent transactional fraud;
-					</li>
-					<li>
-						<span className={style.privacypolicy_underline}>
-							For testing, research, analysis, and a product and
-							service development,
-						</span>{" "}
-						including to improve our Platform and services;
-					</li>
-					<li className={style.privacypolicy_underline}>
-						For facilitating and processing your transactions with
-						us and with our third party affiliates and business
-						partners;
-					</li>
-					<li>
-						<span className={style.privacypolicy_underline}>
-							To respond to law enforcement requests and as
-							required by applicable laws,
-						</span>
-						court orders, or governmental regulations;
-					</li>
-					<li>
-						<span className={style.privacypolicy_underline}>
-							For other purposes:
-						</span>{" "}
-						We may use Your information for other purposes, such as
-						data analysis, identifying usage trends, determining the
-						effectiveness of our promotional campaigns and to
-						evaluate and improve our Service, marketing and your
-						experience.
-					</li>
-				</ul>
-				<br />
-				<br />
-				<b className={style.privacypolicy_underline}>
-					We process personal data on the following legal basis for
-					the following purposes:
-				</b>
-				<br />
-				<br />
+
 				<Table
 					columns={PURPOSE_COLUMNS}
 					dataSource={PURPOSE_DATA}
@@ -345,6 +336,7 @@ const PrivacyPolicy = () => {
 					bordered
 					scroll={{ x: "calc(50%)" }}
 				/>
+				<br />
 				<Typography.Title level={5}>
 					6. METHODS OF DATA PROCESSING
 				</Typography.Title>
@@ -368,7 +360,7 @@ const PrivacyPolicy = () => {
 					requested from the Owner at any time.
 				</Typography.Paragraph>
 				<Typography.Title level={5}>
-					7.TRANSFERS AND SHARING OF DATA
+					7. TRANSFERS AND SHARING OF DATA
 				</Typography.Title>
 				<Typography.Paragraph>
 					Depending on the User's location, data transfers may involve
@@ -377,66 +369,72 @@ const PrivacyPolicy = () => {
 					more by checking the relevant sections of this document or
 					inquire with <b>BinaryTree</b> using the information
 					provided in the contact section.
+					<br />
+					<br />
+					We may share your personal data with following recipients:
+					<ul>
+						<li>
+							<b>Internal recipients</b> – your Personal data will
+							only be disclosed to authorize employees that
+							require an access to fulfil their obligations (e.g.
+							support teams, developers, etc.). Our employees are
+							specifically trained and made aware of the
+							sensitivity of your Personal data and the
+							requirements necessary to ensure the protection of
+							your right to privacy.{" "}
+						</li>
+						<li>
+							<b>Processors</b> – in order to provide the
+							Services, <b>BinaryTree</b> may communicate your
+							Personal data to other entities acting as data
+							processors.{" "}
+						</li>
+						<li>
+							<b>Partners and third parties</b> – in order to
+							provide the Services, <b>BinaryTree</b> may
+							communicate your Personal data to third party
+							service providers.{" "}
+						</li>
+						<li>
+							<b>
+								Judicial, administrative and other public
+								authorities
+							</b>{" "}
+							– <b>BinaryTree</b> may have to share or disclose
+							some of your Personal data if it is required to do
+							so by the law, by a request meaning from a competent
+							authority., to comply with a court order, to obtain
+							legal remedies or defend <b>BinaryTree</b>’s rights,
+							to contribute with investigations (e.g. fraud,
+							identity theft, etc.).{" "}
+						</li>
+					</ul>
 				</Typography.Paragraph>
-				We may share your personal data with following recipients:
-				<ul>
-					<li>
-						<b>Internal recipients</b> – your Personal data will
-						only be disclosed to authorize employees that require an
-						access to fulfil their obligations (e.g. support teams,
-						developers, etc.). Our employees are specifically
-						trained and made aware of the sensitivity of your
-						Personal data and the requirements necessary to ensure
-						the protection of your right to privacy.{" "}
-					</li>
-					<li>
-						<b>Processors</b> – in order to provide the Services,{" "}
-						<b>BinaryTree</b> may communicate your Personal data to
-						other entities acting as data processors.{" "}
-					</li>
-					<li>
-						<b>Partners and third parties</b> – in order to provide
-						the Services, <b>BinaryTree</b> may communicate your
-						Personal data to third party service providers.{" "}
-					</li>
-					<li>
-						<b>
-							Judicial, administrative and other public
-							authorities
-						</b>{" "}
-						- <b>BinaryTree</b> may have to share or disclose some
-						of your Personal data if it is required to do so by the
-						law, by a request meaning from a competent authority.,
-						to comply with a court order, to obtain legal remedies
-						or defend
-						<b>BinaryTree</b>’s rights, to contribute with
-						investigations (e.g. fraud, identity theft, etc.).{" "}
-					</li>
-				</ul>
+
 				<Typography.Title level={5}>8. RETENTION TIME</Typography.Title>
 				<Typography.Paragraph>
 					Personal Data shall be processed and stored for as long as
 					required by the purpose they have been collected for.
 					Therefore:
+					<br />
+					<ul>
+						<li>
+							Personal Data collected for purposes related to the
+							performance of a contract between the Owner and the
+							User shall be retained until such contract has been
+							fully performed.
+						</li>
+						<li>
+							Personal Data collected for the purposes of the
+							Owner’s legitimate interests shall be retained as
+							long as needed to fulfil such purposes. Users may
+							find specific information regarding the legitimate
+							interests pursued by the Owner within the relevant
+							sections of this document or by contacting the
+							Owner.
+						</li>
+					</ul>
 				</Typography.Paragraph>
-				<ul>
-					<li>
-						Personal Data collected for purposes related to the
-						performance of a contract between the Owner and the User
-						shall be retained until such contract has been fully
-						performed.
-					</li>
-					<li>
-						Personal Data collected for the purposes of the Owner’s
-						legitimate interests shall be retained as long as needed
-						to fulfil such purposes. Users may find specific
-						information regarding the legitimate interests pursued
-						by the Owner within the relevant sections of this
-						document or by contacting the Owner.
-					</li>
-				</ul>
-				<br />
-				<br />
 				<Typography.Paragraph>
 					<b>BinaryTree</b> may be allowed to retain Personal Data for
 					a longer period whenever the User has given consent to such
@@ -457,29 +455,37 @@ const PrivacyPolicy = () => {
 					9. ADDITIONAL INFORMATION ABOUT DATA COLLECTION AND
 					PROCESSING
 				</Typography.Title>
-				<b>Legal action</b>
 				<Typography.Paragraph>
+					<b>Legal action</b>
+					<br />
+					<br />
 					The User's Personal Data may be used for legal purposes by
 					<b> BinaryTree</b> in Court or in the stages leading to
 					possible legal action arising from improper use of this
 					Platform or the related Services.
-				</Typography.Paragraph>
-				<b>System logs and maintenance</b>
-				<Typography.Paragraph>
+					<br />
+					<br />
+					<b>System logs and maintenance</b>
+					<br />
+					<br />
 					For operation and maintenance purposes, this Platform and
 					any third-party services may collect files that record
 					interaction with this Platform (System logs) use other
 					Personal Data (such as the IP Address) for this purpose.
-				</Typography.Paragraph>
-				<b>Information not contained in this policy</b>
-				<Typography.Paragraph>
+					<br />
+					<br />
+					<b>Information not contained in this policy</b>
+					<br />
+					<br />
 					More details concerning the collection or processing of
 					Personal Data may be requested from <b>BinaryTree</b> at any
 					time. Please see the contact information at the beginning of
 					this document.
-				</Typography.Paragraph>
-				<b>Visiting Third-Party Platforms</b>
-				<Typography.Paragraph>
+					<br />
+					<br />
+					<b>Visiting Third-Party Platforms</b>
+					<br />
+					<br />
 					Our Platform may contain links or references to third party
 					Platforms. These Platforms are outside of our control, and
 					the privacy policies of these sites may differ from our own.

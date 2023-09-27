@@ -75,15 +75,15 @@ const ACTIVITY_DATA = [
 	{
 		id: "1",
 		activity: "Visiting the Platform",
-		categories: ["Browsing data"],
+		categories: ["Browsing data."],
 	},
 	{
 		id: "2",
 		activity: "Contacting BinaryTree support teams",
 		categories: [
-			"Identification data",
+			"Identification data.",
 			"Contact data.",
-			"Content of your request",
+			"Content of your request.",
 		],
 	},
 	{
@@ -91,26 +91,17 @@ const ACTIVITY_DATA = [
 		activity:
 			"Allowing the visitors and Users to exercise their data protection rights",
 		categories: [
-			"Identification data",
+			"Identification data.",
 			"Contact data.",
-			"Content of your request",
-			"Data necessary to reply to the request addressed to BinaryTree",
+			"Content of your request.",
+			"Data necessary to reply to the request addressed to BinaryTree.",
 		],
 	},
 	{
 		id: "4",
 		activity: "Complying with legal requests or manage litigation",
 		categories: [
-			"Identification data",
-			"Contact data.",
-			"Content of your request",
-		],
-	},
-	{
-		id: "5",
-		activity: "Complying with legal requests or manage litigation",
-		categories: [
-			"Data necessary to prove BinaryTree’s compliance to its obligations and/or manage legal proceedings",
+			"Data necessary to prove BinaryTree’s compliance to its obligations and/or manage legal proceedings.",
 		],
 	},
 ];
