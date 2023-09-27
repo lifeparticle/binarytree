@@ -59,6 +59,7 @@ h5 {
 
 .ant-layout-content,
 .notification-container,
+.search_container,
 .ant-menu {
 	&::-webkit-scrollbar {
 		width: var(--bt-size-8);
@@ -139,3 +140,45 @@ a:hover {
 .ant-typography p {
 	margin-bottom: 0px !important;
 }
+
+/* modal dark mode */
+.dark .ant-modal-content {
+	background-color: #383737 !important;
+	color: white;
+}
+
+.dark .ant-modal-content .ant-modal-header {
+	background-color: transparent !important;
+}
+
+.dark .ant-modal-content .ant-modal-header .ant-modal-title {
+	color: white;
+}
+
+.dark .search_container div:hover {
+	background-color: #817f7f !important;
+}
+
+.dark .ant-input-affix-wrapper {
+	background-color: transparent !important;
+	border-color: #afadad !important;
+}
+
+.dark .ant-input-affix-wrapper .ant-input {
+	background-color: transparent !important;
+	color: white !important;
+}
+
+.dark .ant-input-affix-wrapper .ant-input::placeholder {
+	color: rgb(143, 143, 143) !important;
+}
+
+.dark .ant-input-search-button {
+	background-color: transparent;
+	color: white !important;
+}
+
+.dark .anticon svg {
+	color: white !important;
+}
+/* end modal dark mode */
