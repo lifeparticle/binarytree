@@ -16,16 +16,32 @@
 		gap: 100px;
 		&_text {
 			display: flex;
+			flex: 2;
 			flex-direction: column;
-			align-items: center;
 			justify-content: center;
 			text-align: center;
+			gap: var(--bt-size-10);
+			&_title {
+				text-align: left;
+			}
+			&_paragraph {
+				text-align: left;
+				max-width: 700px;
+			}
+		}
+
+		&_image {
+			flex: 1;
 		}
 	}
 
 	&__features {
 		display: flex;
 		align-items: center;
+
+		&_card {
+			height: 100%;
+		}
 	}
 
 	&__contribution {
