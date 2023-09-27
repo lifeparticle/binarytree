@@ -120,7 +120,7 @@ const Footer: React.FC = () => {
 						</Link>
 					</li>
 					<li>
-						<Link to={"/privacy"}>
+						<Link to={"/privacy-policy"}>
 							<a>Privacy</a>
 						</Link>
 					</li>
