@@ -26,17 +26,25 @@ const Features: React.FC = () => {
 			<Col xs={23} lg={16}>
 				<Row gutter={[16, 16]}>
 					{FEATURES.map((feature) => (
-						<Col xs={24} lg={8} key={feature.id}>
+						<Col xs={24} md={12} lg={12} xl={8} key={feature.id}>
 							<Link to={feature.link}>
-								<Card hoverable>
-									<Icon name={feature.icon} size={40} />
-									<Space direction="vertical" size="middle">
-										<Typography.Title level={4}>
-											{feature.title}
-										</Typography.Title>
-										<Typography.Text>
-											{feature.description}
-										</Typography.Text>
+								<Card
+									hoverable
+									className={style.home__features_card}
+								>
+									<Space direction="vertical">
+										<Icon name={feature.icon} size={40} />
+										<Space
+											direction="vertical"
+											size="middle"
+										>
+											<Typography.Title level={4}>
+												{feature.title}
+											</Typography.Title>
+											<Typography.Text>
+												{feature.description}
+											</Typography.Text>
+										</Space>
 									</Space>
 								</Card>
 							</Link>

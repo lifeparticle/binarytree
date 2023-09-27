@@ -4,4 +4,8 @@
 		justify-content: center;
 		padding: var(--bt-size-20) 0;
 	}
+
+	&_output {
+		overflow: auto;
+	}
 }

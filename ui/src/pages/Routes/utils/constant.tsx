@@ -333,7 +333,7 @@ export const routes: Route[] = [
 	{
 		id: "privacypolicy",
 		path: "/privacy-policy",
-		title: "",
+		title: "Privacy Policy",
 		description: "",
 		component: PrivacyPolicy,
 	},

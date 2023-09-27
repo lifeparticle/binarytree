@@ -648,7 +648,7 @@ const Terms = () => {
 					receive further information regarding use of the Site,
 					please contact us at: hello@binarytree.dev
 				</Typography.Paragraph>
-				Last updated September 23, 2023
+				<i>Last updated September 23, 2023</i>
 			</Space>
 			<Footer />
 		</>

@@ -11,16 +11,19 @@ const CookiePolicy = () => {
 					<Typography.Title level={1}>Cookie Policy</Typography.Title>
 				</div>
 				<Typography.Paragraph>
-					This Cookie Policy explains how BinaryTree
-					(&quot;Company&quot;, &quot;we&quot;, &quot;us&quot;, and
-					&quot;our&quot;) uses cookies and similar technologies to
-					recognize you when you visit our website at
-					https://www.binarytree.dev (&quot;Platform&quot;). It
-					explains what these technologies are and why we use them, as
-					well as your rights to control our use of them. In some
-					cases, we may use cookies to collect personal information,
-					or that becomes personal information if we combine it with
-					other information.
+					This Cookie Policy explains how <b>BinaryTree</b> ("
+					<b>Company</b>", "<b>we</b>", "<b>us</b>", and "<b>our</b>")
+					uses cookies and similar technologies to recognize you when
+					you visit our website at https://www.binarytree.dev
+					("Platform"). It explains what these technologies are and
+					why we use them, as well as your rights to control our use
+					of them.
+					<br />
+					<br />
+					In some cases, we may use cookies to collect personal
+					information, or that becomes personal information if we
+					combine it with other information.
+					<br />
 					<br />
 					<b>Data Controller: </b>BinaryTree
 					<br />
@@ -39,17 +42,18 @@ const CookiePolicy = () => {
 					this section, this term includes technologies that we are
 					using which serve a similar purpose, for example, web
 					beacons, tags and tracking pixels or software development
-					kits (SDKs) in our mobile apps. Cookies set by the Platform
-					owner (in this case, BinaryTree) are called &quot;first
-					party cookies&quot;. Cookies set by parties other than the
-					Platform owner are called &quot;third party cookies&quot;.
-					Third party cookies enable third party features or
-					functionality to be provided on or through the Platform
-					(e.g. like advertising, interactive content and analytics).
-					Our Services use some cookies that are not controlled by us.
-					You should review the privacy and cookie policies of these
-					parties to find out how they use cookies and the information
-					they collect through cookies.
+					kits (SDKs) in our mobile apps.
+					<br />
+					Cookies set by the Platform owner (in this case,{" "}
+					<b>BinaryTree</b>) are called "first party cookies". Cookies
+					set by parties other than the Platform owner are called
+					"third party cookies". Third party cookies enable third
+					party features or functionality to be provided on or through
+					the Platform (e.g. like advertising, interactive content and
+					analytics). Our Services use some cookies that are not
+					controlled by us. You should review the privacy and cookie
+					policies of these parties to find out how they use cookies
+					and the information they collect through cookies.
 				</Typography.Paragraph>
 				<Typography.Paragraph>
 					The parties that set these third party cookies can recognize
@@ -57,24 +61,27 @@ const CookiePolicy = () => {
 					and also when it visits certain other Platforms. BinaryTree
 					is not responsible how third parties use cookies and user
 					must visit third party privacy policies for specific
-					information regarding use of cookies. There are the
-					following types of cookies:
+					information regarding use of cookies.
+					<br />
+					<br />
+					There are the following types of cookies:
 				</Typography.Paragraph>
 				<Typography.Paragraph>
-					Essential cookies - These cookies are essential for our
-					Platforms and services to perform basic functions and are
-					necessary for us to operate certain features. These include
-					those required to allow registered users to authenticate and
-					perform account- related functions, preferences set by users
-					such as account name, language, and location, and ensure our
-					services are operating properly. Without these cookies, the
-					services that you have asked for cannot be provided.
+					<b>Essential cookies</b> - These cookies are essential for
+					our Platforms and services to perform basic functions and
+					are necessary for us to operate certain features. These
+					include those required to allow registered users to
+					authenticate and perform account-related functions,
+					preferences set by users such as account name, language, and
+					location, and ensure our services are operating properly.
+					Without these cookies, the services that you have asked for
+					cannot be provided.
 				</Typography.Paragraph>
 				<Typography.Paragraph>
-					Analytics and Performance cookies - To analyse the use,
-					performance and design of our Services, detect errors and
-					improve user experience. For example, this type of cookie
-					enables us to understand how often you are using our
+					<b>Analytics and Performance cookies</b> - To analyse the
+					use, performance and design of our Services, detect errors
+					and improve user experience. For example, this type of
+					cookie enables us to understand how often you are using our
 					Services, to recognize that you have visited our websites
 					before and to identify which parts of our Services and which
 					sections of our website are most popular, for example by
@@ -84,24 +91,24 @@ const CookiePolicy = () => {
 					to understand how users interact with them.
 				</Typography.Paragraph>
 				<Typography.Paragraph>
-					Functional Cookies - To deliver a better user experience,
-					and build up customer usage patterns and profiles. For
-					example, this type of cookie ensures that the information
-					displayed when you use our Services (e.g. on your next visit
-					to our website) will match up with your user preferences
-					(such as language preferences, font size or auto-fill
-					options).
+					<b>Functional Cookies</b> - To deliver a better user
+					experience, and build up customer usage patterns and
+					profiles. For example, this type of cookie ensures that the
+					information displayed when you use our Services (e.g. on
+					your next visit to our website) will match up with your user
+					preferences (such as language preferences, font size or
+					auto-fill options).
 				</Typography.Paragraph>
 				<Typography.Paragraph>
-					Advertising cookies - These cookies are set by us and our
-					advertising partners to provide you with relevant content
-					and to understand that content’s effectiveness. They may be
-					used to collect information about your online activities
-					over time and across different Platforms to predict your
-					preferences and to display more relevant advertisements to
-					you. These cookies also allow a profile to be built about
-					you and your interests and enable personalized ads to be
-					shown to you based on your profile.
+					<b>Advertising cookies</b> - These cookies are set by us and
+					our advertising partners to provide you with relevant
+					content and to understand that content’s effectiveness. They
+					may be used to collect information about your online
+					activities over time and across different Platforms to
+					predict your preferences and to display more relevant
+					advertisements to you. These cookies also allow a profile to
+					be built about you and your interests and enable
+					personalized ads to be shown to you based on your profile.
 				</Typography.Paragraph>
 				<Typography.Title level={5}>
 					2. WHY DO WE USE COOKIES?
@@ -110,8 +117,7 @@ const CookiePolicy = () => {
 					We use first and third party cookies for several reasons.
 					Cookies in this Platform are required for technical reasons
 					in order for our Platform to operate, and we refer to these
-					as &quot;essential&quot; or &quot;strictly necessary&quot;
-					cookies.
+					as "essential" or "strictly necessary" cookies.
 				</Typography.Paragraph>
 				<Typography.Paragraph>
 					We use essential cookies by default, but we rely on your
@@ -126,9 +132,9 @@ const CookiePolicy = () => {
 					Analytics gathers information about the use of our Website
 					by means of cookies. The information gathered is used to
 					create reports about the use of our Website. You can find
-					out more about Google&#39;s use of information by visiting
+					out more about Google's use of information by visiting
 					https://www.google.com/policies/privacy/partners/ and you
-					can review Google&#39;s privacy policy at
+					can review Google's privacy policy at
 					https://policies.google.com/privacy.
 				</Typography.Paragraph>
 				<Typography.Title level={5}>
@@ -161,7 +167,7 @@ const CookiePolicy = () => {
 					refuse cookies or use our Platform cookie tool to remove
 					unwanted cookies. As the means by which you can refuse
 					cookies through your web browser controls vary from
-					browser-to-browser, you should visit your browser&#39;s help
+					browser-to-browser, you should visit your browser's help
 					menu for more information.
 				</Typography.Paragraph>
 				<Typography.Paragraph>
@@ -175,20 +181,19 @@ const CookiePolicy = () => {
 				<Typography.Paragraph>
 					Cookies are not the only way to recognize or track visitors
 					to a website. We may use other, similar technologies from
-					time to time, like web beacons (sometimes called
-					&quot;tracking pixels&quot; or &quot;clear gifs&quot;).
-					These are tiny graphics files that contain a unique
-					identifier that enable us to recognize when someone has
-					visited our Platform or opened an e-mail including them.
-					This allows us, for example, to monitor the traffic patterns
-					of users from one page within a website to another, to
-					deliver or communicate with cookies, to understand whether
-					you have come to the website from an online advertisement
-					displayed on a third-party website, to improve site
-					performance, and to measure the success of e-mail marketing
-					campaigns. In many instances, these technologies are reliant
-					on cookies to function properly, and so declining cookies
-					will impair their functioning.
+					time to time, like web beacons (sometimes called "tracking
+					pixels" or "clear gifs"). These are tiny graphics files that
+					contain a unique identifier that enable us to recognize when
+					someone has visited our Platform or opened an e-mail
+					including them. This allows us, for example, to monitor the
+					traffic patterns of users from one page within a website to
+					another, to deliver or communicate with cookies, to
+					understand whether you have come to the website from an
+					online advertisement displayed on a third-party website, to
+					improve site performance, and to measure the success of
+					e-mail marketing campaigns. In many instances, these
+					technologies are reliant on cookies to function properly,
+					and so declining cookies will impair their functioning.
 				</Typography.Paragraph>
 				<Typography.Title level={5}>
 					6. HOW OFTEN IS THIS COOKIE POLICY UPDATED?
@@ -207,9 +212,9 @@ const CookiePolicy = () => {
 				</Typography.Title>
 				<Typography.Paragraph>
 					If you have any questions about our use of cookies or other
-					technologies, please email us at hello@binarytree.dev. Last
-					updated September 26, 2023
+					technologies, please email us at hello@binarytree.dev.
 				</Typography.Paragraph>
+				<i>Last updated September 26, 2023</i>
 			</Space>
 
 			<Footer />
