@@ -42,7 +42,7 @@ const TextEditor: React.FC = () => {
 						}}
 						initialValue=""
 						init={{
-							height: "calc(100dvh - 135px)",
+							height: "calc(100dvh - 120px)",
 							wordcount_countcharacters: true,
 							menubar: true,
 							resize: false,
