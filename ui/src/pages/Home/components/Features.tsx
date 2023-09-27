@@ -3,11 +3,9 @@ import { Button, Card, Col, Row, Space, Typography } from "antd";
 import Icon from "components/General/Icon";
 import { FEATURES } from "pages/Home/utils/constants";
 import style from "pages/Home/Home.module.scss";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Features: React.FC = () => {
-	const navigate = useNavigate();
-
 	return (
 		<Row gutter={[16, 16]}>
 			<Col xs={24} lg={8} className={style.home__features}>
@@ -29,20 +27,19 @@ const Features: React.FC = () => {
 				<Row gutter={[16, 16]}>
 					{FEATURES.map((feature) => (
 						<Col xs={24} lg={8} key={feature.id}>
-							<Card
-								onClick={() => navigate(feature.link)}
-								hoverable
-							>
-								<Icon name={feature.icon} size={40} />
-								<Space direction="vertical" size="middle">
-									<Typography.Title level={4}>
-										{feature.title}
-									</Typography.Title>
-									<Typography.Text>
-										{feature.description}
-									</Typography.Text>
-								</Space>
-							</Card>
+							<Link to={feature.link}>
+								<Card hoverable>
+									<Icon name={feature.icon} size={40} />
+									<Space direction="vertical" size="middle">
+										<Typography.Title level={4}>
+											{feature.title}
+										</Typography.Title>
+										<Typography.Text>
+											{feature.description}
+										</Typography.Text>
+									</Space>
+								</Card>
+							</Link>
 						</Col>
 					))}
 				</Row>
