@@ -1,4 +1,4 @@
-.privacypolicy {
+.legal {
 	padding: 64px 10% 64px 10%;
 	display: flex;
 
@@ -6,13 +6,18 @@
 		list-style-type: inherit;
 	}
 
-	&__header {
+	ul li {
+		padding: 5px;
+	}
+
+	h1 {
 		background-color: #c0c0c0;
 		border-radius: 10px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		padding: 10%;
-		margin-bottom: 64px;
+		/* can we do better */
+		margin-bottom: 64px !important;
 	}
 }
