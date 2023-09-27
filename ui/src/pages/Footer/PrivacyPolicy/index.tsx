@@ -1,35 +1,29 @@
-import { Space, Table, Typography } from "antd";
+import { Table, Typography } from "antd";
 import Footer from "components/Layouts/Footer";
-import style from "./PrivacyPolicy.module.scss";
 import {
 	ACTIVITY_COLUMNS,
 	ACTIVITY_DATA,
 	PURPOSE_COLUMNS,
 	PURPOSE_DATA,
 } from "./utils/constants";
+import Legal from "components/Layouts/Legal";
 
 const PrivacyPolicy = () => {
 	return (
 		<>
-			<Space direction="vertical" className={style.privacypolicy}>
-				<div className={style.privacypolicy__header}>
-					<Typography.Title level={1}>
-						Privacy Policy
-					</Typography.Title>
-				</div>
+			<Legal>
+				<Typography.Title level={1}>Privacy Policy</Typography.Title>
 				<Typography.Title level={5}>
 					1. LEGAL INFORMATION
 				</Typography.Title>
 				<Typography.Paragraph>
-					This Privacy Policy informs how BinaryTree (hereinafter also
-					–” Controller”,” Owner”,” we”, “us” or “our”) processes
-					information and personal data on the website{" "}
-					<a href="https://binarytree.dev/">
-						https://www.binarytree.dev
-					</a>{" "}
-					as well as any other media form, media channel, mobile
-					website or mobile application related, linked, or otherwise
-					connected thereto (hereinafter – Platform).
+					This Privacy Policy informs how <b>BinaryTree</b>{" "}
+					(hereinafter also –” Controller”,” Owner”,” we”, “us” or
+					“our”) processes information and personal data on the
+					website https://www.binarytree.dev as well as any other
+					media form, media channel, mobile website or mobile
+					application related, linked, or otherwise connected thereto
+					(hereinafter – Platform).
 					<br />
 					<br />
 					We strive to protect all personal information that we
@@ -125,7 +119,9 @@ const PrivacyPolicy = () => {
 					information.{" "}
 				</Typography.Paragraph>
 				<Typography.Paragraph>
-					<b>3.1. Contacting us</b> <br />
+					<b>3.1. Contacting us</b>
+					<br />
+					<br />
 					If you contact us in relation to any of the Services (via
 					email, telephone, post or otherwise), We may collect and
 					retain your contact details and your communication for the
@@ -301,10 +297,12 @@ const PrivacyPolicy = () => {
 							</u>{" "}
 							including to improve our Platform and services;
 						</li>
-						<li className={style.privacypolicy_underline}>
-							For facilitating and processing your transactions
-							with us and with our third party affiliates and
-							business partners;
+						<li>
+							<u>
+								For facilitating and processing your
+								transactions with us and with our third party
+								affiliates and business partners;
+							</u>
 						</li>
 						<li>
 							<u>
@@ -322,9 +320,11 @@ const PrivacyPolicy = () => {
 							experience.
 						</li>
 					</ul>
-					<b className={style.privacypolicy_underline}>
-						We process personal data on the following legal basis
-						for the following purposes:
+					<b>
+						<u>
+							We process personal data on the following legal
+							basis for the following purposes:
+						</u>
 					</b>
 					<br />
 				</Typography.Paragraph>
@@ -521,7 +521,7 @@ const PrivacyPolicy = () => {
 				<Typography.Text italic>
 					Latest update: September 23, 2023
 				</Typography.Text>
-			</Space>
+			</Legal>
 			<Footer />
 		</>
 	);

@@ -1,12 +1,12 @@
 import Footer from "components/Layouts/Footer";
-import { Space, Typography } from "antd";
-import style from "./Terms.module.scss";
+import { Typography } from "antd";
+import Legal from "components/Layouts/Legal";
 
 const Terms = () => {
 	return (
 		<>
-			<Space direction="vertical" className={style.terms}>
-				<div className={style.terms__header}>
+			<Legal>
+				<div>
 					<Typography.Title level={1}>
 						Terms of Service
 					</Typography.Title>
@@ -649,7 +649,7 @@ const Terms = () => {
 					please contact us at: hello@binarytree.dev
 				</Typography.Paragraph>
 				<i>Last updated September 23, 2023</i>
-			</Space>
+			</Legal>
 			<Footer />
 		</>
 	);

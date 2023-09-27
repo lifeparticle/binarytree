@@ -1,15 +1,13 @@
-import { Space, Table, Typography } from "antd";
+import { Table, Typography } from "antd";
 import Footer from "components/Layouts/Footer";
-import style from "./CookiePolicy.module.scss";
 import { TABLE_COLUMNS, TABLE_DATA } from "./utils/constants";
+import Legal from "components/Layouts/Legal";
 
 const CookiePolicy = () => {
 	return (
 		<>
-			<Space direction="vertical" className={style.cookiepolicy}>
-				<div className={style.cookiepolicy__header}>
-					<Typography.Title level={1}>Cookie Policy</Typography.Title>
-				</div>
+			<Legal>
+				<Typography.Title level={1}>Cookie Policy</Typography.Title>
 				<Typography.Paragraph>
 					This Cookie Policy explains how <b>BinaryTree</b> ("
 					<b>Company</b>", "<b>we</b>", "<b>us</b>", and "<b>our</b>")
@@ -215,7 +213,7 @@ const CookiePolicy = () => {
 					technologies, please email us at hello@binarytree.dev.
 				</Typography.Paragraph>
 				<i>Last updated September 26, 2023</i>
-			</Space>
+			</Legal>
 
 			<Footer />
 		</>
