@@ -1,6 +1,12 @@
-import { Space, Typography } from "antd";
+import { Space, Table, Typography } from "antd";
 import Footer from "components/Layouts/Footer";
 import style from "./PrivacyPolicy.module.scss";
+import {
+	ACTIVITY_COLUMNS,
+	ACTIVITY_DATA,
+	PURPOSE_COLUMNS,
+	PURPOSE_DATA,
+} from "./utils/constants";
 
 const PrivacyPolicy = () => {
 	return (
@@ -17,11 +23,13 @@ const PrivacyPolicy = () => {
 				<Typography.Paragraph>
 					This Privacy Policy informs how BinaryTree (hereinafter also
 					–” Controller”,” Owner”,” we”, “us” or “our”) processes
-					information and personal data on the website
-					https://www.binarytree.dev as well as any other media form,
-					media channel, mobile website or mobile application related,
-					linked, or otherwise connected thereto (hereinafter –
-					Platform).
+					information and personal data on the website{" "}
+					<a href="https://binarytree.dev/">
+						https://www.binarytree.dev
+					</a>{" "}
+					as well as any other media form, media channel, mobile
+					website or mobile application related, linked, or otherwise
+					connected thereto (hereinafter – Platform).
 				</Typography.Paragraph>
 				<Typography.Paragraph>
 					We strive to protect all personal information that we
@@ -43,7 +51,9 @@ const PrivacyPolicy = () => {
 					use this Platform or any of our other services and do not
 					share any personal information with us.
 				</Typography.Paragraph>
-				<b>Data Controller:</b> BinaryTree
+				<Typography.Paragraph>
+					<b>Data Controller:</b> BinaryTree
+				</Typography.Paragraph>
 				<Typography.Paragraph>
 					<b>Contact information:</b> e-mail address:
 					hello@binarytree.dev
@@ -116,7 +126,7 @@ const PrivacyPolicy = () => {
 					information.{" "}
 				</Typography.Paragraph>
 				<Typography.Paragraph>
-					<b>3.1 Contacting us</b> <br />
+					<b>Contacting us</b> <br />
 					If you contact us in relation to any of the Services (via
 					email, telephone, post or otherwise), We may collect and
 					retain your contact details and your communication for the
@@ -124,7 +134,7 @@ const PrivacyPolicy = () => {
 					communications.
 				</Typography.Paragraph>
 				<Typography.Paragraph>
-					<b> 3.2 Other Means of Collection.</b>We collect personal
+					<b>Other Means of Collection.</b>We collect personal
 					information by a variety of means and methods, including the
 					following:
 					<ul>
@@ -177,7 +187,9 @@ const PrivacyPolicy = () => {
 					are uncertain about which Personal Data is mandatory are
 					welcome to contact the Owner.
 				</Typography.Paragraph>
-				Generally, we collect the following data:
+				<b className={style.privacypolicy_underline}>
+					Generally, we collect the following data:
+				</b>
 				<br />
 				<br />
 				<ul>
@@ -212,10 +224,19 @@ const PrivacyPolicy = () => {
 				</ul>
 				<br />
 				<br />
-				We collect the following categories of Personal data for the
-				following activities:
+				<b className={style.privacypolicy_underline}>
+					We collect the following categories of Personal data for the
+					following activities:
+				</b>
 				<br />
 				<br />
+				<Table
+					columns={ACTIVITY_COLUMNS}
+					dataSource={ACTIVITY_DATA}
+					pagination={false}
+					bordered
+					scroll={{ x: "calc(50%)" }}
+				/>
 				<Typography.Title level={5}>
 					5. PURPOSE OF DATA COLLECTION
 				</Typography.Title>
@@ -229,69 +250,101 @@ const PrivacyPolicy = () => {
 				</Typography.Paragraph>
 				<ul>
 					<li>
-						To provide and maintain our Service, including to
-						monitor the usage of our Service.
+						<span className={style.privacypolicy_underline}>
+							To provide and maintain our Service,
+						</span>{" "}
+						including to monitor the usage of our Service.
 					</li>
 					<li>
-						To manage your Account: to manage your registration of
-						the Service. The Personal Data you provide can give you
-						access to different functionalities of the Service that
-						are available to you.
+						<span className={style.privacypolicy_underline}>
+							To manage your Account:
+						</span>{" "}
+						to manage your registration of the Service. The Personal
+						Data you provide can give you access to different
+						functionalities of the Service that are available to
+						you.
 					</li>
 					<li>
-						For the performance of a contract: the development,
-						compliance and undertaking of the contract for the
-						services or of any other contract with us through the
-						Service.
+						<span className={style.privacypolicy_underline}>
+							For the performance of a contract:
+						</span>{" "}
+						the development, compliance and undertaking of the
+						contract for the services or of any other contract with
+						us through the Service.
 					</li>
 					<li>
-						To contact you: To contact you by email, telephone
-						calls, SMS, or other equivalent forms of electronic
-						communication.
+						<span className={style.privacypolicy_underline}>
+							To contact you:
+						</span>{" "}
+						To contact you by email, telephone calls, SMS, or other
+						equivalent forms of electronic communication.
 					</li>
 					<li>
-						To manage your requests: To attend and manage your
-						requests to us.
+						<span className={style.privacypolicy_underline}>
+							To manage your requests:
+						</span>{" "}
+						To attend and manage your requests to us.
 					</li>
 					<li>
-						To respond to your requests and questions, resolve
-						disputes, investigate and address your concerns, and
-						monitor and improve our responses;
+						<span className={style.privacypolicy_underline}>
+							To respond to your requests and questions,
+						</span>{" "}
+						resolve disputes, investigate and address your concerns,
+						and monitor and improve our responses;
 					</li>
 					<li>
-						To help maintain the safety, security, and integrity of
-						our Platform, databases, and technology assets and to
-						detect and prevent transactional fraud;
+						<span className={style.privacypolicy_underline}>
+							To help maintain the safety, security, and integrity
+							of our Platform,
+						</span>{" "}
+						databases, and technology assets and to detect and
+						prevent transactional fraud;
 					</li>
 					<li>
-						For testing, research, analysis, and a product and
-						service development, including to improve our Platform
-						and services;
+						<span className={style.privacypolicy_underline}>
+							For testing, research, analysis, and a product and
+							service development,
+						</span>{" "}
+						including to improve our Platform and services;
 					</li>
-					<li>
+					<li className={style.privacypolicy_underline}>
 						For facilitating and processing your transactions with
 						us and with our third party affiliates and business
 						partners;
 					</li>
 					<li>
-						To respond to law enforcement requests and as required
-						by applicable laws, court orders, or governmental
-						regulations;
+						<span className={style.privacypolicy_underline}>
+							To respond to law enforcement requests and as
+							required by applicable laws,
+						</span>
+						court orders, or governmental regulations;
 					</li>
 					<li>
-						For other purposes: We may use Your information for
-						other purposes, such as data analysis, identifying usage
-						trends, determining the effectiveness of our promotional
-						campaigns and to evaluate and improve our Service,
-						marketing and your experience.
+						<span className={style.privacypolicy_underline}>
+							For other purposes:
+						</span>{" "}
+						We may use Your information for other purposes, such as
+						data analysis, identifying usage trends, determining the
+						effectiveness of our promotional campaigns and to
+						evaluate and improve our Service, marketing and your
+						experience.
 					</li>
 				</ul>
 				<br />
 				<br />
-				We process personal data on the following legal basis for the
-				following purposes:
+				<b className={style.privacypolicy_underline}>
+					We process personal data on the following legal basis for
+					the following purposes:
+				</b>
 				<br />
 				<br />
+				<Table
+					columns={PURPOSE_COLUMNS}
+					dataSource={PURPOSE_DATA}
+					pagination={false}
+					bordered
+					scroll={{ x: "calc(50%)" }}
+				/>
 				<Typography.Title level={5}>
 					6. METHODS OF DATA PROCESSING
 				</Typography.Title>
@@ -322,8 +375,8 @@ const PrivacyPolicy = () => {
 					transferring the User's Data to a country other than their
 					own. If any such transfer takes place, Users can find out
 					more by checking the relevant sections of this document or
-					inquire with BinaryTree using the information provided in
-					the contact section.
+					inquire with <b>BinaryTree</b> using the information
+					provided in the contact section.
 				</Typography.Paragraph>
 				We may share your personal data with following recipients:
 				<ul>
@@ -337,26 +390,27 @@ const PrivacyPolicy = () => {
 						the protection of your right to privacy.{" "}
 					</li>
 					<li>
-						<b>Processors</b> – in order to provide the Services,
-						BinaryTree may communicate your Personal data to other
-						entities acting as data processors.{" "}
+						<b>Processors</b> – in order to provide the Services,{" "}
+						<b>BinaryTree</b> may communicate your Personal data to
+						other entities acting as data processors.{" "}
 					</li>
 					<li>
 						<b>Partners and third parties</b> – in order to provide
-						the Services, BinaryTree may communicate your Personal
-						data to third party service providers.{" "}
+						the Services, <b>BinaryTree</b> may communicate your
+						Personal data to third party service providers.{" "}
 					</li>
 					<li>
 						<b>
 							Judicial, administrative and other public
 							authorities
-						</b>
-						– BinaryTree may have to share or disclose some of your
-						Personal data if it is required to do so by the law, by
-						a request meaning from a competent authority., to comply
-						with a court order, to obtain legal remedies or defend
-						BinaryTree’s rights, to contribute with investigations
-						(e.g. fraud, identity theft, etc.).{" "}
+						</b>{" "}
+						- <b>BinaryTree</b> may have to share or disclose some
+						of your Personal data if it is required to do so by the
+						law, by a request meaning from a competent authority.,
+						to comply with a court order, to obtain legal remedies
+						or defend
+						<b>BinaryTree</b>’s rights, to contribute with
+						investigations (e.g. fraud, identity theft, etc.).{" "}
 					</li>
 				</ul>
 				<Typography.Title level={5}>8. RETENTION TIME</Typography.Title>
@@ -383,18 +437,22 @@ const PrivacyPolicy = () => {
 				</ul>
 				<br />
 				<br />
-				<b>BinaryTree</b> may be allowed to retain Personal Data for a
-				longer period whenever the User has given consent to such
-				processing, as long as such consent is not withdrawn.
-				Furthermore, the Owner may be obliged to retain Personal Data
-				for a longer period whenever required to do so for the
-				performance of a legal obligation or upon order of an authority.
-				<br />
-				<br />
-				Once the retention period expires, Personal Data shall be
-				deleted. Therefore, the right of access, the right to erasure,
-				the right to rectification and the right to data portability
-				cannot be enforced after expiration of the retention period.
+				<Typography.Paragraph>
+					<b>BinaryTree</b> may be allowed to retain Personal Data for
+					a longer period whenever the User has given consent to such
+					processing, as long as such consent is not withdrawn.
+					Furthermore, the Owner may be obliged to retain Personal
+					Data for a longer period whenever required to do so for the
+					performance of a legal obligation or upon order of an
+					authority.
+					<br />
+					<br />
+					Once the retention period expires, Personal Data shall be
+					deleted. Therefore, the right of access, the right to
+					erasure, the right to rectification and the right to data
+					portability cannot be enforced after expiration of the
+					retention period.
+				</Typography.Paragraph>
 				<Typography.Title level={5}>
 					9. ADDITIONAL INFORMATION ABOUT DATA COLLECTION AND
 					PROCESSING
@@ -402,7 +460,7 @@ const PrivacyPolicy = () => {
 				<b>Legal action</b>
 				<Typography.Paragraph>
 					The User's Personal Data may be used for legal purposes by
-					<b>BinaryTree</b> in Court or in the stages leading to
+					<b> BinaryTree</b> in Court or in the stages leading to
 					possible legal action arising from improper use of this
 					Platform or the related Services.
 				</Typography.Paragraph>
@@ -416,9 +474,9 @@ const PrivacyPolicy = () => {
 				<b>Information not contained in this policy</b>
 				<Typography.Paragraph>
 					More details concerning the collection or processing of
-					Personal Data may be requested from BinaryTree at any time.
-					Please see the contact information at the beginning of this
-					document.
+					Personal Data may be requested from <b>BinaryTree</b> at any
+					time. Please see the contact information at the beginning of
+					this document.
 				</Typography.Paragraph>
 				<b>Visiting Third-Party Platforms</b>
 				<Typography.Paragraph>
@@ -444,16 +502,19 @@ const PrivacyPolicy = () => {
 					privacy policy at any time by notifying its Users on this
 					page and possibly within this Platform and/or - as far as
 					technically and legally feasible - sending a notice to Users
-					via any contact information available to BinaryTree. It is
-					strongly recommended to check this page often, referring to
-					the date of the last modification listed at the bottom.
+					via any contact information available to <b>BinaryTree</b>.
+					It is strongly recommended to check this page often,
+					referring to the date of the last modification listed at the
+					bottom.
 				</Typography.Paragraph>
 				<Typography.Paragraph>
 					Should the changes affect processing activities performed on
 					the basis of the User’s consent, <b>BinaryTree</b> shall
 					collect new consent from the User, where required.
 				</Typography.Paragraph>
-				Latest update: September 23, 2023
+				<Typography.Text italic>
+					Latest update: September 23, 2023
+				</Typography.Text>
 			</Space>
 			<Footer />
 		</>
