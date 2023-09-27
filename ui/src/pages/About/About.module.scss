@@ -1,51 +1,55 @@
 .about {
-	margin: 0 auto;
-	max-width: var(--bt-converter-width);
-	margin-bottom: 100px;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding: 64px 10% 64px 10%;
 
-	&__container {
-		display: flex;
-		flex-direction: column;
-		gap: var(--bt-size-20);
-	}
+	&__card {
+		margin: 0 auto;
+		max-width: var(--bt-converter-width);
+		margin-bottom: 100px;
+		padding-left: 10px;
+		padding-right: 10px;
 
-	&__intro {
-		position: relative;
-		min-height: 250px;
-
-		&_wrapper {
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 10%;
-			right: 10%;
+		&__container {
 			display: flex;
-			align-items: center;
-			justify-content: center;
-			z-index: 1;
+			flex-direction: column;
+			gap: var(--bt-size-20);
+		}
 
-			&_text {
-				background-color: var(--bt-color-bg);
-				padding: var(--bt-size-10);
-				text-align: center;
-				color: white;
-				max-width: 80vw;
+		&__intro {
+			position: relative;
+			min-height: 250px;
+
+			&_wrapper {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 10%;
+				right: 10%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				z-index: 1;
+
+				&_text {
+					background-color: var(--bt-color-bg);
+					padding: var(--bt-size-10);
+					text-align: center;
+					color: white;
+					max-width: 80vw;
+				}
+			}
+
+			&_img {
+				width: 100%;
+				height: 250px;
+				object-fit: cover;
+				background-color: #71727e;
 			}
 		}
 
-		&_img {
-			width: 100%;
-			height: 250px;
-			object-fit: cover;
-			background-color: #71727e;
+		&__socials {
+			display: flex;
+			justify-content: center;
+			margin-top: var(--bt-size-20);
 		}
-	}
-
-	&__socials {
-		display: flex;
-		justify-content: center;
-		margin-top: var(--bt-size-20);
 	}
 }

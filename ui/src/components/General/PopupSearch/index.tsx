@@ -1,19 +1,23 @@
-import { Input, Modal } from "antd";
+import { Input, InputRef, Modal } from "antd";
 import { MENU_ITEMS } from "components/Layouts/Menu/utils/constants";
-import React, { useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./PopSearch.module.scss";
 import Icon from "components/General/Icon";
 import { IconName } from "components/General/Icon/utils/types";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
+import { classNames } from "lib/utils/helper";
+import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 
 const { Search } = Input;
 const items = MENU_ITEMS.map((item) => item.children).flat();
 
 const PopupSearch: React.FC = () => {
 	const navigate = useNavigate();
+	const { isDarkMode } = useContext(DarkModeContext);
 	const [input, setInput] = useState<string>("");
 	const [isModalOpen, setIsModalOpen] = useState(false);
+	const searchInputRef = useRef<InputRef | null>(null);
 
 	const handleCancel = () => {
 		setIsModalOpen(false);
@@ -22,6 +26,12 @@ const PopupSearch: React.FC = () => {
 	const handleClick = (url: string) => {
 		navigate(url);
 		setIsModalOpen(false);
+	};
+
+	const handleAfterOpen = () => {
+		if (searchInputRef.current) {
+			searchInputRef.current.focus();
+		}
 	};
 
 	useCombinedKeyPress(
@@ -35,14 +45,23 @@ const PopupSearch: React.FC = () => {
 			title="Features"
 			open={isModalOpen}
 			footer={[]}
+			afterOpenChange={handleAfterOpen}
+			className={isDarkMode ? "dark" : "light"}
 		>
 			<Search
 				placeholder="What do you need?"
 				value={input}
 				onChange={(e) => setInput(e.target.value)}
+				ref={searchInputRef}
 				allowClear
+				autoFocus
 			/>
-			<div className={style.popsearch__container}>
+			<div
+				className={classNames(
+					style.popsearch__container,
+					"search_container"
+				)}
+			>
 				{items
 					.filter((item) =>
 						item.name.toLowerCase().includes(input.toLowerCase())
