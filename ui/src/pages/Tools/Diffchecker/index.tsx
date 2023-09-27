@@ -56,7 +56,7 @@ const Diffchecker: React.FC = () => {
 			<PageGrid>
 				{lineDifferences.length > 0 && (
 					<Card title="Original text output ">
-						<div>
+						<div className={style.diffchecker_output}>
 							<pre>
 								{lineDifferences
 									.filter((part) => !part.added)
@@ -79,7 +79,7 @@ const Diffchecker: React.FC = () => {
 
 				{lineDifferences.length > 0 && (
 					<Card title="Change text output">
-						<div>
+						<div className={style.diffchecker_output}>
 							<pre lang={"js"}>
 								{lineDifferences
 									.filter((part) => !part.removed)
