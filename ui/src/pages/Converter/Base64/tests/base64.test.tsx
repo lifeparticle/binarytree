@@ -13,7 +13,7 @@ describe("BASE64", () => {
 
 		const TEXT = "hello";
 
-		const textInputArea = screen.getByPlaceholderText("Input");
+		const textInputArea = screen.getByPlaceholderText(/decoded text/i);
 		expect(textInputArea).toBeInTheDocument();
 
 		await user.type(textInputArea, TEXT);
