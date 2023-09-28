@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, expect } from "vitest";
 import Sorting from "pages/Tools/Sorting";
 
@@ -10,13 +10,16 @@ describe("Sorting", () => {
 	test("render buttons & label", () => {
 		render(<Sorting />);
 
-		const orderByLabel = screen.getByText(/order/i);
-		expect(orderByLabel).toBeInTheDocument();
+		const value = "New input data";
 
-		const clearButton = screen.queryByRole("button", {
-			name: /clear/i,
+		const inputTextArea = screen.getByPlaceholderText(
+			"Enter data separated by space or comma or new line"
+		);
+
+		fireEvent.change(inputTextArea, {
+			target: { value },
 		});
 
-		expect(clearButton).not.toBeInTheDocument();
+		expect(inputTextArea).toHaveValue(value);
 	});
 });

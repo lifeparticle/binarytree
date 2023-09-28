@@ -23,13 +23,13 @@ const TableOfContent: React.FC = () => {
 			fetchData(
 				"https://raw.githubusercontent.com/lifeparticle/JS-Cheatsheet/main/README.md"
 			),
-		["ControlLeft", "KeyE"]
+		"KeyE"
 	);
 	useCombinedKeyPress(() => {
 		setUrl("");
 		setMarkdown("");
 		setTableOfContents("");
-	}, ["ControlLeft", "KeyR"]);
+	}, "KeyR");
 
 	const onMarkdownChange = (text: string) => {
 		setMarkdown(text);

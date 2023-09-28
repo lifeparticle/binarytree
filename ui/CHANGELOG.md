@@ -1,3 +1,11 @@
+### [6.0.0] - 2023-09-28
+
+-   Add dashboard
+-   Add newsfeed with multiple options
+-   Add cookie policy, privacy policy and terms page
+-   Add features (diffchecker | npmpackages | diagramming)
+-   Add floating search bar
+
 ### [5.0.0] - 2023-09-14
 
 -   Add QR code generator
