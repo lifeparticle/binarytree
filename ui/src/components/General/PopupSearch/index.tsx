@@ -8,14 +8,15 @@ import { IconName } from "components/General/Icon/utils/types";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 import { classNames } from "lib/utils/helper";
 import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
+import { SearchModalContext } from "lib/utils/context/SearchModalProvider";
 
 const { Search } = Input;
 const items = MENU_ITEMS.map((item) => item.children).flat();
 
 const PopupSearch: React.FC = () => {
 	const navigate = useNavigate();
-	const { isDarkMode, isModalOpen, handleModalOpen } =
-		useContext(DarkModeContext);
+	const { isDarkMode } = useContext(DarkModeContext);
+	const { handleModalOpen, isModalOpen } = useContext(SearchModalContext);
 	const [input, setInput] = useState<string>("");
 
 	const searchInputRef = useRef<InputRef | null>(null);
@@ -31,7 +32,7 @@ const PopupSearch: React.FC = () => {
 		}
 	};
 
-	useCombinedKeyPress(handleModalOpen, ["ControlLeft", "KeyK"]);
+	useCombinedKeyPress(handleModalOpen, "KeyK");
 
 	return (
 		<Modal

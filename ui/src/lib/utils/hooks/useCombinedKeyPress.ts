@@ -4,32 +4,43 @@ type CallBackFunction = () => void;
 
 function useCombinedKeyPress(
 	callback: CallBackFunction,
-	keyCodes: string[]
+	keyCode: string
 ): void {
-	const keysPressed = useRef<Set<string>>(new Set());
+	const isControlOrCommandKey = useRef(false);
+	const isKeyPressed = useRef(false);
 
 	const handleKeyDown = useCallback(
 		(event: KeyboardEvent) => {
-			const { code, ctrlKey } = event;
-
-			if (ctrlKey && keyCodes.includes(code)) {
-				// Prevent the default behavior of Ctrl + specified key combination
-				event.preventDefault();
+			const { code } = event;
+			if (event.key === "Control" || event.key === "Meta") {
+				isControlOrCommandKey.current = true;
 			}
 
-			keysPressed.current.add(code);
+			if (isControlOrCommandKey.current && keyCode === code) {
+				event.preventDefault();
+				isKeyPressed.current = true;
+			}
 
-			if (keyCodes.every((keyCode) => keysPressed.current.has(keyCode))) {
+			if (isControlOrCommandKey.current && isKeyPressed.current) {
 				callback();
 			}
 		},
-		[callback, keyCodes]
+		[callback, keyCode]
 	);
 
-	const handleKeyUp = useCallback((event: KeyboardEvent) => {
-		const { code } = event;
-		keysPressed.current.delete(code);
-	}, []);
+	const handleKeyUp = useCallback(
+		(event: KeyboardEvent) => {
+			const { code } = event;
+			if (event.key === "Control" || event.key === "Meta") {
+				isControlOrCommandKey.current = false;
+			}
+
+			if (keyCode === code) {
+				isKeyPressed.current = false;
+			}
+		},
+		[keyCode]
+	);
 
 	useEffect(() => {
 		window.addEventListener("keydown", handleKeyDown);

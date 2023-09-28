@@ -218,13 +218,13 @@ const FEATURE_DATA: Feature[] = [
 		link: routesById.borderradius.path,
 		library: [{ name: "faker.js", url: LIBRARY_URLS["faker-js"] }],
 	},
-	{
-		key: routesById.boxshadow.id,
-		name: routesById.boxshadow.title,
-		description: routesById.boxshadow.description,
-		link: routesById.boxshadow.path,
-		library: [{ name: "faker.js", url: LIBRARY_URLS["faker-js"] }],
-	},
+	// {
+	// 	key: routesById.boxshadow.id,
+	// 	name: routesById.boxshadow.title,
+	// 	description: routesById.boxshadow.description,
+	// 	link: routesById.boxshadow.path,
+	// 	library: [{ name: "faker.js", url: LIBRARY_URLS["faker-js"] }],
+	// },
 	{
 		key: routesById.base64.id,
 		name: routesById.base64.title,
