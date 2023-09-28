@@ -143,7 +143,7 @@ a:hover {
 
 /* modal dark mode */
 .dark .ant-modal-content {
-	background-color: #383737 !important;
+	background-color: #141414 !important;
 	color: white;
 }
 
@@ -182,3 +182,19 @@ a:hover {
 	color: white !important;
 }
 /* end modal dark mode */
+
+.ant-input-group-addon {
+	border: none !important;
+}
+
+.ant-card-bordered,
+.ant-btn,
+.ant-input,
+.ant-menu .ant-menu-title-content {
+	transition: none;
+}
+
+.ant-switch,
+.ant-switch-checked {
+	transition: none !important;
+}

@@ -11,6 +11,7 @@ import {
 	GOOGLE_ANALYTICS_COOKIES,
 	GOOGLE_ANALYTICS_ID,
 	HIT_TYPE,
+	DECLINE_BUTTON_STYLES,
 } from "./utils/constants";
 import CookieConsentText from "./components/CookieConsentText";
 
@@ -44,10 +45,10 @@ const CookieConsent: React.FC = () => {
 			onAccept={handleAcceptCookie}
 			onDecline={handleDeclineCookie}
 			enableDeclineButton
-			flipButtons={true}
+			flipButtons={false}
 			style={COOKIE_CONSENT_STYLES}
 			buttonStyle={BUTTON_STYLES}
-			declineButtonStyle={BUTTON_STYLES}
+			declineButtonStyle={DECLINE_BUTTON_STYLES}
 			declineButtonClasses=""
 			declineButtonText="Decline"
 			buttonText="Accept"
