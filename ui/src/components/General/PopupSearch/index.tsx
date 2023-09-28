@@ -14,18 +14,15 @@ const items = MENU_ITEMS.map((item) => item.children).flat();
 
 const PopupSearch: React.FC = () => {
 	const navigate = useNavigate();
-	const { isDarkMode } = useContext(DarkModeContext);
+	const { isDarkMode, isModalOpen, handleModalOpen } =
+		useContext(DarkModeContext);
 	const [input, setInput] = useState<string>("");
-	const [isModalOpen, setIsModalOpen] = useState(false);
-	const searchInputRef = useRef<InputRef | null>(null);
 
-	const handleCancel = () => {
-		setIsModalOpen(false);
-	};
+	const searchInputRef = useRef<InputRef | null>(null);
 
 	const handleClick = (url: string) => {
 		navigate(url);
-		setIsModalOpen(false);
+		handleModalOpen();
 	};
 
 	const handleAfterOpen = () => {
@@ -34,14 +31,11 @@ const PopupSearch: React.FC = () => {
 		}
 	};
 
-	useCombinedKeyPress(
-		() => setIsModalOpen((open) => !open),
-		["ControlLeft", "KeyK"]
-	);
+	useCombinedKeyPress(handleModalOpen, ["ControlLeft", "KeyK"]);
 
 	return (
 		<Modal
-			onCancel={handleCancel}
+			onCancel={handleModalOpen}
 			title="Features"
 			open={isModalOpen}
 			footer={[]}
