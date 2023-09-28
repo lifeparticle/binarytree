@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import style from "pages/Home/Home.module.scss";
 import { Typography, Image } from "antd";
 import { FEATURE_DATA } from "pages/About/utils/constants";
-import hero from "assets/home/hero_dark.svg";
+import hero from "assets/home/hero.svg";
 
 const { Title } = Typography;
 const Hero: React.FC = () => {
