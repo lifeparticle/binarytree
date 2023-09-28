@@ -1,8 +1,8 @@
 ### [6.0.0] - 2023-09-28
 
--   Add Dashboard
--   Add Newsfeed with Multiple options
--   Add cookie policy, privacy policy and Terms page
+-   Add dashboard
+-   Add newsfeed with multiple options
+-   Add cookie policy, privacy policy and terms page
 -   Add features (diffchecker | npmpackages | diagramming)
 -   Add floating search bar
 
