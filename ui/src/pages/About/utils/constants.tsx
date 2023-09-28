@@ -412,10 +412,10 @@ const FEATURE_DATA: Feature[] = [
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
-		key: "15",
+		key: "1",
 		name: "Resource",
 		description: "List of things",
-		link: "/resource/blog",
+		link: routesById.blog.path,
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 ];
