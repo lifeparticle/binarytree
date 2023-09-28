@@ -8,6 +8,7 @@ import { IconName } from "components/General/Icon/utils/types";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 import { classNames } from "lib/utils/helper";
 import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
+import { SearchModalContext } from "lib/utils/context/SearchModalProvider";
 
 const { Search } = Input;
 const items = MENU_ITEMS.map((item) => item.children).flat();
@@ -15,17 +16,14 @@ const items = MENU_ITEMS.map((item) => item.children).flat();
 const PopupSearch: React.FC = () => {
 	const navigate = useNavigate();
 	const { isDarkMode } = useContext(DarkModeContext);
+	const { handleModalOpen, isModalOpen } = useContext(SearchModalContext);
 	const [input, setInput] = useState<string>("");
-	const [isModalOpen, setIsModalOpen] = useState(false);
-	const searchInputRef = useRef<InputRef | null>(null);
 
-	const handleCancel = () => {
-		setIsModalOpen(false);
-	};
+	const searchInputRef = useRef<InputRef | null>(null);
 
 	const handleClick = (url: string) => {
 		navigate(url);
-		setIsModalOpen(false);
+		handleModalOpen();
 	};
 
 	const handleAfterOpen = () => {
@@ -34,14 +32,11 @@ const PopupSearch: React.FC = () => {
 		}
 	};
 
-	useCombinedKeyPress(
-		() => setIsModalOpen((open) => !open),
-		["ControlLeft", "KeyK"]
-	);
+	useCombinedKeyPress(handleModalOpen, "KeyK");
 
 	return (
 		<Modal
-			onCancel={handleCancel}
+			onCancel={handleModalOpen}
 			title="Features"
 			open={isModalOpen}
 			footer={[]}

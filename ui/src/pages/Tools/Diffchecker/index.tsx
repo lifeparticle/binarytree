@@ -56,47 +56,45 @@ const Diffchecker: React.FC = () => {
 			<PageGrid>
 				{lineDifferences.length > 0 && (
 					<Card title="Original text output ">
-						<div className={style.diffchecker_output}>
-							<pre>
-								{lineDifferences
-									.filter((part) => !part.added)
-									.map((part, index) => (
-										<span
-											key={index}
-											style={{
-												backgroundColor: part.removed
-													? "salmon"
-													: "white",
-											}}
-										>
-											{part.value}
-										</span>
-									))}
-							</pre>
-						</div>
+						<pre>
+							{lineDifferences
+								.filter((part) => !part.added)
+								.map((part, index) => (
+									<span
+										key={index}
+										style={{
+											backgroundColor: part.removed
+												? "salmon"
+												: "white",
+											whiteSpace: "pre-wrap",
+										}}
+									>
+										{part.value}
+									</span>
+								))}
+						</pre>
 					</Card>
 				)}
 
 				{lineDifferences.length > 0 && (
 					<Card title="Change text output">
-						<div className={style.diffchecker_output}>
-							<pre lang={"js"}>
-								{lineDifferences
-									.filter((part) => !part.removed)
-									.map((part, index) => (
-										<span
-											key={index}
-											style={{
-												backgroundColor: part.added
-													? "lightgreen"
-													: "white",
-											}}
-										>
-											{part.value}
-										</span>
-									))}
-							</pre>
-						</div>
+						<pre>
+							{lineDifferences
+								.filter((part) => !part.removed)
+								.map((part, index) => (
+									<span
+										key={index}
+										style={{
+											backgroundColor: part.added
+												? "lightgreen"
+												: "white",
+											whiteSpace: "pre-wrap",
+										}}
+									>
+										{part.value}
+									</span>
+								))}
+						</pre>
 					</Card>
 				)}
 			</PageGrid>
