@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import { DarkModeProvider } from "lib/utils/context/DarkModeProvider";
 import { BrowserRouter } from "react-router-dom";
+import { SearchModalProvider } from "lib/utils/context/SearchModalProvider";
 
 const root = ReactDOM.createRoot(
 	document.getElementById("root") as HTMLElement
@@ -23,7 +24,9 @@ root.render(
 		<QueryClientProvider client={client}>
 			<BrowserRouter>
 				<DarkModeProvider>
-					<App />
+					<SearchModalProvider>
+						<App />
+					</SearchModalProvider>
 				</DarkModeProvider>
 			</BrowserRouter>
 		</QueryClientProvider>

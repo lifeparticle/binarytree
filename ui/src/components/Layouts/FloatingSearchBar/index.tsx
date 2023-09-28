@@ -1,17 +1,18 @@
 import { Input, theme } from "antd";
 import style from "./FloatingSearchBar.module.scss";
 import Icon from "components/General/Icon";
-import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 import { useContext } from "react";
+import { SearchModalContext } from "lib/utils/context/SearchModalProvider";
+import useUserAgent from "lib/utils/hooks/useUserAgent";
 
 const FloatingSearchBar = () => {
-	const userAgent = navigator.userAgent.toLowerCase();
-	const addonCommand = userAgent.indexOf("win") != -1 ? "cmd + k" : "⌘ K";
+	const os = useUserAgent();
+	const addonCommand = os === "win" ? "ctrl + k" : "⌘ K";
 
 	const {
 		token: { colorBgContainer },
 	} = theme.useToken();
-	const { handleModalOpen } = useContext(DarkModeContext);
+	const { handleModalOpen } = useContext(SearchModalContext);
 
 	return (
 		<div
