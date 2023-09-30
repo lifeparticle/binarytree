@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Card, Col, Row, Space, Typography } from "antd";
 import Icon from "components/General/Icon";
 import { FEATURES } from "pages/Home/utils/constants";
 import style from "pages/Home/Home.module.scss";
 import { Link } from "react-router-dom";
+import { SearchModalContext } from "lib/utils/context/SearchModalProvider";
 
 const Features: React.FC = () => {
+	const { handleModalOpen } = useContext(SearchModalContext);
+
 	return (
 		<Row gutter={[16, 16]}>
 			<Col xs={24} lg={8} className={style.home__features}>
@@ -19,7 +22,7 @@ const Features: React.FC = () => {
 						streamline your application development process
 					</Typography.Paragraph>
 
-					<Button>Get Started</Button>
+					<Button onClick={handleModalOpen}>Get Started</Button>
 				</Space>
 			</Col>
 
