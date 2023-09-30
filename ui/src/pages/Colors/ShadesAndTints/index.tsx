@@ -33,8 +33,13 @@ const ShadesAndTints: React.FC = () => {
 		updateParamsValue("percentage", DEFAULT_NUM_SHADES.toString());
 	};
 
-	useCombinedKeyPress(resetInputs, ["ControlLeft", "KeyE"]);
-	useCombinedKeyPress(resetInputs, ["ControlLeft", "KeyR"]);
+	const clearInputs = () => {
+		updateParamsValue("color", "");
+		updateParamsValue("percentage", "");
+	};
+
+	useCombinedKeyPress(resetInputs, "KeyE");
+	useCombinedKeyPress(clearInputs, "KeyR");
 
 	useEffect(() => {
 		startTransition(() => {

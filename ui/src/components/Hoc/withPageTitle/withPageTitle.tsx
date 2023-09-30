@@ -43,14 +43,17 @@ const withPageTitle = <T extends object>(
 					</div>
 				</HeadProvider>
 				{!NO_TITLE.includes(title) && (
-					<>
-						<Space align="center">
+					<div className={style.withpagetitle__header}>
+						<Space
+							align="center"
+							className={style.withpagetitle__header_title}
+						>
 							<Text text={title} level={3} />
 							{helpText && <HelpIcon helpText={helpText} />}
 						</Space>
 						<Text text={description} level={5} />
 						<br />
-					</>
+					</div>
 				)}
 
 				<WrappedComponent {...props} />
