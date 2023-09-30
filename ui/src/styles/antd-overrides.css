@@ -123,7 +123,8 @@ a:hover {
 }
 
 .dark .search_container div:hover {
-	background-color: #817f7f !important;
+	background-color: #dddddd !important;
+	border-radius: 5px;
 }
 
 .dark .ant-input-affix-wrapper {

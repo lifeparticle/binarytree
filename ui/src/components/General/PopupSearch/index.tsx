@@ -1,6 +1,6 @@
 import { Input, InputRef, Modal } from "antd";
 import { MENU_ITEMS } from "components/Layouts/Menu/utils/constants";
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./PopSearch.module.scss";
 import Icon from "components/General/Icon";
@@ -18,6 +18,7 @@ const PopupSearch: React.FC = () => {
 	const { isDarkMode } = useContext(DarkModeContext);
 	const { handleModalOpen, isModalOpen } = useContext(SearchModalContext);
 	const [input, setInput] = useState<string>("");
+	const [filteredItems, setFilteredItems] = useState(items);
 
 	const searchInputRef = useRef<InputRef | null>(null);
 
@@ -31,6 +32,14 @@ const PopupSearch: React.FC = () => {
 			searchInputRef.current.focus();
 		}
 	};
+
+	useEffect(() => {
+		setFilteredItems(
+			items.filter((item) =>
+				item.name.toLowerCase().includes(input.toLowerCase())
+			)
+		);
+	}, [input]);
 
 	useCombinedKeyPress(handleModalOpen, "KeyK");
 
@@ -50,6 +59,10 @@ const PopupSearch: React.FC = () => {
 				ref={searchInputRef}
 				allowClear
 				autoFocus
+				onPressEnter={() => {
+					filteredItems.length > 0 &&
+						handleClick(filteredItems[0].url);
+				}}
 			/>
 			<div
 				className={classNames(
@@ -57,20 +70,16 @@ const PopupSearch: React.FC = () => {
 					"search_container"
 				)}
 			>
-				{items
-					.filter((item) =>
-						item.name.toLowerCase().includes(input.toLowerCase())
-					)
-					.map((item) => (
-						<div
-							key={item.url}
-							className={style.popsearch__container_item}
-							onClick={() => handleClick(item.url)}
-						>
-							<Icon name={item.icon as IconName} />
-							<p>{item?.name}</p>
-						</div>
-					))}
+				{filteredItems.map((item) => (
+					<div
+						key={item.url}
+						className={style.popsearch__container_item}
+						onClick={() => handleClick(item.url)}
+					>
+						<Icon name={item.icon as IconName} />
+						<p>{item?.name}</p>
+					</div>
+				))}
 			</div>
 		</Modal>
 	);
