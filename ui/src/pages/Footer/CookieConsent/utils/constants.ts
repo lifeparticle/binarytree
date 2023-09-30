@@ -7,12 +7,24 @@ const COOKIE_CONSENT_STYLES = {
 	margin: "20px",
 	borderRadius: "10px",
 	fontSize: "17px",
+	backgroundColor: "#141414",
 };
 
 const BUTTON_STYLES = {
 	padding: "8px 20px",
 	fontSize: "17px",
-	borderRadius: "2px",
+	borderRadius: "8px",
+	backgroundColor: "#333333",
+	color: "white",
+};
+
+const DECLINE_BUTTON_STYLES = {
+	padding: "8px 20px",
+	fontSize: "17px",
+	textDecoration: "underline",
+	backgroundColor: "transparent",
+	color: "white",
+	border: "none",
 };
 
 export {
@@ -21,4 +33,5 @@ export {
 	HIT_TYPE,
 	COOKIE_CONSENT_STYLES,
 	BUTTON_STYLES,
+	DECLINE_BUTTON_STYLES,
 };
