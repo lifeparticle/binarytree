@@ -97,11 +97,16 @@ h5 {
 .ant-typography a,
 a {
 	color: grey;
+	transition: all 0.5s ease;
 }
 
 .ant-typography a:hover,
 a:hover {
-	color: whitesmoke;
+	color: #9370db;
+	/* font-size: medium;
+	 */
+	text-decoration: underline;
+	transition: all 0.5s ease;
 }
 
 .ant-typography p {
