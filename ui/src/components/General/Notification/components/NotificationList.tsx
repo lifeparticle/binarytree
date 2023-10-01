@@ -8,7 +8,6 @@ const { Title } = Typography;
 
 const NotificationList: React.FC<NotificationListProps> = ({
 	notifications,
-	colorText,
 	isLoading,
 	isError,
 	handleRedFlagNotification,
@@ -106,7 +105,7 @@ const NotificationList: React.FC<NotificationListProps> = ({
 						showRedFlag ? style.notification__button__status : ""
 					}
 				></span>
-				<Icon name="Bell" size={20} color={colorText} />
+				<Icon name="Bell" size={20} />
 			</Button>
 		</Dropdown>
 	);
