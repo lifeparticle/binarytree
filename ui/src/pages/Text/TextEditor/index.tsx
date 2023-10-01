@@ -22,11 +22,7 @@ const TextEditor: React.FC = () => {
 	const [isLoading, setIsLoading] = useState(true);
 
 	return (
-		<div
-			className={`${style.te} ${
-				isDarkMode ? style.backgroundDark : style.backgroundLight
-			}`}
-		>
+		<div className={style.te}>
 			<Row gutter={[16, 16]}>
 				<Col xs={24} lg={24}>
 					{isLoading ? <Spin /> : null}
