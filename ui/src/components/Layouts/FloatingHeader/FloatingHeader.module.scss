@@ -1,11 +1,10 @@
-.fb {
-	position: absolute;
-	top: var(--bt-size-8);
-	right: var(--bt-size-20);
-	padding: var(--bt-size-4) 0 var(--bt-size-4) 0;
-	border-radius: var(--bt-size-10);
-	z-index: var(--bt-z-index-dropdown);
+.fh {
 	display: flex;
+	align-items: center;
+	border-radius: var(--bt-size-10);
+	padding: var(--bt-size-4);
+	position: sticky;
+	flex-direction: row;
 
 	&__button {
 		border: none;

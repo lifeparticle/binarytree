@@ -6,11 +6,10 @@ import {
 } from "./utils/constants";
 import useGetNotifications from "lib/utils/hooks/useGetNotifications";
 import NotificationList from "./components/NotificationList";
-import { NotificationProps } from "./utils/types";
 import { getLocalstorageValue, setLocalstorageValue } from "lib/utils/helper";
 import { compareDate } from "./utils/helper";
 
-const Notification: React.FC<NotificationProps> = ({ colorText }) => {
+const Notification: React.FC = () => {
 	const { notifications, isLoading, isError } = useGetNotifications(
 		NOTIFICATION_KEY,
 		NOTIFICATION_URL
@@ -43,7 +42,6 @@ const Notification: React.FC<NotificationProps> = ({ colorText }) => {
 	return (
 		<NotificationList
 			notifications={notifications}
-			colorText={colorText}
 			isLoading={isLoading}
 			isError={isError}
 			showRedFlag={showRedFlag}

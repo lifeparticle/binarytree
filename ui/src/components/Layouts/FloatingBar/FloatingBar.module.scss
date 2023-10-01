@@ -1,0 +1,18 @@
+.fb {
+	z-index: var(--bt-z-index-dropdown);
+	display: flex;
+	height: 64px;
+	align-items: center;
+	justify-content: flex-end;
+	flex-direction: row;
+
+	&__container {
+		right: var(--bt-size-10);
+		position: sticky;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		flex-direction: row;
+		gap: 10px;
+	}
+}
