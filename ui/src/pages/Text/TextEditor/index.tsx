@@ -1,9 +1,10 @@
 import React, { useRef, useContext, useState } from "react";
-import { Col, Row, Spin } from "antd";
+import { Col, Row } from "antd";
 import { Editor } from "@tinymce/tinymce-react";
 import { Editor as TinyMCEEditor } from "tinymce";
 import style from "./TextEditor.module.scss";
 import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
+import Spin from "components/General/Spin";
 
 const TextEditor: React.FC = () => {
 	const { isDarkMode } = useContext(DarkModeContext);

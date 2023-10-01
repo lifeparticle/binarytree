@@ -3,7 +3,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import { Route, Routes as RRDRoutes } from "react-router-dom";
 import withPageTitle from "components/Hoc/withPageTitle/withPageTitle";
 import { routes } from "./utils/constant";
-import { Spin } from "antd";
+import Spin from "components/General/Spin";
 
 const Routes: React.FC = () => {
 	return (
