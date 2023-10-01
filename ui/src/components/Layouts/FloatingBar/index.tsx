@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./FloatingBar.module.scss";
-import FloatingSearchBar from "../FloatingSearchBar";
-import FloatingHeader from "../FloatingHeader";
+import FloatingSearchBar from "components/Layouts/FloatingSearchBar";
+import FloatingHeader from "components/Layouts/FloatingHeader";
 import { theme } from "antd";
+
 const FloatingBar: React.FC = () => {
 	const {
 		token: { colorBgContainer },
