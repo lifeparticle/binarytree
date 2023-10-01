@@ -1,17 +1,17 @@
 .fsb {
-	position: absolute;
-	top: var(--bt-size-8);
-	right: 150px;
-	padding: var(--bt-size-4);
-	border-radius: var(--bt-size-10);
-	z-index: var(--bt-z-index-dropdown);
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	&__input {
+		display: flex;
+		align-items: center;
+		position: sticky;
+		border-radius: var(--bt-size-10);
+		padding: var(--bt-size-4);
+	}
 }
 
 @media screen and (max-width: 900px) {
 	.fsb {
-		display: none;
+		&__input {
+			display: none;
+		}
 	}
 }
