@@ -5,6 +5,9 @@
 	align-items: center;
 	justify-content: flex-end;
 	flex-direction: row;
+	// background-color: transparent;
+	position: absolute;
+	right: 18px;
 
 	&__container {
 		right: var(--bt-size-10);

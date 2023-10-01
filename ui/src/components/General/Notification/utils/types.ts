@@ -7,7 +7,6 @@ interface Markdown {
 interface NotificationListProps {
 	notifications: Markdown[] | undefined;
 	showRedFlag: boolean;
-	colorText: string;
 	isLoading: boolean;
 	isError: boolean;
 	handleRedFlagNotification: () => void;
