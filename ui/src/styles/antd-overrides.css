@@ -102,9 +102,6 @@ a {
 
 .ant-typography a:hover,
 a:hover {
-	color: #9370db;
-	/* font-size: medium;
-	 */
 	text-decoration: underline;
 	transition: all 0.5s ease;
 }
@@ -158,4 +155,14 @@ a:hover {
 
 .ant-layout .ant-layout-sider-children {
 	padding-top: 0px;
+}
+
+.ant-input-affix-wrapper,
+.ant-tag,
+.ant-menu .ant-menu-title-content,
+.ant-btn,
+.ant-input-group .ant-input-group-addon,
+.ant-card-hoverable,
+.ant-input {
+	transition: none;
 }
