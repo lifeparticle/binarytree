@@ -3,6 +3,7 @@ import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 
 const useTheme = () => {
 	const { algorithm, isDarkMode } = useContext(DarkModeContext);
+
 	const THEME = {
 		algorithm,
 		token: {
@@ -19,6 +20,15 @@ const useTheme = () => {
 			Spin: {
 				colorPrimary: isDarkMode ? "#ffffff" : "#333333",
 				algorithm: true,
+			},
+			Menu: {
+				colorPrimary: "var(--bt-color-hover)",
+			},
+			Tabs: {
+				colorPrimary: "var(--bt-color-hover)",
+			},
+			Input: {
+				colorPrimary: "var(--bt-color-hover)",
 			},
 		},
 	};
