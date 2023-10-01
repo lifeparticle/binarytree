@@ -28,7 +28,7 @@ const CodeHighlightWithCopy: React.FC<CodeHighlightWithCopyProps> = ({
 				wrapLines
 				language={language}
 				style={isDarkMode ? obsidian : stackoverflowLight}
-				customStyle={{ padding: "20px" }}
+				customStyle={{ padding: "20px", borderRadius: "10px" }}
 			>
 				{codeString}
 			</SyntaxHighlighter>
