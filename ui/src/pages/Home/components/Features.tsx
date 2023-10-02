@@ -4,7 +4,7 @@ import Icon from "components/General/Icon";
 import { FEATURES } from "pages/Home/utils/constants";
 import style from "pages/Home/Home.module.scss";
 import { Link } from "react-router-dom";
-import { useModal } from "lib/utils/context/SearchModalProvider";
+import useModal from "lib/utils/hooks/useModal";
 
 const Features: React.FC = () => {
 	const { handleModalOpen } = useModal();
