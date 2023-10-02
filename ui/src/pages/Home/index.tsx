@@ -5,11 +5,10 @@ import Hero from "./components/Hero";
 import Contribution from "./components/Contribution";
 import grid_light from "assets/grid_light.svg";
 import grid_dark from "assets/grid_dark.svg";
-import { useContext } from "react";
-import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
+import useTheme from "lib/utils/hooks/useTheme";
 
 const Home = () => {
-	const { isDarkMode } = useContext(DarkModeContext);
+	const { isDarkMode } = useTheme();
 	return (
 		<>
 			<div

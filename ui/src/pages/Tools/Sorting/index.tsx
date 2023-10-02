@@ -1,7 +1,7 @@
 import style from "./Sorting.module.scss";
 import { useEffect, useState } from "react";
 import { detectData, sortData } from "./utils/helper";
-import { Input, Form, Card, Badge } from "antd";
+import { Input, Form, Card, Badge, Row, Col } from "antd";
 import { OUTPUT_FORMAT } from "./utils/constants";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
@@ -67,41 +67,45 @@ const Sorting: React.FC = () => {
 						<Warning text="There is no data for sorting, please provide data first." />
 					) : (
 						<>
-							<PageGrid>
-								<ResponsiveSegementWithLabel
-									label={"Order"}
-									value={order}
-									onChange={(value: string | number) =>
-										setOrder(value as string)
-									}
-									options={[
-										{
-											label: "Ascending",
-											value: "Ascending",
-										},
-										{
-											label: "Descending",
-											value: "Descending",
-										},
-									]}
-								/>
-								<CopyInput>
-									<ResponsiveSelectWithLabel
-										label="Output separator"
-										value={outputFormat.value}
-										onSelect={(_, option) => {
-											setOutputFormat(option);
-										}}
-										options={OUTPUT_FORMAT}
-										defaultActiveFirstOption
+							<Row gutter={[16, 16]}>
+								<Col xs={24} sm={24} lg={24} xl={24} xxl={12}>
+									<ResponsiveSegementWithLabel
+										label={"Order"}
+										value={order}
+										onChange={(value: string | number) =>
+											setOrder(value as string)
+										}
+										options={[
+											{
+												label: "Ascending",
+												value: "Ascending",
+											},
+											{
+												label: "Descending",
+												value: "Descending",
+											},
+										]}
 									/>
+								</Col>
+								<Col xs={24} sm={24} lg={24} xl={24} xxl={12}>
+									<CopyInput>
+										<ResponsiveSelectWithLabel
+											label="Output separator"
+											value={outputFormat.value}
+											onSelect={(_, option) => {
+												setOutputFormat(option);
+											}}
+											options={OUTPUT_FORMAT}
+											defaultActiveFirstOption
+										/>
 
-									<Clipboard
-										text={output}
-										clipboardComponent={ClipboardButton}
-									/>
-								</CopyInput>
-							</PageGrid>
+										<Clipboard
+											text={output}
+											clipboardComponent={ClipboardButton}
+										/>
+									</CopyInput>
+								</Col>
+							</Row>
 							<Form.Item label="Sorted output">
 								<TextArea
 									placeholder="output"

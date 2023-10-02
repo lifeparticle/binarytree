@@ -131,6 +131,11 @@ const OTHER_DATA: Other[] = [
 		name: "unDraw",
 		url: "https://undraw.co/",
 	},
+	{
+		key: "5",
+		name: "Movie for hackers",
+		url: "https://github.com/k4m4/movies-for-hackers",
+	},
 ];
 
 const FEATURE_COLUMNS: ColumnsType<Feature> = [

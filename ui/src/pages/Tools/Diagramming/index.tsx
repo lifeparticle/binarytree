@@ -1,10 +1,9 @@
 import { Excalidraw } from "@excalidraw/excalidraw";
 import style from "./diagramming.module.scss";
-import { useContext } from "react";
-import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
+import useTheme from "lib/utils/hooks/useTheme";
 
 const Diagramming = () => {
-	const { isDarkMode } = useContext(DarkModeContext);
+	const { isDarkMode } = useTheme();
 	return (
 		<div className={style.diagramming}>
 			<Excalidraw theme={isDarkMode ? "dark" : "light"} />
