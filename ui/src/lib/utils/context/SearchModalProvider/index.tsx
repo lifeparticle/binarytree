@@ -2,7 +2,6 @@ import {
 	ReactNode,
 	createContext,
 	useCallback,
-	useContext,
 	useMemo,
 	useState,
 } from "react";
@@ -33,8 +32,4 @@ const SearchModalProvider = ({ children }: { children: ReactNode }) => {
 	);
 };
 
-const useModal = () => {
-	return useContext(SearchModalContext);
-};
-
-export { useModal, SearchModalProvider };
+export { SearchModalContext, SearchModalProvider };

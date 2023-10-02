@@ -8,7 +8,7 @@ import { IconName } from "components/General/Icon/utils/types";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 import { classNames } from "lib/utils/helper";
 import useTheme from "lib/utils/hooks/useTheme";
-import { useModal } from "lib/utils/context/SearchModalProvider";
+import useModal from "lib/utils/hooks/useModal";
 
 const { Search } = Input;
 const items = MENU_ITEMS.map((item) => item.children).flat();

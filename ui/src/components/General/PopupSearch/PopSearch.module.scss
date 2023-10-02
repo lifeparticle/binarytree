@@ -10,6 +10,7 @@
 			display: flex;
 			align-items: center;
 			gap: var(--bt-size-10);
+			margin-top: var(--bt-size-5);
 
 			&_light:hover {
 				background-color: #e0e0e0;
