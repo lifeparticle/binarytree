@@ -124,11 +124,6 @@ a:hover {
 	color: white;
 }
 
-.dark .search_container div:hover {
-	background-color: #dddddd !important;
-	border-radius: 5px;
-}
-
 .dark .ant-input-affix-wrapper {
 	background-color: transparent !important;
 	border-color: #afadad !important;

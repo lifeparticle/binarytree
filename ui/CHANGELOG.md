@@ -1,3 +1,11 @@
+### [6.1.0] - 2023-10-02
+
+-   Update Pop search modal color (light & dark)
+-   Fix sorting overlap design
+-   Remove credit from movie list and put into about page
+-   Update excalidraw top bar cut issue
+-   Use hooks to simplify logic
+
 ### [6.0.0] - 2023-09-28
 
 -   Add dashboard

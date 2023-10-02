@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Button, Card, Col, Row, Space, Typography } from "antd";
 import Icon from "components/General/Icon";
 import { FEATURES } from "pages/Home/utils/constants";
 import style from "pages/Home/Home.module.scss";
 import { Link } from "react-router-dom";
-import { SearchModalContext } from "lib/utils/context/SearchModalProvider";
+import { useModal } from "lib/utils/context/SearchModalProvider";
 
 const Features: React.FC = () => {
-	const { handleModalOpen } = useContext(SearchModalContext);
+	const { handleModalOpen } = useModal();
 
 	return (
 		<Row gutter={[16, 16]}>

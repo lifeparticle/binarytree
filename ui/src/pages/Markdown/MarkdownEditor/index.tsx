@@ -1,18 +1,18 @@
 import { Card, Space } from "antd";
 import { downloadPDFFile, downloadTextFile } from "lib/utils/files";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 import style from "./MarkdownEditor.module.scss";
-import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 import MDEditor from "@uiw/react-md-editor";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import { ResponsiveButton } from "components/General/FormComponents";
+import useTheme from "lib/utils/hooks/useTheme";
 
 const MarkdownEditor: React.FC = () => {
 	const [markdown, setMarkdown] = useState("");
 
-	const { isDarkMode } = useContext(DarkModeContext);
+	const { isDarkMode } = useTheme();
 
 	useCombinedKeyPress(() => setMarkdown("# Hello, World!"), "KeyE");
 	useCombinedKeyPress(() => setMarkdown(""), "KeyR");
