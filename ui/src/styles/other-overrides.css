@@ -1,0 +1,11 @@
+/* excalidraw mobile top-menu scroll */
+.excalidraw .App-toolbar--mobile {
+	overflow-x: auto;
+	max-width: 65vw !important;
+}
+
+.excalidraw__canvas.static {
+	border-radius: 8px !important;
+}
+
+/* end excalidraw */

@@ -2,28 +2,35 @@
 	&__container {
 		max-height: 200px;
 		overflow-y: auto;
-		margin-top: 10px;
+		margin-top: var(--bt-size-10);
 
 		&_item {
-			padding: 10px 5px;
+			padding: var(--bt-size-10) var(--bt-size-5);
 			cursor: pointer;
 			display: flex;
 			align-items: center;
-			gap: 10px;
-			margin: 5px;
-			&:hover {
-				background-color: aliceblue;
+			gap: var(--bt-size-10);
+			margin-top: var(--bt-size-5);
+
+			&_light:hover {
+				background-color: #e0e0e0;
+				border-radius: var(--bt-size-5);
 			}
-		}
 
-		&_item:first-child {
-			background-color: #b3b2b2;
-			border-radius: 5px;
-		}
+			&_light:first-child {
+				background-color: #e0e0e0;
+				border-radius: var(--bt-size-5);
+			}
 
-		&_item:hover {
-			background-color: #d9d9d9 !important;
-			border-radius: 5px;
+			&_dark:hover {
+				background-color: #646363;
+				border-radius: var(--bt-size-5);
+			}
+
+			&_dark:first-child {
+				background-color: #646363;
+				border-radius: var(--bt-size-5);
+			}
 		}
 	}
 }

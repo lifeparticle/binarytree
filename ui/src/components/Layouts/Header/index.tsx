@@ -1,18 +1,17 @@
 import { Space, theme } from "antd";
 import { Link } from "react-router-dom";
 import style from "./header.module.scss";
-import { useContext } from "react";
-import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 import { classNames } from "lib/utils/helper";
 import logo_light from "assets/logo_light.svg";
 import logo_dark from "assets/logo_dark.svg";
+import useTheme from "lib/utils/hooks/useTheme";
 
 const Header: React.FC = () => {
 	const {
 		token: { colorBgContainer },
 	} = theme.useToken();
 
-	const { isDarkMode } = useContext(DarkModeContext);
+	const { isDarkMode } = useTheme();
 
 	return (
 		<Space
