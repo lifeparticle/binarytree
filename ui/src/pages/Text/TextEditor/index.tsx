@@ -1,13 +1,14 @@
-import React, { useRef, useContext, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Col, Row } from "antd";
 import { Editor } from "@tinymce/tinymce-react";
 import { Editor as TinyMCEEditor } from "tinymce";
 import style from "./TextEditor.module.scss";
-import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 import Spin from "components/General/Spin";
+import { classNames } from "lib/utils/helper";
+import useTheme from "lib/utils/hooks/useTheme";
 
 const TextEditor: React.FC = () => {
-	const { isDarkMode } = useContext(DarkModeContext);
+	const { isDarkMode } = useTheme();
 
 	const editorRef = useRef<TinyMCEEditor | null>(null);
 
@@ -71,8 +72,11 @@ const TextEditor: React.FC = () => {
 								"fullscreen",
 							],
 
-							skin: isDarkMode ? "oxide-dark" : "oxide",
-							content_css: isDarkMode ? "dark" : "default",
+							skin: isDarkMode ? "tinymce-5-dark" : "oxide",
+							content_css: isDarkMode
+								? "tinymce-5-dark"
+								: "default",
+
 							setup: function (editor) {
 								editor.ui.registry.addButton("clearbutton", {
 									text: "Clear",
@@ -126,7 +130,12 @@ const TextEditor: React.FC = () => {
 						}}
 					/>
 					{!isLoading && (
-						<div className={style.te__footer}>
+						<div
+							className={classNames(
+								style.te__footer,
+								isDarkMode ? style.te__footer_dark : ""
+							)}
+						>
 							<span>
 								<b>{wordCount}</b> Words{" "}
 							</span>

@@ -13,7 +13,6 @@ const Movie: React.FC = () => {
 			itemComponent={Resource}
 			isLoading={isLoading}
 			isError={isError}
-			source="https://github.com/k4m4/movies-for-hackers"
 		/>
 	);
 };

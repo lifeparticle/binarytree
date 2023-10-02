@@ -3,10 +3,9 @@ import Header from "components/Layouts/Header";
 import Menu from "components/Layouts/Menu";
 import { MENU_COLLAPSED_STORAGE_KEY } from "./utils/constants";
 import useMenuCollapsed from "lib/utils/hooks/useMenuCollapsed";
-import { useContext } from "react";
-import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 import Footer from "components/Layouts/Sidebar/Footer";
 import style from "./Sidebar.module.scss";
+import useTheme from "lib/utils/hooks/useTheme";
 
 const { Sider } = Layout;
 
@@ -14,7 +13,7 @@ const Sidebar = () => {
 	const { collapsed, toggleCollapse } = useMenuCollapsed(
 		MENU_COLLAPSED_STORAGE_KEY
 	);
-	const { toggleTheme, isDarkMode } = useContext(DarkModeContext);
+	const { toggleTheme, isDarkMode } = useTheme();
 
 	const {
 		token: { colorBgContainer },

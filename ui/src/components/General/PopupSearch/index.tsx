@@ -1,22 +1,22 @@
 import { Input, InputRef, Modal } from "antd";
 import { MENU_ITEMS } from "components/Layouts/Menu/utils/constants";
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./PopSearch.module.scss";
 import Icon from "components/General/Icon";
 import { IconName } from "components/General/Icon/utils/types";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 import { classNames } from "lib/utils/helper";
-import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
-import { SearchModalContext } from "lib/utils/context/SearchModalProvider";
+import useTheme from "lib/utils/hooks/useTheme";
+import useModal from "lib/utils/hooks/useModal";
 
 const { Search } = Input;
 const items = MENU_ITEMS.map((item) => item.children).flat();
 
 const PopupSearch: React.FC = () => {
 	const navigate = useNavigate();
-	const { isDarkMode } = useContext(DarkModeContext);
-	const { handleModalOpen, isModalOpen } = useContext(SearchModalContext);
+	const { isDarkMode } = useTheme();
+	const { handleModalOpen, isModalOpen } = useModal();
 	const [input, setInput] = useState<string>("");
 	const [filteredItems, setFilteredItems] = useState(items);
 
@@ -73,7 +73,12 @@ const PopupSearch: React.FC = () => {
 				{filteredItems.map((item) => (
 					<div
 						key={item.url}
-						className={style.popsearch__container_item}
+						className={classNames(
+							style.popsearch__container_item,
+							isDarkMode
+								? style.popsearch__container_item_dark
+								: style.popsearch__container_item_light
+						)}
 						onClick={() => handleClick(item.url)}
 					>
 						<Icon name={item.icon as IconName} />
