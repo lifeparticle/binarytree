@@ -1,3 +1,5 @@
+import beautify from "js-beautify";
+
 const INDENTATION_LEVEL = [
 	{
 		value: "2",
@@ -21,4 +23,12 @@ const INPUT_TYPE = [
 	{ label: "YAML", value: "yaml" },
 ];
 
-export { INDENTATION_LEVEL, INPUT_TYPE };
+const BEAUTIFY_FUNCTIONS: {
+	[key: string]: (code: string, options: object) => string;
+} = {
+	html: beautify.html_beautify,
+	css: beautify.css_beautify,
+	default: beautify.js_beautify,
+};
+
+export { INDENTATION_LEVEL, INPUT_TYPE, BEAUTIFY_FUNCTIONS };

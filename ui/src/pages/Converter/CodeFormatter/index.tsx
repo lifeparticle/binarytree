@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import beautify from "js-beautify";
 import style from "./CodeFormatter.module.scss";
 import PageGrid from "components/Layouts/PageGrid";
 import { Card, Form, Space } from "antd";
@@ -11,7 +10,11 @@ import {
 import CodeHighlightWithCopy from "components/General/CodeHighlightWithCopy";
 import Warning from "components/General/Warning";
 import InputGrid from "components/Layouts/InputGrid";
-import { INDENTATION_LEVEL, INPUT_TYPE } from "./utils/constants";
+import {
+	BEAUTIFY_FUNCTIONS,
+	INDENTATION_LEVEL,
+	INPUT_TYPE,
+} from "./utils/constants";
 
 const CodeFormatter: React.FC = () => {
 	const [inputCode, setInputCode] = useState("");
@@ -23,20 +26,14 @@ const CodeFormatter: React.FC = () => {
 
 	const formatCode = () => {
 		try {
-			let formatted = "";
-			if (inputType === "html") {
-				formatted = beautify.html_beautify(inputCode, {
-					indent_size: Number(indentationLevel),
-				});
-			} else if (inputType === "css") {
-				formatted = beautify.css_beautify(inputCode, {
-					indent_size: Number(indentationLevel),
-				});
-			} else {
-				formatted = beautify.js_beautify(inputCode, {
-					indent_size: Number(indentationLevel),
-				});
-			}
+			const options = {
+				indent_size: Number(indentationLevel),
+			};
+
+			const selectedBeautifyFunction =
+				BEAUTIFY_FUNCTIONS[inputType] || BEAUTIFY_FUNCTIONS.default;
+
+			const formatted = selectedBeautifyFunction(inputCode, options);
 
 			setFormattedCode(formatted);
 		} catch (error) {
