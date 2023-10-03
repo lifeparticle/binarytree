@@ -1,3 +1,7 @@
+### [6.2.0] - 2023-10-03
+
+-   Add code formatter for HTML | CSS | JS | XML | JSON
+
 ### [6.1.0] - 2023-10-02
 
 -   Update Pop search modal color (light & dark)

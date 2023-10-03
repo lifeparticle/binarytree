@@ -21,6 +21,7 @@ import {
 	ImageGeneratorFromColors,
 	Interview,
 	JsonToTypescript,
+	CodeFormatter,
 	MarkdownEditor,
 	Mimetype,
 	Movie,
@@ -108,6 +109,13 @@ export const routes: Route[] = [
 		title: "Json To Typescript",
 		description: "Turn your JSON into TypeScript's next top model.",
 		component: JsonToTypescript,
+	},
+	{
+		id: "codeformatter",
+		path: "/converter/code-formatter",
+		title: "Code Formatter",
+		description: "Formar HTML, CSS, JavaScript, JSON, YML Code",
+		component: CodeFormatter,
 	},
 	{
 		id: "data",
