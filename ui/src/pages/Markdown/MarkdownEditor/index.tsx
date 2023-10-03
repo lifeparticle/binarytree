@@ -7,12 +7,12 @@ import MDEditor from "@uiw/react-md-editor";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import { ResponsiveButton } from "components/General/FormComponents";
-import useTheme from "lib/utils/hooks/useTheme";
+import useMode from "lib/utils/hooks/useMode";
 
 const MarkdownEditor: React.FC = () => {
 	const [markdown, setMarkdown] = useState("");
 
-	const { isDarkMode } = useTheme();
+	const { isDarkMode } = useMode();
 
 	useCombinedKeyPress(() => setMarkdown("# Hello, World!"), "KeyE");
 	useCombinedKeyPress(() => setMarkdown(""), "KeyR");

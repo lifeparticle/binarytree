@@ -5,7 +5,7 @@ import { MENU_COLLAPSED_STORAGE_KEY } from "./utils/constants";
 import useMenuCollapsed from "lib/utils/hooks/useMenuCollapsed";
 import Footer from "components/Layouts/Sidebar/Footer";
 import style from "./Sidebar.module.scss";
-import useTheme from "lib/utils/hooks/useTheme";
+import useMode from "lib/utils/hooks/useMode";
 
 const { Sider } = Layout;
 
@@ -13,7 +13,7 @@ const Sidebar = () => {
 	const { collapsed, toggleCollapse } = useMenuCollapsed(
 		MENU_COLLAPSED_STORAGE_KEY
 	);
-	const { toggleTheme, isDarkMode } = useTheme();
+	const { toggleTheme, isDarkMode } = useMode();
 
 	const {
 		token: { colorBgContainer },

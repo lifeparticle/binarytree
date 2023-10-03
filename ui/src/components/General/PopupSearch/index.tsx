@@ -7,7 +7,7 @@ import Icon from "components/General/Icon";
 import { IconName } from "components/General/Icon/utils/types";
 import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
 import { classNames } from "lib/utils/helper";
-import useTheme from "lib/utils/hooks/useTheme";
+import useMode from "lib/utils/hooks/useMode";
 import useModal from "lib/utils/hooks/useModal";
 
 const { Search } = Input;
@@ -15,7 +15,7 @@ const items = MENU_ITEMS.map((item) => item.children).flat();
 
 const PopupSearch: React.FC = () => {
 	const navigate = useNavigate();
-	const { isDarkMode } = useTheme();
+	const { isDarkMode } = useMode();
 	const { handleModalOpen, isModalOpen } = useModal();
 	const [input, setInput] = useState<string>("");
 	const [filteredItems, setFilteredItems] = useState(items);
