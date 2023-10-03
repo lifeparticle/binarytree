@@ -5,10 +5,10 @@ import { Editor as TinyMCEEditor } from "tinymce";
 import style from "./TextEditor.module.scss";
 import Spin from "components/General/Spin";
 import { classNames } from "lib/utils/helper";
-import useTheme from "lib/utils/hooks/useTheme";
+import useMode from "lib/utils/hooks/useMode";
 
 const TextEditor: React.FC = () => {
-	const { isDarkMode } = useTheme();
+	const { isDarkMode } = useMode();
 
 	const editorRef = useRef<TinyMCEEditor | null>(null);
 

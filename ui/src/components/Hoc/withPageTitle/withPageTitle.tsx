@@ -4,24 +4,7 @@ import HelpIcon from "components/General/HelpIcon";
 import { Space } from "antd";
 import usePageTitle from "./utils/hooks";
 import { HeadProvider, Title, Link, Meta } from "react-head";
-
-const NO_PADDING = [
-	"BinaryTree: Developer Productivity Tools",
-	"About",
-	"Terms",
-	"Cookie Policy",
-	"Privacy Policy",
-	"Feedback",
-];
-
-const NO_TITLE = [
-	"BinaryTree: Developer Productivity Tools",
-	"Terms",
-	"Cookie Policy",
-	"Privacy Policy",
-	"About",
-	"Feedback",
-];
+import { NO_PADDING, NO_TITLE } from "./utils/constants";
 
 const withPageTitle = <T extends object>(
 	WrappedComponent: React.ComponentType<T>
@@ -38,6 +21,7 @@ const withPageTitle = <T extends object>(
 				<HeadProvider>
 					<div className="Home">
 						<Title>{title}</Title>
+						<Meta name="title" content={title} />
 						<Link rel="canonical" href={url} />
 						<Meta name="description" content={description} />
 					</div>
