@@ -28,6 +28,7 @@ const CodeFormatter: React.FC = () => {
 		try {
 			const options = {
 				indent_size: Number(indentationLevel),
+				indent_with_tabs: true,
 			};
 
 			const selectedBeautifyFunction =

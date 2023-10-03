@@ -13,6 +13,10 @@ const INDENTATION_LEVEL = [
 		value: "4",
 		label: "4 space per indent level",
 	},
+	{
+		value: "1",
+		label: "Tab delimited",
+	},
 ];
 
 const INPUT_TYPE = [
