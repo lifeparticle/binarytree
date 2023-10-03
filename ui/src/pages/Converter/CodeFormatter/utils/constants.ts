@@ -14,7 +14,7 @@ const INDENTATION_LEVEL = [
 		label: "4 space per indent level",
 	},
 	{
-		value: "1",
+		value: "tab",
 		label: "Tab delimited",
 	},
 ];
