@@ -1,9 +1,9 @@
 import { Excalidraw } from "@excalidraw/excalidraw";
 import style from "./diagramming.module.scss";
-import useTheme from "lib/utils/hooks/useTheme";
+import useMode from "lib/utils/hooks/useMode";
 
 const Diagramming = () => {
-	const { isDarkMode } = useTheme();
+	const { isDarkMode } = useMode();
 	return (
 		<div className={style.diagramming}>
 			<Excalidraw theme={isDarkMode ? "dark" : "light"} />

@@ -7,13 +7,13 @@ import {
 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { CodeHighlightWithCopyProps } from "./utils/types";
 import style from "./CodeHighlightwithCopy.module.scss";
-import useTheme from "lib/utils/hooks/useTheme";
+import useMode from "lib/utils/hooks/useMode";
 
 const CodeHighlightWithCopy: React.FC<CodeHighlightWithCopyProps> = ({
 	codeString,
 	language,
 }) => {
-	const { isDarkMode } = useTheme();
+	const { isDarkMode } = useMode();
 	return (
 		<div className={style.codeHighlight}>
 			<div className={style.codeHighlight__copy__button}>

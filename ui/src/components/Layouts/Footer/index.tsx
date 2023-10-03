@@ -7,10 +7,10 @@ import { Link } from "react-router-dom";
 import bt_light from "assets/bt_light.png";
 import bt_dark from "assets/bt_dark.png";
 import { openLink } from "lib/utils/helper";
-import useTheme from "lib/utils/hooks/useTheme";
+import useMode from "lib/utils/hooks/useMode";
 
 const Footer: React.FC = () => {
-	const { isDarkMode } = useTheme();
+	const { isDarkMode } = useMode();
 
 	return (
 		<div
@@ -97,9 +97,7 @@ const Footer: React.FC = () => {
 				<Typography.Title level={4}>Company</Typography.Title>
 				<ul className={style.footer__list}>
 					<li>
-						<Link to={"/about"}>
-							<a>About</a>
-						</Link>
+						<Link to={"/about"}>About</Link>
 					</li>
 					{/* <li>
 									<a
@@ -115,20 +113,14 @@ const Footer: React.FC = () => {
 				<Typography.Title level={4}>Legal</Typography.Title>
 				<ul className={style.footer__list}>
 					<li>
-						<Link to={"/terms"}>
-							<a>Terms</a>
-						</Link>
+						<Link to={"/terms"}>Terms</Link>
 					</li>
 					<li>
-						<Link to={"/privacy-policy"}>
-							<a>Privacy</a>
-						</Link>
+						<Link to={"/privacy-policy"}>Privacy</Link>
 					</li>
 
 					<li>
-						<Link to={"/cookie-policy"}>
-							<a>Cookie Policy</a>
-						</Link>
+						<Link to={"/cookie-policy"}>Cookie Policy</Link>
 					</li>
 				</ul>
 			</Space>
