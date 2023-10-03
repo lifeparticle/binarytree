@@ -23,6 +23,7 @@ type RouteId =
 	| "image"
 	| "interview"
 	| "jsontotypescript"
+	| "codeformatter"
 	| "mimetype"
 	| "mimetype"
 	| "movie"

@@ -80,6 +80,12 @@ export const MENU_ITEMS = [
 				icon: "FileOutput",
 				show: true,
 			},
+			{
+				name: routesById.codeformatter.title,
+				url: routesById.codeformatter.path,
+				icon: "Code",
+				show: true,
+			},
 		],
 	},
 	{

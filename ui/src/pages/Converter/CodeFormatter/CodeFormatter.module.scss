@@ -1,0 +1,18 @@
+.codeformatter {
+	&__input {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	&__output {
+		height: 100%;
+
+		&_warning {
+			min-height: 375px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+	}
+}
