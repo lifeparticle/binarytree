@@ -18,6 +18,7 @@ const BoxShadow = lazy(() => import("pages/CSS/BoxShadow"));
 const Base64 = lazy(() => import("pages/Converter/Base64"));
 const Pixel = lazy(() => import("pages/Converter/Pixel"));
 const JsonToTypescript = lazy(() => import("pages/Converter/JsonToTypescript"));
+const CodeFormatter = lazy(() => import("pages/Converter/CodeFormatter"));
 
 const DataGenerator = lazy(() => import("pages/Data/DataGenerator"));
 const ImageGeneratorFromColors = lazy(
@@ -76,6 +77,7 @@ export {
 	ImageGeneratorFromColors,
 	Interview,
 	JsonToTypescript,
+	CodeFormatter,
 	MarkdownEditor,
 	Mimetype,
 	Npmpackages,
