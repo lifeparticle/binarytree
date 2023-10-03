@@ -12,11 +12,7 @@
 			gap: var(--bt-size-10);
 			margin-top: var(--bt-size-5);
 
-			&_light:hover {
-				background-color: #e0e0e0;
-				border-radius: var(--bt-size-5);
-			}
-
+			&_light:hover,
 			&_light:first-child {
 				background-color: #e0e0e0;
 				border-radius: var(--bt-size-5);

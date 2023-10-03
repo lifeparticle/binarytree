@@ -4,14 +4,14 @@ import style from "./header.module.scss";
 import { classNames } from "lib/utils/helper";
 import logo_light from "assets/logo_light.svg";
 import logo_dark from "assets/logo_dark.svg";
-import useTheme from "lib/utils/hooks/useTheme";
+import useMode from "lib/utils/hooks/useMode";
 
 const Header: React.FC = () => {
 	const {
 		token: { colorBgContainer },
 	} = theme.useToken();
 
-	const { isDarkMode } = useTheme();
+	const { isDarkMode } = useMode();
 
 	return (
 		<Space

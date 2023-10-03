@@ -1,13 +1,11 @@
 import { useContext } from "react";
 import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 
-const useTheme = () => {
-	const { algorithm, isDarkMode, toggleTheme } = useContext(DarkModeContext);
+const useMode = () => {
+	const { algorithm, isDarkMode } = useContext(DarkModeContext);
 
 	const THEME = {
 		algorithm,
-		toggleTheme,
-		isDarkMode,
 		token: {
 			colorPrimaryHover: "var(--bt-color-hover)",
 			colorPrimaryTextHover: "var(--bt-color-hover)",
@@ -38,4 +36,4 @@ const useTheme = () => {
 	return THEME;
 };
 
-export default useTheme;
+export default useMode;

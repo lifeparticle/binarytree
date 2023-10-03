@@ -6,12 +6,12 @@ import { ResponsiveInputWithLabel } from "components/General/FormComponents";
 import style from "./MdTableGenerator.module.scss";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
-import useTheme from "lib/utils/hooks/useTheme";
+import useMode from "lib/utils/hooks/useMode";
 
 const TableGenerator: React.FC = () => {
 	const [row, setRow] = useState(10);
 	const [column, setColumn] = useState(10);
-	const { isDarkMode } = useTheme();
+	const { isDarkMode } = useMode();
 	const [output, setOutput] = useState(() => {
 		return generateTable(row, column, "");
 	});
