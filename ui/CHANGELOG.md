@@ -1,3 +1,8 @@
+### [6.3.0] - 2023-10-03
+
+-   Update code editor
+-   update base64 and json to typescript
+
 ### [6.2.0] - 2023-10-03
 
 -   Add code formatter for HTML | CSS | JS | XML | JSON
