@@ -10,7 +10,7 @@ const useMode = () => {
 			colorPrimaryHover: "var(--bt-color-hover)",
 			colorPrimaryTextHover: "var(--bt-color-hover)",
 			colorLinkHover: "var(--bt-color-hover)",
-			fontFamily: "Inconsolata",
+			fontFamily: "Inter",
 		},
 
 		components: {
