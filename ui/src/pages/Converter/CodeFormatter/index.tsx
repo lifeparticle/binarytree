@@ -20,7 +20,7 @@ const CodeFormatter: React.FC = () => {
 	const [inputCode, setInputCode] = useState("");
 	const [formattedCode, setFormattedCode] = useState("");
 	const [indentationLevel, setIndentationLevel] = useState(
-		INDENTATION_LEVEL[2].value
+		INDENTATION_LEVEL[3].value
 	);
 	const [inputType, setInputType] = useState(INPUT_TYPE[3].value);
 
