@@ -1,3 +1,13 @@
 :where(html) {
 	--animation-fade-in: background-color 0.3s ease;
+	--bt-animation-moveBackground: moveBackground 100s linear infinite;
+}
+
+@keyframes moveBackground {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 100% 0;
+	}
 }

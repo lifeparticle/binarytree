@@ -1,6 +1,7 @@
 .home {
 	padding: 100px 10% 64px 10%;
 	min-height: calc(100dvh - 272px);
+	animation: var(--bt-animation-moveBackground);
 
 	&__container {
 		display: flex;
@@ -22,6 +23,7 @@
 			gap: var(--bt-size-10);
 			&_title {
 				text-align: left;
+				font-family: "Pixelify Sans", cursive;
 			}
 			&_paragraph {
 				text-align: left;
@@ -37,6 +39,8 @@
 	&__features {
 		display: flex;
 		align-items: center;
+		border-radius: 8px;
+		z-index: 100;
 
 		&_card {
 			height: 100%;
