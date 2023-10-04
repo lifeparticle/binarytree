@@ -1,6 +1,6 @@
 import { Space, theme } from "antd";
 import React from "react";
-import style from "components/General/TextareaWithValidation/TextareaWithValidation.module.scss";
+import style from "components/General/CodeEditor/CodeEditor.module.scss";
 import Icon from "components/General/Icon";
 import { ValidateStatusProps } from "./utils/types";
 
@@ -15,15 +15,15 @@ const ValidateStatus: React.FC<ValidateStatusProps> = ({ status }) => {
 
 	return (
 		<Space
-			className={style.textareaContainer__validator}
+			className={style.codeeditor__validator}
 			style={{ backgroundColor: colorBgContainer }}
 		>
 			{status === "valid" ? (
-				<span className={style.textareaContainer__validator__success}>
+				<span className={style.codeeditor__validator__success}>
 					<Icon name="Check" color="green" />
 				</span>
 			) : (
-				<span className={style.textareaContainer__validator__failed}>
+				<span className={style.codeeditor__validator__failed}>
 					<Icon name="X" color="red" />
 				</span>
 			)}

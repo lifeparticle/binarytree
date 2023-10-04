@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { DarkModeContext } from "lib/utils/context/DarkModeProvider";
 
-const useMode = () => {
+const useTheme = () => {
 	const { algorithm, isDarkMode } = useContext(DarkModeContext);
 
 	const THEME = {
@@ -36,4 +36,4 @@ const useMode = () => {
 	return THEME;
 };
 
-export default useMode;
+export default useTheme;
