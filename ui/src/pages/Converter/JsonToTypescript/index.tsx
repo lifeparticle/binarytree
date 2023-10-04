@@ -2,7 +2,6 @@ import JsonToTS from "json-to-ts";
 import { useEffect, useState } from "react";
 import style from "./JsonToTypescript.module.scss";
 import { Card, Form, Space } from "antd";
-import TextareaWithValidation from "components/General/TextareaWithValidation";
 import { isJsonValid } from "./utils/helper";
 import CodeHighlightWithCopy from "components/General/CodeHighlightWithCopy";
 import PageGrid from "components/Layouts/PageGrid";
@@ -11,6 +10,7 @@ import {
 	ResponsiveInputWithLabel,
 } from "components/General/FormComponents";
 import Warning from "components/General/Warning";
+import CodeEditor from "components/General/CodeEditor";
 
 const JsonToTypescript: React.FC = () => {
 	const [json, setJson] = useState("");
@@ -43,15 +43,11 @@ const JsonToTypescript: React.FC = () => {
 		<PageGrid className={style.json}>
 			<Card className={style.json__input}>
 				<Form layout="vertical">
-					<TextareaWithValidation
-						value={json}
-						onChange={(e) => {
-							setJson(e.target.value);
-							setInterfaces([]);
-						}}
-						label="JSON Input"
-						placeholder="JSON"
-						rows={8}
+					<CodeEditor
+						label="Enter Json input"
+						language="json"
+						code={json}
+						handleCode={(value) => setJson(value || "")}
 						status={status}
 					/>
 

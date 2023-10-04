@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import style from "./CodeFormatter.module.scss";
 import PageGrid from "components/Layouts/PageGrid";
 import { Card, Form, Space } from "antd";
-import TextareaWithValidation from "components/General/TextareaWithValidation";
 import {
 	ResponsiveButton,
 	ResponsiveSelectWithLabel,
@@ -15,6 +14,7 @@ import {
 	INDENTATION_LEVEL,
 	INPUT_TYPE,
 } from "./utils/constants";
+import CodeEditor from "components/General/CodeEditor";
 
 const CodeFormatter: React.FC = () => {
 	const [inputCode, setInputCode] = useState("");
@@ -68,17 +68,15 @@ const CodeFormatter: React.FC = () => {
 							options={INDENTATION_LEVEL}
 						/>
 					</InputGrid>
-					<TextareaWithValidation
-						value={inputCode}
-						onChange={(e) => {
-							setInputCode(e.target.value);
-							setFormattedCode("");
-						}}
-						label="Input Code"
-						placeholder="Paste code for formatting"
-						rows={12}
-						status={status}
+
+					<CodeEditor
+						code={inputCode}
+						handleCode={(value) => setInputCode(value || "")}
+						language={inputType}
+						label="Enter code"
 					/>
+
+					<br />
 
 					<Space>
 						<ResponsiveButton
