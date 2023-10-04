@@ -1,13 +1,11 @@
-import { Card, Form, Input } from "antd";
+import { Card, Form } from "antd";
 import { useEffect, useState } from "react";
 import { Buffer } from "buffer";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import { isBase64Valid } from "./utils/helper";
-import TextareaWithValidation from "components/General/TextareaWithValidation";
 import PageGrid from "components/Layouts/PageGrid";
-
-const { TextArea } = Input;
+import CodeEditor from "components/General/CodeEditor";
 
 const Base64: React.FC = () => {
 	const [input, setInput] = useState("");
@@ -31,19 +29,16 @@ const Base64: React.FC = () => {
 		<PageGrid>
 			<Card>
 				<Form layout="vertical">
-					<Form.Item label="Text">
-						<TextArea
-							value={input}
-							onChange={(currentValue) => {
-								setInput(currentValue.target.value);
-								onClick("encode", currentValue.target.value);
-							}}
-							placeholder="Decoded text"
-							rows={10}
-							data-gramm={false}
-							allowClear
-						/>
-					</Form.Item>
+					<CodeEditor
+						status={status}
+						label="Text"
+						code={input}
+						language="json"
+						handleCode={(value) => {
+							setInput(value || "");
+							onClick("encode", value || "");
+						}}
+					/>
 
 					<Clipboard
 						text={input}
@@ -54,17 +49,15 @@ const Base64: React.FC = () => {
 
 			<Card>
 				<Form layout="vertical">
-					<TextareaWithValidation
-						value={result}
-						onChange={(currentValue) => {
-							const value = currentValue.target.value;
-							setResult(value);
-							onClick("decode", value);
-						}}
-						rows={10}
-						placeholder="Encoded text"
+					<CodeEditor
 						status={status}
 						label="Base64"
+						code={result}
+						language="json"
+						handleCode={(value) => {
+							setResult(value || "");
+							onClick("decode", value || "");
+						}}
 					/>
 
 					<Clipboard
