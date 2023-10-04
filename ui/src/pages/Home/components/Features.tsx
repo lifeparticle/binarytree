@@ -1,10 +1,11 @@
 import React from "react";
-import { Button, Card, Col, Row, Space, Typography } from "antd";
+import { Card, Col, Row, Space, Typography } from "antd";
 import Icon from "components/General/Icon";
 import { FEATURES } from "pages/Home/utils/constants";
 import style from "pages/Home/Home.module.scss";
 import { Link } from "react-router-dom";
 import useModal from "lib/utils/hooks/useModal";
+import { ResponsiveButton } from "components/General/FormComponents";
 
 const Features: React.FC = () => {
 	const { handleModalOpen } = useModal();
@@ -22,7 +23,9 @@ const Features: React.FC = () => {
 						streamline your application development process
 					</Typography.Paragraph>
 
-					<Button onClick={handleModalOpen}>Get Started</Button>
+					<ResponsiveButton onClick={handleModalOpen}>
+						Get Started
+					</ResponsiveButton>
 				</Space>
 			</Col>
 

@@ -10,6 +10,7 @@ const useTheme = () => {
 			colorPrimaryHover: "var(--bt-color-hover)",
 			colorPrimaryTextHover: "var(--bt-color-hover)",
 			colorLinkHover: "var(--bt-color-hover)",
+			fontFamily: "Inter",
 		},
 
 		components: {
