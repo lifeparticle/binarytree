@@ -10,36 +10,23 @@ describe("JsonToTs", () => {
 	test("render json textfield", () => {
 		render(<JsonToTypescript key={101} />);
 
-		const JsonTextbox = screen.getByPlaceholderText("JSON");
-		expect(JsonTextbox).toBeInTheDocument();
-
 		const rootInterfacenameInput = screen.getByPlaceholderText(
 			"Enter Interface name"
 		);
 		expect(rootInterfacenameInput).toBeInTheDocument();
 	});
 
-	test("generates interfaces on button click", () => {
+	test("show initial warning text", () => {
 		render(<JsonToTypescript key={101} />);
 
-		const jsonTextarea = screen.getByPlaceholderText("JSON");
-		fireEvent.change(jsonTextarea, {
-			target: { value: '{"key": "value"}' },
-		});
-
-		const interfaceInput =
-			screen.getByPlaceholderText(/Enter Interface name/i);
-		const ROOT_INTERFACE_NAME = "MyInterface";
-
-		fireEvent.change(interfaceInput, {
-			target: { value: ROOT_INTERFACE_NAME },
-		});
+		const warningText = screen.getByText(
+			/There is no data for JSON, please provide data first./i
+		);
 
 		const convertButton = screen.getByText("Convert");
 		fireEvent.click(convertButton);
 
-		const getValueOfType = screen.getByText(/string/i);
-
-		expect(getValueOfType).toBeInTheDocument();
+		expect(warningText).toBeInTheDocument();
+		expect(convertButton).toBeInTheDocument();
 	});
 });

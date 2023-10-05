@@ -27,8 +27,9 @@ const CodeFormatter: React.FC = () => {
 	const formatCode = () => {
 		try {
 			const options = {
-				indent_size: Number(indentationLevel),
+				indent_size: indentationLevel,
 				indent_with_tabs: indentationLevel === "tab" ? true : false,
+				e4x: true,
 			};
 
 			const selectedBeautifyFunction =
@@ -75,8 +76,6 @@ const CodeFormatter: React.FC = () => {
 						language={inputType}
 						label="Enter code"
 					/>
-
-					<br />
 
 					<Space>
 						<ResponsiveButton
