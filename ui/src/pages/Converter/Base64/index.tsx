@@ -33,7 +33,7 @@ const Base64: React.FC = () => {
 						status={status}
 						label="Text"
 						code={input}
-						language="json"
+						language={" "}
 						handleCode={(value) => {
 							setInput(value || "");
 							onClick("encode", value || "");
@@ -53,7 +53,7 @@ const Base64: React.FC = () => {
 						status={status}
 						label="Base64"
 						code={result}
-						language="json"
+						language={" "}
 						handleCode={(value) => {
 							setResult(value || "");
 							onClick("decode", value || "");

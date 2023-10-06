@@ -5,13 +5,20 @@
 	}
 
 	&__output {
-		min-height: 424px;
+		height: 100%;
 
 		&_warning {
-			min-height: 375px;
+			min-height: 500px;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
+		}
+
+		// xl(1280px)
+		@media screen and (min-width: 1280px) {
+			&_warning {
+				min-height: 600px;
+			}
 		}
 	}
 }

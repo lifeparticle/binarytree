@@ -1,5 +1,11 @@
 ### [6.3.0] - 2023-10-03
 
+-   Fix Test
+-   update design & maintain consistency
+-   Enable code formatter for JSX code
+
+### [6.3.0] - 2023-10-03
+
 -   Update code editor
 -   update base64 and json to typescript
 
