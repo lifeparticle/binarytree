@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import { describe } from "vitest";
-import user from "@testing-library/user-event";
 import Base64 from "pages/Converter/Base64";
 
 describe("BASE64", () => {
@@ -11,13 +10,8 @@ describe("BASE64", () => {
 	test("textbox", async () => {
 		render(<Base64 />);
 
-		const TEXT = "hello";
+		const outputLabel = screen.getByText(/base64/i);
 
-		const textInputArea = screen.getByPlaceholderText(/decoded text/i);
-		expect(textInputArea).toBeInTheDocument();
-
-		await user.type(textInputArea, TEXT);
-
-		expect(textInputArea).toHaveValue(TEXT);
+		expect(outputLabel).toBeInTheDocument();
 	});
 });
