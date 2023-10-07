@@ -1,15 +1,10 @@
-import {
-	FEATURE_COLUMNS,
-	FEATURE_DATA,
-	APP_VALUES,
-	APP_SUPPORT,
-	OTHER_COLUMNS,
-	OTHER_DATA,
-} from "./utils/constants";
-import { Card, List, Table, Typography } from "antd";
+import { Card, Typography } from "antd";
 import style from "./About.module.scss";
-import about from "assets/about.jpg";
 import Footer from "components/Layouts/Footer";
+import Values from "./components/Values";
+import Features from "./components/Features";
+import Credits from "./components/Credits";
+import Support from "./components/Support";
 
 const About = () => {
 	return (
@@ -17,85 +12,55 @@ const About = () => {
 			<div className={style.about}>
 				<Card
 					className={style.about__card}
-					title="Binary Tree"
 					bordered={false}
 					cover={
 						<div className={style.about__card__intro}>
-							<div className={style.about__card__intro_wrapper}>
-								<Typography.Paragraph
-									className={
-										style.about__card__intro_wrapper_text
-									}
-								>
-									At binarytree.dev, we provide an array of
-									developer productivity tools designed to
-									help you save time. With an{" "}
-									<a
-										href="https://github.com/users/lifeparticle/projects/2"
-										target="_blank"
-									>
-										ever-growing number of features
-									</a>{" "}
-									(currently <b>{FEATURE_DATA.length}</b>),
-									our platform is constantly evolving to meet
-									the needs of developers like you.
-								</Typography.Paragraph>
-							</div>
-							<img
-								loading="lazy"
-								alt="about"
-								src={about}
-								className={style.about__card__intro_img}
-								onClick={() =>
-									window.open(
-										"https://unsplash.com/photos/AaqI2ao96KM",
-										"_blank"
-									)
-								}
-							/>
+							<Typography.Paragraph
+								className={style.about__card__intro_text}
+							>
+								Hey there, fellow developers! I hope you're
+								having a fantastic day and your code is running
+								smoothly. Don't worry if it's not; we've all
+								been there. I've been in the software
+								development game for quite some time now, and I
+								remember the days when I constantly searched for
+								tools to make my life easier.
+								<br />
+								<br />
+								Tools like Postman, Faker, JSON Placeholder and
+								many others have been my trusted allies in those
+								challenging times. They helped me test my APIs,
+								generate fake data for testing, and even mock up
+								entire backends. But even with these tools, I
+								felt something was missing. I wanted a tool that
+								would not only help me but also improve the
+								workflows of other devs around the world.
+								<br />
+								<br />
+								So, after many sleepless nights and countless
+								cups of ☕ & 🧋, I'm thrilled to introduce you
+								to BinaryTree - a tool born out of pure passion
+								and determination. BinaryTree is designed to
+								save you time and effort, streamline your
+								workflow, and help you overcome the challenges
+								we developers face daily.
+								<br />
+								<br />I believe that we rise by lifting others,
+								and I hope BinaryTree will be a valuable
+								addition to your developer toolkit. Happy
+								coding!
+								<br />
+								<br />
+								<p>{`— A node in the BinaryTree.`}</p>
+							</Typography.Paragraph>
 						</div>
 					}
 				>
 					<div className={style.about__card__container}>
-						<List
-							header={<div>Values</div>}
-							bordered
-							dataSource={APP_VALUES}
-							renderItem={(item) => (
-								<List.Item>
-									<Typography.Text>{item}</Typography.Text>
-								</List.Item>
-							)}
-						/>
-
-						<Table
-							columns={FEATURE_COLUMNS}
-							dataSource={FEATURE_DATA}
-							pagination={false}
-							title={() => "Features"}
-							bordered
-							scroll={{ x: "calc(50%)" }}
-						/>
-
-						<Table
-							columns={OTHER_COLUMNS}
-							dataSource={OTHER_DATA}
-							pagination={false}
-							title={() => "Others"}
-							scroll={{ x: "calc(50%)" }}
-							bordered
-						/>
-
-						<List
-							header={<div>Support</div>}
-							bordered
-							dataSource={APP_SUPPORT}
-							renderItem={(item) => (
-								<List.Item>
-									<Typography.Text>{item}</Typography.Text>
-								</List.Item>
-							)}
-						/>
+						<Values />
+						<Features />
+						<Credits />
+						<Support />
 					</div>
 				</Card>
 			</div>

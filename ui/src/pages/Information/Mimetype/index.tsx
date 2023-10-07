@@ -1,5 +1,5 @@
 import React from "react";
-import useFetchList from "lib/utils/hooks/useFetchList";
+import useFetchList from "hooks/useFetchList";
 import { MIME_KEY, MIME_URL } from "./utils/constants";
 import MimeSearchResult from "./components/MimeSearchResult";
 

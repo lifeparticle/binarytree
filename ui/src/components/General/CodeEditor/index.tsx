@@ -1,6 +1,6 @@
 import React from "react";
 import Editor from "@monaco-editor/react";
-import useMode from "lib/utils/hooks/useMode";
+import useMode from "hooks/useMode";
 import { Form } from "antd";
 import style from "./CodeEditor.module.scss";
 import ValidateStatus from "./components/ValidateStatus";

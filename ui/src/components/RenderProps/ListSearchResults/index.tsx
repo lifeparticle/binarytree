@@ -4,13 +4,13 @@ import Search from "components/General/Search";
 import { getCategories } from "components/General/Search/CategoryTags/utils/helper";
 import { ListSearchResultsProps } from "./utils/types";
 import List from "components/RenderProps/List";
-import { API_ERROR, API_NO_DATA } from "lib/utils/constants";
+import { API_ERROR, API_NO_DATA } from "data/constants";
 import Text from "components/General/Text/Text";
 import { Typography } from "antd";
 import { filteredNews, filteredResource } from "./utils/helper";
 import { ReactElement } from "react";
 import { QUERY_KEY_NEWS } from "pages/Newsfeed/utils/constants";
-import useParamsValue from "lib/utils/hooks/useParamsValue";
+import useParamsValue from "hooks/useParamsValue";
 
 const { Title } = Typography;
 

@@ -1,10 +1,10 @@
 import { Space, theme } from "antd";
 import { Link } from "react-router-dom";
 import style from "./header.module.scss";
-import { classNames } from "lib/utils/helper";
-import logo_light from "assets/logo_light.svg";
-import logo_dark from "assets/logo_dark.svg";
-import useMode from "lib/utils/hooks/useMode";
+import { classNames } from "utils/helper-functions/string";
+import logo_light from "assets/Sidebar/logo_light.svg";
+import logo_dark from "assets/Sidebar/logo_dark.svg";
+import useMode from "hooks/useMode";
 
 const Header: React.FC = () => {
 	const {

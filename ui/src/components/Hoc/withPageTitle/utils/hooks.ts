@@ -1,4 +1,4 @@
-import { routes } from "pages/Routes/utils/constant";
+import { routes } from "data/routeData";
 import { useLocation } from "react-router-dom";
 import { HELP } from "./constants";
 

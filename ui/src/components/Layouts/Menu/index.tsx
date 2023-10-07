@@ -3,7 +3,7 @@ import { To, useNavigate } from "react-router-dom";
 import { ITEMS } from "./utils/constants";
 import { MenuProps } from "./utils/types";
 import style from "./Menu.module.scss";
-import { classNames } from "lib/utils/helper";
+import { classNames } from "utils/helper-functions/string";
 import Icon from "components/General/Icon";
 
 const { Sider } = Layout;

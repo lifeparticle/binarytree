@@ -1,8 +1,8 @@
 import Text from "components/General/Text/Text";
-import { API_ERROR, API_NO_DATA } from "lib/utils/constants";
-import useFetchList from "lib/utils/hooks/useFetchList";
+import { API_ERROR, API_NO_DATA } from "data/constants";
+import useFetchList from "hooks/useFetchList";
 import PackageList from "./components/PackageList";
-import { PACKAGE_QUERY_KEY, PACKAGE_QUERY_URL } from "./utils/types";
+import { PACKAGE_QUERY_KEY, PACKAGE_QUERY_URL } from "./utils/constants";
 
 const Npmpackages = () => {
 	const { data, isLoading, isError } = useFetchList(

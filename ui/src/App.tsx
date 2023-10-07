@@ -1,9 +1,9 @@
 import { ConfigProvider, Layout } from "antd";
 import { ErrorBoundary } from "react-error-boundary";
-import RoutesWithPageTitle from "pages/Routes";
+import RoutesWithPageTitle from "routes";
 import Sidebar from "components/Layouts/Sidebar";
 import CookieConsent from "pages/Footer/CookieConsent";
-import useTheme from "lib/utils/hooks/useTheme";
+import useTheme from "hooks/useTheme";
 import PopupSearch from "components/General/PopupSearch";
 import FloatingBar from "components/Layouts/FloatingBar";
 

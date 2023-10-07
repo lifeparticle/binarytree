@@ -1,5 +1,5 @@
 import { renderHook, waitFor } from "@testing-library/react";
-import useFetchList from "lib/utils/hooks/useFetchList";
+import useFetchList from "hooks/useFetchList";
 import { describe, test } from "vitest";
 import { wrapper } from "test/wrapper";
 

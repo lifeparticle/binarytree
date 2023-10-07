@@ -1,7 +1,7 @@
 import { MenuProps } from "antd";
 import { IconName } from "components/General/Icon/utils/types";
 import { getItem } from "components/Layouts/Menu/utils/helper";
-import { routesById } from "pages/Routes/utils/constant";
+import { routesById } from "data/routeData";
 
 const IN_DEVELOPMENT = import.meta.env.DEV;
 

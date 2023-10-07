@@ -3,9 +3,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import { DarkModeProvider } from "lib/utils/context/DarkModeProvider";
+import { DarkModeProvider } from "utils/context/DarkModeProvider";
 import { BrowserRouter } from "react-router-dom";
-import { SearchModalProvider } from "lib/utils/context/SearchModalProvider";
+import { SearchModalProvider } from "utils/context/SearchModalProvider";
 
 const root = ReactDOM.createRoot(
 	document.getElementById("root") as HTMLElement

@@ -1,5 +1,14 @@
 import { ColumnsType } from "antd/es/table";
-import { ActivityTableDataType, PurposeTableDataType } from "./types";
+
+interface PurposeTableDataType {
+	purpose: string;
+	legal: string;
+}
+
+interface ActivityTableDataType {
+	activity: string;
+	categories: string[];
+}
 
 const PURPOSE_COLUMNS: ColumnsType<PurposeTableDataType> = [
 	{

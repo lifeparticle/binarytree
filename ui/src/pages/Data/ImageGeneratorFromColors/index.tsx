@@ -5,7 +5,7 @@ import JSZipUtils from "jszip-utils";
 import { toPng } from "html-to-image";
 import { useRef, useState } from "react";
 import style from "./ImageGeneratorFromColors.module.scss";
-import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
+import useCombinedKeyPress from "hooks/useCombinedKeyPress";
 import { extractColors } from "./utils/helper";
 import PageGrid from "components/Layouts/PageGrid";
 import {

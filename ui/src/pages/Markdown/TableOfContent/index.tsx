@@ -2,7 +2,7 @@ import { useState } from "react";
 import style from "./TableOfContent.module.scss";
 import { marked } from "marked";
 import { Input, Form, Card } from "antd";
-import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
+import useCombinedKeyPress from "hooks/useCombinedKeyPress";
 import { TocItem } from "./utils/types";
 import { indentMap } from "./utils/constants";
 import CopyInput from "components/Layouts/CopyInput";
