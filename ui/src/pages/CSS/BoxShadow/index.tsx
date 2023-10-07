@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card, Form, Slider, Space } from "antd";
 import PageGrid from "components/Layouts/PageGrid";
 import CodeHighlightWithCopy from "components/General/CodeHighlightWithCopy";
-import about from "assets/about.jpg";
+import about from "assets/sample.jpg";
 import style from "./BoxShadow.module.scss";
 import { faker } from "@faker-js/faker";
 import {

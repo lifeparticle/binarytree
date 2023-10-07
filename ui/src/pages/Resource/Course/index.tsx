@@ -1,6 +1,6 @@
 import Resource from "components/General/ListItems/Resource/Resource";
 import ListSearchResults from "components/RenderProps/ListSearchResults";
-import useFetchList from "lib/utils/hooks/useFetchList";
+import useFetchList from "hooks/useFetchList";
 import { QUERY_KEY, URL } from "./utils/contants";
 
 const Course: React.FC = () => {

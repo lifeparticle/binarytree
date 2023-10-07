@@ -1,5 +1,5 @@
 import Resource from "components/General/ListItems/Resource/Resource";
-import useFetchList from "lib/utils/hooks/useFetchList";
+import useFetchList from "hooks/useFetchList";
 import ListSearchResults from "components/RenderProps/ListSearchResults";
 import { QUERY_KEY, URL } from "./utils/constants";
 

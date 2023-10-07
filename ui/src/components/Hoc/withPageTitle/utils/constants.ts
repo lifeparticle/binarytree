@@ -1,8 +1,20 @@
-import { routesById } from "pages/Routes/utils/constant";
+import { routesById } from "data/routeData";
 
-const HELP = {
-	[routesById.colorpicker.id]: "colorpicker",
-	[routesById.shadesandtints.id]: "shadesandtints",
+type HelpEntry = {
+	description: string;
+};
+
+interface HelpType {
+	[key: string]: HelpEntry;
+}
+
+const HELP: HelpType = {
+	[routesById.colorpicker.id]: {
+		description: "Color generator tool",
+	},
+	[routesById.shadesandtints.id]: {
+		description: "Color generator tool",
+	},
 };
 
 const NO_PADDING = [
@@ -23,4 +35,5 @@ const NO_TITLE = [
 	"Feedback",
 ];
 
+export type { HelpType };
 export { HELP, NO_PADDING, NO_TITLE };

@@ -161,3 +161,18 @@ a:hover {
 .ant-input {
 	transition: none;
 }
+
+.ant-carousel .slick-dots-bottom li {
+	background-color: var(--bt-color-bg);
+}
+
+@media (max-width: 500px) {
+	.ant-layout-content,
+	.notification-container,
+	.search_container,
+	.ant-menu {
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+}

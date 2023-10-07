@@ -4,7 +4,7 @@ import Icon from "components/General/Icon";
 import { FEATURES } from "pages/Home/utils/constants";
 import style from "pages/Home/Home.module.scss";
 import { Link } from "react-router-dom";
-import useModal from "lib/utils/hooks/useModal";
+import useModal from "hooks/useModal";
 import { ResponsiveButton } from "components/General/FormComponents";
 
 const Features: React.FC = () => {

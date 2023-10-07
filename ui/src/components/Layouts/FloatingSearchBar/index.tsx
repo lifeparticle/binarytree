@@ -1,8 +1,8 @@
 import { Input } from "antd";
 import style from "./FloatingSearchBar.module.scss";
 import Icon from "components/General/Icon";
-import useUserAgent from "lib/utils/hooks/useUserAgent";
-import useModal from "lib/utils/hooks/useModal";
+import useUserAgent from "hooks/useUserAgent";
+import useModal from "hooks/useModal";
 
 interface FloatingSearchBarProps {
 	styles?: React.CSSProperties;

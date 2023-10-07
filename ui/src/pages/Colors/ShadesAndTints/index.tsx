@@ -1,17 +1,23 @@
 import { useState, useEffect, useTransition } from "react";
 import styles from "./ShadesAndTints.module.scss";
-import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
+import useCombinedKeyPress from "hooks/useCombinedKeyPress";
 import {
 	DEFAULT_COLOR,
 	DEFAULT_NUM_SHADES,
 	OUTPUT_FORMAT,
 } from "./utils/constants";
 import { generateShadesForColor } from "./utils/helper";
-import { SelectOption } from "./utils/types";
 import PageGrid from "components/Layouts/PageGrid";
 import Colors from "./components/Colors";
 import ColorInputs from "./components/ColorInputs";
-import useParamsValue from "lib/utils/hooks/useParamsValue";
+import useParamsValue from "hooks/useParamsValue";
+import { useDebounce } from "hooks/useDebounce";
+
+interface SelectOption {
+	value: string;
+	label: string;
+	func?: (shades: string[]) => string;
+}
 
 const ShadesAndTints: React.FC = () => {
 	const { searchParams, updateParamsValue } = useParamsValue({
@@ -19,7 +25,10 @@ const ShadesAndTints: React.FC = () => {
 		percentage: DEFAULT_NUM_SHADES.toString(),
 	});
 
-	const color = String(searchParams.get("color"));
+	const [color, setColor] = useState(String(searchParams.get("color")));
+
+	const debouncedSearchTerm = useDebounce(color);
+
 	const percentage = String(searchParams.get("percentage"));
 
 	const [shades, setShades] = useState<string[]>([]);
@@ -42,27 +51,29 @@ const ShadesAndTints: React.FC = () => {
 	useCombinedKeyPress(clearInputs, "KeyR");
 
 	useEffect(() => {
+		updateParamsValue("color", debouncedSearchTerm);
+	}, [debouncedSearchTerm, updateParamsValue]);
+
+	useEffect(() => {
 		startTransition(() => {
 			const { shades, tints } = generateShadesForColor(
-				color,
+				debouncedSearchTerm,
 				Number(percentage)
 			);
 			setShades(shades);
 			setTints(tints);
 		});
-	}, [color, percentage]);
+	}, [debouncedSearchTerm, percentage]);
 
 	return (
 		<div className={styles.st}>
 			<ColorInputs
 				color={color}
-				handleColorChange={(e) =>
-					updateParamsValue("color", e.target.value)
-				}
+				handleColorChange={(e) => setColor(e.target.value)}
 				handlePercentageChange={(num) =>
 					num && updateParamsValue("percentage", num.toString())
 				}
-				setColor={(value) => updateParamsValue("color", value)}
+				setColor={setColor}
 				percentage={Number(percentage)}
 				handleOutputFormatChange={setOption}
 				option={option}

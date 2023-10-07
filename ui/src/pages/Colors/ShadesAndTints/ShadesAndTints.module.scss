@@ -2,3 +2,27 @@
 	display: grid;
 	gap: var(--bt-size-16);
 }
+
+.colors {
+	display: flex;
+	flex-direction: column;
+
+	&__title {
+		display: flex;
+		align-items: center;
+		gap: var(--bt-size-10);
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: var(--bt-size-4);
+		justify-content: center;
+
+		&_item {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+}

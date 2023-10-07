@@ -1,6 +1,6 @@
 import { EXTENDED_DATA_OPTIONS } from "./constants";
-import { FormatType, colors } from "./types";
 import tinycolor from "tinycolor2";
+import { FormatType, colors } from "./types";
 
 const calculateColors = (color: string) => {
 	const tc = tinycolor(color);

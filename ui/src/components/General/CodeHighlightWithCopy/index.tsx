@@ -7,7 +7,7 @@ import {
 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { CodeHighlightWithCopyProps } from "./utils/types";
 import style from "./CodeHighlightwithCopy.module.scss";
-import useMode from "lib/utils/hooks/useMode";
+import useMode from "hooks/useMode";
 
 const CodeHighlightWithCopy: React.FC<CodeHighlightWithCopyProps> = ({
 	codeString,

@@ -4,8 +4,8 @@ import { Editor } from "@tinymce/tinymce-react";
 import { Editor as TinyMCEEditor } from "tinymce";
 import style from "./TextEditor.module.scss";
 import Spin from "components/General/Spin";
-import { classNames } from "lib/utils/helper";
-import useMode from "lib/utils/hooks/useMode";
+import { classNames } from "utils/helper-functions/string";
+import useMode from "hooks/useMode";
 
 const TextEditor: React.FC = () => {
 	const { isDarkMode } = useMode();

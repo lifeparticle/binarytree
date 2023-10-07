@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Button, Modal } from "antd";
 import Icon from "components/General/Icon";
 import Help from "./components/Help";
+import { HelpType } from "components/Hoc/withPageTitle/utils/constants";
 
-const HelpIcon: React.FC<{ helpText: string }> = ({ helpText }) => {
+const HelpIcon: React.FC<HelpType> = ({ helpObject }) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	const showModal = () => {
@@ -32,7 +33,7 @@ const HelpIcon: React.FC<{ helpText: string }> = ({ helpText }) => {
 				maskClosable={true}
 				onCancel={closeModal}
 			>
-				<Help text={helpText} />
+				<Help text={helpObject.description} />
 			</Modal>
 		</>
 	);

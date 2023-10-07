@@ -1,9 +1,14 @@
 import React from "react";
 import { Row } from "antd";
-import { PackageListProps } from "pages/Information/Npmpackages/utils/types";
 import style from "pages/Information/Npmpackages/Npmpackages.module.scss";
 import Package from "./Package";
+import { Package as PackageProps } from "pages/Information/Npmpackages/utils/types";
 import PackageSkeleton from "./PackageSkeleton";
+
+interface PackageListProps {
+	packages: PackageProps[];
+	isLoading: boolean;
+}
 
 const PackageList: React.FC<PackageListProps> = ({ packages, isLoading }) => {
 	const LoadingComponent = [...Array(4).keys()].map((x) => (

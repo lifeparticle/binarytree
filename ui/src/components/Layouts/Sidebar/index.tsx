@@ -2,10 +2,10 @@ import { Layout, theme } from "antd";
 import Header from "components/Layouts/Header";
 import Menu from "components/Layouts/Menu";
 import { MENU_COLLAPSED_STORAGE_KEY } from "./utils/constants";
-import useMenuCollapsed from "lib/utils/hooks/useMenuCollapsed";
+import useMenuCollapsed from "hooks/useMenuCollapsed";
 import Footer from "components/Layouts/Sidebar/Footer";
 import style from "./Sidebar.module.scss";
-import useMode from "lib/utils/hooks/useMode";
+import useMode from "hooks/useMode";
 
 const { Sider } = Layout;
 

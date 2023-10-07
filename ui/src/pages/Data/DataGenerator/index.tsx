@@ -1,6 +1,6 @@
 import { useClipboard } from "@mantine/hooks";
 import { AutoComplete, Card, Form, Input, Select, Space } from "antd";
-import { downloadTextFile } from "lib/utils/files";
+import { downloadTextFile } from "utils/helper-functions/files";
 import { useState } from "react";
 import style from "./DataGenerator.module.scss";
 import {

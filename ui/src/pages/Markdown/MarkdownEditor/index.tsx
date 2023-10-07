@@ -1,13 +1,16 @@
 import { Card, Space } from "antd";
-import { downloadPDFFile, downloadTextFile } from "lib/utils/files";
+import {
+	downloadPDFFile,
+	downloadTextFile,
+} from "utils/helper-functions/files";
 import { useState } from "react";
-import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
+import useCombinedKeyPress from "hooks/useCombinedKeyPress";
 import style from "./MarkdownEditor.module.scss";
 import MDEditor from "@uiw/react-md-editor";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
 import { ResponsiveButton } from "components/General/FormComponents";
-import useMode from "lib/utils/hooks/useMode";
+import useMode from "hooks/useMode";
 
 const MarkdownEditor: React.FC = () => {
 	const [markdown, setMarkdown] = useState("");

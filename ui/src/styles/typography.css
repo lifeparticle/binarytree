@@ -2,14 +2,17 @@
 	@font-face {
 		font-family: "Pixelify Sans";
 		src: url("./src/assets/fonts/PixelifySans-Regular.ttf")
-				format("truetype"),
-			url("./src/assets/fonts/PixelifySans-Regular.ttf")
-				format("truetype");
+			format("truetype");
 		font-weight: 400;
 		font-style: normal;
 	}
 
-	@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
+	@font-face {
+		font-family: "FreightText";
+		src: url("./src/assets/fonts/fFreightText-Light.otf") format("truetype");
+		font-weight: 400;
+		font-style: normal;
+	}
 
 	--font-sans: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
 		Cantarell, Noto Sans, sans-serif;

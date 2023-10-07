@@ -1,4 +1,4 @@
-import useCopyToClipboard from "lib/utils/hooks/useCopyToClipboard";
+import useCopyToClipboard from "hooks/useCopyToClipboard";
 import { ClipboardProps } from "./utils/test";
 
 const Clipboard: React.FC<ClipboardProps> = ({

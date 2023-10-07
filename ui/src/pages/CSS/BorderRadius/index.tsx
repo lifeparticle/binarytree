@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card, Form, Slider } from "antd";
 import PageGrid from "components/Layouts/PageGrid";
 import CodeHighlightWithCopy from "components/General/CodeHighlightWithCopy";
-import about from "assets/about.jpg";
+import about from "assets/sample.jpg";
 import style from "./BorderRadius.module.scss";
 import {
 	ResponsiveInputWithLabel,

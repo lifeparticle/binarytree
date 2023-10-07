@@ -1,10 +1,10 @@
 import { theme, Switch, Space, Button } from "antd";
 import style from "./Footer.module.scss";
-import MonogramDark from "assets/netlify-monogram-dark.svg";
-import MonogramLight from "assets/netlify-monogram-light.svg";
-import Logo from "assets/netlify-dark.svg";
+import MonogramDark from "assets/Sidebar/netlify-monogram-dark.svg";
+import MonogramLight from "assets/Sidebar/netlify-monogram-light.svg";
+import Logo from "assets/Sidebar/netlify-dark.svg";
 import { FooterProps } from "./utils/types";
-import { classNames } from "lib/utils/helper";
+import { classNames } from "utils/helper-functions/string";
 import Icon from "components/General/Icon";
 
 const Footer: React.FC<FooterProps> = ({

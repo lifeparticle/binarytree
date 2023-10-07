@@ -1,8 +1,8 @@
 import React from "react";
 import style from "pages/Home/Home.module.scss";
 import { Typography, Image } from "antd";
-import { FEATURE_DATA } from "pages/About/utils/constants";
 import hero from "assets/home/hero.svg";
+import { FEATURE_DATA } from "data/featureData";
 
 const { Title } = Typography;
 const Hero: React.FC = () => {

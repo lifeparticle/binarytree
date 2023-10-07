@@ -1,4 +1,4 @@
-import useGetSize from "lib/utils/hooks/useGetSize";
+import useGetSize from "hooks/useGetSize";
 
 const withSize = <T,>(WrappedComponent: React.ComponentType<T>) => {
 	return (props: T) => {

@@ -6,7 +6,7 @@ import { ResponsiveInputWithLabel } from "components/General/FormComponents";
 import style from "./MdTableGenerator.module.scss";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
-import useMode from "lib/utils/hooks/useMode";
+import useMode from "hooks/useMode";
 
 const TableGenerator: React.FC = () => {
 	const [row, setRow] = useState(10);

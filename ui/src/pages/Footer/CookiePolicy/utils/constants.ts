@@ -1,5 +1,11 @@
 import { ColumnsType } from "antd/es/table";
-import { CookieTableDataType } from "./types";
+
+interface CookieTableDataType {
+	cookie: string;
+	description: string;
+	type: string;
+	time: string;
+}
 
 const TABLE_COLUMNS: ColumnsType<CookieTableDataType> = [
 	{

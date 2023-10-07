@@ -5,10 +5,10 @@ import { useNavigate } from "react-router-dom";
 import style from "./PopSearch.module.scss";
 import Icon from "components/General/Icon";
 import { IconName } from "components/General/Icon/utils/types";
-import useCombinedKeyPress from "lib/utils/hooks/useCombinedKeyPress";
-import { classNames } from "lib/utils/helper";
-import useMode from "lib/utils/hooks/useMode";
-import useModal from "lib/utils/hooks/useModal";
+import useCombinedKeyPress from "hooks/useCombinedKeyPress";
+import { classNames } from "utils/helper-functions/string";
+import useMode from "hooks/useMode";
+import useModal from "hooks/useModal";
 
 const { Search } = Input;
 const items = MENU_ITEMS.map((item) => item.children).flat();

@@ -4,7 +4,7 @@ import { Tabs } from "antd";
 import ListSearchResults from "components/RenderProps/ListSearchResults";
 import News from "components/General/ListItems/News/News";
 import style from "./Newsfeed.module.scss";
-import useNewsFeed from "./utils/hooks";
+import useNewsFeed from "./useNewsFeed";
 
 const Newsfeed: React.FC = () => {
 	const { data, isLoading, isError, setUrl } = useNewsFeed();
