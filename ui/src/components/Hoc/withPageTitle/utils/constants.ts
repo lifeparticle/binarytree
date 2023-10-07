@@ -35,5 +35,5 @@ const NO_TITLE = [
 	"Feedback",
 ];
 
-export type { HelpType };
+export type { HelpEntry };
 export { HELP, NO_PADDING, NO_TITLE };

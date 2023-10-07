@@ -11,7 +11,7 @@ const withPageTitle = <T extends object>(
 	WrappedComponent: React.ComponentType<T>
 ) => {
 	const WithPageTitle = (props: T) => {
-		const { title, description, helpText, url } = usePageTitle();
+		const { title, description, helpObject, url } = usePageTitle();
 
 		return (
 			<ErrorBoundary fallback={<p>Something went wrong</p>}>
@@ -41,8 +41,8 @@ const withPageTitle = <T extends object>(
 									}
 								>
 									<Text text={title} level={3} />
-									{helpText && (
-										<HelpIcon helpText={helpText} />
+									{helpObject && (
+										<HelpIcon helpObject={helpObject} />
 									)}
 								</Space>
 								<Text text={description} level={5} />

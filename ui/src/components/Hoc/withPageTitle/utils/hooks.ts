@@ -15,7 +15,7 @@ const usePageTitle = () => {
 	return {
 		title,
 		description,
-		helpText: HELP[id] || "",
+		helpObject: HELP[id] || {},
 		url: `https://binarytree.dev${pathname}`,
 	};
 };
