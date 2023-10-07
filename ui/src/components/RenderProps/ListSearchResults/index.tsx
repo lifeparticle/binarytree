@@ -6,13 +6,10 @@ import { ListSearchResultsProps } from "./utils/types";
 import List from "components/RenderProps/List";
 import { API_ERROR, API_NO_DATA } from "data/constants";
 import Text from "components/General/Text/Text";
-import { Typography } from "antd";
 import { filteredNews, filteredResource } from "./utils/helper";
 import { ReactElement } from "react";
 import { QUERY_KEY_NEWS } from "pages/Newsfeed/utils/constants";
 import useParamsValue from "hooks/useParamsValue";
-
-const { Title } = Typography;
 
 const ListSearchResults = <T,>({
 	items,
@@ -20,7 +17,6 @@ const ListSearchResults = <T,>({
 	itemComponent,
 	isLoading,
 	isError,
-	source = "",
 }: ListSearchResultsProps<T>): ReactElement => {
 	const { searchParams, updateParamsValue } = useParamsValue({});
 
@@ -65,9 +61,6 @@ const ListSearchResults = <T,>({
 				itemComponent={itemComponent}
 				isLoading={isLoading}
 			/>
-			<Title level={5} onClick={() => window.open(source, "_blank")}>
-				{source && `Source: ${source}`}
-			</Title>
 		</div>
 	);
 };

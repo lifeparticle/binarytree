@@ -1,7 +1,7 @@
 import React from "react";
 import { List, Carousel, Card, Space } from "antd";
 import { Tag } from "antd";
-import { FEATURE_DATA } from "../../../data/featureData";
+import { FEATURE_DATA } from "data/featureData";
 import { openLink } from "utils/helper-functions/string";
 
 const Features: React.FC = () => {
@@ -44,7 +44,9 @@ const Features: React.FC = () => {
 							</Space>,
 						]}
 					>
-						{feature.description}
+						{feature.fullDescription.length > 0
+							? feature.fullDescription
+							: feature.shortDescription}
 						<br />
 						<br />
 					</Card>
