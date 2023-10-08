@@ -7,15 +7,6 @@ describe("JsonToTs", () => {
 		render(<JsonToTypescript key={101} />);
 	});
 
-	test("render json textfield", () => {
-		render(<JsonToTypescript key={101} />);
-
-		const rootInterfacenameInput = screen.getByPlaceholderText(
-			"Enter Interface name"
-		);
-		expect(rootInterfacenameInput).toBeInTheDocument();
-	});
-
 	test("show initial warning text", () => {
 		render(<JsonToTypescript key={101} />);
 

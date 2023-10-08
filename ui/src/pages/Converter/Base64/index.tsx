@@ -30,7 +30,6 @@ const Base64: React.FC = () => {
 			<Card>
 				<Form layout="vertical">
 					<CodeEditor
-						status={status}
 						label="Text"
 						code={input}
 						language={" "}

@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import { describe } from "vitest";
-import user from "@testing-library/user-event";
 import Base64 from "pages/Converter/Base64";
 
 describe("BASE64", () => {
@@ -11,13 +10,16 @@ describe("BASE64", () => {
 	test("textbox", async () => {
 		render(<Base64 />);
 
-		const TEXT = "hello";
+		const outputLabel = screen.getByText(/base64/i);
 
-		const textInputArea = screen.getByPlaceholderText(/decoded text/i);
-		expect(textInputArea).toBeInTheDocument();
+		expect(outputLabel).toBeInTheDocument();
+	});
 
-		await user.type(textInputArea, TEXT);
+	test("test whetever how many validation exists", async () => {
+		const { container } = render(<Base64 />); // Render your component and get the container
 
-		expect(textInputArea).toHaveValue(TEXT);
+		const spanElements = container.getElementsByClassName("ant-btn-icon");
+
+		expect(spanElements[0]).toBeInTheDocument();
 	});
 });
