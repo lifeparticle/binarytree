@@ -17,6 +17,7 @@ const ValidateStatus: React.FC<ValidateStatusProps> = ({ status }) => {
 		<Space
 			className={style.codeeditor__validator}
 			style={{ backgroundColor: colorBgContainer }}
+			role="validation"
 		>
 			{status === "valid" ? (
 				<span className={style.codeeditor__validator__success}>
