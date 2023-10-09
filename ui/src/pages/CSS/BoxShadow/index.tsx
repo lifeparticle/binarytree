@@ -7,122 +7,120 @@ import ColorPickerWithInput from "components/General/ColorPickerWithInput";
 import InputGrid from "components/Layouts/InputGrid";
 
 const BoxShadow = () => {
+	const [bgColor, setBgColor] = useState("#ffffff0");
 	const [shadowColor, setShadowColor] = useState("#ddd");
 	const [boxColor, setBoxColor] = useState("#df6a0b77");
-	const [horizontalLength, setHorizontalLength] = useState(0);
-	const [verticalLength, setVerticalLength] = useState(0);
+	const [horizontalLength, setHorizontalLength] = useState(10);
+	const [verticalLength, setVerticalLength] = useState(10);
 	const [blurRadius, setBlurRadius] = useState(0);
 	const [spreadRadius, setSpreadRadius] = useState(0);
-	const [opacity, setOpacity] = useState(0);
+
+	const boxStyle = {
+		width: "300px",
+		height: "300px",
+		backgroundColor: boxColor,
+		margin: "20px auto",
+		boxShadow: `${horizontalLength}px ${verticalLength}px ${blurRadius}px ${spreadRadius}px ${shadowColor}`,
+	};
 
 	const generateCSSCodeString = () => {
-		return "";
+		const webkit = `-webkit-box-shadow: ${horizontalLength}px ${verticalLength}px ${blurRadius}px ${spreadRadius}px ${shadowColor};`;
+		const mozila = `-moz-box-shadow: ${horizontalLength}px ${verticalLength}px ${blurRadius}px ${spreadRadius}px ${shadowColor};`;
+		const boxShadow = `box-shadow: ${horizontalLength}px ${verticalLength}px ${blurRadius}px ${spreadRadius}px ${shadowColor};`;
+
+		return `${webkit}\n${mozila}\n${boxShadow}`;
 	};
 
 	return (
-		<PageGrid className={style.br}>
+		<div className={style.bs}>
+			<PageGrid>
+				<Card className={style.bs__input}>
+					<Form layout="vertical">
+						<InputGrid>
+							<ColorPickerWithInput
+								label="Shadow color"
+								value={shadowColor}
+								setValue={(e) => setShadowColor(e.target.value)}
+								setColor={setShadowColor}
+							/>
+							<ColorPickerWithInput
+								label="Box color"
+								value={boxColor}
+								setValue={(e) => setBoxColor(e.target.value)}
+								setColor={setBoxColor}
+							/>
+						</InputGrid>
+
+						<ColorPickerWithInput
+							label="Background color"
+							value={bgColor}
+							setValue={(e) => setBgColor(e.target.value)}
+							setColor={setBgColor}
+						/>
+
+						<Form.Item label="Horizontal length">
+							<Slider
+								defaultValue={0}
+								value={horizontalLength}
+								onChange={(value: number) => {
+									if (value) {
+										setHorizontalLength(value);
+									}
+								}}
+							/>
+						</Form.Item>
+						<Form.Item label="Vertical length">
+							<Slider
+								defaultValue={0}
+								value={verticalLength}
+								onChange={(value) => {
+									if (value) {
+										setVerticalLength(value);
+									}
+								}}
+							/>
+						</Form.Item>
+						<Form.Item label="Blur radius">
+							<Slider
+								defaultValue={0}
+								value={blurRadius}
+								onChange={(value) => {
+									if (value) {
+										setBlurRadius(value);
+									}
+								}}
+							/>
+						</Form.Item>
+						<Form.Item label="Spread radius">
+							<Slider
+								defaultValue={0}
+								value={spreadRadius}
+								onChange={(value) => {
+									if (value) {
+										setSpreadRadius(value);
+									}
+								}}
+							/>
+						</Form.Item>
+					</Form>
+				</Card>
+
+				<Card
+					className={style.bs__output}
+					style={{ background: bgColor }}
+				>
+					<Space direction="vertical">
+						<div style={boxStyle}></div>
+					</Space>
+				</Card>
+			</PageGrid>
 			<Card>
-				<Form layout="vertical">
-					<InputGrid>
-						<ColorPickerWithInput
-							label="Shadow color"
-							value={shadowColor}
-							setValue={(e) => setShadowColor(e.target.value)}
-							setColor={setShadowColor}
-						/>
-						<ColorPickerWithInput
-							label="Box color"
-							value={boxColor}
-							setValue={(e) => setBoxColor(e.target.value)}
-							setColor={setBoxColor}
-						/>
-					</InputGrid>
-
-					<Form.Item label="Horizontal length">
-						<Slider
-							defaultValue={0}
-							value={horizontalLength}
-							onChange={(value: number) => {
-								if (value) {
-									setHorizontalLength(value);
-								}
-							}}
-						/>
-					</Form.Item>
-					<Form.Item label="Vertical length">
-						<Slider
-							defaultValue={0}
-							value={verticalLength}
-							onChange={(value) => {
-								if (value) {
-									setVerticalLength(value);
-								}
-							}}
-						/>
-					</Form.Item>
-					<Form.Item label="Blur radius">
-						<Slider
-							defaultValue={0}
-							value={blurRadius}
-							onChange={(value) => {
-								if (value) {
-									setBlurRadius(value);
-								}
-							}}
-						/>
-					</Form.Item>
-					<Form.Item label="Spread radius">
-						<Slider
-							defaultValue={0}
-							value={spreadRadius}
-							onChange={(value) => {
-								if (value) {
-									setSpreadRadius(value);
-								}
-							}}
-						/>
-					</Form.Item>
-					<Form.Item label="Opacity">
-						<Slider
-							defaultValue={0}
-							value={opacity}
-							onChange={(value) => {
-								if (value) {
-									setOpacity(value);
-								}
-							}}
-						/>
-					</Form.Item>
-				</Form>
+				<CodeHighlightWithCopy
+					codeString={generateCSSCodeString()}
+					language="json"
+				/>
 			</Card>
-
-			<Card className={style.br__output}>
-				<Space direction="vertical">
-					<div
-						style={{
-							width: 400,
-							height: 300,
-							backgroundColor: shadowColor,
-							transform: `translate(${horizontalLength}px, ${verticalLength}px)`,
-						}}
-					>
-						<div
-							style={{
-								width: 400,
-								height: 300,
-								backgroundColor: boxColor,
-								position: "absolute",
-							}}
-						></div>
-					</div>
-					<br />
-					<CodeHighlightWithCopy
-						codeString={generateCSSCodeString()}
-						language="css"
-					/>
-				</Space>
-			</Card>
-		</PageGrid>
+		</div>
 	);
 };
 
