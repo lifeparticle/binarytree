@@ -1,19 +1,14 @@
-.br {
+.bs {
+	display: flex;
+	flex-direction: column;
+	gap: var(--bt-size-20);
+	&__input {
+		height: 100%;
+	}
 	&__output {
+		height: 100%;
 		display: flex;
+		align-items: center;
 		justify-content: center;
-
-		&_text,
-		&_img {
-			width: 100%;
-			aspect-ratio: 7 / 3;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-
-		&_text {
-			overflow: hidden;
-		}
 	}
 }
