@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, test } from "vitest";
 import user from "@testing-library/user-event";
-import ImageGeneratorFromColors from "pages/Data/ImageGeneratorFromColors";
+import ImageGeneratorFromColors from "pages/Generator/ImageGeneratorFromColors";
 
 describe("Image Generator component", () => {
 	test("render a component without crash", () => {

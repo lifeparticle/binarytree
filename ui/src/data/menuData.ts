@@ -53,7 +53,7 @@ export const MENU_ITEMS = [
 				name: routesById.boxshadow.title,
 				url: routesById.boxshadow.path,
 				icon: "Box",
-				show: IN_DEVELOPMENT,
+				show: true,
 			},
 		],
 	},
@@ -185,6 +185,19 @@ export const MENU_ITEMS = [
 				url: routesById.diffchecker.path,
 				icon: "Diff",
 				show: true,
+			},
+		],
+	},
+	{
+		name: "Automation",
+		icon: "Workflow",
+		show: true,
+		children: [
+			{
+				name: routesById.creategithubissue.title,
+				url: routesById.creategithubissue.path,
+				icon: "Bug",
+				show: IN_DEVELOPMENT,
 			},
 		],
 	},

@@ -9,8 +9,11 @@ type RouteId =
 	| "book"
 	| "borderradius"
 	| "boxshadow"
+	| "codeformatter"
 	| "colorpicker"
+	| "cookiepolicy"
 	| "course"
+	| "creategithubissue"
 	| "data"
 	| "designsystem"
 	| "diagramming"
@@ -25,7 +28,6 @@ type RouteId =
 	| "image"
 	| "interview"
 	| "jsontotypescript"
-	| "codeformatter"
 	| "mimetype"
 	| "mimetype"
 	| "movie"
@@ -37,7 +39,6 @@ type RouteId =
 	| "platform"
 	| "plugin"
 	| "privacypolicy"
-	| "cookiepolicy"
 	| "qrcode"
 	| "shadesandtints"
 	| "sorting"
@@ -369,6 +370,13 @@ export const routes: Route[] = [
 		description:
 			"Ever wondered what’s different? We did too! Play spot the difference with text.",
 		component: Diffchecker,
+	},
+	{
+		id: "creategithubissue",
+		path: "/automation-scripts/create-github-issue",
+		title: "Create Github Issue",
+		description: "Create Github Issue",
+		component: PageNotFound,
 	},
 	{
 		id: "/",
