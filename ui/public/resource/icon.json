@@ -154,5 +154,53 @@
 				"name": ""
 			}
 		]
+	},
+	{
+		"name": "iconsax",
+		"category": "Icons",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://iconsax.io/",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
+	},
+	{
+		"name": "Iconizer",
+		"category": "Icons",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://www.iconizer.io/",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
+	},
+	{
+		"name": "Iconly",
+		"category": "Icons",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://iconly.pro/",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
+	},
+	{
+		"name": "Flaticon",
+		"category": "Icons",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://www.flaticon.com/",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
 	}
 ]
