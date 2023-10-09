@@ -20,12 +20,12 @@ const Pixel = lazy(() => import("pages/Converter/Pixel"));
 const JsonToTypescript = lazy(() => import("pages/Converter/JsonToTypescript"));
 const CodeFormatter = lazy(() => import("pages/Converter/CodeFormatter"));
 
-const DataGenerator = lazy(() => import("pages/Data/DataGenerator"));
+const DataGenerator = lazy(() => import("pages/Generator/DataGenerator"));
 const ImageGeneratorFromColors = lazy(
-	() => import("pages/Data/ImageGeneratorFromColors")
+	() => import("pages/Generator/ImageGeneratorFromColors")
 );
-const Avatar = lazy(() => import("pages/Data/Avatar"));
-const QRcode = lazy(() => import("pages/Data/QRcode"));
+const Avatar = lazy(() => import("pages/Generator/Avatar"));
+const QRcode = lazy(() => import("pages/Generator/QRcode"));
 
 const Blog = lazy(() => import("pages/Resource/Blog"));
 const Book = lazy(() => import("pages/Resource/Book"));

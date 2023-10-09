@@ -117,7 +117,7 @@ const BoxShadow = () => {
 			<Card>
 				<CodeHighlightWithCopy
 					codeString={generateCSSCodeString()}
-					language="json"
+					language="css"
 				/>
 			</Card>
 		</div>

@@ -21,7 +21,7 @@ import {
 } from "components/General/FormComponents";
 import ColorPickerWithInput from "components/General/ColorPickerWithInput";
 import { ChangeEvent } from "react";
-import { SelectOption } from "../utils/types";
+import { SelectOption } from "pages/Colors/ShadesAndTints/utils/types";
 
 interface ColorInputsProps {
 	color: string;
