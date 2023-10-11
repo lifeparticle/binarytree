@@ -25,10 +25,9 @@
 						rgba(0, 0, 0, 0.2),
 						rgba(0, 0, 0, 0.1)
 					),
-					url("src/assets/About/card_bg.jpg") no-repeat left / cover;
+					url("../../assets/About/card_bg.jpg") no-repeat left / cover;
 
 				background-blend-mode: color-dodge;
-
 				object-fit: cover;
 				background-color: #9c9c9c98;
 				display: flex;

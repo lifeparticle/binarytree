@@ -1,22 +1,22 @@
 :where(html) {
 	@font-face {
-		font-family: "Pixelify Sans";
-		src: url("./src/assets/fonts/PixelifySans-Regular.ttf")
+		font-family: "AAA";
+		src: url("./../assets/fonts/PixelifySans-Regular.ttf")
 			format("truetype");
 		font-weight: 400;
 		font-style: normal;
 	}
 
-	@font-face {
+	/* @font-face {
 		font-family: "FreightText";
-		src: url("./src/assets/fonts/fFreightText-Light.otf") format("truetype");
+		src: url("./src/assets/fonts/FreightText-Light.otf") format("truetype");
 		font-weight: 400;
 		font-style: normal;
-	}
+	} */
 
-	--font-sans: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
-		Cantarell, Noto Sans, sans-serif;
+	/* --font-sans: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+		Cantarell, Noto Sans, sans-serif; */
 
-	--font-pixelify-sans: "Pixelify Sans", system-ui, -apple-system, Segoe UI,
-		Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+	--font-pixelify-sans: "AAA", system-ui, -apple-system, Segoe UI, Roboto,
+		Ubuntu, Cantarell, Noto Sans, sans-serif, Aacute;
 }

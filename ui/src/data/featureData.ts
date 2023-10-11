@@ -21,6 +21,9 @@ const LIBRARY_URLS: LibraryList = {
 	diff: "https://www.npmjs.com/package/diff",
 	"@excalidraw/excalidraw":
 		"https://www.npmjs.com/package/@excalidraw/excalidraw",
+	"js-beautify": "https://www.npmjs.com/package/js-beautify",
+	"@monaco-editor/react":
+		"https://www.npmjs.com/package/@monaco-editor/react",
 };
 
 interface Feature {
@@ -67,16 +70,16 @@ export const FEATURE_DATA: Feature[] = [
 		fullDescription:
 			"Round or square? Dotted or dashed? Vivid or monochrome? Customize your border styles and add a splash of color to make your website's edges as unique as your imagination. Generate border codes that match your creative vision with ease. It's the ultimate playground for crafting stylish CSS borders that elevate your web creations from mundane to magnificent.",
 		link: routesById.borderradius.path,
-		library: [{ name: "faker.js", url: LIBRARY_URLS["faker-js"] }],
+		library: [{ name: "Vanilla JS", url: "" }],
 	},
-	// {
-	// 	key: routesById.boxshadow.id,
-	// 	name: routesById.boxshadow.title,
-	// 	shortDescription: routesById.boxshadow.description,
-	// fullDescription: "",
-	// 	link: routesById.boxshadow.path,
-	// 	library: [{ name: "faker.js", url: LIBRARY_URLS["faker-js"] }],
-	// },
+	{
+		key: routesById.boxshadow.id,
+		name: routesById.boxshadow.title,
+		shortDescription: routesById.boxshadow.description,
+		fullDescription: "",
+		link: routesById.boxshadow.path,
+		library: [{ name: "Vanilla JS", url: "" }],
+	},
 	{
 		key: routesById.base64.id,
 		name: routesById.base64.title,
@@ -290,5 +293,22 @@ export const FEATURE_DATA: Feature[] = [
 		fullDescription: "",
 		link: routesById.blog.path,
 		library: [{ name: "Vanilla JS", url: "" }],
+	},
+	{
+		key: routesById.codeformatter.id,
+		name: routesById.codeformatter.title,
+		shortDescription: routesById.codeformatter.description,
+		fullDescription: "",
+		link: routesById.codeformatter.path,
+		library: [
+			{
+				name: "Monaco Editor",
+				url: LIBRARY_URLS["@monaco-editor/react"],
+			},
+			{
+				name: "js-beautify",
+				url: LIBRARY_URLS["js-beautify"],
+			},
+		],
 	},
 ];
