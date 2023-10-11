@@ -81,9 +81,9 @@ export const MENU_ITEMS = [
 				show: true,
 			},
 			{
-				name: routesById.codeformatter.title,
-				url: routesById.codeformatter.path,
-				icon: "Code",
+				name: routesById.svg.title,
+				url: routesById.svg.path,
+				icon: "Command",
 				show: true,
 			},
 		],
@@ -168,12 +168,7 @@ export const MENU_ITEMS = [
 				icon: "PencilRuler",
 				show: true,
 			},
-			{
-				name: routesById.svgformatter.title,
-				url: routesById.svgformatter.path,
-				icon: "Command",
-				show: true,
-			},
+
 			{
 				name: routesById.sorting.title,
 				url: routesById.sorting.path,
@@ -186,6 +181,12 @@ export const MENU_ITEMS = [
 				icon: "Diff",
 				show: true,
 			},
+			{
+				name: routesById.codeformatter.title,
+				url: routesById.codeformatter.path,
+				icon: "Code",
+				show: true,
+			},
 		],
 	},
 	{
@@ -194,8 +195,8 @@ export const MENU_ITEMS = [
 		show: true,
 		children: [
 			{
-				name: routesById.creategithubissue.title,
-				url: routesById.creategithubissue.path,
+				name: routesById.githubissue.title,
+				url: routesById.githubissue.path,
 				icon: "Bug",
 				show: IN_DEVELOPMENT,
 			},

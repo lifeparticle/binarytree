@@ -1,11 +1,11 @@
 import { Card, Col, Skeleton, Space, Tag, Typography } from "antd";
 import React from "react";
-import { Package } from "pages/Information/Npmpackages/utils/types";
+import { Package as PackagType } from "pages/Information/Npmpackages/utils/types";
 const { Title } = Typography;
 import style from "pages/Information/Npmpackages/Npmpackages.module.scss";
 
 interface PackageProps {
-	resource: Package;
+	resource: PackagType;
 }
 
 const Package: React.FC<PackageProps> = (props) => {

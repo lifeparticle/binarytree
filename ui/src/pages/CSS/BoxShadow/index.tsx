@@ -60,29 +60,30 @@ const BoxShadow = () => {
 
 						<Form.Item label="Horizontal length">
 							<Slider
-								defaultValue={0}
 								value={horizontalLength}
 								onChange={(value: number) => {
 									if (value) {
 										setHorizontalLength(value);
 									}
 								}}
+								min={-100}
+								max={100}
 							/>
 						</Form.Item>
 						<Form.Item label="Vertical length">
 							<Slider
-								defaultValue={0}
 								value={verticalLength}
 								onChange={(value) => {
 									if (value) {
 										setVerticalLength(value);
 									}
 								}}
+								min={-100}
+								max={100}
 							/>
 						</Form.Item>
 						<Form.Item label="Blur radius">
 							<Slider
-								defaultValue={0}
 								value={blurRadius}
 								onChange={(value) => {
 									if (value) {
