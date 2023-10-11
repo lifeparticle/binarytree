@@ -27,7 +27,6 @@ const useParamsValue = (initialParams: Params) => {
 			for (const key in initialParams) {
 				if (initialParams[key]) {
 					const element = initialParams[key];
-					console.log("element", element);
 					updateParamsValue(key, element);
 					hasRan.current = true;
 				}

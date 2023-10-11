@@ -23,20 +23,18 @@ const ColorPicker: React.FC = () => {
 		format: INITIAL_FORMAT,
 	});
 
-	const [color, setColor] = useState(String(searchParams.get("color")));
+	const [colorPickerRan, setColorPickerRan] = useState(false);
+	const [formatState, setFormatState] = useState("");
+	const color = String(searchParams.get("color"));
 	const format = String(searchParams.get("format")) as FormatType;
 	const colors = useMemo(() => calculateColors(color), [color]);
-	const debouncedSearchTerm = useDebounce(color);
+	const debouncedSearchTerm = useDebounce(formatState);
 
 	useEffect(() => {
-		updateParamsValue("color", debouncedSearchTerm);
-	}, [debouncedSearchTerm, updateParamsValue]);
-
-	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const inputValue = e.target.value;
-		setColor(inputValue);
-		updateParamsValue("format", determineFormat(inputValue));
-	};
+		if (debouncedSearchTerm && !colorPickerRan) {
+			updateParamsValue("color", debouncedSearchTerm);
+		}
+	}, [debouncedSearchTerm, updateParamsValue, colorPickerRan]);
 
 	return (
 		<Form layout="vertical">
@@ -47,7 +45,14 @@ const ColorPicker: React.FC = () => {
 							<ResponsiveInputWithLabel
 								label="Color code"
 								value={color}
-								onChange={handleInputChange}
+								onChange={(e) => {
+									updateParamsValue("color", e.target.value);
+									setColorPickerRan(true);
+									updateParamsValue(
+										"format",
+										determineFormat(e.target.value)
+									);
+								}}
 								type="text"
 							/>
 							<Clipboard
@@ -67,7 +72,10 @@ const ColorPicker: React.FC = () => {
 						<CP
 							format={format}
 							value={color}
-							onChange={setColor}
+							onChange={(value) => {
+								setFormatState(value);
+								setColorPickerRan(false);
+							}}
 							size="xl"
 						/>
 					</Space>

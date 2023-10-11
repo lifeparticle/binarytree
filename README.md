@@ -4,7 +4,7 @@
   <img src="https://github.com/lifeparticle/lifeparticle/blob/master/gh_social.png" alt="binary tree logo" height="130" align="right"/>
 </a>
 
-At [binarytree.dev](https://binarytree.dev/about), we provide an array of developer productivity tools designed to help you save time. With an ever-growing number of features (currently <b>19</b>), our platform is constantly evolving to meet the needs of developers like you.
+At [binarytree.dev](https://binarytree.dev/about), we provide an array of developer productivity tools designed to help you save time. With an ever-growing number of features (currently <b>24</b>), our platform is constantly evolving to meet the needs of developers like you.
 
 Your [opinions and feedback](https://binarytree.dev/feedback) about our service are highly valuable to us. We eagerly look forward to hearing from you.
 
@@ -19,12 +19,8 @@ Your [opinions and feedback](https://binarytree.dev/feedback) about our service 
 | CodeQL                | [![CodeQL](https://github.com/lifeparticle/binarytree/actions/workflows/codeql.yml/badge.svg)](https://github.com/lifeparticle/binarytree/actions/workflows/codeql.yml)                                |
 | Sonarcloud            | [![Build](https://github.com/lifeparticle/binarytree/actions/workflows/sonarcloud.yml/badge.svg)](https://github.com/lifeparticle/binarytree/actions/workflows/sonarcloud.yml)                         |
 
-## License
+## Licenses
 
-### Code
+Code: The code in this project is licensed under the Apache-2.0 license. See the [LICENSE](LICENSE) file for details.
 
-The code in this project is licensed under the Apache-2.0 license. See the [LICENSE](LICENSE) file for details.
-
-### Logo
-
-The project logo is copyrighted and may not be used without explicit permission.
+Logo: The project logo is copyrighted and may not be used without explicit permission.
