@@ -1,4 +1,5 @@
 interface IssueType {
+	[key: string]: any;
 	title: string;
 	body?: string;
 	assignee?: string | null;
