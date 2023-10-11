@@ -161,7 +161,7 @@ export const routes: Route[] = [
 	{
 		id: "pixelconverter",
 		path: "/converter/pixel",
-		title: "Pixel Converter",
+		title: "Pixel",
 		description: "Pixels to REM - like magic, but real!",
 		component: Pixel,
 	},
