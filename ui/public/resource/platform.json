@@ -82,5 +82,12 @@
 		"subCategory": ["NoSQL", "Spreadsheet", "API"],
 		"url": "https://www.airtable.com/",
 		"socials": []
+	},
+	{
+		"name": "FL0",
+		"category": "Database",
+		"subCategory": ["NoSQL", "Spreadsheet", "API"],
+		"url": "https://www.fl0.com/",
+		"socials": []
 	}
 ]

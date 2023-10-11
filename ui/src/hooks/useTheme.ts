@@ -17,6 +17,8 @@ const useTheme = () => {
 			Button: {
 				colorPrimary: "#333333",
 				algorithm: true,
+				colorPrimaryTextHover: "var(--bt-color-hover)",
+				colorPrimaryHover: "var(--bt-color-hover)",
 			},
 			Spin: {
 				colorPrimary: isDarkMode ? "#ffffff" : "#333333",
