@@ -42,7 +42,7 @@ type RouteId =
 	| "qrcode"
 	| "shadesandtints"
 	| "sorting"
-	| "svgformatter"
+	| "svg"
 	| "table"
 	| "tableofcontent"
 	| "terms"
@@ -50,6 +50,7 @@ type RouteId =
 	| "tool"
 	| "tvseries"
 	| "uiux"
+	| "githubissue"
 	| "youtube";
 
 interface Route {
@@ -95,7 +96,7 @@ import {
 	QRcode,
 	ShadesAndTints,
 	Sorting,
-	SvgFormatter,
+	Svg,
 	TableGenerator,
 	TableOfContent,
 	Terms,
@@ -104,6 +105,7 @@ import {
 	TvSeries,
 	UiUx,
 	YouTube,
+	GithubIsuue,
 } from "pages/pages";
 
 export const routes: Route[] = [
@@ -143,11 +145,11 @@ export const routes: Route[] = [
 		component: BoxShadow,
 	},
 	{
-		id: "svgformatter",
-		path: "/tools/svg-formatter",
-		title: "SVG Formatter",
+		id: "svg",
+		path: "/converter/svg",
+		title: "SVG",
 		description: "Get your SVGs in shipshape.",
-		component: SvgFormatter,
+		component: Svg,
 	},
 	{
 		id: "base64",
@@ -172,7 +174,7 @@ export const routes: Route[] = [
 	},
 	{
 		id: "codeformatter",
-		path: "/converter/code-formatter",
+		path: "/tools/code-formatter",
 		title: "Code Formatter",
 		description:
 			"Embrace your inner Picasso of Programming. Who said formatting code can't be a masterpiece?",
@@ -372,11 +374,11 @@ export const routes: Route[] = [
 		component: Diffchecker,
 	},
 	{
-		id: "creategithubissue",
-		path: "/automation-scripts/create-github-issue",
+		id: "githubissue",
+		path: "/automation/github-issue",
 		title: "Create Github Issue",
 		description: "Create Github Issue",
-		component: PageNotFound,
+		component: GithubIsuue,
 	},
 	{
 		id: "/",

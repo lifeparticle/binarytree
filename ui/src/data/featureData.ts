@@ -247,11 +247,11 @@ export const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: routesById.svgformatter.id,
-		name: routesById.svgformatter.title,
-		shortDescription: routesById.svgformatter.description,
+		key: routesById.svg.id,
+		name: routesById.svg.title,
+		shortDescription: routesById.svg.description,
 		fullDescription: "",
-		link: routesById.svgformatter.path,
+		link: routesById.svg.path,
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{

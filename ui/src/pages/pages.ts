@@ -18,7 +18,7 @@ const BoxShadow = lazy(() => import("pages/CSS/BoxShadow"));
 const Base64 = lazy(() => import("pages/Converter/Base64"));
 const Pixel = lazy(() => import("pages/Converter/Pixel"));
 const JsonToTypescript = lazy(() => import("pages/Converter/JsonToTypescript"));
-const CodeFormatter = lazy(() => import("pages/Converter/CodeFormatter"));
+const CodeFormatter = lazy(() => import("pages/Tools/CodeFormatter"));
 
 const DataGenerator = lazy(() => import("pages/Generator/DataGenerator"));
 const ImageGeneratorFromColors = lazy(
@@ -49,12 +49,14 @@ const TableOfContent = lazy(() => import("pages/Markdown/TableOfContent"));
 const Diagramming = lazy(() => import("pages/Tools/Diagramming"));
 const Diffchecker = lazy(() => import("pages/Tools/Diffchecker"));
 const Sorting = lazy(() => import("pages/Tools/Sorting"));
-const SvgFormatter = lazy(() => import("pages/Tools/SvgFormatter"));
+const Svg = lazy(() => import("pages/Converter/Svg"));
 
 const TextEditor = lazy(() => import("pages/Text/TextEditor"));
 
 const Mimetype = lazy(() => import("pages/Information/Mimetype"));
 const Npmpackages = lazy(() => import("pages/Information/Npmpackages"));
+
+const GithubIsuue = lazy(() => import("pages/Automation/GithubIssue"));
 
 export {
 	About,
@@ -92,7 +94,7 @@ export {
 	QRcode,
 	ShadesAndTints,
 	Sorting,
-	SvgFormatter,
+	Svg,
 	TableGenerator,
 	TableOfContent,
 	Terms,
@@ -100,5 +102,6 @@ export {
 	Tool,
 	TvSeries,
 	UiUx,
+	GithubIsuue,
 	YouTube,
 };
