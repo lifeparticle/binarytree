@@ -1,0 +1,168 @@
+import { Alert, Button, Card, Form, Progress, Steps, Upload } from "antd";
+import { ResponsiveInputWithLabel } from "components/General/FormComponents";
+import InputGrid from "components/Layouts/InputGrid";
+import PageGrid from "components/Layouts/PageGrid";
+import React, { useState } from "react";
+import Papa from "papaparse";
+import CsvTable from "./components/CsvTable";
+import { CSVLink } from "react-csv";
+import { calculateSteps, createGitHubIssue } from "./utils/helper";
+import { steps } from "./utils/constants";
+import { IssueType, SavedIssueType } from "./types";
+
+const GithubIssue: React.FC = () => {
+	//? input state
+	const [owner, setOwner] = useState("");
+	const [repo, setRepo] = useState("");
+	const [token, setToken] = useState("");
+	const [fileData, setFileData] = useState<IssueType[]>([]);
+	const [isValidInput, setIsValidInput] = useState(false);
+
+	// ? output state
+	const [progress, setProgress] = useState(0);
+	const [isError, setIsError] = useState(false);
+	const [savedIssues, setSavedIssues] = useState<SavedIssueType[]>([]);
+
+	const handleUpload = (file: File) => {
+		Papa.parse<IssueType[]>(file, {
+			complete: (result) => {
+				const responseIssue = result.data;
+
+				// Convert keys to lowercase for each object in the array
+				const formatData = responseIssue.map((issue) => {
+					const formattedIssue: IssueType = {} as IssueType;
+					for (const key in issue) {
+						if (Object.prototype.hasOwnProperty.call(issue, key)) {
+							// ts-ignore
+							formattedIssue[key.toLowerCase()] = issue[key];
+						}
+					}
+					return formattedIssue;
+				});
+
+				const checkValidity = formatData.every((dt) => dt?.title);
+				setIsValidInput(checkValidity);
+				if (checkValidity) {
+					setFileData(formatData);
+				}
+			},
+			header: true,
+			skipEmptyLines: true,
+		});
+	};
+
+	const handleCreateGitHubIssue = () => {
+		createGitHubIssue(
+			owner,
+			repo,
+			token,
+			fileData,
+			setProgress,
+			setSavedIssues,
+			setIsError
+		);
+	};
+
+	const haveConfig = repo.length > 0 && token.length > 0 && owner.length > 0;
+	const haveFileData = fileData.length > 0;
+
+	return (
+		<PageGrid>
+			<Card>
+				<Steps
+					current={calculateSteps(
+						haveConfig,
+						haveFileData,
+						isValidInput
+					)}
+					items={steps}
+				/>
+				<br />
+				{!isValidInput && fileData.length > 0 && (
+					<>
+						<Alert
+							message="Csv file must contains a title"
+							type="error"
+							showIcon
+						/>
+						<br />
+					</>
+				)}
+				<Form layout="vertical">
+					<ResponsiveInputWithLabel
+						label="Github token"
+						placeholder="enter your github token"
+						value={token}
+						onChange={(e) => setToken(e.target.value)}
+						min={0}
+						type="text"
+					/>
+
+					<InputGrid>
+						<ResponsiveInputWithLabel
+							label="Owner"
+							placeholder="owner"
+							value={owner}
+							onChange={(e) => setOwner(e.target.value)}
+							min={0}
+							type="text"
+						/>
+
+						<ResponsiveInputWithLabel
+							label="Repositories"
+							placeholder="repository name"
+							value={repo}
+							onChange={(e) => setRepo(e.target.value)}
+							min={0}
+							type="text"
+						/>
+					</InputGrid>
+
+					<InputGrid>
+						<Form.Item>
+							<Upload beforeUpload={handleUpload}>
+								<Button disabled={!haveConfig}>
+									Upload csv
+								</Button>
+							</Upload>
+						</Form.Item>
+						<Button
+							disabled={fileData.length === 0 && !isValidInput}
+							block
+							onClick={handleCreateGitHubIssue}
+						>
+							Create {fileData?.length} issue
+						</Button>
+					</InputGrid>
+				</Form>
+
+				<CsvTable data={fileData} />
+			</Card>
+
+			<Card title="Saved Issue" style={{ height: "100%" }}>
+				{isError && (
+					<>
+						<Alert
+							message="something went wrong, please try again with your valid credentials"
+							type="error"
+							showIcon
+						/>
+						<br />
+					</>
+				)}
+
+				{progress > 0 && <Progress percent={progress} size="small" />}
+
+				<CsvTable data={savedIssues} />
+				<br />
+				<CSVLink data={savedIssues} filename={"csv_data.csv"}>
+					<Button disabled={savedIssues.length === 0}>
+						Download CSV
+					</Button>
+				</CSVLink>
+			</Card>
+		</PageGrid>
+	);
+};
+
+export default GithubIssue;

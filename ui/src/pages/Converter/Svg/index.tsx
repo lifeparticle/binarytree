@@ -3,12 +3,12 @@ import CodeHighlightWithCopy from "components/General/CodeHighlightWithCopy";
 import PageGrid from "components/Layouts/PageGrid";
 import React, { ChangeEvent, useState } from "react";
 import { combineSVGPaths } from "./utils/helper";
-import style from "./SvgFormatter.module.scss";
+import style from "./Svg.module.scss";
 import Warning from "components/General/Warning";
 
 const { TextArea } = Input;
 
-const SvgFormatter: React.FC = () => {
+const Svg: React.FC = () => {
 	const [inputSVG, setInputSVG] = useState("");
 	const [outputSVG, setOutputSVG] = useState<string>("");
 
@@ -75,4 +75,4 @@ const SvgFormatter: React.FC = () => {
 	);
 };
 
-export default SvgFormatter;
+export default Svg;
