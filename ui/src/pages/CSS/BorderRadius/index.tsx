@@ -226,22 +226,6 @@ const BorderRadius = () => {
 
 				<Card className={style.br__output}>
 					<div className={style.br__output_container}>
-						<img
-							src={about}
-							onClick={() =>
-								window.open(
-									"https://unsplash.com/photos/AaqI2ao96KM",
-									"_blank"
-								)
-							}
-							style={{
-								borderRadius: getBorderRadiusString(border),
-								borderWidth: `${borderWidth}px`,
-								borderColor: `${borderColor}`,
-								borderStyle: `${borderStyle}`,
-							}}
-							className={style.br__output_container_img}
-						/>
 						<Card
 							className={style.br__output_container_text}
 							style={{

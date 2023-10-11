@@ -17,8 +17,7 @@
 			flex-direction: row;
 			gap: var(--bt-size-20);
 
-			&_text,
-			&_img {
+			&_text {
 				aspect-ratio: 1 / 1;
 				display: flex;
 				align-items: center;
@@ -26,16 +25,8 @@
 				height: 25dvh;
 			}
 
-			&_img {
-				object-fit: cover;
-			}
-
 			&_text {
 				overflow: hidden;
-			}
-
-			@media screen and (max-width: 1200px) {
-				flex-direction: column;
 			}
 		}
 	}
