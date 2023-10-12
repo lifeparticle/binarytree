@@ -1,10 +1,11 @@
 import { Card, Form, QRCode, Input, Badge, Space } from "antd";
 import PageGrid from "components/Layouts/PageGrid";
 import React, { useEffect, useState } from "react";
-import { detectQrData, downloadQRCode } from "./utils/helper";
+import { downloadQRCode } from "./utils/helper";
 import style from "./QRcode.module.scss";
 import DropdownDownloadButton from "components/General/DropdownDownloadButton";
 import Warning from "components/General/Warning";
+import { detectData } from "pages/Tools/Sorting/utils/helper";
 
 const { TextArea } = Input;
 
@@ -13,7 +14,7 @@ const QRcode: React.FC = () => {
 	const [dataType, setDataType] = useState("");
 
 	useEffect(() => {
-		setDataType(detectQrData(value));
+		setDataType(detectData(value));
 	}, [value]);
 
 	return (
