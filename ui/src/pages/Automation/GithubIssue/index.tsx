@@ -1,4 +1,4 @@
-import { Alert, Button, Card, Form, Progress, Steps, Upload } from "antd";
+import { Button, Card, Form, Progress, Steps, Upload } from "antd";
 import { ResponsiveInputWithLabel } from "components/General/FormComponents";
 import InputGrid from "components/Layouts/InputGrid";
 import PageGrid from "components/Layouts/PageGrid";
@@ -9,6 +9,7 @@ import { CSVLink } from "react-csv";
 import { calculateSteps, createGitHubIssue } from "./utils/helper";
 import { steps } from "./utils/constants";
 import { IssueType, SavedIssueType } from "./types";
+import ErrorComponent from "components/General/ErrorComponent";
 
 const GithubIssue: React.FC = () => {
 	//? input state
@@ -42,9 +43,7 @@ const GithubIssue: React.FC = () => {
 
 				const checkValidity = formatData.every((dt) => dt?.title);
 				setIsValidInput(checkValidity);
-				if (checkValidity) {
-					setFileData(formatData);
-				}
+				setFileData(formatData);
 			},
 			header: true,
 			skipEmptyLines: true,
@@ -80,10 +79,10 @@ const GithubIssue: React.FC = () => {
 				<br />
 				{!isValidInput && fileData.length > 0 && (
 					<>
-						<Alert
-							message="Csv file must contains a title"
-							type="error"
-							showIcon
+						<ErrorComponent
+							category="Validation Error"
+							reasons={["CSV files must contain a title."]}
+							solutions={["Plase add a title in your CSV"]}
 						/>
 						<br />
 					</>
@@ -120,7 +119,10 @@ const GithubIssue: React.FC = () => {
 
 					<InputGrid>
 						<Form.Item>
-							<Upload beforeUpload={handleUpload}>
+							<Upload
+								beforeUpload={handleUpload}
+								listType="picture"
+							>
 								<Button disabled={!haveConfig}>
 									Upload csv
 								</Button>
@@ -142,10 +144,17 @@ const GithubIssue: React.FC = () => {
 			<Card title="Saved Issue" style={{ height: "100%" }}>
 				{isError && (
 					<>
-						<Alert
-							message="something went wrong, please try again with your valid credentials"
-							type="error"
-							showIcon
+						<ErrorComponent
+							category="Configuration Error"
+							reasons={[
+								"Invalid github token/handle/repo name",
+								"Network Issue",
+								"Invalid github repositories name",
+							]}
+							solutions={[
+								"Please provide valid github token/handle/repo name",
+								"Try again with your stable connection",
+							]}
 						/>
 						<br />
 					</>
