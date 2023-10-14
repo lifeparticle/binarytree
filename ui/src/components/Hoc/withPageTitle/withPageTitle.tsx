@@ -6,6 +6,7 @@ import usePageTitle from "./utils/hooks";
 import { HeadProvider, Title, Link, Meta } from "react-head";
 import { NO_PADDING, NO_TITLE } from "./utils/constants";
 import { ErrorBoundary } from "react-error-boundary";
+import FallbackComponent from "components/General/FallbackComponent";
 
 const withPageTitle = <T extends object>(
 	WrappedComponent: React.ComponentType<T>
@@ -50,7 +51,7 @@ const withPageTitle = <T extends object>(
 							</div>
 						)}
 					</ErrorBoundary>
-					<ErrorBoundary fallback={<p>Something went wrong</p>}>
+					<ErrorBoundary FallbackComponent={FallbackComponent}>
 						<WrappedComponent {...props} />
 					</ErrorBoundary>
 				</div>

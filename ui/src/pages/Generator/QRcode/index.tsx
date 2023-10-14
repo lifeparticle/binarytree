@@ -8,13 +8,13 @@ import Warning from "components/General/Warning";
 import ColorPickerWithInput from "components/General/ColorPickerWithInput";
 import { ResponsiveInputWithLabel } from "components/General/FormComponents";
 import { handleImageUpload } from "utils/helper-functions/files";
+import QRCodeErrorBoundary from "./components/QRCodeErrorBoundary";
+import { classNames } from "utils/helper-functions/string";
 import { DataDetection } from "utils/helper-classes/ DataDetection";
 
 const { TextArea } = Input;
 
 const detection = new DataDetection(["number", "string", "url"]);
-console.log(detection.detect()); // Output: number
-
 const QRcode: React.FC = () => {
 	const [value, setValue] = useState("");
 	const [dataType, setDataType] = useState("");
@@ -54,6 +54,7 @@ const QRcode: React.FC = () => {
 							rows={7}
 							onChange={(e) => setValue(e.target.value)}
 							data-gramm={false}
+							placeholder="Enter input"
 							allowClear
 						/>
 					</Form.Item>
@@ -114,7 +115,7 @@ const QRcode: React.FC = () => {
 					</Form.Item>
 				</Form>
 			</Card>
-			<Card className={style.qrcode__output}>
+			<Card className={classNames(style.qrcode__output, "qrcode")}>
 				{value.length > 0 ? (
 					<Space
 						direction="vertical"
@@ -122,15 +123,17 @@ const QRcode: React.FC = () => {
 						size={"large"}
 						id="myqrcode"
 					>
-						<QRCode
-							value={value}
-							color={color}
-							bgColor={bgColor}
-							bordered={bordered}
-							size={size}
-							iconSize={iconSize}
-							icon={icon}
-						/>
+						<QRCodeErrorBoundary>
+							<QRCode
+								value={value}
+								color={color}
+								bgColor={bgColor}
+								bordered={bordered}
+								size={size}
+								iconSize={iconSize}
+								icon={icon}
+							/>
+						</QRCodeErrorBoundary>
 						<DropdownDownloadButton
 							handleDownload={downloadQRCode}
 						/>
