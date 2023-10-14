@@ -15,7 +15,7 @@ const ErrorComponent: React.FC<ErrorComponentProps> = ({
 	return (
 		<Card title={category}>
 			<Alert
-				message={"REASON"}
+				message={"Reason"}
 				description={
 					<>
 						{reasons.map((reason) => (

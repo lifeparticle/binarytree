@@ -27,6 +27,7 @@ h5 {
 .ant-layout-content,
 .notification-container,
 .search_container,
+.qrcode,
 .ant-menu {
 	&::-webkit-scrollbar {
 		width: var(--bt-size-8);
