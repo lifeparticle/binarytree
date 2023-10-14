@@ -5,15 +5,16 @@ import { downloadQRCode } from "./utils/helper";
 import style from "./QRcode.module.scss";
 import DropdownDownloadButton from "components/General/DropdownDownloadButton";
 import Warning from "components/General/Warning";
-import { detectData } from "pages/Tools/Sorting/utils/helper";
 import ColorPickerWithInput from "components/General/ColorPickerWithInput";
 import { ResponsiveInputWithLabel } from "components/General/FormComponents";
 import { handleImageUpload } from "utils/helper-functions/files";
 import QRCodeErrorBoundary from "./components/QRCodeErrorBoundary";
 import { classNames } from "utils/helper-functions/string";
+import { DataDetection } from "utils/helper-classes/ DataDetection";
 
 const { TextArea } = Input;
 
+const detection = new DataDetection(["number", "string", "url"]);
 const QRcode: React.FC = () => {
 	const [value, setValue] = useState("");
 	const [dataType, setDataType] = useState("");
@@ -25,7 +26,8 @@ const QRcode: React.FC = () => {
 	const [iconSize, setIconSize] = useState(size / 4);
 
 	useEffect(() => {
-		setDataType(detectData(value));
+		detection.setData(value);
+		setDataType(detection.detect());
 	}, [value]);
 
 	return (
