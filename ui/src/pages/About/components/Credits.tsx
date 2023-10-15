@@ -40,41 +40,36 @@ const CREDITS_DATA: Credits[] = [
 	},
 	{
 		key: "4",
-		name: "unDraw",
-		url: "https://undraw.co/",
-	},
-	{
-		key: "5",
 		name: "Movie for hackers",
 		url: "https://github.com/k4m4/movies-for-hackers",
 	},
 	{
-		key: "6",
+		key: "5",
 		name: "Jigar Panchal",
 		url: "https://unsplash.com/photos/AaqI2ao96KM",
 	},
 	{
-		key: "7",
+		key: "6",
 		name: "Hassaan Here",
 		url: "https://unsplash.com/photos/bKfkhVRAJTQ",
 	},
 	{
-		key: "8",
+		key: "7",
 		name: "Frontend Focus",
 		url: "https://frontendfoc.us/",
 	},
 	{
-		key: "9",
+		key: "8",
 		name: "React Status",
 		url: "https://react.statuscode.com/",
 	},
 	{
-		key: "10",
+		key: "9",
 		name: "Lucide",
 		url: "https://lucide.dev/",
 	},
 	{
-		key: "11",
+		key: "10",
 		name: "Dudeowl",
 		url: "https://99designs.com.au/profiles/dudeowl",
 	},
