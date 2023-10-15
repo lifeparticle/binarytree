@@ -71,4 +71,19 @@ const calculateSteps = (
 	}
 };
 
-export { createGitHubIssue, calculateSteps };
+function generateCsvData(data: SavedIssueType[]) {
+	// Create a CSV header
+	const csvHeader = ["title", "url"];
+
+	// Convert the data to a CSV string
+	const csvContent = [
+		csvHeader,
+		...data.map((item) => [item.title, item.url]),
+	]
+		.map((row) => row.join(","))
+		.join("\n");
+
+	return csvContent;
+}
+
+export { createGitHubIssue, calculateSteps, generateCsvData };
