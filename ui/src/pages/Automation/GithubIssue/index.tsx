@@ -5,11 +5,11 @@ import PageGrid from "components/Layouts/PageGrid";
 import React, { useState } from "react";
 import Papa from "papaparse";
 import CsvTable from "./components/CsvTable";
-import { CSVLink } from "react-csv";
 import { calculateSteps, createGitHubIssue } from "./utils/helper";
 import { steps } from "./utils/constants";
 import { IssueType, SavedIssueType } from "./types";
 import ErrorComponent from "components/General/ErrorComponent";
+import DownloadCsv from "./components/DownloadCsv";
 
 const GithubIssue: React.FC = () => {
 	//? input state
@@ -164,11 +164,8 @@ const GithubIssue: React.FC = () => {
 
 				<CsvTable data={savedIssues} />
 				<br />
-				<CSVLink data={savedIssues} filename={"csv_data.csv"}>
-					<Button disabled={savedIssues.length === 0}>
-						Download CSV
-					</Button>
-				</CSVLink>
+
+				<DownloadCsv savedIssues={savedIssues} />
 			</Card>
 		</PageGrid>
 	);
