@@ -73,6 +73,11 @@ const CREDITS_DATA: Credits[] = [
 		name: "Lucide",
 		url: "https://lucide.dev/",
 	},
+	{
+		key: "11",
+		name: "Dudeowl",
+		url: "https://99designs.com.au/profiles/dudeowl",
+	},
 ];
 
 const DATA = CREDITS_DATA.map((credit) => (

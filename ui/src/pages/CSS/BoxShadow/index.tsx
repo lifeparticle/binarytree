@@ -62,24 +62,24 @@ const BoxShadow = () => {
 							<Slider
 								value={horizontalLength}
 								onChange={(value: number) => {
-									if (value) {
-										setHorizontalLength(value);
-									}
+									setHorizontalLength(value);
 								}}
 								min={-100}
 								max={100}
+								included={false}
+								tooltip={{ open: true }}
 							/>
 						</Form.Item>
 						<Form.Item label="Vertical length">
 							<Slider
 								value={verticalLength}
 								onChange={(value) => {
-									if (value) {
-										setVerticalLength(value);
-									}
+									setVerticalLength(value);
 								}}
 								min={-100}
 								max={100}
+								included={false}
+								tooltip={{ open: true }}
 							/>
 						</Form.Item>
 						<Form.Item label="Blur radius">
