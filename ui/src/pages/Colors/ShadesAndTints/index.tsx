@@ -50,6 +50,8 @@ const ShadesAndTints: React.FC = () => {
 	useCombinedKeyPress(resetInputs, "KeyE");
 	useCombinedKeyPress(clearInputs, "KeyR");
 
+	useCombinedKeyPress(resetInputs, "KeyE");
+
 	useEffect(() => {
 		updateParamsValue("color", debouncedSearchTerm);
 	}, [debouncedSearchTerm, updateParamsValue]);

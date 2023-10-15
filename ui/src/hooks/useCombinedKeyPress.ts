@@ -1,6 +1,10 @@
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+// import useUserAgent from "./useUserAgent";
 
 type CallBackFunction = () => void;
+
+// mapping
+// const keyCodes = { ctrl: "Control", cmd: "Shift" };
 
 function useCombinedKeyPress(
 	callback: CallBackFunction,
@@ -8,10 +12,19 @@ function useCombinedKeyPress(
 ): void {
 	const isControlOrCommandKey = useRef(false);
 	const isKeyPressed = useRef(false);
+	// const platform = useUserAgent();
+	const [pressedKeys, setPressedKeys] = useState<string[]>([]);
 
 	const handleKeyDown = useCallback(
 		(event: KeyboardEvent) => {
 			const { code } = event;
+
+			if (!pressedKeys.includes(event.key)) {
+				setPressedKeys((prev) => [...prev, event.key]);
+			}
+
+			console.log("handleKeyDown", event.key);
+			return;
 			if (event.key === "Control" || event.key === "Meta") {
 				isControlOrCommandKey.current = true;
 			}
@@ -25,12 +38,24 @@ function useCombinedKeyPress(
 				callback();
 			}
 		},
-		[callback, keyCode]
+		[callback, keyCode, pressedKeys]
 	);
+
+	useEffect(() => {
+		console.log("pressedKeys", pressedKeys);
+	}, [pressedKeys]);
 
 	const handleKeyUp = useCallback(
 		(event: KeyboardEvent) => {
 			const { code } = event;
+
+			const filteredKeys = pressedKeys.filter((key) => key !== event.key);
+
+			setPressedKeys(filteredKeys);
+
+			console.log("handleKeyUp", event.key);
+
+			return;
 			if (event.key === "Control" || event.key === "Meta") {
 				isControlOrCommandKey.current = false;
 			}
@@ -39,7 +64,7 @@ function useCombinedKeyPress(
 				isKeyPressed.current = false;
 			}
 		},
-		[keyCode]
+		[keyCode, pressedKeys]
 	);
 
 	useEffect(() => {
