@@ -21,7 +21,7 @@ function useCombinedKeyPress(
 				setPressedKeys((prev) => [...prev, key || ""]);
 			}
 
-			console.log("handleKeyDown", event.key);
+			console.log("handleKeyDown", event.key, callback);
 		},
 		[pressedKeys, platform]
 	);
