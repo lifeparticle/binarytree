@@ -1,45 +1,57 @@
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useState } from "react";
+import useUserAgent from "./useUserAgent";
 
 type CallBackFunction = () => void;
 
+// mapping
+const keymap = new Map([["Meta", "control"]]);
+
 function useCombinedKeyPress(
 	callback: CallBackFunction,
-	keyCode: string
+	keyCodes: string[]
 ): void {
-	const isControlOrCommandKey = useRef(false);
-	const isKeyPressed = useRef(false);
+	const platform = useUserAgent();
+	const [pressedKeys, setPressedKeys] = useState<string[]>([]);
 
 	const handleKeyDown = useCallback(
 		(event: KeyboardEvent) => {
-			const { code } = event;
-			if (event.key === "Control" || event.key === "Meta") {
-				isControlOrCommandKey.current = true;
+			if (!pressedKeys.includes(event.key)) {
+				const key =
+					platform === "win" ? keymap.get(event.key) : event.key;
+				setPressedKeys((prev) => [...prev, key || ""]);
 			}
 
-			if (isControlOrCommandKey.current && keyCode === code) {
-				event.preventDefault();
-				isKeyPressed.current = true;
-			}
-
-			if (isControlOrCommandKey.current && isKeyPressed.current) {
-				callback();
-			}
+			console.log("handleKeyDown", event.key, callback);
 		},
-		[callback, keyCode]
+		[pressedKeys, platform]
 	);
+
+	useEffect(() => {
+		console.log("pressedKeys", pressedKeys);
+		const identifyKey = () => {
+			for (const key of keyCodes) {
+				if (!pressedKeys.includes(key)) {
+					return false;
+				}
+			}
+			return true;
+		};
+		const val = identifyKey();
+		console.log("val", val);
+	}, [pressedKeys, keyCodes]);
 
 	const handleKeyUp = useCallback(
 		(event: KeyboardEvent) => {
-			const { code } = event;
-			if (event.key === "Control" || event.key === "Meta") {
-				isControlOrCommandKey.current = false;
-			}
+			const keyUp =
+				platform === "win" ? keymap.get(event.key) : event.key;
+			console.log("keyUp", keyUp);
+			const filteredKeys = pressedKeys.filter((key) => key !== keyUp);
 
-			if (keyCode === code) {
-				isKeyPressed.current = false;
-			}
+			setPressedKeys(filteredKeys);
+
+			console.log("handleKeyUp", event.key);
 		},
-		[keyCode]
+		[pressedKeys, platform]
 	);
 
 	useEffect(() => {

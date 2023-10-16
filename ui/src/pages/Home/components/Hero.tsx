@@ -1,7 +1,7 @@
 import React from "react";
 import style from "pages/Home/Home.module.scss";
 import { Typography, Image } from "antd";
-import hero from "assets/Home/hero.svg";
+import hero from "assets/Home/hero.png";
 import { FEATURE_DATA } from "data/featureData";
 
 const { Title } = Typography;

@@ -15,6 +15,7 @@ import { DataDetection } from "utils/helper-classes/ DataDetection";
 const { TextArea } = Input;
 
 const detection = new DataDetection(["number", "string", "url"]);
+
 const QRcode: React.FC = () => {
 	const [value, setValue] = useState("");
 	const [dataType, setDataType] = useState("");
@@ -106,7 +107,7 @@ const QRcode: React.FC = () => {
 						</Form.Item>
 					</PageGrid>
 
-					<Form.Item label="Upload Image">
+					<Form.Item label="Upload Iocn">
 						<Input
 							type="file"
 							accept="image/*"

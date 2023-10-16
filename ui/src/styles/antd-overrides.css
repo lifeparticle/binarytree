@@ -24,6 +24,7 @@ h5 {
 	padding-left: 32px !important;
 }
 
+.ant-input-textarea-affix-wrapper.ant-input-affix-wrapper > textarea.ant-input,
 .ant-layout-content,
 .notification-container,
 .search_container,
