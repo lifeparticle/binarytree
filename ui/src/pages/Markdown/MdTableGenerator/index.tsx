@@ -85,7 +85,6 @@ const TableGenerator: React.FC = () => {
 					value={output}
 					onChange={(val) => setOutput(val || "")}
 					height="100%"
-					style={{ fontSize: "52" }}
 				/>
 			</div>
 		</div>

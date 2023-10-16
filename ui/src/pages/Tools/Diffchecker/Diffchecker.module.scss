@@ -4,4 +4,14 @@
 		justify-content: center;
 		padding: var(--bt-size-20) 0;
 	}
+
+	&__part {
+		white-space: pre-wrap;
+	}
+	&__removed {
+		background-color: salmon;
+	}
+	&__added {
+		background-color: lightgreen;
+	}
 }
