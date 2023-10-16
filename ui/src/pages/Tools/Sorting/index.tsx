@@ -50,9 +50,7 @@ const Sorting: React.FC = () => {
 						<TextArea
 							placeholder="Enter data separated by space or comma or new line"
 							value={input}
-							style={{
-								height: "calc(100dvh - 210px)",
-							}}
+							className={style.sort__input_textarea}
 							onChange={(event) => {
 								setInput(event.currentTarget.value);
 							}}
@@ -110,9 +108,7 @@ const Sorting: React.FC = () => {
 								<TextArea
 									placeholder="output"
 									value={output}
-									style={{
-										height: "calc(100dvh - 300px)",
-									}}
+									className={style.sort__output_textarea}
 									readOnly
 									data-gramm={false}
 								/>
