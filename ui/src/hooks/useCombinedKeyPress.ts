@@ -1,70 +1,57 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-// import useUserAgent from "./useUserAgent";
+import { useCallback, useEffect, useState } from "react";
+import useUserAgent from "./useUserAgent";
 
 type CallBackFunction = () => void;
 
 // mapping
-// const keyCodes = { ctrl: "Control", cmd: "Shift" };
+const keymap = new Map([["Meta", "control"]]);
 
 function useCombinedKeyPress(
 	callback: CallBackFunction,
-	keyCode: string
+	keyCodes: string[]
 ): void {
-	const isControlOrCommandKey = useRef(false);
-	const isKeyPressed = useRef(false);
-	// const platform = useUserAgent();
+	const platform = useUserAgent();
 	const [pressedKeys, setPressedKeys] = useState<string[]>([]);
 
 	const handleKeyDown = useCallback(
 		(event: KeyboardEvent) => {
-			const { code } = event;
-
 			if (!pressedKeys.includes(event.key)) {
-				setPressedKeys((prev) => [...prev, event.key]);
+				const key =
+					platform === "win" ? keymap.get(event.key) : event.key;
+				setPressedKeys((prev) => [...prev, key || ""]);
 			}
 
 			console.log("handleKeyDown", event.key);
-			return;
-			if (event.key === "Control" || event.key === "Meta") {
-				isControlOrCommandKey.current = true;
-			}
-
-			if (isControlOrCommandKey.current && keyCode === code) {
-				event.preventDefault();
-				isKeyPressed.current = true;
-			}
-
-			if (isControlOrCommandKey.current && isKeyPressed.current) {
-				callback();
-			}
 		},
-		[callback, keyCode, pressedKeys]
+		[pressedKeys, platform]
 	);
 
 	useEffect(() => {
 		console.log("pressedKeys", pressedKeys);
-	}, [pressedKeys]);
+		const identifyKey = () => {
+			for (const key of keyCodes) {
+				if (!pressedKeys.includes(key)) {
+					return false;
+				}
+			}
+			return true;
+		};
+		const val = identifyKey();
+		console.log("val", val);
+	}, [pressedKeys, keyCodes]);
 
 	const handleKeyUp = useCallback(
 		(event: KeyboardEvent) => {
-			const { code } = event;
-
-			const filteredKeys = pressedKeys.filter((key) => key !== event.key);
+			const keyUp =
+				platform === "win" ? keymap.get(event.key) : event.key;
+			console.log("keyUp", keyUp);
+			const filteredKeys = pressedKeys.filter((key) => key !== keyUp);
 
 			setPressedKeys(filteredKeys);
 
 			console.log("handleKeyUp", event.key);
-
-			return;
-			if (event.key === "Control" || event.key === "Meta") {
-				isControlOrCommandKey.current = false;
-			}
-
-			if (keyCode === code) {
-				isKeyPressed.current = false;
-			}
 		},
-		[keyCode, pressedKeys]
+		[pressedKeys, platform]
 	);
 
 	useEffect(() => {
