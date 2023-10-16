@@ -10,6 +10,7 @@ import { steps } from "./utils/constants";
 import { IssueType, SavedIssueType } from "./types";
 import ErrorComponent from "components/General/ErrorComponent";
 import DownloadCsv from "./components/DownloadCsv";
+import style from "./GithubIssue.module.scss";
 
 const GithubIssue: React.FC = () => {
 	//? input state
@@ -141,7 +142,7 @@ const GithubIssue: React.FC = () => {
 				<CsvTable data={fileData} />
 			</Card>
 
-			<Card title="Saved Issue" style={{ height: "100%" }}>
+			<Card title="Saved Issue" className={style.gi}>
 				{isError && (
 					<>
 						<ErrorComponent

@@ -116,9 +116,7 @@ const TableOfContent: React.FC = () => {
 					</CopyInput>
 					<Form.Item label="Content">
 						<TextArea
-							style={{
-								height: "calc(100dvh - 290px)",
-							}}
+							className={style.toc__textarea}
 							placeholder=""
 							value={markdown}
 							onChange={(event) =>
@@ -140,9 +138,7 @@ const TableOfContent: React.FC = () => {
 						<Form.Item label="Output">
 							<TextArea
 								value={tableOfContents}
-								style={{
-									height: "calc(100vh - 290px)", // corrected "100dvh" to "100vh"
-								}}
+								className={style.toc__textarea}
 								autoSize={false}
 							/>
 						</Form.Item>

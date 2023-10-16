@@ -14,4 +14,8 @@
 			margin-top: var(--bt-size-24);
 		}
 	}
+
+	&__textarea {
+		height: calc(100dvh - 290px) !important;
+	}
 }

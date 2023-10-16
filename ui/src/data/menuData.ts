@@ -3,8 +3,6 @@ import { IconName } from "components/General/Icon/utils/types";
 import { getItem } from "components/Layouts/Menu/utils/helper";
 import { routesById } from "data/routeData";
 
-const IN_DEVELOPMENT = import.meta.env.DEV;
-
 export const MENU_ITEMS = [
 	{
 		name: "Newsfeed",
@@ -198,7 +196,7 @@ export const MENU_ITEMS = [
 				name: routesById.githubissue.title,
 				url: routesById.githubissue.path,
 				icon: "Bug",
-				show: IN_DEVELOPMENT,
+				show: true,
 			},
 		],
 	},

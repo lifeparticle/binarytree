@@ -17,4 +17,12 @@
 			justify-content: space-between;
 		}
 	}
+
+	&__input_textarea {
+		height: calc(100dvh - 210px);
+	}
+
+	&__output_textarea {
+		height: calc(100dvh - 300px) !important;
+	}
 }

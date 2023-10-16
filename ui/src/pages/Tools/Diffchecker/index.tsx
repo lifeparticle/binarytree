@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { diffLines, Change } from "diff";
 import { ResponsiveButton } from "components/General/FormComponents";
 import style from "./Diffchecker.module.scss";
+import { classNames } from "utils/helper-functions/string";
 
 const { TextArea } = Input;
 
@@ -62,12 +63,12 @@ const Diffchecker: React.FC = () => {
 								.map((part, index) => (
 									<span
 										key={index}
-										style={{
-											backgroundColor: part.removed
-												? "salmon"
-												: "white",
-											whiteSpace: "pre-wrap",
-										}}
+										className={classNames(
+											style.diffchecker__part,
+											part.removed
+												? style.diffchecker__removed
+												: ""
+										)}
 									>
 										{part.value}
 									</span>
@@ -84,12 +85,12 @@ const Diffchecker: React.FC = () => {
 								.map((part, index) => (
 									<span
 										key={index}
-										style={{
-											backgroundColor: part.added
-												? "lightgreen"
-												: "white",
-											whiteSpace: "pre-wrap",
-										}}
+										className={classNames(
+											style.diffchecker__part,
+											part.added
+												? style.diffchecker__added
+												: ""
+										)}
 									>
 										{part.value}
 									</span>

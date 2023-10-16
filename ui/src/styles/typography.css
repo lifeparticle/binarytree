@@ -7,16 +7,6 @@
 		font-style: normal;
 	}
 
-	/* @font-face {
-		font-family: "FreightText";
-		src: url("./src/assets/fonts/FreightText-Light.otf") format("truetype");
-		font-weight: 400;
-		font-style: normal;
-	} */
-
-	/* --font-sans: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
-		Cantarell, Noto Sans, sans-serif; */
-
 	--font-pixelify-sans: "AAA", system-ui, -apple-system, Segoe UI, Roboto,
 		Ubuntu, Cantarell, Noto Sans, sans-serif, Aacute;
 }
