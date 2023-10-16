@@ -6,14 +6,14 @@
 	&__container {
 		display: flex;
 		flex-direction: column;
-		gap: 50px;
+		gap: var(--bt-size-50);
 	}
 
 	&__hero {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		gap: 100px;
+		gap: var(--bt-size-100);
 		&_text {
 			display: flex;
 			flex: 2;
@@ -23,7 +23,6 @@
 			gap: var(--bt-size-10);
 			&_title {
 				text-align: left;
-				// font-family: var(--font-pixelify-sans);
 			}
 			&_paragraph {
 				text-align: left;

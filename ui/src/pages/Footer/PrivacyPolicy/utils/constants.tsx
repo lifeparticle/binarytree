@@ -1,4 +1,5 @@
 import { ColumnsType } from "antd/es/table";
+import style from "pages/Footer/PrivacyPolicy/PrivacyPolicy.module.scss";
 
 interface PurposeTableDataType {
 	purpose: string;
@@ -71,7 +72,7 @@ const ACTIVITY_COLUMNS: ColumnsType<ActivityTableDataType> = [
 		dataIndex: "categories",
 		key: "categories",
 		render: (categories: string[]) => (
-			<ul style={{ listStyleType: "disc" }}>
+			<ul className={style.pp__list}>
 				{categories.map((cat) => (
 					<li key={cat}>{cat}</li>
 				))}

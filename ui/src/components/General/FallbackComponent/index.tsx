@@ -1,9 +1,10 @@
 import { Alert, Button, Card } from "antd";
 import React from "react";
+import style from "./FallbackComponent.module.scss";
 
 const FallbackComponent: React.FC = () => {
 	return (
-		<Card style={{ width: "500px" }}>
+		<Card className={style.fallback}>
 			<Alert
 				message={"Something went wrong"}
 				description={
