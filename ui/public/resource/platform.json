@@ -89,5 +89,12 @@
 		"subCategory": ["NoSQL", "Spreadsheet", "API"],
 		"url": "https://www.fl0.com/",
 		"socials": []
+	},
+	{
+		"name": "NEON",
+		"category": "Database",
+		"subCategory": ["NoSQL", "Spreadsheet", "API"],
+		"url": "https://neon.tech/",
+		"socials": []
 	}
 ]
