@@ -41,7 +41,7 @@ const PopupSearch: React.FC = () => {
 		);
 	}, [input]);
 
-	useCombinedKeyPress(handleModalOpen, "KeyK");
+	useCombinedKeyPress(handleModalOpen, ["Meta", "k"]);
 
 	return (
 		<Modal
