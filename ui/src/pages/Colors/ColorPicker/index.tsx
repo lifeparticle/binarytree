@@ -9,11 +9,15 @@ import ClipboardButton from "components/General/ClipboardButton";
 import DisplayColors from "./components/DisplayColors";
 import { calculateColors, determineFormat } from "./utils/helper";
 import CopyInput from "components/Layouts/CopyInput";
-import { ResponsiveInputWithLabel } from "components/General/FormComponents";
+import {
+	ResponsiveButton,
+	ResponsiveInputWithLabel,
+} from "components/General/FormComponents";
 import useParamsValue from "hooks/useParamsValue";
 import { useDebounce } from "hooks/useDebounce";
 
 import { FORMAT_LABELS } from "./utils/constants";
+import { openLink } from "utils/helper-functions/string";
 
 type FormatType = Lowercase<(typeof FORMAT_LABELS)[number]>;
 
@@ -78,6 +82,18 @@ const ColorPicker: React.FC = () => {
 							}}
 							size="xl"
 						/>
+
+						<ResponsiveButton
+							onClick={() =>
+								openLink(
+									`shades-tints?color=${encodeURIComponent(
+										color
+									)}`
+								)
+							}
+						>
+							Open in Shades & Tints
+						</ResponsiveButton>
 					</Space>
 				</Card>
 
