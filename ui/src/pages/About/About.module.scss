@@ -1,8 +1,13 @@
+:root {
+	--about-bg-color: #9c9c9c98;
+}
+
 .about {
-	padding: 64px 10% 64px 10%;
+	padding: var(--bt-size-64) var(--bt-size-percent-10) var(--bt-size-64)
+		var(--bt-size-percent-10);
 
 	&__card {
-		margin: 0 auto;
+		margin: var(--bt-size-0) auto;
 		max-width: var(--bt-converter-width);
 
 		&__container {
@@ -29,11 +34,11 @@
 
 				background-blend-mode: color-dodge;
 				object-fit: cover;
-				background-color: #9c9c9c98;
+				background-color: var(--about-bg-color);
 				display: flex;
 				justify-content: center;
 				flex-direction: column;
-				padding: 50px;
+				padding: var(--bt-size-50);
 
 				p {
 					text-align: right;

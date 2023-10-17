@@ -3,10 +3,10 @@
 	flex-direction: column;
 	gap: var(--bt-size-20);
 	&__input {
-		height: 100%;
+		height: var(--bt-size-percent-100);
 	}
 	&__output {
-		height: 100%;
+		height: var(--bt-size-percent-100);
 		display: flex;
 		align-items: center;
 		justify-content: center;

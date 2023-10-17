@@ -1,3 +1,7 @@
+:root {
+	--height: calc(100dvh - 90px);
+}
+
 .diagramming {
-	height: calc(100dvh - 90px);
+	height: var(--height);
 }

@@ -1,13 +1,17 @@
+:root {
+	--igfc-bg-color: rgba(255, 255, 255, 0.2);
+}
+
 .igfc {
 	&__card {
 		min-height: var(--bt-card-height);
 	}
 
 	&__colors {
-		grid-column: 1 / -1;
+		grid-column: var(--bt-number-1) / var(--bt-size-minus-1);
 		margin-top: var(--bt-size-16);
 		position: relative;
-		background: rgba(255, 255, 255, 0.2);
+		background: var(---igfc-bg-color);
 	}
 
 	&__images {

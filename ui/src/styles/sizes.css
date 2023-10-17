@@ -5,19 +5,36 @@
 
 	--bt-full-page-height: calc(100dvh - 110px);
 
-	--bt-size-minus-1: -1px;
-	--bt-size-minus-25: -25px;
+	--bt-number-1: 1;
 
+	--bt-grid-template-1: 1fr;
+
+	--bt-size-percent-1: 1%;
+	--bt-size-percent-5: 5%;
+	--bt-size-percent-10: 10%;
+	--bt-size-percent-55: 55%;
+	--bt-size-percent-70: 70%;
+	--bt-size-percent-95: 95%;
+	--bt-size-percent-100: 100%;
+
+	--bt-vw-100: 100vw;
+	--bt-dvh-100: 100dvh;
+
+	--bt-size-minus-1: -1px;
+	--bt-size-0: 0px;
+	--bt-size-1: 1px;
 	--bt-size-2: 2px;
 	--bt-size-3: 3px;
 	--bt-size-4: 4px;
 	--bt-size-5: 5px;
+	--bt-size-6: 6px;
 	--bt-size-7: 7px;
 	--bt-size-8: 8px;
 	--bt-size-10: 10px;
 	--bt-size-11: 11px;
 	--bt-size-15: 15px;
 	--bt-size-16: 16px;
+	--bt-size-17: 17px;
 	--bt-size-18: 18px;
 	--bt-size-20: 20px;
 	--bt-size-24: 24px;
@@ -29,4 +46,6 @@
 	--bt-size-64: 64px;
 	--bt-size-100: 100px;
 	--bt-size-135: 135px;
+	--bt-size-500: 500px;
+	--bt-size-600: 600px;
 }
