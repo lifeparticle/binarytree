@@ -3,7 +3,9 @@
 
 	&_space {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr auto;
+		grid-template-columns: var(--bt-grid-template-1) var(
+				--bt-grid-template-1
+			) var(--bt-grid-template-1) auto;
 	}
 
 	&__avatar {
@@ -21,6 +23,6 @@
 	}
 
 	@media screen and (max-width: 550px) {
-		width: 100%;
+		width: var(--bt-size-percent-100);
 	}
 }

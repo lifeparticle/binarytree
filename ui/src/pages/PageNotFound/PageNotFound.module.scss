@@ -1,12 +1,16 @@
+:root {
+	--pnf-height: calc(100vh - 70px);
+}
+
 .pnf {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: calc(100vh - 70px);
+	height: var(--pnf-height);
 	img {
-		width: 100%;
-		height: 100%;
+		width: var(--bt-size-percent-100);
+		height: var(--bt-size-percent-100);
 		object-fit: cover;
 	}
 }

@@ -1,12 +1,18 @@
+:root {
+	--height: calc(100dvh - 204px);
+	--mobile-height: calc(100dvh - 168px);
+	--collapsed-height: calc(100dvh - 202px);
+}
+
 .menu {
-	height: calc(100dvh - 204px);
+	height: var(--height);
 	overflow-y: auto;
 
 	&__collapsed {
-		height: calc(100dvh - 202px);
+		height: var(--collapsed-height);
 	}
 
 	@media (max-width: 768px) {
-		height: calc(100dvh - 168px);
+		height: var(--mobile-height);
 	}
 }

@@ -5,8 +5,8 @@
 	flex-direction: column;
 
 	&__editor {
-		flex: 1;
-		margin-top: 20px;
+		flex: var(--bt-number-1);
+		margin-top: var(--bt-size-20);
 		overflow: auto;
 	}
 }

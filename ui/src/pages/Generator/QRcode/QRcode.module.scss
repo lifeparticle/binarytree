@@ -1,12 +1,16 @@
+:root {
+	--qrcode-size-623: 623px;
+}
+
 .qrcode {
 	&__label {
 		display: flex;
-		width: 100vw;
+		width: var(--bt-vw-100);
 		justify-content: space-between;
 	}
 
 	&__output {
-		height: 623px;
+		height: var(--qrcode-size-623);
 		display: flex;
 		flex-direction: column;
 		align-items: center;

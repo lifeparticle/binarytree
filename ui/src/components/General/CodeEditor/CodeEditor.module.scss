@@ -4,14 +4,14 @@
 		position: absolute;
 		top: var(--bt-size-16);
 		right: var(--bt-size-10);
-		z-index: 10;
+		z-index: var(--bt-z-index-dropdown);
 
 		&__success {
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			padding: 2px 6px;
-			border: 1px solid green;
+			padding: var(--bt-size-2) var(--bt-size-6);
+			border: var(--bt-size-1) solid green;
 			border-radius: var(--bt-size-5);
 		}
 
@@ -19,8 +19,8 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			padding: 2px 6px;
-			border: 1px solid red;
+			padding: var(--bt-size-2) var(--bt-size-6);
+			border: var(--bt-size-1) solid red;
 			border-radius: var(--bt-size-5);
 		}
 
