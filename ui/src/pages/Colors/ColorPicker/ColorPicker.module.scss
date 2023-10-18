@@ -1,15 +1,13 @@
-:root {
-	--cp-size-435: 435px;
-	--cp-size-380: 380px;
-	--cp-size-360: 360px;
-	--cp-size-minus-10: -10px;
-}
+$cp-size-435: 435px;
+$cp-size-380: 380px;
+$cp-size-360: 360px;
+$cp-size-minus-10: -10px;
 
 .cp {
 	display: grid;
 	grid-template-columns:
-		var(--cp-size-380) var(--cp-size-360) var(--cp-size-435)
-		var(--cp-size-435);
+		$cp-size-380 $cp-size-360 $cp-size-435
+		$cp-size-435;
 	gap: var(--bt-size-16);
 	justify-content: center;
 
@@ -33,17 +31,17 @@
 	}
 
 	@media (max-width: 1900px) {
-		grid-template-columns: var(--cp-size-435) var(--cp-size-360) var(
-				--cp-size-435
-			);
+		grid-template-columns:
+			$cp-size-435 $cp-size-360
+			$cp-size-435;
 	}
 
 	@media (max-width: 1800px) {
-		grid-template-columns: var(--cp-size-435) var(--cp-size-435);
+		grid-template-columns: $cp-size-435 $cp-size-435;
 	}
 
 	@media (max-width: 1200px) {
-		grid-template-columns: var(--cp-size-435);
+		grid-template-columns: $cp-size-435;
 	}
 }
 
@@ -70,8 +68,8 @@
 				linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.6) 70%);
 			background-size: var(--bt-size-20) var(--bt-size-20);
 			background-position: 0 0, 0 var(--bt-size-10),
-				var(--bt-size-10) var(--cp-size-minus-10),
-				var(--cp-size-minus-10) var(--bt-size-0);
+				var(--bt-size-10) $cp-size-minus-10,
+				$cp-size-minus-10 var(--bt-size-0);
 		}
 	}
 }

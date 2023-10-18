@@ -1,8 +1,6 @@
-:root {
-	--footer-vw-6: 6vw;
-	--footer-vw-5: 5vw;
-	--footer-color: #e8e8e8;
-}
+$footer-vw-6: 6vw;
+$footer-vw-5: 5vw;
+$footer-color: #e8e8e8;
 
 .footer {
 	padding: var(--bt-size-30) var(--bt-size-percent-10) var(--bt-size-30)
@@ -18,9 +16,9 @@
 	width: var(--bt-size-percent-100);
 
 	&__left {
-		padding-right: var(--footer-vw-5);
-		border-right: var(--bt-size-1) solid var(--footer-color);
-		margin-right: var(--footer-vw-6);
+		padding-right: $footer-vw-5;
+		border-right: var(--bt-size-1) solid $footer-color;
+		margin-right: $footer-vw-6;
 	}
 
 	&__right {

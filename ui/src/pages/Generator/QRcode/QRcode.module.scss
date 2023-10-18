@@ -1,6 +1,4 @@
-:root {
-	--qrcode-size-623: 623px;
-}
+$qrcode-size-623: 623px;
 
 .qrcode {
 	&__label {
@@ -10,7 +8,7 @@
 	}
 
 	&__output {
-		height: var(--qrcode-size-623);
+		height: $qrcode-size-623;
 		display: flex;
 		flex-direction: column;
 		align-items: center;

@@ -1,6 +1,4 @@
-:root {
-	--br-dvh-25: 25dvh;
-}
+$br-dvh-25: 25dvh;
 
 .br {
 	display: flex;
@@ -26,7 +24,7 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				height: var(--br-dvh-25);
+				height: $br-dvh-25;
 			}
 
 			&_text {

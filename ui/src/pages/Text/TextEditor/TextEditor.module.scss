@@ -1,7 +1,5 @@
-:root {
-	--te-footer-color: rgba(34, 47, 62, 0.7);
-	--te-border-color: #eee;
-}
+$te-footer-color: rgba(34, 47, 62, 0.7);
+$te-border-color: #eee;
 
 .te {
 	display: flex;
@@ -13,17 +11,17 @@
 		justify-content: space-between;
 		background-color: white;
 		padding: var(--bt-size-5);
-		color: var(--te-footer-color);
+		color: $te-footer-color;
 		border-radius: var(--bt-size-0) var(--bt-size-0) var(--bt-size-10)
 			var(--bt-size-10);
-		border-left: var(--bt-size-2) solid var(--te-border-color);
-		border-bottom: var(--bt-size-2) solid var(--te-border-color);
-		border-right: var(--bt-size-2) solid var(--te-border-color);
+		border-left: var(--bt-size-2) solid $te-border-color;
+		border-bottom: var(--bt-size-2) solid $te-border-color;
+		border-right: var(--bt-size-2) solid $te-border-color;
 
 		&_dark {
-			background-color: var(--te-footer-color);
+			background-color: $te-footer-color;
 			color: white;
-			border-color: var(--te-footer-color);
+			border-color: $te-footer-color;
 		}
 	}
 

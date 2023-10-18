@@ -1,6 +1,4 @@
-:root {
-	--about-bg-color: #9c9c9c98;
-}
+$about-bg-color: #9c9c9c98;
 
 .about {
 	padding: var(--bt-size-64) var(--bt-size-percent-10) var(--bt-size-64)
@@ -34,7 +32,7 @@
 
 				background-blend-mode: color-dodge;
 				object-fit: cover;
-				background-color: var(--about-bg-color);
+				background-color: $about-bg-color;
 				display: flex;
 				justify-content: center;
 				flex-direction: column;

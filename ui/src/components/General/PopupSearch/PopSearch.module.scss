@@ -1,12 +1,10 @@
-:root {
-	--popsearch-height: 200px;
-	--popsearch-dark-bg-color: #646363;
-	--popsearch-bg-color: #e0e0e0;
-}
+$popsearch-height: 200px;
+$popsearch-bg-dark: #646363;
+$popsearch-bg-color: #e0e0e0;
 
 .popsearch {
 	&__container {
-		max-height: var(--popsearch-height);
+		max-height: $popsearch-height;
 		overflow-y: auto;
 		margin-top: var(--bt-size-10);
 
@@ -20,17 +18,17 @@
 
 			&_light:hover,
 			&_light:first-child {
-				background-color: var(--popsearch-bg-color);
+				background-color: $popsearch-bg-color;
 				border-radius: var(--bt-size-5);
 			}
 
 			&_dark:hover {
-				background-color: var(--popsearch-dark-bg-color);
+				background-color: $popsearch-bg-dark;
 				border-radius: var(--bt-size-5);
 			}
 
 			&_dark:first-child {
-				background-color: var(--popsearch-dark-bg-color);
+				background-color: $popsearch-bg-dark;
 				border-radius: var(--bt-size-5);
 			}
 		}

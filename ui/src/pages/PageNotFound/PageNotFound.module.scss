@@ -1,13 +1,11 @@
-:root {
-	--pnf-height: calc(100vh - 70px);
-}
+$pnf-height: calc(100vh - 70px);
 
 .pnf {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: var(--pnf-height);
+	height: $pnf-height;
 	img {
 		width: var(--bt-size-percent-100);
 		height: var(--bt-size-percent-100);

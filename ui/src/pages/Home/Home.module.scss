@@ -1,14 +1,12 @@
-:root {
-	--home-height: calc(100dvh - 272px);
-	--home-number-2: 2;
-	--home-hero-paragraph-width: 700px;
-	--home-z-index-100: 100;
-}
+$home-height: calc(100dvh - 272px);
+$home-number-2: 2;
+$home-hero-paragraph-width: 700px;
+$home-z-index-100: 100;
 
 .home {
 	padding: var(--bt-size-100) var(--bt-size-percent-10) var(--bt-size-64)
 		var(--bt-size-percent-10);
-	min-height: var(--home-height);
+	min-height: $home-height;
 	animation: var(--bt-animation-moveBackground);
 
 	&__container {
@@ -24,7 +22,7 @@
 		gap: var(--bt-size-100);
 		&_text {
 			display: flex;
-			flex: var(--home-number-2);
+			flex: $home-number-2;
 			flex-direction: column;
 			justify-content: center;
 			text-align: center;
@@ -34,7 +32,7 @@
 			}
 			&_paragraph {
 				text-align: left;
-				max-width: var(--home-hero-paragraph-width);
+				max-width: $home-hero-paragraph-width;
 			}
 		}
 
@@ -47,7 +45,7 @@
 		display: flex;
 		align-items: center;
 		border-radius: var(--bt-size-8);
-		z-index: var(--home-z-index-100);
+		z-index: $home-z-index-100;
 
 		&_card {
 			height: var(--bt-size-percent-100);

@@ -1,6 +1,4 @@
-:root {
-	--npm-size-minus-7: 7.5px;
-}
+$npm-size-minus-7: 7.5px;
 
 .npm {
 	max-width: var(--bt-converter-width);
@@ -11,7 +9,7 @@
 		&_tag {
 			position: absolute;
 			top: var(--bt-size-0);
-			right: var(--npm-size-minus-7);
+			right: $npm-size-minus-7;
 		}
 	}
 }
