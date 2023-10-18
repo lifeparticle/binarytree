@@ -3,29 +3,29 @@
 		&__bottom {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
-			grid-gap: 20px 10px;
+			grid-gap: var(--bt-size-20) var(--bt-size-10);
 
 			&__select {
-				margin-bottom: 10px;
-				width: 100%;
+				margin-bottom: var(--bt-size-10);
+				width: var(--bt-size-percent-100);
 			}
 
 			&__input {
-				margin-bottom: 10px;
-				width: 100%;
+				margin-bottom: var(--bt-size-10);
+				width: var(--bt-size-percent-100);
 			}
 
 			&__autocomplete {
-				margin-bottom: 10px;
-				width: 100%;
+				margin-bottom: var(--bt-size-10);
+				width: var(--bt-size-percent-100);
 			}
 		}
 	}
 
 	&__right {
 		display: grid;
-		row-gap: 10px;
-		grid-template-columns: 1fr;
+		row-gap: var(--bt-size-10);
+		grid-template-columns: var(--bt-grid-template-1);
 		overflow-x: auto;
 	}
 }

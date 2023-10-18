@@ -1,3 +1,5 @@
+$svg-size-335: 335px;
+
 .svgformatter {
 	&__left,
 	&__right {
@@ -6,7 +8,7 @@
 		gap: var(--bt-size-20);
 
 		&__code {
-			min-height: 335px;
+			min-height: $svg-size-335;
 			display: grid;
 		}
 	}

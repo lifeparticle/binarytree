@@ -1,5 +1,6 @@
 .legal {
-	padding: 64px 10% 64px 10%;
+	padding: var(--bt-size-64) var(--bt-size-percent-10) var(--bt-size-64)
+		var(--bt-size-percent-10);
 	display: flex;
 
 	ul {
@@ -7,17 +8,17 @@
 	}
 
 	ul li {
-		padding: 5px;
+		padding: var(--bt-size-5);
 	}
 
 	h1 {
 		background-color: #c0c0c0;
-		border-radius: 10px;
+		border-radius: var(--bt-size-10);
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 10%;
+		padding: var(--bt-size-percent-10);
 		/* can we do better */
-		margin-bottom: 64px !important;
+		margin-bottom: var(--bt-size-64) !important;
 	}
 }

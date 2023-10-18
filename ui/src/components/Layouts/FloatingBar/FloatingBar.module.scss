@@ -1,13 +1,12 @@
 .fb {
 	z-index: var(--bt-z-index-dropdown);
 	display: flex;
-	height: 64px;
+	height: var(--bt-size-64);
 	align-items: center;
 	justify-content: flex-end;
 	flex-direction: row;
-	// background-color: transparent;
 	position: absolute;
-	right: 18px;
+	right: var(--bt-size-18);
 
 	&__container {
 		right: var(--bt-size-10);
@@ -16,6 +15,6 @@
 		align-items: center;
 		justify-content: flex-end;
 		flex-direction: row;
-		gap: 10px;
+		gap: var(--bt-size-10);
 	}
 }
