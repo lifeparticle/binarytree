@@ -1,6 +1,8 @@
 :where(html) {
+	--ease-1: cubic-bezier(0.25, 0, 0.5, 1);
 	--animation-fade-in: background-color 0.3s ease;
 	--bt-animation-moveBackground: moveBackground 100s linear infinite;
+	--bt-transition-item: background 0.3s var(--ease-1);
 }
 
 @keyframes moveBackground {

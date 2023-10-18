@@ -3,6 +3,8 @@ import { IconName } from "components/General/Icon/utils/types";
 import { getItem } from "components/Layouts/Menu/utils/helper";
 import { routesById } from "data/routeData";
 
+const IN_DEVELOPMENT = import.meta.env.DEV;
+
 export const MENU_ITEMS = [
 	{
 		name: "Newsfeed",
@@ -53,6 +55,12 @@ export const MENU_ITEMS = [
 				icon: "Box",
 				show: true,
 			},
+			{
+				name: routesById.units.title,
+				url: routesById.units.path,
+				icon: "Boxes",
+				show: IN_DEVELOPMENT,
+			},
 		],
 	},
 	{
@@ -65,6 +73,12 @@ export const MENU_ITEMS = [
 				url: routesById.base64.path,
 				icon: "Replace",
 				show: true,
+			},
+			{
+				name: routesById.imageconverter.title,
+				url: routesById.imageconverter.path,
+				icon: "FileImage",
+				show: IN_DEVELOPMENT,
 			},
 			{
 				name: routesById.pixelconverter.title,
@@ -98,8 +112,8 @@ export const MENU_ITEMS = [
 				show: true,
 			},
 			{
-				name: routesById.image.title,
-				url: routesById.image.path,
+				name: routesById.imagegeneratorfromcolors.title,
+				url: routesById.imagegeneratorfromcolors.path,
 				icon: "Image",
 				show: true,
 			},
@@ -122,6 +136,12 @@ export const MENU_ITEMS = [
 		icon: "Code2",
 		show: true,
 		children: [
+			{
+				name: routesById.docs.title,
+				url: routesById.docs.path,
+				icon: "FileStack",
+				show: true,
+			},
 			{
 				name: routesById.editor.title,
 				url: routesById.editor.path,
