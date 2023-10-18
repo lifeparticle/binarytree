@@ -1,6 +1,4 @@
-:root {
-	--toc-height: calc(100dvh - 290px);
-}
+$toc-height: calc(100dvh - 290px);
 
 .toc {
 	overflow: hidden;
@@ -20,6 +18,6 @@
 	}
 
 	&__textarea {
-		height: var(--toc-height) !important;
+		height: $toc-height !important;
 	}
 }

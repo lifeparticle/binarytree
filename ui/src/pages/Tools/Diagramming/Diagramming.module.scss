@@ -1,7 +1,5 @@
-:root {
-	--height: calc(100dvh - 90px);
-}
+$diagramm-height: calc(100dvh - 90px);
 
 .diagramming {
-	height: var(--height);
+	height: $diagramm-height;
 }

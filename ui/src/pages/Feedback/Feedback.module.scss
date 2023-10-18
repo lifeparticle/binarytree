@@ -1,8 +1,6 @@
-:root {
-	--feedback-size-1400: 1400px;
-	--feedback-size-1949: 1949.375px;
-	--feedback-border-color: #ccc;
-}
+$feedback-size-1400: 1400px;
+$feedback-size-1949: 1949.375px;
+$feedback-border-color: #ccc;
 
 .feedback {
 	padding: var(--bt-size-64) var(--bt-size-0) var(--bt-size-64)
@@ -15,13 +13,13 @@
 	.iframe,
 	&__skeletons {
 		width: var(--bt-size-percent-55);
-		max-width: var(--feedback-size-1400);
+		max-width: $feedback-size-1400;
 	}
 
 	&__skeletons {
 		padding: var(--bt-size-50);
-		height: var(--feedback-size-1949);
-		border: var(--bt-size-1) solid var(--feedback-border-color);
+		height: $feedback-size-1949;
+		border: var(--bt-size-1) solid $feedback-border-color;
 		background: white;
 		display: flex;
 		flex-direction: column;
@@ -29,7 +27,7 @@
 	}
 
 	.iframe {
-		border: var(--bt-size-1) solid var(--feedback-border-color);
+		border: var(--bt-size-1) solid $feedback-border-color;
 		display: block;
 		background: transparent;
 	}

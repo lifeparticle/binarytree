@@ -1,8 +1,6 @@
-:root {
-	--right: 10px;
-	--left: 1000px;
-	--bg-color: rgb(68, 68, 68);
-}
+$cp-right: 10px;
+$cp-left: 1000px;
+$cp-bg-color: rgb(68, 68, 68);
 
 .cpwi {
 	&__color {
@@ -12,13 +10,13 @@
 		align-items: center;
 
 		&_dp {
-			background-color: var(--bg-color);
+			background-color: $cp-bg-color;
 			padding: var(--bt-size-10);
 			border-radius: var(--bt-size-10);
 			position: absolute;
 			top: var(--bt-size-percent-100);
-			right: var(--right);
-			left: var(--left);
+			right: $cp-right;
+			left: $cp-left;
 			z-index: var(--bt-z-index-dropdown);
 			display: none;
 		}
