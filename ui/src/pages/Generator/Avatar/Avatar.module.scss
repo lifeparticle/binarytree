@@ -1,6 +1,8 @@
+$avatar-size-424: 424px;
+
 .avatar {
 	&__output {
-		min-height: 424px;
+		min-height: $avatar-size-424;
 		display: flex;
 		align-items: center;
 		justify-content: center;
