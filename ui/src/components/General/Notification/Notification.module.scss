@@ -1,9 +1,14 @@
+$notification-size-200: 200px;
+$notification-size-300: 300px;
+$notification-status-color: #c83939;
+$notification-size-minus-25: -25px;
+
 .notification {
-	height: 300px;
-	width: 200px;
+	height: $notification-size-300;
+	width: $notification-size-200;
 	overflow-y: auto;
 	overflow-x: hidden;
-	border-radius: 8px;
+	border-radius: var(--bt-size-8);
 
 	&__error {
 		text-align: center;
@@ -22,13 +27,13 @@
 		&__status {
 			width: var(--bt-size-7);
 			height: var(--bt-size-7);
-			background-color: #c83939;
+			background-color: $notification-status-color;
 			position: absolute;
-			border-radius: 100%;
+			border-radius: var(--bt-size-percent-100);
 			top: var(--bt-size-5);
-			right: 17px;
+			right: var(--bt-size-17);
 			border-color: white;
-			border-width: 1px;
+			border-width: var(--bt-size-1);
 			border-style: solid;
 		}
 	}
@@ -41,7 +46,7 @@
 
 		&_features {
 			padding-top: var(--bt-size-8);
-			margin-left: var(--bt-size-minus-25);
+			margin-left: $notification-size-minus-25;
 			padding-bottom: var(--bt-size-8);
 			list-style-type: square;
 

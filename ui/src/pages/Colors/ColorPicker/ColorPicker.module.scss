@@ -1,6 +1,13 @@
+$cp-size-435: 435px;
+$cp-size-380: 380px;
+$cp-size-360: 360px;
+$cp-size-minus-10: -10px;
+
 .cp {
 	display: grid;
-	grid-template-columns: 380px 360px 435px 435px;
+	grid-template-columns:
+		$cp-size-380 $cp-size-360 $cp-size-435
+		$cp-size-435;
 	gap: var(--bt-size-16);
 	justify-content: center;
 
@@ -24,21 +31,23 @@
 	}
 
 	@media (max-width: 1900px) {
-		grid-template-columns: 435px 360px 435px;
+		grid-template-columns:
+			$cp-size-435 $cp-size-360
+			$cp-size-435;
 	}
 
 	@media (max-width: 1800px) {
-		grid-template-columns: 435px 435px;
+		grid-template-columns: $cp-size-435 $cp-size-435;
 	}
 
 	@media (max-width: 1200px) {
-		grid-template-columns: 435px;
+		grid-template-columns: $cp-size-435;
 	}
 }
 
 .cd {
 	padding: var(--bt-size-5);
-	border-radius: 10px;
+	border-radius: var(--bt-size-10);
 	&__container {
 		display: flex;
 		gap: var(--bt-size-16);
@@ -57,8 +66,10 @@
 				linear-gradient(-45deg, rgba(0, 0, 0, 0.6) 25%, transparent 25%),
 				linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.6) 75%),
 				linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.6) 70%);
-			background-size: 20px 20px;
-			background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+			background-size: var(--bt-size-20) var(--bt-size-20);
+			background-position: 0 0, 0 var(--bt-size-10),
+				var(--bt-size-10) $cp-size-minus-10,
+				$cp-size-minus-10 var(--bt-size-0);
 		}
 	}
 }

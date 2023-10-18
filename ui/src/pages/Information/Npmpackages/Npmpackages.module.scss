@@ -1,13 +1,15 @@
+$npm-size-minus-7: 7.5px;
+
 .npm {
 	max-width: var(--bt-converter-width);
-	margin: 0 auto;
+	margin: var(--bt-size-0) auto;
 
 	&__card {
 		position: relative;
 		&_tag {
 			position: absolute;
-			top: 0;
-			right: -7.5px;
+			top: var(--bt-size-0);
+			right: $npm-size-minus-7;
 		}
 	}
 }

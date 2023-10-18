@@ -1,3 +1,6 @@
+$input-height: calc(100dvh - 210px);
+$output-height: calc(100dvh - 300px);
+
 .sort {
 	overflow: hidden;
 
@@ -13,16 +16,16 @@
 	&__input {
 		&_label {
 			display: flex;
-			width: 100vw;
+			width: var(--bt-vw-100);
 			justify-content: space-between;
 		}
 	}
 
 	&__input_textarea {
-		height: calc(100dvh - 210px);
+		height: $input-height;
 	}
 
 	&__output_textarea {
-		height: calc(100dvh - 300px) !important;
+		height: $output-height !important;
 	}
 }

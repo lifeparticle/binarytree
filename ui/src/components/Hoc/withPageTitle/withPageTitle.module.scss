@@ -1,6 +1,6 @@
 .withpagetitle {
 	padding: 0 var(--bt-size-10) 0 var(--bt-size-10);
 	&__header_title {
-		height: 64px;
+		height: var(--bt-size-64);
 	}
 }

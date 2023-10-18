@@ -1,5 +1,10 @@
+$feedback-size-1400: 1400px;
+$feedback-size-1949: 1949.375px;
+$feedback-border-color: #ccc;
+
 .feedback {
-	padding: 64px 0 64px 0;
+	padding: var(--bt-size-64) var(--bt-size-0) var(--bt-size-64)
+		var(--bt-size-0);
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -7,14 +12,14 @@
 
 	.iframe,
 	&__skeletons {
-		width: 55%;
-		max-width: 1400px;
+		width: var(--bt-size-percent-55);
+		max-width: $feedback-size-1400;
 	}
 
 	&__skeletons {
 		padding: var(--bt-size-50);
-		height: 1949.375px;
-		border: 1px solid #ccc;
+		height: $feedback-size-1949;
+		border: var(--bt-size-1) solid $feedback-border-color;
 		background: white;
 		display: flex;
 		flex-direction: column;
@@ -22,7 +27,7 @@
 	}
 
 	.iframe {
-		border: 1px solid #ccc;
+		border: var(--bt-size-1) solid $feedback-border-color;
 		display: block;
 		background: transparent;
 	}
@@ -30,14 +35,14 @@
 	@media (max-width: 1300px) {
 		.iframe,
 		&__skeletons {
-			width: 70%;
+			width: var(--bt-size-percent-70);
 		}
 	}
 
 	@media (max-width: 1000px) {
 		.iframe,
 		&__skeletons {
-			width: 95%;
+			width: var(--bt-size-percent-90);
 		}
 	}
 }
