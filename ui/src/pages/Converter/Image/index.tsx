@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./Image.module.scss";
+import styles from "./ImageConverter.module.scss";
 
-const Image: React.FC = () => {
+const ImageConverter: React.FC = () => {
 	return <div className={styles.root}></div>;
 };
 
-export default Image;
+export default ImageConverter;
