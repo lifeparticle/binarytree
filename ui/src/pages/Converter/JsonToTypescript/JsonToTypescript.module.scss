@@ -5,10 +5,10 @@
 	}
 
 	&__output {
-		height: 100%;
+		height: var(--bt-size-percent-100);
 
 		&_warning {
-			min-height: 500px;
+			min-height: var(--bt-size-500);
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -17,7 +17,7 @@
 		// xl(1280px)
 		@media screen and (min-width: 1280px) {
 			&_warning {
-				min-height: 600px;
+				min-height: var(--bt-size-600);
 			}
 		}
 	}

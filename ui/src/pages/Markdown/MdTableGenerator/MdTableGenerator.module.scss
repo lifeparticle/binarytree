@@ -6,15 +6,15 @@
 	gap: var(--bt-size-16);
 
 	&__editor {
-		flex: 1;
+		flex: var(--bt-number-1);
 		overflow: auto;
 		position: relative;
 
 		&__spinner {
 			position: absolute;
-			top: 5%;
-			left: 1%;
-			z-index: 10;
+			top: var(--bt-size-percent-5);
+			left: var(--bt-size-percent-1);
+			z-index: var(--bt-z-index-dropdown);
 		}
 	}
 }
