@@ -16,6 +16,7 @@ const ColorFormatTags = ({
 			color={currentFormat === option.value ? "success" : "default"}
 			key={option.value}
 			className={style.cf}
+			aria-label={`select ${option.label}`}
 		>
 			{option.label}
 		</Tag>

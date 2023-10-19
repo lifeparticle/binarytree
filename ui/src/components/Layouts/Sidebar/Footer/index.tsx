@@ -37,6 +37,7 @@ const Footer: React.FC<FooterProps> = ({
 			</a>
 
 			<Switch
+				aria-label="toggle theme"
 				checkedChildren={
 					<div className={style.footer__moon}>
 						<Icon size={16} color={colorBgContainer} name="Moon" />
@@ -56,6 +57,7 @@ const Footer: React.FC<FooterProps> = ({
 				onClick={handleMenuCollapse}
 				type="text"
 				className={style.footer__menuCollapse}
+				aria-label="toggle-theme"
 			>
 				{collapsed ? (
 					<Icon name="ChevronsRight" color={colorText} />
