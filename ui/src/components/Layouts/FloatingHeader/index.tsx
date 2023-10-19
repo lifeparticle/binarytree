@@ -13,7 +13,7 @@ const FloatingHeader: React.FC<FloatingHeaderProps> = ({ styles }) => {
 		<div className={style.fh} style={styles}>
 			<Notification />
 			<Link to="/feedback">
-				<Button className={style.fh__button}>
+				<Button aria-label="feedback-icon" className={style.fh__button}>
 					<Icon name="Megaphone" size={20} />
 				</Button>
 			</Link>

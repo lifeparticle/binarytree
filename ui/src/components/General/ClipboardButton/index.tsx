@@ -15,6 +15,7 @@ const ClipboardButton: React.FC<ClipboardButtonProps> = ({
 			className={style.button}
 			onClick={() => copyToClipboard(text)}
 			icon={copied ? <Icon name="Check" /> : <Icon name="Copy" />}
+			aria-label={`select ${label} `}
 		>
 			{label}
 		</ResponsiveButton>

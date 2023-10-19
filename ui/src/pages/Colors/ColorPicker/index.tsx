@@ -81,6 +81,7 @@ const ColorPicker: React.FC = () => {
 								setColorPickerRan(false);
 							}}
 							size="xl"
+							aria-label="select a color"
 						/>
 
 						<ResponsiveButton

@@ -26,6 +26,7 @@ const Header: React.FC = () => {
 					src={isDarkMode ? logo_dark : logo_light}
 					height={60}
 					width={60}
+					alt="Logo"
 				/>
 			</Link>
 		</Space>
