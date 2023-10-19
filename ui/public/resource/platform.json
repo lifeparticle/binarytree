@@ -96,5 +96,19 @@
 		"subCategory": ["NoSQL", "Spreadsheet", "API"],
 		"url": "https://neon.tech/",
 		"socials": []
+	},
+	{
+		"name": "Supabase",
+		"category": "Database",
+		"subCategory": ["NoSQL", "Spreadsheet", "API"],
+		"url": "https://supabase.com/",
+		"socials": []
+	},
+	{
+		"name": "Resend",
+		"category": "Email",
+		"subCategory": ["Email", "API"],
+		"url": "https://resend.com/",
+		"socials": []
 	}
 ]

@@ -159,5 +159,12 @@
 		"subCategory": "Programming",
 		"url": "https://jsonplaceholder.typicode.com/",
 		"socials": []
+	},
+	{
+		"name": "AutoDraw",
+		"category": "UI",
+		"subCategory": "UI",
+		"url": "https://www.autodraw.com/",
+		"socials": []
 	}
 ]

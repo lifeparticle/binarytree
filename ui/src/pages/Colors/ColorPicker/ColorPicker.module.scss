@@ -47,6 +47,7 @@ $cp-size-minus-10: -10px;
 
 .cd {
 	padding: var(--bt-size-5);
+	transition: var(--bt-transition-item);
 	border-radius: var(--bt-size-10);
 	&__container {
 		display: flex;

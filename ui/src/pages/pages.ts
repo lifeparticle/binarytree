@@ -1,30 +1,30 @@
 import { lazy } from "react";
 
+const About = lazy(() => import("pages/About"));
+const CookiePolicy = lazy(() => import("pages/Footer/CookiePolicy"));
+const Feedback = lazy(() => import("pages/Feedback"));
 const Home = lazy(() => import("pages/Home"));
 const News = lazy(() => import("pages/Newsfeed"));
-const About = lazy(() => import("pages/About"));
-const Feedback = lazy(() => import("pages/Feedback"));
 const PageNotFound = lazy(() => import("pages/PageNotFound"));
-const Terms = lazy(() => import("pages/Footer/Terms"));
 const PrivacyPolicy = lazy(() => import("pages/Footer/PrivacyPolicy"));
-const CookiePolicy = lazy(() => import("pages/Footer/CookiePolicy"));
+const Terms = lazy(() => import("pages/Footer/Terms"));
 
 const ColorPicker = lazy(() => import("pages/Colors/ColorPicker"));
 const ShadesAndTints = lazy(() => import("pages/Colors/ShadesAndTints"));
 
 const BorderRadius = lazy(() => import("pages/CSS/BorderRadius"));
 const BoxShadow = lazy(() => import("pages/CSS/BoxShadow"));
+const Units = lazy(() => import("pages/CSS/Units"));
 
 const Base64 = lazy(() => import("pages/Converter/Base64"));
-const Pixel = lazy(() => import("pages/Converter/Pixel"));
-const JsonToTypescript = lazy(() => import("pages/Converter/JsonToTypescript"));
 const CodeFormatter = lazy(() => import("pages/Tools/CodeFormatter"));
+const ImageConverter = lazy(() => import("pages/Converter/Image"));
+const JsonToTypescript = lazy(() => import("pages/Converter/JsonToTypescript"));
+const Pixel = lazy(() => import("pages/Converter/Pixel"));
 
-const DataGenerator = lazy(() => import("pages/Generator/DataGenerator"));
-const ImageGeneratorFromColors = lazy(
-	() => import("pages/Generator/ImageGeneratorFromColors")
-);
 const Avatar = lazy(() => import("pages/Generator/Avatar"));
+const DataGenerator = lazy(() => import("pages/Generator/Data"));
+const ImageGeneratorFromColors = lazy(() => import("pages/Generator/Image"));
 const QRcode = lazy(() => import("pages/Generator/QRcode"));
 
 const Blog = lazy(() => import("pages/Resource/Blog"));
@@ -42,8 +42,9 @@ const TvSeries = lazy(() => import("pages/Resource/TvSeries"));
 const UiUx = lazy(() => import("pages/Resource/UiUx"));
 const YouTube = lazy(() => import("pages/Resource/YouTube"));
 
-const MarkdownEditor = lazy(() => import("pages/Markdown/MarkdownEditor"));
-const TableGenerator = lazy(() => import("pages/Markdown/MdTableGenerator"));
+const Docs = lazy(() => import("pages/Markdown/Docs"));
+const Editor = lazy(() => import("pages/Markdown/Editor"));
+const TableGenerator = lazy(() => import("pages/Markdown/TableGenerator"));
 const TableOfContent = lazy(() => import("pages/Markdown/TableOfContent"));
 
 const Diagramming = lazy(() => import("pages/Tools/Diagramming"));
@@ -66,31 +67,34 @@ export {
 	Book,
 	BorderRadius,
 	BoxShadow,
+	CodeFormatter,
 	ColorPicker,
+	CookiePolicy,
 	Course,
 	DataGenerator,
 	DesignSystem,
 	Diagramming,
 	Diffchecker,
+	Docs,
+	Editor,
 	Feedback,
 	Github,
+	GithubIsuue,
 	Home,
 	Icon,
+	ImageConverter,
 	ImageGeneratorFromColors,
 	Interview,
 	JsonToTypescript,
-	CodeFormatter,
-	MarkdownEditor,
 	Mimetype,
-	Npmpackages,
 	Movie,
 	News,
+	Npmpackages,
 	PageNotFound,
 	Pixel,
 	Platform,
 	Plugin,
 	PrivacyPolicy,
-	CookiePolicy,
 	QRcode,
 	ShadesAndTints,
 	Sorting,
@@ -102,6 +106,6 @@ export {
 	Tool,
 	TvSeries,
 	UiUx,
-	GithubIsuue,
+	Units,
 	YouTube,
 };
