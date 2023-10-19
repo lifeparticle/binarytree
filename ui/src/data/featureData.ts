@@ -131,11 +131,11 @@ export const FEATURE_DATA: Feature[] = [
 		],
 	},
 	{
-		key: routesById.image.id,
-		name: routesById.image.title,
-		shortDescription: routesById.image.description,
+		key: routesById.imagegeneratorfromcolors.id,
+		name: routesById.imagegeneratorfromcolors.title,
+		shortDescription: routesById.imagegeneratorfromcolors.description,
 		fullDescription: "",
-		link: routesById.image.path,
+		link: routesById.imagegeneratorfromcolors.path,
 		library: [
 			{
 				name: "file-saver",

@@ -27,7 +27,6 @@ const ShadesAndTints: React.FC = () => {
 
 	const [color, setColor] = useState(String(searchParams.get("color")));
 
-	console.log("ddd", String(searchParams.get("color")));
 	const debouncedSearchTerm = useDebounce(color);
 
 	const percentage = String(searchParams.get("percentage"));

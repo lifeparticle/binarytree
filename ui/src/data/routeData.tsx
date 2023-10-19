@@ -1,3 +1,5 @@
+import Units from "pages/CSS/Units";
+import ImageConverter from "pages/Converter/Image";
 import Diagramming from "pages/Tools/Diagramming";
 
 type RouteId =
@@ -20,12 +22,15 @@ type RouteId =
 	| "diagramming"
 	| "diffchecker"
 	| "diffchecker"
+	| "docs"
 	| "editor"
 	| "feedback"
 	| "feedback"
 	| "github"
+	| "githubissue"
 	| "icon"
-	| "image"
+	| "imageconverter"
+	| "imagegeneratorfromcolors"
 	| "interview"
 	| "jsontotypescript"
 	| "mimetype"
@@ -50,7 +55,7 @@ type RouteId =
 	| "tool"
 	| "tvseries"
 	| "uiux"
-	| "githubissue"
+	| "units"
 	| "youtube";
 
 interface Route {
@@ -83,7 +88,8 @@ import {
 	Interview,
 	JsonToTypescript,
 	CodeFormatter,
-	MarkdownEditor,
+	Docs,
+	Editor,
 	Mimetype,
 	Movie,
 	News,
@@ -145,6 +151,13 @@ export const routes: Route[] = [
 		component: BoxShadow,
 	},
 	{
+		id: "units",
+		path: "/css/units",
+		title: "Units",
+		description: "CSS units",
+		component: Units,
+	},
+	{
 		id: "svg",
 		path: "/converter/svg",
 		title: "SVG",
@@ -173,6 +186,13 @@ export const routes: Route[] = [
 		component: JsonToTypescript,
 	},
 	{
+		id: "imageconverter",
+		path: "/generator/ic",
+		title: "Image",
+		description: "Convert images to different formats.",
+		component: ImageConverter,
+	},
+	{
 		id: "codeformatter",
 		path: "/tools/code-formatter",
 		title: "Code Formatter",
@@ -195,7 +215,7 @@ export const routes: Route[] = [
 		component: Avatar,
 	},
 	{
-		id: "image",
+		id: "imagegeneratorfromcolors",
 		path: "/generator/igfc",
 		title: "Image",
 		description: "Craft beautiful images from a simple palette of colors.",
@@ -318,7 +338,7 @@ export const routes: Route[] = [
 		path: "/markdown/me",
 		title: "Editor",
 		description: "Markdown Editor - for words that mark the spot.",
-		component: MarkdownEditor,
+		component: Editor,
 	},
 	{
 		id: "table",
@@ -334,6 +354,13 @@ export const routes: Route[] = [
 		description:
 			"Organize your thoughts with a click, courtesy of our TOC.",
 		component: TableOfContent,
+	},
+	{
+		id: "docs",
+		path: "/markdown/docs",
+		title: "Docs",
+		description: "Markdown Docs - for words that mark the spot.",
+		component: Docs,
 	},
 	{
 		id: "texteditor",
