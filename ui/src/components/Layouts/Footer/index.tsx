@@ -4,8 +4,8 @@ import Icon from "components/General/Icon";
 import { Space, Typography } from "antd";
 import { ResponsiveButton } from "components/General/FormComponents";
 import { Link } from "react-router-dom";
-import bt_light from "assets/Footer/bt_light.png";
-import bt_dark from "assets/Footer/bt_dark.png";
+import bt_light from "assets/Footer/bt_light.webp";
+import bt_dark from "assets/Footer/bt_dark.webp";
 import { openLink } from "utils/helper-functions/string";
 import useMode from "hooks/useMode";
 
@@ -30,6 +30,7 @@ const Footer: React.FC = () => {
 						<img
 							src={isDarkMode ? bt_dark : bt_light}
 							height={100}
+							alt="footer logo"
 						/>
 					</Link>
 				</Space>
@@ -53,11 +54,9 @@ const Footer: React.FC = () => {
 				<ul className={style.footer__list}>
 					<li>
 						<a
-							onClick={() =>
-								openLink(
-									"https://github.com/users/lifeparticle/projects/2"
-								)
-							}
+							href="https://github.com/users/lifeparticle/projects/2"
+							target="_blank"
+							rel="noopener noreferrer"
 						>
 							Roadmap
 						</a>
@@ -70,22 +69,18 @@ const Footer: React.FC = () => {
 				<ul className={style.footer__list}>
 					<li>
 						<a
-							onClick={() =>
-								openLink(
-									"https://github.com/lifeparticle/binarytree/blob/main/CODE_OF_CONDUCT.md"
-								)
-							}
+							href="https://github.com/lifeparticle/binarytree/blob/main/CODE_OF_CONDUCT.md"
+							target="_blank"
+							rel="noopener noreferrer"
 						>
 							Code of Conduct
 						</a>
 					</li>
 					<li>
 						<a
-							onClick={() =>
-								openLink(
-									"https://github.com/lifeparticle/binarytree#status"
-								)
-							}
+							href="https://github.com/lifeparticle/binarytree#status"
+							target="_blank"
+							rel="noopener noreferrer"
 						>
 							Status
 						</a>
