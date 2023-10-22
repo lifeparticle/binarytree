@@ -38,7 +38,3 @@ You can also run tests to ensure the project's functionality:
 ```shell
 yarn test
 ```
-
-# Contributing
-
-If you'd like to contribute to the project, please check the [How to contribute](CONTRIBUTING.md) file for guidelines and instructions.

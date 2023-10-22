@@ -19,6 +19,61 @@ Your [opinions and feedback](https://binarytree.dev/feedback) about our service 
 | CodeQL                | [![CodeQL](https://github.com/lifeparticle/binarytree/actions/workflows/codeql.yml/badge.svg)](https://github.com/lifeparticle/binarytree/actions/workflows/codeql.yml)                                |
 | Sonarcloud            | [![Build](https://github.com/lifeparticle/binarytree/actions/workflows/sonarcloud.yml/badge.svg)](https://github.com/lifeparticle/binarytree/actions/workflows/sonarcloud.yml)                         |
 
+## Features
+
+- **Newsfeed** : Get the scoop! Fresh news served daily.
+
+- **Color Picker** : Unleash your inner Picasso & pick the perfect hue.
+
+- **Shades & Tints** : 50 shades of any color you fancy!
+
+- **Border Radius** : Shape up your CSS with some smooth curves.
+
+- **Box Shadow** : Add drama to your box! Shadows included.
+
+- **Base64** : Encode, decode, and party in Base64 style.
+
+- **Pixel Converter** : Pixels to REM - like magic, but real!
+
+- **Json To TypeScript** : Turn your JSON into TypeScript's next top model.
+
+- **SVG** : Get your SVGs in shipshape.
+
+- **Data Generator** : Make it rain with random data
+
+- **Image Converter** : Convert images to different formats.
+
+- **Avatar** : Create funky avatars. No airbending skills required.
+
+- **QR Code** : Generate QR codes - like barcodes, but squarer!
+- **Editor** : Markdown Editor - for words that mark the spot.
+
+- **Table** : Create tables that would make any spreadsheet jealous.
+
+- **Table Of Content** : Organize your thoughts with a click, courtesy of our TOC
+
+- **Text Editor** : For those who love to play with words.
+
+- **Diagramming** : Channel your inner Da Vinci of diagrams. Who said flowcharts can't be art.
+
+- **Sorting** : Sort arrays like a boss.
+
+- **Diffchecker** : Ever wondered what’s different? We did too! Play spot the difference with text.
+
+- **Code Formatter** : Embrace your inner Picasso of Programming. Who said formatting code can't be a masterpiece?
+
+- **Create Github Issue** : Create Github Issue from your CSV data
+
+- **Mimetype** : Find out what type your file fancies itself as.
+
+- **Npm Packages** : Unleash your inner Newton of Node. Who said npm packages can't be thrilling.
+
+- **Resources** : Various resources for developers
+
+# Contributing
+
+If you'd like to contribute to the project, please check the [How to contribute](CONTRIBUTING.md) file for guidelines and instructions.
+
 ## Licenses
 
 Code: The code in this project is licensed under the Apache-2.0 license. See the [LICENSE](LICENSE) file for details.
