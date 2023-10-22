@@ -9,10 +9,10 @@ Check your Node.js and Yarn versions to ensure they meet the project's requireme
 
 ```shell
 node -v
-# Should display: 18.16.1
+# 18.16.1
 
 yarn -v
-# Should display: 3.6.1
+# 3.6.1
 ```
 
 ## Installation
