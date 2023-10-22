@@ -28,6 +28,7 @@ const HelpIcon: React.FC<HelpIconProps> = ({ helpObject }) => {
 				shape="circle"
 				icon={<Icon name="Info" size={15} />}
 				onClick={showModal}
+				aria-label="helpicon"
 			/>
 			<Modal
 				title="Help"

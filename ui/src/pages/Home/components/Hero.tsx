@@ -1,7 +1,7 @@
 import React from "react";
 import style from "pages/Home/Home.module.scss";
 import { Typography, Image } from "antd";
-import hero from "assets/Home/hero.png";
+import hero from "assets/Home/hero.webp";
 import { FEATURE_DATA } from "data/featureData";
 
 const { Title } = Typography;
@@ -33,6 +33,8 @@ const Hero: React.FC = () => {
 					src={hero}
 					alt="BinaryTree: Developer Productivity Tools"
 					preview={false}
+					width={"100%"}
+					height={"100%"}
 				/>
 			</div>
 		</section>
