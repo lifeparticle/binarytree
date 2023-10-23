@@ -1,5 +1,17 @@
 [
 	{
+		"name": "ReacTree",
+		"category": "VSCode Extension",
+		"subCategory": "Visualizer",
+		"url": "https://marketplace.visualstudio.com/items?itemName=ReacTreeDev.reactree",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
 		"name": "Prettier-vscode",
 		"category": "VSCode Extension",
 		"subCategory": "Code Quality",

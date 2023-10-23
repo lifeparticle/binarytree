@@ -1,6 +1,6 @@
 import { routes } from "data/routeData";
 import { useLocation } from "react-router-dom";
-import { HELP } from "./constants";
+import { BEAM, HELP } from "./constants";
 
 const usePageTitle = () => {
 	const { pathname } = useLocation();
@@ -16,6 +16,7 @@ const usePageTitle = () => {
 		title,
 		description,
 		helpObject: HELP[id] || {},
+		beamObject: BEAM[id] || {},
 		url: `https://binarytree.dev${pathname}`,
 	};
 };
