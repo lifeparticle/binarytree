@@ -17,7 +17,9 @@ import useParamsValue from "hooks/useParamsValue";
 import { useDebounce } from "hooks/useDebounce";
 
 import { FORMAT_LABELS } from "./utils/constants";
-import { openLink } from "utils/helper-functions/string";
+
+import { useNavigate } from "react-router-dom";
+import Beam from "components/General/Beam";
 
 type FormatType = Lowercase<(typeof FORMAT_LABELS)[number]>;
 
@@ -28,7 +30,9 @@ const ColorPicker: React.FC = () => {
 	});
 
 	const [colorPickerRan, setColorPickerRan] = useState(false);
-	const [formatState, setFormatState] = useState("");
+	const [formatState, setFormatState] = useState(
+		searchParams.get("color") || ""
+	);
 	const color = String(searchParams.get("color"));
 	const format = String(searchParams.get("format")) as FormatType;
 	const colors = useMemo(() => calculateColors(color), [color]);
@@ -40,6 +44,7 @@ const ColorPicker: React.FC = () => {
 		}
 	}, [debouncedSearchTerm, updateParamsValue, colorPickerRan]);
 
+	const navigate = useNavigate();
 	return (
 		<Form layout="vertical">
 			<div className={style.cp}>
@@ -83,18 +88,19 @@ const ColorPicker: React.FC = () => {
 							size="xl"
 							aria-label="select a color"
 						/>
-
-						<ResponsiveButton
-							onClick={() =>
-								openLink(
-									`shades-tints?color=${encodeURIComponent(
-										color
-									)}`
-								)
-							}
-						>
-							Open in Shades & Tints
-						</ResponsiveButton>
+						<Beam>
+							<ResponsiveButton
+								onClick={() =>
+									navigate(
+										`/colors/shades-tints?color=${encodeURIComponent(
+											color
+										)}`
+									)
+								}
+							>
+								Open in Shades & Tints
+							</ResponsiveButton>
+						</Beam>
 					</Space>
 				</Card>
 
