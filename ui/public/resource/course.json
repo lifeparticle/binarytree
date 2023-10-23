@@ -21,6 +21,13 @@
 		"socials": []
 	},
 	{
+		"name": "REACT.gg",
+		"category": "React",
+		"subCategory": "React",
+		"url": "https://react.gg/",
+		"socials": []
+	},
+	{
 		"name": "useEffect",
 		"category": "React",
 		"subCategory": "React",
