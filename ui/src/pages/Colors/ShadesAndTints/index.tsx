@@ -13,6 +13,10 @@ import ColorInputs from "./components/ColorInputs";
 import useParamsValue from "hooks/useParamsValue";
 import { useDebounce } from "hooks/useDebounce";
 
+import { ResponsiveButton } from "components/General/FormComponents";
+import { useNavigate } from "react-router-dom";
+import Beam from "components/General/Beam";
+
 interface SelectOption {
 	value: string;
 	label: string;
@@ -67,6 +71,8 @@ const ShadesAndTints: React.FC = () => {
 		});
 	}, [debouncedSearchTerm, percentage]);
 
+	const navigate = useNavigate();
+
 	return (
 		<div className={styles.st}>
 			<ColorInputs
@@ -86,6 +92,18 @@ const ShadesAndTints: React.FC = () => {
 				<Colors colors={shades} isPending={isPending} type="Shades" />
 				<Colors colors={tints} isPending={isPending} type="Tints" />
 			</PageGrid>
+
+			<Beam>
+				<ResponsiveButton
+					onClick={() =>
+						navigate(
+							`/colors/cp?color=${encodeURIComponent(color)}`
+						)
+					}
+				>
+					Open Color Picker
+				</ResponsiveButton>
+			</Beam>
 		</div>
 	);
 };
