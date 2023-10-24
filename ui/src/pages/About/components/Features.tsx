@@ -15,7 +15,7 @@ const Features: React.FC = () => {
 						title={
 							<h5 onClick={() => openLink(feature.link)}>
 								<a>
-									{index + 1} - {feature.name}
+									{index} - {feature.name}
 								</a>
 							</h5>
 						}
