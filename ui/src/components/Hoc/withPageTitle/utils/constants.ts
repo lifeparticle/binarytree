@@ -8,14 +8,10 @@ interface Help {
 	[key: string]: HelpEntry;
 }
 
-interface QueryParam {
-	[key: string]: string;
-}
-
 interface BeamDetail {
 	name?: string;
 	url?: string;
-	queryParams?: QueryParam[];
+	queryParams?: { [key: string]: string }; // Change queryParams to accept key-value pairs
 }
 
 interface Beam {
@@ -29,14 +25,6 @@ const HELP: Help = {
 	[routesById.shadesandtints.id]: {
 		description: "Color generator tool",
 	},
-};
-
-const BEAM: Beam = {
-	[routesById.colorpicker.id]: [
-		{ name: routesById.shadesandtints.title },
-		{ url: routesById.shadesandtints.path },
-		{ queryParams: [{ color: "color" }] },
-	],
 };
 
 const NO_PADDING = [
@@ -57,5 +45,26 @@ const NO_TITLE = [
 	"Feedback",
 ];
 
-export type { HelpEntry };
+const BEAM: Beam = {
+	[routesById.colorpicker.id]: [
+		{
+			name: routesById.shadesandtints.title,
+			url: routesById.shadesandtints.path,
+			queryParams: {
+				color: "",
+			},
+		},
+	],
+	[routesById.shadesandtints.id]: [
+		{
+			name: routesById.colorpicker.title,
+			url: routesById.colorpicker.path,
+			queryParams: {
+				color: "",
+			},
+		},
+	],
+};
+
+export type { HelpEntry, BeamDetail, Beam };
 export { HELP, NO_PADDING, NO_TITLE, BEAM };

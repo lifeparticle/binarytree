@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import { Drawer, Space } from "antd";
 import Icon from "components/General/Icon";
 import style from "./Beam.module.scss";
+import { useNavigate } from "react-router-dom";
+import { ResponsiveButton } from "../FormComponents";
+import { BeamDetail } from "components/Hoc/withPageTitle/utils/constants";
 
 interface BeamProps {
-	children: React.ReactNode;
+	beamObject: BeamDetail[];
 }
 
-const Beam: React.FC<BeamProps> = ({ children }) => {
+const Beam: React.FC<BeamProps> = ({ beamObject }) => {
 	const [open, setOpen] = useState(false);
 
 	const showDrawer = () => {
@@ -17,6 +20,10 @@ const Beam: React.FC<BeamProps> = ({ children }) => {
 	const onClose = () => {
 		setOpen(false);
 	};
+
+	const navigate = useNavigate();
+
+	if (beamObject.length === 0) return null;
 
 	return (
 		<div>
@@ -32,7 +39,23 @@ const Beam: React.FC<BeamProps> = ({ children }) => {
 				onClose={onClose}
 				open={open}
 			>
-				{children}
+				<Space direction="vertical" size={"middle"}>
+					{beamObject.map((beam) => (
+						<ResponsiveButton
+							key={beam.name}
+							onClick={() => {
+								navigate(
+									`${beam.url}?color=${encodeURIComponent(
+										beam.queryParams?.color as string
+									)}`
+								);
+								setOpen(false);
+							}}
+						>
+							Open in {beam.name}
+						</ResponsiveButton>
+					))}
+				</Space>
 			</Drawer>
 		</div>
 	);

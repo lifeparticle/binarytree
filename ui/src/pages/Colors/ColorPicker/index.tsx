@@ -9,17 +9,11 @@ import ClipboardButton from "components/General/ClipboardButton";
 import DisplayColors from "./components/DisplayColors";
 import { calculateColors, determineFormat } from "./utils/helper";
 import CopyInput from "components/Layouts/CopyInput";
-import {
-	ResponsiveButton,
-	ResponsiveInputWithLabel,
-} from "components/General/FormComponents";
+import { ResponsiveInputWithLabel } from "components/General/FormComponents";
 import useParamsValue from "hooks/useParamsValue";
 import { useDebounce } from "hooks/useDebounce";
 
 import { FORMAT_LABELS } from "./utils/constants";
-
-import { useNavigate } from "react-router-dom";
-import Beam from "components/General/Beam";
 
 type FormatType = Lowercase<(typeof FORMAT_LABELS)[number]>;
 
@@ -44,7 +38,6 @@ const ColorPicker: React.FC = () => {
 		}
 	}, [debouncedSearchTerm, updateParamsValue, colorPickerRan]);
 
-	const navigate = useNavigate();
 	return (
 		<Form layout="vertical">
 			<div className={style.cp}>
@@ -88,19 +81,6 @@ const ColorPicker: React.FC = () => {
 							size="xl"
 							aria-label="select a color"
 						/>
-						<Beam>
-							<ResponsiveButton
-								onClick={() =>
-									navigate(
-										`/colors/shades-tints?color=${encodeURIComponent(
-											color
-										)}`
-									)
-								}
-							>
-								Open in Shades & Tints
-							</ResponsiveButton>
-						</Beam>
 					</Space>
 				</Card>
 
