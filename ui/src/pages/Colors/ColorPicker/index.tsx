@@ -9,15 +9,11 @@ import ClipboardButton from "components/General/ClipboardButton";
 import DisplayColors from "./components/DisplayColors";
 import { calculateColors, determineFormat } from "./utils/helper";
 import CopyInput from "components/Layouts/CopyInput";
-import {
-	ResponsiveButton,
-	ResponsiveInputWithLabel,
-} from "components/General/FormComponents";
+import { ResponsiveInputWithLabel } from "components/General/FormComponents";
 import useParamsValue from "hooks/useParamsValue";
 import { useDebounce } from "hooks/useDebounce";
 
 import { FORMAT_LABELS } from "./utils/constants";
-import { openLink } from "utils/helper-functions/string";
 
 type FormatType = Lowercase<(typeof FORMAT_LABELS)[number]>;
 
@@ -28,7 +24,9 @@ const ColorPicker: React.FC = () => {
 	});
 
 	const [colorPickerRan, setColorPickerRan] = useState(false);
-	const [formatState, setFormatState] = useState("");
+	const [formatState, setFormatState] = useState(
+		searchParams.get("color") || ""
+	);
 	const color = String(searchParams.get("color"));
 	const format = String(searchParams.get("format")) as FormatType;
 	const colors = useMemo(() => calculateColors(color), [color]);
@@ -83,18 +81,6 @@ const ColorPicker: React.FC = () => {
 							size="xl"
 							aria-label="select a color"
 						/>
-
-						<ResponsiveButton
-							onClick={() =>
-								openLink(
-									`shades-tints?color=${encodeURIComponent(
-										color
-									)}`
-								)
-							}
-						>
-							Open in Shades & Tints
-						</ResponsiveButton>
 					</Space>
 				</Card>
 

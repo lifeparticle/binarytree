@@ -1,5 +1,5 @@
-$cp-right: 10px;
-$cp-left: 1000px;
+$cp-top: 27px;
+$cp-left: -12px;
 $cp-bg-color: rgb(68, 68, 68);
 
 .cpwi {
@@ -8,17 +8,17 @@ $cp-bg-color: rgb(68, 68, 68);
 		display: inline-block;
 		display: flex;
 		align-items: center;
+		cursor: pointer;
 
 		&_dp {
 			background-color: $cp-bg-color;
 			padding: var(--bt-size-10);
 			border-radius: var(--bt-size-10);
-			position: absolute;
-			top: var(--bt-size-percent-100);
-			right: $cp-right;
+			top: $cp-top;
 			left: $cp-left;
 			z-index: var(--bt-z-index-dropdown);
 			display: none;
+			position: absolute;
 		}
 
 		&:hover &_dp {

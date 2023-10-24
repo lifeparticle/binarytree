@@ -287,6 +287,14 @@ export const FEATURE_DATA: Feature[] = [
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
+		key: routesById.githubissue.id,
+		name: routesById.githubissue.title,
+		shortDescription: routesById.githubissue.description,
+		fullDescription: "",
+		link: routesById.githubissue.path,
+		library: [{ name: "Vanilla JS", url: "" }],
+	},
+	{
 		key: routesById.blog.id,
 		name: "Resource",
 		shortDescription: "List of things",
@@ -311,4 +319,20 @@ export const FEATURE_DATA: Feature[] = [
 			},
 		],
 	},
+	// {
+	// 	key: routesById.units.id,
+	// 	name: routesById.units.title,
+	// 	shortDescription: routesById.units.description,
+	// 	fullDescription: "",
+	// 	link: routesById.units.path,
+	// 	library: [{ name: "Vanilla JS", url: "" }],
+	// },
+	// {
+	// 	key: routesById.imageconverter.id,
+	// 	name: routesById.imageconverter.title,
+	// 	shortDescription: routesById.imageconverter.description,
+	// 	fullDescription: "",
+	// 	link: routesById.imageconverter.path,
+	// 	library: [{ name: "Vanilla JS", url: "" }],
+	// },
 ];
