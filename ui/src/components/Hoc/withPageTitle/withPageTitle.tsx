@@ -7,12 +7,14 @@ import { HeadProvider, Title, Link, Meta } from "react-head";
 import { NO_PADDING, NO_TITLE } from "./utils/constants";
 import { ErrorBoundary } from "react-error-boundary";
 import FallbackComponent from "components/General/FallbackComponent";
+import Beam from "components/General/Beam";
 
 const withPageTitle = <T extends object>(
 	WrappedComponent: React.ComponentType<T>
 ) => {
 	const WithPageTitle = (props: T) => {
-		const { title, description, helpObject, url } = usePageTitle();
+		const { title, description, helpObject, url, beamObject } =
+			usePageTitle();
 
 		return (
 			<ErrorBoundary fallback={<p>Something went wrong</p>}>
@@ -52,6 +54,7 @@ const withPageTitle = <T extends object>(
 						)}
 					</ErrorBoundary>
 					<ErrorBoundary FallbackComponent={FallbackComponent}>
+						<Beam beamObject={beamObject} />
 						<WrappedComponent {...props} />
 					</ErrorBoundary>
 				</div>
