@@ -8,10 +8,19 @@ interface Help {
 	[key: string]: HelpEntry;
 }
 
+interface MapDetail {
+	from: string;
+	to: string;
+}
+
+interface QueryParamDetail {
+	map: MapDetail;
+}
+
 interface BeamDetail {
-	name?: string;
-	url?: string;
-	queryParams?: { [key: string]: string }; // Change queryParams to accept key-value pairs
+	name: string;
+	url: string;
+	queryParams: QueryParamDetail[];
 }
 
 interface Beam {
@@ -50,21 +59,17 @@ const BEAM: Beam = {
 		{
 			name: routesById.shadesandtints.title,
 			url: routesById.shadesandtints.path,
-			queryParams: {
-				color: "",
-			},
+			queryParams: [{ map: { from: "color", to: "color" } }],
 		},
 	],
 	[routesById.shadesandtints.id]: [
 		{
 			name: routesById.colorpicker.title,
 			url: routesById.colorpicker.path,
-			queryParams: {
-				color: "",
-			},
+			queryParams: [{ map: { from: "color", to: "color" } }],
 		},
 	],
 };
 
-export type { HelpEntry, BeamDetail, Beam };
+export type { HelpEntry, BeamDetail, Beam, QueryParamDetail };
 export { HELP, NO_PADDING, NO_TITLE, BEAM };
