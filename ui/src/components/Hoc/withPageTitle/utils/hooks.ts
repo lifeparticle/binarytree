@@ -1,5 +1,5 @@
 import { routes } from "data/routeData";
-import { useLocation, useSearchParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { BEAM, HELP } from "./constants";
 
 const usePageTitle = () => {
@@ -12,18 +12,11 @@ const usePageTitle = () => {
 
 	const { title, description, id } = page;
 
-	const searchParams = useSearchParams();
-	const color = searchParams[0].get("color") || "";
-
-	const beams = BEAM[id]
-		? BEAM[id].map((beam) => ({ ...beam, queryParams: { color } }))
-		: [];
-
 	return {
 		title,
 		description,
 		helpObject: HELP[id] || {},
-		beamObject: beams,
+		beamObject: BEAM[id],
 		url: `https://binarytree.dev${pathname}`,
 	};
 };
