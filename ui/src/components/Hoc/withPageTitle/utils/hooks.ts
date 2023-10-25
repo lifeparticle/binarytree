@@ -16,7 +16,7 @@ const usePageTitle = () => {
 		title,
 		description,
 		helpObject: HELP[id] || {},
-		beamObject: BEAM[id],
+		beamObject: BEAM[id] || {},
 		url: `https://binarytree.dev${pathname}`,
 	};
 };
