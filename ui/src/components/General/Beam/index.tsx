@@ -29,19 +29,15 @@ const Beam: React.FC<BeamProps> = ({ beamObject }) => {
 		const url = beam.url;
 		let params = "";
 
-		if (beam.queryParams) {
-			beam.queryParams.forEach((queryParam, index, array) => {
-				params += `${queryParam.map.to}=${encodeURIComponent(
-					searchParams.get(queryParam.map.from) as string
-				)}`;
+		beam.queryParams.forEach((queryParam, index, array) => {
+			params += `${queryParam.map.to}=${encodeURIComponent(
+				searchParams.get(queryParam.map.from) as string
+			)}`;
 
-				if (index !== array.length - 1) {
-					params += "&";
-				}
-			});
-		}
-
-		console.log(`${url}?${params}`);
+			if (index !== array.length - 1) {
+				params += "&";
+			}
+		});
 
 		return `${url}?${params}`;
 	};
