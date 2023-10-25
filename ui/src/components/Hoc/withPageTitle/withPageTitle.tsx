@@ -54,7 +54,9 @@ const withPageTitle = <T extends object>(
 						)}
 					</ErrorBoundary>
 					<ErrorBoundary FallbackComponent={FallbackComponent}>
-						<Beam beamObject={beamObject} />
+						{beamObject.length > 0 && (
+							<Beam beamObject={beamObject} />
+						)}
 						<WrappedComponent {...props} />
 					</ErrorBoundary>
 				</div>
