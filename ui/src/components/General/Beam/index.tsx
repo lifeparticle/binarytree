@@ -12,8 +12,8 @@ interface BeamProps {
 
 const Beam: React.FC<BeamProps> = ({ beamObject }) => {
 	const [open, setOpen] = useState(false);
-
 	const [searchParams] = useSearchParams();
+	const navigate = useNavigate();
 
 	if (beamObject.length === 0) return null;
 
@@ -45,8 +45,6 @@ const Beam: React.FC<BeamProps> = ({ beamObject }) => {
 
 		return `${url}?${params}`;
 	};
-
-	const navigate = useNavigate();
 
 	return (
 		<div>
