@@ -15,6 +15,8 @@ const Beam: React.FC<BeamProps> = ({ beamObject }) => {
 
 	const [searchParams] = useSearchParams();
 
+	if (beamObject.length === 0) return null;
+
 	const showDrawer = () => {
 		setOpen(true);
 	};
@@ -45,8 +47,6 @@ const Beam: React.FC<BeamProps> = ({ beamObject }) => {
 	};
 
 	const navigate = useNavigate();
-
-	if (beamObject.length === 0) return null;
 
 	return (
 		<div>
