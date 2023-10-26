@@ -65,7 +65,7 @@ const TableOfContent: React.FC = () => {
 		return `[${text}](#${getUniqueHeadingText(text)
 			.toLowerCase()
 			.replace(/\s/g, "-")
-			.replace(/[^A-Za-z0-9-_]/g, "")})`;
+			.replace(/[^A-Za-z0-9-\u0980-\u09FF_]+/g, "")})`;
 	};
 
 	const generateTableOfContentsText = (tableOfContents: TocItem[]) => {
@@ -123,6 +123,7 @@ const TableOfContent: React.FC = () => {
 								onMarkdownChange(event.currentTarget.value)
 							}
 							autoSize={false}
+							data-testid="toc-input"
 						/>
 					</Form.Item>
 				</Form>
@@ -140,6 +141,7 @@ const TableOfContent: React.FC = () => {
 								value={tableOfContents}
 								className={style.toc__textarea}
 								autoSize={false}
+								data-testid="toc-output"
 							/>
 						</Form.Item>
 					</Form>
