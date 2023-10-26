@@ -1,5 +1,41 @@
 [
 	{
+		"name": "Pretty TypeScript Errors",
+		"category": "VSCode Extension",
+		"subCategory": "Debugger",
+		"url": "https://marketplace.visualstudio.com/items?itemName=yoavbls.pretty-ts-errors",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
+		"name": "Multiple cursor case preserve",
+		"category": "VSCode Extension",
+		"subCategory": "Tools",
+		"url": "https://marketplace.visualstudio.com/items?itemName=Cardinal90.multi-cursor-case-preserve",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
+		"name": "Template String Converter",
+		"category": "VSCode Extension",
+		"subCategory": "Tools",
+		"url": "https://marketplace.visualstudio.com/items?itemName=meganrogge.template-string-converter",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
+	},
+	{
 		"name": "ReacTree",
 		"category": "VSCode Extension",
 		"subCategory": "Visualizer",
