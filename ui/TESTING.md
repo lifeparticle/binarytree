@@ -12,15 +12,15 @@
 | 8   | Sorting            | Yes    |
 | 9   | Text Editor        | Yes    |
 | 10  | News               | Yes    |
+| 11  | Table Of Content   | Yes    |
 
 | No  | Name                     | Status |
 | --- | ------------------------ | ------ |
 | 11  | Data Generator           | No     |
 | 12  | Markdown Editor          | No     |
 | 13  | Markdown Table Generator | No     |
-| 14  | Table Of Content         | No     |
-| 15  | List                     | No     |
-| 16  | Border Radius            | No     |
+| 14  | List                     | No     |
+| 15  | Border Radius            | No     |
 
 # Components
 
