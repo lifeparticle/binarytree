@@ -41,6 +41,21 @@ const APP_VALUES = [
 		</a>{" "}
 		your data, saving you time and hassle.
 	</>,
+	<>
+		<Typography.Text strong>Beam:</Typography.Text> Beam's unique feature
+		allows for seamless integration of data from one page to another. With
+		this feature, you can achieve an efficient workflow. This eliminates the
+		need to manually input data, saving time and reducing potential errors.
+		For instance, Beam allows for effortless data transfer between the{" "}
+		<a href="colors/cp" target="_blank">
+			Color Picker
+		</a>{" "}
+		and{" "}
+		<a href="colors/shades-tints" target="_blank">
+			Shades & Tints
+		</a>
+		, and vice versa.
+	</>,
 ];
 
 const Values: React.FC = () => {

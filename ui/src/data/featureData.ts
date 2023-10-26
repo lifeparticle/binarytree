@@ -335,4 +335,12 @@ export const FEATURE_DATA: Feature[] = [
 	// 	link: routesById.imageconverter.path,
 	// 	library: [{ name: "Vanilla JS", url: "" }],
 	// },
+	// {
+	// 	key: routesById.docs.id,
+	// 	name: routesById.docs.title,
+	// 	shortDescription: routesById.docs.description,
+	// 	fullDescription: "",
+	// 	link: routesById.docs.path,
+	// 	library: [{ name: "Vanilla JS", url: "" }],
+	// },
 ];

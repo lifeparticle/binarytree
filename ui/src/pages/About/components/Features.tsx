@@ -1,6 +1,5 @@
 import React from "react";
-import { List, Carousel, Card, Space } from "antd";
-import { Tag } from "antd";
+import { List, Carousel, Card, Space, Tag } from "antd";
 import { FEATURE_DATA } from "data/featureData";
 import { openLink } from "utils/helper-functions/string";
 

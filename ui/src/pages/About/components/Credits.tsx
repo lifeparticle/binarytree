@@ -43,11 +43,11 @@ const CREDITS_DATA: Credits[] = [
 		name: "Movie for hackers",
 		url: "https://github.com/k4m4/movies-for-hackers",
 	},
-	{
-		key: "5",
-		name: "Jigar Panchal",
-		url: "https://unsplash.com/photos/AaqI2ao96KM",
-	},
+	// {
+	// 	key: "5",
+	// 	name: "",
+	// 	url: "",
+	// },
 	{
 		key: "6",
 		name: "Hassaan Here",
