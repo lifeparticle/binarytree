@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import { Drawer, Space } from "antd";
+import { Drawer as AntDDrawer, Space } from "antd";
 import Icon from "components/General/Icon";
-import style from "./Beam.module.scss";
+import style from "./Drawer.module.scss";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { ResponsiveButton } from "../FormComponents";
+import { ResponsiveButton } from "components/General/FormComponents";
 import { BeamDetail } from "components/Hoc/withPageTitle/utils/constants";
 
-interface BeamProps {
+interface DrawerProps {
 	beamObject: BeamDetail[];
 }
 
-const Beam: React.FC<BeamProps> = ({ beamObject }) => {
+const Drawer: React.FC<DrawerProps> = ({ beamObject }) => {
 	const [open, setOpen] = useState(false);
 	const [searchParams] = useSearchParams();
 	const navigate = useNavigate();
 
-	if (beamObject.length === 0) return null;
+	if (beamObject.length === 0) return;
 
 	const showDrawer = () => {
 		setOpen(true);
@@ -49,8 +49,8 @@ const Beam: React.FC<BeamProps> = ({ beamObject }) => {
 					<Icon name="ChevronRight" />
 				</span>
 			</Space>
-			<Drawer
-				title="Navigate related routes"
+			<AntDDrawer
+				title="Tools"
 				placement={"right"}
 				width={300}
 				onClose={onClose}
@@ -69,9 +69,9 @@ const Beam: React.FC<BeamProps> = ({ beamObject }) => {
 						</ResponsiveButton>
 					))}
 				</Space>
-			</Drawer>
+			</AntDDrawer>
 		</div>
 	);
 };
 
-export default Beam;
+export default Drawer;
