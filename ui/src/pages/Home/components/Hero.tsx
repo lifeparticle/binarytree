@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
 					maxHeight: "40dvh",
 				}}
 			/>
-			<Title className={style.home__hero_text_paragraph} level={2}>
+			<Title className={style.home__hero_text_paragraph} level={3}>
 				At binarytree.dev, we provide an array of developer productivity
 				tools designed to help you save time. With an{" "}
 				<a
