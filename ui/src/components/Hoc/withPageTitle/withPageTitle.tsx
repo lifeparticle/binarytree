@@ -7,7 +7,7 @@ import { HeadProvider, Title, Link, Meta } from "react-head";
 import { NO_PADDING, NO_TITLE } from "./utils/constants";
 import { ErrorBoundary } from "react-error-boundary";
 import FallbackComponent from "components/General/FallbackComponent";
-import Beam from "components/General/Beam";
+import Drawer from "components/General/Drawer";
 
 const withPageTitle = <T extends object>(
 	WrappedComponent: React.ComponentType<T>
@@ -55,7 +55,7 @@ const withPageTitle = <T extends object>(
 					</ErrorBoundary>
 					<ErrorBoundary FallbackComponent={FallbackComponent}>
 						{beamObject.length > 0 && (
-							<Beam beamObject={beamObject} />
+							<Drawer beamObject={beamObject} />
 						)}
 						<WrappedComponent {...props} />
 					</ErrorBoundary>

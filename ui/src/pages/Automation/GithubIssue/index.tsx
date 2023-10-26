@@ -11,9 +11,11 @@ import { IssueType, SavedIssueType } from "./types";
 import ErrorComponent from "components/General/ErrorComponent";
 import DownloadCsv from "./components/DownloadCsv";
 import style from "./GithubIssue.module.scss";
+import { useOnlineStatus } from "hooks/useOnlineStatus";
 
 const GithubIssue: React.FC = () => {
 	//? input state
+	const isOnline = useOnlineStatus();
 	const [owner, setOwner] = useState("");
 	const [repo, setRepo] = useState("");
 	const [token, setToken] = useState("");
@@ -130,11 +132,16 @@ const GithubIssue: React.FC = () => {
 							</Upload>
 						</Form.Item>
 						<Button
-							disabled={fileData.length === 0 && !isValidInput}
+							disabled={
+								!isOnline ||
+								(fileData.length === 0 && !isValidInput)
+							}
 							block
 							onClick={handleCreateGitHubIssue}
 						>
-							Create {fileData?.length} issue
+							{isOnline
+								? `Create ${fileData?.length} issue`
+								: `Connecting...`}
 						</Button>
 					</InputGrid>
 				</Form>
