@@ -4,31 +4,12 @@ import Icon from "components/General/Icon";
 import { FEATURES } from "pages/Home/utils/constants";
 import style from "pages/Home/Home.module.scss";
 import { Link } from "react-router-dom";
-import useModal from "hooks/useModal";
-import { ResponsiveButton } from "components/General/FormComponents";
+
 import features from "assets/Home/features.svg";
-import { openLink } from "utils/helper-functions/string";
 
 const Features: React.FC = () => {
-	const { handleModalOpen } = useModal();
-
 	return (
 		<div className={style.home__features}>
-			<Space direction="horizontal">
-				<ResponsiveButton onClick={handleModalOpen} type="primary">
-					Get Started
-				</ResponsiveButton>
-				<ResponsiveButton
-					onClick={() =>
-						openLink(
-							"https://github.com/lifeparticle/binarytree/issues"
-						)
-					}
-				>
-					Request Features
-				</ResponsiveButton>
-			</Space>
-
 			<div className={style.home__features_cover}>
 				<div>
 					<Typography.Title level={3}>
