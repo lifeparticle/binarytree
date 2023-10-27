@@ -3,7 +3,7 @@ import { icons } from "lucide-react";
 
 const DEFAULT_ICON_NAME = "AlertCircle";
 
-type IconName = keyof typeof icons;
+export type IconName = keyof typeof icons;
 
 interface IconProps {
 	name: IconName;
