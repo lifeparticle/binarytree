@@ -1,4 +1,5 @@
 import { Button, List, Typography } from "antd";
+import Icon from "components/General/Icon";
 import React from "react";
 import { openLink } from "utils/helper-functions/string";
 
@@ -24,7 +25,7 @@ const APP_SUPPORT = [
 		Fancy giving this project a little love? Why not become a superstar
 		through{" "}
 		<Button
-			icon={<span className="heart">❤️</span>}
+			icon={<Icon name="Heart" className="heart" color="red" />}
 			type="primary"
 			onClick={() => openLink("https://github.com/sponsors/lifeparticle")}
 		>

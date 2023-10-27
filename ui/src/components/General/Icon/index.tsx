@@ -1,9 +1,18 @@
 import React from "react";
 import { icons } from "lucide-react";
-import { IconProps } from "./utils/types";
-import { DEFAULT_ICON_NAME } from "./utils/constants";
 
-const Icon: React.FC<IconProps> = ({ name, size = 18, color }) => {
+const DEFAULT_ICON_NAME = "AlertCircle";
+
+type IconName = keyof typeof icons;
+
+interface IconProps {
+	name: IconName;
+	size?: number;
+	color?: string;
+	className?: string;
+}
+
+const Icon: React.FC<IconProps> = ({ name, size = 18, color, className }) => {
 	let LucideIcon = icons[name];
 
 	if (!LucideIcon) {
@@ -20,7 +29,14 @@ const Icon: React.FC<IconProps> = ({ name, size = 18, color }) => {
 		}
 	}
 
-	return <LucideIcon strokeWidth="1.3" size={size} color={color} />;
+	return (
+		<LucideIcon
+			strokeWidth="1.3"
+			size={size}
+			color={color}
+			className={className}
+		/>
+	);
 };
 
 export default Icon;
