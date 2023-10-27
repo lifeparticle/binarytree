@@ -6,6 +6,7 @@
 @import "./styles/shadows.css";
 @import "./styles/animations.css";
 @import "./styles/antd-overrides.css";
+@import "./styles/global.css";
 @import "./styles/other-overrides.css";
 
 /* * {
