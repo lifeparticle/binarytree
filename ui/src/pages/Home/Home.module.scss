@@ -12,6 +12,7 @@ $home-z-index-100: 100;
 	&__container {
 		display: flex;
 		flex-direction: column;
+		gap: var(--bt-size-50);
 	}
 
 	&__hero {
@@ -26,10 +27,12 @@ $home-z-index-100: 100;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
+		gap: var(--bt-size-50);
 
 		&_cover {
 			display: flex;
 			align-items: center;
+			gap: var(--bt-size-50);
 		}
 
 		&_cards {
@@ -57,6 +60,7 @@ $home-z-index-100: 100;
 		&__features {
 			&_cover {
 				flex-direction: column;
+				text-align: center;
 			}
 			&_cards {
 				grid-template-columns: 1fr;
