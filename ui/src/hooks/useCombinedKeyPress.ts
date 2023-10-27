@@ -1,57 +1,42 @@
 import { useCallback, useEffect, useState } from "react";
-import useUserAgent from "./useUserAgent";
 
 type CallBackFunction = () => void;
-
-// mapping
-const keymap = new Map([["Meta", "control"]]);
 
 function useCombinedKeyPress(
 	callback: CallBackFunction,
 	keyCodes: string[]
 ): void {
-	const platform = useUserAgent();
 	const [pressedKeys, setPressedKeys] = useState<string[]>([]);
+
+	useEffect(() => {
+		const isMatched = compareArrays(pressedKeys, keyCodes);
+		if (isMatched) {
+			callback();
+			setPressedKeys([]);
+		}
+	}, [pressedKeys, keyCodes, callback]);
 
 	const handleKeyDown = useCallback(
 		(event: KeyboardEvent) => {
-			if (!pressedKeys.includes(event.key)) {
-				const key =
-					platform === "win" ? keymap.get(event.key) : event.key;
-				setPressedKeys((prev) => [...prev, key || ""]);
+			event.preventDefault();
+			const key = event.key.toLowerCase();
+			if (!pressedKeys.includes(key)) {
+				setPressedKeys((prev) => [...prev, key]);
 			}
-
-			console.log("handleKeyDown", event.key, callback);
 		},
-		[pressedKeys, platform]
+		[pressedKeys]
 	);
-
-	useEffect(() => {
-		console.log("pressedKeys", pressedKeys);
-		const identifyKey = () => {
-			for (const key of keyCodes) {
-				if (!pressedKeys.includes(key)) {
-					return false;
-				}
-			}
-			return true;
-		};
-		const val = identifyKey();
-		console.log("val", val);
-	}, [pressedKeys, keyCodes]);
 
 	const handleKeyUp = useCallback(
 		(event: KeyboardEvent) => {
-			const keyUp =
-				platform === "win" ? keymap.get(event.key) : event.key;
-			console.log("keyUp", keyUp);
-			const filteredKeys = pressedKeys.filter((key) => key !== keyUp);
-
-			setPressedKeys(filteredKeys);
-
-			console.log("handleKeyUp", event.key);
+			event.preventDefault();
+			const key = event.key.toLowerCase();
+			if (pressedKeys.includes(key)) {
+				const filteredKeys = pressedKeys.filter((key) => key !== key);
+				setPressedKeys(filteredKeys);
+			}
 		},
-		[pressedKeys, platform]
+		[pressedKeys]
 	);
 
 	useEffect(() => {
@@ -62,6 +47,19 @@ function useCombinedKeyPress(
 			window.removeEventListener("keyup", handleKeyUp);
 		};
 	}, [handleKeyDown, handleKeyUp]);
+
+	function compareArrays(pressedArray: string[], mainArray: string[]) {
+		if (pressedArray?.length !== mainArray?.length) return false;
+
+		for (const iterator of mainArray) {
+			const filteredArray = pressedArray.filter((key) =>
+				iterator.includes(key)
+			);
+			if (!(filteredArray?.length > 0)) return false;
+		}
+
+		return true;
+	}
 }
 
 export default useCombinedKeyPress;
