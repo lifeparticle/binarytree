@@ -10,7 +10,7 @@ const About = () => {
 	return (
 		<>
 			<div className={style.about}>
-				<div className={style.about__card}>
+				<Card className={style.about__card}>
 					<div className={style.about__card__intro}>
 						<Typography.Title
 							level={5}
@@ -50,7 +50,7 @@ const About = () => {
 							<p>{`— A node in the BinaryTree.`}</p>
 						</Typography.Title>
 					</div>
-				</div>
+				</Card>
 				<Card className={style.about__card} bordered={false}>
 					<Values />
 				</Card>
