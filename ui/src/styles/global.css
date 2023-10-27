@@ -1,0 +1,6 @@
+.heart {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation: pulse 1s infinite;
+}

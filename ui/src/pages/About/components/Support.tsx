@@ -24,6 +24,7 @@ const APP_SUPPORT = [
 		Fancy giving this project a little love? Why not become a superstar
 		through{" "}
 		<Button
+			icon={<span className="heart">❤️</span>}
 			type="primary"
 			onClick={() => openLink("https://github.com/sponsors/lifeparticle")}
 		>
