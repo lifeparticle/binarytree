@@ -18,7 +18,6 @@ function useCombinedKeyPress(
 
 	const handleKeyDown = useCallback(
 		(event: KeyboardEvent) => {
-			event.preventDefault();
 			const key = event.key.toLowerCase();
 			if (!pressedKeys.includes(key)) {
 				setPressedKeys((prev) => [...prev, key]);
@@ -29,7 +28,6 @@ function useCombinedKeyPress(
 
 	const handleKeyUp = useCallback(
 		(event: KeyboardEvent) => {
-			event.preventDefault();
 			const key = event.key.toLowerCase();
 			if (pressedKeys.includes(key)) {
 				const filteredKeys = pressedKeys.filter((key) => key !== key);
