@@ -48,7 +48,7 @@ function useCombinedKeyPress(
 		};
 	}, [handleKeyDown, handleKeyUp]);
 
-	function compareArrays(pressedArray: string[], mainArray: string[]) {
+	const compareArrays = (pressedArray: string[], mainArray: string[]) => {
 		if (pressedArray?.length !== mainArray?.length) return false;
 
 		for (const iterator of mainArray) {
@@ -59,7 +59,7 @@ function useCombinedKeyPress(
 		}
 
 		return true;
-	}
+	};
 }
 
 export default useCombinedKeyPress;
