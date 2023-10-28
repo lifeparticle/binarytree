@@ -1,6 +1,7 @@
+import { BEAM } from "data/beamData";
+import { HELP } from "data/helpData";
 import { routes } from "data/routeData";
 import { useLocation } from "react-router-dom";
-import { BEAM, HELP } from "./constants";
 
 const usePageTitle = () => {
 	const { pathname } = useLocation();

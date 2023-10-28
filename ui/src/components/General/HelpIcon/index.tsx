@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Modal } from "antd";
 import Icon from "components/General/Icon";
 import Help from "./components/Help";
-import { HelpEntry } from "components/Hoc/withPageTitle/utils/constants";
+import { HelpEntry } from "data/helpData";
 
 interface HelpIconProps {
 	helpObject: HelpEntry;

@@ -12,6 +12,7 @@ import Colors from "./components/Colors";
 import ColorInputs from "./components/ColorInputs";
 import useParamsValue from "hooks/useParamsValue";
 import { useDebounce } from "hooks/useDebounce";
+import { PARAMS } from "data/paramsData";
 
 interface SelectOption {
 	value: string;
@@ -25,11 +26,11 @@ const ShadesAndTints: React.FC = () => {
 		percentage: DEFAULT_NUM_SHADES.toString(),
 	});
 
-	const [color, setColor] = useState(String(searchParams.get("color")));
+	const [color, setColor] = useState(String(searchParams.get(PARAMS.color)));
 
 	const debouncedSearchTerm = useDebounce(color);
 
-	const percentage = String(searchParams.get("percentage"));
+	const percentage = String(searchParams.get(PARAMS.percentage));
 
 	const [shades, setShades] = useState<string[]>([]);
 	const [tints, setTints] = useState<string[]>([]);
@@ -38,13 +39,13 @@ const ShadesAndTints: React.FC = () => {
 	const [isPending, startTransition] = useTransition();
 
 	const resetInputs = () => {
-		updateParamsValue("color", DEFAULT_COLOR);
-		updateParamsValue("percentage", DEFAULT_NUM_SHADES.toString());
+		updateParamsValue(PARAMS.color, DEFAULT_COLOR);
+		updateParamsValue(PARAMS.percentage, DEFAULT_NUM_SHADES.toString());
 	};
 
 	const clearInputs = () => {
-		updateParamsValue("color", "");
-		updateParamsValue("percentage", "");
+		updateParamsValue(PARAMS.color, "");
+		updateParamsValue(PARAMS.percentage, "");
 	};
 
 	useCombinedKeyPress(resetInputs, ["Meta", "KeyE"]);
@@ -53,7 +54,7 @@ const ShadesAndTints: React.FC = () => {
 	useCombinedKeyPress(resetInputs, ["Meta", "KeyE"]);
 
 	useEffect(() => {
-		updateParamsValue("color", debouncedSearchTerm);
+		updateParamsValue(PARAMS.color, debouncedSearchTerm);
 	}, [debouncedSearchTerm, updateParamsValue]);
 
 	useEffect(() => {
@@ -73,7 +74,7 @@ const ShadesAndTints: React.FC = () => {
 				color={color}
 				handleColorChange={(e) => setColor(e.target.value)}
 				handlePercentageChange={(num) =>
-					num && updateParamsValue("percentage", num.toString())
+					num && updateParamsValue(PARAMS.percentage, num.toString())
 				}
 				setColor={setColor}
 				percentage={Number(percentage)}

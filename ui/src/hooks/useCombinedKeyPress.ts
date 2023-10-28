@@ -18,7 +18,6 @@ function useCombinedKeyPress(
 
 	const handleKeyDown = useCallback(
 		(event: KeyboardEvent) => {
-			event.preventDefault();
 			const key = event.key.toLowerCase();
 			if (!pressedKeys.includes(key)) {
 				setPressedKeys((prev) => [...prev, key]);
@@ -29,7 +28,6 @@ function useCombinedKeyPress(
 
 	const handleKeyUp = useCallback(
 		(event: KeyboardEvent) => {
-			event.preventDefault();
 			const key = event.key.toLowerCase();
 			if (pressedKeys.includes(key)) {
 				const filteredKeys = pressedKeys.filter((key) => key !== key);
@@ -48,7 +46,7 @@ function useCombinedKeyPress(
 		};
 	}, [handleKeyDown, handleKeyUp]);
 
-	function compareArrays(pressedArray: string[], mainArray: string[]) {
+	const compareArrays = (pressedArray: string[], mainArray: string[]) => {
 		if (pressedArray?.length !== mainArray?.length) return false;
 
 		for (const iterator of mainArray) {
@@ -59,7 +57,7 @@ function useCombinedKeyPress(
 		}
 
 		return true;
-	}
+	};
 }
 
 export default useCombinedKeyPress;
