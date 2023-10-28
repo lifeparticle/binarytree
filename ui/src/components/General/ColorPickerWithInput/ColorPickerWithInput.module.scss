@@ -1,6 +1,7 @@
 $cp-top: 27px;
 $cp-left: -12px;
 $cp-bg-color: rgb(68, 68, 68);
+$cp-z-index: 9999;
 
 .cpwi {
 	&__color {
@@ -16,7 +17,7 @@ $cp-bg-color: rgb(68, 68, 68);
 			border-radius: var(--bt-size-10);
 			top: $cp-top;
 			left: $cp-left;
-			z-index: var(--bt-z-index-dropdown);
+			z-index: $cp-z-index;
 			display: none;
 			position: absolute;
 		}
