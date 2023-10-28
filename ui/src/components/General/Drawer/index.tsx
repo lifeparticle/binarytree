@@ -4,7 +4,7 @@ import Icon from "components/General/Icon";
 import style from "./Drawer.module.scss";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { ResponsiveButton } from "components/General/FormComponents";
-import { BeamDetail } from "components/Hoc/withPageTitle/utils/constants";
+import { BeamDetail } from "data/beamData";
 
 interface DrawerProps {
 	beamObject: BeamDetail[];

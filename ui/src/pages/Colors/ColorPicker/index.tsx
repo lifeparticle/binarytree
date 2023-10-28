@@ -12,29 +12,29 @@ import CopyInput from "components/Layouts/CopyInput";
 import { ResponsiveInputWithLabel } from "components/General/FormComponents";
 import useParamsValue from "hooks/useParamsValue";
 import { useDebounce } from "hooks/useDebounce";
-
 import { FORMAT_LABELS } from "./utils/constants";
+import { PARAMS } from "data/paramsData";
 
 type FormatType = Lowercase<(typeof FORMAT_LABELS)[number]>;
 
 const ColorPicker: React.FC = () => {
 	const { searchParams, updateParamsValue } = useParamsValue({
-		color: INITIAL_COLOR,
-		format: INITIAL_FORMAT,
+		[PARAMS.color]: INITIAL_COLOR,
+		[PARAMS.format]: INITIAL_FORMAT,
 	});
 
 	const [colorPickerRan, setColorPickerRan] = useState(false);
 	const [formatState, setFormatState] = useState(
-		searchParams.get("color") || ""
+		searchParams.get(PARAMS.color) || ""
 	);
-	const color = String(searchParams.get("color"));
-	const format = String(searchParams.get("format")) as FormatType;
+	const color = String(searchParams.get(PARAMS.color));
+	const format = String(searchParams.get(PARAMS.format)) as FormatType;
 	const colors = useMemo(() => calculateColors(color), [color]);
 	const debouncedSearchTerm = useDebounce(formatState);
 
 	useEffect(() => {
 		if (debouncedSearchTerm && !colorPickerRan) {
-			updateParamsValue("color", debouncedSearchTerm);
+			updateParamsValue(PARAMS.color, debouncedSearchTerm);
 		}
 	}, [debouncedSearchTerm, updateParamsValue, colorPickerRan]);
 
@@ -48,10 +48,13 @@ const ColorPicker: React.FC = () => {
 								label="Color code"
 								value={color}
 								onChange={(e) => {
-									updateParamsValue("color", e.target.value);
+									updateParamsValue(
+										PARAMS.color,
+										e.target.value
+									);
 									setColorPickerRan(true);
 									updateParamsValue(
-										"format",
+										PARAMS.format,
 										determineFormat(e.target.value)
 									);
 								}}
@@ -66,7 +69,7 @@ const ColorPicker: React.FC = () => {
 							<ColorFormatTags
 								currentFormat={format}
 								onSelect={(format) => {
-									updateParamsValue("format", format);
+									updateParamsValue(PARAMS.format, format);
 								}}
 							/>
 						</Form.Item>
