@@ -3,8 +3,6 @@ import style from "./TableOfContent.module.scss";
 import { marked } from "marked";
 import { Input, Form, Card } from "antd";
 import useCombinedKeyPress from "hooks/useCombinedKeyPress";
-import { TocItem } from "./utils/types";
-import { indentMap } from "./utils/constants";
 import CopyInput from "components/Layouts/CopyInput";
 import { ResponsiveInputWithLabel } from "components/General/FormComponents";
 import Clipboard from "components/RenderProps/Clipboard";
@@ -12,6 +10,20 @@ import ClipboardButton from "components/General/ClipboardButton";
 import PageGrid from "components/Layouts/PageGrid";
 import Warning from "components/General/Warning";
 const { TextArea } = Input;
+
+type TocItem = {
+	tag: "H1" | "H2" | "H3" | "H4" | "H5" | "H6";
+	text: string;
+};
+
+const indentMap = {
+	H1: "- ",
+	H2: "\t* ",
+	H3: "\t\t+ ",
+	H4: "\t\t\t- ",
+	H5: "\t\t\t\t* ",
+	H6: "\t\t\t\t\t+ ",
+};
 
 const TableOfContent: React.FC = () => {
 	const [url, setUrl] = useState("");
@@ -23,13 +35,14 @@ const TableOfContent: React.FC = () => {
 			fetchData(
 				"https://raw.githubusercontent.com/lifeparticle/JS-Cheatsheet/main/README.md"
 			),
-		["Meta", "KeyE"]
+		["control/meta", "e"]
 	);
+
 	useCombinedKeyPress(() => {
 		setUrl("");
 		setMarkdown("");
 		setTableOfContents("");
-	}, ["Meta", "KeyR"]);
+	}, ["control/meta", "r"]);
 
 	const onMarkdownChange = (text: string) => {
 		setMarkdown(text);
@@ -65,7 +78,7 @@ const TableOfContent: React.FC = () => {
 		return `[${text}](#${getUniqueHeadingText(text)
 			.toLowerCase()
 			.replace(/\s/g, "-")
-			.replace(/[^A-Za-z0-9-\u0980-\u09FF_]+/g, "")})`;
+			.replace(/[^A-Za-z0-9-\u0080-\uFFFF_]+/g, "")})`;
 	};
 
 	const generateTableOfContentsText = (tableOfContents: TocItem[]) => {
@@ -80,6 +93,9 @@ const TableOfContent: React.FC = () => {
 
 	const fetchData = (url: string) => {
 		setUrl(url);
+		setMarkdown("");
+		setTableOfContents("");
+		if (!url) return;
 
 		fetch(url)
 			.then((res) => res.text())
@@ -103,9 +119,7 @@ const TableOfContent: React.FC = () => {
 							label="Input URL"
 							placeholder="URL"
 							value={url}
-							onChange={(event) =>
-								fetchData(event.currentTarget.value)
-							}
+							onChange={(event) => fetchData(event.target.value)}
 							type="text"
 						/>
 
