@@ -79,10 +79,11 @@ const TableOfContent: React.FC = () => {
 			.join("\n");
 	};
 
-	const fetchData = (url: string) => {
-		setUrl(url);
+	const fetchData = (value: string) => {
+		setUrl(value);
+		if (!value) return;
 
-		fetch(url)
+		fetch(value)
 			.then((res) => res.text())
 			.then(
 				(result) => {
@@ -104,9 +105,12 @@ const TableOfContent: React.FC = () => {
 							label="Input URL"
 							placeholder="URL"
 							value={url}
-							onChange={(event) =>
-								fetchData(event.currentTarget.value)
-							}
+							onChange={(event) => {
+								console.log("ddd");
+								setMarkdown("");
+								setTableOfContents("");
+								fetchData(event.target.value);
+							}}
 							type="text"
 						/>
 
