@@ -54,7 +54,7 @@ const About = () => {
 				<Card className={style.about__card} bordered={false}>
 					<Values />
 				</Card>
-				<Card className={style.about__card} bordered={false}>
+				<Card className={style.about_slider_card} bordered={false}>
 					<Features />
 				</Card>
 				<Card className={style.about__card} bordered={false}>
