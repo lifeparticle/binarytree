@@ -1,4 +1,4 @@
-import { HelpEntry } from "components/Hoc/withPageTitle/utils/constants";
+import { HelpEntry } from "data/helpData";
 import React from "react";
 
 interface HelpProps {
