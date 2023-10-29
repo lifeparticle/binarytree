@@ -1,4 +1,4 @@
-import { Card, Typography } from "antd";
+import { Card } from "antd";
 import style from "./About.module.scss";
 import Footer from "components/Layouts/Footer";
 import Values from "./components/Values";
