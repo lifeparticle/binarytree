@@ -2,7 +2,7 @@ import Units from "pages/CSS/Units";
 import ImageConverter from "pages/Converter/Image";
 import Diagramming from "pages/Tools/Diagramming";
 
-type RouteId =
+export type RouteId =
 	| "/"
 	| "about"
 	| "avatar"
