@@ -23,8 +23,8 @@ const steps = [
 	},
 ];
 
-interface IssueType {
-	[key: string]: unknown;
+export interface IssueType {
+	[key: string]: any;
 	title: string;
 	body?: string;
 	assignee?: string | null;
@@ -33,7 +33,7 @@ interface IssueType {
 	labels?: string[];
 }
 
-interface SavedIssueType {
+export interface SavedIssueType {
 	url: string;
 	title: string;
 }
