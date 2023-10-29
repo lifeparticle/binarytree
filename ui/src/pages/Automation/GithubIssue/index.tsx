@@ -12,6 +12,7 @@ import ErrorComponent from "components/General/ErrorComponent";
 import DownloadCsv from "./components/DownloadCsv";
 import style from "./GithubIssue.module.scss";
 import { useOnlineStatus } from "hooks/useOnlineStatus";
+import Icon from "components/General/Icon";
 
 const GithubIssue: React.FC = () => {
 	//? input state
@@ -21,6 +22,7 @@ const GithubIssue: React.FC = () => {
 	const [token, setToken] = useState("");
 	const [fileData, setFileData] = useState<IssueType[]>([]);
 	const [isValidInput, setIsValidInput] = useState(false);
+	const [fileName, setFileName] = useState("");
 
 	// ? output state
 	const [progress, setProgress] = useState(0);
@@ -28,6 +30,7 @@ const GithubIssue: React.FC = () => {
 	const [savedIssues, setSavedIssues] = useState<SavedIssueType[]>([]);
 
 	const handleUpload = (file: File) => {
+		setFileName(file.name);
 		Papa.parse<IssueType[]>(file, {
 			complete: (result) => {
 				const responseIssue = result.data;
@@ -125,11 +128,25 @@ const GithubIssue: React.FC = () => {
 							<Upload
 								beforeUpload={handleUpload}
 								listType="picture"
+								showUploadList={false}
 							>
 								<Button disabled={!haveConfig}>
 									Upload csv
 								</Button>
 							</Upload>
+							<br />
+
+							{fileData.length > 0 && (
+								<div className={style.gi__uploaded_file}>
+									<span>{fileName}</span>
+									<button
+										className={style.gi__uploaded_file_btn}
+										onClick={() => setFileData([])}
+									>
+										<Icon name="X" />
+									</button>
+								</div>
+							)}
 						</Form.Item>
 						<Button
 							disabled={

@@ -1,3 +1,20 @@
 .gi {
 	height: var(--bt-size-percent-100);
+
+	&__uploaded_file {
+		padding: var(--bt-size-4) var(--bt-size-10);
+		border: var(--bt-size-1) solid green;
+		margin-top: var(--bt-size-6);
+		border-radius: var(--bt-size-5);
+		width: var(--bt-size-percent-55);
+		font-weight: bold;
+		display: flex;
+		align-items: center;
+		gap: var(--bt-size-5);
+
+		&_btn {
+			cursor: pointer;
+			border: none;
+		}
+	}
 }
