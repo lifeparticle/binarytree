@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { Drawer as AntDDrawer, Space } from "antd";
-import Icon from "components/General/Icon";
-import style from "./Drawer.module.scss";
+import { Drawer as AntDDrawer, Button, Space } from "antd";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { ResponsiveButton } from "components/General/FormComponents";
 import { BeamDetail } from "data/beamData";
@@ -44,11 +42,15 @@ const Drawer: React.FC<DrawerProps> = ({ beamObject }) => {
 
 	return (
 		<div>
-			<Space>
-				<span className={style.beam} onClick={showDrawer}>
-					<Icon name="ChevronRight" />
-				</span>
-			</Space>
+			<Button
+				size="large"
+				key="Github"
+				type="default"
+				onClick={showDrawer}
+				aria-label="helpicon"
+			>
+				B
+			</Button>
 			<AntDDrawer
 				title="Tools"
 				placement={"right"}

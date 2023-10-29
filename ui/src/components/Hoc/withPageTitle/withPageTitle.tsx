@@ -47,6 +47,9 @@ const withPageTitle = <T extends object>(
 									{helpObject && (
 										<HelpIcon helpObject={helpObject} />
 									)}
+									{beamObject.length > 0 && (
+										<Drawer beamObject={beamObject} />
+									)}
 								</Space>
 								<Text text={description} level={5} />
 								<br />
@@ -54,9 +57,6 @@ const withPageTitle = <T extends object>(
 						)}
 					</ErrorBoundary>
 					<ErrorBoundary FallbackComponent={FallbackComponent}>
-						{beamObject.length > 0 && (
-							<Drawer beamObject={beamObject} />
-						)}
 						<WrappedComponent {...props} />
 					</ErrorBoundary>
 				</div>
