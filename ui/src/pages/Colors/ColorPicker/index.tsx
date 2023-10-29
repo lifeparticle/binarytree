@@ -41,7 +41,7 @@ const ColorPicker: React.FC = () => {
 	return (
 		<Form layout="vertical">
 			<div className={style.cp}>
-				<Card bordered={false}>
+				<Card bordered={false} className={style.cp__inputs}>
 					<Space direction="vertical" wrap>
 						<CopyInput>
 							<ResponsiveInputWithLabel

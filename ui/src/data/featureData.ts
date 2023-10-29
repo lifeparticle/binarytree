@@ -1,4 +1,4 @@
-import { routesById } from "data/routeData";
+import { RouteId, routesById } from "data/routeData";
 
 interface LibraryList {
 	[key: string]: string;
@@ -27,7 +27,7 @@ const LIBRARY_URLS: LibraryList = {
 };
 
 interface Feature {
-	key: string;
+	key: RouteId;
 	name: string;
 	shortDescription: string;
 	fullDescription: string;
@@ -344,3 +344,8 @@ export const FEATURE_DATA: Feature[] = [
 	// 	library: [{ name: "Vanilla JS", url: "" }],
 	// },
 ];
+
+export const featuresById = FEATURE_DATA.reduce((acc, feature) => {
+	acc[feature.key] = feature;
+	return acc;
+}, {} as Record<RouteId, Feature>);

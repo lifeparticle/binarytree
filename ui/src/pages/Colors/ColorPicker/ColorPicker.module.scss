@@ -11,6 +11,13 @@ $cp-size-minus-10: -10px;
 	gap: var(--bt-size-16);
 	justify-content: center;
 
+	&__inputs {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
 	&__result {
 		display: flex;
 		justify-content: space-between;
