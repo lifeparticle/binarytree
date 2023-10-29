@@ -28,4 +28,17 @@
 			}
 		}
 	}
+
+	&__sponsor {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--bt-size-8);
+	}
+
+	&_slider_card {
+		@media screen and (min-width: 1240px) {
+			max-width: var(--bt-converter-width);
+			margin: 0 auto;
+		}
+	}
 }

@@ -51,6 +51,7 @@
 		"react-ga4": "^2.1.0",
 		"react-head": "^3.4.2",
 		"react-markdown": "6",
+		"react-responsive-carousel": "^3.2.23",
 		"react-router-dom": "^6.11.1",
 		"react-syntax-highlighter": "^15.5.0",
 		"sass": "^1.62.1",
