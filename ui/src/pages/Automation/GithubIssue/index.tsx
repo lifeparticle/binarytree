@@ -6,12 +6,37 @@ import React, { useState } from "react";
 import Papa from "papaparse";
 import CsvTable from "./components/CsvTable";
 import { calculateSteps, createGitHubIssue } from "./utils/helper";
-import { steps } from "./utils/constants";
-import { IssueType, SavedIssueType } from "./types";
 import ErrorComponent from "components/General/ErrorComponent";
 import DownloadCsv from "./components/DownloadCsv";
 import style from "./GithubIssue.module.scss";
 import { useOnlineStatus } from "hooks/useOnlineStatus";
+
+const steps = [
+	{
+		title: "Config",
+	},
+	{
+		title: "File uploaded",
+	},
+	{
+		title: "CSV file validation",
+	},
+];
+
+interface IssueType {
+	[key: string]: unknown;
+	title: string;
+	body?: string;
+	assignee?: string | null;
+	assignees?: string[];
+	milestone?: null | string | number;
+	labels?: string[];
+}
+
+interface SavedIssueType {
+	url: string;
+	title: string;
+}
 
 const GithubIssue: React.FC = () => {
 	//? input state
@@ -37,7 +62,6 @@ const GithubIssue: React.FC = () => {
 					const formattedIssue: IssueType = {} as IssueType;
 					for (const key in issue) {
 						if (Object.prototype.hasOwnProperty.call(issue, key)) {
-							// ts-ignore
 							formattedIssue[key.toLowerCase()] = issue[key];
 						}
 					}
