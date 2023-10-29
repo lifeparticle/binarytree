@@ -68,6 +68,11 @@ const CREDITS_DATA: Credits[] = [
 		name: "Dudeowl",
 		url: "https://99designs.com.au/profiles/dudeowl",
 	},
+	{
+		key: "10",
+		name: "Vertex Designs",
+		url: "https://unsplash.com/@vertex_800",
+	},
 ];
 
 const DATA = CREDITS_DATA.map((credit) => (
