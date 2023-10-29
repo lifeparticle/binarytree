@@ -1,6 +1,5 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, test } from "vitest";
-import user from "@testing-library/user-event";
 import ImageGeneratorFromColors from "pages/Generator/Image";
 
 describe("Image Generator component", () => {
@@ -24,7 +23,9 @@ describe("Image Generator component", () => {
 
 		const textareaElement = screen.getByRole("textbox");
 
-		await user.type(textareaElement, COLOR);
+		expect(textareaElement).toBeInTheDocument();
+
+		fireEvent.change(textareaElement, { target: { value: COLOR } });
 
 		expect(textareaElement).toHaveValue(COLOR);
 	});
