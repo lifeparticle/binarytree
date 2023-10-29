@@ -10,22 +10,30 @@
 		max-width: var(--bt-converter-width);
 
 		&__intro {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-
-			&_text {
-				backdrop-filter: blur(100px);
-				object-fit: cover;
-				display: flex;
-				justify-content: center;
-				flex-direction: column;
-				padding: var(--bt-size-50);
-
-				p {
-					text-align: right;
-				}
+			p {
+				font-size: 14px;
+				background: linear-gradient(
+					to bottom,
+					rgba(44, 44, 44, 0.802) 50%,
+					transparent 50%
+				);
+				padding: var(--bt-size-10);
+				border-radius: var(--bt-size-8);
+				background-repeat: repeat-y;
+				background-size: 100% 1px;
+				backdrop-filter: blur(10px);
 			}
+			&_text {
+				color: white !important;
+			}
+			p {
+				text-align: right;
+			}
+		}
+
+		&_cover {
+			background: url("../../assets/About/cover.jpg") no-repeat left /
+				cover;
 		}
 	}
 

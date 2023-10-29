@@ -1,4 +1,4 @@
-import { Card, Typography } from "antd";
+import { Card } from "antd";
 import style from "./About.module.scss";
 import Footer from "components/Layouts/Footer";
 import Values from "./components/Values";
@@ -10,12 +10,9 @@ const About = () => {
 	return (
 		<>
 			<div className={style.about}>
-				<Card className={style.about__card}>
+				<Card className={style.about__card_cover}>
 					<div className={style.about__card__intro}>
-						<Typography.Title
-							level={5}
-							className={style.about__card__intro_text}
-						>
+						<p className={style.about__card__intro_text}>
 							Hey there, fellow developers! I hope you're having a
 							fantastic day and your code is running smoothly.
 							Don't worry if it's not; we've all been there. I've
@@ -46,9 +43,8 @@ const About = () => {
 							I hope BinaryTree will be a valuable addition to
 							your developer toolkit. Happy coding!
 							<br />
-							<br />
-							<p>{`— A node in the BinaryTree.`}</p>
-						</Typography.Title>
+							<br />— A node in the BinaryTree.
+						</p>
 					</div>
 				</Card>
 				<Card className={style.about__card} bordered={false}>

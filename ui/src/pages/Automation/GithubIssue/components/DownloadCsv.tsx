@@ -1,5 +1,5 @@
 import React from "react";
-import { SavedIssueType } from "pages/Automation/GithubIssue/types";
+import { SavedIssueType } from "pages/Automation/GithubIssue/index";
 import { Button } from "antd";
 import { saveAs } from "file-saver";
 import { generateCsvData } from "pages/Automation/GithubIssue/utils/helper";
