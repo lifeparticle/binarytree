@@ -18,7 +18,7 @@ const Units = lazy(() => import("pages/CSS/Units"));
 
 const Base64 = lazy(() => import("pages/Converter/Base64"));
 const CodeFormatter = lazy(() => import("pages/Tools/CodeFormatter"));
-const ImageConverter = lazy(() => import("pages/Converter/Image"));
+const FileConverter = lazy(() => import("pages/Converter/File"));
 const JsonToTypescript = lazy(() => import("pages/Converter/JsonToTypescript"));
 const Pixel = lazy(() => import("pages/Converter/Pixel"));
 
@@ -78,11 +78,11 @@ export {
 	Docs,
 	Editor,
 	Feedback,
+	FileConverter,
 	Github,
 	GithubIsuue,
 	Home,
 	Icon,
-	ImageConverter,
 	ImageGeneratorFromColors,
 	Interview,
 	JsonToTypescript,

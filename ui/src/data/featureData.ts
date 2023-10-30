@@ -24,6 +24,8 @@ const LIBRARY_URLS: LibraryList = {
 	"js-beautify": "https://www.npmjs.com/package/js-beautify",
 	"@monaco-editor/react":
 		"https://www.npmjs.com/package/@monaco-editor/react",
+	"@ffmpeg/ffmpeg": "https://www.npmjs.com/package/@ffmpeg/ffmpeg",
+	"@ffmpeg/util": "https://www.npmjs.com/package/@ffmpeg/util",
 };
 
 interface Feature {
@@ -327,14 +329,23 @@ export const FEATURE_DATA: Feature[] = [
 	// 	link: routesById.units.path,
 	// 	library: [{ name: "Vanilla JS", url: "" }],
 	// },
-	// {
-	// 	key: routesById.imageconverter.id,
-	// 	name: routesById.imageconverter.title,
-	// 	shortDescription: routesById.imageconverter.description,
-	// 	fullDescription: "",
-	// 	link: routesById.imageconverter.path,
-	// 	library: [{ name: "Vanilla JS", url: "" }],
-	// },
+	{
+		key: routesById.fileconverter.id,
+		name: routesById.fileconverter.title,
+		shortDescription: routesById.fileconverter.description,
+		fullDescription: "",
+		link: routesById.fileconverter.path,
+		library: [
+			{
+				name: "FFmpeg",
+				url: LIBRARY_URLS["@ffmpeg/ffmpeg"],
+			},
+			{
+				name: "Fmpeg Util",
+				url: LIBRARY_URLS["@ffmpeg/util"],
+			},
+		],
+	},
 	// {
 	// 	key: routesById.docs.id,
 	// 	name: routesById.docs.title,

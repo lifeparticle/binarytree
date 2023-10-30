@@ -75,10 +75,10 @@ export const MENU_ITEMS = [
 				show: true,
 			},
 			{
-				name: routesById.imageconverter.title,
-				url: routesById.imageconverter.path,
+				name: routesById.fileconverter.title,
+				url: routesById.fileconverter.path,
 				icon: "FileImage",
-				show: IN_DEVELOPMENT,
+				show: true,
 			},
 			{
 				name: routesById.pixelconverter.title,

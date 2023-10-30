@@ -1,3 +1,7 @@
+### [7.0.0] - 2023-10-30
+
+-   Add file converter
+
 ### [6.5.0] - 2023-10-30
 
 -   Update github issue

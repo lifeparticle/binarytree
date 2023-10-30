@@ -17,6 +17,8 @@
 		"@emotion/react": "^11.11.0",
 		"@excalidraw/excalidraw": "^0.16.0",
 		"@faker-js/faker": "^7.6.0",
+		"@ffmpeg/ffmpeg": "^0.12.7",
+		"@ffmpeg/util": "^0.12.1",
 		"@mantine/core": "^6.0.10",
 		"@mantine/ds": "^6.0.10",
 		"@mantine/hooks": "^6.0.10",

@@ -10,9 +10,16 @@ interface IconProps {
 	size?: number;
 	color?: string;
 	className?: string;
+	strokeWidth?: string;
 }
 
-const Icon: React.FC<IconProps> = ({ name, size = 18, color, className }) => {
+const Icon: React.FC<IconProps> = ({
+	name,
+	size = 18,
+	color,
+	className,
+	strokeWidth = "1.3",
+}) => {
 	let LucideIcon = icons[name];
 
 	if (!LucideIcon) {
@@ -31,7 +38,7 @@ const Icon: React.FC<IconProps> = ({ name, size = 18, color, className }) => {
 
 	return (
 		<LucideIcon
-			strokeWidth="1.3"
+			strokeWidth={strokeWidth}
 			size={size}
 			color={color}
 			className={className}
