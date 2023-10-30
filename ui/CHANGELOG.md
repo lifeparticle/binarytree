@@ -2,6 +2,7 @@
 
 -   Update github issue
 -   Add githubIssue README
+-   Update UI PR yml
 
 ### [6.4.0] - 2023-10-11
 
