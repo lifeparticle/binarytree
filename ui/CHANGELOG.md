@@ -1,3 +1,8 @@
+### [6.5.0] - 2023-10-30
+
+-   Update github issue
+-   Add githubIssue README
+
 ### [6.4.0] - 2023-10-11
 
 -   Add github automation
