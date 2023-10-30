@@ -46,4 +46,27 @@ const handleImageUpload = (
 	}
 };
 
-export { downloadFile, downloadPDFFile, downloadTextFile, handleImageUpload };
+const getFileExtension = (fileName: string) => {
+	const ext = fileName.split(".").pop();
+	if (ext) {
+		return ext;
+	}
+	return "";
+};
+
+const removeExtension = (fileName: string) => {
+	const ext = getFileExtension(fileName);
+	if (ext) {
+		return fileName.replace(`.${ext}`, "");
+	}
+	return fileName;
+};
+
+export {
+	downloadFile,
+	downloadPDFFile,
+	downloadTextFile,
+	handleImageUpload,
+	getFileExtension,
+	removeExtension,
+};

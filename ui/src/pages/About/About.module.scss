@@ -20,8 +20,7 @@
 				padding: var(--bt-size-10);
 				border-radius: var(--bt-size-8);
 				background-repeat: repeat-y;
-				background-size: 100% 1px;
-				backdrop-filter: blur(10px);
+				background-size: 300% 1px;
 			}
 			&_text {
 				color: white !important;

@@ -1,7 +1,3 @@
-import Units from "pages/CSS/Units";
-import ImageConverter from "pages/Converter/Image";
-import Diagramming from "pages/Tools/Diagramming";
-
 export type RouteId =
 	| "/"
 	| "about"
@@ -26,10 +22,10 @@ export type RouteId =
 	| "editor"
 	| "feedback"
 	| "feedback"
+	| "fileconverter"
 	| "github"
 	| "githubissue"
 	| "icon"
-	| "imageconverter"
 	| "imagegeneratorfromcolors"
 	| "interview"
 	| "jsontotypescript"
@@ -74,22 +70,25 @@ import {
 	Book,
 	BorderRadius,
 	BoxShadow,
+	CodeFormatter,
 	ColorPicker,
 	CookiePolicy,
 	Course,
 	DataGenerator,
 	DesignSystem,
+	Diagramming,
 	Diffchecker,
+	Docs,
+	Editor,
 	Feedback,
 	Github,
+	GithubIsuue,
 	Home,
 	Icon,
+	FileConverter,
 	ImageGeneratorFromColors,
 	Interview,
 	JsonToTypescript,
-	CodeFormatter,
-	Docs,
-	Editor,
 	Mimetype,
 	Movie,
 	News,
@@ -110,8 +109,8 @@ import {
 	Tool,
 	TvSeries,
 	UiUx,
+	Units,
 	YouTube,
-	GithubIsuue,
 } from "pages/pages";
 
 export const routes: Route[] = [
@@ -186,11 +185,11 @@ export const routes: Route[] = [
 		component: JsonToTypescript,
 	},
 	{
-		id: "imageconverter",
-		path: "/generator/ic",
-		title: "Image",
-		description: "Convert images to different formats.",
-		component: ImageConverter,
+		id: "fileconverter",
+		path: "/converter/fc",
+		title: "File",
+		description: "Convert files to different formats.",
+		component: FileConverter,
 	},
 	{
 		id: "codeformatter",

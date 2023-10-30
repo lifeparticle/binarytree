@@ -725,6 +725,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ffmpeg/ffmpeg@npm:^0.12.7":
+  version: 0.12.7
+  resolution: "@ffmpeg/ffmpeg@npm:0.12.7"
+  dependencies:
+    "@ffmpeg/types": ^0.12.2
+  checksum: 25303e278cdceb1bbb87c8b97c848e06ea8e9387aae497b95316d82da6c56981da2508598567237ab14d7a769f88f1eb6f7e184e564d23a866cae4e6d63a093f
+  languageName: node
+  linkType: hard
+
+"@ffmpeg/types@npm:^0.12.2":
+  version: 0.12.2
+  resolution: "@ffmpeg/types@npm:0.12.2"
+  checksum: 2a80d42f9afe93db86c636a91f1477a796f628528eebe526673bf450221dc97fa2a773670c0979c52b6b287bd8b94fc508bbddbe40054a44df44aeed80c9c801
+  languageName: node
+  linkType: hard
+
+"@ffmpeg/util@npm:^0.12.1":
+  version: 0.12.1
+  resolution: "@ffmpeg/util@npm:0.12.1"
+  checksum: 6de17789a3cbe912fec2ae1e5c0b710fb68a0a668789311bce8967f8468b0dd64335b96144eea71800fa8729d27468e0d54e4c8ef9c7fc35a99590116d3074f9
+  languageName: node
+  linkType: hard
+
 "@floating-ui/core@npm:^1.4.1":
   version: 1.4.1
   resolution: "@floating-ui/core@npm:1.4.1"
@@ -3303,6 +3326,8 @@ __metadata:
     "@emotion/react": ^11.11.0
     "@excalidraw/excalidraw": ^0.16.0
     "@faker-js/faker": ^7.6.0
+    "@ffmpeg/ffmpeg": ^0.12.7
+    "@ffmpeg/util": ^0.12.1
     "@mantine/core": ^6.0.10
     "@mantine/ds": ^6.0.10
     "@mantine/hooks": ^6.0.10
