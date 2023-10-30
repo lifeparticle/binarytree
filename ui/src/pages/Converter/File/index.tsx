@@ -11,7 +11,7 @@ import styles from "./FileConverter.module.scss";
 import { useFfmpeg } from "./useFfmpeg";
 import {
 	getFileExtension,
-	removeExtension,
+	removeFileExtension,
 } from "utils/helper-functions/files";
 
 const { Dragger } = Upload;
@@ -36,9 +36,9 @@ function FileConverter() {
 
 	const transcode = async (fileConverter: FileConverter) => {
 		const ffmpeg = ffmpegRef.current;
-		const outputFileName = `${removeExtension(fileConverter.file.name)}${
-			fileConverter.to
-		}`;
+		const outputFileName = `${removeFileExtension(
+			fileConverter.file.name
+		)}${fileConverter.to}`;
 
 		await ffmpeg.writeFile(
 			fileConverter.file.name,

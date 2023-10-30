@@ -32,7 +32,6 @@ export const useFfmpeg = () => {
 	};
 
 	useEffect(() => {
-		console.log("yoooooo", loaded);
 		load();
 	}, [loaded]);
 

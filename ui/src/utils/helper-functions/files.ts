@@ -54,7 +54,7 @@ const getFileExtension = (fileName: string) => {
 	return "";
 };
 
-const removeExtension = (fileName: string) => {
+const removeFileExtension = (fileName: string) => {
 	const ext = getFileExtension(fileName);
 	if (ext) {
 		return fileName.replace(`.${ext}`, "");
@@ -68,5 +68,5 @@ export {
 	downloadTextFile,
 	handleImageUpload,
 	getFileExtension,
-	removeExtension,
+	removeFileExtension,
 };
