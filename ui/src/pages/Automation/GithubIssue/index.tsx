@@ -24,8 +24,7 @@ const steps = [
 ];
 
 export interface IssueType {
-	[key: string]: any;
-	title: string;
+	title?: string;
 	body?: string;
 	assignee?: string | null;
 	assignees?: string[];
@@ -58,14 +57,14 @@ const GithubIssue: React.FC = () => {
 				const responseIssue = result.data;
 
 				// Convert keys to lowercase for each object in the array
-				const formatData = responseIssue.map((issue) => {
-					const formattedIssue: IssueType = {} as IssueType;
-					for (const key in issue) {
-						if (Object.prototype.hasOwnProperty.call(issue, key)) {
-							formattedIssue[key.toLowerCase()] = issue[key];
-						}
-					}
-					return formattedIssue;
+				const formatData: IssueType[] = responseIssue.map((issue) => {
+					const newObj = Object.fromEntries(
+						Object.entries(issue).map(([k, v]) => [
+							k.toLowerCase(),
+							v,
+						])
+					);
+					return newObj;
 				});
 
 				const checkValidity = formatData.every((dt) => dt?.title);
@@ -147,6 +146,9 @@ const GithubIssue: React.FC = () => {
 					<InputGrid>
 						<Form.Item>
 							<Upload
+								customRequest={({ onSuccess }) => {
+									onSuccess && onSuccess("OK");
+								}}
 								beforeUpload={handleUpload}
 								listType="picture"
 							>
@@ -169,6 +171,7 @@ const GithubIssue: React.FC = () => {
 						</Button>
 					</InputGrid>
 				</Form>
+				<br />
 
 				<CsvTable data={fileData} />
 			</Card>
