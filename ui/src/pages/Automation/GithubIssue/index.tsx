@@ -10,7 +10,6 @@ import ErrorComponent from "components/General/ErrorComponent";
 import DownloadCsv from "./components/DownloadCsv";
 import style from "./GithubIssue.module.scss";
 import { useOnlineStatus } from "hooks/useOnlineStatus";
-import Icon from "components/General/Icon";
 
 const steps = [
 	{
@@ -25,8 +24,7 @@ const steps = [
 ];
 
 export interface IssueType {
-	[key: string]: any;
-	title: string;
+	title?: string;
 	body?: string;
 	assignee?: string | null;
 	assignees?: string[];
@@ -47,7 +45,6 @@ const GithubIssue: React.FC = () => {
 	const [token, setToken] = useState("");
 	const [fileData, setFileData] = useState<IssueType[]>([]);
 	const [isValidInput, setIsValidInput] = useState(false);
-	const [fileName, setFileName] = useState("");
 
 	// ? output state
 	const [progress, setProgress] = useState(0);
@@ -55,20 +52,19 @@ const GithubIssue: React.FC = () => {
 	const [savedIssues, setSavedIssues] = useState<SavedIssueType[]>([]);
 
 	const handleUpload = (file: File) => {
-		setFileName(file.name);
 		Papa.parse<IssueType[]>(file, {
 			complete: (result) => {
 				const responseIssue = result.data;
 
 				// Convert keys to lowercase for each object in the array
-				const formatData = responseIssue.map((issue) => {
-					const formattedIssue: IssueType = {} as IssueType;
-					for (const key in issue) {
-						if (Object.prototype.hasOwnProperty.call(issue, key)) {
-							formattedIssue[key.toLowerCase()] = issue[key];
-						}
-					}
-					return formattedIssue;
+				const formatData: IssueType[] = responseIssue.map((issue) => {
+					const newObj = Object.fromEntries(
+						Object.entries(issue).map(([k, v]) => [
+							k.toLowerCase(),
+							v,
+						])
+					);
+					return newObj;
 				});
 
 				const checkValidity = formatData.every((dt) => dt?.title);
@@ -150,27 +146,16 @@ const GithubIssue: React.FC = () => {
 					<InputGrid>
 						<Form.Item>
 							<Upload
+								customRequest={({ onSuccess }) => {
+									onSuccess && onSuccess("OK");
+								}}
 								beforeUpload={handleUpload}
 								listType="picture"
-								showUploadList={false}
 							>
 								<Button disabled={!haveConfig}>
 									Upload csv
 								</Button>
 							</Upload>
-							<br />
-
-							{fileData.length > 0 && (
-								<div className={style.gi__uploaded_file}>
-									<span>{fileName}</span>
-									<button
-										className={style.gi__uploaded_file_btn}
-										onClick={() => setFileData([])}
-									>
-										<Icon name="X" />
-									</button>
-								</div>
-							)}
 						</Form.Item>
 						<Button
 							disabled={
@@ -186,6 +171,7 @@ const GithubIssue: React.FC = () => {
 						</Button>
 					</InputGrid>
 				</Form>
+				<br />
 
 				<CsvTable data={fileData} />
 			</Card>
