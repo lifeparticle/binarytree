@@ -1,63 +1,35 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
+import useUserAgent from "./useUserAgent";
 
 type CallBackFunction = () => void;
 
 function useCombinedKeyPress(
 	callback: CallBackFunction,
-	keyCodes: string[]
+	targetKey: string
 ): void {
-	const [pressedKeys, setPressedKeys] = useState<string[]>([]);
-
-	useEffect(() => {
-		const isMatched = compareArrays(pressedKeys, keyCodes);
-		if (isMatched) {
-			callback();
-			setPressedKeys([]);
-		}
-	}, [pressedKeys, keyCodes, callback]);
+	const platform = useUserAgent();
 
 	const handleKeyDown = useCallback(
 		(event: KeyboardEvent) => {
 			const key = event.key.toLowerCase();
-			if (!pressedKeys.includes(key)) {
-				setPressedKeys((prev) => [...prev, key]);
-			}
-		},
-		[pressedKeys]
-	);
+			const modifierKey =
+				platform === "mac" ? event.metaKey : event.ctrlKey;
 
-	const handleKeyUp = useCallback(
-		(event: KeyboardEvent) => {
-			const key = event.key.toLowerCase();
-			if (pressedKeys.includes(key)) {
-				const filteredKeys = pressedKeys.filter((key) => key !== key);
-				setPressedKeys(filteredKeys);
+			if (modifierKey && key === targetKey.toLowerCase()) {
+				event.preventDefault();
+				event.stopPropagation();
+				callback();
 			}
 		},
-		[pressedKeys]
+		[platform, targetKey, callback]
 	);
 
 	useEffect(() => {
 		window.addEventListener("keydown", handleKeyDown);
-		window.addEventListener("keyup", handleKeyUp);
 		return () => {
 			window.removeEventListener("keydown", handleKeyDown);
-			window.removeEventListener("keyup", handleKeyUp);
 		};
-	}, [handleKeyDown, handleKeyUp]);
-
-	const compareArrays = (pressedArray: string[], mainArray: string[]) => {
-		if (pressedArray?.length !== mainArray?.length) return false;
-
-		for (const iterator of mainArray) {
-			const filteredArray = pressedArray.filter((key) =>
-				iterator.includes(key)
-			);
-			if (!(filteredArray?.length > 0)) return false;
-		}
-
-		return true;
-	};
+	}, [handleKeyDown]);
 }
 
 export default useCombinedKeyPress;

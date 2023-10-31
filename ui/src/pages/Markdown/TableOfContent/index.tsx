@@ -35,14 +35,14 @@ const TableOfContent: React.FC = () => {
 			fetchData(
 				"https://raw.githubusercontent.com/lifeparticle/JS-Cheatsheet/main/README.md"
 			),
-		["control/meta", "e"]
+		"e"
 	);
 
 	useCombinedKeyPress(() => {
 		setUrl("");
 		setMarkdown("");
 		setTableOfContents("");
-	}, ["control/meta", "r"]);
+	}, "r");
 
 	const onMarkdownChange = (text: string) => {
 		setMarkdown(text);
