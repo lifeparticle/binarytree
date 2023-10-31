@@ -1,6 +1,5 @@
 import { saveAs } from "file-saver";
 import { marked } from "marked";
-import { ChangeEvent } from "react";
 
 const downloadFile = (fileContent: string, fileName: string, type: string) => {
 	saveAs(
@@ -26,26 +25,6 @@ const downloadTextFile = (fileContent: string, fileName: string) => {
 	downloadFile(fileContent, fileName, "text/plain;charset=utf-8");
 };
 
-type ImageCallback = (dataUrl: string) => void;
-
-const handleImageUpload = (
-	e: ChangeEvent<HTMLInputElement>,
-	callback: ImageCallback
-) => {
-	if (e.target.files && e.target.files.length > 0) {
-		const file = e.target.files[0];
-		const reader = new FileReader();
-
-		reader.onload = () => {
-			if (typeof reader.result === "string") {
-				callback(reader.result);
-			}
-		};
-
-		reader.readAsDataURL(file);
-	}
-};
-
 const getFileExtension = (fileName: string) => {
 	const ext = fileName.split(".").pop();
 	if (ext) {
@@ -66,7 +45,6 @@ export {
 	downloadFile,
 	downloadPDFFile,
 	downloadTextFile,
-	handleImageUpload,
 	getFileExtension,
 	removeFileExtension,
 };

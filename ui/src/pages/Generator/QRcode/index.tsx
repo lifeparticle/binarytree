@@ -1,4 +1,14 @@
-import { Card, Form, QRCode, Input, Badge, Space, Checkbox } from "antd";
+import {
+	Card,
+	Form,
+	QRCode,
+	Input,
+	Badge,
+	Space,
+	Checkbox,
+	Upload,
+	Button,
+} from "antd";
 import PageGrid from "components/Layouts/PageGrid";
 import React, { useEffect, useState } from "react";
 import { downloadQRCode } from "./utils/helper";
@@ -7,7 +17,6 @@ import DropdownDownloadButton from "components/General/DropdownDownloadButton";
 import Warning from "components/General/Warning";
 import ColorPickerWithInput from "components/General/ColorPickerWithInput";
 import { ResponsiveInputWithLabel } from "components/General/FormComponents";
-import { handleImageUpload } from "utils/helper-functions/files";
 import QRCodeErrorBoundary from "./components/QRCodeErrorBoundary";
 import { classNames } from "utils/helper-functions/string";
 import { DataDetection } from "utils/helper-classes/ DataDetection";
@@ -30,6 +39,18 @@ const QRcode: React.FC = () => {
 		detection.setData(value);
 		setDataType(detection.detect());
 	}, [value]);
+
+	const handleUpload = (file: File) => {
+		const reader = new FileReader();
+
+		reader.onload = () => {
+			if (typeof reader.result === "string") {
+				setIcon(reader.result);
+			}
+		};
+
+		reader.readAsDataURL(file);
+	};
 
 	return (
 		<PageGrid>
@@ -59,15 +80,7 @@ const QRcode: React.FC = () => {
 							allowClear
 						/>
 					</Form.Item>
-					<Form.Item tooltip="Add border to QR code">
-						<Checkbox
-							type="checkbox"
-							value="Border"
-							onChange={(e) => setBordered(e.target.checked)}
-						>
-							Border
-						</Checkbox>
-					</Form.Item>
+
 					<PageGrid>
 						<ColorPickerWithInput
 							value={color}
@@ -95,25 +108,45 @@ const QRcode: React.FC = () => {
 							/>
 						</Form.Item>
 
-						<Form.Item>
-							<ResponsiveInputWithLabel
-								label="Icon  Size"
-								placeholder="Height"
-								value={iconSize}
-								onChange={(val) => val && setIconSize(val)}
-								min={0}
-								type="number"
-							/>
+						<Form.Item
+							label="Show Border"
+							tooltip="Add border to QR code"
+						>
+							<Checkbox
+								type="checkbox"
+								value="Border"
+								onChange={(e) => setBordered(e.target.checked)}
+							>
+								Border
+							</Checkbox>
 						</Form.Item>
 					</PageGrid>
 
-					<Form.Item label="Upload Iocn">
-						<Input
-							type="file"
-							accept="image/*"
-							onChange={(e) => handleImageUpload(e, setIcon)}
-						/>
-					</Form.Item>
+					<PageGrid>
+						<Form.Item label="Icon">
+							<Upload
+								customRequest={({ onSuccess }) => {
+									onSuccess && onSuccess("OK");
+								}}
+								beforeUpload={handleUpload}
+								listType="picture"
+							>
+								<Button disabled={false}>Upload </Button>
+							</Upload>
+						</Form.Item>
+						{icon && (
+							<Form.Item>
+								<ResponsiveInputWithLabel
+									label="Icon  Size"
+									placeholder="Height"
+									value={iconSize}
+									onChange={(val) => val && setIconSize(val)}
+									min={0}
+									type="number"
+								/>
+							</Form.Item>
+						)}
+					</PageGrid>
 				</Form>
 			</Card>
 			<Card className={classNames(style.qrcode__output, "qrcode")}>
