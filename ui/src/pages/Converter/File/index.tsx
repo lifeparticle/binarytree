@@ -26,7 +26,6 @@ const IMAGE_TYPES = [
 interface FileConverter {
 	file: UploadFile;
 	from: string;
-	to: string;
 }
 
 function FileConverter() {
@@ -38,7 +37,9 @@ function FileConverter() {
 		const ffmpeg = ffmpegRef.current;
 		const outputFileName = `${removeFileExtension(
 			fileConverter.file.name
-		)}${fileConverter.to}`;
+		)}${selectedFormat}`;
+
+		console.log("ileConverter.to", selectedFormat);
 
 		await ffmpeg.writeFile(
 			fileConverter.file.name,
@@ -49,7 +50,7 @@ function FileConverter() {
 		const data = new Uint8Array(fileData as ArrayBuffer);
 
 		const blob = new Blob([data.buffer], {
-			type: `${fileConverter.file.type}/${fileConverter.to}`,
+			type: `${fileConverter.file.type}/${selectedFormat}`,
 		});
 		const url = URL.createObjectURL(blob);
 		return [url, outputFileName];
@@ -103,7 +104,6 @@ function FileConverter() {
 					{
 						file: info.file,
 						from: fileExtension,
-						to: selectedFormat,
 					},
 				]);
 			} else if (status === "error") {
@@ -130,6 +130,7 @@ function FileConverter() {
 							value={selectedFormat}
 							options={IMAGE_TYPES}
 							onSelect={(_, info) => {
+								console.log(info.value);
 								setSelectedFormat(info.value);
 							}}
 						/>
