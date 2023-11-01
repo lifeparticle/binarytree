@@ -1,4 +1,4 @@
-[headers]
+[[headers]]
   for = "/*"
   [headers.values]
     Cross-Origin-Embedder-Policy = "require-corp"
