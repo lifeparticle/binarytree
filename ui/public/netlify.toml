@@ -3,10 +3,10 @@
   [headers.values]
     Cross-Origin-Resource-Policy = "cross-origin"
 
+
 [[headers]]
-  for = "/*"
+  for = "/converter/fc"
   [headers.values]
     Cross-Origin-Embedder-Policy = "require-corp"
     Cross-Origin-Opener-Policy = "same-origin"
-    Cross-Origin-Resource-Policy = "cross-origin"
 
