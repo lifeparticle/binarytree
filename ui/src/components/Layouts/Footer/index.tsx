@@ -101,6 +101,10 @@ const Footer: React.FC = () => {
 										Blog
 									</a>
 								</li> */}
+
+					<li>
+						<Link to="/feedback">Feedback</Link>{" "}
+					</li>
 				</ul>
 			</Space>
 

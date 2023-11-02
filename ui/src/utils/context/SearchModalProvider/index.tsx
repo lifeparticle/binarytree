@@ -14,9 +14,15 @@ const SearchModalContext = createContext<SearchModalContextType>(
 const SearchModalProvider = ({ children }: { children: ReactNode }) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
-	const handleModalOpen = useCallback(() => {
-		setIsModalOpen((prev) => !prev);
-	}, []);
+	const handleModalOpen = useCallback(
+		(event?: KeyboardEvent) => {
+			if (event?.key === "Escape" && !isModalOpen) {
+				return;
+			}
+			setIsModalOpen((prev) => !prev);
+		},
+		[isModalOpen]
+	);
 
 	const contextValue = useMemo(() => {
 		return {

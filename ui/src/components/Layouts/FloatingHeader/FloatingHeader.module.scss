@@ -5,14 +5,4 @@
 	padding: var(--bt-size-4);
 	position: sticky;
 	flex-direction: row;
-
-	&__button {
-		border: none;
-		box-shadow: none;
-		background-color: transparent;
-		cursor: pointer;
-		position: relative;
-		align-items: center;
-		display: flex;
-	}
 }

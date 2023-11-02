@@ -48,10 +48,8 @@ const ShadesAndTints: React.FC = () => {
 		updateParamsValue(PARAMS.percentage, "");
 	};
 
-	useCombinedKeyPress(resetInputs, ["Meta", "KeyE"]);
-	useCombinedKeyPress(clearInputs, ["Meta", "KeyR"]);
-
-	useCombinedKeyPress(resetInputs, ["Meta", "KeyE"]);
+	useCombinedKeyPress(resetInputs, "e");
+	useCombinedKeyPress(clearInputs, "r");
 
 	useEffect(() => {
 		updateParamsValue(PARAMS.color, debouncedSearchTerm);

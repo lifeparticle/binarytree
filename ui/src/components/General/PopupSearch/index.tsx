@@ -40,7 +40,7 @@ const PopupSearch: React.FC = () => {
 		);
 	}, [input]);
 
-	useCombinedKeyPress(handleModalOpen, ["control/meta", "k"]);
+	useCombinedKeyPress(handleModalOpen, "k");
 
 	return (
 		<Modal
@@ -48,6 +48,7 @@ const PopupSearch: React.FC = () => {
 			title="Features"
 			open={isModalOpen}
 			footer={[]}
+			keyboard={true}
 			afterOpenChange={handleAfterOpen}
 			className={isDarkMode ? "dark" : "light"}
 		>

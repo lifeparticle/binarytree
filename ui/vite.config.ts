@@ -17,10 +17,4 @@ export default defineConfig({
 		setupFiles: "./src/test/setup.ts",
 		css: true,
 	},
-	server: {
-		headers: {
-			"Cross-Origin-Embedder-Policy": "require-corp",
-			"Cross-Origin-Opener-Policy": "same-origin",
-		},
-	},
 });

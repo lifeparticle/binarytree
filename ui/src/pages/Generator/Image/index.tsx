@@ -28,12 +28,12 @@ const ImageGeneratorFromColors: React.FC = () => {
 
 	useCombinedKeyPress(
 		() => onTextAreaChange("#FF0000, #00FFFF, #FFFFFF, #C0C0C0, #000000"),
-		["control/meta", "e"]
+		"e"
 	);
 
 	useCombinedKeyPress(() => {
 		onTextAreaChange("");
-	}, ["control/meta", "r"]);
+	}, "r");
 
 	const onTextAreaChange = (value: string) => {
 		setColors(extractColors(value));
