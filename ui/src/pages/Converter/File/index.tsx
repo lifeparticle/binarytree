@@ -141,6 +141,7 @@ function FileConverter() {
 				</div>
 			);
 		},
+		disabled: !loaded,
 	};
 
 	return (
