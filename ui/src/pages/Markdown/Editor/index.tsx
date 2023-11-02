@@ -17,11 +17,8 @@ const MarkdownEditor: React.FC = () => {
 
 	const { isDarkMode } = useMode();
 
-	useCombinedKeyPress(
-		() => setMarkdown("# Hello, World!"),
-		["control/meta", "e"]
-	);
-	useCombinedKeyPress(() => setMarkdown(""), ["control/meta", "r"]);
+	useCombinedKeyPress(() => setMarkdown("# Hello, World!"), "e");
+	useCombinedKeyPress(() => setMarkdown(""), "r");
 
 	const IS_MARKDOWN_EMPTY = markdown.length === 0;
 

@@ -1,3 +1,7 @@
+### [7.1.0] - 2023-10-31
+
+-   useCombinedKeyPress hook
+
 ### [7.0.0] - 2023-10-30
 
 -   Add file converter
