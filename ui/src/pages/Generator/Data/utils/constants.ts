@@ -1,4 +1,4 @@
-import { faker } from "@faker-js/faker";
+import { ChemicalElement, Unit, faker,  } from "@faker-js/faker";
 
 export const MYSQL_DATA_TYPES = [
 	{ value: "BIGINT", label: "Big Integer" },
@@ -43,7 +43,21 @@ export const JSON_DATA_TYPES = [
 	{ value: "NULL", label: "Null" },
 ];
 
-export type fakerMethod = () => string | number | boolean;
+export type fakerMethod = () =>
+	| string
+	| number
+	| boolean
+	| number[]
+	| string[]
+	| (string | number)[]
+	| bigint
+	| ChemicalElement
+	| Unit
+	| undefined
+	| Date
+	| Date[]
+	| (string | number | Date)[]
+	| void;
 
 interface FakerDataType {
 	value: string;
