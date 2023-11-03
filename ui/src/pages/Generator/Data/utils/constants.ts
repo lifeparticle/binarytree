@@ -43,7 +43,15 @@ export const JSON_DATA_TYPES = [
 	{ value: "NULL", label: "Null" },
 ];
 
-export const FAKER_DATA_TYPES = [
+export type fakerMethod = () => string | number | boolean;
+
+interface FakerDataType {
+	value: string;
+	label: string;
+	method: fakerMethod;
+}
+
+export const FAKER_DATA_TYPES: FakerDataType[] = [
 	{
 		value: "buildingNumber",
 		label: "Building Number",

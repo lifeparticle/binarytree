@@ -7,6 +7,7 @@ import {
 	FAKER_DATA_TYPES,
 	JSON_DATA_TYPES,
 	MYSQL_DATA_TYPES,
+	fakerMethod,
 } from "./utils/constants";
 import { convertToJSON } from "./utils/utils";
 import Output from "./components/Output";
@@ -53,8 +54,7 @@ const DataGenerator: React.FC = () => {
 
 	const onButtonClick = () => {
 		let result = "";
-		const allColName = colNames.join("`, `");
-		const fakeDataMethods = [];
+		const fakeDataMethods: fakerMethod[] = [];
 		let sqlTable = `CREATE TABLE \`${tableName}\` (\n`;
 
 		for (let i = 0; i < colNames.length; i++) {
@@ -64,23 +64,37 @@ const DataGenerator: React.FC = () => {
 		sqlTable += `) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;`;
 
 		for (let j = 0; j < colNames.length; j++) {
-			fakeDataMethods.push(
-				FAKER_DATA_TYPES.find((faker) => {
-					return faker.value === fakeDataTypes[j];
-				})?.method
+			const method = FAKER_DATA_TYPES.find(
+				(faker) => faker.value === fakeDataTypes[j]
+			)?.method;
+			if (method === undefined) {
+				throw new Error(
+					`No faker method found for type ${fakeDataTypes[j]}`
+				);
+			}
+			fakeDataMethods.push(method);
+		}
+
+		const insertStatements = [];
+
+		for (let i = 0; i < rowNum; i++) {
+			const fakeData = colNames.map((_, j) => {
+				let value = fakeDataMethods[j]?.();
+				if (typeof value === "string") {
+					value = value.replace(/'/g, "''");
+				}
+				return typeof value === "string" ? `'${value}'` : value;
+			});
+
+			const valuesString = fakeData.join(", ");
+			insertStatements.push(
+				`INSERT INTO \`${tableName}\` (\`${colNames.join(
+					"`, `"
+				)}\`) VALUES (${valuesString});`
 			);
 		}
 
-		for (let i = 0; i < rowNum; i++) {
-			const fakeData = [];
-			for (let j = 0; j < colNames.length; j++) {
-				fakeData.push(fakeDataMethods[j]?.());
-			}
-
-			result += `INSERT INTO \`${tableName}\` (\`${allColName}\`) VALUES ('${fakeData.join(
-				"', '"
-			)}');\n`;
-		}
+		result += insertStatements.join("\n") + "\n";
 
 		setResult(`${sqlTable}\n\n\n\n\n${result}`);
 	};
