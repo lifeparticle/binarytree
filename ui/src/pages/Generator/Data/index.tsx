@@ -75,24 +75,22 @@ const DataGenerator: React.FC = () => {
 			fakeDataMethods.push(method);
 		}
 
-		const insertStatements = [];
+		const escapeStringValue = (value: unknown) =>
+			typeof value === "string"
+				? `'${value.replace(/'/g, "''")}'`
+				: value;
 
-		for (let i = 0; i < rowNum; i++) {
-			const fakeData = colNames.map((_, j) => {
-				let value = fakeDataMethods[j]?.();
-				if (typeof value === "string") {
-					value = value.replace(/'/g, "''");
-				}
-				return typeof value === "string" ? `'${value}'` : value;
-			});
+		const columnNamesString = `\`${colNames.join("`, `")}\``;
 
-			const valuesString = fakeData.join(", ");
-			insertStatements.push(
-				`INSERT INTO \`${tableName}\` (\`${colNames.join(
-					"`, `"
-				)}\`) VALUES (${valuesString});`
-			);
-		}
+		const insertStatements = Array.from({ length: rowNum }, () => {
+			const valuesString = colNames
+				.map((_, j) => {
+					return escapeStringValue(fakeDataMethods[j]?.());
+				})
+				.join(", ");
+
+			return `INSERT INTO \`${tableName}\` (${columnNamesString}) VALUES (${valuesString});`;
+		});
 
 		result += insertStatements.join("\n") + "\n";
 
