@@ -1,7 +1,13 @@
-import { NewsType } from "./utils/types";
 import { Card, Image, Skeleton, Space, Typography } from "antd";
-import { ListItemProps } from "components/RenderProps/List/utils/types";
+import { ListItemProps } from "components/RenderProps/List";
 const { Title } = Typography;
+
+export interface NewsType {
+	title: string;
+	content: string;
+	url: string;
+	image?: string;
+}
 
 const News: React.FC<ListItemProps<NewsType>> = ({
 	resource,

@@ -1,8 +1,27 @@
 import React from "react";
 import { ResponsiveDropdownButton } from "components/General/FormComponents";
 import Icon from "components/General/Icon";
-import { DropdownDownloadButtonProps } from "./utils/types";
-import { IMAGE_TYPE, items } from "./utils/constants";
+import { MenuProps } from "antd";
+
+const IMAGE_TYPE = {
+	jpeg: ".jpeg",
+	png: ".png",
+};
+
+const items: MenuProps["items"] = [
+	{
+		label: "Download JPEG",
+		key: IMAGE_TYPE.jpeg,
+	},
+	{
+		label: "Download PNG",
+		key: IMAGE_TYPE.png,
+	},
+];
+
+interface DropdownDownloadButtonProps {
+	handleDownload: (val: string) => void;
+}
 
 const DropdownDownloadButton: React.FC<DropdownDownloadButtonProps> = ({
 	handleDownload,

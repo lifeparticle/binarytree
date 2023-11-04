@@ -5,9 +5,13 @@ import {
 	obsidian,
 	stackoverflowLight,
 } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { CodeHighlightWithCopyProps } from "./utils/types";
 import style from "./CodeHighlightwithCopy.module.scss";
 import useMode from "hooks/useMode";
+
+interface CodeHighlightWithCopyProps {
+	codeString: string;
+	language: string;
+}
 
 const CodeHighlightWithCopy: React.FC<CodeHighlightWithCopyProps> = ({
 	codeString,

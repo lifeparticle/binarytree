@@ -1,11 +1,25 @@
 import { Avatar, Card, Skeleton, Space, Tag, Typography } from "antd";
 import style from "./Resource.module.scss";
-import { ResourceType } from "./utils/types";
-import { ListItemProps } from "components/RenderProps/List/utils/types";
 import Clipboard from "components/RenderProps/Clipboard";
 import ClipboardButton from "components/General/ClipboardButton";
+import { ListItemProps } from "components/RenderProps/List";
 
 const { Title } = Typography;
+
+export type SocialName = "github" | "youtube" | "website";
+
+interface Social {
+	name: SocialName;
+	url: string;
+}
+
+export interface ResourceType {
+	name: string;
+	category: string;
+	subCategory: string[];
+	socials: Social[];
+	url: string;
+}
 
 const Resource: React.FC<ListItemProps<ResourceType>> = ({
 	resource,

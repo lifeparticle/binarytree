@@ -1,4 +1,14 @@
-import { ListProps } from "./utils/types";
+export interface ListItemProps<T> {
+	resource: T;
+	handleOnClick: (url: string) => void;
+	isLoading: boolean;
+}
+
+export interface ListProps<T> {
+	items: T[];
+	itemComponent: React.FC<ListItemProps<T>>;
+	isLoading: boolean;
+}
 
 const List = <T,>({
 	items,
