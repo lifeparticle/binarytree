@@ -1,6 +1,9 @@
-import { WarningProps } from "./utils/types";
 import Icon from "components/General/Icon";
 import style from "./Warning.module.scss";
+
+interface WarningProps {
+	text?: string;
+}
 
 const Warning: React.FC<WarningProps> = ({ text }) => {
 	return (

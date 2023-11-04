@@ -3,14 +3,14 @@ import {
 	NOTIFICATION_KEY,
 	NOTIFICATION_RED_FLAG_KEY,
 	NOTIFICATION_URL,
-} from "./utils/constants";
+} from "./constants";
 import useGetNotifications from "hooks/useGetNotifications";
 import NotificationList from "./components/NotificationList";
 import {
 	getLocalstorageValue,
 	setLocalstorageValue,
 } from "utils/helper-functions/storage";
-import { compareDate } from "./utils/helper";
+import { compareDate } from "./helper";
 
 const Notification: React.FC = () => {
 	const { notifications, isLoading, isError } = useGetNotifications(

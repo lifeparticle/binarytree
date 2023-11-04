@@ -4,7 +4,14 @@ import useMode from "hooks/useMode";
 import { Form } from "antd";
 import style from "./CodeEditor.module.scss";
 import ValidateStatus from "./components/ValidateStatus";
-import { CodeEditorProps } from "./utils/types";
+
+interface CodeEditorProps {
+	handleCode: (code: string | undefined) => void;
+	language: string;
+	code: string;
+	label: string;
+	status?: string;
+}
 
 const CodeEditor: React.FC<CodeEditorProps> = ({
 	handleCode,

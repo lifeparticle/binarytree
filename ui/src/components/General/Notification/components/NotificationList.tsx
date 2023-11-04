@@ -3,8 +3,16 @@ import { Button, Skeleton } from "antd";
 import { Typography, Tag, Dropdown } from "antd";
 import Icon from "components/General/Icon";
 import { classNames } from "utils/helper-functions/string";
-import { NotificationListProps } from "components/General/Notification/utils/types";
+import { Markdown } from "components/General/Notification/types";
 const { Title } = Typography;
+
+interface NotificationListProps {
+	notifications: Markdown[] | undefined;
+	showRedFlag: boolean;
+	isLoading: boolean;
+	isError: boolean;
+	handleRedFlagNotification: () => void;
+}
 
 const NotificationList: React.FC<NotificationListProps> = ({
 	notifications,

@@ -2,7 +2,13 @@ import { Card } from "antd";
 import { ResponsiveInputWithLabel } from "components/General/FormComponents";
 import { ColorPicker as CP } from "@mantine/core";
 import style from "./ColorPickerWithInput.module.scss";
-import { ColorPickerWithInputProps } from "./utils/constants";
+
+interface ColorPickerWithInputProps {
+	value: string;
+	label: string;
+	setValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	setColor: (color: string) => void;
+}
 
 const ColorPickerWithInput: React.FC<ColorPickerWithInputProps> = ({
 	value,

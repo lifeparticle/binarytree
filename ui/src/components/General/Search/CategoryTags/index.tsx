@@ -1,7 +1,13 @@
 import React from "react";
 import CategoryTag from "./CategoryTag";
 import { Space } from "antd";
-import { CategoryTagsProps } from "./utils/types";
+
+interface CategoryTagsProps {
+	categories: string[];
+	category: string;
+	handleCategoryChange: (category: string) => void;
+	className?: string;
+}
 
 const CategoryTags: React.FC<CategoryTagsProps> = ({
 	categories,
