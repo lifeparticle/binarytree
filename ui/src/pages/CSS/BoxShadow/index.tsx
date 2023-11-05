@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Card, Form, Slider, Space } from "antd";
-import PageGrid from "components/Layouts/PageGrid";
-import CodeHighlightWithCopy from "components/General/CodeHighlightWithCopy";
+import { PageGrid, InputGrid } from "components/Layouts";
+import {
+	CodeHighlightWithCopy,
+	ColorPickerWithInput,
+} from "components/General";
 import style from "./BoxShadow.module.scss";
-import ColorPickerWithInput from "components/General/ColorPickerWithInput";
-import InputGrid from "components/Layouts/InputGrid";
 
 const BoxShadow = () => {
 	const [bgColor, setBgColor] = useState("#ffffff0");

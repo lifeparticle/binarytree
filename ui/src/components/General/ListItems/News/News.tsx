@@ -1,5 +1,5 @@
 import { Card, Image, Skeleton, Space, Typography } from "antd";
-import { ListItemProps } from "components/RenderProps/List";
+import { ListItemProps } from "components/RenderProps";
 const { Title } = Typography;
 
 export interface NewsType {

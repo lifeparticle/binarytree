@@ -7,7 +7,7 @@ import {
 	OUTPUT_FORMAT,
 } from "./utils/constants";
 import { generateShadesForColor } from "./utils/helper";
-import PageGrid from "components/Layouts/PageGrid";
+import { PageGrid } from "components/Layouts";
 import Colors from "./components/Colors";
 import ColorInputs from "./components/ColorInputs";
 import useParamsValue from "hooks/useParamsValue";

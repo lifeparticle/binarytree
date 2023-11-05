@@ -3,12 +3,13 @@ import style from "./TableOfContent.module.scss";
 import { marked } from "marked";
 import { Input, Form, Card } from "antd";
 import useCombinedKeyPress from "hooks/useCombinedKeyPress";
-import CopyInput from "components/Layouts/CopyInput";
-import { ResponsiveInputWithLabel } from "components/General/FormComponents";
-import Clipboard from "components/RenderProps/Clipboard";
-import ClipboardButton from "components/General/ClipboardButton";
-import PageGrid from "components/Layouts/PageGrid";
-import Warning from "components/General/Warning";
+import { CopyInput, PageGrid } from "components/Layouts";
+import {
+	ClipboardButton,
+	Warning,
+	ResponsiveInputWithLabel,
+} from "components/General";
+import { Clipboard } from "components/RenderProps";
 const { TextArea } = Input;
 
 type TocItem = {

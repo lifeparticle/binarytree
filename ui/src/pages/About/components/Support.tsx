@@ -1,8 +1,8 @@
 import { Button, List, Typography } from "antd";
-import Icon from "components/General/Icon";
 import React from "react";
 import { openLink } from "utils/helper-functions/string";
 import style from "pages/About/About.module.scss";
+import { Icon } from "components/General";
 
 const Support: React.FC = () => {
 	return (

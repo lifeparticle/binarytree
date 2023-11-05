@@ -1,3 +1,0 @@
-const MENU_COLLAPSED_STORAGE_KEY = "menuCollapsed";
-
-export { MENU_COLLAPSED_STORAGE_KEY };

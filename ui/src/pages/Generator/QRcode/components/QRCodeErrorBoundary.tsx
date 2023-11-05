@@ -1,4 +1,4 @@
-import ErrorComponent from "components/General/ErrorComponent";
+import { ErrorComponent } from "components/General";
 import { Component, ReactNode } from "react";
 
 type ErrorBoundaryProps = {

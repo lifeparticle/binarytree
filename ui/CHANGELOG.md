@@ -1,3 +1,9 @@
+### [7.1.1] - 2023-10-31
+
+-   Organise components exports and imports
+-   Rename `tests` to `__tests__`
+-   Organise files
+
 ### [7.1.0] - 2023-10-31
 
 -   useCombinedKeyPress hook

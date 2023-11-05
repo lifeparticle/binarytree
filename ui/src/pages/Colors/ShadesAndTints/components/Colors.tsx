@@ -1,7 +1,7 @@
 import { Card, Spin, Tag } from "antd";
 import { getTextColor } from "utils/helper-functions/color";
-import Clipboard from "components/RenderProps/Clipboard";
-import ClipboardButton from "components/General/ClipboardButton";
+import { Clipboard } from "components/RenderProps";
+import { ClipboardButton } from "components/General";
 import styles from "pages/Colors/ShadesAndTints/ShadesAndTints.module.scss";
 
 interface ColorsProps {

@@ -3,7 +3,7 @@ import { MENU_ITEMS } from "data/menuData";
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./PopSearch.module.scss";
-import Icon, { IconName } from "components/General/Icon";
+import { Icon, IconName } from "components/General";
 import useCombinedKeyPress from "hooks/useCombinedKeyPress";
 import { classNames } from "utils/helper-functions/string";
 import useMode from "hooks/useMode";

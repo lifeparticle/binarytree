@@ -1,6 +1,5 @@
-import Footer from "components/Layouts/Footer";
+import { Footer, Legal } from "components/Layouts";
 import { Typography } from "antd";
-import Legal from "components/Layouts/Legal";
 
 const Terms = () => {
 	return (

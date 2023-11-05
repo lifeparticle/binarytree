@@ -1,6 +1,5 @@
 import React from "react";
-import { ResponsiveDropdownButton } from "components/General/FormComponents";
-import Icon from "components/General/Icon";
+import { Icon, ResponsiveDropdownButton } from "components/General";
 import { MenuProps } from "antd";
 
 const IMAGE_TYPE = {

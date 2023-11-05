@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./FloatingBar.module.scss";
-import FloatingSearchBar from "components/Layouts/FloatingSearchBar";
-import FloatingHeader from "components/Layouts/FloatingHeader";
+import { FloatingHeader, FloatingSearchBar } from "components/Layouts";
 import { theme } from "antd";
 
 const FloatingBar: React.FC = () => {

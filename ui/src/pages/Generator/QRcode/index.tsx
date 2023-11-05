@@ -1,16 +1,18 @@
 import { Card, Form, QRCode, Input, Badge, Space, Checkbox } from "antd";
-import PageGrid from "components/Layouts/PageGrid";
+import { PageGrid } from "components/Layouts";
 import React, { useEffect, useState } from "react";
 import { downloadQRCode } from "./utils/helper";
 import style from "./QRcode.module.scss";
-import DropdownDownloadButton from "components/General/DropdownDownloadButton";
-import Warning from "components/General/Warning";
-import ColorPickerWithInput from "components/General/ColorPickerWithInput";
-import { ResponsiveInputWithLabel } from "components/General/FormComponents";
+import {
+	DropdownDownloadButton,
+	Warning,
+	ColorPickerWithInput,
+	ResponsiveInputWithLabel,
+} from "components/General";
 import { handleImageUpload } from "utils/helper-functions/files";
 import QRCodeErrorBoundary from "./components/QRCodeErrorBoundary";
 import { classNames } from "utils/helper-functions/string";
-import { DataDetection } from "utils/helper-classes/ DataDetection";
+import { DataDetection } from "utils/helper-classes/DataDetection";
 
 const { TextArea } = Input;
 

@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { getData } from "api/API";
-import { DEFAULT_RECORD } from "components/General/Notification/constants";
-import { parsedMarkdown } from "components/General/Notification/helper";
+import { DEFAULT_RECORD, parsedMarkdown } from "components/General";
 
 const useGetNotifications = (key: string, url: string) => {
 	const {

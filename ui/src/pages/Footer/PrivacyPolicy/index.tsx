@@ -1,12 +1,11 @@
 import { Table, Typography } from "antd";
-import Footer from "components/Layouts/Footer";
+import { Footer, Legal } from "components/Layouts";
 import {
 	ACTIVITY_COLUMNS,
 	ACTIVITY_DATA,
 	PURPOSE_COLUMNS,
 	PURPOSE_DATA,
 } from "./utils/constants";
-import Legal from "components/Layouts/Legal";
 
 const PrivacyPolicy = () => {
 	return (

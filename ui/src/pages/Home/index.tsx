@@ -1,5 +1,5 @@
 import style from "./Home.module.scss";
-import Footer from "components/Layouts/Footer";
+import { Footer } from "components/Layouts";
 import Features from "./components/Features";
 import Hero from "./components/Hero";
 import Contribution from "./components/Contribution";

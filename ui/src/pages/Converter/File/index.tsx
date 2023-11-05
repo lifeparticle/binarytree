@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { fetchFile } from "@ffmpeg/util";
 import { Button, message, Upload } from "antd";
-import Icon from "components/General/Icon";
 import type { UploadFile, UploadProps } from "antd";
 import {
+	Icon,
 	ResponsiveButton,
 	ResponsiveSelectWithLabel,
-} from "components/General/FormComponents";
+} from "components/General";
 import styles from "./FileConverter.module.scss";
 import { useFfmpeg } from "./useFfmpeg";
 import {

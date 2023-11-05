@@ -1,9 +1,8 @@
 import style from "components/General/Notification/Notification.module.scss";
 import { Button, Skeleton } from "antd";
 import { Typography, Tag, Dropdown } from "antd";
-import Icon from "components/General/Icon";
+import { Icon, Markdown } from "components/General";
 import { classNames } from "utils/helper-functions/string";
-import { Markdown } from "components/General/Notification/types";
 const { Title } = Typography;
 
 interface NotificationListProps {

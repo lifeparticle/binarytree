@@ -1,8 +1,8 @@
 import { Suspense } from "react";
 import { Route, Routes as RRDRoutes } from "react-router-dom";
-import withPageTitle from "components/Hoc/withPageTitle/withPageTitle";
+import { withPageTitle } from "components/Hoc";
 import { routes } from "data/routeData";
-import Spin from "components/General/Spin";
+import { Spin } from "components/General";
 
 const Routes: React.FC = () => {
 	return (

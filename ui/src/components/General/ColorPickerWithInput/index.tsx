@@ -1,5 +1,5 @@
 import { Card } from "antd";
-import { ResponsiveInputWithLabel } from "components/General/FormComponents";
+import { ResponsiveInputWithLabel } from "components/General";
 import { ColorPicker as CP } from "@mantine/core";
 import style from "./ColorPickerWithInput.module.scss";
 

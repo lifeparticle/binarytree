@@ -1,13 +1,27 @@
-import Text from "components/General/Text/Text";
 import style from "./withPageTitle.module.scss";
-import HelpIcon from "components/General/HelpIcon";
 import { Space } from "antd";
-import usePageTitle from "./utils/hooks";
 import { HeadProvider, Title, Link, Meta } from "react-head";
-import { NO_PADDING, NO_TITLE } from "./utils/constants";
 import { ErrorBoundary } from "react-error-boundary";
-import FallbackComponent from "components/General/FallbackComponent";
-import Drawer from "components/General/Drawer";
+import { Text, HelpIcon, Drawer, FallbackComponent } from "components/General";
+import usePageTitle from "./usePageTitle";
+
+const NO_PADDING = [
+	"BinaryTree: Developer Productivity Tools",
+	"About",
+	"Terms",
+	"Cookie Policy",
+	"Privacy Policy",
+	"Feedback",
+];
+
+const NO_TITLE = [
+	"BinaryTree: Developer Productivity Tools",
+	"Terms",
+	"Cookie Policy",
+	"Privacy Policy",
+	"About",
+	"Feedback",
+];
 
 const withPageTitle = <T extends object>(
 	WrappedComponent: React.ComponentType<T>
