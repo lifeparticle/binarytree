@@ -96,7 +96,7 @@
 	{
 		"name": "Grokking Algorithms: An Illustrated Guide for Programmers and Other Curious People",
 		"category": "Algorithms",
-		"subCategory": "https://www.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230/",
+		"subCategory": "Programming",
 		"url": "https://www.amazon.com/Solve-Computer-Prentice-Hall-International-Science/dp/0134340019",
 		"socials": [
 			{
@@ -108,7 +108,7 @@
 	{
 		"name": "40 Algorithms Every Programmer Should Know: Hone your problem-solving skills by learning different algorithms and their implementation in Python",
 		"category": "Algorithms",
-		"subCategory": "https://www.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230/",
+		"subCategory": "Programming",
 		"url": "https://www.amazon.com/Algorithms-Every-Programmer-Should-Know-ebook/dp/B085P1GT72",
 		"socials": [
 			{
@@ -120,8 +120,32 @@
 	{
 		"name": "The Art of Computer Programming (Volume 1 - 7)",
 		"category": "Algorithms",
-		"subCategory": "https://www.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230/",
+		"subCategory": "Programming",
 		"url": "https://www.amazon.com/Algorithms-Every-Programmer-Should-Know-ebook/dp/B085P1GT72",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
+	},
+	{
+		"name": "Dive Into Design Patterns",
+		"category": "Design Patterns",
+		"subCategory": "Programming",
+		"url": "https://refactoring.guru/design-patterns/book",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
+	},
+	{
+		"name": "Dive Into Refactoring",
+		"category": "Code Quality",
+		"subCategory": "Programming",
+		"url": "https://refactoring.guru/refactoring/course",
 		"socials": [
 			{
 				"url": "",
