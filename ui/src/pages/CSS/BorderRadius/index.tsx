@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { Card, Form, Slider } from "antd";
-import PageGrid from "components/Layouts/PageGrid";
-import CodeHighlightWithCopy from "components/General/CodeHighlightWithCopy";
+import { PageGrid, InputGrid } from "components/Layouts";
+import { CodeHighlightWithCopy } from "components/General";
 import style from "./BorderRadius.module.scss";
 import {
+	ColorPickerWithInput,
 	ResponsiveInputWithLabel,
 	ResponsiveSegementWithLabel,
 	ResponsiveSelectWithLabel,
-} from "components/General/FormComponents";
+} from "components/General";
 import {
 	BLOB_SHAPE,
 	BORDER_RADIUS,
@@ -19,8 +20,6 @@ import {
 	RADIUS_ROUND,
 	SEGMENTED_OPTIONS,
 } from "./utils/constants";
-import ColorPickerWithInput from "components/General/ColorPickerWithInput";
-import InputGrid from "components/Layouts/InputGrid";
 
 const BorderRadius = () => {
 	const [border, setBorder] = useState(INIT_BORDER);

@@ -1,13 +1,14 @@
 import { Layout, theme } from "antd";
 import Header from "components/Layouts/Header";
 import Menu from "components/Layouts/Menu";
-import { MENU_COLLAPSED_STORAGE_KEY } from "./utils/constants";
 import useMenuCollapsed from "hooks/useMenuCollapsed";
-import Footer from "components/Layouts/Sidebar/Footer";
+import Footer from "./components";
 import style from "./Sidebar.module.scss";
 import useMode from "hooks/useMode";
 
 const { Sider } = Layout;
+
+const MENU_COLLAPSED_STORAGE_KEY = "menuCollapsed";
 
 const Sidebar = () => {
 	const { collapsed, toggleCollapse } = useMenuCollapsed(

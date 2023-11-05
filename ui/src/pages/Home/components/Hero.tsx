@@ -3,7 +3,7 @@ import style from "pages/Home/Home.module.scss";
 import { Typography, Image, Space } from "antd";
 import hero from "assets/Home/hero.webp";
 import { FEATURE_DATA } from "data/featureData";
-import { ResponsiveButton } from "components/General/FormComponents";
+import { ResponsiveButton } from "components/General";
 import { openLink } from "utils/helper-functions/string";
 import useModal from "hooks/useModal";
 

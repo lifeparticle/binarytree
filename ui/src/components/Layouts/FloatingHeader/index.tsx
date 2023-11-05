@@ -1,5 +1,5 @@
 import style from "./FloatingHeader.module.scss";
-import Notification from "components/General/Notification";
+import { Notification } from "components/General";
 
 interface FloatingHeaderProps {
 	styles?: React.CSSProperties;

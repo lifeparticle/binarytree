@@ -1,7 +1,7 @@
 import React from "react";
 import style from "pages/Home/Home.module.scss";
 import { Space, Typography } from "antd";
-import { ResponsiveButton } from "components/General/FormComponents";
+import { ResponsiveButton } from "components/General";
 import { openLink } from "utils/helper-functions/string";
 
 const Contribution: React.FC = () => {

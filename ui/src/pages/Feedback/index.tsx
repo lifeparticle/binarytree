@@ -1,7 +1,7 @@
 import { useState } from "react";
 import style from "./Feedback.module.scss";
 import { Skeleton } from "antd";
-import Footer from "components/Layouts/Footer";
+import { Footer } from "components/Layouts";
 
 const AirtableEmbed = () => {
 	const [loading, setLoading] = useState(true);

@@ -4,7 +4,7 @@ import CookiConsent, {
 	getCookieConsentValue,
 } from "react-cookie-consent";
 import ReactGA from "react-ga4";
-import usePageTitle from "components/Hoc/withPageTitle/utils/hooks";
+import { usePageTitle } from "components/Hoc";
 import {
 	BUTTON_STYLES,
 	COOKIE_CONSENT_STYLES,

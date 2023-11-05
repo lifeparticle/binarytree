@@ -11,11 +11,8 @@ import {
 } from "./utils/constants";
 import { convertToJSON } from "./utils/utils";
 import Output from "./components/Output";
-import PageGrid from "components/Layouts/PageGrid";
-import {
-	ResponsiveButton,
-	ResponsiveInputWithLabel,
-} from "components/General/FormComponents";
+import { PageGrid } from "components/Layouts";
+import { ResponsiveButton, ResponsiveInputWithLabel } from "components/General";
 
 const DataGenerator: React.FC = () => {
 	const [tableName, setTableName] = useState("");

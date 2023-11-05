@@ -25,8 +25,8 @@ export default Credits;
 const CREDITS_DATA: Credits[] = [
 	{
 		key: "1",
-		name: "Avatar",
-		url: "https://www.dicebear.com/styles/adventurer-neutral",
+		name: "thetallbloke",
+		url: "https://github.com/thetallbloke",
 	},
 	{
 		key: "2",

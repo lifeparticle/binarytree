@@ -1,12 +1,10 @@
 import { Button, Card, Form, Progress, Steps, Upload } from "antd";
-import { ResponsiveInputWithLabel } from "components/General/FormComponents";
-import InputGrid from "components/Layouts/InputGrid";
-import PageGrid from "components/Layouts/PageGrid";
+import { ErrorComponent, ResponsiveInputWithLabel } from "components/General";
+import { InputGrid, PageGrid } from "components/Layouts";
 import React, { useState } from "react";
 import Papa from "papaparse";
 import CsvTable from "./components/CsvTable";
 import { calculateSteps, createGitHubIssue } from "./utils/helper";
-import ErrorComponent from "components/General/ErrorComponent";
 import DownloadCsv from "./components/DownloadCsv";
 import style from "./GithubIssue.module.scss";
 import { useOnlineStatus } from "hooks/useOnlineStatus";

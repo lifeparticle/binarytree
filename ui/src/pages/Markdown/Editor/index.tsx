@@ -7,9 +7,8 @@ import { useState } from "react";
 import useCombinedKeyPress from "hooks/useCombinedKeyPress";
 import style from "./MarkdownEditor.module.scss";
 import MDEditor from "@uiw/react-md-editor";
-import Clipboard from "components/RenderProps/Clipboard";
-import ClipboardButton from "components/General/ClipboardButton";
-import { ResponsiveButton } from "components/General/FormComponents";
+import { Clipboard } from "components/RenderProps";
+import { ClipboardButton, ResponsiveButton } from "components/General";
 import useMode from "hooks/useMode";
 
 const MarkdownEditor: React.FC = () => {

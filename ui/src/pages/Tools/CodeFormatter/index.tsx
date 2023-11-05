@@ -1,20 +1,19 @@
 import React, { useState } from "react";
 import style from "./CodeFormatter.module.scss";
-import PageGrid from "components/Layouts/PageGrid";
+import { PageGrid, InputGrid } from "components/Layouts";
 import { Card, Form, Space } from "antd";
 import {
+	CodeHighlightWithCopy,
+	Warning,
+	CodeEditor,
 	ResponsiveButton,
 	ResponsiveSelectWithLabel,
-} from "components/General/FormComponents";
-import CodeHighlightWithCopy from "components/General/CodeHighlightWithCopy";
-import Warning from "components/General/Warning";
-import InputGrid from "components/Layouts/InputGrid";
+} from "components/General";
 import {
 	BEAUTIFY_FUNCTIONS,
 	INDENTATION_LEVEL,
 	INPUT_TYPE,
 } from "./utils/constants";
-import CodeEditor from "components/General/CodeEditor";
 
 const CodeFormatter: React.FC = () => {
 	const [inputCode, setInputCode] = useState("");

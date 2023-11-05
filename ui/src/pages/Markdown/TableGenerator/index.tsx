@@ -2,10 +2,9 @@ import MDEditor from "@uiw/react-md-editor";
 import { Card, Form, Space, Spin } from "antd";
 import { useState, useTransition } from "react";
 import { generateTable } from "./util/utils";
-import { ResponsiveInputWithLabel } from "components/General/FormComponents";
+import { ClipboardButton, ResponsiveInputWithLabel } from "components/General";
 import style from "./MdTableGenerator.module.scss";
-import Clipboard from "components/RenderProps/Clipboard";
-import ClipboardButton from "components/General/ClipboardButton";
+import { Clipboard } from "components/RenderProps";
 import useMode from "hooks/useMode";
 
 const TableGenerator: React.FC = () => {

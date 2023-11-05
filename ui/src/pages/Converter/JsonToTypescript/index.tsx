@@ -2,15 +2,15 @@ import JsonToTS from "json-to-ts";
 import { useEffect, useState } from "react";
 import style from "./JsonToTypescript.module.scss";
 import { Card, Form, Space } from "antd";
-import { isJsonValid } from "./utils/helper";
-import CodeHighlightWithCopy from "components/General/CodeHighlightWithCopy";
-import PageGrid from "components/Layouts/PageGrid";
+import { isJsonValid } from "./helper";
+import { PageGrid } from "components/Layouts";
 import {
+	CodeEditor,
+	Warning,
+	CodeHighlightWithCopy,
 	ResponsiveButton,
 	ResponsiveInputWithLabel,
-} from "components/General/FormComponents";
-import Warning from "components/General/Warning";
-import CodeEditor from "components/General/CodeEditor";
+} from "components/General";
 
 const JsonToTypescript: React.FC = () => {
 	const [json, setJson] = useState("");

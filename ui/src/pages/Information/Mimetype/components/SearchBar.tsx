@@ -1,6 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 import { useState, useEffect, ChangeEvent } from "react";
-import { ResponsiveInputWithLabel } from "components/General/FormComponents";
+import { ResponsiveInputWithLabel } from "components/General";
 import { Form } from "antd";
 
 const MimeSearch: React.FC = () => {

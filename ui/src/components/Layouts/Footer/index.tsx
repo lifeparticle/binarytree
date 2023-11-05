@@ -1,8 +1,7 @@
 import React from "react";
 import style from "./Footer.module.scss";
-import Icon from "components/General/Icon";
 import { Space, Typography } from "antd";
-import { ResponsiveButton } from "components/General/FormComponents";
+import { Icon, ResponsiveButton } from "components/General";
 import { Link } from "react-router-dom";
 import bt_light from "assets/Footer/bt_light.webp";
 import bt_dark from "assets/Footer/bt_dark.webp";

@@ -1,4 +1,4 @@
-import Text from "components/General/Text/Text";
+import { Text } from "components/General";
 import { API_ERROR, API_NO_DATA } from "data/constants";
 import useFetchList from "hooks/useFetchList";
 import PackageList from "./components/PackageList";

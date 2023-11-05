@@ -1,8 +1,8 @@
 import { Space, theme } from "antd";
 import React from "react";
 import style from "components/General/CodeEditor/CodeEditor.module.scss";
-import Icon from "components/General/Icon";
 import { ValidateStatusProps } from "./utils/types";
+import { Icon } from "components/General";
 
 const ValidateStatus: React.FC<ValidateStatusProps> = ({ status }) => {
 	if (status.length === 0) {

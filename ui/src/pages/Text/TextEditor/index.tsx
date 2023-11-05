@@ -3,7 +3,7 @@ import { Col, Row } from "antd";
 import { Editor } from "@tinymce/tinymce-react";
 import { Editor as TinyMCEEditor } from "tinymce";
 import style from "./TextEditor.module.scss";
-import Spin from "components/General/Spin";
+import { Spin } from "components/General";
 import { classNames } from "utils/helper-functions/string";
 import useMode from "hooks/useMode";
 

@@ -1,6 +1,5 @@
-import { ResponsiveButton } from "components/General/FormComponents";
+import { Icon, ResponsiveButton } from "components/General";
 import style from "./ClipboardButton.module.scss";
-import Icon from "components/General/Icon";
 
 interface ClipboardButtonProps {
 	copyToClipboard: (text: string) => void;

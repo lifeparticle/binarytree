@@ -7,13 +7,12 @@ import { useRef, useState } from "react";
 import style from "./ImageGeneratorFromColors.module.scss";
 import useCombinedKeyPress from "hooks/useCombinedKeyPress";
 import { extractColors } from "./utils/helper";
-import PageGrid from "components/Layouts/PageGrid";
+import { PageGrid, InputGrid } from "components/Layouts";
 import {
+	Warning,
 	ResponsiveButton,
 	ResponsiveInputWithLabel,
-} from "components/General/FormComponents";
-import InputGrid from "components/Layouts/InputGrid";
-import Warning from "components/General/Warning";
+} from "components/General";
 
 const { TextArea } = Input;
 

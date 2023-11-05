@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { afterAll, describe, vi } from "vitest";
-import Footer from "components/Layouts/Sidebar/Footer";
+import Footer from "components/Layouts/Sidebar/components";
 
 // Mock the window.innerWidth to simulate different screen sizes
 const originalInnerWidth = window.innerWidth;

@@ -1,12 +1,15 @@
 import { Menu as AntdMenu, Layout } from "antd";
 import { To, useNavigate } from "react-router-dom";
 import { ITEMS } from "data/menuData";
-import { MenuProps } from "./utils/types";
 import style from "./Menu.module.scss";
 import { classNames } from "utils/helper-functions/string";
-import Icon from "components/General/Icon";
-
+import { Icon } from "components/General";
 const { Sider } = Layout;
+
+interface MenuProps {
+	isDarkMode: boolean;
+	collapsed: boolean;
+}
 
 const Menu: React.FC<MenuProps> = ({ collapsed }) => {
 	const navigate = useNavigate();

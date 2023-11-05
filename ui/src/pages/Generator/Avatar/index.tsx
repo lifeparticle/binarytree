@@ -1,13 +1,15 @@
 import { toPng, toJpeg } from "html-to-image";
 import { Card, Form, Slider, Avatar as AntAvatar, Space } from "antd";
-import ColorPickerWithInput from "components/General/ColorPickerWithInput";
+import { ColorPickerWithInput } from "components/General";
 import WebFont from "webfontloader";
 import {
+	DropdownDownloadButton,
+	Warning,
 	ResponsiveInputWithLabel,
 	ResponsiveSegementWithLabel,
 	ResponsiveSelectWithLabel,
-} from "components/General/FormComponents";
-import PageGrid from "components/Layouts/PageGrid";
+} from "components/General";
+import { PageGrid, InputGrid } from "components/Layouts";
 import { useRef, useState } from "react";
 import {
 	AVATAR_SHAPE_SEGMENTED_OPTIONS,
@@ -15,10 +17,7 @@ import {
 	AvatarShapeType,
 	FONTS,
 } from "./utils/constants";
-import InputGrid from "components/Layouts/InputGrid";
 import style from "./Avatar.module.scss";
-import DropdownDownloadButton from "components/General/DropdownDownloadButton";
-import Warning from "components/General/Warning";
 
 const Avatar = () => {
 	const [text, setText] = useState<string>("");

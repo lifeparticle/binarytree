@@ -1,7 +1,7 @@
 import { ColumnsType } from "antd/es/table";
 import { MimeTableDataType } from "./types";
 import { Tag } from "antd";
-import CodeHighlightWithCopy from "components/General/CodeHighlightWithCopy";
+import { CodeHighlightWithCopy } from "components/General";
 const MIME_URL = "/mime/data.json";
 const MIME_KEY = "mimetype";
 

@@ -1,5 +1,5 @@
 import { QUERY_KEY_NEWS } from "pages/Newsfeed/utils/constants";
-import { ResourceType } from "../ListItems/Resource/Resource";
+import { ResourceType } from "components/General";
 
 const getCategories = <T extends ResourceType>(
 	items: T[],

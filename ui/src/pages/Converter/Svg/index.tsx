@@ -1,10 +1,9 @@
 import { Card, Form, Input } from "antd";
-import CodeHighlightWithCopy from "components/General/CodeHighlightWithCopy";
-import PageGrid from "components/Layouts/PageGrid";
+import { Warning, CodeHighlightWithCopy } from "components/General";
+import { PageGrid } from "components/Layouts";
 import React, { ChangeEvent, useState } from "react";
 import { combineSVGPaths } from "./utils/helper";
 import style from "./Svg.module.scss";
-import Warning from "components/General/Warning";
 
 const { TextArea } = Input;
 

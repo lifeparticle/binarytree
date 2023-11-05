@@ -1,11 +1,10 @@
 import { ConfigProvider, Layout } from "antd";
 import { ErrorBoundary } from "react-error-boundary";
 import RoutesWithPageTitle from "routes";
-import Sidebar from "components/Layouts/Sidebar";
+import { Sidebar, FloatingBar } from "components/Layouts";
 import CookieConsent from "pages/Footer/CookieConsent";
 import useTheme from "hooks/useTheme";
-import PopupSearch from "components/General/PopupSearch";
-import FloatingBar from "components/Layouts/FloatingBar";
+import { PopupSearch } from "components/General";
 
 const { Content } = Layout;
 

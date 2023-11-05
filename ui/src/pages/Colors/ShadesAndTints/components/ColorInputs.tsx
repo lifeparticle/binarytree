@@ -5,21 +5,21 @@ import {
 	SEGMENTED_OPTIONS,
 } from "pages/Colors/ShadesAndTints/utils/constants";
 import { Card, Form, Space } from "antd";
-import Clipboard from "components/RenderProps/Clipboard";
-import ClipboardButton from "components/General/ClipboardButton";
+import { Clipboard } from "components/RenderProps";
 import {
 	formatShades,
 	generateRandomColor,
 } from "pages/Colors/ShadesAndTints/utils/helper";
-import Icon from "components/General/Icon";
 import { useEffect, useState } from "react";
 import {
+	ColorPickerWithInput,
+	Icon,
+	ClipboardButton,
 	ResponsiveButton,
 	ResponsiveInputWithLabel,
 	ResponsiveSegementWithLabel,
 	ResponsiveSelectWithLabel,
-} from "components/General/FormComponents";
-import ColorPickerWithInput from "components/General/ColorPickerWithInput";
+} from "components/General";
 import { ChangeEvent } from "react";
 import { SelectOption } from "pages/Colors/ShadesAndTints/utils/types";
 

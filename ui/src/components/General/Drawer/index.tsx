@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Drawer as AntDDrawer, Button, Space } from "antd";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { ResponsiveButton } from "components/General/FormComponents";
+import { ResponsiveButton } from "components/General";
 import { BeamDetail } from "data/beamData";
 
 interface DrawerProps {

@@ -1,5 +1,5 @@
-import Icon from "components/General/Icon";
 import style from "./Warning.module.scss";
+import { Icon } from "components/General";
 
 interface WarningProps {
 	text?: string;

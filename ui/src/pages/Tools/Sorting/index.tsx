@@ -3,15 +3,14 @@ import { useEffect, useState } from "react";
 import { detectData, sortData } from "./utils/helper";
 import { Input, Form, Card, Badge, Row, Col } from "antd";
 import { OUTPUT_FORMAT } from "./utils/constants";
-import Clipboard from "components/RenderProps/Clipboard";
-import ClipboardButton from "components/General/ClipboardButton";
-import PageGrid from "components/Layouts/PageGrid";
-import CopyInput from "components/Layouts/CopyInput";
+import { Clipboard } from "components/RenderProps";
+import { PageGrid, CopyInput } from "components/Layouts";
 import {
+	Warning,
+	ClipboardButton,
 	ResponsiveSegementWithLabel,
 	ResponsiveSelectWithLabel,
-} from "components/General/FormComponents";
-import Warning from "components/General/Warning";
+} from "components/General";
 
 const { TextArea } = Input;
 

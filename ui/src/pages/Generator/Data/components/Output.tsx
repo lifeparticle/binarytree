@@ -1,6 +1,6 @@
 import React from "react";
 import { Tabs, type TabsProps } from "antd";
-import CodeHighlightWithCopy from "components/General/CodeHighlightWithCopy";
+import { CodeHighlightWithCopy } from "components/General";
 
 interface OutputProps {
 	sql: string;
