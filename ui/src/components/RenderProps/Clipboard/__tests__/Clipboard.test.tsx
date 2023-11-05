@@ -1,8 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, test } from "vitest";
-
-import Clipboard from "components/RenderProps/Clipboard";
-import ClipboardButton from "components/General/ClipboardButton";
+import { Clipboard } from "components/RenderProps";
+import { ClipboardButton } from "components/General";
 
 describe("Clipboard Component", () => {
 	const testText = "Test Text";

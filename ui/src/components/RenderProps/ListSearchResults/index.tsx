@@ -1,14 +1,11 @@
 import style from "./ListSearchResults.module.scss";
-import Search from "components/General/Search";
-import { getCategories } from "components/General/Search/helper";
-import List, { ListProps } from "components/RenderProps/List";
+import { Search, Text, ResourceType, getCategories } from "components/General";
+import { List, ListProps } from "components/RenderProps";
 import { API_ERROR, API_NO_DATA } from "data/constants";
-import Text from "components/General/Text/Text";
 import { filteredNews, filteredResource } from "./helper";
 import { ReactElement } from "react";
 import { QUERY_KEY_NEWS } from "pages/Newsfeed/utils/constants";
 import useParamsValue from "hooks/useParamsValue";
-import { ResourceType } from "components/General/ListItems/Resource/Resource";
 
 interface ListSearchResultsProps<T> extends ListProps<T> {
 	resourceName: string;

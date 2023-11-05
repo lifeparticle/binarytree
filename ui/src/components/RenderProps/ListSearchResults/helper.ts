@@ -1,5 +1,4 @@
-import { NewsType } from "components/General/ListItems/News/News";
-import { ResourceType } from "components/General/ListItems/Resource/Resource";
+import { ResourceType, NewsType } from "components/General";
 
 const filteredNews = <T>(searchQuery: string, items: T[]) => {
 	if (searchQuery) {
