@@ -166,5 +166,12 @@
 		"subCategory": "UI",
 		"url": "https://www.autodraw.com/",
 		"socials": []
+	},
+	{
+		"name": "Notify",
+		"category": "API",
+		"subCategory": "Programming",
+		"url": "https://ntfy.sh/",
+		"socials": []
 	}
 ]
