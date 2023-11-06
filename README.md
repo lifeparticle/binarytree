@@ -21,7 +21,7 @@ Your [opinions and feedback](https://binarytree.dev/feedback) about our service 
 | CodeQL                | [![CodeQL](https://github.com/lifeparticle/binarytree/actions/workflows/codeql.yml/badge.svg)](https://github.com/lifeparticle/binarytree/actions/workflows/codeql.yml)                                |
 | Sonarcloud            | [![Build](https://github.com/lifeparticle/binarytree/actions/workflows/sonarcloud.yml/badge.svg)](https://github.com/lifeparticle/binarytree/actions/workflows/sonarcloud.yml)                         |
 
-# Contributing
+## Contributing
 
 If you'd like to contribute to the project, please check the [How to contribute](CONTRIBUTING.md) file for guidelines and instructions.
 
