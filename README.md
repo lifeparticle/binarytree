@@ -1,8 +1,10 @@
-## Binary Tree
-
+<p align="center">
 <a href="https://binarytree.dev/" target="_blank">
-  <img src="https://github.com/lifeparticle/lifeparticle/blob/master/gh_social.png" alt="binary tree logo" height="130" align="right"/>
+  <img src="https://github.com/lifeparticle/lifeparticle/blob/master/gh_social.png" alt="binary tree logo" height="130" />
 </a>
+</p>
+
+## Binary Tree
 
 At [binarytree.dev](https://binarytree.dev/about), we provide an array of developer productivity tools designed to help you save time. With an ever-growing number of features (currently <b>26</b>), our platform is constantly evolving to meet the needs of developers like you.
 

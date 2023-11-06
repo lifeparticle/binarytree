@@ -1,8 +1,7 @@
 import style from "./Sorting.module.scss";
 import { useEffect, useState } from "react";
-import { detectData, sortData } from "./utils/helper";
+import { sortData } from "./helper";
 import { Input, Form, Card, Badge, Row, Col } from "antd";
-import { OUTPUT_FORMAT } from "./utils/constants";
 import { Clipboard } from "components/RenderProps";
 import { PageGrid, CopyInput } from "components/Layouts";
 import {
@@ -11,8 +10,26 @@ import {
 	ResponsiveSegementWithLabel,
 	ResponsiveSelectWithLabel,
 } from "components/General";
+import { DataDetection } from "utils/helper-classes/DataDetection";
 
 const { TextArea } = Input;
+
+const OUTPUT_FORMAT = [
+	{
+		value: "\n",
+		label: "Separate results by new lines",
+	},
+	{
+		value: ",",
+		label: "Separate results by line commas",
+	},
+	{
+		value: " ",
+		label: "Separate results by line spaces",
+	},
+];
+
+const detection = new DataDetection(["number", "string", "array"]);
 
 const Sorting: React.FC = () => {
 	const [input, setInput] = useState("");
@@ -22,9 +39,14 @@ const Sorting: React.FC = () => {
 	const [dataType, setDataType] = useState("");
 
 	useEffect(() => {
-		const sortedData = sortData(input, order);
+		const formattedStringArray = detection.parseData(input);
+		console.log(formattedStringArray);
+		detection.setData(input, true);
+		const dT = detection.detect();
+
+		const sortedData = sortData(formattedStringArray, order, dT);
 		setOutput(sortedData.join(outputFormat.value));
-		setDataType(detectData(input));
+		setDataType(dT);
 	}, [input, order, outputFormat]);
 
 	return (

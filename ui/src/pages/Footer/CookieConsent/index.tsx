@@ -4,7 +4,6 @@ import CookiConsent, {
 	getCookieConsentValue,
 } from "react-cookie-consent";
 import ReactGA from "react-ga4";
-import { usePageTitle } from "components/Hoc";
 import {
 	BUTTON_STYLES,
 	COOKIE_CONSENT_STYLES,
@@ -14,6 +13,7 @@ import {
 	DECLINE_BUTTON_STYLES,
 } from "./utils/constants";
 import CookieConsentText from "./components/CookieConsentText";
+import usePageTitle from "hooks/usePageTitle";
 
 const CookieConsent: React.FC = () => {
 	const { title, url } = usePageTitle();

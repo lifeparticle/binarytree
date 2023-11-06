@@ -1,9 +1,9 @@
-import style from "./withPageTitle.module.scss";
+import style from "./Routes.module.scss";
 import { Space } from "antd";
 import { HeadProvider, Title, Link, Meta } from "react-head";
 import { ErrorBoundary } from "react-error-boundary";
 import { Text, HelpIcon, Drawer, FallbackComponent } from "components/General";
-import usePageTitle from "./usePageTitle";
+import usePageTitle from "../hooks/usePageTitle";
 
 const NO_PADDING = [
 	"BinaryTree: Developer Productivity Tools",

@@ -1,20 +1,9 @@
-import { Card, Form, QRCode, Input, Badge, Space, Checkbox } from "antd";
-import { PageGrid } from "components/Layouts";
 import React, { useEffect, useState } from "react";
-import { downloadQRCode } from "./utils/helper";
-import style from "./QRcode.module.scss";
-import {
-	DropdownDownloadButton,
-	Warning,
-	ColorPickerWithInput,
-	ResponsiveInputWithLabel,
-} from "components/General";
-import { handleImageUpload } from "utils/helper-functions/files";
-import QRCodeErrorBoundary from "./components/QRCodeErrorBoundary";
-import { classNames } from "utils/helper-functions/string";
+import { PageGrid } from "components/Layouts";
 import { DataDetection } from "utils/helper-classes/DataDetection";
-
-const { TextArea } = Input;
+import UserInputs from "./components/UserInputs";
+import Output from "./components/Output";
+import { downloadQRCode } from "./helper";
 
 const detection = new DataDetection(["number", "string", "url"]);
 
@@ -24,7 +13,7 @@ const QRcode: React.FC = () => {
 	const [color, setColor] = useState("#000000");
 	const [bgColor, setBgColor] = useState("#FFFFFF");
 	const [bordered, setBordered] = useState(false);
-	const [icon, setIcon] = useState<string | undefined>(undefined);
+	const [icon, setIcon] = useState<string>("");
 	const [size, setSize] = useState(200);
 	const [iconSize, setIconSize] = useState(size / 4);
 
@@ -35,119 +24,32 @@ const QRcode: React.FC = () => {
 
 	return (
 		<PageGrid>
-			<Card>
-				<Form layout="vertical">
-					<Form.Item
-						label={
-							<div className={style.qrcode__label}>
-								<p>{`Input data`}</p>
-								<Badge
-									text={`${dataType} detected`}
-									color={
-										dataType === "No data"
-											? "yellow"
-											: "green"
-									}
-								/>
-							</div>
-						}
-					>
-						<TextArea
-							value={value}
-							rows={7}
-							onChange={(e) => setValue(e.target.value)}
-							data-gramm={false}
-							placeholder="Enter input"
-							allowClear
-						/>
-					</Form.Item>
-					<Form.Item tooltip="Add border to QR code">
-						<Checkbox
-							type="checkbox"
-							value="Border"
-							onChange={(e) => setBordered(e.target.checked)}
-						>
-							Border
-						</Checkbox>
-					</Form.Item>
-					<PageGrid>
-						<ColorPickerWithInput
-							value={color}
-							setValue={(e) => setColor(e.target.value)}
-							setColor={setColor}
-							label="Color"
-						/>
-						<ColorPickerWithInput
-							value={bgColor}
-							setValue={(e) => setBgColor(e.target.value)}
-							setColor={setBgColor}
-							label="Background Color"
-						/>
-					</PageGrid>
-
-					<PageGrid>
-						<Form.Item>
-							<ResponsiveInputWithLabel
-								label="QR Code Size"
-								placeholder="Height"
-								value={size}
-								onChange={(val) => val && setSize(val)}
-								min={0}
-								type="number"
-							/>
-						</Form.Item>
-
-						<Form.Item>
-							<ResponsiveInputWithLabel
-								label="Icon  Size"
-								placeholder="Height"
-								value={iconSize}
-								onChange={(val) => val && setIconSize(val)}
-								min={0}
-								type="number"
-							/>
-						</Form.Item>
-					</PageGrid>
-
-					<Form.Item label="Upload Iocn">
-						<Input
-							type="file"
-							accept="image/*"
-							onChange={(e) => handleImageUpload(e, setIcon)}
-						/>
-					</Form.Item>
-				</Form>
-			</Card>
-			<Card className={classNames(style.qrcode__output, "qrcode")}>
-				{value.length > 0 ? (
-					<Space
-						direction="vertical"
-						align="center"
-						size={"large"}
-						id="myqrcode"
-					>
-						<QRCodeErrorBoundary>
-							<QRCode
-								value={value}
-								color={color}
-								bgColor={bgColor}
-								bordered={bordered}
-								size={size}
-								iconSize={iconSize}
-								icon={icon}
-							/>
-						</QRCodeErrorBoundary>
-						<DropdownDownloadButton
-							handleDownload={downloadQRCode}
-						/>
-					</Space>
-				) : (
-					<Warning
-						text="There is no data for generating QR code, please provide data
-					first."
-					/>
-				)}
-			</Card>
+			<UserInputs
+				value={value}
+				setValue={setValue}
+				dataType={dataType}
+				color={color}
+				setColor={setColor}
+				bgColor={bgColor}
+				setBgColor={setBgColor}
+				size={size}
+				setSize={setSize}
+				setBordered={setBordered}
+				iconSize={iconSize}
+				setIconSize={setIconSize}
+				icon={icon}
+				setIcon={setIcon}
+			/>
+			<Output
+				value={value}
+				color={color}
+				bgColor={bgColor}
+				bordered={bordered}
+				size={size}
+				iconSize={iconSize}
+				icon={icon}
+				downloadQRCode={downloadQRCode}
+			/>
 		</PageGrid>
 	);
 };

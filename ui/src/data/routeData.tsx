@@ -153,7 +153,7 @@ export const routes: Route[] = [
 		id: "units",
 		path: "/css/units",
 		title: "Units",
-		description: "CSS units",
+		description: "Join the CSS party with Pixels, Ems, Rems, and more.",
 		component: Units,
 	},
 	{
@@ -188,7 +188,8 @@ export const routes: Route[] = [
 		id: "fileconverter",
 		path: "/converter/fc",
 		title: "File",
-		description: "Convert files to different formats.",
+		description:
+			"Your file, our recipe! We churn your files into new formats - it's 'file-flambé' minus the flames!",
 		component: FileConverter,
 	},
 	{
@@ -403,7 +404,8 @@ export const routes: Route[] = [
 		id: "githubissue",
 		path: "/automation/github-issue",
 		title: "Create Github Issue",
-		description: "Create Github Issue",
+		description:
+			"CSV to Github issues? It's not magic, it's just wickedly smart",
 		component: GithubIsuue,
 	},
 	{
