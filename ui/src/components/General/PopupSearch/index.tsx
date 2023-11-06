@@ -8,6 +8,7 @@ import useCombinedKeyPress from "hooks/useCombinedKeyPress";
 import { classNames } from "utils/helper-functions/string";
 import useMode from "hooks/useMode";
 import useModal from "hooks/useModal";
+import useKeyPress from "hooks/useKeyPress";
 
 const { Search } = Input;
 const items = MENU_ITEMS.map((item) => item.children).flat();
@@ -18,13 +19,34 @@ const PopupSearch: React.FC = () => {
 	const { handleModalOpen, isModalOpen } = useModal();
 	const [input, setInput] = useState<string>("");
 	const [filteredItems, setFilteredItems] = useState(items);
+	const [selectedIndex, setSelectedIndex] = useState<number>(0);
+
+	const handleArrowUp = () => {
+		setSelectedIndex((prevIndex) => (prevIndex === 0 ? 0 : prevIndex - 1));
+	};
+
+	const handleArrowDown = () => {
+		setSelectedIndex((prevIndex) =>
+			prevIndex === filteredItems.length - 1
+				? filteredItems.length - 1
+				: prevIndex + 1
+		);
+	};
+
+	const handleEnter = () => {
+		if (isModalOpen && filteredItems.length > 0) {
+			navigate(filteredItems[selectedIndex].url);
+			handleModalOpen();
+		}
+	};
+
+	useKeyPress(handleArrowUp, "ArrowUp");
+	useKeyPress(handleArrowDown, "ArrowDown");
+	useKeyPress(handleEnter, "Enter");
+	useCombinedKeyPress(handleModalOpen, "k");
 
 	const searchInputRef = useRef<InputRef | null>(null);
-
-	const handleClick = (url: string) => {
-		navigate(url);
-		handleModalOpen();
-	};
+	const itemRefs = useRef<Array<HTMLDivElement | null>>([]);
 
 	const handleAfterOpen = () => {
 		if (searchInputRef.current) {
@@ -40,7 +62,15 @@ const PopupSearch: React.FC = () => {
 		);
 	}, [input]);
 
-	useCombinedKeyPress(handleModalOpen, "k");
+	useEffect(() => {
+		const selectedItemRef = itemRefs.current[selectedIndex];
+		if (selectedItemRef) {
+			selectedItemRef.scrollIntoView({
+				behavior: "smooth",
+				block: "nearest",
+			});
+		}
+	}, [selectedIndex]);
 
 	return (
 		<Modal
@@ -59,10 +89,6 @@ const PopupSearch: React.FC = () => {
 				ref={searchInputRef}
 				allowClear
 				autoFocus
-				onPressEnter={() => {
-					filteredItems.length > 0 &&
-						handleClick(filteredItems[0].url);
-				}}
 			/>
 			<div
 				className={classNames(
@@ -70,16 +96,19 @@ const PopupSearch: React.FC = () => {
 					"search_container"
 				)}
 			>
-				{filteredItems.map((item) => (
+				{filteredItems.map((item, index) => (
 					<div
+						ref={(el) => (itemRefs.current[index] = el)}
 						key={item.url}
 						className={classNames(
 							style.popsearch__container_item,
+							selectedIndex === index
+								? style.popsearch__container_item_selected
+								: "",
 							isDarkMode
 								? style.popsearch__container_item_dark
 								: style.popsearch__container_item_light
 						)}
-						onClick={() => handleClick(item.url)}
 					>
 						<Icon name={item.icon as IconName} />
 						<p>{item?.name}</p>

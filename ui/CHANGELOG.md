@@ -1,4 +1,11 @@
-### [7.1.1] - 2023-10-31
+### [7.1.2] - 2023-11-6
+
+-   Refactor DataDetection class to handle multiple data
+-   Refactor QR code
+-   Organise files
+-   Update root README.md
+
+### [7.1.1] - 2023-11-5
 
 -   Organise components exports and imports
 -   Rename `tests` to `__tests__`

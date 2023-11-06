@@ -10,14 +10,15 @@ $popsearch-bg-color: #e0e0e0;
 
 		&_item {
 			padding: var(--bt-size-10) var(--bt-size-5);
+			margin: 0 var(--bt-size-5);
+			border-radius: var(--bt-size-8);
 			cursor: pointer;
 			display: flex;
 			align-items: center;
 			gap: var(--bt-size-10);
 			margin-top: var(--bt-size-5);
 
-			&_light:hover,
-			&_light:first-child {
+			&_light:hover {
 				background-color: $popsearch-bg-color;
 				border-radius: var(--bt-size-5);
 			}
@@ -30,6 +31,10 @@ $popsearch-bg-color: #e0e0e0;
 			&_dark:first-child {
 				background-color: $popsearch-bg-dark;
 				border-radius: var(--bt-size-5);
+			}
+
+			&_selected {
+				background-color: $popsearch-bg-dark;
 			}
 		}
 	}
