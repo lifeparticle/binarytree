@@ -85,6 +85,12 @@ const ColorInputs: React.FC<ColorInputsProps> = ({
 						type="number"
 						style={{ width: 90 }}
 					/>
+					<Form.Item>
+						<ResponsiveButton
+							icon={<Icon name="RefreshCcw" />}
+							onClick={() => setColor(generateRandomColor())}
+						/>
+					</Form.Item>
 
 					<ResponsiveSelectWithLabel
 						label="Output separator"
@@ -97,24 +103,17 @@ const ColorInputs: React.FC<ColorInputsProps> = ({
 					/>
 
 					<ResponsiveSegementWithLabel
+						label="Copy options"
 						value={order}
 						onChange={(value: string | number) =>
 							setOrder(value as string)
 						}
 						options={SEGMENTED_OPTIONS}
 					/>
-
 					<Form.Item>
 						<Clipboard
 							text={clipboardText}
 							clipboardComponent={ClipboardButton}
-						/>
-					</Form.Item>
-
-					<Form.Item>
-						<ResponsiveButton
-							icon={<Icon name="RefreshCcw" />}
-							onClick={() => setColor(generateRandomColor())}
 						/>
 					</Form.Item>
 				</Space>

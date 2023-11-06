@@ -39,12 +39,9 @@ const Sorting: React.FC = () => {
 	const [dataType, setDataType] = useState("");
 
 	useEffect(() => {
-		const formattedStringArray = detection.parseData(input);
-		console.log(formattedStringArray);
 		detection.setData(input, true);
 		const dT = detection.detect();
-
-		const sortedData = sortData(formattedStringArray, order, dT);
+		const sortedData = sortData(detection.parseData(input), order, dT);
 		setOutput(sortedData.join(outputFormat.value));
 		setDataType(dT);
 	}, [input, order, outputFormat]);
