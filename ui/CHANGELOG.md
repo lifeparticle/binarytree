@@ -4,6 +4,7 @@
 -   Refactor QR code
 -   Organise files
 -   Update root README.md
+-   useKeyPress hook
 
 ### [7.1.1] - 2023-11-5
 
