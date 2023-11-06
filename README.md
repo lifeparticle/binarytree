@@ -4,7 +4,7 @@
 </a>
 </p>
 
-## Binary Tree
+## BinaryTree
 
 At [binarytree.dev](https://binarytree.dev/about), we provide an array of developer productivity tools designed to help you save time. With an ever-growing number of features (currently <b>26</b>), our platform is constantly evolving to meet the needs of developers like you.
 
