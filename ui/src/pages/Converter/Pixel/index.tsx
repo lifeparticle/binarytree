@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Card, Form } from "antd";
 import { CopyInput, PageGrid } from "components/Layouts";
-import { Clipboard } from "components/RenderProps";
-import { ClipboardButton, ResponsiveInputWithLabel } from "components/General";
+import { Clipboard } from "components/ComponentInjector";
+import { ResponsiveInputWithLabel } from "components/General";
+import { ClipboardButton } from "components/InjectedComponent";
 
 const Pixel: React.FC = () => {
 	const [pixel, setPixel] = useState(0);

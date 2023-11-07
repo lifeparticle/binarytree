@@ -1,10 +1,11 @@
 import { Typography, theme } from "antd";
 import style from "pages/Colors/ColorPicker/ColorPicker.module.scss";
-import { Clipboard } from "components/RenderProps";
-import { ClipboardButton, CodeHighlightWithCopy } from "components/General";
+import { Clipboard } from "components/ComponentInjector";
+import { CodeHighlightWithCopy } from "components/General";
 import { getTextColor, isTransparent } from "utils/helper-functions/color";
 import { useSearchParams } from "react-router-dom";
 import { classNames } from "utils/helper-functions/string";
+import { ClipboardButton } from "components/InjectedComponent";
 
 const { Title } = Typography;
 

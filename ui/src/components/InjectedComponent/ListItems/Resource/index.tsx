@@ -1,12 +1,12 @@
 import { Avatar, Card, Skeleton, Space, Tag, Typography } from "antd";
 import style from "./Resource.module.scss";
-import { Clipboard } from "components/RenderProps";
-import { ClipboardButton } from "components/General";
-import { ListItemProps } from "components/RenderProps";
+import { Clipboard } from "components/ComponentInjector";
+import { ClipboardButton } from "components/InjectedComponent";
+import { ListItemProps } from "components/ComponentInjector";
 
 const { Title } = Typography;
 
-export type SocialName = "github" | "youtube" | "website";
+type SocialName = "github" | "youtube" | "website";
 
 interface Social {
 	name: SocialName;

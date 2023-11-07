@@ -1,10 +1,11 @@
 import { Card, Form } from "antd";
 import { useEffect, useState } from "react";
 import { Buffer } from "buffer";
-import { Clipboard } from "components/RenderProps";
-import { ClipboardButton, CodeEditor } from "components/General";
+import { Clipboard } from "components/ComponentInjector";
+import { CodeEditor } from "components/General";
 import { isBase64Valid } from "./utils/helper";
 import { PageGrid } from "components/Layouts";
+import { ClipboardButton } from "components/InjectedComponent";
 
 const Base64: React.FC = () => {
 	const [input, setInput] = useState("");

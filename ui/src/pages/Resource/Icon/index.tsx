@@ -1,6 +1,6 @@
-import { Resource } from "components/General";
+import { Resource } from "components/InjectedComponent";
 import useFetchList from "hooks/useFetchList";
-import { ListSearchResults } from "components/RenderProps";
+import { ListSearchResults } from "components/ComponentInjector";
 import { QUERY_KEY, URL } from "./utils/constants";
 
 const Icon: React.FC = () => {

@@ -1,5 +1,5 @@
+import { ResourceType } from "components/InjectedComponent";
 import { QUERY_KEY_NEWS } from "pages/Newsfeed/utils/constants";
-import { ResourceType } from "components/General";
 
 const getCategories = <T extends ResourceType>(
 	items: T[],

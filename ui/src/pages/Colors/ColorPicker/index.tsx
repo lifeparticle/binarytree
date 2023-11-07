@@ -4,15 +4,16 @@ import { Card, Form, Space } from "antd";
 import { ColorPicker as CP } from "@mantine/core";
 import { INITIAL_COLOR, INITIAL_FORMAT } from "./utils/constants";
 import ColorFormatTags from "./components/ColorFormatTags";
-import { Clipboard } from "components/RenderProps";
+import { Clipboard } from "components/ComponentInjector";
 import DisplayColors from "./components/DisplayColors";
 import { calculateColors, determineFormat } from "./utils/helper";
 import { CopyInput } from "components/Layouts";
-import { ClipboardButton, ResponsiveInputWithLabel } from "components/General";
+import { ResponsiveInputWithLabel } from "components/General";
 import useParamsValue from "hooks/useParamsValue";
 import { useDebounce } from "hooks/useDebounce";
 import { FORMAT_LABELS } from "./utils/constants";
 import { PARAMS } from "data/paramsData";
+import { ClipboardButton } from "components/InjectedComponent";
 
 type FormatType = Lowercase<(typeof FORMAT_LABELS)[number]>;
 

@@ -1,4 +1,4 @@
-import { ResourceType, NewsType } from "components/General";
+import { ResourceType, NewsType } from "components/InjectedComponent";
 
 const filteredNews = <T>(searchQuery: string, items: T[]) => {
 	if (searchQuery) {

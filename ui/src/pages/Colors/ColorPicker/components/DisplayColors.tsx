@@ -1,8 +1,8 @@
 import { Card, Space } from "antd";
 import { EXTENDED_DATA_OPTIONS } from "pages/Colors/ColorPicker/utils/constants";
 import DisplayColor from "pages/Colors/ColorPicker/components/DisplayColor";
-import { Clipboard } from "components/RenderProps";
-import { ClipboardButton } from "components/General";
+import { Clipboard } from "components/ComponentInjector";
+import { ClipboardButton } from "components/InjectedComponent";
 import style from "pages/Colors/ColorPicker/ColorPicker.module.scss";
 import {
 	determineLabel,

@@ -21,6 +21,11 @@ const PopupSearch: React.FC = () => {
 	const [filteredItems, setFilteredItems] = useState(items);
 	const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
+	const onClickHandler = (url: string) => {
+		navigate(url);
+		handleModalOpen();
+	};
+
 	const handleArrowUp = () => {
 		setSelectedIndex((prevIndex) => (prevIndex === 0 ? 0 : prevIndex - 1));
 	};
@@ -35,8 +40,7 @@ const PopupSearch: React.FC = () => {
 
 	const handleEnter = () => {
 		if (isModalOpen && filteredItems.length > 0) {
-			navigate(filteredItems[selectedIndex].url);
-			handleModalOpen();
+			onClickHandler(filteredItems[selectedIndex].url);
 		}
 	};
 
@@ -98,6 +102,7 @@ const PopupSearch: React.FC = () => {
 			>
 				{filteredItems.map((item, index) => (
 					<div
+						onClick={() => onClickHandler(item.url)}
 						ref={(el) => (itemRefs.current[index] = el)}
 						key={item.url}
 						className={classNames(
