@@ -4,12 +4,9 @@ import { marked } from "marked";
 import { Input, Form, Card } from "antd";
 import useCombinedKeyPress from "hooks/useCombinedKeyPress";
 import { CopyInput, PageGrid } from "components/Layouts";
-import {
-	ClipboardButton,
-	Warning,
-	ResponsiveInputWithLabel,
-} from "components/General";
-import { Clipboard } from "components/RenderProps";
+import { Warning, ResponsiveInputWithLabel } from "components/General";
+import { Clipboard } from "components/ComponentInjector";
+import { ClipboardButton } from "components/InjectedComponent";
 const { TextArea } = Input;
 
 type TocItem = {

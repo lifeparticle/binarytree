@@ -1,3 +1,5 @@
+const CANT_DETECT_DATA = "Can't detect data";
+
 // Define a union type of possible data types that can be detected.
 export type DataType =
 	| "number"
@@ -46,15 +48,24 @@ export class DataDetection {
 		return urlRegex.test(data);
 	}
 
-	private isArray(data: string): boolean {
+	private isArray(data: object): boolean {
 		try {
-			return Array.isArray(JSON.parse(data));
+			return Array.isArray(data);
 		} catch {
 			return false;
 		}
 	}
 
-	parseData = (data: string): string[] => {
+	private parsedData = (data: string) => {
+		try {
+			return JSON.parse(data);
+		} catch (error) {
+			// Fallback to string detection if parsing fails
+			return false;
+		}
+	};
+
+	formatData = (data: string): string[] => {
 		return data
 			.split(this.delimitersRegex)
 			.filter((entry) => entry.length > 0);
@@ -68,35 +79,29 @@ export class DataDetection {
 		if (this.isMultiple) {
 			if (
 				this.typesToDetect.includes("array") &&
-				this.isArray(this.data)
+				this.isArray(this.parsedData(this.data))
 			) {
 				return "array";
-			} else {
-				const parsedData = this.parseData(this.data);
-
-				// Detect types for each individual element.
-				const detectedTypes = parsedData.map((item) =>
-					this.detectType(item)
-				);
-
-				// Check if all detected types are the same.
-				const allSameType = detectedTypes.every(
-					(type) => type === detectedTypes[0]
-				);
-
-				if (
-					allSameType &&
-					this.typesToDetect.includes(detectedTypes[0])
-				) {
-					return detectedTypes[0];
-				} else {
-					return "string";
-				}
 			}
-		} else {
-			// Detect type for single data element.
-			return this.detectType(this.data);
+
+			// Detect types for each individual element.
+			const detectedTypes = this.formatData(this.data).map((item) =>
+				this.detectType(item)
+			);
+
+			// Check if all detected types are the same.
+			const allSameType = detectedTypes.every(
+				(type) => type === detectedTypes[0]
+			);
+
+			if (allSameType && this.typesToDetect.includes(detectedTypes[0])) {
+				return detectedTypes[0];
+			}
+
+			return "string";
 		}
+
+		return this.detectType(this.data);
 	}
 
 	private detectType(data: string): DataType {
@@ -104,28 +109,35 @@ export class DataDetection {
 			return "url";
 		}
 
-		try {
-			const parsedData = JSON.parse(data);
-			const actualType: DataType = this.isArray(parsedData)
-				? "array"
-				: parsedData === null
-				? "null"
-				: (typeof parsedData as DataType);
-
-			if (this.typesToDetect.includes(actualType)) {
-				return actualType;
-			}
-		} catch (error) {
-			if (this.typesToDetect.includes("string")) {
-				return "string";
-			}
-		}
-
 		// Special case for empty array '[]' or empty object '{}' represented as strings.
 		if (data === "[]" || data === "{}") {
 			return "string";
 		}
 
-		return "Can't detect data";
+		const parsedData = this.parsedData(data);
+
+		if (!parsedData) {
+			return this.typesToDetect.includes("string")
+				? "string"
+				: CANT_DETECT_DATA;
+		}
+
+		// Detect array or null
+		if (this.isArray(parsedData)) {
+			return this.typesToDetect.includes("array")
+				? "array"
+				: CANT_DETECT_DATA;
+		}
+		if (parsedData === null) {
+			return this.typesToDetect.includes("null")
+				? "null"
+				: CANT_DETECT_DATA;
+		}
+
+		// Detect number, boolean, or object
+		const detectedType: DataType = typeof parsedData as DataType;
+		return this.typesToDetect.includes(detectedType)
+			? detectedType
+			: CANT_DETECT_DATA;
 	}
 }

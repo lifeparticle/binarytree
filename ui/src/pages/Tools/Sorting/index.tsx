@@ -2,15 +2,15 @@ import style from "./Sorting.module.scss";
 import { useEffect, useState } from "react";
 import { sortData } from "./helper";
 import { Input, Form, Card, Badge, Row, Col } from "antd";
-import { Clipboard } from "components/RenderProps";
+import { Clipboard } from "components/ComponentInjector";
 import { PageGrid, CopyInput } from "components/Layouts";
 import {
 	Warning,
-	ClipboardButton,
 	ResponsiveSegementWithLabel,
 	ResponsiveSelectWithLabel,
 } from "components/General";
 import { DataDetection } from "utils/helper-classes/DataDetection";
+import { ClipboardButton } from "components/InjectedComponent";
 
 const { TextArea } = Input;
 
@@ -41,7 +41,7 @@ const Sorting: React.FC = () => {
 	useEffect(() => {
 		detection.setData(input, true);
 		const dT = detection.detect();
-		const sortedData = sortData(detection.parseData(input), order, dT);
+		const sortedData = sortData(detection.formatData(input), order, dT);
 		setOutput(sortedData.join(outputFormat.value));
 		setDataType(dT);
 	}, [input, order, outputFormat]);

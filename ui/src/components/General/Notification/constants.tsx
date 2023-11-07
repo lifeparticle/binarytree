@@ -4,7 +4,7 @@ const NOTIFICATION_RED_FLAG_KEY = "feature-date";
 
 const DEFAULT_RECORD = [
 	{
-		date: "01.01.23",
+		date: "2023-11-5",
 		version: "1.1.1",
 		features: [
 			"Create Notifcation modal",

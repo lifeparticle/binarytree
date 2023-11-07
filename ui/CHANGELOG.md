@@ -1,4 +1,12 @@
-### [7.1.2] - 2023-11-6
+### [7.1.3] - 2023-11-07
+
+-   Refactor DataDetection class
+-   Organise component files
+-   Add tests for DataDetection class
+-   Notification bell icon bug fix
+-   Search modal onClick bug fix
+
+### [7.1.2] - 2023-11-06
 
 -   Refactor DataDetection class to handle multiple data
 -   Refactor QR code
@@ -6,7 +14,7 @@
 -   Update root README.md
 -   useKeyPress hook
 
-### [7.1.1] - 2023-11-5
+### [7.1.1] - 2023-11-05
 
 -   Organise components exports and imports
 -   Rename `tests` to `__tests__`

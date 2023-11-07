@@ -1,5 +1,5 @@
-import { Resource } from "components/General";
-import { ListSearchResults } from "components/RenderProps";
+import { Resource } from "components/InjectedComponent";
+import { ListSearchResults } from "components/ComponentInjector";
 import useFetchList from "hooks/useFetchList";
 import { QUERY_KEY, URL } from "./utils/contants";
 

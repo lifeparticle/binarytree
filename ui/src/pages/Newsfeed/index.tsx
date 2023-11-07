@@ -1,8 +1,8 @@
 import React from "react";
 import { QUERY_KEY_NEWS, TAB_ITEMS } from "./utils/constants";
 import { Tabs } from "antd";
-import { ListSearchResults } from "components/RenderProps";
-import { News } from "components/General";
+import { ListSearchResults } from "components/ComponentInjector";
+import { News } from "components/InjectedComponent";
 import style from "./Newsfeed.module.scss";
 import useNewsFeed from "./useNewsFeed";
 

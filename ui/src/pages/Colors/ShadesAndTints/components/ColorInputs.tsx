@@ -5,7 +5,7 @@ import {
 	SEGMENTED_OPTIONS,
 } from "pages/Colors/ShadesAndTints/utils/constants";
 import { Card, Form, Space } from "antd";
-import { Clipboard } from "components/RenderProps";
+import { Clipboard } from "components/ComponentInjector";
 import {
 	formatShades,
 	generateRandomColor,
@@ -14,7 +14,6 @@ import { useEffect, useState } from "react";
 import {
 	ColorPickerWithInput,
 	Icon,
-	ClipboardButton,
 	ResponsiveButton,
 	ResponsiveInputWithLabel,
 	ResponsiveSegementWithLabel,
@@ -22,6 +21,7 @@ import {
 } from "components/General";
 import { ChangeEvent } from "react";
 import { SelectOption } from "pages/Colors/ShadesAndTints/utils/types";
+import { ClipboardButton } from "components/InjectedComponent";
 
 interface ColorInputsProps {
 	color: string;

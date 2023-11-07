@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { ListSearchResults } from "components/RenderProps";
+import { ListSearchResults } from "components/ComponentInjector";
 import { API_ERROR, API_LOADING, API_NO_DATA } from "data/constants";
 import { MemoryRouter } from "react-router-dom";
 

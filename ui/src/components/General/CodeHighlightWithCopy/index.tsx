@@ -1,6 +1,6 @@
-import { Clipboard } from "components/RenderProps";
+import { Clipboard } from "components/ComponentInjector";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { ClipboardButton } from "components/General";
+import { ClipboardButton } from "components/InjectedComponent";
 import {
 	obsidian,
 	stackoverflowLight,
