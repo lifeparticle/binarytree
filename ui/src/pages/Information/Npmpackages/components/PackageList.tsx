@@ -2,11 +2,11 @@ import React from "react";
 import { Row } from "antd";
 import style from "pages/Information/Npmpackages/Npmpackages.module.scss";
 import Package from "./Package";
-import { Package as PackageProps } from "pages/Information/Npmpackages/utils/types";
 import PackageSkeleton from "./PackageSkeleton";
+import { Package as PackagType } from "pages/Information/Npmpackages/types";
 
 interface PackageListProps {
-	packages: PackageProps[];
+	packages: PackagType[];
 	isLoading: boolean;
 }
 

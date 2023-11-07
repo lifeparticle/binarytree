@@ -10,7 +10,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: automation-scripts/News
+        working-directory: api/News
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -32,11 +32,6 @@ jobs:
         env:
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
         run: yarn start
-
-      - name: Move news.json
-        run: |-
-          git add news.json
-          git mv -f news.json ../../api/news.json
 
       - name: Commit and push if changed
         run: |-

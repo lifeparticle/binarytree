@@ -1,10 +1,14 @@
-### [7.1.3] - 2023-11-07
+### [8.0.0] - 2023-11-07
 
 -   Refactor DataDetection class
 -   Organise component files
 -   Add tests for DataDetection class
 -   Notification bell icon bug fix
 -   Search modal onClick bug fix
+-   Remove automation-scripts folder
+-   Remove packages folder
+-   Update README.md in api folder
+-   Update news.yml and packages.yml
 
 ### [7.1.2] - 2023-11-06
 

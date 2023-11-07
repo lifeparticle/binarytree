@@ -1,6 +1,6 @@
 import { Card, Col, Skeleton, Space, Tag, Typography } from "antd";
 import React from "react";
-import { Package as PackagType } from "pages/Information/Npmpackages/utils/types";
+import { Package as PackagType } from "pages/Information/Npmpackages/types";
 const { Title } = Typography;
 import style from "pages/Information/Npmpackages/Npmpackages.module.scss";
 
