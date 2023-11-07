@@ -2,7 +2,10 @@ import { Text } from "components/General";
 import { API_ERROR, API_NO_DATA } from "data/constants";
 import useFetchList from "hooks/useFetchList";
 import PackageList from "./components/PackageList";
-import { PACKAGE_QUERY_KEY, PACKAGE_QUERY_URL } from "./utils/constants";
+
+const PACKAGE_QUERY_KEY = "npm-packages";
+const PACKAGE_QUERY_URL =
+	"https://raw.githubusercontent.com/lifeparticle/binarytree/main/api/npm-packages/packages.json";
 
 const Npmpackages = () => {
 	const { data, isLoading, isError } = useFetchList(

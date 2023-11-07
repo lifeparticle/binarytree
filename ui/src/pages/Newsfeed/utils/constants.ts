@@ -13,7 +13,7 @@ const SITE_OPTIONS = {
 	},
 	news: {
 		label: "News",
-		value: "https://raw.githubusercontent.com/lifeparticle/binarytree/main/api/news.json",
+		value: "https://raw.githubusercontent.com/lifeparticle/binarytree/main/api/News/news.json",
 		isFeedItem: false,
 	},
 };

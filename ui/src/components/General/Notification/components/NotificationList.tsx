@@ -105,7 +105,6 @@ const NotificationList: React.FC<NotificationListProps> = ({
 				"notification-container"
 			)}
 			onOpenChange={handleRedFlagNotification}
-			open
 		>
 			<Button
 				aria-label="notification-icon"
