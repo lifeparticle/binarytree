@@ -2,7 +2,7 @@
 
 An Express.js application that serves as an RSS feed generator. It provides a convenient way to fetch and serve RSS feeds from specified sources.
 
-# News
+# news
 
 This script fetches news articles about JavaScript from a news API and saves them to `news.json`.
 
