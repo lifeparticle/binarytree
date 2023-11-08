@@ -10,7 +10,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: api/News
+        working-directory: api/news
     steps:
       - name: Checkout
         uses: actions/checkout@v2
