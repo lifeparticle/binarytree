@@ -110,5 +110,12 @@
 		"subCategory": ["Email", "API"],
 		"url": "https://resend.com/",
 		"socials": []
+	},
+	{
+		"name": "Upstash",
+		"category": "Database",
+		"subCategory": ["Database"],
+		"url": "https://upstash.com/",
+		"socials": []
 	}
 ]
