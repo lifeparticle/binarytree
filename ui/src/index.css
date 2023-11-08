@@ -2,7 +2,7 @@
 @import "./styles/sizes.css";
 @import "./styles/z-index.css";
 @import "./styles/borders.css";
-@import "./styles/typography.css";
+@import "./styles/fonts.scss";
 @import "./styles/shadows.css";
 @import "./styles/animations.css";
 @import "./styles/antd-overrides.css";
