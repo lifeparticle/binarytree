@@ -1,0 +1,22 @@
+:where(html) {
+	@font-face {
+		font-family: "Geist";
+		src: url("../assets/fonts/Geist/Geist-Regular.woff2") format('woff2');
+		font-weight: 400;
+		font-style: normal;
+	}
+    @font-face {
+		font-family: "Geist";
+		src: url("../assets/fonts/Geist/Geist-SemiBold.woff2") format('woff2');
+		font-weight: 600;
+	}
+
+    @font-face {
+		font-family: "Geist-Mono";
+		src: url("../assets/fonts/Geist-Mono/GeistMono-Regular.woff2") format('woff2');
+		font-weight: 400;
+		font-style: normal;
+	}
+	--global-font: "Geist",Segoe UI,Arial,sans-serif; 
+    --global-font-mono: "Geist-Mono", monospace;
+}
