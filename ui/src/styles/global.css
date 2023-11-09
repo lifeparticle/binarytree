@@ -1,3 +1,9 @@
 .heart {
 	animation: pulse 1s infinite;
 }
+.CookieConsent{
+	font-family: var(--global-font);
+}
+code{
+	font-family: var(--global-font-mono);
+}
