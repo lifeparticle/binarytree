@@ -2,6 +2,8 @@
 	"name": "BinaryTree",
 	"short_name": "BinaryTree",
 	"description": "binarytree.dev: Developer Productivity Tools",
+	"display": "standalone",
+	"start_url": "/",
 	"icons": [
 		{
 			"src": "logo.svg",
@@ -21,6 +23,10 @@
 		{
 			"src": "icon-128.png",
 			"sizes": "128x128"
+		},
+		{
+			"src": "icon-512.png",
+			"sizes": "512x512"
 		}
 	],
 	"background_color": "#141414",
