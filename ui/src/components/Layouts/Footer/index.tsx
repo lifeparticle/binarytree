@@ -8,6 +8,8 @@ import bt_dark from "assets/Footer/bt_dark.webp";
 import { openLink } from "utils/helper-functions/string";
 import useMode from "hooks/useMode";
 
+const { Text } = Typography;
+
 const Footer: React.FC = () => {
 	const { isDarkMode } = useMode();
 
@@ -38,6 +40,7 @@ const Footer: React.FC = () => {
 					key="Github"
 					type="default"
 					shape="circle"
+					aria-label="Github Icon"
 					icon={<Icon name="Github" />}
 					onClick={() =>
 						openLink("https://github.com/lifeparticle/binarytree")
@@ -49,7 +52,7 @@ const Footer: React.FC = () => {
 			</Space>
 
 			<Space direction="vertical" className={style.footer__right}>
-				<Typography.Title level={4}>Product</Typography.Title>
+				<Text strong>Product</Text>
 				<ul className={style.footer__list}>
 					<li>
 						<a
@@ -64,7 +67,7 @@ const Footer: React.FC = () => {
 			</Space>
 
 			<Space direction="vertical" className={style.footer__right}>
-				<Typography.Title level={4}>Developers</Typography.Title>
+				<Text strong>Developers</Text>
 				<ul className={style.footer__list}>
 					<li>
 						<a
@@ -88,7 +91,7 @@ const Footer: React.FC = () => {
 			</Space>
 
 			<Space direction="vertical" className={style.footer__right}>
-				<Typography.Title level={4}>Company</Typography.Title>
+				<Text strong>Company</Text>
 				<ul className={style.footer__list}>
 					<li>
 						<Link to={"/about"}>About</Link>
@@ -108,7 +111,7 @@ const Footer: React.FC = () => {
 			</Space>
 
 			<Space direction="vertical" className={style.footer__right}>
-				<Typography.Title level={4}>Legal</Typography.Title>
+				<Text strong>Legal</Text>
 				<ul className={style.footer__list}>
 					<li>
 						<Link to={"/terms"}>Terms</Link>

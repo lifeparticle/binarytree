@@ -3,22 +3,21 @@ import { Card, Space, Typography, Image } from "antd";
 import { FEATURES } from "pages/Home/utils/constants";
 import style from "pages/Home/Home.module.scss";
 import { Link } from "react-router-dom";
-
 import features from "assets/Home/features.svg";
 import { Icon } from "components/General";
+
+const { Text } = Typography;
 
 const Features: React.FC = () => {
 	return (
 		<div className={style.home__features}>
 			<div className={style.home__features_cover}>
 				<div>
-					<Typography.Title level={3}>
-						BinaryTree comes packed with some awesome features
-					</Typography.Title>
-					<Typography.Title level={4}>
-						For modern app development, tools like BinaryTree can
+					<Text strong>
+						BinaryTree comes packed with some awesome features. For
+						modern app development, tools like BinaryTree can
 						significantly enhance and streamline your workflow.
-					</Typography.Title>
+					</Text>
 				</div>
 				<Image
 					src={features}
@@ -44,12 +43,8 @@ const Features: React.FC = () => {
 								<Space direction="vertical">
 									<Icon name={feature.icon} size={40} />
 									<Space direction="vertical" size="middle">
-										<Typography.Title level={4}>
-											{feature.title}
-										</Typography.Title>
-										<Typography.Text>
-											{feature.description}
-										</Typography.Text>
+										<Text strong>{feature.title}</Text>
+										<Text>{feature.description}</Text>
 									</Space>
 								</Space>
 							</Card>

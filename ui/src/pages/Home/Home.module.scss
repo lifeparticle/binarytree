@@ -21,6 +21,10 @@ $home-z-index-100: 100;
 		align-items: center;
 		text-align: center;
 		gap: var(--bt-size-50);
+
+		&_paragraph {
+			font-size: larger;
+		}
 	}
 
 	&__features {
