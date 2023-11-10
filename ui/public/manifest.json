@@ -1,0 +1,28 @@
+{
+	"name": "BinaryTree",
+	"short_name": "BinaryTree",
+	"description": "binarytree.dev: Developer Productivity Tools",
+	"icons": [
+		{
+			"src": "logo.svg",
+			"type": "image/svg+xml",
+			"sizes": "512x512"
+		},
+		{
+			"src": "maskable_icon_x192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "icon-256.png",
+			"sizes": "256x256"
+		},
+		{
+			"src": "icon-128.png",
+			"sizes": "128x128"
+		}
+	],
+	"background_color": "#141414",
+	"theme_color": "#141414"
+}
