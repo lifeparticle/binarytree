@@ -7,6 +7,8 @@ import { ResponsiveButton } from "components/General";
 import { openLink } from "utils/helper-functions/string";
 import useModal from "hooks/useModal";
 
+const { Text } = Typography;
+
 const { Title } = Typography;
 const Hero: React.FC = () => {
 	const { handleModalOpen } = useModal();
@@ -24,7 +26,7 @@ const Hero: React.FC = () => {
 					maxHeight: "40dvh",
 				}}
 			/>
-			<Title className={style.home__hero_text_paragraph} level={3}>
+			<Text className={style.home__hero_paragraph} strong keyboard>
 				At binarytree.dev, we provide an array of developer productivity
 				tools designed to help you save time. With an{" "}
 				<a
@@ -35,7 +37,7 @@ const Hero: React.FC = () => {
 				</a>{" "}
 				(currently <b>{FEATURE_DATA.length}</b>), our platform is
 				constantly evolving to meet the needs of developers like you
-			</Title>
+			</Text>
 
 			<Space direction="horizontal">
 				<ResponsiveButton onClick={handleModalOpen} type="primary">
