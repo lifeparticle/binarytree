@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { parseXML } from "./utils/helper";
-import { BASE_URL, SITE_OPTIONS } from "./utils/constants";
+import { BASE_URL, SITE_OPTIONS } from "./constants";
 import useFetchList from "hooks/useFetchList";
 
 const useNewsFeed = () => {
