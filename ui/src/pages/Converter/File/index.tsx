@@ -6,6 +6,7 @@ import {
 	Icon,
 	ResponsiveButton,
 	ResponsiveSelectWithLabel,
+	Spin,
 } from "components/General";
 import styles from "./FileConverter.module.scss";
 import { useFfmpeg } from "./useFfmpeg";
@@ -38,8 +39,6 @@ function FileConverter() {
 		const outputFileName = `${removeFileExtension(
 			fileConverter.file.name
 		)}${selectedFormat}`;
-
-		console.log("ileConverter.to", selectedFormat);
 
 		await ffmpeg.writeFile(
 			fileConverter.file.name,
@@ -83,9 +82,6 @@ function FileConverter() {
 		},
 		onChange(info) {
 			const { status } = info.file;
-			if (status !== "uploading") {
-				// console.log(info.file, info.fileList);
-			}
 			if (status === "done") {
 				message.success(
 					`${info.file.name} file uploaded successfully.`
@@ -147,6 +143,7 @@ function FileConverter() {
 
 	return (
 		<div className={styles.ic}>
+			{!loaded && <Spin />}
 			<Dragger {...props}>
 				<p className="ant-upload-drag-icon">
 					<Icon name="Inbox" size={100} strokeWidth="0.2" />
@@ -162,6 +159,7 @@ function FileConverter() {
 				type="primary"
 				onClick={convertFiles}
 				disabled={!loaded}
+				icon
 			>
 				{uploadFiles.length > 1 ? "Convert All" : "Convert"}
 			</ResponsiveButton>
