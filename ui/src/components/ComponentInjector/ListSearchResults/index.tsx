@@ -1,4 +1,5 @@
 import style from "./ListSearchResults.module.scss";
+import { Row } from "antd";
 import { Search, Text, getCategories } from "components/General";
 import { List, ListProps } from "components/ComponentInjector";
 import { API_ERROR, API_NO_DATA } from "data/constants";
@@ -58,11 +59,13 @@ const ListSearchResults = <T,>({
 				categoryQuery={categoryQuery}
 				onSearchCriteriaChange={onSearchCriteriaChange}
 			/>
-			<List
-				items={list}
-				itemComponent={itemComponent}
-				isLoading={isLoading}
-			/>
+			<Row gutter={[24, 24]}>
+				<List
+					items={list}
+					itemComponent={itemComponent}
+					isLoading={isLoading}
+				/>
+			</Row>
 		</div>
 	);
 };

@@ -1,11 +1,21 @@
 .resource {
-	display: grid;
+	box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+	transition: all .3s;
+	min-height: 160px;
+    border: 1px solid rgba(0,0,0,.05);
+    border-radius: 8px;
+    background-color: #fff;
+
+	&:hover {
+		box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.18);
+		transform: translate3d(0px, -4px, 0px);
+	}
 
 	&_space {
 		display: grid;
-		grid-template-columns: var(--bt-grid-template-1) var(
-				--bt-grid-template-1
-			) var(--bt-grid-template-1) auto;
+		grid-template-columns:
+			var(--bt-grid-template-1) var(--bt-grid-template-1)
+			var(--bt-grid-template-1) auto;
 	}
 
 	&__avatar {
@@ -16,11 +26,6 @@
 		width: var(--bt-size-50);
 	}
 
-	&__container {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
 
 	@media screen and (max-width: 550px) {
 		width: var(--bt-size-percent-100);
