@@ -4,7 +4,7 @@ import { List, ListProps } from "components/ComponentInjector";
 import { API_ERROR, API_NO_DATA } from "data/constants";
 import { filteredNews, filteredResource } from "./helper";
 import { ReactElement } from "react";
-import { QUERY_KEY_NEWS } from "pages/Newsfeed/utils/constants";
+import { QUERY_KEY_NEWS } from "pages/Newsfeed/constants";
 import useParamsValue from "hooks/useParamsValue";
 import { ResourceType } from "components/InjectedComponent";
 

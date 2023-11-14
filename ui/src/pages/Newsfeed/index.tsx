@@ -1,5 +1,5 @@
 import React from "react";
-import { QUERY_KEY_NEWS, TAB_ITEMS } from "./utils/constants";
+import { QUERY_KEY_NEWS, TAB_ITEMS } from "./constants";
 import { Tabs } from "antd";
 import { ListSearchResults } from "components/ComponentInjector";
 import { News } from "components/InjectedComponent";
