@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { parseXML } from "./utils/helper";
+import { parseXML } from "./helper";
 import { BASE_URL, SITE_OPTIONS } from "./constants";
 import useFetchList from "hooks/useFetchList";
 
