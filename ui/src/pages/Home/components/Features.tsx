@@ -13,7 +13,7 @@ const Features: React.FC = () => {
 		<div className={style.home__features}>
 			<div className={style.home__features_cover}>
 				<div>
-					<Text strong>
+					<Text strong keyboard>
 						BinaryTree comes packed with some awesome features. For
 						modern app development, tools like BinaryTree can
 						significantly enhance and streamline your workflow.
