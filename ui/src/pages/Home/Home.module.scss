@@ -34,7 +34,8 @@ $home-z-index-100: 100;
 		gap: var(--bt-size-50);
 
 		&_cover {
-			display: flex;
+			display: grid;
+			grid-template-columns: auto auto;
 			align-items: center;
 			gap: var(--bt-size-50);
 		}
