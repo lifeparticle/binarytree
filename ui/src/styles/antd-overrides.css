@@ -13,16 +13,10 @@ h5 {
 	border-inline-end: none !important;
 }
 
-.ant-menu-submenu {
-	/* can we do better? */
-	padding-left: 20px !important;
-	padding-right: 20px !important;
+.ant-layout{
+	background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
 }
 
-.ant-menu-item {
-	/* can we do better? */
-	padding-left: 32px !important;
-}
 
 .ant-input-textarea-affix-wrapper.ant-input-affix-wrapper > textarea.ant-input,
 .ant-layout-content,

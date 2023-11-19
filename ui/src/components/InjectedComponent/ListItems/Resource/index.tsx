@@ -1,7 +1,5 @@
-import { Avatar, Card, Skeleton, Space, Tag, Typography } from "antd";
+import { Avatar, Card, Skeleton, Space, Tag, Typography,Col } from "antd";
 import style from "./Resource.module.scss";
-import { Clipboard } from "components/ComponentInjector";
-import { ClipboardButton } from "components/InjectedComponent";
 import { ListItemProps } from "components/ComponentInjector";
 
 const { Title } = Typography;
@@ -29,6 +27,7 @@ const Resource: React.FC<ListItemProps<ResourceType>> = ({
 	const { name, category, url } = resource || {};
 
 	return (
+		<Col className="gutter-row" xs={24} md={12} xl={8}>
 		<Card
 			className={style.resource}
 			key={name}
@@ -47,13 +46,14 @@ const Resource: React.FC<ListItemProps<ResourceType>> = ({
 						</Space>
 					</Space>
 
-					<Clipboard
+					{/* <Clipboard
 						text={url}
 						clipboardComponent={ClipboardButton}
-					/>
+					/> */}
 				</Space>
 			</Skeleton>
 		</Card>
+		</Col>
 	);
 };
 
