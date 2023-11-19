@@ -5,6 +5,7 @@
 	"packageManager": "yarn@3.6.1",
 	"scripts": {
 		"dev": "vite",
+		"prod": "tsc && vite build && cp CHANGELOG.md dist && vite preview",
 		"host": "vite --host",
 		"build": "tsc && vite build && cp CHANGELOG.md dist",
 		"test": "vitest",

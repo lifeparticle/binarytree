@@ -5,7 +5,7 @@ import UserInputs from "./components/UserInputs";
 import Output from "./components/Output";
 import { downloadQRCode } from "./helper";
 
-const detection = new DataDetection(["number", "string", "url"]);
+const detection = new DataDetection(new Set(["number", "string", "url"]));
 
 const QRcode: React.FC = () => {
 	const [value, setValue] = useState("");
