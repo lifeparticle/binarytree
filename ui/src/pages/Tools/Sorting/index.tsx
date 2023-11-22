@@ -29,7 +29,7 @@ const OUTPUT_FORMAT = [
 	},
 ];
 
-const detection = new DataDetection(["number", "string", "array"]);
+const detection = new DataDetection(new Set(["number", "string", "array"]));
 
 const Sorting: React.FC = () => {
 	const [input, setInput] = useState("");
