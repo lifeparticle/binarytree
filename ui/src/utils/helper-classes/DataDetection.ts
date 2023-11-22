@@ -25,7 +25,7 @@ export class DataDetection {
 	// Regular expression used to split input data into individual parts.
 	// It is set to match commas, spaces, and newlines by default.
 	// isMultiple must be set to true for this to be used.
-	delimitersRegex: RegExp = /[,\s\n]+/;
+	delimitersRegex: RegExp = /[,\s]+/;
 
 	// Constructor takes an array of data types that should be detected.
 	constructor(typesToDetect: Set<DataType>) {
@@ -35,7 +35,7 @@ export class DataDetection {
 	setData(
 		data: string,
 		isMultiple = false,
-		delimitersRegex = /[,\s\n]+/
+		delimitersRegex = /[,\s]+/
 	): void {
 		this.data = data;
 		this.isMultiple = isMultiple;
@@ -44,7 +44,7 @@ export class DataDetection {
 
 	private isUrl(data: string): boolean {
 		const urlRegex =
-			/^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
+			/^(?!$)(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
 		return urlRegex.test(data);
 	}
 
