@@ -1,36 +1,27 @@
 const NOTIFICATION_KEY = "notification";
-const NOTIFICATION_URL = "/changelog.md";
+const NOTIFICATION_URL = "/CHANGELOG.md";
 const NOTIFICATION_RED_FLAG_KEY = "feature-date";
 
 const DEFAULT_RECORD = [
 	{
-		date: "2023-11-5",
-		version: "1.1.1",
+		version: "8.0.0",
+		date: "2023-11-07",
+		features: ["Refactor DataDetection class", "Organise component files"],
+	},
+	{
+		version: "7.1.2",
+		date: "2023-11-06",
 		features: [
-			"Create Notifcation modal",
-			"Create About page",
-			"Fix Maekdown editor dyamic height",
-			"Fix design and maintain design consistancy",
+			"Refactor DataDetection class to handle multiple data",
+			"Refactor QR code",
 		],
 	},
 	{
-		date: "01.01.22",
-		version: "1.1.0",
+		version: "7.1.1",
+		date: "2023-11-05",
 		features: [
-			"Create Notifcation modal",
-			"Create About page",
-			"Fix Maekdown editor dyamic height",
-			"Fix design and maintain design consistancy",
-		],
-	},
-	{
-		date: "01.01.22",
-		version: "1.1.0",
-		features: [
-			"Create Notifcation modal",
-			"Create About page",
-			"Fix Maekdown editor dyamic height",
-			"Fix design and maintain design consistancy",
+			"Organise components exports and imports",
+			"Rename `tests` to `__tests__`",
 		],
 	},
 ];
