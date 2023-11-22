@@ -16,8 +16,8 @@ export class DataDetection {
 	// input data as a string or null if not provided.
 	data: string | null = null;
 
-	// Array of DataTypes that this instance will attempt to detect.
-	typesToDetect: DataType[];
+	// Set of DataType that this instance will attempt to detect.
+	typesToDetect: Set<DataType>;
 
 	// Flag to determine if multiple data types should be considered.
 	isMultiple: boolean = false;
@@ -28,7 +28,7 @@ export class DataDetection {
 	delimitersRegex: RegExp = /[,\s\n]+/;
 
 	// Constructor takes an array of data types that should be detected.
-	constructor(typesToDetect: DataType[]) {
+	constructor(typesToDetect: Set<DataType>) {
 		this.typesToDetect = typesToDetect;
 	}
 
@@ -78,7 +78,7 @@ export class DataDetection {
 
 		if (this.isMultiple) {
 			if (
-				this.typesToDetect.includes("array") &&
+				this.typesToDetect.has("array") &&
 				this.isArray(this.parsedData(this.data))
 			) {
 				return "array";
@@ -94,7 +94,7 @@ export class DataDetection {
 				(type) => type === detectedTypes[0]
 			);
 
-			if (allSameType && this.typesToDetect.includes(detectedTypes[0])) {
+			if (allSameType && this.typesToDetect.has(detectedTypes[0])) {
 				return detectedTypes[0];
 			}
 
@@ -105,7 +105,7 @@ export class DataDetection {
 	}
 
 	private detectType(data: string): DataType {
-		if (this.typesToDetect.includes("url") && this.isUrl(data)) {
+		if (this.typesToDetect.has("url") && this.isUrl(data)) {
 			return "url";
 		}
 
@@ -117,26 +117,22 @@ export class DataDetection {
 		const parsedData = this.parsedData(data);
 
 		if (!parsedData) {
-			return this.typesToDetect.includes("string")
+			return this.typesToDetect.has("string")
 				? "string"
 				: CANT_DETECT_DATA;
 		}
 
 		// Detect array or null
 		if (this.isArray(parsedData)) {
-			return this.typesToDetect.includes("array")
-				? "array"
-				: CANT_DETECT_DATA;
+			return this.typesToDetect.has("array") ? "array" : CANT_DETECT_DATA;
 		}
 		if (parsedData === null) {
-			return this.typesToDetect.includes("null")
-				? "null"
-				: CANT_DETECT_DATA;
+			return this.typesToDetect.has("null") ? "null" : CANT_DETECT_DATA;
 		}
 
 		// Detect number, boolean, or object
 		const detectedType: DataType = typeof parsedData as DataType;
-		return this.typesToDetect.includes(detectedType)
+		return this.typesToDetect.has(detectedType)
 			? detectedType
 			: CANT_DETECT_DATA;
 	}
