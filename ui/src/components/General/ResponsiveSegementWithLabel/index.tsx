@@ -21,4 +21,3 @@ const ResponsiveSegment: React.FC<SegmentComponentProps> = (props) => {
 const ResponsiveSegementWithLabel = withLabelSize(ResponsiveSegment);
 
 export default ResponsiveSegementWithLabel;
-ResponsiveSegementWithLabel;

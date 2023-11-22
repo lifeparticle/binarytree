@@ -1,40 +1,39 @@
 import { Markdown } from "./types";
 
-const parsedMarkdown = (markdown: string): Markdown[] => {
-	const entries = markdown.split("\n### ");
+const versionRegex = /\[(.*?)\] - (\d{4}-\d{2}-\d{2})/;
+const featureRegex = /- (.+)/;
 
-	const parsedEntries = entries
-		.filter((dt) => dt.length > 0)
-		.map((entry) => {
-			const [versionLine, ...changes] = entry.split("\n");
-			const output = versionLine.match(/\[(.*?)\] - (\d{4}-\d{2}-\d{2})/);
+const parseEntry = (entry: string): Markdown => {
+	const [versionLine, ...changes] = entry.split("\n");
+	const versionMatch = versionRegex.exec(versionLine);
 
-			const features = changes
-				.map((change) => {
-					const f = change.match(/- (.+)/);
-					return f?.[1]?.trim();
-				})
-				.filter(Boolean);
+	const features = changes
+		.map((change) => {
+			const featureMatch = featureRegex.exec(change);
+			return featureMatch ? featureMatch[1].trim() : null;
+		})
+		.filter(Boolean);
 
-			return {
-				version: output?.[1],
-				date: output?.[2],
-				features,
-			} as Markdown;
-		});
-
-	return parsedEntries;
+	return {
+		version: versionMatch ? versionMatch[1] : "",
+		date: versionMatch ? versionMatch[2] : "",
+		features,
+	} as Markdown;
 };
 
-const compareDate = (latestDate: string, localeStorageDate?: string | null) => {
-	if (!localeStorageDate) {
+const parsedMarkdown = (markdown: string): Markdown[] => {
+	return markdown
+		.split("\n### ")
+		.filter((line) => line)
+		.map(parseEntry);
+};
+
+const compareDate = (latestDate: string, localStorageDate: string | null) => {
+	if (!localStorageDate) {
 		return true;
 	}
 
-	const formatLatestDate = new Date(latestDate);
-	const formatlocaleStorageDate = new Date(localeStorageDate);
-
-	return formatLatestDate > formatlocaleStorageDate;
+	return new Date(latestDate) > new Date(localStorageDate);
 };
 
 export { parsedMarkdown, compareDate };

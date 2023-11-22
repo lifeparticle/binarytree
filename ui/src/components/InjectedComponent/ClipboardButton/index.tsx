@@ -18,7 +18,10 @@ const ClipboardButton: React.FC<ClipboardButtonProps> = ({
 		<ResponsiveButton
 			disabled={text === ""}
 			className={style.button}
-			onClick={() => copyToClipboard(text)}
+			onClick={(e) => {
+				copyToClipboard(text);
+				e.stopPropagation();
+			}}
 			icon={copied ? <Icon name="Check" /> : <Icon name="Copy" />}
 			aria-label={`select ${label} `}
 		>

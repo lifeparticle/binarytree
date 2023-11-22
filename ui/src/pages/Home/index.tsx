@@ -9,6 +9,7 @@ import useMode from "hooks/useMode";
 
 const Home = () => {
 	const { isDarkMode } = useMode();
+
 	return (
 		<>
 			<div
