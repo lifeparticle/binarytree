@@ -1,7 +1,11 @@
 [[headers]]
   for = "/*"
   [headers.values]
-     must-revalidate'''
+    cache-control = '''
+    max-age=0,
+    no-cache,
+    no-store,
+    must-revalidate'''
 
 [[headers]]
   for = "/converter/fc"
