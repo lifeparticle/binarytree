@@ -32,9 +32,10 @@ interface FileConverter {
 function FileConverter() {
 	const [uploadFiles, setUploadedFiles] = useState<FileConverter[]>([]);
 	const [selectedFormat, setSelectedFormat] = useState(IMAGE_TYPES[0].value);
-	const { loaded, ffmpeg } = useFfmpeg();
+	const { loaded, ffmpegRef } = useFfmpeg();
 
 	const transcode = async (fileConverter: FileConverter) => {
+		const ffmpeg = ffmpegRef.current;
 		const outputFileName = `${removeFileExtension(
 			fileConverter.file.name
 		)}${selectedFormat}`;
