@@ -27,7 +27,7 @@ const CodeFormatter: React.FC = () => {
 		try {
 			const options = {
 				indent_size: indentationLevel,
-				indent_with_tabs: indentationLevel === "tab" ? true : false,
+				indent_with_tabs: indentationLevel === "tab",
 				e4x: true,
 			};
 

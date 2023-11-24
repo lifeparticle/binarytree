@@ -1,6 +1,5 @@
 import style from "components/General/Notification/Notification.module.scss";
-import { Button, Skeleton } from "antd";
-import { Typography, Tag, Dropdown } from "antd";
+import { Button, Skeleton, Typography, Tag, Dropdown } from "antd";
 import { Icon, Markdown } from "components/General";
 import { classNames } from "utils/helper-functions/string";
 const { Title } = Typography;

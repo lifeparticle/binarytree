@@ -1,4 +1,3 @@
-// import withSize from "components/Hoc/withSize";
 import React from "react";
 import { withSize } from "components/Hoc";
 import { Button as AntButton } from "antd";

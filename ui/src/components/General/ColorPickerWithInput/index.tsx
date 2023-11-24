@@ -1,6 +1,6 @@
 import { Card } from "antd";
 import { ResponsiveInputWithLabel } from "components/General";
-import { ColorPicker as CP } from "@mantine/core";
+import { ColorPicker as Cp } from "@mantine/core";
 import style from "./ColorPickerWithInput.module.scss";
 
 interface ColorPickerWithInputProps {
@@ -27,7 +27,7 @@ const ColorPickerWithInput: React.FC<ColorPickerWithInputProps> = ({
 				<div className={style.cpwi__color}>
 					<Card size="small" style={{ background: value }} />
 					<div className={style.cpwi__color_dp}>
-						<CP
+						<Cp
 							format="rgba"
 							value={value}
 							onChange={setColor}

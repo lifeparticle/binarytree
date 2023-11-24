@@ -8,7 +8,6 @@ const FallbackComponent: React.FC = () => {
 			<Alert
 				message={"Something went wrong"}
 				description={
-					<>
 						<Button
 							onClick={() =>
 								window.location.assign(window.location.pathname)
@@ -16,7 +15,6 @@ const FallbackComponent: React.FC = () => {
 						>
 							Refresh
 						</Button>
-					</>
 				}
 				type="error"
 				showIcon
