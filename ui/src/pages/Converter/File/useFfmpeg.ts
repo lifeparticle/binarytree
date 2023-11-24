@@ -14,7 +14,7 @@ export const useFfmpeg = () => {
 		if (loaded) {
 			return;
 		}
-		const baseURL = "";
+		const baseURL = "https://unpkg.com/@ffmpeg/core-mt@0.12.4/dist/esm";
 		ffmpeg.on("log", ({ message }) => {
 			if (messageRef.current) messageRef.current.innerHTML = message;
 		});
