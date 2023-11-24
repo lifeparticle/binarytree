@@ -1,5 +1,5 @@
 import { toBlobURL } from "@ffmpeg/util";
-import { useEffect, useReducer, useRef, useState } from "react";
+import { useEffect, useReducer, useRef } from "react";
 import { FFmpeg } from "@ffmpeg/ffmpeg";
 
 let loaded = false;
