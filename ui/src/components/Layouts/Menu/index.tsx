@@ -16,6 +16,7 @@ const Menu: React.FC<MenuProps> = ({ collapsed }) => {
 
 	const onClick = (e: { key: To }) => {
 		navigate(e.key);
+		navigate(0);
 	};
 
 	return (
