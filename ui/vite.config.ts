@@ -14,9 +14,6 @@ export default defineConfig({
 			name: "configure-response-headers",
 			configureServer: (server) => {
 				server.middlewares.use((_req, res, next) => {
-					// if (_req.url.includes("/feedback")) {
-					// 	return next();
-					// }
 					if (_req.url.includes("/converter/fc")) {
 						res.setHeader(
 							"Cross-Origin-Embedder-Policy",
