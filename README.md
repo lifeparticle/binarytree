@@ -23,7 +23,7 @@ Your [opinions and feedback](https://binarytree.dev/feedback) about our service 
 
 ## Contributing
 
-If you'd like to contribute to the project, please check the [How to contribute](CONTRIBUTING.md) file for guidelines and instructions.
+If you'd like to contribute to the project, please check the [How to contribute](ui/CONTRIBUTING.md) file for guidelines and instructions.
 
 ## Licenses
 

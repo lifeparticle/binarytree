@@ -12,7 +12,8 @@ const PageNotFound: React.FC = () => {
 				onClick={() =>
 					window.open(
 						"https://unsplash.com/photos/Oze6U2m1oYU",
-						"_blank"
+						"_blank",
+						"noopener"
 					)
 				}
 			/>

@@ -5,7 +5,6 @@ import { Icon, ResponsiveButton } from "components/General";
 import { Link } from "react-router-dom";
 import bt_light from "assets/Footer/bt_light.webp";
 import bt_dark from "assets/Footer/bt_dark.webp";
-import { openLink } from "utils/helper-functions/string";
 import useMode from "hooks/useMode";
 
 const { Text } = Typography;
@@ -43,7 +42,11 @@ const Footer: React.FC = () => {
 					aria-label="Github Icon"
 					icon={<Icon name="Github" />}
 					onClick={() =>
-						openLink("https://github.com/lifeparticle/binarytree")
+						window.open(
+							"https://github.com/lifeparticle/binarytree",
+							"_blank",
+							"noopener"
+						)
 					}
 				/>
 				<Typography.Text>

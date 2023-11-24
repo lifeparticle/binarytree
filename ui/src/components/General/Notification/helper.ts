@@ -1,6 +1,6 @@
 import { Markdown } from "./types";
 
-const versionRegex = /\[(.*?)\] - (\d{4}-\d{2}-\d{2})/;
+const versionRegex = /\[(\d+\.\d+\.\d+)] - (\d{4}-\d{2}-\d{2})/;
 const featureRegex = /- (.+)/;
 
 const parseEntry = (entry: string): Markdown => {

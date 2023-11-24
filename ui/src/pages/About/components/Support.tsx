@@ -1,6 +1,5 @@
 import { Button, List, Typography } from "antd";
 import React from "react";
-import { openLink } from "utils/helper-functions/string";
 import style from "pages/About/About.module.scss";
 import { Icon } from "components/General";
 
@@ -28,7 +27,13 @@ const APP_SUPPORT = [
 		<Button
 			type="primary"
 			className={style.about__sponsor}
-			onClick={() => openLink("https://github.com/sponsors/lifeparticle")}
+			onClick={() =>
+				window.open(
+					"https://github.com/sponsors/lifeparticle",
+					"_blank",
+					"noopener"
+				)
+			}
 		>
 			<Icon name="Heart" className="heart" color="red" />
 
