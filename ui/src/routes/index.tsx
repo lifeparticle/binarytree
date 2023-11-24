@@ -12,6 +12,7 @@ const Routes: React.FC = () => {
 					<Route
 						key={route.path}
 						path={route.path}
+						forceRefresh={true}
 						element={<route.component />}
 					/>
 				))}
