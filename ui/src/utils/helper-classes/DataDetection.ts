@@ -44,7 +44,7 @@ export class DataDetection {
 
 	private isUrl(data: string): boolean {
 		const urlRegex =
-			/^(https?:\/\/)?([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,6})([\w .-]*)*\/?$/;
+			/^(https?:\/\/)?([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,6})([\w .-]*\/?)$/;
 		return urlRegex.test(data);
 	}
 
