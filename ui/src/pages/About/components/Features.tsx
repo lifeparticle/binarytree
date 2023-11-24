@@ -13,15 +13,17 @@ const Features: React.FC = () => {
 					bordered={false}
 					key={feature.key}
 					title={
-						<h5
-							onClick={() =>
-								window.open(feature.link, "_blank", "noopener")
-							}
+						<a
+							href={feature.link}
+							target="_blank"
+							rel="noopener noreferrer"
 						>
-							<a>
-								{index} - {feature.name}
-							</a>
-						</h5>
+							<h5>
+								<a>
+									{index} - {feature.name}
+								</a>
+							</h5>
+						</a>
 					}
 					actions={[
 						<Space>
