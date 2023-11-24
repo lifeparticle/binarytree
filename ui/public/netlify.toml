@@ -1,4 +1,8 @@
 [[headers]]
+  for = "/*"
+     must-revalidate'''
+
+[[headers]]
   for = "/converter/fc"
   [headers.values]
     Cross-Origin-Embedder-Policy = "require-corp"

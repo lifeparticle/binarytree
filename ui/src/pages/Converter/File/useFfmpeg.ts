@@ -1,15 +1,20 @@
 import { toBlobURL } from "@ffmpeg/util";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useReducer, useRef } from "react";
 import { FFmpeg } from "@ffmpeg/ffmpeg";
 
+let loaded = false;
+const ffmpeg = new FFmpeg();
+
 export const useFfmpeg = () => {
-	const [loaded, setLoaded] = useState(false);
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	const [_, rerender] = useReducer((s) => s + 1, 0);
 	const messageRef = useRef<HTMLParagraphElement | null>(null);
-	const ffmpegRef = useRef(new FFmpeg());
 
 	const load = async () => {
+		if (loaded) {
+			return;
+		}
 		const baseURL = "https://unpkg.com/@ffmpeg/core-mt@0.12.4/dist/esm";
-		const ffmpeg = ffmpegRef.current;
 		ffmpeg.on("log", ({ message }) => {
 			if (messageRef.current) messageRef.current.innerHTML = message;
 		});
@@ -28,12 +33,13 @@ export const useFfmpeg = () => {
 				"text/javascript"
 			),
 		});
-		setLoaded(true);
+		loaded = true;
+		rerender();
 	};
 
 	useEffect(() => {
 		load();
-	}, [loaded]);
+	}, []);
 
-	return { loaded, ffmpegRef };
+	return { loaded, ffmpeg };
 };
