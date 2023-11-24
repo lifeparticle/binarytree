@@ -1,9 +1,7 @@
 import React from "react";
 
-import styles from "./Docs.module.scss";
-
 const Docs: React.FC = () => {
-	return <div className={styles.root}></div>;
+	return <div></div>;
 };
 
 export default Docs;

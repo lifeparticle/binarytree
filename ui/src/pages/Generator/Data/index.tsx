@@ -210,7 +210,7 @@ const DataGenerator: React.FC = () => {
 					</div>
 
 					<ResponsiveButton
-						disabled={tableName && colNum > 0 ? false : true}
+						disabled={!tableName || colNum <= 0}
 						onClick={onButtonClick}
 					>
 						Generate
@@ -220,41 +220,36 @@ const DataGenerator: React.FC = () => {
 				{result.length > 0 ? (
 					<Card>
 						<div className={style.dg__right}>
-							<>
-								<Space>
-									<ResponsiveButton
-										onClick={() => {
-											downloadTextFile(
-												result,
-												"data.sql"
-											);
-										}}
-									>
-										Download SQL
-									</ResponsiveButton>
-									<ResponsiveButton
-										onClick={() => {
-											downloadTextFile(
-												convertToJSON(
-													colNames,
-													rowNum,
-													result
-												),
-												"data.json"
-											);
-										}}
-									>
-										Download JSON
-									</ResponsiveButton>
-									<ResponsiveButton
-										onClick={() => clipboard.copy(result)}
-									>
-										{clipboard.copied ? "Copied" : "Copy"}
-									</ResponsiveButton>
-								</Space>
+							<Space>
+								<ResponsiveButton
+									onClick={() => {
+										downloadTextFile(result, "data.sql");
+									}}
+								>
+									Download SQL
+								</ResponsiveButton>
+								<ResponsiveButton
+									onClick={() => {
+										downloadTextFile(
+											convertToJSON(
+												colNames,
+												rowNum,
+												result
+											),
+											"data.json"
+										);
+									}}
+								>
+									Download JSON
+								</ResponsiveButton>
+								<ResponsiveButton
+									onClick={() => clipboard.copy(result)}
+								>
+									{clipboard.copied ? "Copied" : "Copy"}
+								</ResponsiveButton>
+							</Space>
 
-								<Output sql={result} json="" />
-							</>
+							<Output sql={result} json="" />
 						</div>
 					</Card>
 				) : null}

@@ -27,7 +27,6 @@ export type RouteId =
 	| "interview"
 	| "jsontotypescript"
 	| "mimetype"
-	| "mimetype"
 	| "movie"
 	| "newsfeed"
 	| "npmpackages"

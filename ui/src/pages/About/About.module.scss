@@ -11,6 +11,7 @@
 
 		&__intro {
 			p {
+				text-align: right;
 				font-size: 14px;
 				background: linear-gradient(
 					to bottom,
@@ -22,11 +23,9 @@
 				background-repeat: repeat-y;
 				background-size: 1000% 1px;
 			}
+
 			&_text {
 				color: white !important;
-			}
-			p {
-				text-align: right;
 			}
 		}
 
