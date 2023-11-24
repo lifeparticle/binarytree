@@ -4,6 +4,7 @@ import { PageGrid } from "components/Layouts";
 import React, { ChangeEvent, useState } from "react";
 import { combineSVGPaths } from "./utils/helper";
 import style from "./Svg.module.scss";
+import SVGRenderer from "./components/SVGRenderer";
 
 const { TextArea } = Input;
 
@@ -14,7 +15,6 @@ const Svg: React.FC = () => {
 	const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
 		const newValue = e.target.value;
 		setInputSVG(newValue);
-
 		const combinedSvgOutput = combineSVGPaths(newValue);
 		setOutputSVG(combinedSvgOutput);
 	};
@@ -38,7 +38,7 @@ const Svg: React.FC = () => {
 
 				<Card>
 					{inputSVG.length > 0 ? (
-						<div dangerouslySetInnerHTML={{ __html: inputSVG }} />
+						<SVGRenderer svgString={inputSVG} />
 					) : (
 						<Warning text="There is no data for SVG, please provide data first." />
 					)}
@@ -64,7 +64,7 @@ const Svg: React.FC = () => {
 				<Card>
 					{outputSVG.length > 0 &&
 					outputSVG !== "Error combining SVG paths." ? (
-						<div dangerouslySetInnerHTML={{ __html: outputSVG }} />
+						<SVGRenderer svgString={outputSVG} />
 					) : (
 						<Warning text="There is no data for SVG, please provide data first." />
 					)}

@@ -1,7 +1,6 @@
 import React from "react";
 import { Card, Space, Tag } from "antd";
 import { FEATURE_DATA } from "data/featureData";
-import { openLink } from "utils/helper-functions/string";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
@@ -14,7 +13,11 @@ const Features: React.FC = () => {
 					bordered={false}
 					key={feature.key}
 					title={
-						<h5 onClick={() => openLink(feature.link)}>
+						<h5
+							onClick={() =>
+								window.open(feature.link, "_blank", "noopener")
+							}
+						>
 							<a>
 								{index} - {feature.name}
 							</a>

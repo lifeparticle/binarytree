@@ -17,8 +17,8 @@ const BoxShadow = () => {
 	const [spreadRadius, setSpreadRadius] = useState(0);
 
 	const boxStyle = {
-		width: "300px",
-		height: "300px",
+		width: "25dvh",
+		height: "25dvh",
 		backgroundColor: boxColor,
 		margin: "20px auto",
 		boxShadow: `${horizontalLength}px ${verticalLength}px ${blurRadius}px ${spreadRadius}px ${shadowColor}`,

@@ -2,6 +2,7 @@ import express from "express";
 import axios from "axios";
 
 const app = express();
+app.disable("x-powered-by");
 
 app.use((req, res, next) => {
 	const environment = process.env.NODE_ENV || "development";
@@ -44,6 +45,6 @@ app.get("/rss", async (req, res) => {
 	}
 });
 
-const PORT = 5000;
+const PORT = 3000;
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));

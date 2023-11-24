@@ -2,7 +2,6 @@ import React from "react";
 import style from "pages/Home/Home.module.scss";
 import { Space, Typography } from "antd";
 import { ResponsiveButton } from "components/General";
-import { openLink } from "utils/helper-functions/string";
 
 const Contribution: React.FC = () => {
 	return (
@@ -17,7 +16,11 @@ const Contribution: React.FC = () => {
 				</Typography.Paragraph>
 				<ResponsiveButton
 					onClick={() =>
-						openLink("https://github.com/lifeparticle/binarytree")
+						window.open(
+							"https://github.com/lifeparticle/binarytree",
+							"_blank",
+							"noopener"
+						)
 					}
 				>
 					Github Discussion

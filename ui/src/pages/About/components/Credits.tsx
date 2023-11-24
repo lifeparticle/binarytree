@@ -1,6 +1,5 @@
 import React from "react";
 import { List, Space, Tag } from "antd";
-import { openLink } from "utils/helper-functions/string";
 
 interface Credits {
 	key: string;
@@ -76,7 +75,10 @@ const CREDITS_DATA: Credits[] = [
 ];
 
 const DATA = CREDITS_DATA.map((credit) => (
-	<Tag key={credit.key} onClick={() => openLink(credit.url)}>
+	<Tag
+		key={credit.key}
+		onClick={() => window.open(credit.url, "_blank", "noopener")}
+	>
 		{credit.name}
 	</Tag>
 ));
