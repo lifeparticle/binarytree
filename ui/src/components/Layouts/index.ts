@@ -9,4 +9,3 @@ export { default as FloatingSearchBar } from "./FloatingSearchBar";
 export { default as Header } from "./Header";
 export { default as Legal } from "./Legal";
 export { default as PageGrid } from "./PageGrid";
-// export { getItem } from "./Menu/helper";

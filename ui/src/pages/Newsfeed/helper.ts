@@ -5,9 +5,7 @@ function parseXML(value: string) {
 	const items = xmldoc.getElementsByTagName("item");
 	const list = [];
 
-	for (let i = 0; i < items.length; i++) {
-		const item = items[i];
-
+	for (const item of items) {
 		const title = item.getElementsByTagName("title")[0].textContent;
 		const description =
 			item.getElementsByTagName("description")[0].textContent;

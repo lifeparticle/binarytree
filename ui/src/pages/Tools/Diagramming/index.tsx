@@ -16,11 +16,7 @@ const Diagramming = () => {
 
 	const clearInputs = () => {
 		console.log("Element removed");
-		if (
-			btEcalidraw &&
-			btEcalidraw.elements &&
-			btEcalidraw.elements.length > 0
-		) {
+		if (btEcalidraw?.elements && btEcalidraw?.elements?.length > 0) {
 			const newElements = btEcalidraw.elements.slice(0, -1); // Remove the last element
 			setBtEcalidraw({
 				...btEcalidraw,
