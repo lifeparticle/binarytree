@@ -1,8 +1,12 @@
 import React, { useEffect, useMemo, useState } from "react";
 import style from "./ColorPicker.module.scss";
 import { Card, Form, Space } from "antd";
-import { ColorPicker as CP } from "@mantine/core";
-import { INITIAL_COLOR, INITIAL_FORMAT } from "./utils/constants";
+import { ColorPicker as Cp } from "@mantine/core";
+import {
+	INITIAL_COLOR,
+	INITIAL_FORMAT,
+	FORMAT_LABELS,
+} from "./utils/constants";
 import ColorFormatTags from "./components/ColorFormatTags";
 import { Clipboard } from "components/ComponentInjector";
 import DisplayColors from "./components/DisplayColors";
@@ -11,7 +15,6 @@ import { CopyInput } from "components/Layouts";
 import { ResponsiveInputWithLabel } from "components/General";
 import useParamsValue from "hooks/useParamsValue";
 import { useDebounce } from "hooks/useDebounce";
-import { FORMAT_LABELS } from "./utils/constants";
 import { PARAMS } from "data/paramsData";
 import { ClipboardButton } from "components/InjectedComponent";
 
@@ -74,7 +77,7 @@ const ColorPicker: React.FC = () => {
 							/>
 						</Form.Item>
 
-						<CP
+						<Cp
 							format={format}
 							value={color}
 							onChange={(value) => {

@@ -1,8 +1,8 @@
 import { toPng, toJpeg } from "html-to-image";
 import { Card, Form, Slider, Avatar as AntAvatar, Space } from "antd";
-import { ColorPickerWithInput } from "components/General";
 import WebFont from "webfontloader";
 import {
+	ColorPickerWithInput,
 	DropdownDownloadButton,
 	Warning,
 	ResponsiveInputWithLabel,

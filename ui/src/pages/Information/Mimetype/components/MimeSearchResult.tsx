@@ -24,6 +24,7 @@ const MimeSearchResult: React.FC<MimeSearchResultProps> = ({
 			? filteredMimeType(data, searchQuery)
 			: data
 		: [];
+
 	return (
 		<Card>
 			<MimeSearch />

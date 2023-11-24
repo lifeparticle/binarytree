@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Card, Form, Slider } from "antd";
 import { PageGrid, InputGrid } from "components/Layouts";
-import { CodeHighlightWithCopy } from "components/General";
 import style from "./BorderRadius.module.scss";
 import {
+	CodeHighlightWithCopy,
 	ColorPickerWithInput,
 	ResponsiveInputWithLabel,
 	ResponsiveSegementWithLabel,

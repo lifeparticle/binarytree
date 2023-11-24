@@ -10,7 +10,7 @@ import {
 	formatShades,
 	generateRandomColor,
 } from "pages/Colors/ShadesAndTints/utils/helper";
-import { useEffect, useState } from "react";
+import { useEffect, useState, ChangeEvent } from "react";
 import {
 	ColorPickerWithInput,
 	Icon,
@@ -19,7 +19,6 @@ import {
 	ResponsiveSegementWithLabel,
 	ResponsiveSelectWithLabel,
 } from "components/General";
-import { ChangeEvent } from "react";
 import { SelectOption } from "pages/Colors/ShadesAndTints/utils/types";
 import { ClipboardButton } from "components/InjectedComponent";
 
