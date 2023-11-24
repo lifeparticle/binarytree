@@ -152,5 +152,29 @@
 				"name": ""
 			}
 		]
+	},
+	{
+		"name": "React - The Road To Enterprise",
+		"category": "React",
+		"subCategory": "Programming",
+		"url": "https://theroadtoenterprise.com/books/react-the-road-to-enterprise",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
+	},
+	{
+		"name": "Vue - The Road To Enterprise",
+		"category": "Vue",
+		"subCategory": "Programming",
+		"url": "https://theroadtoenterprise.com/books/vue-the-road-to-enterprise",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
 	}
 ]
