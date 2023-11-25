@@ -13,17 +13,13 @@ const MimeSearchResult: React.FC<MimeSearchResultProps> = ({
 }) => {
 	const [searchParams] = useSearchParams();
 
-	const searchQuery = searchParams.get("type") || "";
+	const searchQuery = searchParams.get("type") ?? "";
 
 	if (isError) {
 		return <div>Something went wrong!</div>;
 	}
 
-	const list = data
-		? searchQuery
-			? filteredMimeType(data, searchQuery)
-			: data
-		: [];
+	const list = searchQuery ? filteredMimeType(data, searchQuery) : data;
 
 	return (
 		<Card>

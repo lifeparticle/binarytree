@@ -30,7 +30,8 @@ interface FileConverter {
 }
 
 function FileConverter() {
-	const [uploadFiles, setUploadedFiles] = useState<FileConverter[]>([]);
+	const [uploadedFiles, setUploadedFiles] = useState<FileConverter[]>([]);
+
 	const [selectedFormat, setSelectedFormat] = useState(IMAGE_TYPES[0].value);
 	const { loaded, ffmpeg } = useFfmpeg();
 
@@ -55,11 +56,12 @@ function FileConverter() {
 	};
 
 	const convertFiles = async () => {
-		const convertedFilesPromises = uploadFiles.map(transcode);
+		const convertedFilesPromises = uploadedFiles.map(transcode);
 		const convertedFiles = await Promise.all(convertedFilesPromises);
-		convertedFiles.forEach(([url, fileName]) =>
-			downloadFiles(url, fileName)
-		);
+
+		for (const [url, fileName] of convertedFiles) {
+			await downloadFiles(url, fileName);
+		}
 	};
 
 	const downloadFiles = async (url: string, fileName: string) => {
@@ -160,7 +162,7 @@ function FileConverter() {
 				disabled={!loaded}
 				icon
 			>
-				{uploadFiles.length > 1 ? "Convert All" : "Convert"}
+				{uploadedFiles.length > 1 ? "Convert All" : "Convert"}
 			</ResponsiveButton>
 		</div>
 	);

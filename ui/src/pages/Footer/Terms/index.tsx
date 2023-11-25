@@ -16,14 +16,21 @@ const Terms = () => {
 				<Typography.Paragraph>
 					These Terms of Service constitute a legally binding
 					agreement made between you, whether personally or on behalf
-					of an entity (“you”) and <b>BinaryTree</b> ("<b>Company</b>
-					," <b>“we</b>," <b>“us</b>," or <b>“our”</b>), concerning
-					your access to and use of the https://www.binarytree.dev
-					website as well as any other media form, media channel,
-					mobile website or mobile application related, linked, or
-					otherwise connected thereto (collectively, the “Site”). You
-					agree that by accessing the Site, you have read, understood,
-					and agreed to be bound by all of these Terms of Service.
+					of an entity ("you") and <b>BinaryTree</b> {"("}
+					<b>"Company"</b>
+					{", "}
+					<b>"we"</b>
+					{", "}
+					<b>"us"</b>
+					{", or "}
+					<b>"our"</b>
+					{")"}, concerning your access to and use of the
+					https://www.binarytree.dev website as well as any other
+					media form, media channel, mobile website or mobile
+					application related, linked, or otherwise connected thereto
+					(collectively, the “Site”). You agree that by accessing the
+					Site, you have read, understood, and agreed to be bound by
+					all of these Terms of Service.
 				</Typography.Paragraph>
 				<Typography.Paragraph>
 					Supplemental terms and conditions or documents that may be
