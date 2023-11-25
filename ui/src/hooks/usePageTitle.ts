@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 
 const usePageTitle = () => {
 	const { pathname } = useLocation();
-	const page = routes.find((route) => route.path === pathname) || {
+	const page = routes.find((route) => route.path === pathname) ?? {
 		title: "Page Not Found",
 		description: "",
 		id: "",

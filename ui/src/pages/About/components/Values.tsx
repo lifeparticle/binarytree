@@ -16,8 +16,9 @@ const APP_VALUES = [
 		<a href="resource/course?q=&cat=React" target="_blank">
 			Resources
 		</a>
-		, and more. This feature not only enhances collaboration but also
-		improves overall productivity.
+		{", "}
+		and more. This feature not only enhances collaboration but also improves
+		overall productivity.
 	</>,
 	<>
 		<Typography.Text strong>Data Verification:</Typography.Text> Data
@@ -30,7 +31,8 @@ const APP_VALUES = [
 		<a href="converter/jtt" target="_blank">
 			JSON
 		</a>
-		, and others, ensuring accuracy and reliability in your projects.
+		{", "}
+		and others, ensuring accuracy and reliability in your projects.
 	</>,
 	<>
 		<Typography.Text strong>Smart Data Detection:</Typography.Text> Our
@@ -54,7 +56,8 @@ const APP_VALUES = [
 		<a href="colors/shades-tints" target="_blank">
 			Shades & Tints
 		</a>
-		, and vice versa.
+		{", "}
+		and vice versa.
 	</>,
 ];
 
