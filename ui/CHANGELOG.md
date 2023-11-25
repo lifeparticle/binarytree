@@ -1,3 +1,11 @@
+### [8.1.0] - 2023-11-25
+
+-   Fix sonar lint issues
+-   Implement hard reload due to CORS issues
+-   Add vite response headers
+-   Feedback form is loading again
+-   Newsfeed images are loading again
+
 ### [8.0.0] - 2023-11-07
 
 -   Refactor DataDetection class
