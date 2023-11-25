@@ -18,7 +18,7 @@ function combineSVGPaths(svgInput: string): string {
 
 		if (svgElement) {
 			const firstPathStroke =
-				pathElements[0].getAttribute("stroke") || "none";
+				pathElements[0].getAttribute("stroke") ?? "none";
 			svgElement.innerHTML = `<path d="${combinedPathData}" stroke="${firstPathStroke}" />`;
 		} else {
 			throw new Error("<svg> element not found in the SVG.");

@@ -35,7 +35,7 @@ const createGitHubIssue = async (
 
 			// Check if the response contains JSON
 			const contentType = response.headers.get("content-type");
-			if (contentType && contentType.includes("application/json")) {
+			if (contentType?.includes("application/json")) {
 				const data = await response.json();
 				savedIssues.push({ title: data.title, url: data?.html_url });
 			} else {

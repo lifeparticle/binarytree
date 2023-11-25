@@ -4,7 +4,7 @@ import { InputGrid, PageGrid } from "components/Layouts";
 import React, { useState } from "react";
 import Papa from "papaparse";
 import CsvTable from "./components/CsvTable";
-import { calculateSteps, createGitHubIssue } from "./utils/helper";
+import { calculateSteps, createGitHubIssue } from "./helper";
 import DownloadCsv from "./components/DownloadCsv";
 import style from "./GithubIssue.module.scss";
 import { useOnlineStatus } from "hooks/useOnlineStatus";
@@ -145,7 +145,7 @@ const GithubIssue: React.FC = () => {
 						<Form.Item>
 							<Upload
 								customRequest={({ onSuccess }) => {
-									onSuccess && onSuccess("OK");
+									onSuccess?.("OK");
 								}}
 								beforeUpload={handleUpload}
 								listType="picture"

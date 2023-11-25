@@ -8,10 +8,10 @@ const CookiePolicy = () => {
 			<Legal>
 				<Typography.Title level={1}>Cookie Policy</Typography.Title>
 				<Typography.Paragraph>
-					This Cookie Policy explains how <b>BinaryTree</b> ("
-					<b>Company</b>", "<b>we</b>", "<b>us</b>", and "<b>our</b>")
-					uses cookies and similar technologies to recognize you when
-					you visit our website at https://www.binarytree.dev
+					This Cookie Policy explains how <b>BinaryTree</b> {"("}"
+					<b>Company</b>", "<b>we</b>", "<b>us</b>", and "<b>our</b>"
+					{")"} uses cookies and similar technologies to recognize you
+					when you visit our website at https://www.binarytree.dev
 					("Platform"). It explains what these technologies are and
 					why we use them, as well as your rights to control our use
 					of them.
@@ -24,7 +24,7 @@ const CookiePolicy = () => {
 					<br />
 					<b>Data Controller: </b>BinaryTree
 					<br />
-					<b>Contact information: e-mail address: </b>
+					<b>Contact information: e-mail address:</b>{" "}
 					hello@binarytree.dev
 				</Typography.Paragraph>
 				<Typography.Title level={5}>
