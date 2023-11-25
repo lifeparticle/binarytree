@@ -4,55 +4,23 @@ interface Credits {
 	url: string;
 }
 
+function createCredit(key: string, name: string, url: string): Credits {
+	return { key, name, url };
+}
+
 export const CREDITS_DATA: Credits[] = [
-	{
-		key: "1",
-		name: "thetallbloke",
-		url: "https://github.com/thetallbloke",
-	},
-	{
-		key: "2",
-		name: "Open Props",
-		url: "https://github.com/argyleink/open-props",
-	},
-	{
-		key: "3",
-		name: "News API",
-		url: "https://newsapi.org",
-	},
-	{
-		key: "4",
-		name: "Movie for hackers",
-		url: "https://github.com/k4m4/movies-for-hackers",
-	},
-	{
-		key: "5",
-		name: "unDraw",
-		url: "https://undraw.co/",
-	},
-	{
-		key: "6",
-		name: "Frontend Focus",
-		url: "https://frontendfoc.us/",
-	},
-	{
-		key: "7",
-		name: "React Status",
-		url: "https://react.statuscode.com/",
-	},
-	{
-		key: "8",
-		name: "Lucide",
-		url: "https://lucide.dev/",
-	},
-	{
-		key: "9",
-		name: "Dudeowl",
-		url: "https://99designs.com.au/profiles/dudeowl",
-	},
-	{
-		key: "10",
-		name: "Vertex Designs",
-		url: "https://unsplash.com/@vertex_800",
-	},
+	createCredit("1", "thetallbloke", "https://github.com/thetallbloke"),
+	createCredit("2", "Open Props", "https://github.com/argyleink/open-props"),
+	createCredit("3", "News API", "https://newsapi.org"),
+	createCredit(
+		"4",
+		"Movie for hackers",
+		"https://github.com/k4m4/movies-for-hackers"
+	),
+	createCredit("5", "unDraw", "https://undraw.co/"),
+	createCredit("6", "Frontend Focus", "https://frontendfoc.us/"),
+	createCredit("7", "React Status", "https://react.statuscode.com/"),
+	createCredit("8", "Lucide", "https://lucide.dev/"),
+	createCredit("9", "Dudeowl", "https://99designs.com.au/profiles/dudeowl"),
+	createCredit("10", "Vertex Designs", "https://unsplash.com/@vertex_800"),
 ];
