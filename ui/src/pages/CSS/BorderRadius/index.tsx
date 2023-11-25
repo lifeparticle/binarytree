@@ -19,7 +19,7 @@ import {
 	PARAGRAPHS,
 	RADIUS_ROUND,
 	SEGMENTED_OPTIONS,
-} from "./utils/constants";
+} from "./constants";
 
 const BorderRadius = () => {
 	const [border, setBorder] = useState(INIT_BORDER);

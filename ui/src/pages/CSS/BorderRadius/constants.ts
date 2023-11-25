@@ -1,47 +1,22 @@
 import { faker } from "@faker-js/faker";
 
-const BORDER_STYLES = [
-	{
-		value: "none",
-		label: "None",
-	},
-	{
-		value: "hidden",
-		label: "Hidden",
-	},
-	{
-		value: "dotted",
-		label: "Dotted",
-	},
-	{
-		value: "dashed",
-		label: "Dashed",
-	},
-	{
-		value: "solid",
-		label: "Solid",
-	},
-	{
-		value: "double",
-		label: "Double",
-	},
-	{
-		value: "groove",
-		label: "Groove",
-	},
-	{
-		value: "ridge",
-		label: "Ridge",
-	},
-	{
-		value: "inset",
-		label: "Inset",
-	},
-	{
-		value: "outset",
-		label: "Outset",
-	},
+const borderStyleValues = [
+	"none",
+	"hidden",
+	"dotted",
+	"dashed",
+	"solid",
+	"double",
+	"groove",
+	"ridge",
+	"inset",
+	"outset",
 ];
+
+const BORDER_STYLES = borderStyleValues.map((value) => ({
+	value,
+	label: value,
+}));
 
 const BORDER_RADIUS = {
 	rounded: "rounded",
