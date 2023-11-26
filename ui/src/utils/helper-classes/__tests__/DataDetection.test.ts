@@ -1,39 +1,62 @@
 import { DataDetection, DataType } from "utils/helper-classes/DataDetection";
+import { faker } from "@faker-js/faker";
 
 describe("DataDetection", () => {
 	const testData = [
-		{ types: ["string"], data: "This is a string", expected: "string" },
-		{ types: ["url"], data: "https://binarytree.dev/", expected: "url" },
-		{ types: ["number"], data: "123", expected: "number" },
-		{ types: ["array"], data: "[1,2,3]", expected: "array" },
-		{ types: ["object"], data: '{"key": "value"}', expected: "object" },
-		{ types: ["boolean"], data: "true", expected: "boolean" },
+		{ types: ["string"], data: faker.random.word(), expected: "string" },
+		{ types: ["url"], data: faker.internet.url(), expected: "url" },
 		{
 			types: ["number"],
-			data: "Unsupported data",
+			data: faker.datatype.number().toString(),
+			expected: "number",
+		},
+		{
+			types: ["array"],
+			data: JSON.stringify([
+				faker.datatype.number(),
+				faker.datatype.number(),
+			]),
+			expected: "array",
+		},
+		{
+			types: ["object"],
+			data: JSON.stringify({ key: faker.random.word() }),
+			expected: "object",
+		},
+		{
+			types: ["boolean"],
+			data: faker.datatype.boolean().toString(),
+			expected: "boolean",
+		},
+		{
+			types: ["number"],
+			data: faker.lorem.sentence(),
 			expected: "Can't detect data",
 		},
 		{
 			types: ["number", "string"],
-			data: "123, Some string",
+			data: `${faker.datatype.number()}, ${faker.random.words()}`,
 			expected: "string",
 			isMultiple: true,
 		},
 		{
 			types: ["number", "string"],
-			data: "1, 2",
+			data: `${faker.datatype.number()}, ${faker.datatype.number()}`,
 			expected: "number",
 			isMultiple: true,
 		},
 		{
 			types: ["number", "string", "array"],
-			data: "[1, 2]",
+			data: JSON.stringify([
+				faker.datatype.number(),
+				faker.datatype.number(),
+			]),
 			expected: "array",
 			isMultiple: true,
 		},
 		{
 			types: ["number", "string", "array"],
-			data: '["1", "2"]',
+			data: JSON.stringify([faker.random.word(), faker.random.word()]),
 			expected: "array",
 			isMultiple: true,
 		},
