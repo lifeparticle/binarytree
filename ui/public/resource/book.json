@@ -176,5 +176,29 @@
 				"name": ""
 			}
 		]
+	},
+	{
+		"name": "Eloquent JavaScript",
+		"category": "JS",
+		"subCategory": "Programming",
+		"url": "https://www.amazon.com.au/Eloquent-Javascript-3rd-Marijn-Haverbeke/dp/1593279507",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
+	},
+	{
+		"name": "Deep Work: Rules for Focused Success in a Distracted World",
+		"category": "Programming",
+		"subCategory": "Programming",
+		"url": "https://www.amazon.com.au/Deep-Work-Cal-Newport/dp/1455586692",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
 	}
 ]
