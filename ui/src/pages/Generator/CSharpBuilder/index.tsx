@@ -1,25 +1,19 @@
 import React from "react";
 import { Card, Form } from "antd";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Clipboard } from "components/ComponentInjector";
 import { CodeEditor } from "components/General";
 import { PageGrid } from "components/Layouts";
 import { ClipboardButton } from "components/InjectedComponent";
-import { isBase64Valid } from "pages/Converter/Base64/utils/helper";
 import { generateBuilderMethods } from "./helper";
 
 const CSharpBuilde: React.FC = () => {
 	const [input, setInput] = useState("");
 	const [result, setResult] = useState("");
-	const [status, setStatus] = useState<string>("");
 
 	const onClick = (value: string) => {
 		setResult(generateBuilderMethods(value));
 	};
-
-	useEffect(() => {
-		setStatus(isBase64Valid(result));
-	}, [result]);
 
 	return (
 		<PageGrid>
