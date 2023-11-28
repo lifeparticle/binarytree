@@ -182,7 +182,14 @@ export const FEATURE_DATA: Feature[] = [
 		link: routesById.qrcode.path,
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
-
+	{
+		key: routesById.csharpbuilder.id,
+		name: routesById.csharpbuilder.title,
+		shortDescription: routesById.csharpbuilder.description,
+		fullDescription: "",
+		link: routesById.csharpbuilder.path,
+		library: [{ name: "Vanilla JS", url: "" }],
+	},
 	{
 		key: routesById.editor.id,
 		name: routesById.editor.title,

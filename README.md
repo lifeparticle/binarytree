@@ -6,7 +6,7 @@
 
 ## BinaryTree
 
-At [binarytree.dev](https://binarytree.dev/about), we provide an array of developer productivity tools designed to help you save time. With an ever-growing number of features (currently <b>26</b>), our platform is constantly evolving to meet the needs of developers like you.
+At [binarytree.dev](https://binarytree.dev/about), we provide an array of developer productivity tools designed to help you save time. With an ever-growing number of features (currently <b>27</b>), our platform is constantly evolving to meet the needs of developers like you.
 
 Your [opinions and feedback](https://binarytree.dev/feedback) about our service are highly valuable to us. We eagerly look forward to hearing from you.
 
