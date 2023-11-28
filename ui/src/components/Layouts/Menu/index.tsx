@@ -16,12 +16,12 @@ const Menu: React.FC<MenuProps> = ({ collapsed }) => {
 
 	const onClick = (e: { key: To }) => {
 		navigate(e.key);
-		// if (
-		// 	["/converter/fc", "/feedback", "/newsfeed"].includes(
-		// 		e.key as string
-		// 	)
-		// )
-		// 	navigate(0);
+		if (
+			["/converter/fc", "/feedback", "/newsfeed"].includes(
+				e.key as string
+			)
+		)
+			navigate(0);
 	};
 
 	return (
