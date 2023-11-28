@@ -6,7 +6,7 @@ import style from "./CodeEditor.module.scss";
 import ValidateStatus from "./components/ValidateStatus";
 
 interface CodeEditorProps {
-	handleCode: (code: string | undefined) => void;
+	handleCode?: (code: string | undefined) => void;
 	language: string;
 	code: string;
 	label: string;

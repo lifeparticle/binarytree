@@ -9,3 +9,13 @@
   [headers.values]
     Cross-Origin-Embedder-Policy = "require-corp"
     Cross-Origin-Opener-Policy = "same-origin"
+
+[[headers]]
+  for = "/newsfeed"
+  [headers.values]
+    Cross-Origin-Opener-Policy = "cross-origin"
+
+[[headers]]
+  for = "/feedback"
+  [headers.values]
+    Cross-Origin-Opener-Policy = "cross-origin"

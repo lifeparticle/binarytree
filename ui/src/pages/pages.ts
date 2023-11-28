@@ -23,6 +23,7 @@ const JsonToTypescript = lazy(() => import("pages/Converter/JsonToTypescript"));
 const Pixel = lazy(() => import("pages/Converter/Pixel"));
 
 const Avatar = lazy(() => import("pages/Generator/Avatar"));
+const CSharpBuilder = lazy(() => import("pages/Generator/CSharpBuilder"));
 const DataGenerator = lazy(() => import("pages/Generator/Data"));
 const ImageGeneratorFromColors = lazy(() => import("pages/Generator/Image"));
 const QRcode = lazy(() => import("pages/Generator/QRcode"));
@@ -71,6 +72,7 @@ export {
 	ColorPicker,
 	CookiePolicy,
 	Course,
+	CSharpBuilder,
 	DataGenerator,
 	DesignSystem,
 	Diagramming,
