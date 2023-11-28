@@ -20,7 +20,7 @@ const CSharpBuilde: React.FC = () => {
 			<Card>
 				<Form layout="vertical">
 					<CodeEditor
-						label="Text"
+						label="Class"
 						code={input}
 						language={"csharp"}
 						handleCode={(value) => {
@@ -39,8 +39,7 @@ const CSharpBuilde: React.FC = () => {
 			<Card>
 				<Form layout="vertical">
 					<CodeEditor
-						status={status}
-						label="Base64"
+						label="Builder output"
 						code={result}
 						language={"csharp"}
 					/>
