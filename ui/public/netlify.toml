@@ -13,9 +13,9 @@
 [[headers]]
   for = "/newsfeed"
   [headers.values]
-    Cross-Origin-Opener-Policy = "cross-origin"
+    Cross-Origin-Resource-Policy = "cross-origin"
 
 [[headers]]
   for = "/feedback"
   [headers.values]
-    Cross-Origin-Opener-Policy = "cross-origin"
+    Cross-Origin-Resource-Policy= "cross-origin"
