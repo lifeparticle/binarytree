@@ -12,6 +12,7 @@ export type RouteId =
 	| "cookiepolicy"
 	| "course"
 	| "creategithubissue"
+	| "csharpbuilder"
 	| "data"
 	| "designsystem"
 	| "diagramming"
@@ -69,6 +70,7 @@ import {
 	ColorPicker,
 	CookiePolicy,
 	Course,
+	CSharpBuilder,
 	DataGenerator,
 	DesignSystem,
 	Diagramming,
@@ -76,11 +78,11 @@ import {
 	Docs,
 	Editor,
 	Feedback,
+	FileConverter,
 	Github,
 	GithubIsuue,
 	Home,
 	Icon,
-	FileConverter,
 	ImageGeneratorFromColors,
 	Interview,
 	JsonToTypescript,
@@ -222,6 +224,13 @@ export const routes: Route[] = [
 		title: "QR Code",
 		description: "Generate QR codes - like barcodes, but squarer!",
 		component: QRcode,
+	},
+	{
+		id: "csharpbuilder",
+		path: "/generator/csharpbuilder",
+		title: "C# Builder",
+		description: "Build C# code with a few clicks.",
+		component: CSharpBuilder,
 	},
 	{
 		id: "sorting",

@@ -129,6 +129,12 @@ export const MENU_ITEMS = [
 				icon: "QrCode",
 				show: true,
 			},
+			{
+				name: routesById.csharpbuilder.title,
+				url: routesById.csharpbuilder.path,
+				icon: "Code",
+				show: true,
+			},
 		],
 	},
 	{
@@ -140,7 +146,7 @@ export const MENU_ITEMS = [
 				name: routesById.docs.title,
 				url: routesById.docs.path,
 				icon: "FileStack",
-				show: true,
+				show: IN_DEVELOPMENT,
 			},
 			{
 				name: routesById.editor.title,

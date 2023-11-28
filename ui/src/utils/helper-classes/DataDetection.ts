@@ -116,7 +116,7 @@ export class DataDetection {
 
 		const parsedData = this.parsedData(data);
 
-		if (!parsedData) {
+		if (parsedData === false && data !== "false") {
 			return this.typesToDetect.has("string")
 				? "string"
 				: CANT_DETECT_DATA;
