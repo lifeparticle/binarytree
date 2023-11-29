@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, test } from "vitest";
-import ImageGeneratorFromColors from "pages/Generator/Image/Image";
+import ImageGeneratorFromColors from "pages/Generator/Image";
 
 describe("Image Generator component", () => {
 	test("render a component without crash", () => {

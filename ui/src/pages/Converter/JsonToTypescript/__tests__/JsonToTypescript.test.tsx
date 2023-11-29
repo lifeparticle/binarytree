@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, test } from "vitest";
-import JsonToTypescript from "pages/Converter/JsonToTypescript/JsonToTypescript";
+import JsonToTypescript from "pages/Converter/JsonToTypescript";
 
 describe("JsonToTs", () => {
 	test("render component without crash", () => {

@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe } from "vitest";
-import Base64 from "pages/Converter/Base64/Base64";
+import Base64 from "pages/Converter/Base64";
 
 describe("BASE64", () => {
 	test("render component without crash", () => {

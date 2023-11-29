@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, test, expect } from "vitest";
 import user from "@testing-library/user-event";
-import Avatar from "pages/Generator/Avatar/Avatar";
+import Avatar from "pages/Generator/Avatar";
 
 describe("Avatar component", () => {
 	test("render component without crash", () => {
