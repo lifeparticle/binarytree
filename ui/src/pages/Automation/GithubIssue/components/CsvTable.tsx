@@ -1,6 +1,6 @@
 import React from "react";
 import { Table } from "antd";
-import { IssueType } from "pages/Automation/GithubIssue/Automation";
+import { IssueType } from "pages/Automation/GithubIssue";
 
 interface CsvTableProps {
 	data: IssueType[];

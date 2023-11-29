@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 import {
 	IssueType,
 	SavedIssueType,
-} from "pages/Automation/GithubIssue/Automation";
+} from "pages/Automation/GithubIssue/GithubIssue";
 const createGitHubIssue = async (
 	owner: string,
 	repo: string,

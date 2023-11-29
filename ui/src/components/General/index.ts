@@ -1,7 +1,7 @@
 export { default as CodeEditor } from "./CodeEditor";
 export { default as CodeHighlightWithCopy } from "./CodeHighlightWithCopy";
 export { default as ColorPickerWithInput } from "./ColorPickerWithInput";
-export { default as Drawer } from "./Drawer/Drawer";
+export { default as Drawer } from "./Drawer";
 export { default as DropdownDownloadButton } from "./DropdownDownloadButton";
 export { default as ErrorComponent } from "./ErrorComponent";
 export { default as FallbackComponent } from "./FallbackComponent";

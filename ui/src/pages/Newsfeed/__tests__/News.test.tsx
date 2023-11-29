@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import { News } from "pages/pages";
+import { News } from "pages";
 import { describe, test } from "vitest";
 
 describe("test news component", () => {

@@ -108,7 +108,7 @@ import {
 	UiUx,
 	Units,
 	YouTube,
-} from "pages/pages";
+} from "pages";
 
 export const routes: Route[] = [
 	{
