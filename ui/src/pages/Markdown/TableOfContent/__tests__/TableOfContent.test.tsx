@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, test } from "vitest";
-import TableOfContent from "pages/Markdown/TableOfContent";
+import TableOfContent from "pages/Markdown/TableOfContent/TableOfContent";
 
 describe("Table Of content", () => {
 	test("Render component without crash", () => {

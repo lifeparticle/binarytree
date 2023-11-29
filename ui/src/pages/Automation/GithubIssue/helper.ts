@@ -1,5 +1,8 @@
 import { Dispatch, SetStateAction } from "react";
-import { IssueType, SavedIssueType } from "pages/Automation/GithubIssue/index";
+import {
+	IssueType,
+	SavedIssueType,
+} from "pages/Automation/GithubIssue/Automation";
 const createGitHubIssue = async (
 	owner: string,
 	repo: string,
