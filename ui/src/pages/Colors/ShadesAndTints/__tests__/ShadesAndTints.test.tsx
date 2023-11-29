@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, test } from "vitest";
-import Shades from "pages/Colors/ShadesAndTints";
+import Shades from "pages/Colors/ShadesAndTints/ShadesAndTints";
 import { MemoryRouter } from "react-router-dom";
 
 describe("Shade", () => {

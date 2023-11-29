@@ -1,6 +1,6 @@
 import { Layout, theme } from "antd";
-import Header from "components/Layouts/Header";
-import Menu from "components/Layouts/Menu";
+import Header from "components/Layouts/Header/Header";
+import Menu from "components/Layouts/Menu/Menu";
 import useMenuCollapsed from "hooks/useMenuCollapsed";
 import Footer from "./components";
 import style from "./Sidebar.module.scss";
