@@ -1,14 +1,14 @@
 import MDEditor from "@uiw/react-md-editor";
 import { Card, Form, Space, Spin } from "antd";
-import { useState, useTransition } from "react";
+import { FC, useState, useTransition } from "react";
 import { generateTable } from "./util/utils";
 import { ResponsiveInputWithLabel } from "components/General";
 import style from "./MdTableGenerator.module.scss";
 import { Clipboard } from "components/ComponentInjector";
-import useMode from "hooks/useMode";
+import { useMode } from "hooks";
 import { ClipboardButton } from "components/InjectedComponent";
 
-const TableGenerator: React.FC = () => {
+const TableGenerator: FC = () => {
 	const [row, setRow] = useState(10);
 	const [column, setColumn] = useState(10);
 	const { isDarkMode } = useMode();

@@ -1,6 +1,6 @@
 import { Card, Form, Input } from "antd";
 import { PageGrid } from "components/Layouts";
-import React, { useState } from "react";
+import { useState, FC } from "react";
 import { diffLines, Change } from "diff";
 import { ResponsiveButton } from "components/General";
 import style from "./Diffchecker.module.scss";
@@ -8,7 +8,7 @@ import { classNames } from "utils/helper-functions/string";
 
 const { TextArea } = Input;
 
-const Diffchecker: React.FC = () => {
+const Diffchecker: FC = () => {
 	const [text1, setText1] = useState("");
 	const [text2, setText2] = useState("");
 	const [lineDifferences, setLineDifferences] = useState<Change[]>([]);

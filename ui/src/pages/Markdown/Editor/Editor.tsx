@@ -3,16 +3,16 @@ import {
 	downloadPDFFile,
 	downloadTextFile,
 } from "utils/helper-functions/files";
-import { useState } from "react";
-import useCombinedKeyPress from "hooks/useCombinedKeyPress";
+import { FC, useState } from "react";
+import { useCombinedKeyPress } from "hooks";
 import style from "./MarkdownEditor.module.scss";
 import MDEditor from "@uiw/react-md-editor";
 import { Clipboard } from "components/ComponentInjector";
 import { ResponsiveButton } from "components/General";
-import useMode from "hooks/useMode";
+import { useMode } from "hooks";
 import { ClipboardButton } from "components/InjectedComponent";
 
-const MarkdownEditor: React.FC = () => {
+const MarkdownEditor: FC = () => {
 	const [markdown, setMarkdown] = useState("");
 
 	const { isDarkMode } = useMode();

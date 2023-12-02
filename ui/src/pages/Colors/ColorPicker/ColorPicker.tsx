@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { FC, useEffect, useMemo, useState } from "react";
 import style from "./ColorPicker.module.scss";
 import { Card, Form, Space } from "antd";
 import { ColorPicker as Cp } from "@mantine/core";
@@ -13,14 +13,13 @@ import DisplayColors from "./components/DisplayColors";
 import { calculateColors, determineFormat } from "./utils/helper";
 import { CopyInput } from "components/Layouts";
 import { ResponsiveInputWithLabel } from "components/General";
-import useParamsValue from "hooks/useParamsValue";
-import { useDebounce } from "hooks/useDebounce";
+import { useDebounce, useParamsValue } from "hooks";
 import { PARAMS } from "data/paramsData";
 import { ClipboardButton } from "components/InjectedComponent";
 
 type FormatType = Lowercase<(typeof FORMAT_LABELS)[number]>;
 
-const ColorPicker: React.FC = () => {
+const ColorPicker: FC = () => {
 	const { searchParams, updateParamsValue } = useParamsValue({
 		[PARAMS.color]: INITIAL_COLOR,
 		[PARAMS.format]: INITIAL_FORMAT,

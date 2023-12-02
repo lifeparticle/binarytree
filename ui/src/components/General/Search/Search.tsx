@@ -1,7 +1,7 @@
 import { Input } from "antd";
 import style from "./search.module.scss";
-import CategoryTags from "./CategoryTags";
-import { ChangeEvent } from "react";
+import CategoryTags from "./CategoryTags/CategoryTags";
+import { ChangeEvent, FC } from "react";
 
 interface SearchProps {
 	categories: string[];
@@ -12,7 +12,7 @@ interface SearchProps {
 	onSearchCriteriaChange: (queryType: "q" | "cat", value: string) => void;
 }
 
-const Search: React.FC<SearchProps> = ({
+const Search: FC<SearchProps> = ({
 	categories,
 	isLoading,
 	searchQuery,

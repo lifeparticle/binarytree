@@ -1,3 +1,4 @@
+import { FC } from "react";
 import style from "./Warning.module.scss";
 import { Icon } from "components/General";
 
@@ -5,7 +6,7 @@ interface WarningProps {
 	text?: string;
 }
 
-const Warning: React.FC<WarningProps> = ({ text }) => {
+const Warning: FC<WarningProps> = ({ text }) => {
 	return (
 		<div className={style.warning}>
 			<span>

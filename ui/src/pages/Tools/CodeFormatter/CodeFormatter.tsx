@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, FC } from "react";
 import style from "./CodeFormatter.module.scss";
 import { PageGrid, InputGrid } from "components/Layouts";
 import { Card, Form, Space } from "antd";
@@ -15,7 +15,7 @@ import {
 	INPUT_TYPE,
 } from "./utils/constants";
 
-const CodeFormatter: React.FC = () => {
+const CodeFormatter: FC = () => {
 	const [inputCode, setInputCode] = useState("");
 	const [formattedCode, setFormattedCode] = useState("");
 	const [indentationLevel, setIndentationLevel] = useState(

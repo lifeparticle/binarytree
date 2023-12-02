@@ -4,9 +4,10 @@ import style from "./header.module.scss";
 import { classNames } from "utils/helper-functions/string";
 import logo_light from "assets/Sidebar/logo_light.svg";
 import logo_dark from "assets/Sidebar/logo_dark.svg";
-import useMode from "hooks/useMode";
+import { useMode } from "hooks";
+import { FC } from "react";
 
-const Header: React.FC = () => {
+const Header: FC = () => {
 	const {
 		token: { colorBgContainer },
 	} = theme.useToken();
@@ -21,7 +22,7 @@ const Header: React.FC = () => {
 				isDarkMode ? style.header_dark : style.header_light
 			)}
 		>
-			<Link to={"/"}>
+			<Link to="/">
 				<img
 					src={isDarkMode ? logo_dark : logo_light}
 					height={60}

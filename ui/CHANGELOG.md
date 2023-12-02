@@ -1,3 +1,11 @@
+### [9.0.0] - 2023-12-01
+
+-   Fix imports and exports
+-   Better naming for onClick
+-   Bring types closer to the components
+-   {" "} -> " "
+-   Put mandatory props at the top, followed by optional props
+
 ### [8.1.0] - 2023-11-25
 
 -   Fix sonar lint issues

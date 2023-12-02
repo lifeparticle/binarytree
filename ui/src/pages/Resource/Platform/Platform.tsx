@@ -1,9 +1,12 @@
 import { Resource } from "components/InjectedComponent";
 import { ListSearchResults } from "components/ComponentInjector";
-import useFetchList from "hooks/useFetchList";
-import { QUERY_KEY, URL } from "./utils/contants";
+import { useFetchList } from "hooks";
+import { FC } from "react";
 
-const Platform: React.FC = () => {
+const URL = `./platform.json`;
+const QUERY_KEY = "platform";
+
+const Platform: FC = () => {
 	const { data, isLoading, isError } = useFetchList(QUERY_KEY, URL);
 
 	return (

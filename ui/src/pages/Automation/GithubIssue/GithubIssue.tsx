@@ -1,13 +1,13 @@
 import { Button, Card, Form, Progress, Steps, Upload } from "antd";
 import { ErrorComponent, ResponsiveInputWithLabel } from "components/General";
 import { InputGrid, PageGrid } from "components/Layouts";
-import React, { useState } from "react";
+import { FC, useState } from "react";
 import Papa from "papaparse";
 import CsvTable from "./components/CsvTable";
 import { calculateSteps, createGitHubIssue } from "./helper";
 import DownloadCsv from "./components/DownloadCsv";
 import style from "./GithubIssue.module.scss";
-import { useOnlineStatus } from "hooks/useOnlineStatus";
+import { useOnlineStatus } from "hooks";
 
 const steps = [
 	{
@@ -35,7 +35,7 @@ export interface SavedIssueType {
 	title: string;
 }
 
-const GithubIssue: React.FC = () => {
+const GithubIssue: FC = () => {
 	//? input state
 	const isOnline = useOnlineStatus();
 	const [owner, setOwner] = useState("");

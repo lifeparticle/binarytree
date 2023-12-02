@@ -1,5 +1,5 @@
 import JsonToTS from "json-to-ts";
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import style from "./JsonToTypescript.module.scss";
 import { Card, Form, Space } from "antd";
 import { isJsonValid } from "./helper";
@@ -12,7 +12,7 @@ import {
 	ResponsiveInputWithLabel,
 } from "components/General";
 
-const JsonToTypescript: React.FC = () => {
+const JsonToTypescript: FC = () => {
 	const [json, setJson] = useState("");
 	const [rootName, setRootName] = useState("");
 	const [interfaces, setInterfaces] = useState<string[]>([]);

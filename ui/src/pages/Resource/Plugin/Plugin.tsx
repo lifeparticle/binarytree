@@ -1,9 +1,12 @@
 import { Resource } from "components/InjectedComponent";
 import { ListSearchResults } from "components/ComponentInjector";
-import useFetchList from "hooks/useFetchList";
-import { QUERY_KEY, URL } from "./utils/contants";
+import { useFetchList } from "hooks";
+import { FC } from "react";
 
-const Plugin: React.FC = () => {
+const URL = `./plugin.json`;
+const QUERY_KEY = "plugin";
+
+const Plugin: FC = () => {
 	const { data, isLoading, isError } = useFetchList(QUERY_KEY, URL);
 
 	return (

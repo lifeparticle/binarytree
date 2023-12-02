@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { FC, useState } from "react";
 import { Button, Modal } from "antd";
 import Help from "./components/Help";
 import { HelpEntry } from "data/helpData";
@@ -8,7 +8,7 @@ interface HelpIconProps {
 	helpObject: HelpEntry;
 }
 
-const HelpIcon: React.FC<HelpIconProps> = ({ helpObject }) => {
+const HelpIcon: FC<HelpIconProps> = ({ helpObject }) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	const showModal = () => {

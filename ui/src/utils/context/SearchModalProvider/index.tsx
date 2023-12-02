@@ -7,11 +7,11 @@ import {
 } from "react";
 import { SearchModalContextType } from "./utils/types";
 
-const SearchModalContext = createContext<SearchModalContextType>(
+export const SearchModalContext = createContext<SearchModalContextType>(
 	{} as SearchModalContextType
 );
 
-const SearchModalProvider = ({ children }: { children: ReactNode }) => {
+export const SearchModalProvider = ({ children }: { children: ReactNode }) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	const handleModalOpen = useCallback(
@@ -37,5 +37,3 @@ const SearchModalProvider = ({ children }: { children: ReactNode }) => {
 		</SearchModalContext.Provider>
 	);
 };
-
-export { SearchModalContext, SearchModalProvider };

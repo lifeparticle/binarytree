@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { icons } from "lucide-react";
 
 const DEFAULT_ICON_NAME = "AlertCircle";
@@ -13,7 +13,7 @@ interface IconProps {
 	strokeWidth?: string;
 }
 
-const Icon: React.FC<IconProps> = ({
+const Icon: FC<IconProps> = ({
 	name,
 	size = 18,
 	color,

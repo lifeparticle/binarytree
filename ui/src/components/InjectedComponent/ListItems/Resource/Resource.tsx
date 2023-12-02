@@ -2,6 +2,7 @@ import { Avatar, Card, Skeleton, Space, Tag, Typography } from "antd";
 import style from "./Resource.module.scss";
 import { Clipboard, ListItemProps } from "components/ComponentInjector";
 import { ClipboardButton } from "components/InjectedComponent";
+import { FC } from "react";
 
 const { Title } = Typography;
 
@@ -20,12 +21,13 @@ export interface ResourceType {
 	url: string;
 }
 
-const Resource: React.FC<ListItemProps<ResourceType>> = ({
+const Resource: FC<ListItemProps<ResourceType>> = ({
 	resource,
 	handleOnClick,
 	isLoading,
 }) => {
 	const { name, category, url } = resource || {};
+	const initialLetter = name?.[0];
 
 	return (
 		<Card
@@ -38,7 +40,7 @@ const Resource: React.FC<ListItemProps<ResourceType>> = ({
 				<Space className={style.resource__container}>
 					<Space size={16}>
 						<Avatar className={style.resource__avatar}>
-							{name?.[0]}
+							{initialLetter}
 						</Avatar>
 						<Space direction="vertical">
 							<Title level={4}>{name}</Title>

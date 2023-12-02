@@ -1,20 +1,20 @@
 import { Alert, Button, Card } from "antd";
-import React from "react";
+import { FC } from "react";
 import style from "./FallbackComponent.module.scss";
 
-const FallbackComponent: React.FC = () => {
+const FallbackComponent: FC = () => {
 	return (
 		<Card className={style.fallback}>
 			<Alert
-				message={"Something went wrong"}
+				message="Something went wrong"
 				description={
-						<Button
-							onClick={() =>
-								window.location.assign(window.location.pathname)
-							}
-						>
-							Refresh
-						</Button>
+					<Button
+						onClick={() =>
+							window.location.assign(window.location.pathname)
+						}
+					>
+						Refresh
+					</Button>
 				}
 				type="error"
 				showIcon

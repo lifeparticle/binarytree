@@ -1,13 +1,13 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState, FC } from "react";
 import { Col, Row } from "antd";
 import { Editor } from "@tinymce/tinymce-react";
 import { Editor as TinyMCEEditor } from "tinymce";
 import style from "./TextEditor.module.scss";
 import { Spin } from "components/General";
 import { classNames } from "utils/helper-functions/string";
-import useMode from "hooks/useMode";
+import { useMode } from "hooks";
 
-const TextEditor: React.FC = () => {
+const TextEditor: FC = () => {
 	const { isDarkMode } = useMode();
 
 	const editorRef = useRef<TinyMCEEditor | null>(null);
@@ -27,7 +27,7 @@ const TextEditor: React.FC = () => {
 		<div className={style.te}>
 			<Row gutter={[16, 16]}>
 				<Col xs={24} lg={24}>
-					{isLoading ? <Spin /> : null}
+					{isLoading && <Spin />}
 					<Editor
 						onEditorChange={(_, editor) => {
 							const wordcount = editor.plugins.wordcount;

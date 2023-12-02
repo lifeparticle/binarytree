@@ -1,9 +1,9 @@
 import { Card, Col, Skeleton, Space, Typography } from "antd";
-import React from "react";
+import { FC } from "react";
 
 const { Title } = Typography;
 
-const PackageSkeleton: React.FC = () => {
+const PackageSkeleton: FC = () => {
 	return (
 		<Col xs={24} lg={12}>
 			<Card>

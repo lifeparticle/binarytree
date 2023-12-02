@@ -5,7 +5,7 @@ import { API_ERROR, API_NO_DATA } from "data/constants";
 import { filteredNews, filteredResource } from "./helper";
 import { ReactElement } from "react";
 import { QUERY_KEY_NEWS } from "pages/Newsfeed/constants";
-import useParamsValue from "hooks/useParamsValue";
+import { useParamsValue } from "hooks";
 import { ResourceType } from "components/InjectedComponent";
 
 const DEFAULT_RESULT_COUNT = 20;

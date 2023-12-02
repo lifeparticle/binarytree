@@ -1,5 +1,6 @@
 import { Card, Image, Skeleton, Space, Typography } from "antd";
 import { ListItemProps } from "components/ComponentInjector";
+import { FC } from "react";
 const { Title } = Typography;
 
 export interface NewsType {
@@ -9,7 +10,7 @@ export interface NewsType {
 	image?: string;
 }
 
-const News: React.FC<ListItemProps<NewsType>> = ({
+const News: FC<ListItemProps<NewsType>> = ({
 	resource,
 	handleOnClick,
 	isLoading,
@@ -19,13 +20,13 @@ const News: React.FC<ListItemProps<NewsType>> = ({
 	return (
 		<Card onClick={() => handleOnClick(url)} hoverable>
 			<Skeleton loading={isLoading}>
-				<Space size={"middle"} align="start">
+				<Space size="middle" align="start">
 					{image && (
 						<Image
 							width="10vw"
 							preview={false}
 							src={image}
-							alt=""
+							alt="News Image"
 						/>
 					)}
 					<div>

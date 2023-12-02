@@ -6,6 +6,7 @@ import { getTextColor, isTransparent } from "utils/helper-functions/color";
 import { useSearchParams } from "react-router-dom";
 import { classNames } from "utils/helper-functions/string";
 import { ClipboardButton } from "components/InjectedComponent";
+import { FC } from "react";
 
 const { Title } = Typography;
 
@@ -18,7 +19,7 @@ interface DisplayColorProps {
 	title: string;
 }
 
-const DisplayColor: React.FC<DisplayColorProps> = ({
+const DisplayColor: FC<DisplayColorProps> = ({
 	customLabel,
 	label,
 	customValue,

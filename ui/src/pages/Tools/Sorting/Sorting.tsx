@@ -1,5 +1,5 @@
 import style from "./Sorting.module.scss";
-import { useEffect, useState } from "react";
+import { useEffect, useState, FC } from "react";
 import { sortData } from "./helper";
 import { Input, Form, Card, Badge, Row, Col } from "antd";
 import { Clipboard } from "components/ComponentInjector";
@@ -31,7 +31,7 @@ const OUTPUT_FORMAT = [
 
 const detection = new DataDetection(new Set(["number", "string", "array"]));
 
-const Sorting: React.FC = () => {
+const Sorting: FC = () => {
 	const [input, setInput] = useState("");
 	const [output, setOutput] = useState("");
 	const [outputFormat, setOutputFormat] = useState(OUTPUT_FORMAT[0]);
@@ -86,7 +86,7 @@ const Sorting: React.FC = () => {
 							<Row gutter={[16, 16]}>
 								<Col xs={24} sm={24} lg={24} xl={24} xxl={12}>
 									<ResponsiveSegementWithLabel
-										label={"Order"}
+										label="Order"
 										value={order}
 										onChange={(value: string | number) =>
 											setOrder(value as string)

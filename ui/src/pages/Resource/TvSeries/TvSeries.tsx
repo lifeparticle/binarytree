@@ -1,9 +1,12 @@
 import { Resource } from "components/InjectedComponent";
 import { ListSearchResults } from "components/ComponentInjector";
-import useFetchList from "hooks/useFetchList";
-import { QUERY_KEY, URL } from "./utils/contants";
+import { useFetchList } from "hooks";
+import { FC } from "react";
 
-const TvSeries: React.FC = () => {
+const URL = `./tv_series.json`;
+const QUERY_KEY = "tv_series";
+
+const TvSeries: FC = () => {
 	const { data, isLoading, isError } = useFetchList(QUERY_KEY, URL);
 
 	return (

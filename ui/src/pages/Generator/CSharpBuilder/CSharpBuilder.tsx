@@ -1,13 +1,12 @@
-import React from "react";
+import { FC, useState } from "react";
 import { Card, Form } from "antd";
-import { useState } from "react";
 import { Clipboard } from "components/ComponentInjector";
 import { CodeEditor } from "components/General";
 import { PageGrid } from "components/Layouts";
 import { ClipboardButton } from "components/InjectedComponent";
 import { generateBuilderMethods } from "./helper";
 
-const CSharpBuilde: React.FC = () => {
+const CSharpBuilde: FC = () => {
 	const [input, setInput] = useState("");
 	const [result, setResult] = useState("");
 
@@ -22,7 +21,7 @@ const CSharpBuilde: React.FC = () => {
 					<CodeEditor
 						label="Class"
 						code={input}
-						language={"csharp"}
+						language="csharp"
 						handleCode={(value) => {
 							setInput(value || "");
 							onClick(value || "");
@@ -41,7 +40,7 @@ const CSharpBuilde: React.FC = () => {
 					<CodeEditor
 						label="Builder output"
 						code={result}
-						language={"csharp"}
+						language="csharp"
 					/>
 
 					<Clipboard

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import {
 	NOTIFICATION_KEY,
 	NOTIFICATION_RED_FLAG_KEY,
 	NOTIFICATION_URL,
 } from "./constants";
-import useGetNotifications from "hooks/useGetNotifications";
+import { useGetNotifications } from "hooks";
 import NotificationList from "./components/NotificationList";
 import {
 	getLocalstorageValue,
@@ -12,7 +12,7 @@ import {
 } from "utils/helper-functions/storage";
 import { compareDate } from "./helper";
 
-const Notification: React.FC = () => {
+const Notification: FC = () => {
 	const { notifications, isLoading, isError } = useGetNotifications(
 		NOTIFICATION_KEY,
 		NOTIFICATION_URL

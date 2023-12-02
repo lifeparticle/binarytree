@@ -1,8 +1,8 @@
-import React from "react";
+import { FC } from "react";
 import style from "./PageNotFound.module.scss";
 import not_found from "assets/not_found.jpg";
 
-const PageNotFound: React.FC = () => {
+const PageNotFound: FC = () => {
 	return (
 		<div className={style.pnf}>
 			<a

@@ -1,14 +1,14 @@
 import { Card, Form, Input } from "antd";
 import { Warning, CodeHighlightWithCopy } from "components/General";
 import { PageGrid } from "components/Layouts";
-import React, { ChangeEvent, useState } from "react";
+import { ChangeEvent, FC, useState } from "react";
 import { combineSVGPaths } from "./utils/helper";
 import style from "./Svg.module.scss";
 import SVGRenderer from "./components/SVGRenderer";
 
 const { TextArea } = Input;
 
-const Svg: React.FC = () => {
+const Svg: FC = () => {
 	const [inputSVG, setInputSVG] = useState("");
 	const [outputSVG, setOutputSVG] = useState<string>("");
 

@@ -1,7 +1,7 @@
 import { useClipboard } from "@mantine/hooks";
 import { AutoComplete, Card, Form, Input, Select, Space } from "antd";
 import { downloadTextFile } from "utils/helper-functions/files";
-import { useState } from "react";
+import { FC, useState } from "react";
 import style from "./DataGenerator.module.scss";
 import {
 	FAKER_DATA_TYPES,
@@ -14,7 +14,7 @@ import Output from "./components/Output";
 import { PageGrid } from "components/Layouts";
 import { ResponsiveButton, ResponsiveInputWithLabel } from "components/General";
 
-const DataGenerator: React.FC = () => {
+const DataGenerator: FC = () => {
 	const [tableName, setTableName] = useState("");
 	const [result, setResult] = useState("");
 	const [colNum, setColNum] = useState(0);

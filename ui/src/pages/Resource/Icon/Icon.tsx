@@ -1,9 +1,12 @@
 import { Resource } from "components/InjectedComponent";
-import useFetchList from "hooks/useFetchList";
+import { useFetchList } from "hooks";
 import { ListSearchResults } from "components/ComponentInjector";
-import { QUERY_KEY, URL } from "./utils/constants";
+import { FC } from "react";
 
-const Icon: React.FC = () => {
+export const URL = `./icon.json`;
+export const QUERY_KEY = "icon";
+
+const Icon: FC = () => {
 	const { data, isLoading, isError } = useFetchList(QUERY_KEY, URL);
 	return (
 		<ListSearchResults

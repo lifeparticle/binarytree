@@ -6,7 +6,7 @@ import {
 import useWindowWidth from "./useWindowWidth";
 import { MOBILE_WIDTH } from "data/constants";
 
-export const useMenuCollapsed = (storageKey: string) => {
+const useMenuCollapsed = (storageKey: string) => {
 	const { windowWidth } = useWindowWidth();
 	const initialCollapsedValue = getLocalstorageValue<boolean>(storageKey);
 

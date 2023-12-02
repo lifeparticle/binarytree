@@ -3,7 +3,7 @@ import { Space } from "antd";
 import { HeadProvider, Title, Link, Meta } from "react-head";
 import { ErrorBoundary } from "react-error-boundary";
 import { Text, HelpIcon, Drawer, FallbackComponent } from "components/General";
-import usePageTitle from "../hooks/usePageTitle";
+import { usePageTitle } from "hooks";
 
 const NO_PADDING = [
 	"BinaryTree: Developer Productivity Tools",

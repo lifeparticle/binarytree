@@ -10,7 +10,7 @@ import {
 	formatShades,
 	generateRandomColor,
 } from "pages/Colors/ShadesAndTints/utils/helper";
-import { useEffect, useState, ChangeEvent } from "react";
+import { useEffect, useState, ChangeEvent, FC } from "react";
 import {
 	ColorPickerWithInput,
 	Icon,
@@ -34,7 +34,7 @@ interface ColorInputsProps {
 	tints: string[];
 }
 
-const ColorInputs: React.FC<ColorInputsProps> = ({
+const ColorInputs: FC<ColorInputsProps> = ({
 	color,
 	handleColorChange,
 	handlePercentageChange,

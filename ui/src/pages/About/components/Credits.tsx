@@ -1,9 +1,9 @@
-import React from "react";
+import { FC } from "react";
 import { List, Space, Tag } from "antd";
 import { CREDITS_DATA } from "./creditsData";
 import style from "pages/About/About.module.scss";
 
-const Credits: React.FC = () => {
+const Credits: FC = () => {
 	return (
 		<List header={<div>Credits</div>} bordered>
 			<List.Item>

@@ -1,5 +1,3 @@
-const classNames = (...args: (string | undefined)[]) => {
+export const classNames = (...args: (string | undefined)[]) => {
 	return args.filter(Boolean).join(" ");
 };
-
-export { classNames };
