@@ -1,9 +1,9 @@
 import { Button, List, Typography } from "antd";
-import React from "react";
+import { FC } from "react";
 import style from "pages/About/About.module.scss";
 import { Icon } from "components/General";
 
-const Support: React.FC = () => {
+const Support: FC = () => {
 	return (
 		<List
 			header={<div>Support</div>}

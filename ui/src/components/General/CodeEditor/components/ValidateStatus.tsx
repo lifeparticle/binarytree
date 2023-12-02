@@ -1,10 +1,12 @@
 import { Space, theme } from "antd";
-import React from "react";
+import { FC } from "react";
 import style from "components/General/CodeEditor/CodeEditor.module.scss";
 import { ValidateStatusProps } from "./utils/types";
 import { Icon } from "components/General";
 
-const ValidateStatus: React.FC<ValidateStatusProps> = ({ status }) => {
+const VALID = "valid";
+
+const ValidateStatus: FC<ValidateStatusProps> = ({ status }) => {
 	if (status.length === 0) {
 		return null;
 	}
@@ -19,7 +21,7 @@ const ValidateStatus: React.FC<ValidateStatusProps> = ({ status }) => {
 			style={{ backgroundColor: colorBgContainer }}
 			role="validation"
 		>
-			{status === "valid" ? (
+			{status === VALID ? (
 				<span className={style.codeeditor__validator__success}>
 					<Icon name="Check" color="green" />
 				</span>

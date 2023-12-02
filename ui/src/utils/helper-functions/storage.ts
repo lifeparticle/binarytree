@@ -1,4 +1,4 @@
-function setLocalstorageValue<T>(key: string, value: T): void {
+export function setLocalstorageValue<T>(key: string, value: T): void {
 	try {
 		const serializedValue = JSON.stringify(value);
 		localStorage.setItem(key, serializedValue);
@@ -7,7 +7,7 @@ function setLocalstorageValue<T>(key: string, value: T): void {
 	}
 }
 
-function getLocalstorageValue<T>(key: string): T | null {
+export function getLocalstorageValue<T>(key: string): T | null {
 	try {
 		const serializedValue = localStorage.getItem(key);
 
@@ -20,5 +20,3 @@ function getLocalstorageValue<T>(key: string): T | null {
 		return null;
 	}
 }
-
-export { setLocalstorageValue, getLocalstorageValue };

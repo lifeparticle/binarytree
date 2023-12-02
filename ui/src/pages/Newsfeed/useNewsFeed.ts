@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { parseXML } from "./helper";
 import { BASE_URL, SITE_OPTIONS } from "./constants";
-import useFetchList from "hooks/useFetchList";
+import { useFetchList } from "hooks";
 
 const useNewsFeed = () => {
 	const [url, setUrl] = useState(SITE_OPTIONS["frontend-focus"].value);

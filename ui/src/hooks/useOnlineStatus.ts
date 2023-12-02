@@ -9,7 +9,7 @@ function subscribe(callback: () => void): () => void {
 	};
 }
 
-export function useOnlineStatus(): boolean {
+export default function useOnlineStatus(): boolean {
 	return useSyncExternalStore(
 		subscribe,
 		() => navigator.onLine, // client

@@ -3,10 +3,10 @@ import {
 	getLocalstorageValue,
 	setLocalstorageValue,
 } from "utils/helper-functions/storage";
-import useWindowWidth from "./useWindowWidth";
 import { MOBILE_WIDTH } from "data/constants";
+import useWindowWidth from "./useWindowWidth";
 
-export const useMenuCollapsed = (storageKey: string) => {
+export default function useMenuCollapsed(storageKey: string) {
 	const { windowWidth } = useWindowWidth();
 	const initialCollapsedValue = getLocalstorageValue<boolean>(storageKey);
 
@@ -30,6 +30,4 @@ export const useMenuCollapsed = (storageKey: string) => {
 		toggleCollapse,
 		collapsed,
 	};
-};
-
-export default useMenuCollapsed;
+}

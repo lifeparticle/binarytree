@@ -10,6 +10,7 @@ import {
 	generateClipboardText,
 } from "pages/Colors/ColorPicker/utils/helper";
 import { colors } from "pages/Colors/ColorPicker/utils/types";
+import { FC } from "react";
 
 interface DisplayColorsProps {
 	colors: colors;
@@ -18,7 +19,7 @@ interface DisplayColorsProps {
 	title: string;
 }
 
-const DisplayColors: React.FC<DisplayColorsProps> = ({
+const DisplayColors: FC<DisplayColorsProps> = ({
 	colors,
 	displayType,
 	format,

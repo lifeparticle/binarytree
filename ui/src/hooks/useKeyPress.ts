@@ -1,8 +1,9 @@
 import { useCallback, useEffect } from "react";
 
-type CallbackFunction = () => void;
-
-function useKeyPress(callback: CallbackFunction, targetKey: string): void {
+export default function useKeyPress(
+	callback: () => void,
+	targetKey: string
+): void {
 	const handleKeyDown = useCallback(
 		(event: KeyboardEvent) => {
 			if (event.key === targetKey) {
@@ -19,5 +20,3 @@ function useKeyPress(callback: CallbackFunction, targetKey: string): void {
 		};
 	}, [handleKeyDown]);
 }
-
-export default useKeyPress;

@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getData } from "api/API";
 
-const useFetchList = (key: string, url: string) => {
+export default function useFetchList(key: string, url: string) {
 	const { data, isLoading, isError, error, isSuccess } = useQuery({
 		queryKey: [key],
 		queryFn: () => {
@@ -10,6 +10,4 @@ const useFetchList = (key: string, url: string) => {
 	});
 
 	return { data, isLoading, isError, error, isSuccess };
-};
-
-export default useFetchList;
+}

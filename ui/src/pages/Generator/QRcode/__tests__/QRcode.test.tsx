@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, test } from "vitest";
-import QRcode from "..";
+import QRcode from "pages/Generator/QRcode";
 
 describe("QRCODE", () => {
 	test("render component without crash", () => {

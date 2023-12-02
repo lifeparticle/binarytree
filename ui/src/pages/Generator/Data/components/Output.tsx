@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { Tabs, type TabsProps } from "antd";
 import { CodeHighlightWithCopy } from "components/General";
 
@@ -7,7 +7,7 @@ interface OutputProps {
 	json: string;
 }
 
-const Output: React.FC<OutputProps> = ({ json, sql }) => {
+const Output: FC<OutputProps> = ({ json, sql }) => {
 	const items: TabsProps["items"] = [
 		{
 			key: "1",

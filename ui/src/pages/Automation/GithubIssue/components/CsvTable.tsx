@@ -1,6 +1,6 @@
-import React from "react";
+import { FC } from "react";
 import { Table } from "antd";
-import { IssueType } from "pages/Automation/GithubIssue/index";
+import { IssueType } from "pages/Automation/GithubIssue";
 
 interface CsvTableProps {
 	data: IssueType[];
@@ -12,7 +12,7 @@ type DataColumn = {
 	key: string;
 };
 
-const CsvTable: React.FC<CsvTableProps> = ({ data }) => {
+const CsvTable: FC<CsvTableProps> = ({ data }) => {
 	const columns: DataColumn[] = [];
 
 	if (data.length > 0) {
