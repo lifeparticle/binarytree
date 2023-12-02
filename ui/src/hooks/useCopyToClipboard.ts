@@ -3,7 +3,7 @@ import { message } from "antd";
 
 const COPY_TEXT_MAX_LENGTH = 50;
 
-const useCopyToClipboard = (timeout = 500) => {
+export default function useCopyToClipboard(timeout = 500) {
 	const [copied, setCopied] = useState(false);
 	const [messageApi, contextHolder] = message.useMessage();
 
@@ -29,6 +29,4 @@ const useCopyToClipboard = (timeout = 500) => {
 	);
 
 	return { copied, copyToClipboard, ClipboardMessage: contextHolder };
-};
-
-export default useCopyToClipboard;
+}

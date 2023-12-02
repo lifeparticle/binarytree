@@ -5,7 +5,7 @@ interface Params {
 	[key: string]: string;
 }
 
-const useParamsValue = (initialParams: Params) => {
+export default function useParamsValue(initialParams: Params) {
 	const [searchParams, setSearchParams] = useSearchParams(initialParams);
 	const hasRan = useRef(false);
 
@@ -35,6 +35,4 @@ const useParamsValue = (initialParams: Params) => {
 	}, [initialParams, updateParamsValue]);
 
 	return { searchParams, setSearchParams, updateParamsValue };
-};
-
-export default useParamsValue;
+}

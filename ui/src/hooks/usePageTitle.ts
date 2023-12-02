@@ -3,7 +3,7 @@ import { HELP } from "data/helpData";
 import { routes } from "data/routeData";
 import { useLocation } from "react-router-dom";
 
-const usePageTitle = () => {
+export default function usePageTitle() {
 	const { pathname } = useLocation();
 	const page = routes.find((route) => route.path === pathname) ?? {
 		title: "Page Not Found",
@@ -20,6 +20,4 @@ const usePageTitle = () => {
 		beamObject: BEAM[id] || [],
 		url: `https://binarytree.dev${pathname}`,
 	};
-};
-
-export default usePageTitle;
+}

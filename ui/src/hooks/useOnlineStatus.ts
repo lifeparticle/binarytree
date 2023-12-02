@@ -8,12 +8,11 @@ function subscribe(callback: () => void): () => void {
 		window.removeEventListener("offline", callback);
 	};
 }
-function useOnlineStatus(): boolean {
+
+export default function useOnlineStatus(): boolean {
 	return useSyncExternalStore(
 		subscribe,
 		() => navigator.onLine, // client
 		() => true //  server
 	);
 }
-
-export default useOnlineStatus;
