@@ -8,7 +8,6 @@ import { FC } from "react";
 const { Sider } = Layout;
 
 interface MenuProps {
-	isDarkMode: boolean;
 	collapsed: boolean;
 }
 

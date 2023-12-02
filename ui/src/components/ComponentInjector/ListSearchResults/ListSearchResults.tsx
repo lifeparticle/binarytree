@@ -54,7 +54,6 @@ const ListSearchResults = <T,>({
 		<div className={style.container}>
 			<Search
 				categories={categories}
-				resourceName={resourceName}
 				isLoading={isLoading}
 				searchQuery={searchQuery}
 				categoryQuery={categoryQuery}
