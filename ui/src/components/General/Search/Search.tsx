@@ -1,6 +1,6 @@
 import { Input } from "antd";
 import style from "./search.module.scss";
-import CategoryTags from "./CategoryTags/CategoryTags";
+import CategoryTags from "./components/CategoryTags";
 import { ChangeEvent, FC } from "react";
 
 interface SearchProps {
