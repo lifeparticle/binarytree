@@ -1,10 +1,9 @@
 import { Layout, theme } from "antd";
 import Header from "components/Layouts/Header";
 import Menu from "components/Layouts/Menu";
-import { useMenuCollapsed } from "hooks";
+import { useMenuCollapsed, useMode } from "hooks";
 import Footer from "./components";
 import style from "./Sidebar.module.scss";
-import { useMode } from "hooks";
 
 const { Sider } = Layout;
 
@@ -33,7 +32,7 @@ const Sidebar = () => {
 		>
 			<Header />
 
-			<Menu isDarkMode={isDarkMode} collapsed={collapsed} />
+			<Menu collapsed={collapsed} />
 
 			<Footer
 				collapsed={collapsed}

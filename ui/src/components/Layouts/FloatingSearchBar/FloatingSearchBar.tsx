@@ -1,7 +1,6 @@
 import { Input } from "antd";
 import style from "./FloatingSearchBar.module.scss";
-import { useUserAgent } from "hooks";
-import { useModal } from "hooks";
+import { useUserAgent, useModal } from "hooks";
 import { Icon } from "components/General";
 import { FC } from "react";
 
