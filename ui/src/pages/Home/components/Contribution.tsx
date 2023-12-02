@@ -1,9 +1,9 @@
-import React from "react";
+import { FC } from "react";
 import style from "pages/Home/Home.module.scss";
 import { Space, Typography } from "antd";
 import { ResponsiveButton } from "components/General";
 
-const Contribution: React.FC = () => {
+const Contribution: FC = () => {
 	return (
 		<section className={style.home__contribution}>
 			<Space direction="vertical">

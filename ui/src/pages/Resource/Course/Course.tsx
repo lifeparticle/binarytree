@@ -1,9 +1,12 @@
 import { Resource } from "components/InjectedComponent";
 import { ListSearchResults } from "components/ComponentInjector";
-import useFetchList from "hooks/useFetchList";
-import { QUERY_KEY, URL } from "./utils/contants";
+import { useFetchList } from "hooks";
+import { FC } from "react";
 
-const Course: React.FC = () => {
+const URL = `./course.json`;
+const QUERY_KEY = "course";
+
+const Course: FC = () => {
 	const { data, isLoading, isError } = useFetchList(QUERY_KEY, URL);
 
 	return (

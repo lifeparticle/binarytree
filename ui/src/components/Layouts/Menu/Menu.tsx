@@ -4,6 +4,7 @@ import { ITEMS } from "data/menuData";
 import style from "./Menu.module.scss";
 import { classNames } from "utils/helper-functions/string";
 import { Icon } from "components/General";
+import { FC } from "react";
 const { Sider } = Layout;
 
 interface MenuProps {
@@ -11,10 +12,10 @@ interface MenuProps {
 	collapsed: boolean;
 }
 
-const Menu: React.FC<MenuProps> = ({ collapsed }) => {
+const Menu: FC<MenuProps> = ({ collapsed }) => {
 	const navigate = useNavigate();
 
-	const onClick = (e: { key: To }) => {
+	const handleMenuItemClick = (e: { key: To }) => {
 		navigate(e.key);
 		if (
 			["/converter/fc", "/feedback", "/newsfeed"].includes(
@@ -33,7 +34,7 @@ const Menu: React.FC<MenuProps> = ({ collapsed }) => {
 					collapsed ? style.menu__collapsed : ""
 				)}
 				mode="inline"
-				onClick={onClick}
+				onClick={handleMenuItemClick}
 				items={ITEMS}
 				style={{
 					minWidth: collapsed ? 0 : 250,

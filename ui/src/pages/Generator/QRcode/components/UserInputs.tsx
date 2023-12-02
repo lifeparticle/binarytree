@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import {
 	Card,
 	Form,
@@ -36,7 +36,7 @@ interface UserInputsProps {
 	icon: string;
 	setIcon: (icon: string) => void;
 }
-const UserInputs: React.FC<UserInputsProps> = ({
+const UserInputs: FC<UserInputsProps> = ({
 	value,
 	setValue,
 	dataType,

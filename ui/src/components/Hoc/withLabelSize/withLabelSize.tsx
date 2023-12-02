@@ -1,5 +1,5 @@
 import { Form } from "antd";
-import useGetSize from "hooks/useGetSize";
+import { useGetSize } from "hooks";
 
 interface CommonProps {
 	label?: string;

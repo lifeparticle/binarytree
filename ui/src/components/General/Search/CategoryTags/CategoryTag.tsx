@@ -1,4 +1,5 @@
 import { Tag } from "antd";
+import { FC } from "react";
 
 interface CategoryTagProps {
 	label: string;
@@ -8,7 +9,7 @@ interface CategoryTagProps {
 	key?: string | number;
 }
 
-const CategoryTag: React.FC<CategoryTagProps> = ({
+const CategoryTag: FC<CategoryTagProps> = ({
 	label,
 	selected,
 	onClick,

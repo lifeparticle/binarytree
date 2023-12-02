@@ -1,6 +1,6 @@
-import { useState, useEffect, useTransition } from "react";
+import { useState, useEffect, useTransition, FC } from "react";
 import styles from "./ShadesAndTints.module.scss";
-import useCombinedKeyPress from "hooks/useCombinedKeyPress";
+import { useCombinedKeyPress, useDebounce, useParamsValue } from "hooks";
 import {
 	DEFAULT_COLOR,
 	DEFAULT_NUM_SHADES,
@@ -10,8 +10,6 @@ import { generateShadesForColor } from "./utils/helper";
 import { PageGrid } from "components/Layouts";
 import Colors from "./components/Colors";
 import ColorInputs from "./components/ColorInputs";
-import useParamsValue from "hooks/useParamsValue";
-import { useDebounce } from "hooks/useDebounce";
 import { PARAMS } from "data/paramsData";
 
 interface SelectOption {
@@ -20,7 +18,7 @@ interface SelectOption {
 	func?: (shades: string[]) => string;
 }
 
-const ShadesAndTints: React.FC = () => {
+const ShadesAndTints: FC = () => {
 	const { searchParams, updateParamsValue } = useParamsValue({
 		color: DEFAULT_COLOR,
 		percentage: DEFAULT_NUM_SHADES.toString(),

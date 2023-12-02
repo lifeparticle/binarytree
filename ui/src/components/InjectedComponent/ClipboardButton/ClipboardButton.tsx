@@ -1,5 +1,6 @@
 import { Icon, ResponsiveButton } from "components/General";
 import style from "./ClipboardButton.module.scss";
+import { FC } from "react";
 
 interface ClipboardButtonProps {
 	copyToClipboard: (text: string) => void;
@@ -8,7 +9,7 @@ interface ClipboardButtonProps {
 	label?: boolean;
 }
 
-const ClipboardButton: React.FC<ClipboardButtonProps> = ({
+const ClipboardButton: FC<ClipboardButtonProps> = ({
 	copyToClipboard,
 	copied,
 	text,

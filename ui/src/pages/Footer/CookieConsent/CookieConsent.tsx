@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import { FC, useCallback, useEffect } from "react";
 import CookiConsent, {
 	Cookies,
 	getCookieConsentValue,
@@ -13,9 +13,9 @@ import {
 	DECLINE_BUTTON_STYLES,
 } from "./utils/constants";
 import CookieConsentText from "./components/CookieConsentText";
-import usePageTitle from "hooks/usePageTitle";
+import { usePageTitle } from "hooks";
 
-const CookieConsent: React.FC = () => {
+const CookieConsent: FC = () => {
 	const { title, url } = usePageTitle();
 
 	const handleAcceptCookie = useCallback(() => {

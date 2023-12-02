@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import style from "./TableOfContent.module.scss";
 import { marked } from "marked";
 import { Input, Form, Card } from "antd";
-import useCombinedKeyPress from "hooks/useCombinedKeyPress";
+import { useCombinedKeyPress } from "hooks";
 import { CopyInput, PageGrid } from "components/Layouts";
 import { Warning, ResponsiveInputWithLabel } from "components/General";
 import { Clipboard } from "components/ComponentInjector";
@@ -23,7 +23,7 @@ const indentMap = {
 	H6: "\t\t\t\t\t+ ",
 };
 
-const TableOfContent: React.FC = () => {
+const TableOfContent: FC = () => {
 	const [url, setUrl] = useState("");
 	const [markdown, setMarkdown] = useState("");
 	const [tableOfContents, setTableOfContents] = useState<string>("");

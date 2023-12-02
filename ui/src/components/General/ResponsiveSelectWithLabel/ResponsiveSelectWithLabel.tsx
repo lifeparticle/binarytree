@@ -1,5 +1,5 @@
 import { Select } from "antd";
-import React from "react";
+import { FC } from "react";
 import { withLabelSize } from "components/Hoc";
 
 interface Option {
@@ -8,14 +8,14 @@ interface Option {
 }
 
 interface SelectComponentProps {
+	options: Option[];
 	label?: string;
 	value?: string;
 	defaultActiveFirstOption?: boolean;
 	onSelect?: (value: string, option: Option) => void;
-	options: Option[];
 }
 
-const ResponsiveSelect: React.FC<SelectComponentProps> = (props) => {
+const ResponsiveSelect: FC<SelectComponentProps> = (props) => {
 	return <Select {...props} />;
 };
 

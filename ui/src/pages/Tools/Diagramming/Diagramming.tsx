@@ -1,10 +1,10 @@
 import { Excalidraw } from "@excalidraw/excalidraw";
 import style from "./Diagramming.module.scss";
-import useMode from "hooks/useMode";
+import { useMode } from "hooks";
 import { ExcalidrawElement } from "@excalidraw/excalidraw/types/element/types";
 import { ExcalidrawInitialDataState } from "@excalidraw/excalidraw/types/types";
 import { useRef, useState } from "react";
-import useCombinedKeyPress from "hooks/useCombinedKeyPress";
+import { useCombinedKeyPress } from "hooks";
 
 const Diagramming = () => {
 	const { isDarkMode } = useMode();

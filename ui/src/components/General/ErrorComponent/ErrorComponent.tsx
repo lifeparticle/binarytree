@@ -1,5 +1,5 @@
 import { Alert, Card } from "antd";
-import React from "react";
+import { FC } from "react";
 
 interface ErrorComponentProps {
 	category: string;
@@ -7,7 +7,7 @@ interface ErrorComponentProps {
 	solutions: string[];
 }
 
-const ErrorComponent: React.FC<ErrorComponentProps> = ({
+const ErrorComponent: FC<ErrorComponentProps> = ({
 	reasons,
 	solutions,
 	category,
@@ -15,7 +15,7 @@ const ErrorComponent: React.FC<ErrorComponentProps> = ({
 	return (
 		<Card title={category}>
 			<Alert
-				message={"Reason"}
+				message="Reason"
 				description={
 					<>
 						{reasons.map((reason) => (

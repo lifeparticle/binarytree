@@ -1,15 +1,18 @@
-import React from "react";
-import { CopyInputProps } from "./utils/types";
+import React, { FC } from "react";
 import style from "./CopyInput.module.scss";
 
-const CopyInput: React.FC<CopyInputProps> = ({ children }) => {
-	const [children1, children2] = React.Children.toArray(children);
+interface CopyInputProps {
+	children: React.ReactNode;
+}
+
+const CopyInput: FC<CopyInputProps> = ({ children }) => {
+	const [input, clipboard] = React.Children.toArray(children);
 
 	return (
 		<div className={style.copyinput}>
-			<div className={style.copyinput__input}>{children1}</div>
-			{children2 ? (
-				<div className={style.copyinput__copybtn}>{children2}</div>
+			<div className={style.copyinput__input}>{input}</div>
+			{clipboard ? (
+				<div className={style.copyinput__copybtn}>{clipboard}</div>
 			) : null}
 		</div>
 	);

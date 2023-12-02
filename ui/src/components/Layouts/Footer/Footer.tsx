@@ -1,15 +1,15 @@
-import React from "react";
+import { FC } from "react";
 import style from "./Footer.module.scss";
 import { Space, Typography } from "antd";
 import { Icon, ResponsiveButton } from "components/General";
 import { Link } from "react-router-dom";
 import bt_light from "assets/Footer/bt_light.webp";
 import bt_dark from "assets/Footer/bt_dark.webp";
-import useMode from "hooks/useMode";
+import { useMode } from "hooks";
 
 const { Text } = Typography;
 
-const Footer: React.FC = () => {
+const Footer: FC = () => {
 	const { isDarkMode } = useMode();
 
 	return (
@@ -21,12 +21,12 @@ const Footer: React.FC = () => {
 		>
 			<Space
 				direction="vertical"
-				size={"large"}
+				size="large"
 				className={style.footer__left}
 				align="center"
 			>
 				<Space>
-					<Link to={"/"}>
+					<Link to="/">
 						<img
 							src={isDarkMode ? bt_dark : bt_light}
 							height={100}
@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
 				<Text strong>Company</Text>
 				<ul className={style.footer__list}>
 					<li>
-						<Link to={"/about"}>About</Link>
+						<Link to="/about">About</Link>
 					</li>
 					{/* <li>
 									<a
@@ -117,14 +117,14 @@ const Footer: React.FC = () => {
 				<Text strong>Legal</Text>
 				<ul className={style.footer__list}>
 					<li>
-						<Link to={"/terms"}>Terms</Link>
+						<Link to="/terms">Terms</Link>
 					</li>
 					<li>
-						<Link to={"/privacy-policy"}>Privacy</Link>
+						<Link to="/privacy-policy">Privacy</Link>
 					</li>
 
 					<li>
-						<Link to={"/cookie-policy"}>Cookie Policy</Link>
+						<Link to="/cookie-policy">Cookie Policy</Link>
 					</li>
 				</ul>
 			</Space>

@@ -1,3 +1,5 @@
+import { FC } from "react";
+
 export interface ListItemProps<T> {
 	resource: T;
 	handleOnClick: (url: string) => void;
@@ -6,7 +8,7 @@ export interface ListItemProps<T> {
 
 export interface ListProps<T> {
 	items: T[];
-	itemComponent: React.FC<ListItemProps<T>>;
+	itemComponent: FC<ListItemProps<T>>;
 	isLoading: boolean;
 }
 

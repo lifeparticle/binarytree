@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { FC, useState } from "react";
 import { Icon, ResponsiveDropdownButton } from "components/General";
 import { MenuProps } from "antd";
 
@@ -27,7 +27,7 @@ interface DropdownDownloadButtonProps {
 	handleDownload: (type: string) => void;
 }
 
-const DropdownDownloadButton: React.FC<DropdownDownloadButtonProps> = ({
+const DropdownDownloadButton: FC<DropdownDownloadButtonProps> = ({
 	handleDownload,
 }) => {
 	const [downloadType, setDownloadType] = useState(IMAGE_TYPE.png);

@@ -1,11 +1,11 @@
-import React from "react";
+import { FC } from "react";
 import { Card, Space, Tag } from "antd";
 import { FEATURE_DATA } from "data/featureData";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
-const Features: React.FC = () => {
+const Features: FC = () => {
 	return (
 		<Carousel autoPlay={true} infiniteLoop={true}>
 			{FEATURE_DATA.map((feature, index) => (

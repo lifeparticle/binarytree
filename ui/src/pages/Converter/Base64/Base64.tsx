@@ -1,5 +1,5 @@
 import { Card, Form } from "antd";
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Buffer } from "buffer";
 import { Clipboard } from "components/ComponentInjector";
 import { CodeEditor } from "components/General";
@@ -7,7 +7,7 @@ import { isBase64Valid } from "./utils/helper";
 import { PageGrid } from "components/Layouts";
 import { ClipboardButton } from "components/InjectedComponent";
 
-const Base64: React.FC = () => {
+const Base64: FC = () => {
 	const [input, setInput] = useState("");
 	const [result, setResult] = useState("");
 	const [status, setStatus] = useState<string>("");
@@ -32,7 +32,7 @@ const Base64: React.FC = () => {
 					<CodeEditor
 						label="Text"
 						code={input}
-						language={" "}
+						language=" "
 						handleCode={(value) => {
 							setInput(value || "");
 							onClick("encode", value || "");

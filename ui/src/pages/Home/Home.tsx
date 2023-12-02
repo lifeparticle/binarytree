@@ -5,7 +5,7 @@ import Hero from "./components/Hero";
 import Contribution from "./components/Contribution";
 import grid_light from "assets/Home/grid_light.svg";
 import grid_dark from "assets/Home/grid_dark.svg";
-import useMode from "hooks/useMode";
+import { useMode } from "hooks";
 
 const Home = () => {
 	const { isDarkMode } = useMode();

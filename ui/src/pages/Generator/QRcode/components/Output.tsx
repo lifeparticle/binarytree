@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import styles from "pages/Generator/QRcode/QRcode.module.scss";
 import { classNames } from "utils/helper-functions/string";
 import { Card, QRCode, Space } from "antd";
@@ -16,7 +16,7 @@ interface OutputProps {
 	downloadQRCode: (ext: string) => void;
 }
 
-const Output: React.FC<OutputProps> = ({
+const Output: FC<OutputProps> = ({
 	value,
 	color,
 	bgColor,

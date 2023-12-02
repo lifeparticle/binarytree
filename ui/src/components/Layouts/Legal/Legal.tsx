@@ -1,14 +1,15 @@
-import React, { ReactNode } from "react";
+import { FC, ReactNode } from "react";
 import styles from "./Legal.module.scss";
 import { Space } from "antd";
 
 interface LegalProps {
 	children: ReactNode;
+	direction?: "vertical" | "horizontal";
 }
 
-const Legal: React.FC<LegalProps> = ({ children }) => {
+const Legal: FC<LegalProps> = ({ children, direction = "vertical" }) => {
 	return (
-		<Space direction="vertical" className={styles.legal}>
+		<Space direction={direction} className={styles.legal}>
 			{children}
 		</Space>
 	);

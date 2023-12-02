@@ -1,19 +1,16 @@
 import { Input, InputRef, Modal } from "antd";
 import { MENU_ITEMS } from "data/menuData";
-import React, { useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./PopSearch.module.scss";
 import { Icon, IconName } from "components/General";
-import useCombinedKeyPress from "hooks/useCombinedKeyPress";
+import { useCombinedKeyPress, useMode, useModal, useKeyPress } from "hooks";
 import { classNames } from "utils/helper-functions/string";
-import useMode from "hooks/useMode";
-import useModal from "hooks/useModal";
-import useKeyPress from "hooks/useKeyPress";
 
 const { Search } = Input;
 const items = MENU_ITEMS.map((item) => item.children).flat();
 
-const PopupSearch: React.FC = () => {
+const PopupSearch: FC = () => {
 	const navigate = useNavigate();
 	const { isDarkMode } = useMode();
 	const { handleModalOpen, isModalOpen } = useModal();

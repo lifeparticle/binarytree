@@ -1,11 +1,11 @@
 import { HelpEntry } from "data/helpData";
-import React from "react";
+import { FC } from "react";
 
 interface HelpProps {
 	helpObject: HelpEntry;
 }
 
-const Help: React.FC<HelpProps> = ({ helpObject }) => {
+const Help: FC<HelpProps> = ({ helpObject }) => {
 	return (
 		<div>
 			<p>{helpObject.description}</p>

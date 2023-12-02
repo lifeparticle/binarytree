@@ -143,7 +143,7 @@ const Avatar = () => {
 
 			<Card className={style.avatar__output}>
 				{text.length > 0 ? (
-					<Space direction="vertical" align="center" size={"large"}>
+					<Space direction="vertical" align="center" size="large">
 						<AntAvatar
 							ref={domEl}
 							size={avatarSize}

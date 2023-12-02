@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { List, Typography } from "antd";
 
 const APP_VALUES = [
@@ -61,7 +61,7 @@ const APP_VALUES = [
 	</>,
 ];
 
-const Values: React.FC = () => {
+const Values: FC = () => {
 	return (
 		<List
 			header={<div>Values</div>}

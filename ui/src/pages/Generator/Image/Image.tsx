@@ -3,9 +3,9 @@ import { Card, Form, Input, Space, Tag } from "antd";
 import { saveAs } from "file-saver";
 import JSZipUtils from "jszip-utils";
 import { toPng } from "html-to-image";
-import { useRef, useState } from "react";
+import { FC, useRef, useState } from "react";
 import style from "./ImageGeneratorFromColors.module.scss";
-import useCombinedKeyPress from "hooks/useCombinedKeyPress";
+import { useCombinedKeyPress } from "hooks";
 import { extractColors } from "./utils/helper";
 import { PageGrid, InputGrid } from "components/Layouts";
 import {
@@ -16,7 +16,7 @@ import {
 
 const { TextArea } = Input;
 
-const ImageGeneratorFromColors: React.FC = () => {
+const ImageGeneratorFromColors: FC = () => {
 	const [colors, setColors] = useState<Array<string>>([]);
 	const [value, setValue] = useState("");
 	const domEl = useRef<Array<HTMLDivElement>>([]);

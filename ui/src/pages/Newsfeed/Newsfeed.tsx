@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { QUERY_KEY_NEWS, TAB_ITEMS } from "./constants";
 import { Tabs } from "antd";
 import { ListSearchResults } from "components/ComponentInjector";
@@ -6,7 +6,7 @@ import { News } from "components/InjectedComponent";
 import style from "./Newsfeed.module.scss";
 import useNewsFeed from "./useNewsFeed";
 
-const Newsfeed: React.FC = () => {
+const Newsfeed: FC = () => {
 	const { data, isLoading, isError, setUrl } = useNewsFeed();
 
 	return (

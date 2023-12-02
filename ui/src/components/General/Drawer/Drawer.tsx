@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { FC, useState } from "react";
 import { Drawer as AntDDrawer, Button, Space } from "antd";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { ResponsiveButton } from "components/General";
@@ -8,7 +8,7 @@ interface DrawerProps {
 	beamObject: BeamDetail[];
 }
 
-const Drawer: React.FC<DrawerProps> = ({ beamObject }) => {
+const Drawer: FC<DrawerProps> = ({ beamObject }) => {
 	const [open, setOpen] = useState(false);
 	const [searchParams] = useSearchParams();
 	const navigate = useNavigate();
@@ -53,12 +53,12 @@ const Drawer: React.FC<DrawerProps> = ({ beamObject }) => {
 			</Button>
 			<AntDDrawer
 				title="Tools"
-				placement={"right"}
+				placement="right"
 				width={300}
 				onClose={onClose}
 				open={open}
 			>
-				<Space direction="vertical" size={"middle"}>
+				<Space direction="vertical" size="middle">
 					{beamObject.map((beam) => (
 						<ResponsiveButton
 							key={beam.name}

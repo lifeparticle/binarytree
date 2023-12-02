@@ -6,14 +6,15 @@ import {
 	stackoverflowLight,
 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import style from "./CodeHighlightwithCopy.module.scss";
-import useMode from "hooks/useMode";
+import { useMode } from "hooks";
+import { FC } from "react";
 
 interface CodeHighlightWithCopyProps {
 	codeString: string;
 	language: string;
 }
 
-const CodeHighlightWithCopy: React.FC<CodeHighlightWithCopyProps> = ({
+const CodeHighlightWithCopy: FC<CodeHighlightWithCopyProps> = ({
 	codeString,
 	language,
 }) => {

@@ -1,9 +1,12 @@
 import { Resource } from "components/InjectedComponent";
 import { ListSearchResults } from "components/ComponentInjector";
-import useFetchList from "hooks/useFetchList";
-import { QUERY_KEY, URL } from "./utils/contants";
+import { useFetchList } from "hooks";
+import { FC } from "react";
 
-const UiUx: React.FC = () => {
+const URL = `./ui_ux.json`;
+const QUERY_KEY = "ui_ux";
+
+const UiUx: FC = () => {
 	const { data, isLoading, isError } = useFetchList(QUERY_KEY, URL);
 
 	return (

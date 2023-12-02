@@ -1,6 +1,6 @@
 import { Text } from "components/General";
 import { API_ERROR, API_NO_DATA } from "data/constants";
-import useFetchList from "hooks/useFetchList";
+import { useFetchList } from "hooks";
 import PackageList from "./components/PackageList";
 
 const PACKAGE_QUERY_KEY = "npm-packages";

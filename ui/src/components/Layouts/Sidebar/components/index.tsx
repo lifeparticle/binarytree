@@ -5,18 +5,19 @@ import MonogramLight from "assets/Sidebar/netlify-monogram-light.svg";
 import Logo from "assets/Sidebar/netlify-dark.svg";
 import { classNames } from "utils/helper-functions/string";
 import { Icon } from "components/General";
+import { FC } from "react";
 
 interface FooterProps {
-	handleThemeChange: () => void;
 	isDarkMode: boolean;
 	collapsed: boolean;
+	handleThemeChange: () => void;
 	handleMenuCollapse: () => void;
 }
 
-const Footer: React.FC<FooterProps> = ({
-	handleThemeChange,
+const Footer: FC<FooterProps> = ({
 	isDarkMode,
 	collapsed,
+	handleThemeChange,
 	handleMenuCollapse,
 }) => {
 	const {

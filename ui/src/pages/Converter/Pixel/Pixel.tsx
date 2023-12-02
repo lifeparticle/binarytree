@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { Card, Form } from "antd";
 import { CopyInput, PageGrid } from "components/Layouts";
 import { Clipboard } from "components/ComponentInjector";
 import { ResponsiveInputWithLabel } from "components/General";
 import { ClipboardButton } from "components/InjectedComponent";
 
-const Pixel: React.FC = () => {
+const Pixel: FC = () => {
 	const [pixel, setPixel] = useState(0);
 	const [rem, setRem] = useState(0);
 	const [base, setBase] = useState(16);

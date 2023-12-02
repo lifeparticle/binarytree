@@ -1,21 +1,21 @@
-import React from "react";
+import { FC } from "react";
 import Editor from "@monaco-editor/react";
-import useMode from "hooks/useMode";
+import { useMode } from "hooks";
 import { Form } from "antd";
 import style from "./CodeEditor.module.scss";
 import ValidateStatus from "./components/ValidateStatus";
 
 interface CodeEditorProps {
 	handleCode?: (code: string | undefined) => void;
-	language: string;
+	language?: string;
 	code: string;
 	label: string;
 	status?: string;
 }
 
-const CodeEditor: React.FC<CodeEditorProps> = ({
+const CodeEditor: FC<CodeEditorProps> = ({
 	handleCode,
-	language,
+	language = "javascript",
 	code,
 	label,
 	status,
@@ -26,8 +26,8 @@ const CodeEditor: React.FC<CodeEditorProps> = ({
 			<Form.Item label={label}>
 				<Editor
 					value={code}
-					height={"50vh"}
-					language={language || "javascript"}
+					height="50dvh"
+					language={language}
 					onChange={handleCode}
 					theme={isDarkMode ? "vs-dark" : "light"}
 				/>

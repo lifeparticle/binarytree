@@ -1,6 +1,7 @@
 import { Typography } from "antd";
 import style from "./text.module.scss";
 import { useLocation } from "react-router-dom";
+import { FC } from "react";
 const { Title } = Typography;
 
 interface TextProps {
@@ -9,7 +10,7 @@ interface TextProps {
 }
 const LIST_PAGE_COMMON_PATH = "list";
 
-const Text: React.FC<TextProps> = ({ text, level = 4 }) => {
+const Text: FC<TextProps> = ({ text, level = 4 }) => {
 	const location = useLocation();
 
 	return (

@@ -1,5 +1,5 @@
 import { Segmented } from "antd";
-import React from "react";
+import { FC } from "react";
 import { withLabelSize } from "components/Hoc";
 
 interface Option {
@@ -14,7 +14,7 @@ interface SegmentComponentProps {
 	options: Option[];
 }
 
-const ResponsiveSegment: React.FC<SegmentComponentProps> = (props) => {
+const ResponsiveSegment: FC<SegmentComponentProps> = (props) => {
 	return <Segmented {...props} />;
 };
 

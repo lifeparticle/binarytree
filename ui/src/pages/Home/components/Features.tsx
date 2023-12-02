@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { Card, Space, Typography, Image } from "antd";
 import { FEATURES } from "pages/Home/utils/constants";
 import style from "pages/Home/Home.module.scss";
@@ -8,7 +8,7 @@ import { Icon } from "components/General";
 
 const { Text } = Typography;
 
-const Features: React.FC = () => {
+const Features: FC = () => {
 	return (
 		<div className={style.home__features}>
 			<div className={style.home__features_cover}>
@@ -23,7 +23,7 @@ const Features: React.FC = () => {
 					src={features}
 					alt="BinaryTree: Developer Productivity Tools"
 					preview={false}
-					height={"40vh"}
+					height="40vh"
 				/>
 			</div>
 			<div className={style.home__features_cards}>

@@ -1,5 +1,5 @@
 import { Input, InputNumber } from "antd";
-import React, { ReactNode } from "react";
+import React, { FC, ReactNode } from "react";
 import { withLabelSize } from "components/Hoc";
 
 type NumberType = {
@@ -27,7 +27,7 @@ type InputComponentProps = {
 	style?: React.CSSProperties;
 } & (NumberType | TextType);
 
-const ResponsiveInput: React.FC<InputComponentProps> = (props) => {
+const ResponsiveInput: FC<InputComponentProps> = (props) => {
 	return props.type === "number" ? (
 		<InputNumber style={{ width: "100%" }} {...props} />
 	) : (

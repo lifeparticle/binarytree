@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { PageGrid } from "components/Layouts";
 import { DataDetection } from "utils/helper-classes/DataDetection";
 import UserInputs from "./components/UserInputs";
@@ -7,7 +7,7 @@ import { downloadQRCode } from "./helper";
 
 const detection = new DataDetection(new Set(["number", "string", "url"]));
 
-const QRcode: React.FC = () => {
+const QRcode: FC = () => {
 	const [value, setValue] = useState("");
 	const [dataType, setDataType] = useState("");
 	const [color, setColor] = useState("#000000");

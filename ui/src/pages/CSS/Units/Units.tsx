@@ -1,6 +1,6 @@
-import React from "react";
+import { FC } from "react";
 
-const Units: React.FC = () => {
+const Units: FC = () => {
 	return <div></div>;
 };
 
