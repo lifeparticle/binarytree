@@ -1,9 +1,9 @@
 import { useSearchParams } from "react-router-dom";
-import { useState, useEffect, ChangeEvent } from "react";
+import { useState, useEffect, ChangeEvent, FC } from "react";
 import { ResponsiveInputWithLabel } from "components/General";
 import { Form } from "antd";
 
-const MimeSearch: React.FC = () => {
+const MimeSearch: FC = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const [queryParams, setQueryParams] = useState({
 		q: searchParams.get("type") || "",

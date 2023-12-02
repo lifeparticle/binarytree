@@ -1,10 +1,10 @@
-import React, { useMemo } from "react";
+import React, { FC, useMemo } from "react";
 
 interface SVGRendererProps {
 	svgString: string;
 }
 
-const SVGRenderer: React.FC<SVGRendererProps> = ({ svgString }) => {
+const SVGRenderer: FC<SVGRendererProps> = ({ svgString }) => {
 	const svgJSX = useMemo(() => {
 		const parser = new DOMParser();
 		const svgDoc = parser.parseFromString(svgString, "image/svg+xml");

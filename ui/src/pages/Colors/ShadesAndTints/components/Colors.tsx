@@ -3,6 +3,7 @@ import { getTextColor } from "utils/helper-functions/color";
 import { Clipboard } from "components/ComponentInjector";
 import { ClipboardButton } from "components/InjectedComponent";
 import styles from "pages/Colors/ShadesAndTints/ShadesAndTints.module.scss";
+import { FC } from "react";
 
 interface ColorsProps {
 	colors: string[];
@@ -13,7 +14,7 @@ interface ExtendedColorsProps extends ColorsProps {
 	type: string;
 }
 
-const Colors: React.FC<ExtendedColorsProps> = ({ colors, isPending, type }) => {
+const Colors: FC<ExtendedColorsProps> = ({ colors, isPending, type }) => {
 	if (colors.length === 0) return null;
 
 	const cardTitle = (

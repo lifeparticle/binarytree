@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getData } from "api/API";
 import { DEFAULT_RECORD, parsedMarkdown } from "components/General";
 
-const useGetNotifications = (key: string, url: string) => {
+export default function useGetNotifications(key: string, url: string) {
 	const {
 		data: notifications,
 		isLoading,
@@ -24,6 +24,4 @@ const useGetNotifications = (key: string, url: string) => {
 		isLoading,
 		isError,
 	};
-};
-
-export default useGetNotifications;
+}

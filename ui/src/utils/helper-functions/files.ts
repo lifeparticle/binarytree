@@ -1,15 +1,19 @@
 import { saveAs } from "file-saver";
 import { marked } from "marked";
 
-const downloadFile = (fileContent: string, fileName: string, type: string) => {
+export function downloadFile(
+	fileContent: string,
+	fileName: string,
+	type: string
+) {
 	saveAs(
 		new File([fileContent], fileName, {
 			type: type,
 		})
 	);
-};
+}
 
-const downloadPDFFile = async (fileContent: string, fileName: string) => {
+export async function downloadPDFFile(fileContent: string, fileName: string) {
 	const renderer = new marked.Renderer();
 	const content = marked(fileContent, { renderer });
 
@@ -19,16 +23,16 @@ const downloadPDFFile = async (fileContent: string, fileName: string) => {
 
 	document.body.appendChild(a);
 	a.click();
-};
+}
 
-const downloadTextFile = (fileContent: string, fileName: string) => {
+export function downloadTextFile(fileContent: string, fileName: string) {
 	downloadFile(fileContent, fileName, "text/plain;charset=utf-8");
-};
+}
 
-const handleImageUpload = (
+export function handleImageUpload(
 	file: File,
 	callback: (base64: string) => void
-): void => {
+): void {
 	const reader = new FileReader();
 	reader.onload = (e) => {
 		const imageSrc = e.target?.result;
@@ -37,29 +41,20 @@ const handleImageUpload = (
 		}
 	};
 	reader.readAsDataURL(file);
-};
+}
 
-const getFileExtension = (fileName: string) => {
+export function getFileExtension(fileName: string) {
 	const ext = fileName.split(".").pop();
 	if (ext) {
 		return ext;
 	}
 	return "";
-};
+}
 
-const removeFileExtension = (fileName: string) => {
+export const removeFileExtension = (fileName: string) => {
 	const ext = getFileExtension(fileName);
 	if (ext) {
 		return fileName.replace(`.${ext}`, "");
 	}
 	return fileName;
-};
-
-export {
-	downloadFile,
-	downloadPDFFile,
-	downloadTextFile,
-	handleImageUpload,
-	getFileExtension,
-	removeFileExtension,
 };

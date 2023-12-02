@@ -1,10 +1,8 @@
 import { useCallback, useEffect } from "react";
 import useUserAgent from "./useUserAgent";
 
-type CallBackFunction = () => void;
-
-function useCombinedKeyPress(
-	callback: CallBackFunction,
+export default function useCombinedKeyPress(
+	callback: () => void,
 	targetKey: string
 ): void {
 	const platform = useUserAgent();
@@ -31,5 +29,3 @@ function useCombinedKeyPress(
 		};
 	}, [handleKeyDown]);
 }
-
-export default useCombinedKeyPress;

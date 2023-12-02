@@ -2,6 +2,7 @@ import style from "components/General/Notification/Notification.module.scss";
 import { Button, Skeleton, Typography, Tag, Dropdown } from "antd";
 import { Icon, Markdown } from "components/General";
 import { classNames } from "utils/helper-functions/string";
+import { FC } from "react";
 const { Title } = Typography;
 
 interface NotificationListProps {
@@ -12,7 +13,7 @@ interface NotificationListProps {
 	handleRedFlagNotification: () => void;
 }
 
-const NotificationList: React.FC<NotificationListProps> = ({
+const NotificationList: FC<NotificationListProps> = ({
 	notifications,
 	isLoading,
 	isError,
@@ -43,8 +44,7 @@ const NotificationList: React.FC<NotificationListProps> = ({
 			];
 		}
 
-		if (notifications && notifications.length === 0) {
-			// Render a message when there are no notifications
+		if (notifications?.length === 0) {
 			return [
 				{
 					key: 1,
@@ -57,7 +57,6 @@ const NotificationList: React.FC<NotificationListProps> = ({
 			];
 		}
 
-		// Render the notification items
 		return notifications
 			?.map((notification, index) => [
 				{

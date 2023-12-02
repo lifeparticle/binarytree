@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { Row } from "antd";
 import style from "pages/Information/Npmpackages/Npmpackages.module.scss";
 import Package from "./Package";
@@ -10,7 +10,7 @@ interface PackageListProps {
 	isLoading: boolean;
 }
 
-const PackageList: React.FC<PackageListProps> = ({ packages, isLoading }) => {
+const PackageList: FC<PackageListProps> = ({ packages, isLoading }) => {
 	const LoadingComponent = [...Array(4).keys()].map((x) => (
 		<PackageSkeleton key={x} />
 	));

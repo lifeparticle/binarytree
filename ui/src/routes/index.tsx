@@ -1,10 +1,10 @@
-import { Suspense } from "react";
+import { FC, Suspense } from "react";
 import { Route, Routes as RRDRoutes } from "react-router-dom";
 import { routes } from "data/routeData";
 import { Spin } from "components/General";
 import withPageTitle from "./withPageTitle";
 
-const Routes: React.FC = () => {
+const Routes: FC = () => {
 	return (
 		<Suspense fallback={<Spin />}>
 			<RRDRoutes>

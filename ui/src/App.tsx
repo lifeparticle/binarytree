@@ -3,12 +3,13 @@ import { ErrorBoundary } from "react-error-boundary";
 import RoutesWithPageTitle from "routes";
 import { Sidebar, FloatingBar } from "components/Layouts";
 import CookieConsent from "pages/Footer/CookieConsent";
-import useTheme from "hooks/useTheme";
+import { useTheme } from "hooks";
 import { PopupSearch } from "components/General";
+import { FC } from "react";
 
 const { Content } = Layout;
 
-const App: React.FC = () => {
+const App: FC = () => {
 	const theme = useTheme();
 
 	return (
