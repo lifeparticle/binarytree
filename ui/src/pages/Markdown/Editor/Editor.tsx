@@ -4,12 +4,11 @@ import {
 	downloadTextFile,
 } from "utils/helper-functions/files";
 import { FC, useState } from "react";
-import { useCombinedKeyPress } from "hooks";
+import { useCombinedKeyPress, useMode } from "hooks";
 import style from "./MarkdownEditor.module.scss";
 import MDEditor from "@uiw/react-md-editor";
 import { Clipboard } from "components/ComponentInjector";
 import { ResponsiveButton } from "components/General";
-import { useMode } from "hooks";
 import { ClipboardButton } from "components/InjectedComponent";
 
 const MarkdownEditor: FC = () => {

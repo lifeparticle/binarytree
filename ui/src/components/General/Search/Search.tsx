@@ -5,7 +5,6 @@ import { ChangeEvent, FC } from "react";
 
 interface SearchProps {
 	categories: string[];
-	resourceName: string;
 	isLoading: boolean;
 	searchQuery: string;
 	categoryQuery: string;
