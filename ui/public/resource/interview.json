@@ -19,5 +19,11 @@
 		"subCategory": [],
 		"url": "https://www.geeksforgeeks.org/",
 		"socials": []
+	},
+	{
+		"name": "CodeWars",
+		"category": "Online Learning Platform",
+		"subCategory": "IT courses",
+		"url": "https://www.codewars.com/"
 	}
 ]
