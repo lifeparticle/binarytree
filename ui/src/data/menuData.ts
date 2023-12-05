@@ -229,7 +229,7 @@ export const MENU_ITEMS = [
 	{
 		name: "Networking",
 		icon: "Globe",
-		show: true,
+		show: IN_DEVELOPMENT,
 		children: [
 			{
 				name: routesById.ipsubnet.title,
