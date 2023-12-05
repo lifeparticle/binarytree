@@ -1,7 +1,7 @@
 import Values from "values.js";
 import { SelectOption } from "./types";
 
-const formatShades = (shades: string[], option: SelectOption) => {
+export const formatShades = (shades: string[], option: SelectOption) => {
 	if (option.func) {
 		return option.func(shades);
 	}
@@ -9,7 +9,7 @@ const formatShades = (shades: string[], option: SelectOption) => {
 	return shades.join(option.value);
 };
 
-const generateShadesForColor = (
+export const generateShadesForColor = (
 	selectedColor: string,
 	count: number
 ): { shades: string[]; tints: string[] } => {
@@ -30,7 +30,7 @@ const generateShadesForColor = (
 	}
 };
 
-const generateRandomColor = () => {
+export const generateRandomColor = () => {
 	const letters = "0123456789ABCDEF";
 	let color = "#";
 	for (let i = 0; i < 6; i++) {
@@ -38,5 +38,3 @@ const generateRandomColor = () => {
 	}
 	return color;
 };
-
-export { formatShades, generateShadesForColor, generateRandomColor };

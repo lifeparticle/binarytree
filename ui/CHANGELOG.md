@@ -1,3 +1,7 @@
+### [9.0.2] - 2023-12-06
+
+-   Start refactoring Pages/Colors
+
 ### [9.0.1] - 2023-12-05
 
 -   Added new resources
