@@ -2,7 +2,7 @@ import { EXTENDED_DATA_OPTIONS } from "./constants";
 import tinycolor from "tinycolor2";
 import { FormatType, colors } from "./types";
 
-const calculateColors = (color: string) => {
+export const calculateColors = (color: string) => {
 	const tc = tinycolor(color);
 	const { r, g, b, a } = tc.toRgb();
 	const hsl = tc.toHsl();
@@ -22,7 +22,7 @@ const calculateColors = (color: string) => {
 	};
 };
 
-const determineFormat = (input: string): FormatType => {
+export const determineFormat = (input: string): FormatType => {
 	const formats: Record<string, FormatType> = {
 		"#": "hex",
 		rgba: "rgba",
@@ -36,7 +36,7 @@ const determineFormat = (input: string): FormatType => {
 	return "hex";
 };
 
-const determineLabel = (
+export const determineLabel = (
 	optionValue: string,
 	optionLabel: string,
 	displayType: string
@@ -51,7 +51,7 @@ const determineLabel = (
 	}
 };
 
-const determineValue = (
+export const determineValue = (
 	optionValue: string,
 	displayType: string,
 	colors: colors
@@ -61,7 +61,7 @@ const determineValue = (
 		: colors[optionValue];
 };
 
-const generateClipboardText = (displayType: string, colors: colors) => {
+export const generateClipboardText = (displayType: string, colors: colors) => {
 	switch (displayType) {
 		case "variables":
 			return EXTENDED_DATA_OPTIONS.map(
@@ -76,12 +76,4 @@ const generateClipboardText = (displayType: string, colors: colors) => {
 		default:
 			return Object.values(colors).join("\n");
 	}
-};
-
-export {
-	calculateColors,
-	determineFormat,
-	determineLabel,
-	determineValue,
-	generateClipboardText,
 };

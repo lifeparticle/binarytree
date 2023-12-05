@@ -1,15 +1,11 @@
 import { useState, useEffect, useTransition, FC } from "react";
 import styles from "./ShadesAndTints.module.scss";
 import { useCombinedKeyPress, useDebounce, useParamsValue } from "hooks";
-import {
-	DEFAULT_COLOR,
-	DEFAULT_NUM_SHADES,
-	OUTPUT_FORMAT,
-} from "./utils/constants";
-import { generateShadesForColor } from "./utils/helper";
+import { DEFAULT_COLOR, DEFAULT_NUM_SHADES, OUTPUT_FORMAT } from "./constants";
+import { generateShadesForColor } from "./helper";
 import { PageGrid } from "components/Layouts";
 import Colors from "./components/Colors";
-import ColorInputs from "./components/ColorInputs";
+import UserInputs from "./components/UserInputs";
 import { PARAMS } from "data/paramsData";
 
 interface SelectOption {
@@ -66,7 +62,7 @@ const ShadesAndTints: FC = () => {
 
 	return (
 		<div className={styles.st}>
-			<ColorInputs
+			<UserInputs
 				color={color}
 				handleColorChange={(e) => setColor(e.target.value)}
 				handlePercentageChange={(num) =>

@@ -3,13 +3,13 @@ import {
 	MIN_SHADES,
 	OUTPUT_FORMAT,
 	SEGMENTED_OPTIONS,
-} from "pages/Colors/ShadesAndTints/utils/constants";
+} from "pages/Colors/ShadesAndTints/constants";
 import { Card, Form, Space } from "antd";
 import { Clipboard } from "components/ComponentInjector";
 import {
 	formatShades,
 	generateRandomColor,
-} from "pages/Colors/ShadesAndTints/utils/helper";
+} from "pages/Colors/ShadesAndTints/helper";
 import { useEffect, useState, ChangeEvent, FC } from "react";
 import {
 	ColorPickerWithInput,
@@ -19,10 +19,10 @@ import {
 	ResponsiveSegementWithLabel,
 	ResponsiveSelectWithLabel,
 } from "components/General";
-import { SelectOption } from "pages/Colors/ShadesAndTints/utils/types";
+import { SelectOption } from "pages/Colors/ShadesAndTints/types";
 import { ClipboardButton } from "components/InjectedComponent";
 
-interface ColorInputsProps {
+interface UserInputsProps {
 	color: string;
 	handleColorChange: (event: ChangeEvent<HTMLInputElement>) => void;
 	handlePercentageChange: (value: number | null) => void;
@@ -34,7 +34,7 @@ interface ColorInputsProps {
 	tints: string[];
 }
 
-const ColorInputs: FC<ColorInputsProps> = ({
+const UserInputs: FC<UserInputsProps> = ({
 	color,
 	handleColorChange,
 	handlePercentageChange,
@@ -121,4 +121,4 @@ const ColorInputs: FC<ColorInputsProps> = ({
 	);
 };
 
-export default ColorInputs;
+export default UserInputs;

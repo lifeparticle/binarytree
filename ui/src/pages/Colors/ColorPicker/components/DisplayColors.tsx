@@ -1,5 +1,5 @@
 import { Card, Space } from "antd";
-import { EXTENDED_DATA_OPTIONS } from "pages/Colors/ColorPicker/utils/constants";
+import { EXTENDED_DATA_OPTIONS } from "pages/Colors/ColorPicker/constants";
 import DisplayColor from "pages/Colors/ColorPicker/components/DisplayColor";
 import { Clipboard } from "components/ComponentInjector";
 import { ClipboardButton } from "components/InjectedComponent";
@@ -8,8 +8,8 @@ import {
 	determineLabel,
 	determineValue,
 	generateClipboardText,
-} from "pages/Colors/ColorPicker/utils/helper";
-import { colors } from "pages/Colors/ColorPicker/utils/types";
+} from "pages/Colors/ColorPicker/helper";
+import { colors } from "pages/Colors/ColorPicker/types";
 import { FC } from "react";
 
 interface DisplayColorsProps {
