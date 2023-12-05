@@ -117,5 +117,12 @@
 		"subCategory": ["Database"],
 		"url": "https://upstash.com/",
 		"socials": []
+	},
+	{
+		"name": "Pipedream",
+		"category": "Automation",
+		"subCategory": ["Automation"],
+		"url": "https://pipedream.com/",
+		"socials": []
 	}
 ]

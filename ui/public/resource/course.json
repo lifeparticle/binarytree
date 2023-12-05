@@ -80,5 +80,41 @@
 		"category": "Professional Development",
 		"subCategory": "IT courses",
 		"url": "https://www.linkedin.com/learning/"
+	},
+	{
+		"name": "Coursera",
+		"category": "Online University Courses",
+		"subCategory": "IT courses",
+		"url": "https://www.coursera.org/"
+	},
+	{
+		"name": "Udacity",
+		"category": "Online University Courses",
+		"subCategory": "IT courses",
+		"url": "https://www.udacity.com/"
+	},
+	{
+		"name": "Codecademy",
+		"category": "Online Learning Platform",
+		"subCategory": "IT courses",
+		"url": "https://www.codecademy.com/"
+	},
+	{
+		"name": "Thinkful",
+		"category": "Online Learning Platform",
+		"subCategory": "IT courses",
+		"url": "https://www.thinkful.com/"
+	},
+	{
+		"name": "Pluralsight",
+		"category": "Online Learning Platform",
+		"subCategory": "IT courses",
+		"url": "https://www.pluralsight.com/"
+	},
+	{
+		"name": "FreeCodeCamp",
+		"category": "Online Learning Platform",
+		"subCategory": "IT courses",
+		"url": "https://www.freecodecamp.org/"
 	}
 ]

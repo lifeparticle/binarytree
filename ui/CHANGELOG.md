@@ -1,3 +1,7 @@
+### [9.0.1] - 2023-12-05
+
+-   Added new resources
+
 ### [9.0.0] - 2023-12-01
 
 -   Fix imports and exports
