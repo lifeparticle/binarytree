@@ -1,0 +1,15 @@
+[
+	{
+		"name": "Deeplearning.AI",
+		"category": "Education",
+		"subCategory": "Online Courses",
+		"url": "https://www.deeplearning.ai/",
+		"socials": []
+	},
+	{
+		"name": "Hugging Face",
+		"category": "AI",
+		"subCategory": "NLP",
+		"url": "https://huggingface.co/"
+	}
+]

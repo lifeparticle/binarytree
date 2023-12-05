@@ -1,5 +1,6 @@
 import {
 	About,
+	Ai,
 	Avatar,
 	Base64,
 	Blog,
@@ -25,6 +26,7 @@ import {
 	Icon,
 	ImageGeneratorFromColors,
 	Interview,
+	IPSubnet,
 	JsonToTypescript,
 	Mimetype,
 	Movie,
@@ -54,6 +56,7 @@ import { FC } from "react";
 export type RouteId =
 	| "/"
 	| "about"
+	| "ai"
 	| "avatar"
 	| "base64"
 	| "blog"
@@ -79,6 +82,7 @@ export type RouteId =
 	| "icon"
 	| "imagegeneratorfromcolors"
 	| "interview"
+	| "ipsubnet"
 	| "jsontotypescript"
 	| "mimetype"
 	| "movie"
@@ -239,6 +243,13 @@ export const routes: Route[] = [
 		title: "Sorting",
 		description: "Sort arrays like a boss.",
 		component: Sorting,
+	},
+	{
+		id: "ai",
+		path: "/resource/ai",
+		title: "AI",
+		description: "AI resources to make your projects smarter.",
+		component: Ai,
 	},
 	{
 		id: "blog",
@@ -412,6 +423,13 @@ export const routes: Route[] = [
 		description:
 			"CSV to Github issues? It's not magic, it's just wickedly smart",
 		component: GithubIsuue,
+	},
+	{
+		id: "ipsubnet",
+		path: "/networking/ip-subnet",
+		title: "IP Subnet",
+		description: "IP subnetting made easy.",
+		component: IPSubnet,
 	},
 	{
 		id: "/",
