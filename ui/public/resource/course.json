@@ -7,51 +7,6 @@
 		"socials": []
 	},
 	{
-		"name": "Epic React",
-		"category": "React",
-		"subCategory": "React",
-		"url": "https://epicreact.dev/",
-		"socials": []
-	},
-	{
-		"name": "The Joy of React",
-		"category": "React",
-		"subCategory": "React",
-		"url": "https://www.joyofreact.com/",
-		"socials": []
-	},
-	{
-		"name": "REACT.gg",
-		"category": "React",
-		"subCategory": "React",
-		"url": "https://react.gg/",
-		"socials": []
-	},
-	{
-		"name": "useEffect",
-		"category": "React",
-		"subCategory": "React",
-		"url": "https://useeffect.dev/"
-	},
-	{
-		"name": "Hackerrank",
-		"category": "Interview Preparation",
-		"subCategory": "Interview",
-		"url": "https://www.hackerrank.com/"
-	},
-	{
-		"name": "LeetCode",
-		"category": "Interview Preparation",
-		"subCategory": "Interview",
-		"url": "https://leetcode.com/"
-	},
-	{
-		"name": "Algoexpert",
-		"category": "Interview Preparation",
-		"subCategory": "Interview",
-		"url": "https://www.algoexpert.io/product"
-	},
-	{
 		"name": "Edx",
 		"category": "Online University Courses",
 		"subCategory": "CSE/CS courses",
@@ -116,5 +71,32 @@
 		"category": "Online Learning Platform",
 		"subCategory": "IT courses",
 		"url": "https://www.freecodecamp.org/"
+	},
+	{
+		"name": "Epic React",
+		"category": "React",
+		"subCategory": "React",
+		"url": "https://epicreact.dev/",
+		"socials": []
+	},
+	{
+		"name": "The Joy of React",
+		"category": "React",
+		"subCategory": "React",
+		"url": "https://www.joyofreact.com/",
+		"socials": []
+	},
+	{
+		"name": "REACT.gg",
+		"category": "React",
+		"subCategory": "React",
+		"url": "https://react.gg/",
+		"socials": []
+	},
+	{
+		"name": "useEffect",
+		"category": "React",
+		"subCategory": "React",
+		"url": "https://useeffect.dev/"
 	}
 ]

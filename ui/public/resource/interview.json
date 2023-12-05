@@ -25,5 +25,11 @@
 		"category": "Online Learning Platform",
 		"subCategory": "IT courses",
 		"url": "https://www.codewars.com/"
+	},
+	{
+		"name": "Algoexpert",
+		"category": "Interview Preparation",
+		"subCategory": "Interview",
+		"url": "https://www.algoexpert.io/product"
 	}
 ]
