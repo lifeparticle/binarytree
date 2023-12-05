@@ -227,6 +227,19 @@ export const MENU_ITEMS = [
 		],
 	},
 	{
+		name: "Networking",
+		icon: "Globe",
+		show: true,
+		children: [
+			{
+				name: routesById.ipsubnet.title,
+				url: routesById.ipsubnet.path,
+				icon: "GlobeAlt",
+				show: IN_DEVELOPMENT,
+			},
+		],
+	},
+	{
 		name: "Information",
 		icon: "BadgeInfo",
 		show: true,
@@ -250,6 +263,12 @@ export const MENU_ITEMS = [
 		icon: "List",
 		show: true,
 		children: [
+			{
+				name: routesById.ai.title,
+				url: routesById.ai.path,
+				icon: "Brain",
+				show: true,
+			},
 			{
 				name: routesById.blog.title,
 				url: routesById.blog.path,

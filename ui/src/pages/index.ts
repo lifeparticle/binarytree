@@ -28,6 +28,7 @@ const DataGenerator = lazy(() => import("pages/Generator/Data"));
 const ImageGeneratorFromColors = lazy(() => import("pages/Generator/Image"));
 const QRcode = lazy(() => import("pages/Generator/QRcode"));
 
+const Ai = lazy(() => import("pages/Resource/Ai"));
 const Blog = lazy(() => import("pages/Resource/Blog"));
 const Book = lazy(() => import("pages/Resource/Book"));
 const Course = lazy(() => import("pages/Resource/Course"));
@@ -60,8 +61,11 @@ const Npmpackages = lazy(() => import("pages/Information/Npmpackages"));
 
 const GithubIsuue = lazy(() => import("pages/Automation/GithubIssue"));
 
+const IPSubnet = lazy(() => import("pages/Networking/IPSubnet"));
+
 export {
 	About,
+	Ai,
 	Avatar,
 	Base64,
 	Blog,
@@ -87,6 +91,7 @@ export {
 	Icon,
 	ImageGeneratorFromColors,
 	Interview,
+	IPSubnet,
 	JsonToTypescript,
 	Mimetype,
 	Movie,
