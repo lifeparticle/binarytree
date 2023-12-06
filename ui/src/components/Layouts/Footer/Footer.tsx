@@ -110,6 +110,15 @@ const Footer: FC = () => {
 					<li>
 						<Link to="/feedback">Feedback</Link>{" "}
 					</li>
+					<li>
+						<a
+							href="https://github.com/sponsors/lifeparticle"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Support
+						</a>
+					</li>
 				</ul>
 			</Space>
 
