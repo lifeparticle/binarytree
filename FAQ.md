@@ -8,26 +8,41 @@
 | New features or feature changes     | Minor Version  |
 | Bug fixes (backwards compatible)    | Patch Version  |
 
-## 2: How to structure folders and files?
+## 2. Folder and File Naming Conventions for Pages
 
-**A:** When structuring folders and files, it's important to ensure they are organized in a way that makes sense for the project. This can help improve efficiency and maintainability. Here is a proposed structure that offers clear organization for pages, components, and utilities, facilitating seamless navigation within the project.
+When structuring folders and files, it's important to ensure they are organized in a way that makes sense for the project. This can help improve efficiency and maintainability. Here is a proposed structure that offers clear organization for pages, components, and utilities, facilitating seamless navigation within the project. 
 
-```shell
+- Use PascalCase for component files and folders (e.g., `Button.jsx`).
+
+```
 PageName/
-|
-|-- index.tsx
-|-- PageName.scss <- CompA.scss + CompB.scss + .......
-|-- CompA.tsx
-|-- CompA.scss
-|-- compAData.ts
-|-- types.ts
-|-- useHookName.ts
+├── index.tsx
+├── PageName.tsx
+├── PageName.module.scss # Combines styles for PageName, CompA, and CompB
+├── components/
+│   ├── CompA/
+│   │   ├── CompA.tsx
+│   └── CompB/
+│       ├── CompB.tsx
+├── useHookName.ts # Put this inside a hooks folder if you have more than one hooks
+├── someData.ts
+└── __tests__/
+    └── PageName.test.tsx
 ```
 
-Let's break this down:
+**`PageName/`**: Root directory for a specific page in the React application.
+  - **`index.tsx`**: Entry file for the `PageName` directory, typically used to export the main page component.
+  - **`PageName.tsx`**: The main React component file for the page, containing JSX and logic for `PageName`.
+  - **`PageName.module.scss`**: SCSS module with styles for `PageName` and its child components.
+  - **`components/`**: Subdirectory for components part of or used by `PageName`.
+    - **`CompA/`**: 
+      - **`CompA.tsx`**: React component file for `CompA`.
+    - **`CompB/`**: 
+      - **`CompB.tsx`**: React component file for `CompB`.
+  - **`hooks/`**: Directory for custom hooks relevant to `PageName` or its components.
+    - **`useHookName.ts`**: Custom hook file.
+  - **`someData.ts`**: File holding specific data relevant to `PageName`.
+  - **`__tests__/`**: Directory for test files related to `PageName`.
+    - **`PageName.test.tsx`**: Test file for the `PageName` component.
 
-PageName/: This is the root directory for a specific page in the application.
-
-`index.tsx`: This is the main TypeScript file for the page.
-`PageName.scss`s: This contains the styles for the page and other related components.
-`CompA.tsx`: This is the main TypeScript file for the 'CompA' component.
+Adopting consistent naming conventions helps in understanding and navigating the codebase. 
