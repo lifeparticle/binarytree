@@ -23,9 +23,9 @@ const List = <T,>({
 
 	return (
 		<>
-			{items?.map((item, i) => (
+			{items?.map((item) => (
 				<ItemComponent
-					key={i}
+					key={crypto.randomUUID()}
 					resource={item}
 					handleOnClick={handleOnClick}
 					isLoading={isLoading}
