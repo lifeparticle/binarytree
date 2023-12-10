@@ -1,5 +1,5 @@
 export function generateBuilderMethods(classDefinition: string): string {
-	const classNameMatch = classDefinition.match(/class (\w+)/);
+	const classNameMatch = /class (\w+)/.exec(classDefinition);
 	if (!classNameMatch) {
 		throw new Error("Class name not found");
 	}
