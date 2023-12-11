@@ -53,11 +53,11 @@ export const updateHeader = (prevTable: string, colNum: number) => {
 
 	const isColNumInc = prevColNum < colNum;
 
-	let tableHeader = isColNumInc
+	const tableHeader = isColNumInc
 		? `${lines[0]}${generateRow(colNum - prevColNum, FILL_SPACE, true)}`
 		: getPartialString(lines[0], getUpdatedColNum(prevColNum, colNum));
 
-	let tableHeaderDivider = isColNumInc
+	const tableHeaderDivider = isColNumInc
 		? generateRow(colNum, FILL_HYPHEN)
 		: getPartialString(lines[1], getUpdatedColNum(prevColNum, colNum));
 
