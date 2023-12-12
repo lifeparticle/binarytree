@@ -1,4 +1,4 @@
-$te-footer-color: rgba(34, 47, 62, 0.7);
+$te-footer-color: rgb(34 47 62 / 0.7);
 $te-border-color: #eee;
 
 .te {
@@ -9,8 +9,8 @@ $te-border-color: #eee;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		background-color: white;
 		padding: var(--bt-size-5);
+		background-color: white; /* I like to keep layout vs colours etc. separated */
 		color: $te-footer-color;
 		border-radius: var(--bt-size-0) var(--bt-size-0) var(--bt-size-10)
 			var(--bt-size-10);
@@ -27,7 +27,7 @@ $te-border-color: #eee;
 
 	@media (max-width: 768px) {
 		&__footer span {
-			flex-basis: calc(33.333% - 10px);
+			flex-basis: calc(33.333% - 10px); /* Avoid hacks */
 			margin-bottom: var(--bt-size-5);
 			text-align: center;
 		}

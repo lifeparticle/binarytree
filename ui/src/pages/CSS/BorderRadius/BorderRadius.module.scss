@@ -10,9 +10,8 @@ $br-dvh-25: 25dvh;
 	}
 
 	&__output {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		display: grid;
+		place-content: center;
 
 		&_container {
 			display: flex;
@@ -21,11 +20,10 @@ $br-dvh-25: 25dvh;
 
 			&_text {
 				aspect-ratio: var(--bt-number-1) / var(--bt-number-1);
-				display: flex;
-				align-items: center;
-				justify-content: center;
 				height: $br-dvh-25;
 				overflow: hidden;
+				display: grid;
+				place-content: center;
 			}
 		}
 	}

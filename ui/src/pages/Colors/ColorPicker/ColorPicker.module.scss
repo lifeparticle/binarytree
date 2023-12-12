@@ -1,4 +1,3 @@
-$cp-size-435: 435px;
 $cp-size-380: 380px;
 $cp-size-360: 360px;
 $cp-size-minus-10: -10px;
@@ -12,10 +11,8 @@ $cp-size-minus-10: -10px;
 	justify-content: center;
 
 	&__inputs {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+		display: grid;
+		place-content: center;
 	}
 
 	&__result {
@@ -31,9 +28,8 @@ $cp-size-minus-10: -10px;
 		}
 
 		&__button {
-			display: flex;
-			align-items: center;
-			justify-content: center;
+			display: grid;
+			place-content: center;
 		}
 	}
 
@@ -57,13 +53,13 @@ $cp-size-minus-10: -10px;
 	transition: var(--bt-transition-item);
 	border-radius: var(--bt-size-10);
 	&__container {
-		display: flex;
-		gap: var(--bt-size-16);
-		align-items: center;
-		justify-content: space-between;
+		padding: var(--bt-size-11);
 		transition: var(--animation-fade-in);
 		border-radius: var(--bt-border-radius-4);
-		padding: var(--bt-size-11);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--bt-size-16);
 
 		&_checkered {
 			background-image: linear-gradient(
@@ -71,9 +67,9 @@ $cp-size-minus-10: -10px;
 					rgba(0, 0, 0, 0.6) 25%,
 					transparent 25%
 				),
-				linear-gradient(-45deg, rgba(0, 0, 0, 0.6) 25%, transparent 25%),
-				linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.6) 75%),
-				linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.6) 70%);
+				linear-gradient(-45deg, rgb(0 0 0 / 0.6) 25%, transparent 25%),
+				linear-gradient(45deg, transparent 75%, rgb(0 0 0 / 0.6) 75%),
+				linear-gradient(-45deg, transparent 75%, rgb(0 0 0 / 0.6) 70%);
 			background-size: var(--bt-size-20) var(--bt-size-20);
 			background-position: 0 0, 0 var(--bt-size-10),
 				var(--bt-size-10) $cp-size-minus-10,

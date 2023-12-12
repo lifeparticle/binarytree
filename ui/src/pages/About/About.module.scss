@@ -12,10 +12,11 @@
 		&__intro {
 			p {
 				text-align: right;
-				font-size: 14px;
+				font-size: 0.875rem; /* 14 divided by 16 (16 is default font size)
+				When users increase their font size this respects that setting by using rem */
 				background: linear-gradient(
 					to bottom,
-					rgba(44, 44, 44, 0.802) 50%,
+					rgb(44 44 44 / 0.802) 50%,
 					transparent 50%
 				);
 				padding: var(--bt-size-10);
@@ -30,7 +31,7 @@
 		}
 
 		&_cover {
-			background: url("../../assets/About/cover.webp") no-repeat left /
+			background: url('../../assets/About/cover.webp') no-repeat left /
 				cover;
 		}
 	}

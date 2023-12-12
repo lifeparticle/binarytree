@@ -1,29 +1,25 @@
-$feedback-size-1400: 1400px;
-$feedback-size-1949: 1949.375px;
 $feedback-border-color: #ccc;
 
 .feedback {
 	padding: var(--bt-size-64) var(--bt-size-0) var(--bt-size-64)
 		var(--bt-size-0);
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	align-items: center;
+	display: grid;
+	place-content: center;
 
 	.iframe,
 	&__skeletons {
 		width: var(--bt-size-percent-55);
-		max-width: $feedback-size-1400;
+		max-width: 1400px;
 	}
 
 	&__skeletons {
-		padding: var(--bt-size-50);
-		height: $feedback-size-1949;
-		border: var(--bt-size-1) solid $feedback-border-color;
-		background: white;
+		height: 1949.375px; /* What... */
 		display: flex;
 		flex-direction: column;
 		gap: var(--bt-size-20);
+		padding: var(--bt-size-50);
+		border: var(--bt-size-1) solid $feedback-border-color;
+		background: white;
 	}
 
 	.iframe {

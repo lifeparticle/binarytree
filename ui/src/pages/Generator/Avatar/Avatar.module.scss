@@ -1,11 +1,8 @@
-$avatar-size-424: 424px;
-
 .avatar {
 	&__output {
-		min-height: $avatar-size-424;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		min-height: 424px; /* Avatar size */
+		display: grid;
+		place-content: center;
 		overflow: auto;
 	}
 }
