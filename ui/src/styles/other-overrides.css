@@ -1,5 +1,6 @@
 /* excalidraw mobile top-menu scroll */
 .excalidraw .App-toolbar--mobile {
+	/* Use cascade layers instead of !important */
 	overflow-x: auto;
 	max-width: 65vw !important;
 }

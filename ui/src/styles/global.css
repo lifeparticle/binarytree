@@ -1,9 +1,10 @@
 .heart {
 	animation: pulse 1s infinite;
 }
-.CookieConsent{
+.CookieConsent {
+	/* Non standard PascalCase as opposed to kebab-case for class name, and global font should inherit */
 	font-family: var(--global-font);
 }
-code{
+code {
 	font-family: var(--global-font-mono);
 }
