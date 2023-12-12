@@ -60,9 +60,9 @@ const Diffchecker: FC = () => {
 						<pre>
 							{lineDifferences
 								.filter((part) => !part.added)
-								.map((part, index) => (
+								.map((part) => (
 									<span
-										key={index}
+										key={crypto.randomUUID()}
 										className={classNames(
 											style.diffchecker__part,
 											part.removed
@@ -82,9 +82,9 @@ const Diffchecker: FC = () => {
 						<pre>
 							{lineDifferences
 								.filter((part) => !part.removed)
-								.map((part, index) => (
+								.map((part) => (
 									<span
-										key={index}
+										key={crypto.randomUUID()}
 										className={classNames(
 											style.diffchecker__part,
 											part.added

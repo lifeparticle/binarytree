@@ -11,7 +11,7 @@ import { determineFormat } from "pages/Colors/ColorPicker/helper";
 import { FormatType } from "pages/Colors/ColorPicker/types";
 import ColorFormatTags from "./ColorFormatTags";
 
-interface UserInputsProps {
+interface ColorInputsProps {
 	color: string;
 	format: FormatType;
 	setColorPickerRan: (value: boolean) => void;
@@ -19,7 +19,7 @@ interface UserInputsProps {
 	updateParamsValue: (key: string, value: string) => void;
 }
 
-const UserInputs: FC<UserInputsProps> = ({
+const ColorInputs: FC<ColorInputsProps> = ({
 	color,
 	format,
 	setColorPickerRan,
@@ -72,4 +72,4 @@ const UserInputs: FC<UserInputsProps> = ({
 	);
 };
 
-export default UserInputs;
+export default ColorInputs;

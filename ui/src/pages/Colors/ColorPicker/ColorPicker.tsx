@@ -6,7 +6,7 @@ import DisplayColors from "./components/DisplayColors";
 import { calculateColors } from "./helper";
 import { useDebounce, useParamsValue } from "hooks";
 import { PARAMS } from "data/paramsData";
-import UserInputs from "./components/UserInputs";
+import ColorInputs from "./components/ColorInputs";
 
 type FormatType = Lowercase<(typeof FORMAT_LABELS)[number]>;
 
@@ -34,7 +34,7 @@ const ColorPicker: FC = () => {
 	return (
 		<Form layout="vertical">
 			<div className={style.cp}>
-				<UserInputs
+				<ColorInputs
 					color={color}
 					format={format}
 					setColorPickerRan={setColorPickerRan}
