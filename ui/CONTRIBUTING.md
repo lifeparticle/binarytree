@@ -17,7 +17,7 @@
     3.3.
 
     ```shell
-    git branch --set-upstream-to=upstream/master master
+    git branch --set-upstream-to=upstream/main main
     ```
 
     3.4.
