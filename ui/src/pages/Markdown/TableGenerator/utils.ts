@@ -20,6 +20,27 @@ export const generateHeader = (colNum: number) => {
 	return `${tableHeader}\n${tableHeaderDivider}`;
 };
 
+const getPartialString = (line: string, updatedColNum: number): string => {
+	let result = "";
+	let tempUpdatedColNum = updatedColNum;
+
+	for (let i = 0; i < line.length; i++) {
+		if (tempUpdatedColNum < 0) {
+			break;
+		} else if (line.charAt(i) === "|" && tempUpdatedColNum > 0) {
+			result += line.charAt(i);
+			tempUpdatedColNum--;
+		} else if (tempUpdatedColNum > 0) {
+			result += line.charAt(i);
+		}
+	}
+
+	return result;
+};
+
+const getUpdatedColNum = (prevColNum: number, colNum: number): number =>
+	prevColNum - (prevColNum - colNum) + 1;
+
 export const updateHeader = (prevTable: string, colNum: number) => {
 	const lines = prevTable
 		.split(/\r?\n/)
@@ -31,48 +52,14 @@ export const updateHeader = (prevTable: string, colNum: number) => {
 	}
 
 	const isColNumInc = prevColNum < colNum;
-	let tableHeader = ``;
-	let tableHeaderDivider = ``;
 
-	if (isColNumInc) {
-		tableHeader = `${lines[0]}${generateRow(
-			colNum - prevColNum,
-			FILL_SPACE,
-			true
-		)}`;
-		tableHeaderDivider = generateRow(colNum, FILL_HYPHEN);
-	} else {
-		const updatedColNum = prevColNum - (prevColNum - colNum) + 1;
-		let currChar = ``;
+	const tableHeader = isColNumInc
+		? `${lines[0]}${generateRow(colNum - prevColNum, FILL_SPACE, true)}`
+		: getPartialString(lines[0], getUpdatedColNum(prevColNum, colNum));
 
-		let tempUpdatedColNum = updatedColNum;
-
-		for (let i = 0; i < lines[0].length; i++) {
-			currChar = lines[0].charAt(i);
-			if (tempUpdatedColNum < 0) {
-				break;
-			} else if (currChar === "|" && tempUpdatedColNum > 0) {
-				tableHeader += lines[0].charAt(i);
-				tempUpdatedColNum--;
-			} else if (tempUpdatedColNum > 0) {
-				tableHeader += lines[0].charAt(i);
-			}
-		}
-
-		tempUpdatedColNum = updatedColNum;
-
-		for (let i = 0; i < lines[1].length; i++) {
-			currChar = lines[1].charAt(i);
-			if (tempUpdatedColNum < 0) {
-				break;
-			} else if (currChar === "|" && tempUpdatedColNum > 0) {
-				tableHeaderDivider += lines[1].charAt(i);
-				tempUpdatedColNum--;
-			} else if (tempUpdatedColNum > 0) {
-				tableHeaderDivider += lines[1].charAt(i);
-			}
-		}
-	}
+	const tableHeaderDivider = isColNumInc
+		? generateRow(colNum, FILL_HYPHEN)
+		: getPartialString(lines[1], getUpdatedColNum(prevColNum, colNum));
 
 	return `${tableHeader}\n${tableHeaderDivider}`;
 };
@@ -96,66 +83,40 @@ export const updateRows = (
 		.filter((line: string) => line !== "");
 	const prevRowNum = lines.length - 2;
 	const prevColNum = lines[0].replace(/[^|]/g, "").length - 1;
-	let appendRows = ``;
-	let result = ``;
-
-	const isColNumInc = prevColNum < colNum;
 
 	if (rowNum === 0) return "";
 
 	if (prevRowNum === rowNum) {
-		if (isColNumInc) {
-			for (let i = 2; i < lines.length; i++) {
-				result += `${lines[i]}${generateRow(
-					colNum - prevColNum,
-					FILL_SPACE,
-					true
-				)}\n`;
-			}
+		if (prevColNum < colNum) {
+			return lines
+				.slice(2)
+				.map(
+					(line) =>
+						`${line}${generateRow(
+							colNum - prevColNum,
+							FILL_SPACE,
+							true
+						)}`
+				)
+				.join("\n");
 		} else {
-			const updatedColNum = prevColNum - (prevColNum - colNum) + 1;
-			let currChar = ``;
-			let updatedRow;
-			let tempUpdatedColNum;
-
-			for (let i = 2; i < lines.length; i++) {
-				updatedRow = ``;
-				tempUpdatedColNum = updatedColNum;
-				for (let j = 0; j < lines[i].length; j++) {
-					currChar = lines[i].charAt(j);
-					if (tempUpdatedColNum < 0) {
-						break;
-					} else if (currChar === "|" && tempUpdatedColNum > 0) {
-						updatedRow += lines[i].charAt(j);
-						tempUpdatedColNum--;
-					} else if (tempUpdatedColNum > 0) {
-						updatedRow += lines[i].charAt(j);
-					}
-				}
-
-				result += `${updatedRow}\n`;
-			}
+			return lines
+				.slice(2)
+				.map((line) =>
+					getPartialString(line, getUpdatedColNum(prevColNum, colNum))
+				)
+				.join("\n");
 		}
-		return result;
 	}
 
-	const isRowNumInc = prevRowNum < rowNum;
+	if (prevRowNum > rowNum) {
+		const rows = lines.slice(2).join("\n");
+		const appendRows = generateRows(rowNum - prevRowNum, colNum);
 
-	if (isRowNumInc) {
-		const rows =
-			lines.length === 2
-				? ``
-				: `${lines.slice(2, lines.length).join("\n")}\n`;
-
-		appendRows = generateRows(rowNum - prevRowNum, colNum);
-		result = `${rows}${appendRows}`;
+		return `${rows}${appendRows}`;
 	} else {
-		result = `${lines
-			.slice(2, lines.length - (prevRowNum - rowNum))
-			.join("\n")}`;
+		return lines.slice(2, -1 * (prevRowNum - rowNum)).join("\n");
 	}
-
-	return result;
 };
 
 export const updateTable = (

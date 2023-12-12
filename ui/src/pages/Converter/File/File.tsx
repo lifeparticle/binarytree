@@ -1,29 +1,18 @@
 import { useState } from "react";
 import { fetchFile } from "@ffmpeg/util";
-import { Button, message, Upload } from "antd";
+import { message, Upload } from "antd";
 import type { UploadFile, UploadProps } from "antd";
-import {
-	Icon,
-	ResponsiveButton,
-	ResponsiveSelectWithLabel,
-	Spin,
-} from "components/General";
+import { Icon, ResponsiveButton, Spin } from "components/General";
 import styles from "./FileConverter.module.scss";
 import { useFfmpeg } from "./useFfmpeg";
 import {
 	getFileExtension,
 	removeFileExtension,
 } from "utils/helper-functions/files";
+import { ItemFileRender } from "./ItemRender";
+import { IMAGE_TYPES } from "./constants";
 
 const { Dragger } = Upload;
-
-const IMAGE_TYPES = [
-	{ label: "PNG", value: ".png" },
-	{ label: "JPEG", value: ".jpeg" },
-	{ label: "SVG", value: ".svg" },
-	{ label: "WEBP", value: ".webp" },
-];
-
 interface FileConverter {
 	file: UploadFile;
 	from: string;
@@ -108,37 +97,14 @@ function FileConverter() {
 			}
 		},
 		accept: "image/*,video/*,audio/*",
-		itemRender: (
-			_,
-			file: UploadFile,
-			__,
-			actions: {
-				download: (file: UploadFile) => void;
-				preview: (file: UploadFile) => void;
-				remove: (file: UploadFile) => void;
-			}
-		) => {
-			return (
-				<div className={styles.ic__item}>
-					<h5>{file.name}</h5>
-					<div className={styles.ic__item_right}>
-						<ResponsiveSelectWithLabel
-							label="Convert file to:"
-							value={selectedFormat}
-							options={IMAGE_TYPES}
-							onSelect={(_, info) => {
-								console.log(info.value);
-								setSelectedFormat(info.value);
-							}}
-						/>
-						<Button
-							icon={<Icon name="Trash" />}
-							onClick={() => actions.remove(file)}
-						/>
-					</div>
-				</div>
-			);
-		},
+		itemRender: (_, file: UploadFile, __, actions) => (
+			<ItemFileRender
+				file={file}
+				actions={actions}
+				selectedFormat={selectedFormat}
+				setSelectedFormat={setSelectedFormat}
+			/>
+		),
 		disabled: !loaded,
 	};
 
