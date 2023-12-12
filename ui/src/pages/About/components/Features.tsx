@@ -26,7 +26,7 @@ const Features: FC = () => {
 						</a>
 					}
 					actions={[
-						<Space>
+						<Space key={feature.key}>
 							{feature.library.map((lib) => {
 								return (
 									<a

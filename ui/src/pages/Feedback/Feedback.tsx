@@ -25,6 +25,8 @@ const AirtableEmbed = () => {
 				)}
 
 				<iframe
+					title="Feedback Form"
+					allow="fullscreen"
 					className={`airtable-embed airtable-dynamic-height ${style.iframe}`}
 					src="https://airtable.com/embed/appbcH1EyjqD8PXkK/shrm5RlUHdworbgSz?backgroundColor=blue"
 					height="1949.375"
