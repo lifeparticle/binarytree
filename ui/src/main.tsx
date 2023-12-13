@@ -7,21 +7,11 @@ import { DarkModeProvider } from "utils/context/DarkModeProvider";
 import { BrowserRouter } from "react-router-dom";
 import { SearchModalProvider } from "utils/context/SearchModalProvider";
 
-const root = ReactDOM.createRoot(
-	document.getElementById("root") as HTMLElement
-);
+const queryClient = new QueryClient();
 
-const client = new QueryClient({
-	defaultOptions: {
-		queries: {
-			refetchOnWindowFocus: false,
-		},
-	},
-});
-
-root.render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
-		<QueryClientProvider client={client}>
+		<QueryClientProvider client={queryClient}>
 			<BrowserRouter>
 				<DarkModeProvider>
 					<SearchModalProvider>
