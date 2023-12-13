@@ -1,20 +1,21 @@
 .fb {
-	z-index: var(--bt-z-index-dropdown);
-	display: flex;
+	/* flex direction is already row
+     Move z-index near position,
+     flex properties together */
 	height: var(--bt-size-64);
-	align-items: center;
-	justify-content: flex-end;
-	flex-direction: row;
 	position: absolute;
 	right: var(--bt-size-18);
+	z-index: var(--bt-z-index-dropdown);
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
 
 	&__container {
-		right: var(--bt-size-10);
 		position: sticky;
+		right: var(--bt-size-10);
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
-		flex-direction: row;
 		gap: var(--bt-size-10);
 	}
 }

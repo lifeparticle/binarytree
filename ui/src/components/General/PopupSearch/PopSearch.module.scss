@@ -1,25 +1,23 @@
-$popsearch-height: 200px;
 $popsearch-bg-dark: #646363;
-$popsearch-bg-color: #e0e0e0;
 
 .popsearch {
 	&__container {
-		max-height: $popsearch-height;
+		max-height: 200px;
 		overflow-y: auto;
 		margin-top: var(--bt-size-10);
 
 		&_item {
 			padding: var(--bt-size-10) var(--bt-size-5);
 			margin: 0 var(--bt-size-5);
+			margin-top: var(--bt-size-5);
 			border-radius: var(--bt-size-8);
 			cursor: pointer;
 			display: flex;
 			align-items: center;
 			gap: var(--bt-size-10);
-			margin-top: var(--bt-size-5);
 
 			&_light:hover {
-				background-color: $popsearch-bg-color;
+				background-color: #e0e0e0;
 				border-radius: var(--bt-size-5);
 			}
 

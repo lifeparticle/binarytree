@@ -1,10 +1,10 @@
 .fsb {
 	&__input {
+		position: sticky;
+		padding: var(--bt-size-4);
+		border-radius: var(--bt-size-10);
 		display: flex;
 		align-items: center;
-		position: sticky;
-		border-radius: var(--bt-size-10);
-		padding: var(--bt-size-4);
 	}
 }
 

@@ -1,16 +1,12 @@
-$menu-height: calc(100dvh - 204px);
-$menu-mobile-height: calc(100dvh - 168px);
-$menu-collapsed-height: calc(100dvh - 202px);
-
 .menu {
-	height: $menu-height;
+	height: calc(100dvh - 204px);
 	overflow-y: auto;
 
 	&__collapsed {
-		height: $menu-collapsed-height;
+		height: calc(100dvh - 202px);
 	}
 
 	@media (max-width: 768px) {
-		height: $menu-mobile-height;
+		height: calc(100dvh - 168px);
 	}
 }

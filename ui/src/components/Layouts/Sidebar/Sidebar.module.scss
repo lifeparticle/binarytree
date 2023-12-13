@@ -11,10 +11,9 @@
 		display: block;
 		max-width: var(--bt-size-135);
 		max-height: var(--bt-size-55);
-		width: auto;
-		height: auto;
-		padding-top: var(--bt-size-10);
-		padding-bottom: var(--bt-size-10);
+		/* width and height are auto by default */
+		/* "logical property" does top and bottom padding as shorthand */
+		padding-block: var(--bt-size-10);
 		margin-bottom: var(--bt-size-10);
 
 		&_dark {

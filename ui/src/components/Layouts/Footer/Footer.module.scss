@@ -1,24 +1,20 @@
-$footer-vw-6: 6vw;
-$footer-vw-5: 5vw;
-$footer-color: #e8e8e8;
-
 .footer {
+	position: sticky;
+	width: var(--bt-size-percent-100);
 	padding: var(--bt-size-30) var(--bt-size-percent-10) var(--bt-size-30)
 		var(--bt-size-percent-10);
+	box-shadow: var(--bt-footer-box-shadow);
 	display: grid;
 	grid-template-columns:
 		var(--bt-grid-template-1) var(--bt-grid-template-1) var(
 			--bt-grid-template-1
 		)
 		var(--bt-grid-template-1) var(--bt-grid-template-1);
-	box-shadow: var(--bt-footer-box-shadow);
-	position: sticky;
-	width: var(--bt-size-percent-100);
 
 	&__left {
-		padding-right: $footer-vw-5;
-		border-right: var(--bt-size-1) solid $footer-color;
-		margin-right: $footer-vw-6;
+		padding-right: 5vw;
+		margin-right: 6vw;
+		border-right: var(--bt-size-1) solid #e8e8e8;
 	}
 
 	&__right {
