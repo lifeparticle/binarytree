@@ -1,7 +1,7 @@
 import { useState, FC } from "react";
 import style from "./CodeFormatter.module.scss";
 import { PageGrid, InputGrid } from "components/Layouts";
-import { Card, Form, Space } from "antd";
+import { Card, Form } from "antd";
 import {
 	CodeHighlightWithCopy,
 	Warning,
@@ -48,26 +48,34 @@ const CodeFormatter: FC = () => {
 		<PageGrid className={style.codeformatter}>
 			<Card className={style.codeformatter__input}>
 				<Form layout="vertical">
-					<InputGrid>
-						<ResponsiveSelectWithLabel
-							label="Input Type"
-							value={inputType}
-							defaultActiveFirstOption
-							onSelect={(value) => {
-								setInputType(value);
-							}}
-							options={INPUT_TYPE}
-						/>
-						<ResponsiveSelectWithLabel
-							label="Indentation level"
-							value={indentationLevel}
-							defaultActiveFirstOption
-							onSelect={(value) => {
-								setIndentationLevel(value);
-							}}
-							options={INDENTATION_LEVEL}
-						/>
-					</InputGrid>
+					<div className={style.codeformatter__input_container}>
+						<InputGrid>
+							<ResponsiveSelectWithLabel
+								label="Input Type"
+								value={inputType}
+								defaultActiveFirstOption
+								onSelect={(value) => {
+									setInputType(value);
+								}}
+								options={INPUT_TYPE}
+							/>
+							<ResponsiveSelectWithLabel
+								label="Indentation level"
+								value={indentationLevel}
+								defaultActiveFirstOption
+								onSelect={(value) => {
+									setIndentationLevel(value);
+								}}
+								options={INDENTATION_LEVEL}
+							/>
+						</InputGrid>
+						<ResponsiveButton
+							onClick={formatCode}
+							disabled={inputCode.length === 0 || !inputType}
+						>
+							Format
+						</ResponsiveButton>
+					</div>
 
 					<CodeEditor
 						code={inputCode}
@@ -75,15 +83,6 @@ const CodeFormatter: FC = () => {
 						language={inputType}
 						label="Enter code"
 					/>
-
-					<Space>
-						<ResponsiveButton
-							onClick={formatCode}
-							disabled={inputCode.length === 0 || !inputType}
-						>
-							Format
-						</ResponsiveButton>
-					</Space>
 				</Form>
 			</Card>
 
