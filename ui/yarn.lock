@@ -1662,13 +1662,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tabler/icons@npm:^2.17.0":
-  version: 2.30.0
-  resolution: "@tabler/icons@npm:2.30.0"
-  checksum: d89255ea6bb0a5280f9d23ab85005ef0f7c7c0198904db7d7d6cbc0289c7ba108c433c6f9fb6531fc127619ed61452c6c5832e7c7cc49a5889faad412636e618
-  languageName: node
-  linkType: hard
-
 "@tanstack/query-core@npm:4.32.6":
   version: 4.32.6
   resolution: "@tanstack/query-core@npm:4.32.6"
@@ -3332,7 +3325,6 @@ __metadata:
     "@mantine/ds": ^6.0.10
     "@mantine/hooks": ^6.0.10
     "@monaco-editor/react": ^4.5.2
-    "@tabler/icons": ^2.17.0
     "@tanstack/react-query": ^4.29.25
     "@testing-library/jest-dom": ^5.17.0
     "@testing-library/react": ^14.0.0
