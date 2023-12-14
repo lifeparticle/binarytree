@@ -15,6 +15,7 @@
 		"postinstall": "node ./postinstall.js"
 	},
 	"dependencies": {
+		"@emotion/react": "^11.11.1",
 		"@excalidraw/excalidraw": "^0.16.0",
 		"@faker-js/faker": "^7.6.0",
 		"@ffmpeg/ffmpeg": "^0.12.7",
