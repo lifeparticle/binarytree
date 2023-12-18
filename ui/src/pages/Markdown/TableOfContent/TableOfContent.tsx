@@ -42,9 +42,9 @@ const TableOfContent: FC = () => {
 		setTableOfContents("");
 	}, "r");
 
-	const onMarkdownChange = (text: string) => {
+	const onMarkdownChange = async (text: string) => {
 		setMarkdown(text);
-		const markdownHtml = marked.parse(text);
+		const markdownHtml = await marked.parse(text);
 		const tempDiv = document.createElement("div");
 
 		tempDiv.innerHTML = markdownHtml;
@@ -89,23 +89,20 @@ const TableOfContent: FC = () => {
 			.join("\n");
 	};
 
-	const fetchData = (url: string) => {
+	const fetchData = async (url: string) => {
 		setUrl(url);
 		setMarkdown("");
 		setTableOfContents("");
 		if (!url) return;
 
-		fetch(url)
-			.then((res) => res.text())
-			.then(
-				(result) => {
-					setMarkdown(result);
-					onMarkdownChange(result);
-				},
-				(error) => {
-					console.log(error);
-				}
-			);
+		try {
+			const response = await fetch(url);
+			const result = await response.text();
+			setMarkdown(result);
+			onMarkdownChange(result);
+		} catch (error) {
+			console.log(error);
+		}
 	};
 
 	return (
