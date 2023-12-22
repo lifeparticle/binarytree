@@ -82,5 +82,12 @@
 		"subCategory": "Web",
 		"url": "https://chakra-ui.com/",
 		"socials": []
+	},
+	{
+		"name": "Radix UI",
+		"category": "Design System",
+		"subCategory": "Web",
+		"url": "https://www.radix-ui.com/",
+		"socials": []	
 	}
 ]
