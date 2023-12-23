@@ -103,8 +103,8 @@ const HELP: Help = {
 			},
 		],
 	},
-	[routesById.imageconverter.id]: {
-		description: featuresById.imageconverter.fullDescription,
+	[routesById.fileconverter.id]: {
+		description: featuresById.fileconverter.fullDescription,
 		helpTexts: [
 			{
 				title: "",
