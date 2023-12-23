@@ -107,6 +107,7 @@ const HELP: Help = {
 		description: featuresById.fileconverter.fullDescription,
 		helpTexts: [
 			{
+				id: "10",
 				title: "",
 				bulletPoints: [],
 			},
