@@ -78,7 +78,8 @@ export const FEATURE_DATA: Feature[] = [
 		key: routesById.boxshadow.id,
 		name: routesById.boxshadow.title,
 		shortDescription: routesById.boxshadow.description,
-		fullDescription: "Shape your vision into reality by customizing Box Shadows with precision. Define the dimensions, tweak lengths, play with colors, and set radius blur and spread radius - all with a spontaneous interface. Instantly visualize the impact of your design choices and seamlessly generate the corresponding code.",
+		fullDescription:
+			"Shape your vision into reality by customizing Box Shadows with precision. Define the dimensions, tweak lengths, play with colors, and set radius blur and spread radius - all with a spontaneous interface. Instantly visualize the impact of your design choices and seamlessly generate the corresponding code.",
 		link: routesById.boxshadow.path,
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
@@ -92,12 +93,12 @@ export const FEATURE_DATA: Feature[] = [
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
-		key: routesById.file.id,
-		name: routesById.file.title,
-		shortDescription: routesById.file.description,
+		key: routesById.fileconverter.id,
+		name: routesById.fileconverter.title,
+		shortDescription: routesById.fileconverter.description,
 		fullDescription:
 			"Transform your work by quickly uploading and converting supported files into miscellaneous formats. Whether you're converting audio, or image, files, our platform streamlines the process, saving you valuable time.",
-		link: routesById.file.path,
+		link: routesById.fileconverter.path,
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
@@ -136,7 +137,8 @@ export const FEATURE_DATA: Feature[] = [
 		key: routesById.data.id,
 		name: routesById.data.title,
 		shortDescription: routesById.data.description,
-		fullDescription: "Tired of drowning in a sea of SQL queries and JSON formatting? Fear not, intrepid coder. Our time-saving magic allows you to effortlessly conjure SQL and JSON snippets with just a few clicks. Toss in your Table Name, Column Number, Row Number, and a sprinkle of other variables, and voila! Just hit 'Generate' and watch as our magic unfolds. We save you time and spare you from the agony of manual coding.",
+		fullDescription:
+			"Tired of drowning in a sea of SQL queries and JSON formatting? Fear not, intrepid coder. Our time-saving magic allows you to effortlessly conjure SQL and JSON snippets with just a few clicks. Toss in your Table Name, Column Number, Row Number, and a sprinkle of other variables, and voila! Just hit 'Generate' and watch as our magic unfolds. We save you time and spare you from the agony of manual coding.",
 		link: routesById.data.path,
 		library: [
 			{
@@ -153,7 +155,8 @@ export const FEATURE_DATA: Feature[] = [
 		key: routesById.imagegeneratorfromcolors.id,
 		name: routesById.imagegeneratorfromcolors.title,
 		shortDescription: routesById.imagegeneratorfromcolors.description,
-		fullDescription: "Enter the pixel-perfect realm of binarytree.dev, where innovation meets imagination with our dazzling 'Image' feature. We're not just keeping up with the code; we're painting the future of developer productivity. 'Image' is your digital paintbrush, turning code into a visual masterpiece. So, grab your creative cap, embrace the pixels, and let 'Image' be your canvas for coding wonders.",
+		fullDescription:
+			"Enter the pixel-perfect realm of binarytree.dev, where innovation meets imagination with our dazzling 'Image' feature. We're not just keeping up with the code; we're painting the future of developer productivity. 'Image' is your digital paintbrush, turning code into a visual masterpiece. So, grab your creative cap, embrace the pixels, and let 'Image' be your canvas for coding wonders.",
 		link: routesById.imagegeneratorfromcolors.path,
 		library: [
 			{
@@ -174,7 +177,8 @@ export const FEATURE_DATA: Feature[] = [
 		key: routesById.avatar.id,
 		name: routesById.avatar.title,
 		shortDescription: routesById.avatar.description,
-		fullDescription: "Join the \"Avatar: The Way of Coder\" revolution and transform your code into a visual symphony. Let your creativity fly with a symphony of customization options – choose your text color to reflect the mood of your code, set a background hue that resonates with your programming vibe, pick a font style that showcases your coding charisma, tailor your avatar's size and shape to match the grandeur of your coding prowess. Cherry on top, you can download your creation in PNG format, turning your coding masterpiece into a shareable work of art",
+		fullDescription:
+			'Join the "Avatar: The Way of Coder" revolution and transform your code into a visual symphony. Let your creativity fly with a symphony of customization options – choose your text color to reflect the mood of your code, set a background hue that resonates with your programming vibe, pick a font style that showcases your coding charisma, tailor your avatar\'s size and shape to match the grandeur of your coding prowess. Cherry on top, you can download your creation in PNG format, turning your coding masterpiece into a shareable work of art',
 		link: routesById.avatar.path,
 		library: [
 			{
@@ -195,7 +199,8 @@ export const FEATURE_DATA: Feature[] = [
 		key: routesById.qrcode.id,
 		name: routesById.qrcode.title,
 		shortDescription: routesById.qrcode.description,
-		fullDescription: "We bring this tool to craft custom QR codes that not only transmit information but do so with style and flair. Effortlessly encode URLs, contact details, or any data you desire. Customize your QR code's color palette to match your brand aesthetic, and play with background hues to make it a visual wonder. Scale your QR code to perfection, from petite secrets to grand revelations. Lastly, add a sleek border to frame your digital message, turning every QR code into a work of art that demands attention. What's more, save your bespoke QR code in PNG format.",
+		fullDescription:
+			"We bring this tool to craft custom QR codes that not only transmit information but do so with style and flair. Effortlessly encode URLs, contact details, or any data you desire. Customize your QR code's color palette to match your brand aesthetic, and play with background hues to make it a visual wonder. Scale your QR code to perfection, from petite secrets to grand revelations. Lastly, add a sleek border to frame your digital message, turning every QR code into a work of art that demands attention. What's more, save your bespoke QR code in PNG format.",
 		link: routesById.qrcode.path,
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
@@ -203,7 +208,8 @@ export const FEATURE_DATA: Feature[] = [
 		key: routesById.csharpbuilder.id,
 		name: routesById.csharpbuilder.title,
 		shortDescription: routesById.csharpbuilder.description,
-		fullDescription: "Feel the power of precision coding with \"C# Builder\". Craft impeccable C# code effortlessly, as this feature empowers developers to streamline their projects with finesse. Stay ahead in the coding game with a tool designed to elevate your C# building experience.",
+		fullDescription:
+			'Feel the power of precision coding with "C# Builder". Craft impeccable C# code effortlessly, as this feature empowers developers to streamline their projects with finesse. Stay ahead in the coding game with a tool designed to elevate your C# building experience.',
 		link: routesById.csharpbuilder.path,
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
@@ -211,7 +217,8 @@ export const FEATURE_DATA: Feature[] = [
 		key: routesById.editor.id,
 		name: routesById.editor.title,
 		shortDescription: routesById.editor.description,
-		fullDescription: "Transform your ideas into stunning content effortlessly with our Editor tool. Enjoy the flexibility to download your creations in Markdown and HTML, empowering you to share your work across platforms smoothly. Simplify collaboration, and save time on formatting.",
+		fullDescription:
+			"Transform your ideas into stunning content effortlessly with our Editor tool. Enjoy the flexibility to download your creations in Markdown and HTML, empowering you to share your work across platforms smoothly. Simplify collaboration, and save time on formatting.",
 		link: routesById.editor.path,
 		library: [
 			{
@@ -224,7 +231,8 @@ export const FEATURE_DATA: Feature[] = [
 		key: routesById.table.id,
 		name: routesById.table.title,
 		shortDescription: routesById.table.description,
-		fullDescription: "Craft tables that fluently integrate into your projects with Table. Our user-friendly interface allows you to draw spreadsheet-like tables in a snap. Whether you're documenting, coding, or presenting data, our feature ensures precision and easefulness.",
+		fullDescription:
+			"Craft tables that fluently integrate into your projects with Table. Our user-friendly interface allows you to draw spreadsheet-like tables in a snap. Whether you're documenting, coding, or presenting data, our feature ensures precision and easefulness.",
 		link: routesById.table.path,
 		library: [
 			{
@@ -237,7 +245,8 @@ export const FEATURE_DATA: Feature[] = [
 		key: routesById.tableofcontent.id,
 		name: routesById.tableofcontent.title,
 		shortDescription: routesById.tableofcontent.description,
-		fullDescription: "Simply input a URL and unlock a streamlined presentation of webpage content. Instantly generate an organized table of contents outlining the page's structure, making information retrieval a breeze.",
+		fullDescription:
+			"Simply input a URL and unlock a streamlined presentation of webpage content. Instantly generate an organized table of contents outlining the page's structure, making information retrieval a breeze.",
 		link: routesById.tableofcontent.path,
 		library: [
 			{
@@ -263,7 +272,8 @@ export const FEATURE_DATA: Feature[] = [
 		key: routesById.diagramming.id,
 		name: routesById.diagramming.title,
 		shortDescription: routesById.diagramming.description,
-		fullDescription: "No wonder it would be super awesome if you could illustrate complex ideas effortlessly and stay ahead in the ever-evolving world of coding. With the \"Diagramming\" tool, you can easily map out your code architecture, workflows, and concepts. Our user-friendly interface empowers developers to create stunning, professional diagrams in minutes. Literally.",
+		fullDescription:
+			'No wonder it would be super awesome if you could illustrate complex ideas effortlessly and stay ahead in the ever-evolving world of coding. With the "Diagramming" tool, you can easily map out your code architecture, workflows, and concepts. Our user-friendly interface empowers developers to create stunning, professional diagrams in minutes. Literally.',
 		link: routesById.diagramming.path,
 		library: [
 			{
@@ -276,7 +286,8 @@ export const FEATURE_DATA: Feature[] = [
 		key: routesById.sorting.id,
 		name: routesById.sorting.title,
 		shortDescription: routesById.sorting.description,
-		fullDescription: "Simplify data organization with our Sorting feature. Whether dealing with lists, arrays, or datasets, effortlessly arrange your information in perfect order. Input your data and seamlessly sort it precisely - ascending or descending, tailored to your needs. Our tool goes beyond the basics, allowing you to customize results by lines, commas, or spaces for ultimate flexibility. Instantly transform chaos into clarity as you obtain a neatly sorted output.",
+		fullDescription:
+			"Simplify data organization with our Sorting feature. Whether dealing with lists, arrays, or datasets, effortlessly arrange your information in perfect order. Input your data and seamlessly sort it precisely - ascending or descending, tailored to your needs. Our tool goes beyond the basics, allowing you to customize results by lines, commas, or spaces for ultimate flexibility. Instantly transform chaos into clarity as you obtain a neatly sorted output.",
 		link: routesById.sorting.path,
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
@@ -284,7 +295,8 @@ export const FEATURE_DATA: Feature[] = [
 		key: routesById.diffchecker.id,
 		name: routesById.diffchecker.title,
 		shortDescription: routesById.diffchecker.description,
-		fullDescription: "Compare the dissimilarities between your original and modified text, fluently identifying changes with a glance. \"Diffchecker\" highlights additions, deletions, and modifications, empowering developers to review edits swiftly. Enhance collaboration, streamline version control, and ensure accuracy in your code or content.",
+		fullDescription:
+			'Compare the dissimilarities between your original and modified text, fluently identifying changes with a glance. "Diffchecker" highlights additions, deletions, and modifications, empowering developers to review edits swiftly. Enhance collaboration, streamline version control, and ensure accuracy in your code or content.',
 		link: routesById.diffchecker.path,
 		library: [{ name: "diff", url: LIBRARY_URLS["diff"] }],
 	},
@@ -292,7 +304,8 @@ export const FEATURE_DATA: Feature[] = [
 		key: routesById.codeformatter.id,
 		name: routesById.codeformatter.title,
 		shortDescription: routesById.codeformatter.description,
-		fullDescription: "No more manual formatting struggles. It's time for clean, professionally styled code. Whether you're working in HTML, CSS, JSON, JavaScript or YAML language, our \"Code Formatter\" streamlines your workflow, saving you time and headaches. A well-formatted code is not just a luxury but a necessity for every developer on the path to glory",
+		fullDescription:
+			"No more manual formatting struggles. It's time for clean, professionally styled code. Whether you're working in HTML, CSS, JSON, JavaScript or YAML language, our \"Code Formatter\" streamlines your workflow, saving you time and headaches. A well-formatted code is not just a luxury but a necessity for every developer on the path to glory",
 		link: routesById.codeformatter.path,
 		library: [
 			{
@@ -309,7 +322,8 @@ export const FEATURE_DATA: Feature[] = [
 		key: routesById.githubissue.id,
 		name: routesById.githubissue.title,
 		shortDescription: routesById.githubissue.description,
-		fullDescription: "Streamline issue tracking and enhance collaboration with our Create GitHub Issue feature. Bridge the gap between development and project management by effortlessly generating GitHub issues directly from our platform. It saves time and helps you focus on what truly matters in your marvelous project",
+		fullDescription:
+			"Streamline issue tracking and enhance collaboration with our Create GitHub Issue feature. Bridge the gap between development and project management by effortlessly generating GitHub issues directly from our platform. It saves time and helps you focus on what truly matters in your marvelous project",
 		link: routesById.githubissue.path,
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
@@ -333,7 +347,8 @@ export const FEATURE_DATA: Feature[] = [
 		key: routesById.blog.id,
 		name: "Resource",
 		shortDescription: "List of things",
-		fullDescription: "Uplift your coding journey with a curated collection of courses, blogs, YouTube channels, interviews, movies, platforms, blogs, and more - all handpicked to enrich your software development expertise. Discover a one-stop hub where valuable insights and educational gems await. Fuel your passion for coding and unlock a universe of knowledge.",
+		fullDescription:
+			"Uplift your coding journey with a curated collection of courses, blogs, YouTube channels, interviews, movies, platforms, blogs, and more - all handpicked to enrich your software development expertise. Discover a one-stop hub where valuable insights and educational gems await. Fuel your passion for coding and unlock a universe of knowledge.",
 		link: routesById.blog.path,
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
