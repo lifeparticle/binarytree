@@ -103,15 +103,15 @@ const HELP: Help = {
 			},
 		],
 	},
-	// [routesById.imageconverter.id]: {
-	// 	description: featuresById.imageconverter.fullDescription,
-	// 	helpTexts: [
-	// 		{
-	// 			title: "",
-	// 			bulletPoints: [],
-	// 		},
-	// 	],
-	// },
+	[routesById.imageconverter.id]: {
+		description: featuresById.imageconverter.fullDescription,
+		helpTexts: [
+			{
+				title: "",
+				bulletPoints: [],
+			},
+		],
+	},
 	[routesById.pixelconverter.id]: {
 		description: featuresById.pixelconverter.fullDescription,
 		helpTexts: [
@@ -302,7 +302,7 @@ const HELP: Help = {
 		],
 	},
 	[routesById.blog.id]: {
-		description: "Blog",
+		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
 				id: "29",
@@ -312,7 +312,7 @@ const HELP: Help = {
 		],
 	},
 	[routesById.book.id]: {
-		description: "Book",
+		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
 				id: "30",
@@ -322,7 +322,7 @@ const HELP: Help = {
 		],
 	},
 	[routesById.course.id]: {
-		description: "Course",
+		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
 				id: "31",
@@ -332,7 +332,7 @@ const HELP: Help = {
 		],
 	},
 	[routesById.designsystem.id]: {
-		description: "Design System",
+		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
 				id: "32",
@@ -342,7 +342,7 @@ const HELP: Help = {
 		],
 	},
 	[routesById.github.id]: {
-		description: "Github",
+		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
 				id: "33",
@@ -352,7 +352,7 @@ const HELP: Help = {
 		],
 	},
 	[routesById.icon.id]: {
-		description: "Icon",
+		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
 				id: "34",
@@ -362,7 +362,7 @@ const HELP: Help = {
 		],
 	},
 	[routesById.interview.id]: {
-		description: "Interview",
+		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
 				id: "35",
@@ -372,7 +372,7 @@ const HELP: Help = {
 		],
 	},
 	[routesById.movie.id]: {
-		description: "Movie",
+		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
 				id: "36",
@@ -382,7 +382,7 @@ const HELP: Help = {
 		],
 	},
 	[routesById.platform.id]: {
-		description: "Platform",
+		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
 				id: "37",
@@ -392,7 +392,7 @@ const HELP: Help = {
 		],
 	},
 	[routesById.plugin.id]: {
-		description: "Plugin",
+		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
 				id: "38",
@@ -402,7 +402,7 @@ const HELP: Help = {
 		],
 	},
 	[routesById.tool.id]: {
-		description: "Tool",
+		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
 				id: "39",
@@ -412,7 +412,7 @@ const HELP: Help = {
 		],
 	},
 	[routesById.tvseries.id]: {
-		description: "TV Series",
+		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
 				id: "40",
@@ -422,7 +422,7 @@ const HELP: Help = {
 		],
 	},
 	[routesById.uiux.id]: {
-		description: "UI/UX",
+		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
 				id: "41",
@@ -432,7 +432,7 @@ const HELP: Help = {
 		],
 	},
 	[routesById.youtube.id]: {
-		description: "Youtube",
+		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
 				id: "42",
