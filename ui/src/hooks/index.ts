@@ -1,7 +1,7 @@
 export { default as useCombinedKeyPress } from "./useCombinedKeyPress";
 export { default as useCopyToClipboard } from "./useCopyToClipboard";
 export { default as useDebounce } from "./useDebounce";
-export { default as useFetchList } from "./useFetchList";
+export { default as useFetch } from "./useFetch";
 export { default as useGetNotifications } from "./useGetNotifications";
 export { default as useGetSize } from "./useGetSize";
 export { default as useKeyPress } from "./useKeyPress";

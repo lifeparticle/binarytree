@@ -1,40 +1,26 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import style from "./TableOfContent.module.scss";
 import { marked } from "marked";
 import { Input, Form, Card } from "antd";
-import { useCombinedKeyPress } from "hooks";
+import { useCombinedKeyPress, useFetch } from "hooks";
 import { CopyInput, PageGrid } from "components/Layouts";
 import { Warning, ResponsiveInputWithLabel } from "components/General";
 import { Clipboard } from "components/ComponentInjector";
 import { ClipboardButton } from "components/InjectedComponent";
+import { TocItem } from "./types";
+import { generateTableOfContentsText } from "./helper";
 const { TextArea } = Input;
 
-type TocItem = {
-	tag: "H1" | "H2" | "H3" | "H4" | "H5" | "H6";
-	text: string;
-};
-
-const indentMap = {
-	H1: "- ",
-	H2: "\t* ",
-	H3: "\t\t+ ",
-	H4: "\t\t\t- ",
-	H5: "\t\t\t\t* ",
-	H6: "\t\t\t\t\t+ ",
-};
+const EXAMPLE_URL =
+	"https://raw.githubusercontent.com/lifeparticle/JS-Cheatsheet/main/README.md";
 
 const TableOfContent: FC = () => {
 	const [url, setUrl] = useState("");
 	const [markdown, setMarkdown] = useState("");
 	const [tableOfContents, setTableOfContents] = useState<string>("");
+	const { data, isLoading, isError } = useFetch("markdown", url);
 
-	useCombinedKeyPress(
-		() =>
-			fetchData(
-				"https://raw.githubusercontent.com/lifeparticle/JS-Cheatsheet/main/README.md"
-			),
-		"e"
-	);
+	useCombinedKeyPress(() => setUrl(EXAMPLE_URL), "e");
 
 	useCombinedKeyPress(() => {
 		setUrl("");
@@ -42,9 +28,9 @@ const TableOfContent: FC = () => {
 		setTableOfContents("");
 	}, "r");
 
-	const onMarkdownChange = (text: string) => {
+	const onMarkdownChange = async (text: string) => {
 		setMarkdown(text);
-		const markdownHtml = marked.parse(text);
+		const markdownHtml = await marked.parse(text);
 		const tempDiv = document.createElement("div");
 
 		tempDiv.innerHTML = markdownHtml;
@@ -60,53 +46,19 @@ const TableOfContent: FC = () => {
 		setTableOfContents(generateTableOfContentsText(headings));
 	};
 
-	const headingCounts: Record<string, number> = {};
-
-	const getUniqueHeadingText = (text: string) => {
-		if (headingCounts[text] >= 0) {
-			headingCounts[text]++;
-			return `${text}-${headingCounts[text]}`;
-		} else {
-			headingCounts[text] = 0;
-			return text;
+	useEffect(() => {
+		if (isLoading) {
+			setMarkdown("Loading...");
+			setTableOfContents("Loading...");
 		}
-	};
+	}, [isLoading]);
 
-	const generateTocItem = (text: string) => {
-		return `[${text}](#${getUniqueHeadingText(text)
-			.toLowerCase()
-			.replace(/\s/g, "-")
-			.replace(/[^A-Za-z0-9-\u0080-\uFFFF_]+/g, "")})`;
-	};
-
-	const generateTableOfContentsText = (tableOfContents: TocItem[]) => {
-		return tableOfContents
-			.map((tocItem) => {
-				return `${indentMap[tocItem.tag]}${generateTocItem(
-					tocItem.text
-				)}`;
-			})
-			.join("\n");
-	};
-
-	const fetchData = (url: string) => {
-		setUrl(url);
-		setMarkdown("");
-		setTableOfContents("");
-		if (!url) return;
-
-		fetch(url)
-			.then((res) => res.text())
-			.then(
-				(result) => {
-					setMarkdown(result);
-					onMarkdownChange(result);
-				},
-				(error) => {
-					console.log(error);
-				}
-			);
-	};
+	useEffect(() => {
+		if (url && data && !isError) {
+			setMarkdown(data);
+			onMarkdownChange(data);
+		}
+	}, [data, isError, url]);
 
 	return (
 		<PageGrid className={style.toc}>
@@ -117,7 +69,7 @@ const TableOfContent: FC = () => {
 							label="Input URL"
 							placeholder="URL"
 							value={url}
-							onChange={(event) => fetchData(event.target.value)}
+							onChange={(event) => setUrl(event.target.value)}
 							type="text"
 						/>
 
@@ -135,7 +87,7 @@ const TableOfContent: FC = () => {
 								onMarkdownChange(event.currentTarget.value)
 							}
 							autoSize={false}
-							data-testid="toc-input"
+							allowClear
 						/>
 					</Form.Item>
 				</Form>
@@ -153,7 +105,7 @@ const TableOfContent: FC = () => {
 								value={tableOfContents}
 								className={style.toc__textarea}
 								autoSize={false}
-								data-testid="toc-output"
+								allowClear
 							/>
 						</Form.Item>
 					</Form>
