@@ -38,7 +38,7 @@ const APP_VALUES = [
 		<Typography.Text strong>Smart Data Detection:</Typography.Text> Our
 		platform is equipped with intelligent data detection capabilities to
 		simplify your tasks. With smart data detection, it can automatically{" "}
-		<a href="data/sorting" target="_blank">
+		<a href="tools/sorting" target="_blank">
 			Sort
 		</a>{" "}
 		your data, saving you time and hassle.
