@@ -1,12 +1,12 @@
-export const FILL_SPACE = `        `;
-export const FILL_HYPHEN = `------`;
+export const FILL_SPACE = "        ";
+export const FILL_HYPHEN = "------";
 
 export const generateRow = (
 	colNum: number,
 	fill = FILL_SPACE,
 	append = false
 ) => {
-	let result = append ? `` : `|`;
+	let result = append ? "" : "|";
 
 	for (let i = 0; i < colNum; i++) {
 		result += `${fill}|`;
@@ -20,68 +20,134 @@ export const generateHeader = (colNum: number) => {
 	return `${tableHeader}\n${tableHeaderDivider}`;
 };
 
-export const updateHeader = (prevTable: string, colNum: number) => {
-	const lines = prevTable
-		.split(/\r?\n/)
-		.filter((line: string) => line !== "");
-	const prevColNum = lines[0].replace(/[^|]/g, "").length - 1;
+const addHeader = (prevHeader: string, prevColNum: number, colNum: number) => {
+	let tableHeader = "";
+	let tableHeaderDivider = "";
 
-	if (prevColNum === colNum) {
-		return `${lines[0]}\n${lines[1]}`;
+	tableHeader = `${prevHeader}${generateRow(
+		colNum - prevColNum,
+		FILL_SPACE,
+		true
+	)}`;
+	tableHeaderDivider = generateRow(colNum, FILL_HYPHEN);
+
+	return `${tableHeader}\n${tableHeaderDivider}`;
+};
+
+const removeHeader = (
+	prevHeader: string,
+	prevDivider: string,
+	prevColNum: number,
+	colNum: number
+) => {
+	let tableHeader = "";
+	let tableHeaderDivider = "";
+
+	const updatedColNum = prevColNum - (prevColNum - colNum) + 1;
+	let currChar = "";
+
+	let tempUpdatedColNum = updatedColNum;
+
+	for (let i = 0; i < prevHeader.length; i++) {
+		currChar = prevHeader.charAt(i);
+		if (tempUpdatedColNum < 0) {
+			break;
+		} else if (currChar === "|" && tempUpdatedColNum > 0) {
+			tableHeader += prevHeader.charAt(i);
+			tempUpdatedColNum--;
+		} else if (tempUpdatedColNum > 0) {
+			tableHeader += prevHeader.charAt(i);
+		}
 	}
 
-	const isColNumInc = prevColNum < colNum;
-	let tableHeader = ``;
-	let tableHeaderDivider = ``;
+	tempUpdatedColNum = updatedColNum;
 
-	if (isColNumInc) {
-		tableHeader = `${lines[0]}${generateRow(
-			colNum - prevColNum,
-			FILL_SPACE,
-			true
-		)}`;
-		tableHeaderDivider = generateRow(colNum, FILL_HYPHEN);
-	} else {
-		const updatedColNum = prevColNum - (prevColNum - colNum) + 1;
-		let currChar = ``;
-
-		let tempUpdatedColNum = updatedColNum;
-
-		for (let i = 0; i < lines[0].length; i++) {
-			currChar = lines[0].charAt(i);
-			if (tempUpdatedColNum < 0) {
-				break;
-			} else if (currChar === "|" && tempUpdatedColNum > 0) {
-				tableHeader += lines[0].charAt(i);
-				tempUpdatedColNum--;
-			} else if (tempUpdatedColNum > 0) {
-				tableHeader += lines[0].charAt(i);
-			}
-		}
-
-		tempUpdatedColNum = updatedColNum;
-
-		for (let i = 0; i < lines[1].length; i++) {
-			currChar = lines[1].charAt(i);
-			if (tempUpdatedColNum < 0) {
-				break;
-			} else if (currChar === "|" && tempUpdatedColNum > 0) {
-				tableHeaderDivider += lines[1].charAt(i);
-				tempUpdatedColNum--;
-			} else if (tempUpdatedColNum > 0) {
-				tableHeaderDivider += lines[1].charAt(i);
-			}
+	for (let i = 0; i < prevDivider.length; i++) {
+		currChar = prevDivider.charAt(i);
+		if (tempUpdatedColNum < 0) {
+			break;
+		} else if (currChar === "|" && tempUpdatedColNum > 0) {
+			tableHeaderDivider += prevDivider.charAt(i);
+			tempUpdatedColNum--;
+		} else if (tempUpdatedColNum > 0) {
+			tableHeaderDivider += prevDivider.charAt(i);
 		}
 	}
 
 	return `${tableHeader}\n${tableHeaderDivider}`;
 };
 
+const getPrevColNum = (header: string) => {
+	return header.replace(/[^|]/g, "").length - 1;
+};
+
+const getLines = (table: string) => {
+	return table.split(/\r?\n/).filter((line: string) => line !== "");
+};
+
+export const updateHeader = (prevTable: string, colNum: number) => {
+	const lines = getLines(prevTable);
+	const prevHeader = lines[0];
+	const prevDivider = lines[1];
+	const prevColNum = getPrevColNum(prevHeader);
+
+	if (prevColNum === colNum) {
+		return `${prevHeader}\n${prevDivider}`;
+	}
+
+	const isColNumInc = prevColNum < colNum;
+
+	if (isColNumInc) {
+		return addHeader(prevHeader, prevColNum, colNum);
+	}
+
+	return removeHeader(prevHeader, prevDivider, prevColNum, colNum);
+};
+
 export const generateRows = (rowNum: number, colNum: number) => {
-	let result = ``;
+	let result = "";
 	const row = generateRow(colNum);
 	for (let j = 0; j < rowNum; j++) {
 		result += `${row}\n`;
+	}
+	return result;
+};
+
+const addRows = (lines: string[], prevColNum: number, colNum: number) => {
+	let result = "";
+	for (let i = 2; i < lines.length; i++) {
+		result += `${lines[i]}${generateRow(
+			colNum - prevColNum,
+			FILL_SPACE,
+			true
+		)}\n`;
+	}
+	return result;
+};
+
+const removeRows = (lines: string[], prevColNum: number, colNum: number) => {
+	let result = "";
+	const updatedColNum = prevColNum - (prevColNum - colNum) + 1;
+	let currChar = "";
+	let updatedRow;
+	let tempUpdatedColNum;
+
+	for (let i = 2; i < lines.length; i++) {
+		updatedRow = "";
+		tempUpdatedColNum = updatedColNum;
+		for (let j = 0; j < lines[i].length; j++) {
+			currChar = lines[i].charAt(j);
+			if (tempUpdatedColNum < 0) {
+				break;
+			} else if (currChar === "|" && tempUpdatedColNum > 0) {
+				updatedRow += lines[i].charAt(j);
+				tempUpdatedColNum--;
+			} else if (tempUpdatedColNum > 0) {
+				updatedRow += lines[i].charAt(j);
+			}
+		}
+
+		result += `${updatedRow}\n`;
 	}
 	return result;
 };
@@ -91,52 +157,22 @@ export const updateRows = (
 	rowNum: number,
 	colNum: number
 ) => {
-	const lines = prevTable
-		.split(/\r?\n/)
-		.filter((line: string) => line !== "");
+	if (rowNum === 0) return "";
+
+	const lines = getLines(prevTable);
 	const prevRowNum = lines.length - 2;
-	const prevColNum = lines[0].replace(/[^|]/g, "").length - 1;
-	let appendRows = ``;
-	let result = ``;
+	const prevHeader = lines[0];
+	const prevColNum = getPrevColNum(prevHeader);
+	let result = "";
+	let appendRows = "";
 
 	const isColNumInc = prevColNum < colNum;
 
-	if (rowNum === 0) return "";
-
 	if (prevRowNum === rowNum) {
 		if (isColNumInc) {
-			for (let i = 2; i < lines.length; i++) {
-				result += `${lines[i]}${generateRow(
-					colNum - prevColNum,
-					FILL_SPACE,
-					true
-				)}\n`;
-			}
-		} else {
-			const updatedColNum = prevColNum - (prevColNum - colNum) + 1;
-			let currChar = ``;
-			let updatedRow;
-			let tempUpdatedColNum;
-
-			for (let i = 2; i < lines.length; i++) {
-				updatedRow = ``;
-				tempUpdatedColNum = updatedColNum;
-				for (let j = 0; j < lines[i].length; j++) {
-					currChar = lines[i].charAt(j);
-					if (tempUpdatedColNum < 0) {
-						break;
-					} else if (currChar === "|" && tempUpdatedColNum > 0) {
-						updatedRow += lines[i].charAt(j);
-						tempUpdatedColNum--;
-					} else if (tempUpdatedColNum > 0) {
-						updatedRow += lines[i].charAt(j);
-					}
-				}
-
-				result += `${updatedRow}\n`;
-			}
+			return addRows(lines, prevColNum, colNum);
 		}
-		return result;
+		return removeRows(lines, prevColNum, colNum);
 	}
 
 	const isRowNumInc = prevRowNum < rowNum;
@@ -144,7 +180,7 @@ export const updateRows = (
 	if (isRowNumInc) {
 		const rows =
 			lines.length === 2
-				? ``
+				? ""
 				: `${lines.slice(2, lines.length).join("\n")}\n`;
 
 		appendRows = generateRows(rowNum - prevRowNum, colNum);
