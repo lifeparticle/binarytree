@@ -3,24 +3,21 @@ import { faker } from "@faker-js/faker";
 
 describe("DataDetection", () => {
 	const testData = [
-		{ types: ["string"], data: faker.random.word(), expected: "string" },
+		{ types: ["string"], data: faker.lorem.word(), expected: "string" },
 		{ types: ["url"], data: faker.internet.url(), expected: "url" },
 		{
 			types: ["number"],
-			data: faker.datatype.number().toString(),
+			data: faker.number.int().toString(),
 			expected: "number",
 		},
 		{
 			types: ["array"],
-			data: JSON.stringify([
-				faker.datatype.number(),
-				faker.datatype.number(),
-			]),
+			data: JSON.stringify([faker.number.int(), faker.number.int()]),
 			expected: "array",
 		},
 		{
 			types: ["object"],
-			data: JSON.stringify({ key: faker.random.word() }),
+			data: JSON.stringify({ key: faker.lorem.word() }),
 			expected: "object",
 		},
 		{
@@ -35,28 +32,25 @@ describe("DataDetection", () => {
 		},
 		{
 			types: ["number", "string"],
-			data: `${faker.datatype.number()}, ${faker.random.words()}`,
+			data: `${faker.number.int()}, ${faker.lorem.words()}`,
 			expected: "string",
 			isMultiple: true,
 		},
 		{
 			types: ["number", "string"],
-			data: `${faker.datatype.number()}, ${faker.datatype.number()}`,
+			data: `${faker.number.int()}, ${faker.number.int()}`,
 			expected: "number",
 			isMultiple: true,
 		},
 		{
 			types: ["number", "string", "array"],
-			data: JSON.stringify([
-				faker.datatype.number(),
-				faker.datatype.number(),
-			]),
+			data: JSON.stringify([faker.number.int(), faker.number.int()]),
 			expected: "array",
 			isMultiple: true,
 		},
 		{
 			types: ["number", "string", "array"],
-			data: JSON.stringify([faker.random.word(), faker.random.word()]),
+			data: JSON.stringify([faker.lorem.word(), faker.lorem.word()]),
 			expected: "array",
 			isMultiple: true,
 		},
