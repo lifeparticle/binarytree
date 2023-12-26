@@ -36,7 +36,7 @@ const NotificationList: FC<NotificationListProps> = ({
 					key: 1,
 					label: (
 						<div className={style.notification__error}>
-							<Icon name="ShieldClose" color="red" />
+							<Icon name="ShieldX" color="red" />
 							<p>Something went wrong!</p>
 						</div>
 					),

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { parseXML } from "./helper";
 import { BASE_URL, SITE_OPTIONS } from "./constants";
-import { useFetchList } from "hooks";
+import { useFetch } from "hooks";
 
 const useNewsFeed = () => {
 	const [url, setUrl] = useState(SITE_OPTIONS["frontend-focus"].value);
@@ -9,7 +9,7 @@ const useNewsFeed = () => {
 		(item) => item.isFeedItem && item.value === url
 	);
 
-	const { data, isLoading, isError } = useFetchList(
+	const { data, isLoading, isError } = useFetch(
 		url,
 		isFeedItem ? `${BASE_URL}${url}` : url
 	);
