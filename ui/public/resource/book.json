@@ -200,5 +200,17 @@
 				"name": ""
 			}
 		]
+	},
+	{
+		"name": "Resilient Web Design",
+		"category": "Programming",
+		"subCategory": "Programming",
+		"url": "https://resilientwebdesign.com/",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
 	}
 ]
