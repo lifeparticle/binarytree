@@ -1,19 +1,22 @@
 import { Space, theme } from "antd";
 import { FC } from "react";
 import style from "components/General/CodeEditor/CodeEditor.module.scss";
-import { ValidateStatusProps } from "./utils/types";
 import { Icon } from "components/General";
 
 const VALID = "valid";
 
-const ValidateStatus: FC<ValidateStatusProps> = ({ status }) => {
-	if (status.length === 0) {
-		return null;
-	}
+interface ValidateStatusProps {
+	status: string;
+}
 
+const ValidateStatus: FC<ValidateStatusProps> = ({ status }) => {
 	const {
 		token: { colorBgContainer },
 	} = theme.useToken();
+
+	if (status.length === 0) {
+		return null;
+	}
 
 	return (
 		<Space

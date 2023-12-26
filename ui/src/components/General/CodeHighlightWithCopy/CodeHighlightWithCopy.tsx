@@ -1,5 +1,5 @@
 import { Clipboard } from "components/ComponentInjector";
-import { Prism, SyntaxHighlighterProps } from "react-syntax-highlighter";
+import { Prism } from "react-syntax-highlighter";
 import { ClipboardButton } from "components/InjectedComponent";
 import {
 	obsidian,
@@ -7,10 +7,10 @@ import {
 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import style from "./CodeHighlightWithCopy.module.scss";
 import { useMode } from "hooks";
-import { Component, FC } from "react";
+import { FC } from "react";
 
 // https://github.com/react-syntax-highlighter/react-syntax-highlighter/issues/539
-const SyntaxHighlighter = Prism as typeof Component<SyntaxHighlighterProps>;
+const SyntaxHighlighter = Prism;
 
 interface CodeHighlightWithCopyProps {
 	codeString: string;
