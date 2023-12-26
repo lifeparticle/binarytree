@@ -216,9 +216,18 @@ const HELP: Help = {
 		description: featuresById.tableofcontent.fullDescription,
 		helpTexts: [
 			{
-				id: "20",
-				title: "",
-				bulletPoints: [],
+				id: "1",
+				title: "Get URL from GitHub",
+				bulletPoints: [
+					"Navigate to your markdown file and copy the raw URl",
+				],
+			},
+			{
+				id: "2",
+				title: "Example URL",
+				bulletPoints: [
+					"Press cmd + e on mac or ctrl + e on windows",
+				],
 			},
 		],
 	},
