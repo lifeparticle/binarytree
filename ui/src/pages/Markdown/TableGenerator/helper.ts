@@ -1,5 +1,5 @@
-const FILL_SPACE = `        `;
-const FILL_HYPHEN = `------`;
+export const FILL_SPACE = `        `;
+export const FILL_HYPHEN = `------`;
 
 export const generateRow = (
 	colNum: number,
