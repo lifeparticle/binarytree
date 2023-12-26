@@ -1,12 +1,12 @@
-export const FILL_SPACE = `        `;
-export const FILL_HYPHEN = `------`;
+export const FILL_SPACE = "        ";
+export const FILL_HYPHEN = "------";
 
 export const generateRow = (
 	colNum: number,
 	fill = FILL_SPACE,
 	append = false
 ) => {
-	let result = append ? `` : `|`;
+	let result = append ? "" : "|";
 
 	for (let i = 0; i < colNum; i++) {
 		result += `${fill}|`;
@@ -105,10 +105,49 @@ export const updateHeader = (prevTable: string, colNum: number) => {
 };
 
 export const generateRows = (rowNum: number, colNum: number) => {
-	let result = ``;
+	let result = "";
 	const row = generateRow(colNum);
 	for (let j = 0; j < rowNum; j++) {
 		result += `${row}\n`;
+	}
+	return result;
+};
+
+const addRows = (lines: string[], prevColNum: number, colNum: number) => {
+	let result = "";
+	for (let i = 2; i < lines.length; i++) {
+		result += `${lines[i]}${generateRow(
+			colNum - prevColNum,
+			FILL_SPACE,
+			true
+		)}\n`;
+	}
+	return result;
+};
+
+const removeRows = (lines: string[], prevColNum: number, colNum: number) => {
+	let result = "";
+	const updatedColNum = prevColNum - (prevColNum - colNum) + 1;
+	let currChar = "";
+	let updatedRow;
+	let tempUpdatedColNum;
+
+	for (let i = 2; i < lines.length; i++) {
+		updatedRow = "";
+		tempUpdatedColNum = updatedColNum;
+		for (let j = 0; j < lines[i].length; j++) {
+			currChar = lines[i].charAt(j);
+			if (tempUpdatedColNum < 0) {
+				break;
+			} else if (currChar === "|" && tempUpdatedColNum > 0) {
+				updatedRow += lines[i].charAt(j);
+				tempUpdatedColNum--;
+			} else if (tempUpdatedColNum > 0) {
+				updatedRow += lines[i].charAt(j);
+			}
+		}
+
+		result += `${updatedRow}\n`;
 	}
 	return result;
 };
@@ -118,50 +157,22 @@ export const updateRows = (
 	rowNum: number,
 	colNum: number
 ) => {
+	if (rowNum === 0) return "";
+
 	const lines = getLines(prevTable);
 	const prevRowNum = lines.length - 2;
-	const prevColNum = getPrevColNum(lines[0]);
-	let appendRows = ``;
-	let result = ``;
+	const prevHeader = lines[0];
+	const prevColNum = getPrevColNum(prevHeader);
+	let result = "";
+	let appendRows = "";
 
 	const isColNumInc = prevColNum < colNum;
 
-	if (rowNum === 0) return "";
-
 	if (prevRowNum === rowNum) {
 		if (isColNumInc) {
-			for (let i = 2; i < lines.length; i++) {
-				result += `${lines[i]}${generateRow(
-					colNum - prevColNum,
-					FILL_SPACE,
-					true
-				)}\n`;
-			}
-		} else {
-			const updatedColNum = prevColNum - (prevColNum - colNum) + 1;
-			let currChar = ``;
-			let updatedRow;
-			let tempUpdatedColNum;
-
-			for (let i = 2; i < lines.length; i++) {
-				updatedRow = ``;
-				tempUpdatedColNum = updatedColNum;
-				for (let j = 0; j < lines[i].length; j++) {
-					currChar = lines[i].charAt(j);
-					if (tempUpdatedColNum < 0) {
-						break;
-					} else if (currChar === "|" && tempUpdatedColNum > 0) {
-						updatedRow += lines[i].charAt(j);
-						tempUpdatedColNum--;
-					} else if (tempUpdatedColNum > 0) {
-						updatedRow += lines[i].charAt(j);
-					}
-				}
-
-				result += `${updatedRow}\n`;
-			}
+			return addRows(lines, prevColNum, colNum);
 		}
-		return result;
+		return removeRows(lines, prevColNum, colNum);
 	}
 
 	const isRowNumInc = prevRowNum < rowNum;
@@ -169,7 +180,7 @@ export const updateRows = (
 	if (isRowNumInc) {
 		const rows =
 			lines.length === 2
-				? ``
+				? ""
 				: `${lines.slice(2, lines.length).join("\n")}\n`;
 
 		appendRows = generateRows(rowNum - prevRowNum, colNum);
