@@ -1,0 +1,22 @@
+{
+	"Create a React component": {
+		"prefix": "rfc",
+		"body": [
+			"import { FC } from 'react';",
+			"",
+			"import styles from './${TM_FILENAME_BASE}.module.scss';",
+			"",
+			"interface ${1:${TM_FILENAME_BASE}}Props {",
+			"\tprop: string;",
+			"}",
+			"",
+			"const ${1:${TM_FILENAME_BASE}}: FC<${1:${TM_FILENAME_BASE}}Props> = () => {",
+			"\treturn <div className={styles.root}></div>;",
+			"};",
+			"",
+			"export default ${1:${TM_FILENAME_BASE}};",
+			""
+		],
+		"description": "Create a React functional component using TypeScript and SCSS modules"
+	}
+}

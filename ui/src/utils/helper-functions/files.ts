@@ -15,7 +15,7 @@ export function downloadFile(
 
 export async function downloadPDFFile(fileContent: string, fileName: string) {
 	const renderer = new marked.Renderer();
-	const content = marked(fileContent, { renderer });
+	const content = await marked(fileContent, { renderer });
 
 	const a = document.createElement("a");
 	a.href = "data:text/html;charset=utf-8," + encodeURIComponent(content);
