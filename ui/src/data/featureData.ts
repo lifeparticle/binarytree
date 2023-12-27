@@ -99,7 +99,16 @@ export const FEATURE_DATA: Feature[] = [
 		fullDescription:
 			"Transform your work by quickly uploading and converting supported files into miscellaneous formats. Whether you're converting audio, or image, files, our platform streamlines the process, saving you valuable time.",
 		link: routesById.fileconverter.path,
-		library: [{ name: "Vanilla JS", url: "" }],
+		library: [
+			{
+				name: "FFmpeg",
+				url: LIBRARY_URLS["@ffmpeg/ffmpeg"],
+			},
+			{
+				name: "Fmpeg Util",
+				url: LIBRARY_URLS["@ffmpeg/util"],
+			},
+		],
 	},
 	{
 		key: routesById.pixelconverter.id,
@@ -351,23 +360,6 @@ export const FEATURE_DATA: Feature[] = [
 			"Uplift your coding journey with a curated collection of courses, blogs, YouTube channels, interviews, movies, platforms, blogs, and more - all handpicked to enrich your software development expertise. Discover a one-stop hub where valuable insights and educational gems await. Fuel your passion for coding and unlock a universe of knowledge.",
 		link: routesById.blog.path,
 		library: [{ name: "Vanilla JS", url: "" }],
-	},
-	{
-		key: routesById.fileconverter.id,
-		name: routesById.fileconverter.title,
-		shortDescription: routesById.fileconverter.description,
-		fullDescription: "",
-		link: routesById.fileconverter.path,
-		library: [
-			{
-				name: "FFmpeg",
-				url: LIBRARY_URLS["@ffmpeg/ffmpeg"],
-			},
-			{
-				name: "Fmpeg Util",
-				url: LIBRARY_URLS["@ffmpeg/util"],
-			},
-		],
 	},
 	// {
 	// 	key: routesById.docs.id,
