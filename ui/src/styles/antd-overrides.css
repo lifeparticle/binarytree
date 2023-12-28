@@ -63,9 +63,8 @@ h5 {
 }
 
 .ant-btn-icon-only {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	display: grid;
+	place-content: center;
 }
 
 .tox-tinymce {
