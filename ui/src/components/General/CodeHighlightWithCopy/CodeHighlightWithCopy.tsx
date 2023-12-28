@@ -1,13 +1,16 @@
 import { Clipboard } from "components/ComponentInjector";
-import SyntaxHighlighter from "react-syntax-highlighter";
+import { Prism } from "react-syntax-highlighter";
 import { ClipboardButton } from "components/InjectedComponent";
 import {
 	obsidian,
 	stackoverflowLight,
 } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import style from "./CodeHighlightwithCopy.module.scss";
+import style from "./CodeHighlightWithCopy.module.scss";
 import { useMode } from "hooks";
 import { FC } from "react";
+
+// https://github.com/react-syntax-highlighter/react-syntax-highlighter/issues/539
+const SyntaxHighlighter = Prism;
 
 interface CodeHighlightWithCopyProps {
 	codeString: string;

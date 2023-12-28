@@ -1,6 +1,5 @@
 import { test, expect, describe } from "vitest";
 import ColorPicker from "pages/Colors/ColorPicker";
-import "@testing-library/jest-dom/extend-expect";
 import { render, fireEvent, screen } from "@testing-library/react";
 import { FORMAT_LABELS } from "pages/Colors/ColorPicker/constants";
 import { MemoryRouter } from "react-router-dom";

@@ -3,6 +3,13 @@
 		display: flex;
 		flex-direction: column;
 		height: var(--bt-size-percent-100);
+
+		&_container {
+			display: grid;
+			grid-template-columns: auto auto auto;
+			gap: var(--bt-size-10);
+			align-items: center;
+		}
 	}
 
 	&__output {
@@ -15,7 +22,6 @@
 			justify-content: center;
 		}
 
-		// xl(1280px)
 		@media screen and (min-width: 1280px) {
 			&_warning {
 				min-height: var(--bt-size-600);

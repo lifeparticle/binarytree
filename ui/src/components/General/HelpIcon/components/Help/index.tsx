@@ -9,12 +9,12 @@ const Help: FC<HelpProps> = ({ helpObject }) => {
 	return (
 		<div>
 			<p>{helpObject.description}</p>
-			{helpObject.helpTexts.map((helpText, index) => (
-				<div key={index}>
-					<h4>{helpText.title}</h4>
+			{helpObject.helpTexts.map(({ id, title, bulletPoints }) => (
+				<div key={id}>
+					<h4>{title}</h4>
 					<ul>
-						{helpText.bulletPoints.map((bulletPoint, bpIndex) => (
-							<li key={bpIndex}>{bulletPoint}</li>
+						{bulletPoints.map((bulletPoint) => (
+							<li key={crypto.randomUUID()}>{bulletPoint}</li>
 						))}
 					</ul>
 				</div>

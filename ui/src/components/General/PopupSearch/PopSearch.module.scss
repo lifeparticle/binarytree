@@ -7,14 +7,18 @@ $popsearch-bg-dark: #646363;
 		margin-top: var(--bt-size-10);
 
 		&_item {
-			padding: var(--bt-size-10) var(--bt-size-5);
-			margin: 0 var(--bt-size-5);
-			margin-top: var(--bt-size-5);
-			border-radius: var(--bt-size-8);
-			cursor: pointer;
 			display: flex;
 			align-items: center;
 			gap: var(--bt-size-10);
+			width: calc(100% - var(--bt-size-10));
+			border-radius: var(--bt-size-8);
+			background-color: #ffff;
+			line-height: 22px;
+			margin: 0 var(--bt-size-5);
+			margin-top: var(--bt-size-5);
+			padding: var(--bt-size-10) var(--bt-size-5);
+			border: none;
+			cursor: pointer;
 
 			&_light:hover {
 				background-color: #e0e0e0;

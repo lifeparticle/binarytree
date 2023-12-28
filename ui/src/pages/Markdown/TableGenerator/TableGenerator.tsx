@@ -1,7 +1,7 @@
 import MDEditor from "@uiw/react-md-editor";
 import { Card, Form, Space, Spin } from "antd";
 import { FC, useState, useTransition } from "react";
-import { generateTable } from "./util/utils";
+import { generateTable } from "./helper";
 import { ResponsiveInputWithLabel } from "components/General";
 import style from "./MdTableGenerator.module.scss";
 import { Clipboard } from "components/ComponentInjector";

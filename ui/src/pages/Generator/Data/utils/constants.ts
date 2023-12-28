@@ -1,4 +1,4 @@
-import { ChemicalElement, Unit, faker,  } from "@faker-js/faker";
+import { ChemicalElement, Unit, faker } from "@faker-js/faker";
 
 export const MYSQL_DATA_TYPES = [
 	{ value: "BIGINT", label: "Big Integer" },
@@ -70,49 +70,49 @@ export const FAKER_DATA_TYPES: FakerDataType[] = [
 		value: "buildingNumber",
 		label: "Building Number",
 		method: () => {
-			return faker.address.buildingNumber();
+			return faker.location.buildingNumber();
 		},
 	},
 	{
 		value: "cardinalDirection",
 		label: "Cardinal Direction",
 		method: () => {
-			return faker.address.cardinalDirection();
+			return faker.location.cardinalDirection();
 		},
 	},
 	{
 		value: "addressCity",
 		label: "City",
 		method: () => {
-			return faker.address.city();
+			return faker.location.city();
 		},
 	},
 	{
 		value: "cityName",
 		label: "City Name",
 		method: () => {
-			return faker.address.cityName();
+			return faker.location.cityName();
 		},
 	},
 	{
 		value: "country",
 		label: "Country",
 		method: () => {
-			return faker.address.country();
+			return faker.location.country();
 		},
 	},
 	{
 		value: "countryCode",
 		label: "Country Code",
 		method: () => {
-			return faker.address.countryCode();
+			return faker.location.countryCode();
 		},
 	},
 	{
 		value: "county",
 		label: "County",
 		method: () => {
-			return faker.address.county();
+			return faker.location.county();
 		},
 	},
 
@@ -120,112 +120,98 @@ export const FAKER_DATA_TYPES: FakerDataType[] = [
 		value: "direction",
 		label: "Direction",
 		method: () => {
-			return faker.address.direction();
+			return faker.location.direction();
 		},
 	},
 	{
 		value: "latitude",
 		label: "Latitude",
 		method: () => {
-			return faker.address.latitude();
+			return faker.location.latitude();
 		},
 	},
 	{
 		value: "longitude",
 		label: "Longitude",
 		method: () => {
-			return faker.address.longitude();
+			return faker.location.longitude();
 		},
 	},
 	{
 		value: "nearbyGPSCoordinate",
 		label: "Nearby G P S Coordinate",
 		method: () => {
-			return faker.address.nearbyGPSCoordinate();
+			return faker.location.nearbyGPSCoordinate();
 		},
 	},
 	{
 		value: "ordinalDirection",
 		label: "Ordinal Direction",
 		method: () => {
-			return faker.address.ordinalDirection();
+			return faker.location.ordinalDirection();
 		},
 	},
 	{
 		value: "secondaryAddress",
 		label: "Secondary Address",
 		method: () => {
-			return faker.address.secondaryAddress();
+			return faker.location.secondaryAddress();
 		},
 	},
 	{
 		value: "state",
 		label: "State",
 		method: () => {
-			return faker.address.state();
+			return faker.location.state();
 		},
 	},
 	{
 		value: "stateAbbr",
 		label: "State Abbr",
 		method: () => {
-			return faker.address.stateAbbr();
+			return faker.location.stateAbbr();
 		},
 	},
 	{
 		value: "street",
 		label: "Street",
 		method: () => {
-			return faker.address.street();
+			return faker.location.street();
 		},
 	},
 	{
 		value: "streetAddress",
 		label: "Street Address",
 		method: () => {
-			return faker.address.streetAddress();
+			return faker.location.streetAddress();
 		},
 	},
 	{
 		value: "streetName",
 		label: "Street Name",
 		method: () => {
-			return faker.address.streetName();
-		},
-	},
-	{
-		value: "streetPrefix",
-		label: "Street Prefix",
-		method: () => {
-			return faker.address.streetPrefix();
-		},
-	},
-	{
-		value: "streetSuffix",
-		label: "Street Suffix",
-		method: () => {
-			return faker.address.streetSuffix();
+			return faker.location.street();
 		},
 	},
 	{
 		value: "timeZone",
 		label: "Time Zone",
 		method: () => {
-			return faker.address.timeZone();
+			return faker.location.timeZone();
 		},
 	},
 	{
 		value: "zipCode",
 		label: "Zip Code",
 		method: () => {
-			return faker.address.zipCode();
+			return faker.location.zipCode();
 		},
 	},
 	{
 		value: "zipCodeByState",
 		label: "Zip Code By State",
 		method: () => {
-			return faker.address.zipCodeByState("####");
+			return faker.location.zipCodeByState("####");
 		},
 	},
 	{
@@ -412,13 +398,6 @@ export const FAKER_DATA_TYPES: FakerDataType[] = [
 		},
 	},
 	{
-		value: "color",
-		label: "Color",
-		method: () => {
-			return faker.commerce.color();
-		},
-	},
-	{
 		value: "department",
 		label: "Department",
 		method: () => {
@@ -521,14 +500,6 @@ export const FAKER_DATA_TYPES: FakerDataType[] = [
 		label: "Catch Phrase Noun",
 		method: () => {
 			return faker.company.catchPhraseNoun();
-		},
-	},
-
-	{
-		value: "companyName",
-		label: "Company Name",
-		method: () => {
-			return faker.company.companyName();
 		},
 	},
 	{
@@ -939,20 +910,6 @@ export const FAKER_DATA_TYPES: FakerDataType[] = [
 		},
 	},
 	{
-		value: "arrayElement",
-		label: "Array Element",
-		method: () => {
-			return faker.helpers.arrayElement();
-		},
-	},
-	{
-		value: "arrayElements",
-		label: "Array Elements",
-		method: () => {
-			return faker.helpers.arrayElements();
-		},
-	},
-	{
 		value: "maybe",
 		label: "Maybe",
 		method: () => {
@@ -1012,13 +969,6 @@ export const FAKER_DATA_TYPES: FakerDataType[] = [
 		label: "Replace Symbols",
 		method: () => {
 			return faker.helpers.replaceSymbols();
-		},
-	},
-	{
-		value: "shuffle",
-		label: "Shuffle",
-		method: () => {
-			return faker.helpers.shuffle();
 		},
 	},
 	{
@@ -1361,27 +1311,6 @@ export const FAKER_DATA_TYPES: FakerDataType[] = [
 		},
 	},
 	{
-		value: "rand",
-		label: "Rand",
-		method: () => {
-			return faker.mersenne.rand();
-		},
-	},
-	{
-		value: "seed",
-		label: "Seed",
-		method: () => {
-			return faker.mersenne.seed(faker.mersenne.rand());
-		},
-	},
-	{
-		value: "seed_array",
-		label: "Seed_array",
-		method: () => {
-			return faker.mersenne.seed_array([]);
-		},
-	},
-	{
 		value: "genre",
 		label: "Genre",
 		method: () => {
@@ -1396,101 +1325,94 @@ export const FAKER_DATA_TYPES: FakerDataType[] = [
 		},
 	},
 	{
-		value: "findName",
-		label: "Find Name",
-		method: () => {
-			return faker.name.findName();
-		},
-	},
-	{
 		value: "firstName",
 		label: "First Name",
 		method: () => {
-			return faker.name.firstName();
+			return faker.person.firstName();
 		},
 	},
 	{
 		value: "fullName",
 		label: "Full Name",
 		method: () => {
-			return faker.name.fullName();
+			return faker.person.fullName();
 		},
 	},
 	{
 		value: "gender",
 		label: "Gender",
 		method: () => {
-			return faker.name.gender();
+			return faker.person.gender();
 		},
 	},
 	{
 		value: "jobArea",
 		label: "Job Area",
 		method: () => {
-			return faker.name.jobArea();
+			return faker.person.jobArea();
 		},
 	},
 	{
 		value: "jobDescriptor",
 		label: "Job Descriptor",
 		method: () => {
-			return faker.name.jobDescriptor();
+			return faker.person.jobDescriptor();
 		},
 	},
 	{
 		value: "jobTitle",
 		label: "Job Title",
 		method: () => {
-			return faker.name.jobTitle();
+			return faker.person.jobTitle();
 		},
 	},
 	{
 		value: "jobType",
 		label: "Job Type",
 		method: () => {
-			return faker.name.jobType();
+			return faker.person.jobType();
 		},
 	},
 	{
 		value: "lastName",
 		label: "Last Name",
 		method: () => {
-			return faker.name.lastName();
+			return faker.person.lastName();
 		},
 	},
 	{
 		value: "middleName",
 		label: "Middle Name",
 		method: () => {
-			return faker.name.middleName();
+			return faker.person.middleName();
 		},
 	},
 	{
 		value: "prefix",
 		label: "Prefix",
 		method: () => {
-			return faker.name.prefix();
+			return faker.person.prefix();
 		},
 	},
 	{
 		value: "sex",
 		label: "Sex",
 		method: () => {
-			return faker.name.sex();
+			return faker.person.sex();
 		},
 	},
 	{
 		value: "sexType",
 		label: "Sex Type",
 		method: () => {
-			return faker.name.sexType();
+			return faker.person.sexType();
 		},
 	},
 	{
 		value: "suffix",
 		label: "Suffix",
 		method: () => {
-			return faker.name.suffix();
+			return faker.person.suffix();
 		},
 	},
 
@@ -1509,26 +1431,13 @@ export const FAKER_DATA_TYPES: FakerDataType[] = [
 		},
 	},
 	{
-		value: "phoneFormats",
-		label: "Phone Formats",
-		method: () => {
-			return faker.phone.phoneFormats();
-		},
-	},
-	{
 		value: "phoneNumber",
 		label: "Phone Number",
 		method: () => {
-			return faker.phone.phoneNumber();
+			return faker.phone.number();
 		},
 	},
-	{
-		value: "phoneNumberFormat",
-		label: "Phone Number Format",
-		method: () => {
-			return faker.phone.phoneNumberFormat();
-		},
-	},
+
 	{
 		value: "alpha",
 		label: "Alpha",
@@ -1544,33 +1453,25 @@ export const FAKER_DATA_TYPES: FakerDataType[] = [
 			return faker.random.alphaNumeric();
 		},
 	},
-
-	{
-		value: "locale",
-		label: "Locale",
-		method: () => {
-			return faker.random.locale();
-		},
-	},
 	{
 		value: "numeric",
 		label: "Numeric",
 		method: () => {
-			return faker.random.numeric();
+			return faker.string.numeric();
 		},
 	},
 	{
 		value: "word",
 		label: "Word",
 		method: () => {
-			return faker.random.word();
+			return faker.lorem.word();
 		},
 	},
 	{
 		value: "words",
 		label: "Words",
 		method: () => {
-			return faker.random.words();
+			return faker.lorem.words();
 		},
 	},
 	{

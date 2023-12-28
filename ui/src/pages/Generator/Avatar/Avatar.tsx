@@ -16,7 +16,7 @@ import {
 	AvatarShape,
 	AvatarShapeType,
 	FONTS,
-} from "./utils/constants";
+} from "./constants";
 import style from "./Avatar.module.scss";
 
 const Avatar = () => {

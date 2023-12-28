@@ -47,7 +47,7 @@ const PopupSearch: FC = () => {
 	useCombinedKeyPress(handleModalOpen, "k");
 
 	const searchInputRef = useRef<InputRef | null>(null);
-	const itemRefs = useRef<Array<HTMLDivElement | null>>([]);
+	const itemRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
 	const handleAfterOpen = () => {
 		if (searchInputRef.current) {
@@ -98,7 +98,7 @@ const PopupSearch: FC = () => {
 				)}
 			>
 				{filteredItems.map((item, index) => (
-					<div
+					<button
 						onClick={() => onClickHandler(item.url)}
 						ref={(el) => (itemRefs.current[index] = el)}
 						key={item.url}
@@ -114,7 +114,7 @@ const PopupSearch: FC = () => {
 					>
 						<Icon name={item.icon as IconName} />
 						<p>{item?.name}</p>
-					</div>
+					</button>
 				))}
 			</div>
 		</Modal>

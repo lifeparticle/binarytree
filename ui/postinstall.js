@@ -1,6 +1,8 @@
-const fse = require("fs-extra");
-const path = require("path");
-const topDir = __dirname;
+import fse from "fs-extra";
+import path from "path";
+
+const topDir = path.dirname(new URL(import.meta.url).pathname);
+
 fse.emptyDirSync(path.join(topDir, "public", "tinymce"));
 fse.copySync(
 	path.join(topDir, "node_modules", "tinymce"),

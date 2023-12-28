@@ -1,3 +1,17 @@
+### [10.0.1] - 2023-12-26
+
+-   Fix [use a Hook conditionally bug](https://github.com/facebook/react/issues/24391)
+
+### [10.0.0] - 2023-12-26
+
+-   Upddate packages
+-   `useFetchList` to `useFetch`
+-   Refactor `useFetch`
+-   Refactor **TableOfContent.tsx**
+-   Add `ui/.vscode/react.code-snippets`
+-   ignore `!.vscode/react.code-snippets` in `ui/.gitignore`
+-   Tests are failing check issue https://github.com/lifeparticle/binarytree/issues/391
+
 ### [9.0.2] - 2023-12-06
 
 -   Start refactoring Pages/Colors

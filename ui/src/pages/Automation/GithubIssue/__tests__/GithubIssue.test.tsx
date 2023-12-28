@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
-import GithubIssue from "./GithubIssue";
+import GithubIssue from "pages/Automation/GithubIssue/GithubIssue";
 
 describe(`#GithubIssue`, () => {
 	test("render component without a crash", () => {
