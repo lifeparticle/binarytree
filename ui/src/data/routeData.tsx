@@ -36,6 +36,7 @@ import {
 	Pixel,
 	Platform,
 	Plugin,
+	Survey,
 	PrivacyPolicy,
 	QRcode,
 	ShadesAndTints,
@@ -92,6 +93,7 @@ export type RouteId =
 	| "pixelconverter"
 	| "platform"
 	| "plugin"
+	| "survey"
 	| "privacypolicy"
 	| "qrcode"
 	| "shadesandtints"
@@ -320,6 +322,13 @@ export const routes: Route[] = [
 		title: "Plugins",
 		description: "Plugins to power up your projects.",
 		component: Plugin,
+	},
+	{
+		id: "survey",
+		path: "/resource/survey",
+		title: "Surveys",
+		description: "Take a peek at the survey results.",
+		component: Survey,
 	},
 	{
 		id: "tool",

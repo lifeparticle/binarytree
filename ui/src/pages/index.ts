@@ -39,6 +39,7 @@ const Interview = lazy(() => import("pages/Resource/Interview"));
 const Movie = lazy(() => import("pages/Resource/Movie"));
 const Platform = lazy(() => import("pages/Resource/Platform"));
 const Plugin = lazy(() => import("pages/Resource/Plugin"));
+const Survey = lazy(() => import("pages/Resource/Survey"));
 const Tool = lazy(() => import("pages/Resource/Tool"));
 const TvSeries = lazy(() => import("pages/Resource/TvSeries"));
 const UiUx = lazy(() => import("pages/Resource/UiUx"));
@@ -101,6 +102,7 @@ export {
 	Pixel,
 	Platform,
 	Plugin,
+	Survey,
 	PrivacyPolicy,
 	QRcode,
 	ShadesAndTints,
