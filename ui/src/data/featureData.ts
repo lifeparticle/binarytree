@@ -340,7 +340,8 @@ export const FEATURE_DATA: Feature[] = [
 		key: routesById.mimetype.id,
 		name: routesById.mimetype.title,
 		shortDescription: routesById.mimetype.description,
-		fullDescription: "",
+		fullDescription:
+			"A comprehensive table detailing file extensions ('Name'), examples with descriptions ('Example'), and mime-types ('JavaScript code') with a 'Copy to Clipboard' feature. It also includes a search bar for easy navigation by name or content type—a must-have tool for API  developers and a quick reference guide for curious minds.",
 		link: routesById.mimetype.path,
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
@@ -348,7 +349,8 @@ export const FEATURE_DATA: Feature[] = [
 		key: routesById.npmpackages.id,
 		name: routesById.npmpackages.title,
 		shortDescription: routesById.npmpackages.description,
-		fullDescription: "",
+		fullDescription:
+			"Npm Packages tracks the latest version numbers of popular npm packages. It's a tool for developers keen on staying ahead with the newest package versions in the ever-evolving world of JavaScript.",
 		link: routesById.npmpackages.path,
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
@@ -361,22 +363,6 @@ export const FEATURE_DATA: Feature[] = [
 		link: routesById.blog.path,
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
-	// {
-	// 	key: routesById.docs.id,
-	// 	name: routesById.docs.title,
-	// 	shortDescription: routesById.docs.description,
-	// 	fullDescription: "",
-	// 	link: routesById.docs.path,
-	// 	library: [{ name: "Vanilla JS", url: "" }],
-	// },
-	// {
-	// 	key: routesById.units.id,
-	// 	name: routesById.units.title,
-	// 	shortDescription: routesById.units.description,
-	// 	fullDescription: "",
-	// 	link: routesById.units.path,
-	// 	library: [{ name: "Vanilla JS", url: "" }],
-	// },
 ];
 
 export const featuresById = FEATURE_DATA.reduce((acc, feature) => {
