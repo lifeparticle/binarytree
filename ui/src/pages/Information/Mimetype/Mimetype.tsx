@@ -1,7 +1,9 @@
 import { FC } from "react";
 import { useFetch } from "hooks";
-import { MIME_KEY, MIME_URL } from "./utils/constants";
 import MimeSearchResult from "./components/MimeSearchResult";
+
+const MIME_URL = "/mime/data.json";
+const MIME_KEY = "mimetype";
 
 const Mimetype: FC = () => {
 	const { data, isError, isLoading } = useFetch(MIME_KEY, MIME_URL);
