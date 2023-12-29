@@ -1,11 +1,9 @@
-import { Card, Table } from "antd";
+import { Card, Table, Tag } from "antd";
 import { FC } from "react";
 import MimeSearch from "./SearchBar";
 import { filteredMimeType } from "pages/Information/Mimetype/helper";
 import useParamsValue from "hooks/useParamsValue";
-import { ColumnsType } from "antd/es/table";
-import { Tag } from "antd";
-import { CodeHighlightWithCopy } from "components/General";
+import { ColumnsType } from "antd/es/table";import { CodeHighlightWithCopy } from "components/General";
 import { PARAMS } from "data/paramsData";
 import { MimeTableDataType } from "pages/Information/Mimetype/types";
 
