@@ -7,12 +7,7 @@ import { ColumnsType } from "antd/es/table";
 import { Tag } from "antd";
 import { CodeHighlightWithCopy } from "components/General";
 import { PARAMS } from "data/paramsData";
-
-interface MimeTableDataType {
-	name: string;
-	example: string;
-	code: { "content-type": string };
-}
+import { MimeTableDataType } from "pages/Information/Mimetype/types";
 
 interface MimeSearchResultProps {
 	data: MimeTableDataType[];
