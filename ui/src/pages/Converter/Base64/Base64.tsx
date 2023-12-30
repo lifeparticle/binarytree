@@ -31,7 +31,7 @@ const Base64: FC = () => {
 				<Form layout="vertical">
 					<CodeEditor
 						label="Text"
-						code={input}
+						value={input}
 						language=" "
 						handleCode={(value) => {
 							setInput(value || "");
@@ -51,7 +51,7 @@ const Base64: FC = () => {
 					<CodeEditor
 						status={status}
 						label="Base64"
-						code={result}
+						value={result}
 						language={" "}
 						handleCode={(value) => {
 							setResult(value || "");

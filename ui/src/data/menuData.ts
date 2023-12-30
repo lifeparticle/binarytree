@@ -187,16 +187,16 @@ export const MENU_ITEMS = [
 		show: true,
 		children: [
 			{
-				name: routesById.diagramming.title,
-				url: routesById.diagramming.path,
-				icon: "PencilRuler",
+				name: routesById.codeformatter.title,
+				url: routesById.codeformatter.path,
+				icon: "Code",
 				show: true,
 			},
 
 			{
-				name: routesById.sorting.title,
-				url: routesById.sorting.path,
-				icon: "ArrowUpNarrowWide",
+				name: routesById.diagramming.title,
+				url: routesById.diagramming.path,
+				icon: "PencilRuler",
 				show: true,
 			},
 			{
@@ -206,9 +206,15 @@ export const MENU_ITEMS = [
 				show: true,
 			},
 			{
-				name: routesById.codeformatter.title,
-				url: routesById.codeformatter.path,
-				icon: "Code",
+				name: routesById.progressivewebapp.title,
+				url: routesById.progressivewebapp.path,
+				icon: "Globe",
+				show: true,
+			},
+			{
+				name: routesById.sorting.title,
+				url: routesById.sorting.path,
+				icon: "ArrowUpNarrowWide",
 				show: true,
 			},
 		],

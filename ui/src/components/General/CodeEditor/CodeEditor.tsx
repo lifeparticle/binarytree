@@ -8,7 +8,7 @@ import ValidateStatus from "./components/ValidateStatus";
 interface CodeEditorProps {
 	handleCode?: (code: string | undefined) => void;
 	language?: string;
-	code: string;
+	value: string;
 	label: string;
 	status?: string;
 }
@@ -16,7 +16,7 @@ interface CodeEditorProps {
 const CodeEditor: FC<CodeEditorProps> = ({
 	handleCode,
 	language = "javascript",
-	code,
+	value,
 	label,
 	status,
 }) => {
@@ -25,7 +25,7 @@ const CodeEditor: FC<CodeEditorProps> = ({
 		<div className={style.textareaContainer}>
 			<Form.Item label={label}>
 				<Editor
-					value={code}
+					value={value}
 					height="50dvh"
 					language={language}
 					onChange={handleCode}

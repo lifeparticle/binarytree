@@ -301,6 +301,20 @@ export const FEATURE_DATA: Feature[] = [
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
+		key: routesById.progressivewebapp.id,
+		name: routesById.progressivewebapp.title,
+		shortDescription: routesById.progressivewebapp.description,
+		fullDescription:
+			"Convert your website into a Progressive Web App (PWA) and enjoy the best of both worlds. Our feature allows you to transform your website into a mobile app and reap the benefits of both platforms. It's the ultimate solution for developers keen on enhancing user experience and boosting engagement.",
+		link: routesById.progressivewebapp.path,
+		library: [
+			{
+				name: "Monaco Editor",
+				url: LIBRARY_URLS["@monaco-editor/react"],
+			},
+		],
+	},
+	{
 		key: routesById.diffchecker.id,
 		name: routesById.diffchecker.title,
 		shortDescription: routesById.diffchecker.description,
