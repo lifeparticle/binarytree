@@ -31,6 +31,7 @@ const AirtableEmbed = () => {
 					src="https://airtable.com/embed/appbcH1EyjqD8PXkK/shrm5RlUHdworbgSz?backgroundColor=blue"
 					height="1949.375"
 					onLoad={() => setLoading(false)}
+					role="presentation"
 				></iframe>
 			</div>
 			<Footer />
