@@ -24,7 +24,6 @@ interface FileConverter {
 
 function FileConverter() {
 	const [uploadedFiles, setUploadedFiles] = useState<FileConverter[]>([]);
-
 	const [selectedFormat, setSelectedFormat] = useState(IMAGE_TYPES[0].value);
 	const { loaded, ffmpeg } = useFfmpeg();
 
@@ -103,6 +102,12 @@ function FileConverter() {
 		accept: "image/*,video/*,audio/*",
 		disabled: !loaded,
 		listType: "picture",
+		onRemove: (file) => {
+			const newUploadedFiles = uploadedFiles.filter(
+				(item) => item.file.uid !== file.uid
+			);
+			setUploadedFiles(newUploadedFiles);
+		},
 	};
 
 	return (
@@ -131,7 +136,7 @@ function FileConverter() {
 			<ResponsiveButton
 				type="primary"
 				onClick={convertFiles}
-				disabled={!loaded}
+				disabled={!loaded || uploadedFiles.length === 0}
 				icon
 			>
 				{uploadedFiles.length > 1 ? "Convert All" : "Convert"}
