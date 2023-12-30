@@ -2,15 +2,19 @@ import { useState } from "react";
 import { fetchFile } from "@ffmpeg/util";
 import { message, Upload } from "antd";
 import type { UploadFile, UploadProps } from "antd";
-import { Icon, ResponsiveButton, Spin } from "components/General";
+import {
+	Icon,
+	ResponsiveButton,
+	ResponsiveSelectWithLabel,
+	Spin,
+} from "components/General";
 import styles from "./FileConverter.module.scss";
-import { useFfmpeg } from "./useFfmpeg";
 import {
 	getFileExtension,
 	removeFileExtension,
 } from "utils/helper-functions/files";
-import { ItemFileRender } from "./ItemRender";
 import { IMAGE_TYPES } from "./constants";
+import { useFfmpeg } from "./useFfmpeg";
 
 const { Dragger } = Upload;
 interface FileConverter {
@@ -97,20 +101,14 @@ function FileConverter() {
 			}
 		},
 		accept: "image/*,video/*,audio/*",
-		itemRender: (_, file: UploadFile, __, actions) => (
-			<ItemFileRender
-				file={file}
-				actions={actions}
-				selectedFormat={selectedFormat}
-				setSelectedFormat={setSelectedFormat}
-			/>
-		),
 		disabled: !loaded,
+		listType: "picture",
 	};
 
 	return (
 		<div className={styles.ic}>
 			{!loaded && <Spin />}
+
 			<Dragger {...props}>
 				<p className="ant-upload-drag-icon">
 					<Icon name="Inbox" size={100} strokeWidth="0.2" />
@@ -122,6 +120,14 @@ function FileConverter() {
 					Support for a single or bulk upload.
 				</p>
 			</Dragger>
+			<ResponsiveSelectWithLabel
+				label="Output file format"
+				value={selectedFormat}
+				onSelect={(_, option) => setSelectedFormat(option.value)}
+				options={IMAGE_TYPES}
+				defaultActiveFirstOption
+				disabled={!loaded}
+			/>
 			<ResponsiveButton
 				type="primary"
 				onClick={convertFiles}
