@@ -78,7 +78,7 @@ const CodeFormatter: FC = () => {
 					</div>
 
 					<CodeEditor
-						code={inputCode}
+						value={inputCode}
 						handleCode={(value) => setInputCode(value || "")}
 						language={inputType}
 						label="Enter code"

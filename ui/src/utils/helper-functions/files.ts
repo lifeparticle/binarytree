@@ -29,6 +29,10 @@ export function downloadTextFile(fileContent: string, fileName: string) {
 	downloadFile(fileContent, fileName, "text/plain;charset=utf-8");
 }
 
+export function downloadJSONFile(fileContent: string, fileName: string) {
+	downloadFile(fileContent, fileName, "application/json;charset=utf-8");
+}
+
 export function handleImageUpload(
 	file: File,
 	callback: (base64: string) => void

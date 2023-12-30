@@ -17,10 +17,10 @@ const BoxShadow = lazy(() => import("pages/CSS/BoxShadow"));
 const Units = lazy(() => import("pages/CSS/Units"));
 
 const Base64 = lazy(() => import("pages/Converter/Base64"));
-const CodeFormatter = lazy(() => import("pages/Tools/CodeFormatter"));
 const FileConverter = lazy(() => import("pages/Converter/File"));
 const JsonToTypescript = lazy(() => import("pages/Converter/JsonToTypescript"));
 const Pixel = lazy(() => import("pages/Converter/Pixel"));
+const Svg = lazy(() => import("pages/Converter/Svg"));
 
 const Avatar = lazy(() => import("pages/Generator/Avatar"));
 const CSharpBuilder = lazy(() => import("pages/Generator/CSharpBuilder"));
@@ -50,10 +50,11 @@ const Editor = lazy(() => import("pages/Markdown/Editor"));
 const TableGenerator = lazy(() => import("pages/Markdown/TableGenerator"));
 const TableOfContent = lazy(() => import("pages/Markdown/TableOfContent"));
 
+const CodeFormatter = lazy(() => import("pages/Tools/CodeFormatter"));
 const Diagramming = lazy(() => import("pages/Tools/Diagramming"));
 const Diffchecker = lazy(() => import("pages/Tools/Diffchecker"));
+const ProgressiveWebApp = lazy(() => import("pages/Tools/ProgressiveWebApp"));
 const Sorting = lazy(() => import("pages/Tools/Sorting"));
-const Svg = lazy(() => import("pages/Converter/Svg"));
 
 const TextEditor = lazy(() => import("pages/Text/TextEditor"));
 
@@ -102,11 +103,12 @@ export {
 	Pixel,
 	Platform,
 	Plugin,
-	Survey,
 	PrivacyPolicy,
+	ProgressiveWebApp,
 	QRcode,
 	ShadesAndTints,
 	Sorting,
+	Survey,
 	Svg,
 	TableGenerator,
 	TableOfContent,

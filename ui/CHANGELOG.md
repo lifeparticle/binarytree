@@ -1,3 +1,7 @@
+### [10.1.0] - 2023-12-30
+
+-   Add new feature - Progressive Web App
+
 ### [10.0.1] - 2023-12-26
 
 -   Fix [use a Hook conditionally bug](https://github.com/facebook/react/issues/24391)

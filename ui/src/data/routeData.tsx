@@ -36,11 +36,12 @@ import {
 	Pixel,
 	Platform,
 	Plugin,
-	Survey,
 	PrivacyPolicy,
+	ProgressiveWebApp,
 	QRcode,
 	ShadesAndTints,
 	Sorting,
+	Survey,
 	Svg,
 	TableGenerator,
 	TableOfContent,
@@ -93,11 +94,12 @@ export type RouteId =
 	| "pixelconverter"
 	| "platform"
 	| "plugin"
-	| "survey"
 	| "privacypolicy"
+	| "progressivewebapp"
 	| "qrcode"
 	| "shadesandtints"
 	| "sorting"
+	| "survey"
 	| "svg"
 	| "table"
 	| "tableofcontent"
@@ -205,6 +207,20 @@ export const routes: Route[] = [
 		component: CodeFormatter,
 	},
 	{
+		id: "sorting",
+		path: "/tools/sorting",
+		title: "Sorting",
+		description: "Sort arrays like a boss.",
+		component: Sorting,
+	},
+	{
+		id: "progressivewebapp",
+		path: "/tools/pwa",
+		title: "Progressive Web App",
+		description: "Turn your website into a Progressive Web App.",
+		component: ProgressiveWebApp,
+	},
+	{
 		id: "data",
 		path: "/generator/data",
 		title: "Data",
@@ -239,13 +255,7 @@ export const routes: Route[] = [
 		description: "Build C# code with a few clicks.",
 		component: CSharpBuilder,
 	},
-	{
-		id: "sorting",
-		path: "/tools/sorting",
-		title: "Sorting",
-		description: "Sort arrays like a boss.",
-		component: Sorting,
-	},
+
 	{
 		id: "ai",
 		path: "/resource/ai",

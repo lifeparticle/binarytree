@@ -46,7 +46,7 @@ const JsonToTypescript: FC = () => {
 					<CodeEditor
 						label="Enter Json input"
 						language="json"
-						code={json}
+						value={json}
 						handleCode={(value) => setJson(value || "")}
 						status={status}
 					/>
