@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { fetchFile } from "@ffmpeg/util";
+
 import { message, Upload } from "antd";
 import type { UploadFile, UploadProps } from "antd";
 import {
@@ -9,10 +9,7 @@ import {
 	Spin,
 } from "components/General";
 import styles from "./FileConverter.module.scss";
-import {
-	getFileExtension,
-	removeFileExtension,
-} from "utils/helper-functions/files";
+import { convertFiles, getFileExtension } from "utils/helper-functions/files";
 import { IMAGE_TYPES } from "./constants";
 import { useFfmpeg } from "./useFfmpeg";
 
@@ -26,44 +23,6 @@ function FileConverter() {
 	const [uploadedFiles, setUploadedFiles] = useState<FileConverter[]>([]);
 	const [selectedFormat, setSelectedFormat] = useState(IMAGE_TYPES[0].value);
 	const { loaded, ffmpeg } = useFfmpeg();
-
-	const transcode = async (fileConverter: FileConverter) => {
-		const outputFileName = `${removeFileExtension(
-			fileConverter.file.name
-		)}${selectedFormat}`;
-
-		await ffmpeg.writeFile(
-			fileConverter.file.name,
-			await fetchFile(fileConverter.file.originFileObj)
-		);
-		await ffmpeg.exec(["-i", fileConverter.file.name, outputFileName]);
-		const fileData = await ffmpeg.readFile(outputFileName);
-		const data = new Uint8Array(fileData as ArrayBuffer);
-
-		const blob = new Blob([data.buffer], {
-			type: `${fileConverter.file.type}/${selectedFormat}`,
-		});
-		const url = URL.createObjectURL(blob);
-		return [url, outputFileName];
-	};
-
-	const convertFiles = async () => {
-		const convertedFilesPromises = uploadedFiles.map(transcode);
-		const convertedFiles = await Promise.all(convertedFilesPromises);
-
-		for (const [url, fileName] of convertedFiles) {
-			await downloadFiles(url, fileName);
-		}
-	};
-
-	const downloadFiles = async (url: string, fileName: string) => {
-		const a = document.createElement("a");
-		a.download = fileName;
-		a.href = url;
-		document.body.appendChild(a);
-		a.click();
-		document.body.removeChild(a);
-	};
 
 	const props: UploadProps = {
 		name: "file",
@@ -131,11 +90,13 @@ function FileConverter() {
 				onSelect={(_, option) => setSelectedFormat(option.value)}
 				options={IMAGE_TYPES}
 				defaultActiveFirstOption
-				disabled={!loaded}
+				disabled={!loaded || uploadedFiles.length === 0}
 			/>
 			<ResponsiveButton
 				type="primary"
-				onClick={convertFiles}
+				onClick={() =>
+					convertFiles(uploadedFiles, selectedFormat, ffmpeg)
+				}
 				disabled={!loaded || uploadedFiles.length === 0}
 				icon
 			>

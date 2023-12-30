@@ -1,5 +1,8 @@
 import { saveAs } from "file-saver";
 import { marked } from "marked";
+import FileConverter from "pages/Converter/File";
+import { fetchFile } from "@ffmpeg/util";
+import { FFmpeg } from "@ffmpeg/ffmpeg";
 
 export function downloadFile(
 	fileContent: string,
@@ -32,6 +35,54 @@ export function downloadTextFile(fileContent: string, fileName: string) {
 export function downloadJSONFile(fileContent: string, fileName: string) {
 	downloadFile(fileContent, fileName, "application/json;charset=utf-8");
 }
+
+const transcode = async (
+	fileConverter: FileConverter,
+	selectedFormat: string,
+	ffmpeg: FFmpeg
+) => {
+	const outputFileName = `${removeFileExtension(
+		fileConverter.file.name
+	)}${selectedFormat}`;
+
+	await ffmpeg.writeFile(
+		fileConverter.file.name,
+		await fetchFile(fileConverter.file.originFileObj)
+	);
+	await ffmpeg.exec(["-i", fileConverter.file.name, outputFileName]);
+	const fileData = await ffmpeg.readFile(outputFileName);
+	const data = new Uint8Array(fileData as ArrayBuffer);
+
+	const blob = new Blob([data.buffer], {
+		type: `${fileConverter.file.type}/${selectedFormat}`,
+	});
+	const url = URL.createObjectURL(blob);
+	return [url, outputFileName];
+};
+
+const downloadFiles = async (url: string, fileName: string) => {
+	const a = document.createElement("a");
+	a.download = fileName;
+	a.href = url;
+	document.body.appendChild(a);
+	a.click();
+	document.body.removeChild(a);
+};
+
+export const convertFiles = async (
+	uploadedFiles: FileConverter[],
+	selectedFormat: string,
+	ffmpeg: FFmpeg
+) => {
+	const convertedFilesPromises = uploadedFiles.map((fileConverter) =>
+		transcode(fileConverter, selectedFormat, ffmpeg)
+	);
+	const convertedFiles = await Promise.all(convertedFilesPromises);
+
+	for (const [url, fileName] of convertedFiles) {
+		await downloadFiles(url, fileName);
+	}
+};
 
 export function handleImageUpload(
 	file: File,
