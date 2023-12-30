@@ -13,6 +13,7 @@ interface SelectComponentProps {
 	value?: string;
 	defaultActiveFirstOption?: boolean;
 	onSelect?: (value: string, option: Option) => void;
+	disabled?: boolean;
 }
 
 const ResponsiveSelect: FC<SelectComponentProps> = (props) => {
