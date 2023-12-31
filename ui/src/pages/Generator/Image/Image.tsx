@@ -6,7 +6,7 @@ import { toPng } from "html-to-image";
 import { FC, useRef, useState } from "react";
 import style from "./ImageGeneratorFromColors.module.scss";
 import { useCombinedKeyPress } from "hooks";
-import { extractColors } from "./utils/helper";
+import { extractColors } from "./helper";
 import { PageGrid, InputGrid } from "components/Layouts";
 import {
 	Warning,

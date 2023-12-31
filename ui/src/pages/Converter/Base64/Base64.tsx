@@ -3,7 +3,7 @@ import { FC, useEffect, useState } from "react";
 import { Buffer } from "buffer";
 import { Clipboard } from "components/ComponentInjector";
 import { CodeEditor, ResponsiveButton } from "components/General";
-import { isBase64Valid } from "./utils/helper";
+import { isBase64Valid } from "./helper";
 import { PageGrid } from "components/Layouts";
 import { ClipboardButton } from "components/InjectedComponent";
 import style from "./Base64.module.scss";

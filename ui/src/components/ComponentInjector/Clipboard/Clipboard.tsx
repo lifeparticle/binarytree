@@ -1,6 +1,12 @@
 import { useCopyToClipboard } from "hooks";
-import { ClipboardProps } from "./utils/test";
 import { FC } from "react";
+
+interface ClipboardProps {
+	text: string;
+	clipboardComponent: React.ElementType;
+	className?: string;
+	label?: string;
+}
 
 const Clipboard: FC<ClipboardProps> = ({
 	text,
