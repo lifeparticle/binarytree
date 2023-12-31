@@ -5,7 +5,7 @@ import {
 	ACTIVITY_DATA,
 	PURPOSE_COLUMNS,
 	PURPOSE_DATA,
-} from "./utils/constants";
+} from "./constants";
 
 const PrivacyPolicy = () => {
 	return (
