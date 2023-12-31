@@ -8,6 +8,7 @@ const { Text } = Typography;
 
 const URL = `./pwa.json`;
 const QUERY_KEY = "pwa";
+const OUTPUT_FILE_NAME = "manifest.json";
 
 const ProgressiveWebApp: FC = () => {
 	const [manifest, setManifest] = useState({});
@@ -37,7 +38,7 @@ const ProgressiveWebApp: FC = () => {
 	};
 
 	const handleDownload = () => {
-		downloadJSONFile(JSON.stringify(manifest, null, 4), "manifest.json");
+		downloadJSONFile(JSON.stringify(manifest, null, 4), OUTPUT_FILE_NAME);
 	};
 
 	return (
