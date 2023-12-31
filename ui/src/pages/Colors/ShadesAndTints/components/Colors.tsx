@@ -37,9 +37,7 @@ const Colors: FC<ExtendedColorsProps> = ({ colors, isPending, type }) => {
 					>
 						<div className={styles.colors__list_item}>
 							{index + 1}
-							<Tag style={{ color: getTextColor(color) }}>
-								{color}
-							</Tag>
+							<Tag>{color}</Tag>
 							<Clipboard
 								text={color}
 								clipboardComponent={ClipboardButton}
