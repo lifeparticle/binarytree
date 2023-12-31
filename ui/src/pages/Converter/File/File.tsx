@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import { FC, useState } from "react";
 import { message, Upload } from "antd";
 import type { UploadFile, UploadProps } from "antd";
 import {
@@ -14,12 +13,13 @@ import { IMAGE_TYPES } from "./constants";
 import { useFfmpeg } from "./useFfmpeg";
 
 const { Dragger } = Upload;
+
 interface FileConverter {
 	file: UploadFile;
 	from: string;
 }
 
-function FileConverter() {
+const FileConverter: FC = () => {
 	const [uploadedFiles, setUploadedFiles] = useState<FileConverter[]>([]);
 	const [selectedFormat, setSelectedFormat] = useState(IMAGE_TYPES[0].value);
 	const { loaded, ffmpeg } = useFfmpeg();
@@ -104,6 +104,6 @@ function FileConverter() {
 			</ResponsiveButton>
 		</div>
 	);
-}
+};
 
 export default FileConverter;

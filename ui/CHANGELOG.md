@@ -1,3 +1,7 @@
+### [10.2.0] - 2023-12-31
+
+-   Fix for broken UI: Resolved an issue where the usage of crypto.randomUUID() in the PageGrid and InputGrid component was causing unnecessary re-renders and loss of focus within child components
+
 ### [10.1.0] - 2023-12-30
 
 -   Add new feature - Progressive Web App
