@@ -5,7 +5,10 @@ import {
 	useMemo,
 	useState,
 } from "react";
-import { SearchModalContextType } from "./utils/types";
+interface SearchModalContextType {
+	isModalOpen: boolean;
+	handleModalOpen: () => void;
+}
 
 export const SearchModalContext = createContext<SearchModalContextType>(
 	{} as SearchModalContextType
