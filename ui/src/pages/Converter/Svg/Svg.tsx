@@ -2,7 +2,7 @@ import { Card, Form, Input } from "antd";
 import { Warning, CodeHighlightWithCopy } from "components/General";
 import { PageGrid } from "components/Layouts";
 import { ChangeEvent, FC, useState } from "react";
-import { combineSVGPaths } from "./utils/helper";
+import { combineSVGPaths } from "./helper";
 import style from "./Svg.module.scss";
 import SVGRenderer from "./components/SVGRenderer";
 
