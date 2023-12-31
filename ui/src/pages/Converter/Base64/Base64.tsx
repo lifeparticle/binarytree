@@ -7,6 +7,7 @@ import { isBase64Valid } from "./utils/helper";
 import { PageGrid } from "components/Layouts";
 import { ClipboardButton } from "components/InjectedComponent";
 import style from "./Base64.module.scss";
+import { handleImageUpload } from "utils/helper-functions/files";
 
 const Base64: FC = () => {
 	const [input, setInput] = useState("");
@@ -35,11 +36,21 @@ const Base64: FC = () => {
 			}
 		},
 		async onChange(info) {
-			const { status, originFileObj } = info.file;
+			const { status, originFileObj, type } = info.file;
 			const text = (await originFileObj?.text()) || "";
 			if (status === "done") {
-				setInput(text);
-				onClick("encode", text || "");
+				if (type?.startsWith("image/")) {
+					handleImageUpload(
+						originFileObj as File,
+						(base64String: string) => {
+							setInput(text);
+							setResult(base64String.split(",")[1]);
+						}
+					);
+				} else {
+					setInput(text);
+					onClick("encode", text || "");
+				}
 				message.success(
 					`${info.file.name} file uploaded successfully.`
 				);
@@ -47,6 +58,7 @@ const Base64: FC = () => {
 				message.error(`${info.file.name} file upload failed.`);
 			}
 		},
+		maxCount: 1,
 		accept: "*/*",
 		listType: "picture",
 	};
