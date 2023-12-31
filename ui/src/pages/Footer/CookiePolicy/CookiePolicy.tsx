@@ -1,6 +1,6 @@
 import { Table, Typography } from "antd";
 import { Footer, Legal } from "components/Layouts";
-import { TABLE_COLUMNS, TABLE_DATA } from "./utils/constants";
+import { TABLE_COLUMNS, TABLE_DATA } from "./constants";
 
 const CookiePolicy = () => {
 	return (

@@ -11,7 +11,7 @@ import {
 	GOOGLE_ANALYTICS_ID,
 	HIT_TYPE,
 	DECLINE_BUTTON_STYLES,
-} from "./utils/constants";
+} from "./constants";
 import CookieConsentText from "./components/CookieConsentText";
 import { usePageTitle } from "hooks";
 
