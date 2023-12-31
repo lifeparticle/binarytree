@@ -240,7 +240,7 @@ export const MENU_ITEMS = [
 			{
 				name: routesById.ipsubnet.title,
 				url: routesById.ipsubnet.path,
-				icon: "GlobeAlt",
+				icon: "Globe",
 				show: IN_DEVELOPMENT,
 			},
 		],
@@ -338,7 +338,7 @@ export const MENU_ITEMS = [
 			{
 				name: routesById.survey.title,
 				url: routesById.survey.path,
-				icon: "Poll",
+				icon: "Vote",
 				show: true,
 			},
 			{

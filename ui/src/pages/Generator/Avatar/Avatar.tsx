@@ -59,6 +59,7 @@ const Avatar = () => {
 			families: [avatarFont],
 		},
 	});
+
 	return (
 		<PageGrid>
 			<Card>
