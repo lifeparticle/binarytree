@@ -225,9 +225,7 @@ const HELP: Help = {
 			{
 				id: "2",
 				title: "Example URL",
-				bulletPoints: [
-					"Press cmd + e on mac or ctrl + e on windows",
-				],
+				bulletPoints: ["Press cmd + e on mac or ctrl + e on windows"],
 			},
 		],
 	},
@@ -266,6 +264,16 @@ const HELP: Help = {
 		helpTexts: [
 			{
 				id: "24",
+				title: "",
+				bulletPoints: [],
+			},
+		],
+	},
+	[routesById.progressivewebapp.id]: {
+		description: featuresById.progressivewebapp.fullDescription,
+		helpTexts: [
+			{
+				id: "25",
 				title: "",
 				bulletPoints: [],
 			},
