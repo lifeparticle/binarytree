@@ -46,3 +46,17 @@ PageName/
     - **`PageName.test.tsx`**: Test file for the `PageName` component.
 
 Adopting consistent naming conventions helps in understanding and navigating the codebase. 
+
+## 3. How to use scaffdog to create a page
+
+```shell
+npx scaffdog generate
+```
+
+```shell
+? Please select a document. page.md
+? Please select the output destination directory. src/pages
+? Please enter a page name. Test
+```
+
+-   You will get **index.tsx**, **PageName.tsx**, **PageName.module.scss** and test folder with **PageName.test.tsx**

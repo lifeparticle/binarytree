@@ -10,7 +10,7 @@ questions:
 # `{{ inputs.value | pascal }}/index.ts`
 
 ```typescript
-export { default } from "./{{ inputs.value }}";
+export { default } from "./{{ inputs.value | pascal }}";
 ```
 
 # `{{ inputs.value | pascal }}/{{ inputs.value | pascal }}.tsx`
@@ -20,7 +20,7 @@ import { FC } from "react";
 import style from "./{{ inputs.value | pascal }}.module.scss";
 
 const {{ inputs.value | pascal }} : FC = () => {
-	return <div className={style.{{inputs.value | lower}}}>{{inputs.value}}</div>;
+	return <div className={style.{{inputs.value | lower | replace " " "" }}}>{{inputs.value}}</div>;
 };
 
 export default {{ inputs.value | pascal }};
@@ -29,7 +29,7 @@ export default {{ inputs.value | pascal }};
 # `{{ inputs.value | pascal }}/{{ inputs.value | pascal }}.module.scss`
 
 ```scss
-.{{inputs.value | lower}} {
+.{{inputs.value | lower | replace " " ""}} {
 
 }
 ```
@@ -38,11 +38,11 @@ export default {{ inputs.value | pascal }};
 
 ```tsx
 import { render } from "@testing-library/react";
-import {{ inputs.value }} from "pages/{{ inputs.value }}";
+import {{ inputs.value | pascal }} from "pages/{{ inputs.value | pascal }}";
 
 describe("{{ inputs.value }} Component", () => {
 	it("renders correctly", () => {
-		const { getByText } = render(<{{ inputs.value }} />);
+		const { getByText } = render(<{{ inputs.value | pascal }} />);
 		expect(getByText("{{ inputs.value }}")).toBeInTheDocument();
 	});
 });
