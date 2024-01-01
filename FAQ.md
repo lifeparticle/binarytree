@@ -56,7 +56,15 @@ npx scaffdog generate
 ```shell
 ? Please select a document. page.md
 ? Please select the output destination directory. src/pages
-? Please enter a page name. Test
+? Please enter a page name. progressive web app
 ```
+It will create the following files and folders structure:
 
--   You will get **index.tsx**, **PageName.tsx**, **PageName.module.scss** and test folder with **PageName.test.tsx**
+```shell
+ProgressiveWebApp/
+|── ProgressiveWebApp.module.scss
+|── ProgressiveWebApp.tsx
+|── __tests__/
+|   |── ProgressiveWebApp.test.tsx
+|── index.ts
+```
