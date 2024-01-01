@@ -13,7 +13,7 @@ import {
 	BEAUTIFY_FUNCTIONS,
 	INDENTATION_LEVEL,
 	INPUT_TYPE,
-} from "./utils/constants";
+} from "./constants";
 
 const CodeFormatter: FC = () => {
 	const [inputCode, setInputCode] = useState("");

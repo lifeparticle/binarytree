@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Card, Space, Typography, Image } from "antd";
-import { FEATURES } from "pages/Home/utils/constants";
+import { FEATURES } from "pages/Home/constants";
 import style from "pages/Home/Home.module.scss";
 import { Link } from "react-router-dom";
 import features from "assets/Home/features.svg";
