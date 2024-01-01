@@ -1,3 +1,7 @@
+### [10.3.0] - 2024-01-01
+
+-   Scaffdog is added
+
 ### [10.2.0] - 2023-12-31
 
 -   Fix for broken UI: Resolved an issue where the usage of crypto.randomUUID() in the PageGrid and InputGrid component was causing unnecessary re-renders and loss of focus within child components
