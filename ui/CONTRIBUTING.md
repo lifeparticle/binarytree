@@ -1,6 +1,6 @@
 1.  Fork the repo
 2.  Clone your fork
-3.  Sync your local master
+3.  Sync your local main
 
     3.1.
 
