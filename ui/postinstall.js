@@ -1,12 +1,11 @@
 import fse from "fs-extra";
 import path from "path";
+import { fileURLToPath } from "url";
 
 try {
-	const urlPath = new URL(import.meta.url).pathname;
-	// Correcting the path for Windows environment
-	const topDir = path.resolve(
-		process.platform === "win32" ? urlPath.substring(1) : urlPath
-	);
+	// Convert URL to file path and get the directory name
+	const __filename = fileURLToPath(import.meta.url);
+	const topDir = path.dirname(__filename);
 
 	const sourceDir = path.join(topDir, "node_modules", "tinymce");
 	const destDir = path.join(topDir, "public", "tinymce");
