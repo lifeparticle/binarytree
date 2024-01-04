@@ -20,7 +20,13 @@ $home-z-index-100: 100;
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
-		gap: var(--bt-size-50);
+		gap: var(--bt-size-24);
+
+		&__stats_container {
+			display: grid;
+			gap: var(--bt-size-20);
+			grid-template-columns: repeat(3, minmax(auto, 300px));
+		}
 
 		&_paragraph {
 			font-size: larger;
@@ -32,12 +38,17 @@ $home-z-index-100: 100;
 		align-items: center;
 		flex-direction: column;
 		gap: var(--bt-size-50);
+		background-color: rgba(128, 128, 128, 0.198);
+		padding: var(--bt-size-100) var(--bt-size-percent-10) var(--bt-size-64)
+			var(--bt-size-percent-10);
+		border-radius: var(--bt-size-50);
 
 		&_cover {
 			display: grid;
 			grid-template-columns: auto auto;
 			align-items: center;
 			gap: var(--bt-size-50);
+			text-align: center;
 		}
 
 		&_cards {
