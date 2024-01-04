@@ -39,6 +39,11 @@ $home-z-index-100: 100;
 		&_paragraph {
 			font-size: larger;
 		}
+
+		&_buttons {
+			display: flex;
+			gap: var(--bt-size-20);
+		}
 	}
 
 	&__features {
@@ -80,6 +85,10 @@ $home-z-index-100: 100;
 		&__hero {
 			&__stats_container {
 				grid-template-columns: 1fr;
+			}
+
+			&_buttons {
+				flex-direction: column;
 			}
 		}
 
