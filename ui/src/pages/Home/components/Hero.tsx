@@ -1,6 +1,6 @@
 import { FC } from "react";
 import style from "pages/Home/Home.module.scss";
-import { Typography, Image, Space } from "antd";
+import { Typography, Image } from "antd";
 import hero from "assets/Home/hero.webp";
 import { Icon, ResponsiveButton } from "components/General";
 import { useModal } from "hooks";
@@ -16,7 +16,7 @@ const Hero: FC = () => {
 				We Provide an Array of Developer Productivity Tools Designed to
 				Help You Save Time
 			</Title>
-			<Space direction="horizontal">
+			<div className={style.home__hero_buttons}>
 				<ResponsiveButton onClick={handleModalOpen} type="primary">
 					Explore Features
 				</ResponsiveButton>
@@ -32,7 +32,7 @@ const Hero: FC = () => {
 				>
 					Request Features <Icon name="MoveUpRight" />
 				</ResponsiveButton>
-			</Space>
+			</div>
 			<Image
 				src={hero}
 				alt="BinaryTree: Developer Productivity Tools"
