@@ -2,7 +2,6 @@ import { FC } from "react";
 import style from "pages/Home/Home.module.scss";
 import { Typography, Image, Space, Card } from "antd";
 import hero from "assets/Home/hero.webp";
-import { FEATURE_DATA } from "data/featureData";
 import { ResponsiveButton } from "components/General";
 import { useModal } from "hooks";
 import { STATS_DATA } from "pages/Home/statsData";
