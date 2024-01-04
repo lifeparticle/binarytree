@@ -27,14 +27,25 @@ describe("parseXML", () => {
 
 describe("extractImage", () => {
 	it("should extract image URL from description", () => {
+		// arrange
 		const description =
 			'Check out this image: <img src="https://example.com/image.jpg" alt="Image">';
-		const expected = "https://example.com/image.jpg";
-		expect(extractImage(description)).toBe(expected);
+		
+		// act
+		const response = extractImage(description);
+		
+		// assert
+		expect(response).toBe("https://example.com/image.jpg");
 	});
 
 	it("should return null if no image URL found in description", () => {
+		// arrange
 		const description = "This is a text description without any image.";
-		expect(extractImage(description)).toBeNull();
+		
+		// act
+		const response = extractImage(description);
+		
+		// assert
+		expect(response).toBeNull();
 	});
 });
