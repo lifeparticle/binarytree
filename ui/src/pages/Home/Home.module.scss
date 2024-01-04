@@ -7,6 +7,14 @@ $home-z-index-100: 100;
 	padding: var(--bt-size-100) var(--bt-size-percent-10) var(--bt-size-64)
 		var(--bt-size-percent-10);
 	min-height: $home-height;
+	&_light {
+		background-image: url("../../assets/Home/grid_light.svg");
+	}
+
+	&_dark {
+		background-image: url("../../assets/Home/grid_dark.svg");
+	}
+
 	animation: var(--bt-animation-moveBackground);
 
 	&__container {
