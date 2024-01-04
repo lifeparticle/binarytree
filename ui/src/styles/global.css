@@ -1,9 +1,15 @@
 .heart {
 	animation: pulse 1s infinite;
 }
-.CookieConsent{
+.CookieConsent {
 	font-family: var(--global-font);
 }
-code{
+code {
 	font-family: var(--global-font-mono);
+}
+
+.button-right-icon {
+	display: flex;
+	align-items: center;
+	gap: var(--bt-size-5);
 }
