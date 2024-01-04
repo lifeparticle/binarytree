@@ -74,8 +74,8 @@ const Hero: FC = () => {
 				>
 					ever-growing number of features
 				</a>{" "}
-				(currently <b>{FEATURE_DATA.length}</b>), our platform is
-				constantly evolving to meet the needs of developers like you
+				, our platform is constantly evolving to meet the needs of
+				developers like you
 			</Title>
 		</section>
 	);
