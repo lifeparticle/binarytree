@@ -1,7 +1,7 @@
 import { FC } from "react";
 import style from "pages/Home/Home.module.scss";
 import { Space, Typography } from "antd";
-import { ResponsiveButton } from "components/General";
+import { Icon, ResponsiveButton } from "components/General";
 
 const Contribution: FC = () => {
 	return (
@@ -14,17 +14,20 @@ const Contribution: FC = () => {
 					Join our open-source community and help shape the future of
 					Modern web
 				</Typography.Paragraph>
-				<ResponsiveButton
-					onClick={() =>
-						window.open(
-							"https://github.com/lifeparticle/binarytree",
-							"_blank",
-							"noopener"
-						)
-					}
-				>
-					Github Discussion
-				</ResponsiveButton>
+				<Space direction="horizontal">
+					<ResponsiveButton
+						className="button-right-icon"
+						onClick={() =>
+							window.open(
+								"https://github.com/lifeparticle/binarytree",
+								"_blank",
+								"noopener"
+							)
+						}
+					>
+						Github Discussion <Icon name="MoveUpRight" />
+					</ResponsiveButton>
+				</Space>
 			</Space>
 		</section>
 	);
