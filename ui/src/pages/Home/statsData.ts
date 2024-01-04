@@ -1,8 +1,10 @@
+import { FEATURE_DATA } from "data/featureData";
+
 export const STATS_DATA = [
 	{
 		id: 1,
 		title: "Features",
-		value: 28,
+		value: FEATURE_DATA.length,
 		link: "",
 	},
 	{
