@@ -1,12 +1,10 @@
 import { FC } from "react";
 import style from "pages/Home/Home.module.scss";
-import { Typography, Image, Space, Card } from "antd";
+import { Typography, Image, Space } from "antd";
 import hero from "assets/Home/hero.webp";
 import { Icon, ResponsiveButton } from "components/General";
 import { useModal } from "hooks";
-import { STATS_DATA } from "pages/Home/statsData";
 
-const { Text } = Typography;
 const { Title } = Typography;
 
 const Hero: FC = () => {
@@ -43,29 +41,6 @@ const Hero: FC = () => {
 					maxHeight: "40dvh",
 				}}
 			/>
-			<div className={style.home__hero__stats_container}>
-				{STATS_DATA.map((feature) => (
-					<Card
-						bordered={false}
-						key={feature.id}
-						hoverable
-						onClick={() =>
-							feature.link === ""
-								? handleModalOpen()
-								: window.open(
-										feature.link,
-										"_blank",
-										"noopener"
-								  )
-						}
-					>
-						<Space direction="vertical" size="middle">
-							<Title keyboard>{feature.value}</Title>
-							<Text strong>{feature.title}</Text>
-						</Space>
-					</Card>
-				))}
-			</div>
 			<Title level={2}>
 				With an{" "}
 				<a

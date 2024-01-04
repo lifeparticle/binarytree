@@ -1,31 +1,15 @@
 import { FC } from "react";
-import { Card, Space, Typography, Image } from "antd";
+import { Card, Space, Typography } from "antd";
 import { FEATURES } from "pages/Home/constants";
 import style from "pages/Home/Home.module.scss";
 import { Link } from "react-router-dom";
-import features from "assets/Home/features.svg";
 import { Icon } from "components/General";
 
 const { Text } = Typography;
-const { Title } = Typography;
 
 const Features: FC = () => {
 	return (
 		<div className={style.home__features}>
-			<Image
-				src={features}
-				alt="BinaryTree: Developer Productivity Tools"
-				preview={false}
-				height="25vh"
-			/>
-			<div className={style.home__features_cover}>
-				<Title level={3}>
-					BinaryTree comes packed with some awesome features. For
-					modern app development, tools like BinaryTree can
-					significantly enhance and streamline your workflow.
-				</Title>
-			</div>
-
 			<div className={style.home__features_cards}>
 				{FEATURES.map((feature) => (
 					<div
