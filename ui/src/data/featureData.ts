@@ -268,7 +268,8 @@ export const FEATURE_DATA: Feature[] = [
 		key: routesById.texteditor.id,
 		name: routesById.texteditor.title,
 		shortDescription: routesById.texteditor.description,
-		fullDescription: "",
+		fullDescription:
+			"A versatile text editor that supports various formatting options. Ideal for drafting and editing text with the ability to preview the output in real-time. It also supports markdown, providing a seamless writing experience for both plain text and formatted content.",
 		link: routesById.texteditor.path,
 		library: [
 			{
