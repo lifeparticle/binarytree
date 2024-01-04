@@ -107,7 +107,7 @@ const HELP: Help = {
 		description: featuresById.fileconverter.fullDescription,
 		helpTexts: [
 			{
-				id: "10",
+				id: "11",
 				title: "",
 				bulletPoints: [],
 			},
@@ -117,7 +117,7 @@ const HELP: Help = {
 		description: featuresById.pixelconverter.fullDescription,
 		helpTexts: [
 			{
-				id: "11",
+				id: "12",
 				title: "",
 				bulletPoints: [],
 			},
@@ -127,7 +127,7 @@ const HELP: Help = {
 		description: featuresById.jsontotypescript.fullDescription,
 		helpTexts: [
 			{
-				id: "12",
+				id: "13",
 				title: "",
 				bulletPoints: [],
 			},
@@ -137,7 +137,7 @@ const HELP: Help = {
 		description: featuresById.svg.fullDescription,
 		helpTexts: [
 			{
-				id: "13",
+				id: "14",
 				title: "",
 				bulletPoints: [],
 			},
@@ -147,7 +147,7 @@ const HELP: Help = {
 		description: featuresById.data.fullDescription,
 		helpTexts: [
 			{
-				id: "14",
+				id: "15",
 				title: "",
 				bulletPoints: [],
 			},
@@ -157,7 +157,7 @@ const HELP: Help = {
 		description: featuresById.imagegeneratorfromcolors.fullDescription,
 		helpTexts: [
 			{
-				id: "15",
+				id: "16",
 				title: "",
 				bulletPoints: [],
 			},
@@ -167,7 +167,7 @@ const HELP: Help = {
 		description: featuresById.avatar.fullDescription,
 		helpTexts: [
 			{
-				id: "16",
+				id: "17",
 				title: "",
 				bulletPoints: [],
 			},
@@ -177,7 +177,7 @@ const HELP: Help = {
 		description: featuresById.qrcode.fullDescription,
 		helpTexts: [
 			{
-				id: "17",
+				id: "18",
 				title: "",
 				bulletPoints: [],
 			},
@@ -196,7 +196,7 @@ const HELP: Help = {
 		description: featuresById.editor.fullDescription,
 		helpTexts: [
 			{
-				id: "18",
+				id: "19",
 				title: "",
 				bulletPoints: [],
 			},
@@ -206,7 +206,7 @@ const HELP: Help = {
 		description: featuresById.table.fullDescription,
 		helpTexts: [
 			{
-				id: "19",
+				id: "20",
 				title: "",
 				bulletPoints: [],
 			},
@@ -216,14 +216,14 @@ const HELP: Help = {
 		description: featuresById.tableofcontent.fullDescription,
 		helpTexts: [
 			{
-				id: "1",
+				id: "21",
 				title: "Get URL from GitHub",
 				bulletPoints: [
 					"Navigate to your markdown file and copy the raw URl",
 				],
 			},
 			{
-				id: "2",
+				id: "22",
 				title: "Example URL",
 				bulletPoints: ["Press cmd + e on mac or ctrl + e on windows"],
 			},
@@ -233,7 +233,7 @@ const HELP: Help = {
 		description: featuresById.texteditor.fullDescription,
 		helpTexts: [
 			{
-				id: "21",
+				id: "23",
 				title: "",
 				bulletPoints: [],
 			},
@@ -243,7 +243,7 @@ const HELP: Help = {
 		description: featuresById.diagramming.fullDescription,
 		helpTexts: [
 			{
-				id: "22",
+				id: "24",
 				title: "",
 				bulletPoints: [],
 			},
@@ -253,7 +253,7 @@ const HELP: Help = {
 		description: featuresById.sorting.fullDescription,
 		helpTexts: [
 			{
-				id: "23",
+				id: "25",
 				title: "",
 				bulletPoints: [],
 			},
@@ -263,7 +263,7 @@ const HELP: Help = {
 		description: featuresById.diffchecker.fullDescription,
 		helpTexts: [
 			{
-				id: "24",
+				id: "26",
 				title: "",
 				bulletPoints: [],
 			},
@@ -273,7 +273,7 @@ const HELP: Help = {
 		description: featuresById.progressivewebapp.fullDescription,
 		helpTexts: [
 			{
-				id: "25",
+				id: "27",
 				title: "",
 				bulletPoints: [],
 			},
@@ -283,7 +283,7 @@ const HELP: Help = {
 		description: featuresById.codeformatter.fullDescription,
 		helpTexts: [
 			{
-				id: "25",
+				id: "28",
 				title: "",
 				bulletPoints: [],
 			},
@@ -293,7 +293,7 @@ const HELP: Help = {
 		description: featuresById.githubissue.fullDescription,
 		helpTexts: [
 			{
-				id: "26",
+				id: "29",
 				title: "",
 				bulletPoints: [],
 			},
@@ -303,7 +303,7 @@ const HELP: Help = {
 		description: featuresById.mimetype.fullDescription,
 		helpTexts: [
 			{
-				id: "27",
+				id: "30",
 				title: "",
 				bulletPoints: [],
 			},
@@ -313,43 +313,13 @@ const HELP: Help = {
 		description: featuresById.npmpackages.fullDescription,
 		helpTexts: [
 			{
-				id: "28",
-				title: "",
-				bulletPoints: [],
-			},
-		],
-	},
-	[routesById.blog.id]: {
-		description: featuresById.blog.fullDescription,
-		helpTexts: [
-			{
-				id: "29",
-				title: "",
-				bulletPoints: [],
-			},
-		],
-	},
-	[routesById.book.id]: {
-		description: featuresById.blog.fullDescription,
-		helpTexts: [
-			{
-				id: "30",
-				title: "",
-				bulletPoints: [],
-			},
-		],
-	},
-	[routesById.course.id]: {
-		description: featuresById.blog.fullDescription,
-		helpTexts: [
-			{
 				id: "31",
 				title: "",
 				bulletPoints: [],
 			},
 		],
 	},
-	[routesById.designsystem.id]: {
+	[routesById.ai.id]: {
 		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
@@ -359,7 +329,7 @@ const HELP: Help = {
 			},
 		],
 	},
-	[routesById.github.id]: {
+	[routesById.blog.id]: {
 		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
@@ -369,7 +339,7 @@ const HELP: Help = {
 			},
 		],
 	},
-	[routesById.icon.id]: {
+	[routesById.book.id]: {
 		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
@@ -379,7 +349,7 @@ const HELP: Help = {
 			},
 		],
 	},
-	[routesById.interview.id]: {
+	[routesById.course.id]: {
 		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
@@ -389,7 +359,7 @@ const HELP: Help = {
 			},
 		],
 	},
-	[routesById.movie.id]: {
+	[routesById.designsystem.id]: {
 		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
@@ -399,7 +369,7 @@ const HELP: Help = {
 			},
 		],
 	},
-	[routesById.platform.id]: {
+	[routesById.github.id]: {
 		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
@@ -409,7 +379,7 @@ const HELP: Help = {
 			},
 		],
 	},
-	[routesById.plugin.id]: {
+	[routesById.icon.id]: {
 		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
@@ -419,7 +389,7 @@ const HELP: Help = {
 			},
 		],
 	},
-	[routesById.tool.id]: {
+	[routesById.interview.id]: {
 		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
@@ -429,7 +399,7 @@ const HELP: Help = {
 			},
 		],
 	},
-	[routesById.tvseries.id]: {
+	[routesById.movie.id]: {
 		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
@@ -439,7 +409,7 @@ const HELP: Help = {
 			},
 		],
 	},
-	[routesById.uiux.id]: {
+	[routesById.platform.id]: {
 		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
@@ -449,11 +419,61 @@ const HELP: Help = {
 			},
 		],
 	},
-	[routesById.youtube.id]: {
+	[routesById.plugin.id]: {
 		description: featuresById.blog.fullDescription,
 		helpTexts: [
 			{
 				id: "42",
+				title: "",
+				bulletPoints: [],
+			},
+		],
+	},
+	[routesById.survey.id]: {
+		description: featuresById.blog.fullDescription,
+		helpTexts: [
+			{
+				id: "43",
+				title: "",
+				bulletPoints: [],
+			},
+		],
+	},
+	[routesById.tool.id]: {
+		description: featuresById.blog.fullDescription,
+		helpTexts: [
+			{
+				id: "44",
+				title: "",
+				bulletPoints: [],
+			},
+		],
+	},
+	[routesById.tvseries.id]: {
+		description: featuresById.blog.fullDescription,
+		helpTexts: [
+			{
+				id: "45",
+				title: "",
+				bulletPoints: [],
+			},
+		],
+	},
+	[routesById.uiux.id]: {
+		description: featuresById.blog.fullDescription,
+		helpTexts: [
+			{
+				id: "46",
+				title: "",
+				bulletPoints: [],
+			},
+		],
+	},
+	[routesById.youtube.id]: {
+		description: featuresById.blog.fullDescription,
+		helpTexts: [
+			{
+				id: "47",
 				title: "",
 				bulletPoints: [],
 			},
