@@ -45,10 +45,6 @@ $home-z-index-100: 100;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
-		gap: var(--bt-size-50);
-		background-color: rgba(128, 128, 128, 0.198);
-		padding: var(--bt-size-100) var(--bt-size-percent-10) var(--bt-size-64)
-			var(--bt-size-percent-10);
 		border-radius: var(--bt-size-50);
 
 		&_cover {
