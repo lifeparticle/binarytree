@@ -30,12 +30,6 @@ $home-z-index-100: 100;
 		text-align: center;
 		gap: var(--bt-size-24);
 
-		&__stats_container {
-			display: grid;
-			gap: var(--bt-size-20);
-			grid-template-columns: repeat(3, minmax(auto, 300px));
-		}
-
 		&_paragraph {
 			font-size: larger;
 		}
@@ -76,9 +70,18 @@ $home-z-index-100: 100;
 
 	&__contribution {
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
+		gap: var(--bt-size-24);
+
+		&__stats_container {
+			justify-content: center;
+			display: grid;
+			gap: var(--bt-size-20);
+			grid-template-columns: repeat(3, minmax(auto, 300px));
+		}
 	}
 
 	@media screen and (max-width: 900px) {
