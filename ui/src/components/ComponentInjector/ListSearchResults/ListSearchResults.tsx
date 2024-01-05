@@ -10,7 +10,7 @@ import { ResourceType } from "components/InjectedComponent";
 
 const DEFAULT_RESULT_COUNT = 20;
 
-interface ListSearchResultsProps<T> extends ListProps<T> {
+export interface ListSearchResultsProps<T> extends ListProps<T> {
 	resourceName: string;
 	isError: boolean;
 }
