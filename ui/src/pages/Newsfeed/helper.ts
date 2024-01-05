@@ -25,4 +25,4 @@ function extractImage(description: string) {
 	return match ? match[1] : null;
 }
 
-export { parseXML };
+export { parseXML, extractImage };
