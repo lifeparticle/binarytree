@@ -84,6 +84,15 @@ export const FEATURE_DATA: Feature[] = [
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
+		key: routesById.flexboxgenerator.id,
+		name: routesById.flexboxgenerator.title,
+		shortDescription: routesById.flexboxgenerator.description,
+		fullDescription:
+			"Arrange your items inside your container element as like as you want.",
+		link: routesById.flexboxgenerator.path,
+		library: [{ name: "Vanilla JS", url: "" }],
+	},
+	{
 		key: routesById.base64.id,
 		name: routesById.base64.title,
 		shortDescription: routesById.base64.description,

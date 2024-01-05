@@ -14,6 +14,7 @@ const ShadesAndTints = lazy(() => import("pages/Colors/ShadesAndTints"));
 
 const BorderRadius = lazy(() => import("pages/CSS/BorderRadius"));
 const BoxShadow = lazy(() => import("pages/CSS/BoxShadow"));
+const FlexboxGenerator = lazy(() => import("pages/CSS/FlexboxGenerator"));
 const Units = lazy(() => import("pages/CSS/Units"));
 
 const Base64 = lazy(() => import("pages/Converter/Base64"));
@@ -74,6 +75,7 @@ export {
 	Book,
 	BorderRadius,
 	BoxShadow,
+	FlexboxGenerator,
 	CodeFormatter,
 	ColorPicker,
 	CookiePolicy,
