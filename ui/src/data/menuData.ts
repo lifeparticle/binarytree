@@ -56,6 +56,12 @@ export const MENU_ITEMS = [
 				show: true,
 			},
 			{
+				name: routesById.flexboxgenerator.title,
+				url: routesById.flexboxgenerator.path,
+				icon: "AlignCenter",
+				show: IN_DEVELOPMENT,
+			},
+			{
 				name: routesById.units.title,
 				url: routesById.units.path,
 				icon: "Boxes",

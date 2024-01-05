@@ -84,6 +84,7 @@ const HELP: Help = {
 			},
 		],
 	},
+
 	// [routesById.units.id]: {
 	// 	description: featuresById.units.fullDescription,
 	// 	helpTexts: [
@@ -474,6 +475,16 @@ const HELP: Help = {
 		helpTexts: [
 			{
 				id: "47",
+				title: "",
+				bulletPoints: [],
+			},
+		],
+	},
+	[routesById.flexboxgenerator.id]: {
+		description: featuresById.flexboxgenerator.fullDescription,
+		helpTexts: [
+			{
+				id: "48",
 				title: "",
 				bulletPoints: [],
 			},

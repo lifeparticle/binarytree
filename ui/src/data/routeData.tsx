@@ -52,6 +52,7 @@ import {
 	UiUx,
 	Units,
 	YouTube,
+	FlexboxGenerator,
 } from "pages";
 import { FC } from "react";
 
@@ -109,7 +110,8 @@ export type RouteId =
 	| "tvseries"
 	| "uiux"
 	| "units"
-	| "youtube";
+	| "youtube"
+	| "flexboxgenerator";
 
 interface Route {
 	path: string;
@@ -154,6 +156,13 @@ export const routes: Route[] = [
 		title: "Box Shadow",
 		description: "Add drama to your box! Shadows included.",
 		component: BoxShadow,
+	},
+	{
+		id: "flexboxgenerator",
+		path: "/css/fg",
+		title: "Flexbox Generator",
+		description: "Arrange your item inside your container.",
+		component: FlexboxGenerator,
 	},
 	{
 		id: "units",
