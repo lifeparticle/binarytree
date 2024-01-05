@@ -2,7 +2,7 @@
 import { renderHook, act } from "@testing-library/react";
 import { vi } from "vitest";
 // hooks
-import useNewsFeed from "../useNewsFeed";
+import useNewsFeed from "pages/Newsfeed/useNewsFeed";
 import { useFetch } from "hooks";
 // mocks
 import {
