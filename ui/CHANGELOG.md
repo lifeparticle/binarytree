@@ -1,3 +1,7 @@
+### [10.4.0] - 2024-01-05
+
+-   NewsFeed Page tests have been added. Includes tests for helper and custom hook as well.
+
 ### [10.3.0] - 2024-01-01
 
 -   Scaffdog is added
