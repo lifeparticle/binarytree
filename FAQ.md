@@ -47,7 +47,10 @@ PageName/
 
 Adopting consistent naming conventions helps in understanding and navigating the codebase. 
 
-## 3. How to use scaffdog to create a page
+## 3. How to add a feature
+
+
+3.1. Use scaffdog to create the page folder
 
 ```shell
 npx scaffdog generate
@@ -68,3 +71,23 @@ ProgressiveWebApp/
 |   |── ProgressiveWebApp.test.tsx
 |── index.ts
 ```
+
+3.2. Update
+
+`ui/src/pages/index.ts`
+
+3.3. Update
+
+`ui/src/data/featureData.ts`
+
+3.4. Update
+
+`ui/src/data/helpData.ts`
+
+3.5. Update
+
+`ui/src/data/menuData.ts`
+
+3.6. Update
+
+`ui/src/data/routeData.tsx`
