@@ -158,7 +158,7 @@ yarn test
 
 #### 2. How to use absolute paths instead of relative paths?
 
-Using absolute paths instead of relative can significantly enhance readability and maintainability.
+Using absolute paths instead of relative paths can significantly enhance readability and maintainability.
 
 **Relative Path Example:**
 
