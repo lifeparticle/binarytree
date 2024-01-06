@@ -1,4 +1,4 @@
-import { parsedMarkdown } from "../helper";
+import { parsedMarkdown } from "components/General/Notification/helper";
 
 describe("parsedMarkdown", () => {
 	it("should correctly parse the markdown string", () => {
