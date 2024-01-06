@@ -106,22 +106,24 @@ yarn test
     git checkout issue-2
     ```
 
-6.  Push your changes to your fork with git push
+6. Update the [CHANGELOG](./CHANGELOG.md) file  with the changes you have made.
+
+7.  Push your changes to your fork with git push
     ```shell
     git add .
     git commit -m"Write a meaningfull commit message"
     git push
     ```
-7.  Create a pull request
+8.  Create a pull request
 
-    7.1 Use the url from the terminal
+    8.1 Use the url from the terminal
 
     ```shell
     remote: Create a pull request for 'issue-2' on GitHub by visiting:
     remote:      https://github.com/........................
     ```
 
-    7.2 If you're having problem finding the url
+    8.2 If you're having problem finding the url
 
         a) https://github.com/lifeparticle/binarytree/pulls
 
@@ -135,7 +137,7 @@ yarn test
 
         f) Create pull request
 
-8.  Repeat
+9.  Repeat
 
     ```shell
     git checkout main
