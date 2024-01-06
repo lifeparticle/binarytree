@@ -86,10 +86,6 @@ $home-z-index-100: 100;
 
 	@media screen and (max-width: 900px) {
 		&__hero {
-			&__stats_container {
-				grid-template-columns: 1fr;
-			}
-
 			&_buttons {
 				flex-direction: column;
 			}
@@ -101,6 +97,11 @@ $home-z-index-100: 100;
 				text-align: center;
 			}
 			&_cards {
+				grid-template-columns: 1fr;
+			}
+		}
+		&__contribution {
+			&__stats_container {
 				grid-template-columns: 1fr;
 			}
 		}
