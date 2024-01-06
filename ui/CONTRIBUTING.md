@@ -208,7 +208,7 @@ Adopting consistent naming conventions helps in understanding and navigating the
 
 #### 4. How to add a feature?
 
-3.1. Use scaffdog to create the page folder
+4.1. Use scaffdog to create the page folder
 
 ```shell
 npx scaffdog generate
@@ -231,23 +231,23 @@ ProgressiveWebApp/
 |── index.ts
 ```
 
-3.2. Update
+4.2. Update
 
 `ui/src/pages/index.ts`
 
-3.3. Update
+4.3. Update
 
 `ui/src/data/featureData.ts`
 
-3.4. Update
+4.4. Update
 
 `ui/src/data/helpData.ts`
 
-3.5. Update
+4.5. Update
 
 `ui/src/data/menuData.ts`
 
-3.6. Update
+4.6. Update
 
 `ui/src/data/routeData.tsx`
 
