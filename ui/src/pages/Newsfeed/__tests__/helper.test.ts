@@ -1,5 +1,5 @@
 // helpers
-import { parseXML, extractImage } from "../helper";
+import { parseXML, extractImage } from "pages/Newsfeed/helper";
 // mocks
 import { mockedXMLString, mockedParsedXML, mockedXMLStringMissingDescription } from "./newsFeed.testkit";
 describe("parseXML", () => {
@@ -30,10 +30,10 @@ describe("extractImage", () => {
 		// arrange
 		const description =
 			'Check out this image: <img src="https://example.com/image.jpg" alt="Image">';
-		
+
 		// act
 		const response = extractImage(description);
-		
+
 		// assert
 		expect(response).toBe("https://example.com/image.jpg");
 	});
@@ -41,10 +41,10 @@ describe("extractImage", () => {
 	it("should return null if no image URL found in description", () => {
 		// arrange
 		const description = "This is a text description without any image.";
-		
+
 		// act
 		const response = extractImage(description);
-		
+
 		// assert
 		expect(response).toBeNull();
 	});

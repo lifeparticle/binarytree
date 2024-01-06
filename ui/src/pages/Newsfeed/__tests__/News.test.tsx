@@ -5,13 +5,13 @@ import { vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 // hooks
-import useNewsFeed from "../useNewsFeed";
+import useNewsFeed from "pages/Newsfeed/useNewsFeed";
 // types
 import { ListSearchResultsProps } from "components/ComponentInjector/ListSearchResults/ListSearchResults";
 
-vi.mock("../useNewsFeed");
+vi.mock("pages/Newsfeed/useNewsFeed");
 
-type Items = unknown[]
+type Items = unknown[];
 
 const mockListSearchResultsProps = vi.fn();
 vi.mock("components/ComponentInjector", () => ({
@@ -77,6 +77,8 @@ describe("News component", () => {
 
 		await user.click(newsTab);
 
-		expect(mockSetUrl).toHaveBeenCalledWith("https://raw.githubusercontent.com/lifeparticle/binarytree/main/api/news/news.json");
+		expect(mockSetUrl).toHaveBeenCalledWith(
+			"https://raw.githubusercontent.com/lifeparticle/binarytree/main/api/news/news.json"
+		);
 	});
 });

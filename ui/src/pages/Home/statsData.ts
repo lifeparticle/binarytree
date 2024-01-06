@@ -16,7 +16,7 @@ export const STATS_DATA = [
 	{
 		id: 3,
 		title: "Contributors",
-		value: 6,
+		value: 7,
 		link: "https://github.com/lifeparticle/binarytree/graphs/contributors",
 	},
 ];
