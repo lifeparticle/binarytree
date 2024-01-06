@@ -219,17 +219,17 @@ npx scaffdog generate
 ```shell
 ? Please select a document. page.md
 ? Please select the output destination directory. src/pages
-? Please enter a page name. progressive web app
+? Please enter a page name. PageA
 ```
 
 It will create the following files and folders structure:
 
 ```shell
-ProgressiveWebApp/
-|── ProgressiveWebApp.module.scss
-|── ProgressiveWebApp.tsx
+PageA/
+|── PageA.module.scss
+|── PageA.tsx
 |── __tests__/
-|   |── ProgressiveWebApp.test.tsx
+|   |── PageA.test.tsx
 |── index.ts
 ```
 
@@ -258,6 +258,6 @@ ProgressiveWebApp/
 -   Identify the key functionalities of your feature that need testing.
 -   Define test cases for these functionalities, including both positive and negative scenarios.
 -   Ensure your test cases cover all critical paths and edge cases.
--   Place your test scripts in the `__tests__` folder within your feature directory (in this case, `ProgressiveWebApp/__tests__`).
+-   Place your test scripts in the `__tests__` folder within your feature directory (in this case, `PageA/__tests__`).
 -   Mock any external dependencies or modules that your feature interacts with. This ensures that your tests are focused solely on the feature's functionality.
 -   Use faker to generate fake data for your tests.
