@@ -10,7 +10,7 @@ At [binarytree.dev](https://binarytree.dev/about), we provide an array of develo
 
 Your [opinions and feedback](https://binarytree.dev/feedback) about our service are highly valuable to us. We eagerly look forward to hearing from you.
 
-### Status
+## Status
 
 | Name                  | Status                                                                                                                                                                                                 |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
