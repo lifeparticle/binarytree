@@ -1,47 +1,11 @@
-## Installation
+## Introduction
 
-### Prerequisites
+Welcome to the Frontend part of the project!
 
-Ensure these dependencies are installed before proceeding:
+## Contributing
 
-```shell
-node -v
-# 18.16.1
+If you'd like to contribute to the project, please check the [How to contribute](./CONTRIBUTING.md) file for guidelines and instructions.
 
-yarn -v
-# 3.6.1
-```
+## FAQ
 
-If you don't have these installed, please visit [Node.js](https://nodejs.org/en) official website and [Yarn](https://yarnpkg.com/) Package Manager to download and install them.
-
-### Installing Project Dependencies
-
-Install project dependencies using Yarn with the `--immutable` flag to ensure consistent package versions:
-
-```shell
-yarn install --immutable
-```
-
-## Running the Project Locally
-
-To run the project locally, execute the following command:
-
-```shell
-yarn dev
-```
-
-## Running Linters
-
-Run the following command to execute the linter:
-
-```shell
-yarn lint
-```
-
-## Running Tests
-
-You can also run tests to ensure the project's functionality:
-
-```shell
-yarn test
-```
+Check the [FAQ](./FAQ.md) file for a list of frequently asked questions and their answers.
