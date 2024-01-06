@@ -1,111 +1,148 @@
 import { FC, useState } from "react";
-import { Card, Form, Slider, Space } from "antd";
+import { Card, Form, Space } from "antd";
 import { PageGrid, InputGrid } from "components/Layouts";
 import {
 	CodeHighlightWithCopy,
-	ColorPickerWithInput,
+	ResponsiveSelectWithLabel,
+	ResponsiveButton
 } from "components/General";
+import {
+	JUSTIFY_CONTENT,
+	FLEX_DIRECTION,
+	ALIGN_ITEM,
+	ALIGN_CONTENT,
+	FLEX_WRAP,
+} from "./constants";
 import style from "./FlexboxGenerator.module.scss";
 
-const FlexboxGenerator : FC = () => {
+const FlexboxGenerator: FC = () => {
 	const [bgColor, setBgColor] = useState("#ffffff0");
-	const [shadowColor, setShadowColor] = useState("#ddd");
-	const [boxColor, setBoxColor] = useState("#df6a0b77");
-	const [horizontalLength, setHorizontalLength] = useState(10);
-	const [verticalLength, setVerticalLength] = useState(10);
-	const [blurRadius, setBlurRadius] = useState(0);
-	const [spreadRadius, setSpreadRadius] = useState(0);
+	const [boxColor, setBoxColor] = useState("#4f5456");
+	const [justifyContent, setJustifyContent] = useState(JUSTIFY_CONTENT[0].value);
+	const [flexDirection, setFlexDirection] = useState(FLEX_DIRECTION[0].value);
+	const [alignItem, setAlignItem] = useState(ALIGN_ITEM[0].value);
+	const [alignContent, setAlignContent] = useState(ALIGN_CONTENT[0].value);
+	const [flexWrap, setFlexWrap] = useState(FLEX_WRAP[0].value);
+	const [itemCount, setItemCount] = useState(3);
 
-	const boxStyle = {
-		width: "25dvh",
-		height: "25dvh",
+	const indices = Array.from({ length: itemCount }, (_, index) => index);
+
+	const containerStyle = {
+		width: "70dvh",
+		height: "50dvh",
 		backgroundColor: boxColor,
-		margin: "20px auto",
-		boxShadow: `${horizontalLength}px ${verticalLength}px ${blurRadius}px ${spreadRadius}px ${shadowColor}`,
+		borderRadius:".8rem",
+		display:"flex",
+		justifyContent: `${justifyContent}`,
+		flexDirection: `${flexDirection}`,
+		alignItem: `${alignItem}`,
+		alignContent: `${alignContent}`,
+		flexWrap: `${flexWrap}`,
 	};
+
+	const itemStyle = {
+		width: "5rem",
+		height: "5rem",
+		background: "whitesmoke",
+		color:"black",
+		margin: "10px",
+		padding:"10px",
+		borderRadius:".5rem",
+	}
 
 	const generateCSSCodeString = () => {
-		const webkit = `-webkit-box-shadow: ${horizontalLength}px ${verticalLength}px ${blurRadius}px ${spreadRadius}px ${shadowColor};`;
-		const mozila = `-moz-box-shadow: ${horizontalLength}px ${verticalLength}px ${blurRadius}px ${spreadRadius}px ${shadowColor};`;
-		const boxShadow = `box-shadow: ${horizontalLength}px ${verticalLength}px ${blurRadius}px ${spreadRadius}px ${shadowColor};`;
+		const displayFlexCode = `display: flex`;
+		const justifyContentCode = `justify-content: ${justifyContent};`;
+		const flexDirectionCode = `flex-direction: ${flexDirection};`;
+		const alignItemCode = `align-item: ${alignItem};`;
+		const alignContentnCode = `align-content: ${alignContent};`;
+		const flexWrapCode = `flex-wrap: ${flexWrap};`;
 
-		return `${webkit}\n${mozila}\n${boxShadow}`;
+		return `${displayFlexCode}\n${justifyContentCode}\n${flexDirectionCode}\n${alignItemCode}\n${alignContentnCode}\n${flexWrapCode}`;
 	};
 
+	const addItem = () => {
+		setItemCount(itemCount+ 1);
+	}
+	const removeItem = () => {
+		setItemCount(itemCount - 1);
+	}
 
 	return (
 		<div className={style.fg}>
 			<PageGrid>
 				<Card className={style.fg__input}>
-					<Form layout="vertical">
-						<InputGrid>
-							<ColorPickerWithInput
-								label="Shadow color"
-								value={shadowColor}
-								setValue={(e) => setShadowColor(e.target.value)}
-								setColor={setShadowColor}
-							/>
-							<ColorPickerWithInput
-								label="Box color"
-								value={boxColor}
-								setValue={(e) => setBoxColor(e.target.value)}
-								setColor={setBoxColor}
-							/>
-						</InputGrid>
+					Container
+					<Card>
+						<Space>
+							<ResponsiveButton
+								onClick={() => addItem()}
+							>
+								Add Item
+							</ResponsiveButton>
 
-						<ColorPickerWithInput
-							label="Background color"
-							value={bgColor}
-							setValue={(e) => setBgColor(e.target.value)}
-							setColor={setBgColor}
-						/>
+							<ResponsiveButton
+								onClick={() => removeItem()}
+							>
+								Remove Item
+							</ResponsiveButton>
 
-						<Form.Item label="Horizontal length">
-							<Slider
-								value={horizontalLength}
-								onChange={(value: number) => {
-									setHorizontalLength(value);
-								}}
-								min={-100}
-								max={100}
-								included={false}
-								tooltip={{ open: true }}
-							/>
-						</Form.Item>
-						<Form.Item label="Vertical length">
-							<Slider
-								value={verticalLength}
-								onChange={(value) => {
-									setVerticalLength(value);
-								}}
-								min={-100}
-								max={100}
-								included={false}
-								tooltip={{ open: true }}
-							/>
-						</Form.Item>
-						<Form.Item label="Blur radius">
-							<Slider
-								value={blurRadius}
-								onChange={(value) => {
-									if (value) {
-										setBlurRadius(value);
+						</Space>
+						<Form layout="vertical">
+							<br />
+							<InputGrid>
+								<ResponsiveSelectWithLabel
+									label="Justify Content"
+									value={justifyContent}
+									defaultActiveFirstOption
+									onSelect={(_, option) =>
+										setJustifyContent(option.value)
 									}
-								}}
-							/>
-						</Form.Item>
-						<Form.Item label="Spread radius">
-							<Slider
-								defaultValue={0}
-								value={spreadRadius}
-								onChange={(value) => {
-									if (value) {
-										setSpreadRadius(value);
+									options={JUSTIFY_CONTENT}
+								/>
+								<ResponsiveSelectWithLabel
+									label="Flex Direction"
+									value={flexDirection}
+									defaultActiveFirstOption
+									onSelect={(_, option) =>
+										setFlexDirection(option.value)
 									}
-								}}
-							/>
-						</Form.Item>
-					</Form>
+									options={FLEX_DIRECTION}
+								/>
+							</InputGrid>
+							<InputGrid>
+								<ResponsiveSelectWithLabel
+									label="Align Item"
+									value={alignItem}
+									defaultActiveFirstOption
+									onSelect={(_, option) =>
+										setAlignItem(option.value)
+									}
+									options={ALIGN_ITEM}
+								/>
+								<ResponsiveSelectWithLabel
+									label="Align Content"
+									value={alignContent}
+									defaultActiveFirstOption
+									onSelect={(_, option) =>
+										setAlignContent(option.value)
+									}
+									options={ALIGN_CONTENT}
+								/>
+							</InputGrid>
+							<InputGrid>
+								<ResponsiveSelectWithLabel
+									label="Flex Wrap"
+									value={flexWrap}
+									defaultActiveFirstOption
+									onSelect={(_, option) =>
+										setFlexWrap(option.value)
+									}
+									options={FLEX_WRAP}
+								/>
+							</InputGrid>
+						</Form>
+					</Card>
 				</Card>
 
 				<Card
@@ -113,7 +150,13 @@ const FlexboxGenerator : FC = () => {
 					style={{ background: bgColor }}
 				>
 					<Space direction="vertical">
-						<div style={boxStyle}></div>
+						<div style={containerStyle}>
+							{indices.map((index) => (
+								<div key={index} style={itemStyle}>
+									Item {index + 1}
+								</div>
+							))}
+						</div>
 					</Space>
 				</Card>
 			</PageGrid>
