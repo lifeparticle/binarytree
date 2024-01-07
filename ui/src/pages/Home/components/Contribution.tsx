@@ -12,6 +12,12 @@ const { Text } = Typography;
 const Contribution: FC = () => {
 	const { handleModalOpen } = useModal();
 
+	const handleCardClick = (link: string) => {
+		link === ""
+			? handleModalOpen()
+			: window.open(link, "_blank", "noopener");
+	};
+
 	return (
 		<section className={style.home__contribution}>
 			<Image
@@ -33,15 +39,7 @@ const Contribution: FC = () => {
 						bordered={false}
 						key={feature.id}
 						hoverable
-						onClick={() =>
-							feature.link === ""
-								? handleModalOpen()
-								: window.open(
-										feature.link,
-										"_blank",
-										"noopener"
-								  )
-						}
+						onClick={() => handleCardClick(feature.link)}
 					>
 						<Space direction="vertical" size="middle">
 							<Title keyboard>{feature.value}</Title>

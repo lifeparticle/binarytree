@@ -1,5 +1,18 @@
-const JUSTIFY_CONTENT = [
-	{ label: "flext-start", value: "flext-start"},
+export type JustifyContent =
+	| "flex-start"
+	| "flex-end"
+	| "center"
+	| "space-between"
+	| "space-around"
+	| "space-evenly";
+
+type JustifyContentOption = {
+	label: JustifyContent;
+	value: JustifyContent;
+};
+
+export const JUSTIFY_CONTENT: JustifyContentOption[] = [
+	{ label: "flex-start", value: "flex-start" },
 	{ label: "flex-end", value: "flex-end" },
 	{ label: "center", value: "center" },
 	{ label: "space-evenly", value: "space-evenly" },
@@ -7,39 +20,69 @@ const JUSTIFY_CONTENT = [
 	{ label: "space-between", value: "space-between" },
 ];
 
-const FLEX_DIRECTION = [
-	{ label: "row", value: "row"},
+export type FlexDirection = "row" | "row-reverse" | "column" | "column-reverse";
+
+type FlexDirectionOption = {
+	label: FlexDirection;
+	value: FlexDirection;
+};
+
+export const FLEX_DIRECTION: FlexDirectionOption[] = [
+	{ label: "row", value: "row" },
 	{ label: "column", value: "column" },
 	{ label: "row-reverse", value: "row-reverse" },
 	{ label: "column-reverse", value: "column-reverse" },
 ];
 
-const ALIGN_ITEM = [
-	{ label: "flex-start", value: "flex-start"},
+export type AlignItems =
+	| "stretch"
+	| "flex-start"
+	| "flex-end"
+	| "center"
+	| "baseline";
+type AlignItemsOption = {
+	label: AlignItems;
+	value: AlignItems;
+};
+
+export const ALIGN_ITEM: AlignItemsOption[] = [
+	{ label: "flex-start", value: "flex-start" },
 	{ label: "flex-end", value: "flex-end" },
 	{ label: "center", value: "center" },
 	{ label: "stretch", value: "stretch" },
 	{ label: "baseline", value: "baseline" },
 ];
 
-const ALIGN_CONTENT = [
-	{ label: "flex-start", value: "flex-start"},
+export type AlignContent =
+	| "flex-start"
+	| "flex-end"
+	| "center"
+	| "space-between"
+	| "space-around"
+	| "stretch"
+	| "baseline";
+
+type AlignContentOption = {
+	label: AlignContent;
+	value: AlignContent;
+};
+
+export const ALIGN_CONTENT: AlignContentOption[] = [
+	{ label: "flex-start", value: "flex-start" },
 	{ label: "flex-end", value: "flex-end" },
 	{ label: "center", value: "center" },
 	{ label: "stretch", value: "stretch" },
 	{ label: "baseline", value: "baseline" },
 ];
 
-const FLEX_WRAP = [
-	{ label: "nowrap", value: "nowrap"},
+export type FlexWrap = "nowrap" | "wrap" | "wrap-reverse";
+type FlexWrapOption = {
+	label: FlexWrap;
+	value: FlexWrap;
+};
+
+export const FLEX_WRAP: FlexWrapOption[] = [
+	{ label: "nowrap", value: "nowrap" },
 	{ label: "wrap", value: "wrap" },
 	{ label: "wrap-reverse", value: "wrap-reverse" },
 ];
-
-export {
-	JUSTIFY_CONTENT,
-	FLEX_DIRECTION,
-	ALIGN_ITEM,
-	ALIGN_CONTENT,
-	FLEX_WRAP,
-};

@@ -4,7 +4,7 @@ import { PageGrid, InputGrid } from "components/Layouts";
 import {
 	CodeHighlightWithCopy,
 	ResponsiveSelectWithLabel,
-	ResponsiveButton
+	ResponsiveButton,
 } from "components/General";
 import {
 	JUSTIFY_CONTENT,
@@ -12,38 +12,59 @@ import {
 	ALIGN_ITEM,
 	ALIGN_CONTENT,
 	FLEX_WRAP,
+	JustifyContent,
+	FlexDirection,
+	AlignContent,
+	FlexWrap,
+	AlignItems,
 } from "./constants";
 import style from "./FlexboxGenerator.module.scss";
 
+type ContainerStyle = {
+	width: string;
+	height: string;
+	backgroundColor: string;
+	borderRadius: string;
+	display: string;
+	justifyContent: JustifyContent;
+	flexDirection: FlexDirection;
+	alignItems: AlignItems;
+	alignContent: AlignContent;
+	flexWrap: FlexWrap;
+};
+
 const FlexboxGenerator: FC = () => {
-	const [bgColor] = useState("#ffffff0");
-	const [boxColor] = useState("#4f5456");
-	const [justifyContent, setJustifyContent] = useState(JUSTIFY_CONTENT[0].value);
-	const [flexDirection, setFlexDirection] = useState(FLEX_DIRECTION[0].value);
-	const [alignItem, setAlignItem] = useState(ALIGN_ITEM[0].value);
-	const [alignContent, setAlignContent] = useState(ALIGN_CONTENT[0].value);
-	const [flexWrap, setFlexWrap] = useState(FLEX_WRAP[0].value);
+	const bgColor = "#ffffff0";
+	const boxColor = "#4f5456";
+	const [justifyContent, setJustifyContent] = useState<JustifyContent>(
+		JUSTIFY_CONTENT[0].value
+	);
+	const [flexDirection, setFlexDirection] = useState<FlexDirection>(
+		FLEX_DIRECTION[0].value
+	);
+	const [alignItem, setAlignItem] = useState<AlignItems>(ALIGN_ITEM[0].value);
+	const [alignContent, setAlignContent] = useState<AlignContent>(
+		ALIGN_CONTENT[0].value
+	);
+	const [flexWrap, setFlexWrap] = useState<FlexWrap>(FLEX_WRAP[0].value);
 	const [itemCount, setItemCount] = useState(3);
 
-	const containerItems = Array.from({ length: itemCount }, (_, index) => index);
+	const containerItems = Array.from(
+		{ length: itemCount },
+		(_, index) => index
+	);
 
-	type FlexDirection = "row" | "row-reverse" | "column" | "column-reverse";
-	type JustifyContent = "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly";
-	type AlignItems = "stretch" | "flex-start" | "flex-end" | "center" | "baseline";
-	type AlignContent = "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "stretch";
-	type FlexWrap = "nowrap" | "wrap" | "wrap-reverse";
-
-	const containerStyle = {
+	const containerStyle: ContainerStyle = {
 		width: "70dvh",
 		height: "50dvh",
 		backgroundColor: boxColor,
 		borderRadius: ".8rem",
 		display: "flex",
-		justifyContent: `${justifyContent}` as JustifyContent,
-		flexDirection: `${flexDirection}` as FlexDirection,
-		alignItems: `${alignItem}` as AlignItems,
-		alignContent: `${alignContent}` as AlignContent,
-		flexWrap: `${flexWrap}` as FlexWrap,
+		justifyContent: `${justifyContent}`,
+		flexDirection: `${flexDirection}`,
+		alignItems: `${alignItem}`,
+		alignContent: `${alignContent}`,
+		flexWrap: `${flexWrap}`,
 	};
 
 	const itemStyle = {
@@ -54,7 +75,7 @@ const FlexboxGenerator: FC = () => {
 		margin: "10px",
 		padding: "10px",
 		borderRadius: ".5rem",
-	}
+	};
 
 	const generateCSSCodeString = () => {
 		const displayFlexCode = `display: flex`;
@@ -69,10 +90,10 @@ const FlexboxGenerator: FC = () => {
 
 	const addItem = () => {
 		setItemCount(itemCount + 1);
-	}
+	};
 	const removeItem = () => {
 		setItemCount(itemCount - 1);
-	}
+	};
 
 	return (
 		<div className={style.fg}>
@@ -81,18 +102,13 @@ const FlexboxGenerator: FC = () => {
 					Container
 					<Card>
 						<Space>
-							<ResponsiveButton
-								onClick={() => addItem()}
-							>
+							<ResponsiveButton onClick={() => addItem()}>
 								Add Item
 							</ResponsiveButton>
 
-							<ResponsiveButton
-								onClick={() => removeItem()}
-							>
+							<ResponsiveButton onClick={() => removeItem()}>
 								Remove Item
 							</ResponsiveButton>
-
 						</Space>
 						<Form layout="vertical">
 							<br />
@@ -102,7 +118,9 @@ const FlexboxGenerator: FC = () => {
 									value={justifyContent}
 									defaultActiveFirstOption
 									onSelect={(_, option) =>
-										setJustifyContent(option.value)
+										setJustifyContent(
+											option.value as JustifyContent
+										)
 									}
 									options={JUSTIFY_CONTENT}
 								/>
@@ -111,7 +129,9 @@ const FlexboxGenerator: FC = () => {
 									value={flexDirection}
 									defaultActiveFirstOption
 									onSelect={(_, option) =>
-										setFlexDirection(option.value)
+										setFlexDirection(
+											option.value as FlexDirection
+										)
 									}
 									options={FLEX_DIRECTION}
 								/>
@@ -122,7 +142,7 @@ const FlexboxGenerator: FC = () => {
 									value={alignItem}
 									defaultActiveFirstOption
 									onSelect={(_, option) =>
-										setAlignItem(option.value)
+										setAlignItem(option.value as AlignItems)
 									}
 									options={ALIGN_ITEM}
 								/>
@@ -131,7 +151,9 @@ const FlexboxGenerator: FC = () => {
 									value={alignContent}
 									defaultActiveFirstOption
 									onSelect={(_, option) =>
-										setAlignContent(option.value)
+										setAlignContent(
+											option.value as AlignContent
+										)
 									}
 									options={ALIGN_CONTENT}
 								/>
@@ -142,7 +164,7 @@ const FlexboxGenerator: FC = () => {
 									value={flexWrap}
 									defaultActiveFirstOption
 									onSelect={(_, option) =>
-										setFlexWrap(option.value)
+										setFlexWrap(option.value as FlexWrap)
 									}
 									options={FLEX_WRAP}
 								/>
