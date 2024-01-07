@@ -16,8 +16,8 @@ import {
 import style from "./FlexboxGenerator.module.scss";
 
 const FlexboxGenerator: FC = () => {
-	const [bgColor, setBgColor] = useState("#ffffff0");
-	const [boxColor, setBoxColor] = useState("#4f5456");
+	const [bgColor] = useState("#ffffff0");
+	const [boxColor] = useState("#4f5456");
 	const [justifyContent, setJustifyContent] = useState(JUSTIFY_CONTENT[0].value);
 	const [flexDirection, setFlexDirection] = useState(FLEX_DIRECTION[0].value);
 	const [alignItem, setAlignItem] = useState(ALIGN_ITEM[0].value);
@@ -25,29 +25,35 @@ const FlexboxGenerator: FC = () => {
 	const [flexWrap, setFlexWrap] = useState(FLEX_WRAP[0].value);
 	const [itemCount, setItemCount] = useState(3);
 
-	const indices = Array.from({ length: itemCount }, (_, index) => index);
+	const containerItems = Array.from({ length: itemCount }, (_, index) => index);
+
+	type FlexDirection = "row" | "row-reverse" | "column" | "column-reverse";
+	type JustifyContent = "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly";
+	type AlignItems = "stretch" | "flex-start" | "flex-end" | "center" | "baseline";
+	type AlignContent = "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "stretch";
+	type FlexWrap = "nowrap" | "wrap" | "wrap-reverse";
 
 	const containerStyle = {
 		width: "70dvh",
 		height: "50dvh",
 		backgroundColor: boxColor,
-		borderRadius:".8rem",
-		display:"flex",
-		justifyContent: `${justifyContent}`,
-		flexDirection: `${flexDirection}`,
-		alignItem: `${alignItem}`,
-		alignContent: `${alignContent}`,
-		flexWrap: `${flexWrap}`,
+		borderRadius: ".8rem",
+		display: "flex",
+		justifyContent: `${justifyContent}` as JustifyContent,
+		flexDirection: `${flexDirection}` as FlexDirection,
+		alignItems: `${alignItem}` as AlignItems,
+		alignContent: `${alignContent}` as AlignContent,
+		flexWrap: `${flexWrap}` as FlexWrap,
 	};
 
 	const itemStyle = {
 		width: "5rem",
 		height: "5rem",
 		background: "whitesmoke",
-		color:"black",
+		color: "black",
 		margin: "10px",
-		padding:"10px",
-		borderRadius:".5rem",
+		padding: "10px",
+		borderRadius: ".5rem",
 	}
 
 	const generateCSSCodeString = () => {
@@ -62,7 +68,7 @@ const FlexboxGenerator: FC = () => {
 	};
 
 	const addItem = () => {
-		setItemCount(itemCount+ 1);
+		setItemCount(itemCount + 1);
 	}
 	const removeItem = () => {
 		setItemCount(itemCount - 1);
@@ -151,7 +157,7 @@ const FlexboxGenerator: FC = () => {
 				>
 					<Space direction="vertical">
 						<div style={containerStyle}>
-							{indices.map((index) => (
+							{containerItems.map((index) => (
 								<div key={index} style={itemStyle}>
 									Item {index + 1}
 								</div>

@@ -80,6 +80,7 @@ export type RouteId =
 	| "editor"
 	| "feedback"
 	| "fileconverter"
+	| "flexboxgenerator"
 	| "github"
 	| "githubissue"
 	| "icon"
@@ -110,8 +111,7 @@ export type RouteId =
 	| "tvseries"
 	| "uiux"
 	| "units"
-	| "youtube"
-	| "flexboxgenerator";
+	| "youtube";
 
 interface Route {
 	path: string;
