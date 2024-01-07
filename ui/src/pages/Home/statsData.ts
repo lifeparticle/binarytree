@@ -4,13 +4,13 @@ export const STATS_DATA = [
 	{
 		id: 1,
 		title: "Features",
-		value: FEATURE_DATA.length,
+		value: FEATURE_DATA.filter((feature) => !feature.in_progress).length,
 		link: "",
 	},
 	{
 		id: 2,
 		title: "GitHub Stars",
-		value: 22,
+		value: 23,
 		link: "https://github.com/lifeparticle/binarytree/stargazers",
 	},
 	{

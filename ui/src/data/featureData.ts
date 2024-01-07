@@ -35,6 +35,7 @@ interface Feature {
 	fullDescription: string;
 	link: string;
 	library: { name: string; url: string }[];
+	in_progress?: boolean;
 }
 
 export const FEATURE_DATA: Feature[] = [
@@ -91,6 +92,7 @@ export const FEATURE_DATA: Feature[] = [
 			"Arrange your items inside your container element as like as you want.",
 		link: routesById.flexboxgenerator.path,
 		library: [{ name: "Vanilla JS", url: "" }],
+		in_progress: true,
 	},
 	{
 		key: routesById.base64.id,
