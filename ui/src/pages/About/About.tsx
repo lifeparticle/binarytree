@@ -1,10 +1,10 @@
 import { Card } from "antd";
 import style from "./About.module.scss";
-import { Footer } from "components/Layouts";
 import Values from "./components/Values";
 import Features from "./components/Features";
 import Credits from "./components/Credits";
 import Support from "./components/Support";
+import { Footer } from "components/Layouts";
 
 const About = () => {
 	return (
