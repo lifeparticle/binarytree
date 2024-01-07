@@ -48,7 +48,7 @@ const Hero: FC = () => {
 					target="_blank"
 				>
 					ever-growing number of features
-				</a>
+				</a>{" "}
 				, our platform is constantly evolving to meet the needs of
 				developers like you
 			</Title>
