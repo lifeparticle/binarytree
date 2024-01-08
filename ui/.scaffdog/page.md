@@ -7,26 +7,30 @@ questions:
     value: "Please enter a page name."
 ---
 
-# `{{ inputs.value | pascal }}/index.ts`
+# Variables
+
+-   name: `{{ inputs.value | pascal }}`
+
+# `{{ name }}/index.ts`
 
 ```typescript
-export { default } from "./{{ inputs.value | pascal }}";
+export { default } from "./{{ name }}";
 ```
 
-# `{{ inputs.value | pascal }}/{{ inputs.value | pascal }}.tsx`
+# `{{ name }}/{{ name }}.tsx`
 
 ```typescript
 import { FC } from "react";
-import style from "./{{ inputs.value | pascal }}.module.scss";
+import style from "./{{ name }}.module.scss";
 
-const {{ inputs.value | pascal }} : FC = () => {
+const {{ name }} : FC = () => {
 	return <div className={style.{{inputs.value | lower | replace " " "" }}}>{{inputs.value}}</div>;
 };
 
-export default {{ inputs.value | pascal }};
+export default {{ name }};
 ```
 
-# `{{ inputs.value | pascal }}/{{ inputs.value | pascal }}.module.scss`
+# `{{ name }}/{{ name }}.module.scss`
 
 ```scss
 .{{inputs.value | lower | replace " " ""}} {
@@ -34,15 +38,15 @@ export default {{ inputs.value | pascal }};
 }
 ```
 
-# `{{ inputs.value | pascal }}/__test__/{{ inputs.value | pascal }}.test.tsx`
+# `{{ name }}/__test__/{{ name }}.test.tsx`
 
 ```tsx
 import { render } from "@testing-library/react";
-import {{ inputs.value | pascal }} from "pages/{{ inputs.value | pascal }}";
+import {{ name }} from "pages/{{ name }}";
 
 describe("{{ inputs.value }} Component", () => {
 	it("renders correctly", () => {
-		const { getByText } = render(<{{ inputs.value | pascal }} />);
+		const { getByText } = render(<{{ name }} />);
 		expect(getByText("{{ inputs.value }}")).toBeInTheDocument();
 	});
 });
