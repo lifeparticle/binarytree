@@ -1,15 +1,12 @@
 :where(html) {
-	--bt-color-border: #ddd;
+	--bt-color-border: rgb(221 221 221);
 	/* New rgb syntax */
 	/* I would also strongly recommend having all your colours in a consistent syntax
      i.e. all hex or all rgb */
-	/* --bt-color-border-solid-light: rgba(250, 250, 250, 0.06); */
 	--bt-color-border-solid-light: rgb(250 250 250 / 0.06);
-	/* --bt-color-border-solid-dark: rgba(5, 5, 5, 0.06); */
 	--bt-color-border-solid-dark: rgb(5 5 5 / 0.06);
-	--bt-color-scrollbar-thumb: #707070;
-	--bt-color-scrollbar-track: #c9c8c8;
-	/* --bt-color-bg: rgba(0, 0, 0, 0.5); */
+	--bt-color-scrollbar-thumb: rgb(112 112 112);
+	--bt-color-scrollbar-track: rgb(201 200 200);
 	--bt-color-bg: rgb(0 0 0 / 0.5);
-	--bt-color-hover: #9370db;
+	--bt-color-hover: rgb(147 112 219);
 }

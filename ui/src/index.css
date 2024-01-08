@@ -10,8 +10,8 @@
 @import "./styles/other-overrides.css";
 
 *,
-*::before,
-*::after {
+::before,
+::after {
 	box-sizing: border-box;
 }
 
@@ -22,7 +22,7 @@
 html,
 body {
 	height: 100%;
-	overflow: hidden;
+	overflow: hidden; /* Why? Are things overflowing? */
 }
 
 body {

@@ -42,8 +42,7 @@ h5 {
 }
 
 .ant-layout-content {
-	overflow-x: auto;
-	overflow-y: auto;
+	overflow: auto;
 	max-height: 100dvh;
 	scroll-behavior: smooth;
 }
@@ -52,7 +51,7 @@ h5 {
 	position: sticky;
 	top: 0;
 	z-index: var(--bt-z-index-header);
-	width: 100%;
+	width: 100%; /* Is this needed? */
 	display: flex;
 	align-items: center;
 	padding-inline: 0;
@@ -72,7 +71,7 @@ h5 {
 }
 
 .ant-select-selection-search-input {
-	font-size: 16px;
+	font-size: 1rem;
 }
 
 .ant-card-cover img {
@@ -108,7 +107,7 @@ a:hover {
 
 /* modal dark mode */
 .dark .ant-modal-content {
-	background-color: #383737 !important;
+	background-color: rgb(56 56 56) !important;
 	color: white;
 }
 
