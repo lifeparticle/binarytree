@@ -7,6 +7,14 @@ $home-z-index-100: 100;
 	padding: var(--bt-size-100) var(--bt-size-percent-10) var(--bt-size-64)
 		var(--bt-size-percent-10);
 	min-height: $home-height;
+	&_light {
+		background-image: url("../../assets/Home/grid_light.svg");
+	}
+
+	&_dark {
+		background-image: url("../../assets/Home/grid_dark.svg");
+	}
+
 	animation: var(--bt-animation-moveBackground);
 
 	&__container {
@@ -21,10 +29,15 @@ $home-z-index-100: 100;
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
-		gap: var(--bt-size-50);
+		gap: var(--bt-size-24);
 
 		&_paragraph {
 			font-size: larger;
+		}
+
+		&_buttons {
+			display: flex;
+			gap: var(--bt-size-20);
 		}
 	}
 
@@ -32,13 +45,14 @@ $home-z-index-100: 100;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
-		gap: var(--bt-size-50);
+		border-radius: var(--bt-size-50);
 
 		&_cover {
 			display: grid;
 			grid-template-columns: auto auto;
 			align-items: center;
 			gap: var(--bt-size-50);
+			text-align: center;
 		}
 
 		&_cards {
@@ -58,18 +72,38 @@ $home-z-index-100: 100;
 	&__contribution {
 		/* consider grid */
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
+		gap: var(--bt-size-24);
+
+		&__stats_container {
+			justify-content: center;
+			display: grid;
+			gap: var(--bt-size-20);
+			grid-template-columns: repeat(3, minmax(auto, 300px));
+		}
 	}
 
 	@media screen and (max-width: 900px) {
+		&__hero {
+			&_buttons {
+				flex-direction: column;
+			}
+		}
+
 		&__features {
 			&_cover {
 				flex-direction: column;
 				text-align: center;
 			}
 			&_cards {
+				grid-template-columns: 1fr;
+			}
+		}
+		&__contribution {
+			&__stats_container {
 				grid-template-columns: 1fr;
 			}
 		}

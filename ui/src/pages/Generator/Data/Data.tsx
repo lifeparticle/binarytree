@@ -8,8 +8,8 @@ import {
 	JSON_DATA_TYPES,
 	MYSQL_DATA_TYPES,
 	fakerMethod,
-} from "./utils/constants";
-import { convertToJSON } from "./utils/utils";
+} from "./constants";
+import { convertToJSON } from "./utils";
 import Output from "./components/Output";
 import { PageGrid } from "components/Layouts";
 import { ResponsiveButton, ResponsiveInputWithLabel } from "components/General";

@@ -1,66 +1,28 @@
-import { useState } from "react";
-import { fetchFile } from "@ffmpeg/util";
+import { FC, useState } from "react";
 import { message, Upload } from "antd";
 import type { UploadFile, UploadProps } from "antd";
-import { Icon, ResponsiveButton, Spin } from "components/General";
-import styles from "./FileConverter.module.scss";
-import { useFfmpeg } from "./useFfmpeg";
 import {
-	getFileExtension,
-	removeFileExtension,
-} from "utils/helper-functions/files";
-import { ItemFileRender } from "./ItemRender";
+	Icon,
+	ResponsiveButton,
+	ResponsiveSelectWithLabel,
+	Spin,
+} from "components/General";
+import styles from "./FileConverter.module.scss";
+import { convertFiles, getFileExtension } from "utils/helper-functions/files";
 import { IMAGE_TYPES } from "./constants";
+import { useFfmpeg } from "./useFfmpeg";
 
 const { Dragger } = Upload;
+
 interface FileConverter {
 	file: UploadFile;
 	from: string;
 }
 
-function FileConverter() {
+const FileConverter: FC = () => {
 	const [uploadedFiles, setUploadedFiles] = useState<FileConverter[]>([]);
-
 	const [selectedFormat, setSelectedFormat] = useState(IMAGE_TYPES[0].value);
 	const { loaded, ffmpeg } = useFfmpeg();
-
-	const transcode = async (fileConverter: FileConverter) => {
-		const outputFileName = `${removeFileExtension(
-			fileConverter.file.name
-		)}${selectedFormat}`;
-
-		await ffmpeg.writeFile(
-			fileConverter.file.name,
-			await fetchFile(fileConverter.file.originFileObj)
-		);
-		await ffmpeg.exec(["-i", fileConverter.file.name, outputFileName]);
-		const fileData = await ffmpeg.readFile(outputFileName);
-		const data = new Uint8Array(fileData as ArrayBuffer);
-
-		const blob = new Blob([data.buffer], {
-			type: `${fileConverter.file.type}/${selectedFormat}`,
-		});
-		const url = URL.createObjectURL(blob);
-		return [url, outputFileName];
-	};
-
-	const convertFiles = async () => {
-		const convertedFilesPromises = uploadedFiles.map(transcode);
-		const convertedFiles = await Promise.all(convertedFilesPromises);
-
-		for (const [url, fileName] of convertedFiles) {
-			await downloadFiles(url, fileName);
-		}
-	};
-
-	const downloadFiles = async (url: string, fileName: string) => {
-		const a = document.createElement("a");
-		a.download = fileName;
-		a.href = url;
-		document.body.appendChild(a);
-		a.click();
-		document.body.removeChild(a);
-	};
 
 	const props: UploadProps = {
 		name: "file",
@@ -97,20 +59,20 @@ function FileConverter() {
 			}
 		},
 		accept: "image/*,video/*,audio/*",
-		itemRender: (_, file: UploadFile, __, actions) => (
-			<ItemFileRender
-				file={file}
-				actions={actions}
-				selectedFormat={selectedFormat}
-				setSelectedFormat={setSelectedFormat}
-			/>
-		),
 		disabled: !loaded,
+		listType: "picture",
+		onRemove: (file) => {
+			const newUploadedFiles = uploadedFiles.filter(
+				(item) => item.file.uid !== file.uid
+			);
+			setUploadedFiles(newUploadedFiles);
+		},
 	};
 
 	return (
 		<div className={styles.ic}>
 			{!loaded && <Spin />}
+
 			<Dragger {...props}>
 				<p className="ant-upload-drag-icon">
 					<Icon name="Inbox" size={100} strokeWidth="0.2" />
@@ -122,16 +84,26 @@ function FileConverter() {
 					Support for a single or bulk upload.
 				</p>
 			</Dragger>
+			<ResponsiveSelectWithLabel
+				label="Output file format"
+				value={selectedFormat}
+				onSelect={(_, option) => setSelectedFormat(option.value)}
+				options={IMAGE_TYPES}
+				defaultActiveFirstOption
+				disabled={!loaded || uploadedFiles.length === 0}
+			/>
 			<ResponsiveButton
 				type="primary"
-				onClick={convertFiles}
-				disabled={!loaded}
+				onClick={() =>
+					convertFiles(uploadedFiles, selectedFormat, ffmpeg)
+				}
+				disabled={!loaded || uploadedFiles.length === 0}
 				icon
 			>
 				{uploadedFiles.length > 1 ? "Convert All" : "Convert"}
 			</ResponsiveButton>
 		</div>
 	);
-}
+};
 
 export default FileConverter;

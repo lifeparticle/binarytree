@@ -13,7 +13,7 @@ import {
 	BEAUTIFY_FUNCTIONS,
 	INDENTATION_LEVEL,
 	INPUT_TYPE,
-} from "./utils/constants";
+} from "./constants";
 
 const CodeFormatter: FC = () => {
 	const [inputCode, setInputCode] = useState("");
@@ -78,7 +78,7 @@ const CodeFormatter: FC = () => {
 					</div>
 
 					<CodeEditor
-						code={inputCode}
+						value={inputCode}
 						handleCode={(value) => setInputCode(value || "")}
 						language={inputType}
 						label="Enter code"

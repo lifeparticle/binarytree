@@ -1,33 +1,11 @@
-## Installation
+## Introduction
 
-Ensure these dependencies are installed before proceeding:
+Welcome to the Frontend part of the project!
 
-```shell
-node -v
-# 18.16.1
+## Contributing
 
-yarn -v
-# 3.6.1
-```
+If you'd like to contribute to the project, please check the [How to contribute](./CONTRIBUTING.md) file for guidelines and instructions.
 
-Install project dependencies using Yarn with the `--immutable` flag to ensure consistent package versions:
+## FAQ
 
-```shell
-yarn install --immutable
-```
-
-## Running the Project
-
-To run the project locally, execute the following command:
-
-```shell
-yarn dev
-```
-
-## Running Tests
-
-You can also run tests to ensure the project's functionality:
-
-```shell
-yarn test
-```
+Check the [FAQ](./FAQ.md) file for a list of frequently asked questions and their answers.

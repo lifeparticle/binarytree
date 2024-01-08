@@ -14,13 +14,14 @@ const ShadesAndTints = lazy(() => import("pages/Colors/ShadesAndTints"));
 
 const BorderRadius = lazy(() => import("pages/CSS/BorderRadius"));
 const BoxShadow = lazy(() => import("pages/CSS/BoxShadow"));
+const FlexboxGenerator = lazy(() => import("pages/CSS/FlexboxGenerator"));
 const Units = lazy(() => import("pages/CSS/Units"));
 
 const Base64 = lazy(() => import("pages/Converter/Base64"));
-const CodeFormatter = lazy(() => import("pages/Tools/CodeFormatter"));
 const FileConverter = lazy(() => import("pages/Converter/File"));
 const JsonToTypescript = lazy(() => import("pages/Converter/JsonToTypescript"));
 const Pixel = lazy(() => import("pages/Converter/Pixel"));
+const Svg = lazy(() => import("pages/Converter/Svg"));
 
 const Avatar = lazy(() => import("pages/Generator/Avatar"));
 const CSharpBuilder = lazy(() => import("pages/Generator/CSharpBuilder"));
@@ -39,6 +40,7 @@ const Interview = lazy(() => import("pages/Resource/Interview"));
 const Movie = lazy(() => import("pages/Resource/Movie"));
 const Platform = lazy(() => import("pages/Resource/Platform"));
 const Plugin = lazy(() => import("pages/Resource/Plugin"));
+const Survey = lazy(() => import("pages/Resource/Survey"));
 const Tool = lazy(() => import("pages/Resource/Tool"));
 const TvSeries = lazy(() => import("pages/Resource/TvSeries"));
 const UiUx = lazy(() => import("pages/Resource/UiUx"));
@@ -49,10 +51,11 @@ const Editor = lazy(() => import("pages/Markdown/Editor"));
 const TableGenerator = lazy(() => import("pages/Markdown/TableGenerator"));
 const TableOfContent = lazy(() => import("pages/Markdown/TableOfContent"));
 
+const CodeFormatter = lazy(() => import("pages/Tools/CodeFormatter"));
 const Diagramming = lazy(() => import("pages/Tools/Diagramming"));
 const Diffchecker = lazy(() => import("pages/Tools/Diffchecker"));
+const ProgressiveWebApp = lazy(() => import("pages/Tools/ProgressiveWebApp"));
 const Sorting = lazy(() => import("pages/Tools/Sorting"));
-const Svg = lazy(() => import("pages/Converter/Svg"));
 
 const TextEditor = lazy(() => import("pages/Text/TextEditor"));
 
@@ -72,6 +75,7 @@ export {
 	Book,
 	BorderRadius,
 	BoxShadow,
+	FlexboxGenerator,
 	CodeFormatter,
 	ColorPicker,
 	CookiePolicy,
@@ -102,9 +106,11 @@ export {
 	Platform,
 	Plugin,
 	PrivacyPolicy,
+	ProgressiveWebApp,
 	QRcode,
 	ShadesAndTints,
 	Sorting,
+	Survey,
 	Svg,
 	TableGenerator,
 	TableOfContent,

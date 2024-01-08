@@ -6,11 +6,11 @@
 
 ## BinaryTree
 
-At [binarytree.dev](https://binarytree.dev/about), we provide an array of developer productivity tools designed to help you save time. With an ever-growing number of features (currently <b>27</b>), our platform is constantly evolving to meet the needs of developers like you.
+At [binarytree.dev](https://binarytree.dev/about), we provide an array of developer productivity tools designed to help you save time. With an ever-growing number of features (currently <b>28</b>), our platform is constantly evolving to meet the needs of developers like you.
 
 Your [opinions and feedback](https://binarytree.dev/feedback) about our service are highly valuable to us. We eagerly look forward to hearing from you.
 
-### Status
+## Status
 
 | Name                  | Status                                                                                                                                                                                                 |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -20,10 +20,6 @@ Your [opinions and feedback](https://binarytree.dev/feedback) about our service 
 | UI PR                 | [![UI PR](https://github.com/lifeparticle/binarytree/actions/workflows/ui-pr.yml/badge.svg)](https://github.com/lifeparticle/binarytree/actions/workflows/ui-pr.yml)                                   |
 | CodeQL                | [![CodeQL](https://github.com/lifeparticle/binarytree/actions/workflows/codeql.yml/badge.svg)](https://github.com/lifeparticle/binarytree/actions/workflows/codeql.yml)                                |
 | Sonarcloud            | [![Build](https://github.com/lifeparticle/binarytree/actions/workflows/sonarcloud.yml/badge.svg)](https://github.com/lifeparticle/binarytree/actions/workflows/sonarcloud.yml)                         |
-
-## Contributing
-
-If you'd like to contribute to the project, please check the [How to contribute](ui/CONTRIBUTING.md) file for guidelines and instructions.
 
 ## Licenses
 

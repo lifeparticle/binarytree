@@ -8,3 +8,8 @@
 code {
 	font-family: var(--global-font-mono);
 }
+.button-right-icon {
+	display: flex;
+	align-items: center;
+	gap: var(--bt-size-5);
+}

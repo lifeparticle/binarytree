@@ -37,9 +37,11 @@ import {
 	Platform,
 	Plugin,
 	PrivacyPolicy,
+	ProgressiveWebApp,
 	QRcode,
 	ShadesAndTints,
 	Sorting,
+	Survey,
 	Svg,
 	TableGenerator,
 	TableOfContent,
@@ -50,6 +52,7 @@ import {
 	UiUx,
 	Units,
 	YouTube,
+	FlexboxGenerator,
 } from "pages";
 import { FC } from "react";
 
@@ -77,6 +80,7 @@ export type RouteId =
 	| "editor"
 	| "feedback"
 	| "fileconverter"
+	| "flexboxgenerator"
 	| "github"
 	| "githubissue"
 	| "icon"
@@ -93,9 +97,11 @@ export type RouteId =
 	| "platform"
 	| "plugin"
 	| "privacypolicy"
+	| "progressivewebapp"
 	| "qrcode"
 	| "shadesandtints"
 	| "sorting"
+	| "survey"
 	| "svg"
 	| "table"
 	| "tableofcontent"
@@ -152,6 +158,13 @@ export const routes: Route[] = [
 		component: BoxShadow,
 	},
 	{
+		id: "flexboxgenerator",
+		path: "/css/fg",
+		title: "Flexbox Generator",
+		description: "Arrange your item inside your container.",
+		component: FlexboxGenerator,
+	},
+	{
 		id: "units",
 		path: "/css/units",
 		title: "Units",
@@ -203,6 +216,20 @@ export const routes: Route[] = [
 		component: CodeFormatter,
 	},
 	{
+		id: "sorting",
+		path: "/tools/sorting",
+		title: "Sorting",
+		description: "Sort arrays like a boss.",
+		component: Sorting,
+	},
+	{
+		id: "progressivewebapp",
+		path: "/tools/pwa",
+		title: "Progressive Web App",
+		description: "Turn your website into a Progressive Web App.",
+		component: ProgressiveWebApp,
+	},
+	{
 		id: "data",
 		path: "/generator/data",
 		title: "Data",
@@ -237,13 +264,7 @@ export const routes: Route[] = [
 		description: "Build C# code with a few clicks.",
 		component: CSharpBuilder,
 	},
-	{
-		id: "sorting",
-		path: "/tools/sorting",
-		title: "Sorting",
-		description: "Sort arrays like a boss.",
-		component: Sorting,
-	},
+
 	{
 		id: "ai",
 		path: "/resource/ai",
@@ -320,6 +341,13 @@ export const routes: Route[] = [
 		title: "Plugins",
 		description: "Plugins to power up your projects.",
 		component: Plugin,
+	},
+	{
+		id: "survey",
+		path: "/resource/survey",
+		title: "Surveys",
+		description: "Take a peek at the survey results.",
+		component: Survey,
 	},
 	{
 		id: "tool",

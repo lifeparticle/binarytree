@@ -12,13 +12,12 @@
 		&__intro {
 			p {
 				text-align: right;
-				font-size: 0.875rem; /* 14 divided by 16 (16 is default font size)
-				When users increase their font size this respects that setting by using rem */
 				background: linear-gradient(
 					to bottom,
 					rgb(44 44 44 / 0.802) 50%,
 					transparent 50%
 				);
+				/* font-size: 16px; Font size is already 16 by default */
 				padding: var(--bt-size-10);
 				border-radius: var(--bt-size-8);
 				background-repeat: repeat-y;

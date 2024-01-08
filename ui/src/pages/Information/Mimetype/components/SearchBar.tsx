@@ -1,24 +1,19 @@
-import { useSearchParams } from "react-router-dom";
-import { useState, useEffect, ChangeEvent, FC } from "react";
+import { useState, useEffect, FC } from "react";
 import { ResponsiveInputWithLabel } from "components/General";
 import { Form } from "antd";
+import useParamsValue from "hooks/useParamsValue";
+import { PARAMS } from "data/paramsData";
 
 const MimeSearch: FC = () => {
-	const [searchParams, setSearchParams] = useSearchParams();
-	const [queryParams, setQueryParams] = useState({
-		q: searchParams.get("type") || "",
-	});
+	const { searchParams, updateParamsValue } = useParamsValue({});
 
-	const { q: searchQuery } = queryParams;
+	const [queryParams, setQueryParams] = useState(
+		searchParams.get(PARAMS.type) || ""
+	);
 
 	useEffect(() => {
-		setSearchParams(`?type=${searchQuery}`);
-	}, [searchQuery, setSearchParams]);
-
-	const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
-		const value = e.target.value;
-		setQueryParams((prevParams) => ({ ...prevParams, q: value }));
-	};
+		updateParamsValue(PARAMS.type, queryParams);
+	}, [queryParams, updateParamsValue]);
 
 	return (
 		<Form layout="vertical">
@@ -26,8 +21,8 @@ const MimeSearch: FC = () => {
 				label="Search Table"
 				type="text"
 				placeholder="Search by Name or Content-type..."
-				value={searchQuery}
-				onChange={handleSearchChange}
+				value={queryParams}
+				onChange={(e) => setQueryParams(e.target.value)}
 			/>
 		</Form>
 	);

@@ -35,6 +35,7 @@ interface Feature {
 	fullDescription: string;
 	link: string;
 	library: { name: string; url: string }[];
+	in_progress?: boolean;
 }
 
 export const FEATURE_DATA: Feature[] = [
@@ -82,6 +83,16 @@ export const FEATURE_DATA: Feature[] = [
 			"Shape your vision into reality by customizing Box Shadows with precision. Define the dimensions, tweak lengths, play with colors, and set radius blur and spread radius - all with a spontaneous interface. Instantly visualize the impact of your design choices and seamlessly generate the corresponding code.",
 		link: routesById.boxshadow.path,
 		library: [{ name: "Vanilla JS", url: "" }],
+	},
+	{
+		key: routesById.flexboxgenerator.id,
+		name: routesById.flexboxgenerator.title,
+		shortDescription: routesById.flexboxgenerator.description,
+		fullDescription:
+			"Arrange your items inside your container element as like as you want.",
+		link: routesById.flexboxgenerator.path,
+		library: [{ name: "Vanilla JS", url: "" }],
+		in_progress: true,
 	},
 	{
 		key: routesById.base64.id,
@@ -268,7 +279,8 @@ export const FEATURE_DATA: Feature[] = [
 		key: routesById.texteditor.id,
 		name: routesById.texteditor.title,
 		shortDescription: routesById.texteditor.description,
-		fullDescription: "",
+		fullDescription:
+			"A versatile text editor that supports various formatting options. Ideal for drafting and editing text with the ability to preview the output in real-time. It also supports markdown, providing a seamless writing experience for both plain text and formatted content.",
 		link: routesById.texteditor.path,
 		library: [
 			{
@@ -299,6 +311,20 @@ export const FEATURE_DATA: Feature[] = [
 			"Simplify data organization with our Sorting feature. Whether dealing with lists, arrays, or datasets, effortlessly arrange your information in perfect order. Input your data and seamlessly sort it precisely - ascending or descending, tailored to your needs. Our tool goes beyond the basics, allowing you to customize results by lines, commas, or spaces for ultimate flexibility. Instantly transform chaos into clarity as you obtain a neatly sorted output.",
 		link: routesById.sorting.path,
 		library: [{ name: "Vanilla JS", url: "" }],
+	},
+	{
+		key: routesById.progressivewebapp.id,
+		name: routesById.progressivewebapp.title,
+		shortDescription: routesById.progressivewebapp.description,
+		fullDescription:
+			"Convert your website into a Progressive Web App (PWA) and enjoy the best of both worlds. Our feature allows you to transform your website into a mobile app and reap the benefits of both platforms. It's the ultimate solution for developers keen on enhancing user experience and boosting engagement.",
+		link: routesById.progressivewebapp.path,
+		library: [
+			{
+				name: "Monaco Editor",
+				url: LIBRARY_URLS["@monaco-editor/react"],
+			},
+		],
 	},
 	{
 		key: routesById.diffchecker.id,
@@ -340,7 +366,8 @@ export const FEATURE_DATA: Feature[] = [
 		key: routesById.mimetype.id,
 		name: routesById.mimetype.title,
 		shortDescription: routesById.mimetype.description,
-		fullDescription: "",
+		fullDescription:
+			"A comprehensive table detailing file extensions ('Name'), examples with descriptions ('Example'), and mime-types ('JavaScript code') with a 'Copy to Clipboard' feature. It also includes a search bar for easy navigation by name or content type—a must-have tool for API  developers and a quick reference guide for curious minds.",
 		link: routesById.mimetype.path,
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
@@ -348,7 +375,8 @@ export const FEATURE_DATA: Feature[] = [
 		key: routesById.npmpackages.id,
 		name: routesById.npmpackages.title,
 		shortDescription: routesById.npmpackages.description,
-		fullDescription: "",
+		fullDescription:
+			"Npm Packages tracks the latest version numbers of popular npm packages. It's a tool for developers keen on staying ahead with the newest package versions in the ever-evolving world of JavaScript.",
 		link: routesById.npmpackages.path,
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
@@ -361,22 +389,6 @@ export const FEATURE_DATA: Feature[] = [
 		link: routesById.blog.path,
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
-	// {
-	// 	key: routesById.docs.id,
-	// 	name: routesById.docs.title,
-	// 	shortDescription: routesById.docs.description,
-	// 	fullDescription: "",
-	// 	link: routesById.docs.path,
-	// 	library: [{ name: "Vanilla JS", url: "" }],
-	// },
-	// {
-	// 	key: routesById.units.id,
-	// 	name: routesById.units.title,
-	// 	shortDescription: routesById.units.description,
-	// 	fullDescription: "",
-	// 	link: routesById.units.path,
-	// 	library: [{ name: "Vanilla JS", url: "" }],
-	// },
 ];
 
 export const featuresById = FEATURE_DATA.reduce((acc, feature) => {

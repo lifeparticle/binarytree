@@ -1,11 +1,18 @@
-import useDarkMode from "utils/context/DarkModeProvider/utils/hooks/useDarkMode";
+import useDarkMode from "utils/context/DarkModeProvider/useDarkMode";
 import { ReactNode, createContext, useMemo } from "react";
-import { DarkModeContextType } from "./utils/types";
-import { DARK_MODE_STORAGE_KEY } from "./utils/constant";
+import { MapToken, SeedToken } from "antd/es/theme/interface";
+
+interface DarkModeContextType {
+	isDarkMode: boolean;
+	toggleTheme: () => void;
+	algorithm: (token: SeedToken) => MapToken;
+}
 
 export const DarkModeContext = createContext<DarkModeContextType>(
 	{} as DarkModeContextType
 );
+
+const DARK_MODE_STORAGE_KEY = "darkMode";
 
 export const DarkModeProvider = ({ children }: { children: ReactNode }) => {
 	const { isDarkMode, algorithm, toggleTheme } = useDarkMode(

@@ -19,7 +19,7 @@ const Diffchecker: FC = () => {
 	};
 
 	return (
-		<>
+		<div className={style.diffchecker}>
 			<PageGrid>
 				<Card>
 					<Form layout="vertical">
@@ -48,6 +48,7 @@ const Diffchecker: FC = () => {
 					</Form>
 				</Card>
 			</PageGrid>
+
 			<div className={style.diffchecker__button}>
 				<ResponsiveButton onClick={calculateDiff}>
 					Find Difference
@@ -56,7 +57,7 @@ const Diffchecker: FC = () => {
 
 			<PageGrid>
 				{lineDifferences.length > 0 && (
-					<Card title="Original text output ">
+					<Card title="Original text output">
 						<pre>
 							{lineDifferences
 								.filter((part) => !part.added)
@@ -99,7 +100,7 @@ const Diffchecker: FC = () => {
 					</Card>
 				)}
 			</PageGrid>
-		</>
+		</div>
 	);
 };
 

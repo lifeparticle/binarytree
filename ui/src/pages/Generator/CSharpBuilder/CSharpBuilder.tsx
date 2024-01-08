@@ -20,7 +20,7 @@ const CSharpBuilde: FC = () => {
 				<Form layout="vertical">
 					<CodeEditor
 						label="Class"
-						code={input}
+						value={input}
 						language="csharp"
 						handleCode={(value) => {
 							setInput(value || "");
@@ -39,7 +39,7 @@ const CSharpBuilde: FC = () => {
 				<Form layout="vertical">
 					<CodeEditor
 						label="Builder output"
-						code={result}
+						value={result}
 						language="csharp"
 					/>
 

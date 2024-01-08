@@ -1,48 +1,27 @@
 import { FC } from "react";
 import style from "pages/Home/Home.module.scss";
-import { Typography, Image, Space } from "antd";
+import { Typography, Image } from "antd";
 import hero from "assets/Home/hero.webp";
-import { FEATURE_DATA } from "data/featureData";
-import { ResponsiveButton } from "components/General";
+import { Icon, ResponsiveButton } from "components/General";
 import { useModal } from "hooks";
 
-const { Text } = Typography;
-
 const { Title } = Typography;
+
 const Hero: FC = () => {
 	const { handleModalOpen } = useModal();
 
 	return (
 		<section className={style.home__hero}>
-			<Title className={style.home__hero_text_title}>
-				Your Mate in Software Development
+			<Title>
+				We Provide an Array of Developer Productivity Tools Designed to
+				Help You Save Time
 			</Title>
-			<Image
-				src={hero}
-				alt="BinaryTree: Developer Productivity Tools"
-				preview={false}
-				style={{
-					maxHeight: "40dvh",
-				}}
-			/>
-			<Text className={style.home__hero_paragraph} strong keyboard>
-				At binarytree.dev, we provide an array of developer productivity
-				tools designed to help you save time. With an{" "}
-				<a
-					href="https://github.com/users/lifeparticle/projects/2"
-					target="_blank"
-				>
-					ever-growing number of features
-				</a>{" "}
-				(currently <b>{FEATURE_DATA.length}</b>), our platform is
-				constantly evolving to meet the needs of developers like you
-			</Text>
-
-			<Space direction="horizontal">
+			<div className={style.home__hero_buttons}>
 				<ResponsiveButton onClick={handleModalOpen} type="primary">
-					Get Started
+					Explore Features
 				</ResponsiveButton>
 				<ResponsiveButton
+					className="button-right-icon"
 					onClick={() =>
 						window.open(
 							"https://github.com/lifeparticle/binarytree/issues",
@@ -51,9 +30,28 @@ const Hero: FC = () => {
 						)
 					}
 				>
-					Request Features
+					Request Features <Icon name="MoveUpRight" />
 				</ResponsiveButton>
-			</Space>
+			</div>
+			<Image
+				src={hero}
+				alt="BinaryTree: Developer Productivity Tools"
+				preview={false}
+				style={{
+					maxHeight: "40dvh",
+				}}
+			/>
+			<Title level={2}>
+				With an{" "}
+				<a
+					href="https://github.com/users/lifeparticle/projects/2"
+					target="_blank"
+				>
+					ever-growing number of features
+				</a>{" "}
+				, our platform is constantly evolving to meet the needs of
+				developers like you
+			</Title>
 		</section>
 	);
 };

@@ -19,7 +19,7 @@ const FloatingSearchBar: FC<FloatingSearchBarProps> = ({ styles }) => {
 			style={styles}
 			addonBefore={<Icon name="Search" />}
 			addonAfter={<>{addonCommand}</>}
-			placeholder="Search..."
+			placeholder="Search features..."
 			value=""
 			onChange={handleModalOpen}
 			className={style.fsb__input}

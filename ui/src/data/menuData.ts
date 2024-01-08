@@ -1,6 +1,6 @@
-import { getItem } from "components/Layouts/Menu/helper";
 import { MenuProps } from "antd";
 import { IconName } from "components/General";
+import { getItem } from "components/Layouts/Menu/helper";
 import { routesById } from "data/routeData";
 
 const IN_DEVELOPMENT = import.meta.env.DEV;
@@ -54,6 +54,12 @@ export const MENU_ITEMS = [
 				url: routesById.boxshadow.path,
 				icon: "Box",
 				show: true,
+			},
+			{
+				name: routesById.flexboxgenerator.title,
+				url: routesById.flexboxgenerator.path,
+				icon: "AlignCenter",
+				show: IN_DEVELOPMENT,
 			},
 			{
 				name: routesById.units.title,
@@ -187,16 +193,16 @@ export const MENU_ITEMS = [
 		show: true,
 		children: [
 			{
-				name: routesById.diagramming.title,
-				url: routesById.diagramming.path,
-				icon: "PencilRuler",
+				name: routesById.codeformatter.title,
+				url: routesById.codeformatter.path,
+				icon: "Code",
 				show: true,
 			},
 
 			{
-				name: routesById.sorting.title,
-				url: routesById.sorting.path,
-				icon: "ArrowUpNarrowWide",
+				name: routesById.diagramming.title,
+				url: routesById.diagramming.path,
+				icon: "PencilRuler",
 				show: true,
 			},
 			{
@@ -206,9 +212,15 @@ export const MENU_ITEMS = [
 				show: true,
 			},
 			{
-				name: routesById.codeformatter.title,
-				url: routesById.codeformatter.path,
-				icon: "Code",
+				name: routesById.progressivewebapp.title,
+				url: routesById.progressivewebapp.path,
+				icon: "Globe",
+				show: true,
+			},
+			{
+				name: routesById.sorting.title,
+				url: routesById.sorting.path,
+				icon: "ArrowUpNarrowWide",
 				show: true,
 			},
 		],
@@ -234,7 +246,7 @@ export const MENU_ITEMS = [
 			{
 				name: routesById.ipsubnet.title,
 				url: routesById.ipsubnet.path,
-				icon: "GlobeAlt",
+				icon: "Globe",
 				show: IN_DEVELOPMENT,
 			},
 		],
@@ -327,6 +339,12 @@ export const MENU_ITEMS = [
 				name: routesById.plugin.title,
 				url: routesById.plugin.path,
 				icon: "Plug",
+				show: true,
+			},
+			{
+				name: routesById.survey.title,
+				url: routesById.survey.path,
+				icon: "Vote",
 				show: true,
 			},
 			{
