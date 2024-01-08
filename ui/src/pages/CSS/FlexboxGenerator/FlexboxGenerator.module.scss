@@ -11,4 +11,12 @@
 		align-items: center;
 		justify-content: center;
 	}
+	&__snippet{
+		display: flex;
+		justify-content: space-evenly;
+		gap: 1rem;
+		&__item{
+			width: 50%;
+		}
+	}
 }

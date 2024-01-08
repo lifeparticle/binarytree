@@ -86,3 +86,71 @@ export const FLEX_WRAP: FlexWrapOption[] = [
 	{ label: "wrap", value: "wrap" },
 	{ label: "wrap-reverse", value: "wrap-reverse" },
 ];
+
+
+export type AlignSelf =
+	| "auto"
+	| "flex-start"
+	| "flex-end"
+	| "center"
+	| "space-between"
+	| "space-around"
+	| "stretch"
+	| "baseline";
+
+type AlignSelfOption = {
+	label: AlignSelf;
+	value: AlignSelf;
+};
+
+export const ALIGN_SELF: AlignSelfOption[] = [
+	{ label: "auto", value: "auto" },
+	{ label: "flex-start", value: "flex-start" },
+	{ label: "flex-end", value: "flex-end" },
+	{ label: "center", value: "center" },
+	{ label: "stretch", value: "stretch" },
+	{ label: "baseline", value: "baseline" },
+];
+export type ItemStyle = {
+	index: number;
+	height: string;
+	background: string;
+	color: string;
+	margin: string;
+	padding: string;
+	borderRadius: string;
+	order: number;
+	flexGrow: number;
+	flexShrink: number;
+	flexBasis: string;
+	alignSelf: string;
+  }
+
+export const ItemStyleIntialvalue:ItemStyle = {
+	index: 0,
+	height: "auto",
+	background: "whitesmoke",
+	color: "black",
+	margin: "10px",
+	padding: "10px",
+	borderRadius: ".5rem",
+	order: 0,
+	flexGrow: 0,
+	flexShrink: 0,
+	flexBasis: "auto",
+	alignSelf: "auto"
+}
+
+export type ContainerStyle = {
+	width: string;
+	height: string;
+	overflow: string;
+	backgroundColor: string;
+	borderRadius: string;
+	display: string;
+	justifyContent: JustifyContent;
+	flexDirection: FlexDirection;
+	alignItems: AlignItems;
+	alignContent: AlignContent;
+	flexWrap: FlexWrap;
+};
