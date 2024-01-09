@@ -56,7 +56,7 @@ const FChildCssGenerator = ({
                     defaultActiveFirstOption
                     onSelect={(_, option) => {
                         setItemClass(option.value);
-                        setCurrentIndex(option.index);
+                        setCurrentIndex(option.index !== undefined? option.index : 0);
                         setAlignSelf(ALIGN_SELF[0].value);
                         setFlexGrow(0);
                         setFlexShrink(0);
