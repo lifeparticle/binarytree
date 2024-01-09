@@ -96,6 +96,7 @@ const FlexboxGenerator: FC = () => {
 			index,
 		}));
 		setItemsStyles(initialItemsStyles);
+		// eslint-disable-next-line
 	}, []);
 
 	const generateCSSStringFromItemsStyles = (styles: ItemStyle[]) => {
