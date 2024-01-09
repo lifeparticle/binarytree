@@ -1,11 +1,9 @@
 import { FC, useEffect, useState } from "react";
-import { Card, Form, Space } from "antd";
-import { PageGrid, InputGrid } from "components/Layouts";
+import { Card, Space } from "antd";
+import { PageGrid } from "components/Layouts";
 import {
 	CodeHighlightWithCopy,
-	ResponsiveSelectWithLabel,
-	ResponsiveButton,
-	ResponsiveInputWithLabel
+	ResponsiveButton
 } from "components/General";
 import {
 	ALIGN_CONTENT,
@@ -25,6 +23,8 @@ import {
 	ContainerStyle,
 } from "./constants";
 import style from "./FlexboxGenerator.module.scss";
+import FChildCssGenerator from "./FChildCssGenerator";
+import FParentCssGenerator from "./FParentCssGenerator";
 
 const FlexboxGenerator: FC = () => {
 	const bgColor = "#ffffff0";
@@ -56,7 +56,7 @@ const FlexboxGenerator: FC = () => {
 		})
 	);
 	const [itemClass, setItemClass] = useState(containerItemsClass[0].value);
-	const [currentIndex, setCurrentIndex] = useState<number|null>(0);
+	const [currentIndex, setCurrentIndex] = useState<number | null>(0);
 
 	const [flexGrow, setFlexGrow] = useState(0);
 	const [flexShrink, setFlexShrink] = useState(0);
@@ -96,7 +96,7 @@ const FlexboxGenerator: FC = () => {
 			index,
 		}));
 		setItemsStyles(initialItemsStyles);
-	},[]);
+	}, []);
 
 	const generateCSSStringFromItemsStyles = (styles: ItemStyle[]) => {
 		return styles?.map((itemStyle: ItemStyle) => {
@@ -115,11 +115,11 @@ const FlexboxGenerator: FC = () => {
 
 	const addItem = () => {
 		setItemCount(itemCount + 1);
-		setItemsStyles((prevItems) => [...(prevItems??[]), { ...ItemStyleIntialvalue, index: itemCount }]);
+		setItemsStyles((prevItems) => [...(prevItems ?? []), { ...ItemStyleIntialvalue, index: itemCount }]);
 		console.log(itemsStyles);
 	};
 	const removeItem = () => {
-		if(itemCount>1){
+		if (itemCount > 1) {
 			setItemCount(itemCount - 1);
 			setItemsStyles((prevItems) => prevItems?.slice(0, -1));
 		}
@@ -140,157 +140,40 @@ const FlexboxGenerator: FC = () => {
 								Remove Item
 							</ResponsiveButton>
 						</Space>
-						<Form layout="vertical">
-							<br />
-							<InputGrid>
-								<ResponsiveSelectWithLabel
-									label="Justify Content"
-									value={justifyContent}
-									defaultActiveFirstOption
-									onSelect={(_, option) =>
-										setJustifyContent(
-											option.value as JustifyContent
-										)
-									}
-									options={JUSTIFY_CONTENT}
-								/>
-								<ResponsiveSelectWithLabel
-									label="Flex Direction"
-									value={flexDirection}
-									defaultActiveFirstOption
-									onSelect={(_, option) =>
-										setFlexDirection(
-											option.value as FlexDirection
-										)
-									}
-									options={FLEX_DIRECTION}
-								/>
-							</InputGrid>
-							<InputGrid>
-								<ResponsiveSelectWithLabel
-									label="Align Item"
-									value={alignItem}
-									defaultActiveFirstOption
-									onSelect={(_, option) =>
-										setAlignItem(option.value as AlignItems)
-									}
-									options={ALIGN_ITEM}
-								/>
-								<ResponsiveSelectWithLabel
-									label="Align Content"
-									value={alignContent}
-									defaultActiveFirstOption
-									onSelect={(_, option) =>
-										setAlignContent(
-											option.value as AlignContent
-										)
-									}
-									options={ALIGN_CONTENT}
-								/>
-							</InputGrid>
-							<InputGrid>
-								<ResponsiveSelectWithLabel
-									label="Flex Wrap"
-									value={flexWrap}
-									defaultActiveFirstOption
-									onSelect={(_, option) =>
-										setFlexWrap(option.value as FlexWrap)
-									}
-									options={FLEX_WRAP}
-								/>
-							</InputGrid>
-						</Form>
+						<FParentCssGenerator
+							justifyContent={justifyContent}
+							setJustifyContent={setJustifyContent}
+							flexDirection={flexDirection}
+							setFlexDirection={setFlexDirection}
+							alignItem={alignItem}
+							setAlignItem={setAlignItem}
+							alignContent={alignContent}
+							setAlignContent={setAlignContent}
+							flexWrap={flexWrap}
+							setFlexWrap={setFlexWrap}
+						/>
 					</Card>
 					<br />
 					Items
 					<Card>
-						<Form layout="vertical">
-							<InputGrid>
-								<ResponsiveSelectWithLabel
-									label="Item Class"
-									value={itemClass}
-									defaultActiveFirstOption
-									onSelect={(_, option) => {
-										setItemClass(option.value);
-										setCurrentIndex(option.index);
-										setAlignSelf(ALIGN_SELF[0].value);
-										setFlexGrow(0);
-										setFlexShrink(0);
-										setFlexBasis("");
-										setOrder(0);
-									}
-									}
-									options={containerItemsClass}
-								/>
-								<ResponsiveSelectWithLabel
-									label="Align Self"
-									value={alignSelf}
-									defaultActiveFirstOption
-									onSelect={(_, option) => {
-										setAlignSelf(option.value as AlignSelf);
-										if (currentIndex !== null && currentIndex !== undefined && itemsStyles !== undefined)
-											itemsStyles[currentIndex] = { ...itemsStyles[currentIndex], alignSelf: option.value };
-									}
-									}
-									options={ALIGN_SELF}
-								/>
-							</InputGrid>
-							<InputGrid>
-								<ResponsiveInputWithLabel
-									label="Flex Grow"
-									placeholder="flex-grow"
-									value={flexGrow}
-									min={0}
-									onChange={(val) => {
-										if (currentIndex !== null && currentIndex !== undefined && itemsStyles !== undefined && val !== null){
-											setFlexGrow(val);
-											itemsStyles[currentIndex] = { ...itemsStyles[currentIndex], flexGrow: val };
-										}
-									}
-									}
-									type="number"
-								/>
-								<ResponsiveInputWithLabel
-									label="Flex Shrink"
-									placeholder="flex-shrink"
-									value={flexShrink}
-									min={0}
-									onChange={(val) => {
-										if (currentIndex !== null && currentIndex !== undefined && itemsStyles !== undefined && val !== null){
-											setFlexShrink(val);
-											itemsStyles[currentIndex] = { ...itemsStyles[currentIndex], flexShrink: val };
-										}
-									}}
-									type="number"
-								/>
-							</InputGrid>
-							<InputGrid>
-								<ResponsiveInputWithLabel
-									label="Flex Basis"
-									placeholder="flex-basis"
-									value={flexBasis}
-									onChange={(event) => {
-										setFlexBasis(event.currentTarget.value)
-										if (currentIndex !== null && currentIndex !== undefined && itemsStyles !== undefined)
-											itemsStyles[currentIndex] = { ...itemsStyles[currentIndex], flexBasis: event.currentTarget.value };
-									}}
-									type="text"
-								/>
-								<ResponsiveInputWithLabel
-									label="Order"
-									placeholder="order"
-									value={order}
-									min={0}
-									onChange={(val) => {
-										if (currentIndex !== null && currentIndex !== undefined && itemsStyles !== undefined && val !== null){
-											setOrder(val);
-											itemsStyles[currentIndex] = { ...itemsStyles[currentIndex], order: val };
-										}
-									}}
-									type="number"
-								/>
-							</InputGrid>
-						</Form>
+						<FChildCssGenerator
+							itemClass={itemClass}
+							setItemClass={setItemClass}
+							currentIndex={currentIndex}
+							setCurrentIndex={setCurrentIndex}
+							setAlignSelf={setAlignSelf}
+							setFlexGrow={setFlexGrow}
+							setFlexShrink={setFlexShrink}
+							setFlexBasis={setFlexBasis}
+							setOrder={setOrder}
+							alignSelf={alignSelf}
+							flexGrow={flexGrow}
+							flexShrink={flexShrink}
+							flexBasis={flexBasis}
+							order={order}
+							itemsStyles={itemsStyles !== undefined ? itemsStyles : []}
+							containerItemsClass={containerItemsClass}
+						/>
 					</Card>
 				</Card>
 
@@ -323,7 +206,7 @@ const FlexboxGenerator: FC = () => {
 					</div>
 					<div className={style.fg__snippet__item}>
 						<CodeHighlightWithCopy
-							codeString={itemsStyles ? generateCSSStringFromItemsStyles(itemsStyles): ""}
+							codeString={itemsStyles ? generateCSSStringFromItemsStyles(itemsStyles) : ""}
 							language="css"
 						/>
 					</div>
