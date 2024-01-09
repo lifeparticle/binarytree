@@ -1,4 +1,4 @@
-import { FC, useEffect, useMemo, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Card, Form, Space } from "antd";
 import { PageGrid, InputGrid } from "components/Layouts";
 import {
@@ -56,13 +56,14 @@ const FlexboxGenerator: FC = () => {
 		})
 	);
 	const [itemClass, setItemClass] = useState(containerItemsClass[0].value);
-	const [currentIndex, setCurrentIndex] = useState(0);
+	const [currentIndex, setCurrentIndex] = useState<number|null>(0);
 
 	const [flexGrow, setFlexGrow] = useState(0);
 	const [flexShrink, setFlexShrink] = useState(0);
 	const [flexBasis, setFlexBasis] = useState("auto");
 	const [order, setOrder] = useState(0);
 
+	const [itemsStyles, setItemsStyles] = useState<ItemStyle[]>();
 
 	const containerStyle: ContainerStyle = {
 		width: "25rem",
@@ -89,9 +90,6 @@ const FlexboxGenerator: FC = () => {
 		return `${displayFlexCode}\n${justifyContentCode}\n${flexDirectionCode}\n${alignItemCode}\n${alignContentnCode}\n${flexWrapCode}`;
 	};
 
-
-	const [itemsStyles, setItemsStyles] = useState<ItemStyle[]>();
-
 	useEffect(() => {
 		const initialItemsStyles = Array.from({ length: itemCount }, (_, index) => ({
 			...ItemStyleIntialvalue,
@@ -99,7 +97,6 @@ const FlexboxGenerator: FC = () => {
 		}));
 		setItemsStyles(initialItemsStyles);
 	}, []);
-
 
 	const generateCSSStringFromItemsStyles = (styles: ItemStyle[]) => {
 		return styles?.map((itemStyle: ItemStyle) => {
@@ -118,12 +115,14 @@ const FlexboxGenerator: FC = () => {
 
 	const addItem = () => {
 		setItemCount(itemCount + 1);
-		setItemsStyles((prevItems) => [...prevItems, { ...ItemStyleIntialvalue, index: itemCount }]);
+		setItemsStyles((prevItems) => [...(prevItems??[]), { ...ItemStyleIntialvalue, index: itemCount }]);
 		console.log(itemsStyles);
 	};
 	const removeItem = () => {
-		setItemCount(itemCount - 1);
-		setItemsStyles((prevItems) => prevItems?.slice(0, -1));
+		if(itemCount>1){
+			setItemCount(itemCount - 1);
+			setItemsStyles((prevItems) => prevItems?.slice(0, -1));
+		}
 	};
 
 	return (
@@ -229,7 +228,8 @@ const FlexboxGenerator: FC = () => {
 									defaultActiveFirstOption
 									onSelect={(_, option) => {
 										setAlignSelf(option.value as AlignSelf);
-										itemsStyles[currentIndex] = { ...itemsStyles[currentIndex], alignSelf: option.value };
+										if (currentIndex !== null && currentIndex !== undefined && itemsStyles !== undefined)
+											itemsStyles[currentIndex] = { ...itemsStyles[currentIndex], alignSelf: option.value };
 									}
 									}
 									options={ALIGN_SELF}
@@ -243,7 +243,8 @@ const FlexboxGenerator: FC = () => {
 									min={0}
 									onChange={(val) => {
 										val && setFlexGrow(val);
-										itemsStyles[currentIndex] = { ...itemsStyles[currentIndex], flexGrow: val };
+										if (currentIndex !== null && currentIndex !== undefined && itemsStyles !== undefined && val !== null)
+											itemsStyles[currentIndex] = { ...itemsStyles[currentIndex], flexGrow: val };
 									}
 									}
 									type="number"
@@ -255,7 +256,8 @@ const FlexboxGenerator: FC = () => {
 									min={0}
 									onChange={(val) => {
 										val && setFlexShrink(val)
-										itemsStyles[currentIndex] = { ...itemsStyles[currentIndex], flexShrink: val };
+										if (currentIndex !== null && currentIndex !== undefined && itemsStyles !== undefined && val !== null)
+											itemsStyles[currentIndex] = { ...itemsStyles[currentIndex], flexShrink: val };
 									}}
 									type="number"
 								/>
@@ -267,7 +269,8 @@ const FlexboxGenerator: FC = () => {
 									value={flexBasis}
 									onChange={(event) => {
 										setFlexBasis(event.currentTarget.value)
-										itemsStyles[currentIndex] = { ...itemsStyles[currentIndex], flexBasis: event.currentTarget.value };
+										if (currentIndex !== null && currentIndex !== undefined && itemsStyles !== undefined)
+											itemsStyles[currentIndex] = { ...itemsStyles[currentIndex], flexBasis: event.currentTarget.value };
 									}}
 									type="text"
 								/>
@@ -278,7 +281,8 @@ const FlexboxGenerator: FC = () => {
 									min={0}
 									onChange={(val) => {
 										val && setOrder(val);
-										itemsStyles[currentIndex] = { ...itemsStyles[currentIndex], order: val };
+										if (currentIndex !== null && currentIndex !== undefined && itemsStyles !== undefined && val !== null)
+											itemsStyles[currentIndex] = { ...itemsStyles[currentIndex], order: val };
 									}}
 									type="number"
 								/>
@@ -316,7 +320,7 @@ const FlexboxGenerator: FC = () => {
 					</div>
 					<div className={style.fg__snippet__item}>
 						<CodeHighlightWithCopy
-							codeString={generateCSSStringFromItemsStyles(itemsStyles)}
+							codeString={itemsStyles ? generateCSSStringFromItemsStyles(itemsStyles): ""}
 							language="css"
 						/>
 					</div>
