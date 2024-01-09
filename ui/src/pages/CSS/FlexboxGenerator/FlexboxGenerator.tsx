@@ -96,7 +96,7 @@ const FlexboxGenerator: FC = () => {
 			index,
 		}));
 		setItemsStyles(initialItemsStyles);
-	}, []);
+	},[]);
 
 	const generateCSSStringFromItemsStyles = (styles: ItemStyle[]) => {
 		return styles?.map((itemStyle: ItemStyle) => {
@@ -242,9 +242,10 @@ const FlexboxGenerator: FC = () => {
 									value={flexGrow}
 									min={0}
 									onChange={(val) => {
-										val && setFlexGrow(val);
-										if (currentIndex !== null && currentIndex !== undefined && itemsStyles !== undefined && val !== null)
+										if (currentIndex !== null && currentIndex !== undefined && itemsStyles !== undefined && val !== null){
+											setFlexGrow(val);
 											itemsStyles[currentIndex] = { ...itemsStyles[currentIndex], flexGrow: val };
+										}
 									}
 									}
 									type="number"
@@ -255,9 +256,10 @@ const FlexboxGenerator: FC = () => {
 									value={flexShrink}
 									min={0}
 									onChange={(val) => {
-										val && setFlexShrink(val)
-										if (currentIndex !== null && currentIndex !== undefined && itemsStyles !== undefined && val !== null)
+										if (currentIndex !== null && currentIndex !== undefined && itemsStyles !== undefined && val !== null){
+											setFlexShrink(val);
 											itemsStyles[currentIndex] = { ...itemsStyles[currentIndex], flexShrink: val };
+										}
 									}}
 									type="number"
 								/>
@@ -280,9 +282,10 @@ const FlexboxGenerator: FC = () => {
 									value={order}
 									min={0}
 									onChange={(val) => {
-										val && setOrder(val);
-										if (currentIndex !== null && currentIndex !== undefined && itemsStyles !== undefined && val !== null)
+										if (currentIndex !== null && currentIndex !== undefined && itemsStyles !== undefined && val !== null){
+											setOrder(val);
 											itemsStyles[currentIndex] = { ...itemsStyles[currentIndex], order: val };
+										}
 									}}
 									type="number"
 								/>
