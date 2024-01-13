@@ -114,7 +114,7 @@ const GithubIssue: FC = () => {
 				<Form layout="vertical">
 					<ResponsiveInputWithLabel
 						label="Github token"
-						placeholder="enter your github token"
+						placeholder="Enter your GitHub token"
 						value={token}
 						onChange={(e) => setToken(e.target.value)}
 						min={0}
@@ -124,7 +124,7 @@ const GithubIssue: FC = () => {
 					<InputGrid>
 						<ResponsiveInputWithLabel
 							label="Owner"
-							placeholder="owner"
+							placeholder="Owner"
 							value={owner}
 							onChange={(e) => setOwner(e.target.value)}
 							min={0}
@@ -133,7 +133,7 @@ const GithubIssue: FC = () => {
 
 						<ResponsiveInputWithLabel
 							label="Repositories"
-							placeholder="repository name"
+							placeholder="Repository name"
 							value={repo}
 							onChange={(e) => setRepo(e.target.value)}
 							min={0}
