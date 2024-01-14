@@ -11,11 +11,11 @@
 		align-items: center;
 		justify-content: center;
 	}
-	&__snippet{
+	&__snippet {
 		display: flex;
 		justify-content: space-evenly;
 		gap: 1rem;
-		&__item{
+		&__item {
 			width: 50%;
 		}
 	}

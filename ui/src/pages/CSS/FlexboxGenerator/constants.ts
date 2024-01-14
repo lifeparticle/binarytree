@@ -87,7 +87,6 @@ export const FLEX_WRAP: FlexWrapOption[] = [
 	{ label: "wrap-reverse", value: "wrap-reverse" },
 ];
 
-
 export type AlignSelf =
 	| "auto"
 	| "flex-start"
@@ -124,9 +123,9 @@ export type ItemStyle = {
 	flexShrink: number;
 	flexBasis: string;
 	alignSelf: string;
-  }
+};
 
-export const ItemStyleIntialvalue:ItemStyle = {
+export const ItemStyleIntialvalue: ItemStyle = {
 	index: 0,
 	height: "auto",
 	background: "whitesmoke",
@@ -138,8 +137,8 @@ export const ItemStyleIntialvalue:ItemStyle = {
 	flexGrow: 0,
 	flexShrink: 0,
 	flexBasis: "auto",
-	alignSelf: "auto"
-}
+	alignSelf: "auto",
+};
 
 export type ContainerStyle = {
 	width: string;
@@ -154,3 +153,6 @@ export type ContainerStyle = {
 	alignContent: AlignContent;
 	flexWrap: FlexWrap;
 };
+
+export const bgColor = "#ffffff0";
+export const boxColor = "#4f5456";
