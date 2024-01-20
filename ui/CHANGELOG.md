@@ -1,3 +1,7 @@
+### [10.5.0] - 2024-01-20
+
+-   Integrate Vitest UI to view and interact with your tests.
+
 ### [10.4.0] - 2024-01-05
 
 -   NewsFeed Page tests have been added. Includes tests for helper and custom hook as well.
