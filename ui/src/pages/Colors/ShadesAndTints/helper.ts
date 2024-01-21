@@ -21,8 +21,8 @@ export const generateShadesForColor = (
 		const shadesArray = values.shades(count);
 		const tintsArray = values.tints(count);
 
-		const shades = shadesArray.map((shade) => "#" + shade.hex);
-		const tints = tintsArray.map((tint) => "#" + tint.hex);
+		const shades = shadesArray.map((shade) => `#${  shade.hex}`);
+		const tints = tintsArray.map((tint) => `#${  tint.hex}`);
 
 		return { shades, tints };
 	} catch (err) {
