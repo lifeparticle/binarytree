@@ -41,5 +41,14 @@ export default defineConfig({
 		include: ["**/*.test.{ts,tsx}"],
 		setupFiles: ["./src/test/setup.ts"],
 		css: true,
+		reporters: ['default', 'html'],
+		coverage: {
+			reportsDirectory: "html/ui",
+			enabled: true,
+			include: ["**/*.{ts,tsx}"],
+			exclude: ["**/*.test.{ts,tsx}"],
+			reporter: ['text', ['html', { subdir: 'coverage'}]],
+			provider: "v8",
+		}
 	},
 });
