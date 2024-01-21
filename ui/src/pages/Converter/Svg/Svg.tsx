@@ -52,9 +52,9 @@ const Svg: FC = () => {
 						<CodeHighlightWithCopy
 							language="css"
 							codeString={
-								outputSVG.split(">").slice(0, -1).join(">\n") +
-								">" +
-								outputSVG.split(">").slice(-1)
+								`${outputSVG.split(">").slice(0, -1).join(">\n") 
+								}>${ 
+								outputSVG.split(">").slice(-1)}`
 							}
 						/>
 					) : (

@@ -89,7 +89,7 @@ const DataGenerator: FC = () => {
 			return `INSERT INTO \`${tableName}\` (${columnNamesString}) VALUES (${valuesString});`;
 		});
 
-		result += insertStatements.join("\n") + "\n";
+		result += `${insertStatements.join("\n")  }\n`;
 
 		setResult(`${sqlTable}\n\n\n\n\n${result}`);
 	};
