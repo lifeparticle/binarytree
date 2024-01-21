@@ -37,3 +37,6 @@ dist-ssr
 
 /public/tinymce/
 /coverage
+
+# vitest
+html/
