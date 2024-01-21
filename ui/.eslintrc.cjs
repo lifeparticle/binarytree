@@ -14,6 +14,8 @@ module.exports = {
 			"warn",
 			{ allowConstantExport: true },
 		],
+		"max-params": ["error", 7],
+		"max-lines": ["warn", 100],
 	},
 	parserOptions: {
 		parser: "@typescript-eslint/parser",
