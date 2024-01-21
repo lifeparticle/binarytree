@@ -14,9 +14,9 @@ module.exports = {
 			"warn",
 			{ allowConstantExport: true },
 		],
-		// "max-params": ["error", 7],
-		// "max-lines": ["warn", 100],
-		// "no-var": "error",
+		"max-params": ["error", 7],
+		"max-lines": ["warn", 100],
+		"no-var": "error",
 		"prefer-template": "error",
 	},
 	parserOptions: {
