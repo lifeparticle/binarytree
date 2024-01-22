@@ -1,12 +1,8 @@
 import { Card, Col, Skeleton, Space, Tag, Typography } from "antd";
 import { FC } from "react";
-import { Package as PackagType } from "pages/Information/Npmpackages/types";
+import { PackageProps } from "pages/Information/Npmpackages/types";
 const { Title } = Typography;
 import style from "pages/Information/Npmpackages/Npmpackages.module.scss";
-
-interface PackageProps {
-	resource: PackagType;
-}
 
 const Package: FC<PackageProps> = (props) => {
 	const onClick = (url: string) => {

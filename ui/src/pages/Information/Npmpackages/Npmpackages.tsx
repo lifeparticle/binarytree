@@ -17,7 +17,7 @@ const Npmpackages = () => {
 		return <Text text={API_ERROR} />;
 	}
 
-	if (!isError && !isLoading && data.packages?.length === 0) {
+	if (!isError && !isLoading && (!data.packages || data.packages.length === 0)) {
 		return <Text text={API_NO_DATA} />;
 	}
 
