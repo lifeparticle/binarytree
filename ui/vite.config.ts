@@ -44,9 +44,8 @@ export default defineConfig({
 		reporters: ['default', 'html'],
 		coverage: {
 			reportsDirectory: "html/ui",
-			enabled: true,
 			include: ["**/*.{ts,tsx}"],
-			exclude: ["**/*.test.{ts,tsx}"],
+			exclude: ["**/*.test.{ts,tsx}", "**/types.ts", "**/*.testkit.ts"],
 			reporter: ['text', ['html', { subdir: 'coverage'}]],
 			provider: "v8",
 		}
