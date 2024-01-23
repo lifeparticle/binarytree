@@ -2,6 +2,9 @@
 <a href="https://binarytree.dev/" target="_blank">
   <img src="https://github.com/lifeparticle/lifeparticle/blob/master/gh_social.png" alt="binary tree logo" height="70" />
 </a>
+</p>
+
+<div align="center">
 
   [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
   [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=bugs)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
@@ -12,7 +15,8 @@
   [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
   [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
   [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
-</p>
+
+</div>
 
 ## BinaryTree
 
