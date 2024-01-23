@@ -42,3 +42,6 @@ Code: The code in this project is licensed under the Apache-2.0 license. See the
 Logo: The project logo is copyrighted and may not be used without explicit permission.
 
 Hero Image: The project hero image is copyrighted and may not be used without explicit permission.
+
+
+  [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-orange.svg)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
