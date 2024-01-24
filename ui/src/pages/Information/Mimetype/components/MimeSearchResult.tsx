@@ -5,13 +5,7 @@ import { filteredMimeType } from "pages/Information/Mimetype/helper";
 import useParamsValue from "hooks/useParamsValue";
 import { ColumnsType } from "antd/es/table";import { CodeHighlightWithCopy } from "components/General";
 import { PARAMS } from "data/paramsData";
-import { MimeTableDataType } from "pages/Information/Mimetype/types";
-
-interface MimeSearchResultProps {
-	data: MimeTableDataType[];
-	isLoading: boolean;
-	isError: boolean;
-}
+import { MimeSearchResultProps, MimeTableDataType } from "pages/Information/Mimetype/types";
 
 const MimeSearchResult: FC<MimeSearchResultProps> = ({
 	data,
