@@ -1,3 +1,7 @@
+### [10.6.0] - 2024-01-24
+
+-   Added Information Page tests
+
 ### [10.5.0] - 2024-01-20
 
 -   Integrate Vitest UI to view and interact with your tests.
