@@ -4,3 +4,12 @@ export interface Package {
 	version: string;
 	new: boolean;
 }
+
+export interface PackageListProps {
+	packages: Package[];
+	isLoading: boolean;
+}
+
+export interface PackageProps {
+	resource: Package;
+}
