@@ -1,4 +1,4 @@
-import { MimeTableDataType } from "./types";
+import { MimeTableDataType } from "pages/Information/Mimetype/types";
 
 function filteredMimeType(items: MimeTableDataType[], searchQuery: string) {
 	const lowercaseSearchQuery = searchQuery.toLowerCase();
