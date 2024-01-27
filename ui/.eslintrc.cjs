@@ -18,6 +18,7 @@ module.exports = {
 		"max-lines": ["warn", 100],
 		"no-var": "error",
 		"prefer-template": "error",
+		eqeqeq: "error",
 	},
 	parserOptions: {
 		parser: "@typescript-eslint/parser",
@@ -25,4 +26,12 @@ module.exports = {
 			jsx: false,
 		},
 	},
+	overrides: [
+		{
+			files: ["*.test.tsx", "*.test.ts", "*.testkit.ts"],
+			rules: {
+				"max-lines": "off",
+			},
+		},
+	],
 };
