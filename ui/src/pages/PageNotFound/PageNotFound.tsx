@@ -1,6 +1,6 @@
 import { FC } from "react";
 import style from "./PageNotFound.module.scss";
-import not_found from "assets/not_found.jpg";
+import not_found from "assets/not_found.svg";
 
 const PageNotFound: FC = () => {
 	return (
@@ -11,7 +11,7 @@ const PageNotFound: FC = () => {
 				rel="noopener noreferrer"
 			>
 				<img
-					alt="about"
+					alt="Page Not Found"
 					src={not_found}
 					className={style.about__intro_img}
 				/>
