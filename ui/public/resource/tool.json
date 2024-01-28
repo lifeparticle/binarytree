@@ -187,5 +187,12 @@
 		"subCategory": "Analytics",
 		"url": "https://posthog.com/",
 		"socials": []
+	},
+	{
+		"name": "error404",
+		"category": "UI",
+		"subCategory": "UI",
+		"url": "https://error404.fun/",
+		"socials": []
 	}
 ]
