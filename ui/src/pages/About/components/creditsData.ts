@@ -23,4 +23,5 @@ export const CREDITS_DATA: Credits[] = [
 	createCredit("8", "Lucide", "https://lucide.dev/"),
 	createCredit("9", "Dudeowl", "https://99designs.com.au/profiles/dudeowl"),
 	createCredit("10", "Vertex Designs", "https://unsplash.com/@vertex_800"),
+	createCredit("11", "error404", "https://error404.fun/"),
 ];
