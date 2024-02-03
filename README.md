@@ -15,6 +15,8 @@
   [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
   [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
   [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
+  
+[:dependabot:](https://github.com/lifeparticle/binarytree/blob/main/.github/dependabot.yml)
 
 </div>
 
