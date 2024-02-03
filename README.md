@@ -39,8 +39,8 @@ Your [opinions and feedback](https://binarytree.dev/feedback) about our service 
 
 ## Licenses
 
-Code: The code in this project is licensed under the Apache-2.0 license. See the [LICENSE](LICENSE) file for details.
+**Code:** The code in this project is licensed under the Apache-2.0 license. See the [LICENSE](LICENSE) file for details.
 
-Logo: The project logo is copyrighted and may not be used without explicit permission.
+**Logo:** The project logo is copyrighted and may not be used without explicit permission.
 
-Hero Image: The project hero image is copyrighted and may not be used without explicit permission.
+**Hero Image:** The project hero image is copyrighted and may not be used without explicit permission.
