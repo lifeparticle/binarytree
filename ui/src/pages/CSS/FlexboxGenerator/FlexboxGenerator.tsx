@@ -1,41 +1,31 @@
 import { FC, useState } from "react";
-import { Card, Form, Space } from "antd";
-import { PageGrid, InputGrid } from "components/Layouts";
+import { Card, Space } from "antd";
+import { PageGrid } from "components/Layouts";
+import { CodeHighlightWithCopy, ResponsiveButton } from "components/General";
 import {
-	CodeHighlightWithCopy,
-	ResponsiveSelectWithLabel,
-	ResponsiveButton,
-} from "components/General";
-import {
-	JUSTIFY_CONTENT,
-	FLEX_DIRECTION,
-	ALIGN_ITEM,
 	ALIGN_CONTENT,
-	FLEX_WRAP,
-	JustifyContent,
-	FlexDirection,
+	ALIGN_ITEM,
+	ALIGN_SELF,
 	AlignContent,
-	FlexWrap,
 	AlignItems,
+	AlignSelf,
+	FLEX_DIRECTION,
+	FLEX_WRAP,
+	FlexDirection,
+	FlexWrap,
+	JUSTIFY_CONTENT,
+	JustifyContent,
+	ItemStyleIntialvalue,
+	ItemStyle,
+	ContainerStyle,
+	bgColor,
+	boxColor,
 } from "./constants";
 import style from "./FlexboxGenerator.module.scss";
-
-type ContainerStyle = {
-	width: string;
-	height: string;
-	backgroundColor: string;
-	borderRadius: string;
-	display: string;
-	justifyContent: JustifyContent;
-	flexDirection: FlexDirection;
-	alignItems: AlignItems;
-	alignContent: AlignContent;
-	flexWrap: FlexWrap;
-};
+import FChildCssGenerator from "./FChildCssGenerator";
+import FParentCssGenerator from "./FParentCssGenerator";
 
 const FlexboxGenerator: FC = () => {
-	const bgColor = "#ffffff0";
-	const boxColor = "#4f5456";
 	const [justifyContent, setJustifyContent] = useState<JustifyContent>(
 		JUSTIFY_CONTENT[0].value
 	);
@@ -47,16 +37,31 @@ const FlexboxGenerator: FC = () => {
 		ALIGN_CONTENT[0].value
 	);
 	const [flexWrap, setFlexWrap] = useState<FlexWrap>(FLEX_WRAP[0].value);
+	const [alignSelf, setAlignSelf] = useState<AlignSelf>(ALIGN_SELF[0].value);
 	const [itemCount, setItemCount] = useState(3);
 
-	const containerItems = Array.from(
-		{ length: itemCount },
-		(_, index) => index
+	const containerItems = Array.from({ length: itemCount }, (_, index) => ({
+		label: "item" + (index + 1),
+		value: "item" + (index + 1),
+		index: index,
+	}));
+	const [itemClass, setItemClass] = useState(containerItems[0].value);
+	const [currentIndex, setCurrentIndex] = useState<number | null>(0);
+	const [flexGrow, setFlexGrow] = useState(0);
+	const [flexShrink, setFlexShrink] = useState(0);
+	const [flexBasis, setFlexBasis] = useState("auto");
+	const [order, setOrder] = useState(0);
+	const [itemsStyles, setItemsStyles] = useState<ItemStyle[]>(
+		Array.from({ length: itemCount }, (_, index) => ({
+			...ItemStyleIntialvalue,
+			index,
+		}))
 	);
 
 	const containerStyle: ContainerStyle = {
-		width: "70dvh",
-		height: "50dvh",
+		width: "25rem",
+		height: "35rem",
+		overflow: "auto",
 		backgroundColor: boxColor,
 		borderRadius: ".8rem",
 		display: "flex",
@@ -65,16 +70,6 @@ const FlexboxGenerator: FC = () => {
 		alignItems: `${alignItem}`,
 		alignContent: `${alignContent}`,
 		flexWrap: `${flexWrap}`,
-	};
-
-	const itemStyle = {
-		width: "5rem",
-		height: "5rem",
-		background: "whitesmoke",
-		color: "black",
-		margin: "10px",
-		padding: "10px",
-		borderRadius: ".5rem",
 	};
 
 	const generateCSSCodeString = () => {
@@ -88,11 +83,35 @@ const FlexboxGenerator: FC = () => {
 		return `${displayFlexCode}\n${justifyContentCode}\n${flexDirectionCode}\n${alignItemCode}\n${alignContentnCode}\n${flexWrapCode}`;
 	};
 
+	const generateCSSStringFromItemsStyles = (styles: ItemStyle[]) => {
+		return styles
+			?.map((itemStyle: ItemStyle) => {
+				const cssCode = `
+	item${itemStyle.index + 1} {
+	order: ${itemStyle.order};
+	flex-grow: ${itemStyle.flexGrow};
+	flex-shrink: ${itemStyle.flexShrink};
+	flex-basis: ${itemStyle.flexBasis};
+	align-self: ${itemStyle.alignSelf};
+}`;
+				return cssCode.trim();
+			})
+			.join("\n");
+	};
+
 	const addItem = () => {
 		setItemCount(itemCount + 1);
+		setItemsStyles((prevItems) => [
+			...(prevItems ?? []),
+			{ ...ItemStyleIntialvalue, index: itemCount },
+		]);
 	};
+
 	const removeItem = () => {
-		setItemCount(itemCount - 1);
+		if (itemCount > 1) {
+			setItemCount(itemCount - 1);
+			setItemsStyles((prevItems) => prevItems?.slice(0, -1));
+		}
 	};
 
 	return (
@@ -110,66 +129,42 @@ const FlexboxGenerator: FC = () => {
 								Remove Item
 							</ResponsiveButton>
 						</Space>
-						<Form layout="vertical">
-							<br />
-							<InputGrid>
-								<ResponsiveSelectWithLabel
-									label="Justify Content"
-									value={justifyContent}
-									defaultActiveFirstOption
-									onSelect={(_, option) =>
-										setJustifyContent(
-											option.value as JustifyContent
-										)
-									}
-									options={JUSTIFY_CONTENT}
-								/>
-								<ResponsiveSelectWithLabel
-									label="Flex Direction"
-									value={flexDirection}
-									defaultActiveFirstOption
-									onSelect={(_, option) =>
-										setFlexDirection(
-											option.value as FlexDirection
-										)
-									}
-									options={FLEX_DIRECTION}
-								/>
-							</InputGrid>
-							<InputGrid>
-								<ResponsiveSelectWithLabel
-									label="Align Item"
-									value={alignItem}
-									defaultActiveFirstOption
-									onSelect={(_, option) =>
-										setAlignItem(option.value as AlignItems)
-									}
-									options={ALIGN_ITEM}
-								/>
-								<ResponsiveSelectWithLabel
-									label="Align Content"
-									value={alignContent}
-									defaultActiveFirstOption
-									onSelect={(_, option) =>
-										setAlignContent(
-											option.value as AlignContent
-										)
-									}
-									options={ALIGN_CONTENT}
-								/>
-							</InputGrid>
-							<InputGrid>
-								<ResponsiveSelectWithLabel
-									label="Flex Wrap"
-									value={flexWrap}
-									defaultActiveFirstOption
-									onSelect={(_, option) =>
-										setFlexWrap(option.value as FlexWrap)
-									}
-									options={FLEX_WRAP}
-								/>
-							</InputGrid>
-						</Form>
+						<FParentCssGenerator
+							justifyContent={justifyContent}
+							setJustifyContent={setJustifyContent}
+							flexDirection={flexDirection}
+							setFlexDirection={setFlexDirection}
+							alignItem={alignItem}
+							setAlignItem={setAlignItem}
+							alignContent={alignContent}
+							setAlignContent={setAlignContent}
+							flexWrap={flexWrap}
+							setFlexWrap={setFlexWrap}
+						/>
+					</Card>
+					<br />
+					Items
+					<Card>
+						<FChildCssGenerator
+							itemClass={itemClass}
+							setItemClass={setItemClass}
+							currentIndex={currentIndex}
+							setCurrentIndex={setCurrentIndex}
+							setAlignSelf={setAlignSelf}
+							setFlexGrow={setFlexGrow}
+							setFlexShrink={setFlexShrink}
+							setFlexBasis={setFlexBasis}
+							setOrder={setOrder}
+							alignSelf={alignSelf}
+							flexGrow={flexGrow}
+							flexShrink={flexShrink}
+							flexBasis={flexBasis}
+							order={order}
+							itemsStyles={
+								itemsStyles !== undefined ? itemsStyles : []
+							}
+							containerItems={containerItems}
+						/>
 					</Card>
 				</Card>
 
@@ -178,21 +173,45 @@ const FlexboxGenerator: FC = () => {
 					style={{ background: bgColor }}
 				>
 					<Space direction="vertical">
-						<div style={containerStyle}>
-							{containerItems.map((index) => (
-								<div key={index} style={itemStyle}>
-									Item {index + 1}
-								</div>
-							))}
+						<div style={containerStyle} id="itemsContainer">
+							{itemsStyles ? (
+								containerItems.map((item) => (
+									<div
+										key={item.index}
+										className={"item" + item.index}
+										style={itemsStyles[item.index]}
+									>
+										Item {item.index + 1}
+									</div>
+								))
+							) : (
+								<p>Loading...</p>
+							)}
 						</div>
 					</Space>
 				</Card>
 			</PageGrid>
 			<Card>
-				<CodeHighlightWithCopy
-					codeString={generateCSSCodeString()}
-					language="css"
-				/>
+				<div className={style.fg__snippet}>
+					<div className={style.fg__snippet__item}>
+						<CodeHighlightWithCopy
+							codeString={generateCSSCodeString()}
+							language="css"
+						/>
+					</div>
+					<div className={style.fg__snippet__item}>
+						<CodeHighlightWithCopy
+							codeString={
+								itemsStyles
+									? generateCSSStringFromItemsStyles(
+											itemsStyles
+									  )
+									: ""
+							}
+							language="css"
+						/>
+					</div>
+				</div>
 			</Card>
 		</div>
 	);

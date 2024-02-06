@@ -5,6 +5,7 @@ import { withLabelSize } from "components/Hoc";
 interface Option {
 	value: string;
 	label: string;
+	index?: number;
 }
 
 interface SelectComponentProps {
