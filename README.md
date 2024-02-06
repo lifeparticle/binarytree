@@ -4,7 +4,7 @@
 </a>
 </p>
 
-<div align="">
+<div>
 
   [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
   [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=bugs)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
