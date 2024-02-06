@@ -210,7 +210,17 @@ Adopting consistent naming conventions helps in understanding and navigating the
 
 #### 4. How to add a feature?
 
-4.1. Use scaffdog to create the page folder
+Adding a new feature may seem daunting at first, but by following these steps and working together can ensure a smooth and efficient process.
+
+4.1 If there is no related issue then create a new one and clearly describe the feature.
+
+4.2 Design a low-fidelity mockup of the feature. This helps in visualizing the user interface and the user experience. Ensure that the design aligns with the project's design guidelines and style.
+
+4.3 Wait for feedback and approval before proceeding. Make any necessary revisions based on the feedback received.
+
+4.4 Once the mockup is approved, you can begin the development process. Remember to write clean, readable, and maintainable code.
+
+4.5. Use scaffdog to create the page folder
 
 ```shell
 npx scaffdog generate
@@ -233,27 +243,19 @@ PageA/
 |── index.ts
 ```
 
-4.2. Update
+4.6. Update files
 
-`ui/src/pages/index.ts`
+- `ui/src/pages/index.ts`
 
-4.3. Update
+- `ui/src/data/featureData.ts`
 
-`ui/src/data/featureData.ts`
+- `ui/src/data/helpData.ts`
 
-4.4. Update
+- `ui/src/data/menuData.ts`
 
-`ui/src/data/helpData.ts`
+- `ui/src/data/routeData.tsx`
 
-4.5. Update
-
-`ui/src/data/menuData.ts`
-
-4.6. Update
-
-`ui/src/data/routeData.tsx`
-
-#### 5. How to add tests for a feature?
+4.7 Add tests for a feature
 
 -   Identify the key functionalities of your feature that need testing.
 -   Define test cases for these functionalities, including both positive and negative scenarios.
@@ -261,3 +263,6 @@ PageA/
 -   Place your test scripts in the `__tests__` folder within your feature directory (in this case, `PageA/__tests__`).
 -   Mock any external dependencies or modules that your feature interacts with. This ensures that your tests are focused solely on the feature's functionality.
 -   Use faker to generate fake data for your tests.
+
+4.8 Raise a PR for your feature
+
