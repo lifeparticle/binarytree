@@ -30,11 +30,11 @@ jobs:
       - name: Run Tests
         run: yarn test
 
-      # - name: Post the knip results
-      #   run: yarn knip
+      - name: Post the knip results
+        run: yarn knip --max-issues=51
 
       - name: Run ESLint
-        run: yarn lint
+        run: yarn lint --max-warnings 33
 
       - name: Danger
         run: yarn danger ci
