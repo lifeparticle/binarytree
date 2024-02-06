@@ -30,6 +30,9 @@ jobs:
       - name: Run Tests
         run: yarn test
 
+      - name: Post the knip results
+        uses: codex-/knip-reporter@v1
+
       - name: Run ESLint
         run: yarn lint
 
