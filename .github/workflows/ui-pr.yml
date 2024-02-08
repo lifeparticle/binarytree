@@ -31,10 +31,10 @@ jobs:
         run: yarn test
 
       - name: Post the knip results
-        run: yarn knip --max-issues=51
+        run: yarn knip --max-issues=${{ vars.KNIP_MAX_ISSUES }}
 
       - name: Run ESLint
-        run: yarn lint --max-warnings 33
+        run: yarn lint --max-warnings ${{ vars.LINT_MAX_WARNINGS }}
 
       - name: Danger
         run: yarn danger ci
