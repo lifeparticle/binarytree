@@ -6,6 +6,7 @@
 
 <div align="center">
 
+  [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=coverage)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
   [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
   [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=bugs)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
   [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
