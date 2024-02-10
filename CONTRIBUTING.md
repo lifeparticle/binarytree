@@ -7,4 +7,4 @@
 </a>
 </p>
 
-[ui](./ui/CONTRIBUTING.md)
+- [ui](./ui/CONTRIBUTING.md)
