@@ -10,7 +10,7 @@ export const STATS_DATA = [
 	{
 		id: 2,
 		title: "GitHub Stars",
-		value: 23,
+		value: 25,
 		link: "https://github.com/lifeparticle/binarytree/stargazers",
 	},
 	{
