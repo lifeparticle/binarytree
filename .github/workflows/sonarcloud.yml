@@ -23,12 +23,15 @@ jobs:
         run: |
           corepack enable
           corepack prepare yarn@stable --activate
+          working-directory: ui
           
       - name: yarn install
         run: yarn install --immutable
+        working-directory: ui
 
       - name: Run Tests
         run: yarn test:coverage
+        working-directory: ui
         
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
