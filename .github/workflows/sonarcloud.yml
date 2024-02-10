@@ -23,7 +23,7 @@ jobs:
         run: |
           corepack enable
           corepack prepare yarn@stable --activate
-          working-directory: ui
+        working-directory: ui
           
       - name: yarn install
         run: yarn install --immutable
