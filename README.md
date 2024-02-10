@@ -1,4 +1,4 @@
-<p align="">
+<p >
 <a href="https://binarytree.dev/">
   <img src="https://github.com/lifeparticle/lifeparticle/blob/master/gh_social.png" alt="binary tree logo" height="70" />
 </a>
