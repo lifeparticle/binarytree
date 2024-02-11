@@ -202,5 +202,17 @@
 				"name": ""
 			}
 		]
+	},
+	{
+		"name": "Devicon",
+		"category": "Icons",
+		"subCategory": ["React", "Frontend"],
+		"url": "https://devicon.dev/",
+		"socials": [
+			{
+				"url": "https://github.com/devicons/devicon/",
+				"name": "github"
+			}
+		]
 	}
 ]
