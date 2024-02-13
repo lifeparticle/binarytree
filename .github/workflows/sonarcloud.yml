@@ -37,6 +37,9 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@master
         with:
           projectBaseDir: ui
+          args: >
+            -Dsonar.organization=lifeparticle
+            -Dsonar.projectKey=lifeparticle_binarytree
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
