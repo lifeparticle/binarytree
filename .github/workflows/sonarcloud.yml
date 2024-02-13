@@ -35,13 +35,6 @@ jobs:
         
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
-        with:
-          projectBaseDir: ui
-          args: >
-            -Dsonar.organization=lifeparticle
-            -Dsonar.projectKey=lifeparticle_binarytree
-            -Dsonar.javascript.lcov.reportPaths=ui/html/ui/lcov.info
-            -Dsonar.pullrequest.github.summary_comment=true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
