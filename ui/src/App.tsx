@@ -11,6 +11,7 @@ const { Content } = Layout;
 
 const App: FC = () => {
 	const theme = useTheme();
+	var a = "test";
 
 	return (
 		<ErrorBoundary fallback={<p>Something went wrong</p>}>
