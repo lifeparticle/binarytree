@@ -18,7 +18,7 @@
   [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
   
 <a href="https://github.com/lifeparticle/binarytree/blob/main/.github/dependabot.yml" target="">
-  <img src="https://github.com/lifeparticle/binarytree/assets/1612112/75075fc7-8241-4375-905d-8d96cc239ffa" alt="binary tree logo" height="20" />
+  <img src="https://github.com/lifeparticle/binarytree/assets/1612112/75075fc7-8241-4375-905d-8d96cc239ffa" alt="binary tree logo" height="" />
 </a>
 
 </div>
