@@ -6,22 +6,34 @@
 
 <div align="center">
 
-  [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=coverage)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
-  [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
-  [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=bugs)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
-  [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
-  [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
-  [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
-  [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
-  [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
-  [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
-  [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree)
-  
+[![Coverage][Coverage-badge]][SonarCloud-Summary-URL]
+[![Vulnerabilities][Vulnerabilities-badge]][SonarCloud-Summary-URL]
+[![Bugs][Bugs-badge]][SonarCloud-Summary-URL]
+[![Security Rating][Security-Rating-badge]][SonarCloud-Summary-URL]
+[![Maintainability Rating][Maintainability-Rating-badge]][SonarCloud-Summary-URL]
+[![Code Smells][Code-Smells-badge]][SonarCloud-Summary-URL]
+[![Lines of Code][Lines-of-Code-badge]][SonarCloud-Summary-URL]
+[![Technical Debt][Technical-Debt-badge]][SonarCloud-Summary-URL]
+[![Reliability Rating][Reliability-Rating-badge]][SonarCloud-Summary-URL]
+[![Duplicated Lines (%)][Duplicated-Lines-badge]][SonarCloud-Summary-URL]
+
 <a href="https://github.com/lifeparticle/binarytree/blob/main/.github/dependabot.yml" target="_blank">
   <img src="https://github.com/lifeparticle/binarytree/assets/1612112/75075fc7-8241-4375-905d-8d96cc239ffa" alt="binary tree logo" height="20" />
 </a>
 
 </div>
+
+[Coverage-badge]: https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=coverage
+[Vulnerabilities-badge]: https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=vulnerabilities
+[Bugs-badge]: https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=bugs
+[Security-Rating-badge]: https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=security_rating
+[Maintainability-Rating-badge]: https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=sqale_rating
+[Code-Smells-badge]: https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=code_smells
+[Lines-of-Code-badge]: https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=ncloc
+[Technical-Debt-badge]: https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=sqale_index
+[Reliability-Rating-badge]: https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=reliability_rating
+[Duplicated-Lines-badge]: https://sonarcloud.io/api/project_badges/measure?project=lifeparticle_binarytree&metric=duplicated_lines_density
+[SonarCloud-Summary-URL]: https://sonarcloud.io/summary/new_code?id=lifeparticle_binarytree
 
 ## BinaryTree
 
