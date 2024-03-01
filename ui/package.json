@@ -22,7 +22,7 @@
 	"dependencies": {
 		"@emotion/react": "^11.11.1",
 		"@excalidraw/excalidraw": "^0.17.2",
-		"@faker-js/faker": "^8.4.0",
+		"@faker-js/faker": "^8.4.1",
 		"@ffmpeg/ffmpeg": "^0.12.7",
 		"@ffmpeg/util": "^0.12.1",
 		"@mantine/core": "^6.0.10",
