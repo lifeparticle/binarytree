@@ -24,7 +24,7 @@ vi.mock("components/ComponentInjector", () => ({
 const user = userEvent.setup();
 
 describe("News component", () => {
-	const mockSetUrl = vi.fn();
+	const mockSetTab = vi.fn();
 	const newsFeedData = ["some data"];
 
 	beforeEach(() => {
@@ -32,7 +32,7 @@ describe("News component", () => {
 			data: newsFeedData,
 			isLoading: false,
 			isError: false,
-			setUrl: mockSetUrl,
+			setTab: mockSetTab,
 		});
 	});
 
@@ -62,7 +62,7 @@ describe("News component", () => {
 		expect(newsTab).toHaveTextContent("News");
 	});
 
-	it("calls the seturl function when the tab is changed", async () => {
+	it("calls the SetTabValue function when the tab is changed", async () => {
 		// act
 		render(<News />);
 
@@ -73,11 +73,11 @@ describe("News component", () => {
 
 		await user.click(reactTab);
 
-		expect(mockSetUrl).toHaveBeenCalledWith("react-status");
+		expect(mockSetTab).toHaveBeenCalledWith("react-status");
 
 		await user.click(newsTab);
 
-		expect(mockSetUrl).toHaveBeenCalledWith(
+		expect(mockSetTab).toHaveBeenCalledWith(
 			"https://raw.githubusercontent.com/lifeparticle/binarytree/main/api/news/news.json"
 		);
 	});
