@@ -22,6 +22,6 @@
 		"noFallthroughCasesInSwitch": true,
 		"types": ["vitest/globals"]
 	},
-	"include": ["src", "../api/newsfeed/helper.js"],
+	"include": ["src"],
 	"references": [{ "path": "./tsconfig.node.json" }]
 }
