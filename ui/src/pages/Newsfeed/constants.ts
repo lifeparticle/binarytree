@@ -1,45 +1,32 @@
 import { TabsProps } from "antd";
 
+export const BASE_URL = import.meta.env.VITE_VERCEL_NEWS_FEED_URL;
+
+export const QUERY_KEY_NEWS = "news";
+
 const SITE_OPTIONS = {
 	"frontend-focus": {
 		label: "Frontend Focus",
 		value: "frontend-focus",
-		isFeedItem: true,
+		show: true,
 	},
 	"react-status": {
 		label: "React Status",
 		value: "react-status",
-		isFeedItem: true,
+		show: true,
 	},
-	news: {
+	"news-api": {
 		label: "News",
-		value: "https://raw.githubusercontent.com/lifeparticle/binarytree/main/api/news/news.json",
-		isFeedItem: false,
+		value: "news-api",
+		show: true,
 	},
 };
 
-const TAB_ITEMS: TabsProps["items"] = [
-	{
-		key: SITE_OPTIONS["frontend-focus"].value,
-		label: SITE_OPTIONS["frontend-focus"].label,
-		show: true,
-	},
-	{
-		key: SITE_OPTIONS["react-status"].value,
-		label: SITE_OPTIONS["react-status"].label,
-		show: true,
-	},
-	{
-		key: SITE_OPTIONS["news"].value,
-		label: SITE_OPTIONS["news"].label,
-		show: true,
-	},
-].filter((item) => item.show);
+export const FIRST_TAB_VALUE = SITE_OPTIONS["frontend-focus"].value;
 
-const BASE_URL = import.meta.env.DEV
-	? "http://localhost:3000/rss?name="
-	: "https://binarytree-rssfeed-api.vercel.app/rss?name=";
-
-const QUERY_KEY_NEWS = "news";
-
-export { SITE_OPTIONS, TAB_ITEMS, BASE_URL, QUERY_KEY_NEWS };
+export const TAB_ITEMS: TabsProps["items"] = Object.values(SITE_OPTIONS)
+	.filter((option) => option.show)
+	.map((option) => ({
+		key: option.value,
+		label: option.label,
+	}));
