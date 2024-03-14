@@ -28,14 +28,20 @@
 	},
 	{
 		"name": "Algoexpert",
-		"category": "Interview Preparation",
-		"subCategory": "Interview",
+		"category": "Interview",
+		"subCategory": [],
 		"url": "https://www.algoexpert.io/product"
 	},
 	{
 		"name": "CodeCrafters",
-		"category": "Interview Preparation",
-		"subCategory": "Interview",
+		"category": "Interview",
+		"subCategory": [],
 		"url": "https://codecrafters.io/"
+	},
+	{
+		"name": "Csvistool",
+		"category": "Data Structures and Algorithms Visualization Tool",
+		"subCategory": [],
+		"url": "https://csvistool.com/"
 	}
 ]
