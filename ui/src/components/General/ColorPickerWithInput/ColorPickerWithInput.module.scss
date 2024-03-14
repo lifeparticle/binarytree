@@ -1,23 +1,18 @@
-$cp-top: 27px;
-$cp-left: -12px;
-$cp-bg-color: rgb(68, 68, 68);
-$cp-z-index: 9999;
-
 .cpwi {
 	&__color {
 		position: relative;
-		display: inline-block;
+		/* inline-block immediately overridden, assuming error and not for browser support */
 		display: flex;
 		align-items: center;
 		cursor: pointer;
 
 		&_dp {
-			background-color: $cp-bg-color;
+			background-color: rgb(68 68 68);
 			padding: var(--bt-size-10);
 			border-radius: var(--bt-size-10);
-			top: $cp-top;
-			left: $cp-left;
-			z-index: $cp-z-index;
+			top: 27px;
+			left: -12px;
+			z-index: 9999; /* Hacky? */
 			display: none;
 			position: absolute;
 		}

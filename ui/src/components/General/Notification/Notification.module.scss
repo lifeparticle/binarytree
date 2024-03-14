@@ -1,13 +1,7 @@
-$notification-size-200: 200px;
-$notification-size-300: 300px;
-$notification-status-color: #c83939;
-$notification-size-minus-25: -25px;
-
 .notification {
-	height: $notification-size-300;
-	width: $notification-size-200;
-	overflow-y: auto;
-	overflow-x: hidden;
+	height: 300px;
+	width: 200px;
+	overflow: hidden auto;
 	border-radius: var(--bt-size-8);
 
 	&__error {
@@ -16,25 +10,23 @@ $notification-size-minus-25: -25px;
 	}
 
 	&__button {
+		position: relative;
 		border: none;
 		box-shadow: none;
 		background-color: transparent;
 		cursor: pointer;
-		position: relative;
-		align-items: center;
 		display: flex;
+		align-items: center;
 
 		&__status {
+			position: absolute;
 			width: var(--bt-size-7);
 			height: var(--bt-size-7);
-			background-color: $notification-status-color;
-			position: absolute;
-			border-radius: var(--bt-size-percent-100);
 			top: var(--bt-size-5);
 			right: var(--bt-size-17);
-			border-color: white;
-			border-width: var(--bt-size-1);
-			border-style: solid;
+			background-color: #c83939;
+			border: var(--bt-size-1) solid white;
+			border-radius: var(--bt-size-percent-100);
 		}
 	}
 
@@ -45,8 +37,8 @@ $notification-size-minus-25: -25px;
 		}
 
 		&_features {
+			margin-left: -25px;
 			padding-top: var(--bt-size-8);
-			margin-left: $notification-size-minus-25;
 			padding-bottom: var(--bt-size-8);
 			list-style-type: square;
 

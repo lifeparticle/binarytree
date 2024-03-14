@@ -1,11 +1,8 @@
-$pnf-height: calc(100vh - 70px);
-
 .pnf {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	height: $pnf-height;
+	/* Sometimes grid is simpler */
+	display: grid;
+	place-content: center;
+	height: calc(100vh - 70px); /* Variable wasn't needed */
 	img {
 		width: var(--bt-size-percent-100);
 		height: var(--bt-size-percent-100);

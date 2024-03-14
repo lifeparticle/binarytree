@@ -2,4 +2,30 @@
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+
+	&__item {
+		min-height: 66px;
+		padding: 8px;
+		border: 1px solid #d9d9d9;
+		border-radius: 8px;
+		transition: opacity 300ms, height 300ms;
+		display: grid;
+		grid-template-columns: auto auto;
+		align-items: center;
+		gap: 20px;
+
+		h5 {
+			overflow: hidden;
+		}
+
+		&_right {
+			display: flex;
+			align-items: center;
+			justify-content: end;
+			gap: 20px;
+			> div {
+				margin-bottom: 0 !important;
+			}
+		}
+	}
 }

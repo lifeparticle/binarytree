@@ -1,5 +1,3 @@
-$qrcode-size-623: 623px;
-
 .qrcode {
 	&__label {
 		display: flex;
@@ -8,11 +6,9 @@ $qrcode-size-623: 623px;
 	}
 
 	&__output {
-		height: $qrcode-size-623;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+		height: 623px;
+		display: grid;
+		place-content: center;
 		overflow-y: auto;
 	}
 }

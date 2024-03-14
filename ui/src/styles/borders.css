@@ -2,6 +2,7 @@
 	--bt-border-dashed: 1px dashed var(--bt-color-border);
 	--bt-border-solid-dark: 1px solid var(--bt-color-border-solid-dark);
 	--bt-border-solid-light: 1px solid var(--bt-color-border-solid-light);
+	/* These two seem superfluous */
 	--bt-border-radius-4: 4px;
 	--bt-border-radius-8: 8px;
 }

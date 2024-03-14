@@ -1,8 +1,7 @@
 .fh {
+	position: sticky;
+	padding: var(--bt-size-4);
+	border-radius: var(--bt-size-10);
 	display: flex;
 	align-items: center;
-	border-radius: var(--bt-size-10);
-	padding: var(--bt-size-4);
-	position: sticky;
-	flex-direction: row;
 }

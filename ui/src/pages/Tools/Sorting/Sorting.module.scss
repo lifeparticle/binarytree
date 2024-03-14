@@ -1,6 +1,3 @@
-$input-height: calc(100dvh - 210px);
-$output-height: calc(100dvh - 300px);
-
 .sort {
 	overflow: hidden;
 
@@ -21,11 +18,15 @@ $output-height: calc(100dvh - 300px);
 		}
 	}
 
+	/* Moved variables here since you only use them once,
+	   keep them as they convey meaning */
 	&__input_textarea {
+		$input-height: calc(100dvh - 210px);
 		height: $input-height;
 	}
 
 	&__output_textarea {
+		$output-height: calc(100dvh - 300px);
 		height: $output-height !important;
 	}
 }

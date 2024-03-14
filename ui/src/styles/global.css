@@ -2,12 +2,12 @@
 	animation: pulse 1s infinite;
 }
 .CookieConsent {
+	/* Non standard PascalCase as opposed to kebab-case for class name, and global font should inherit */
 	font-family: var(--global-font);
 }
 code {
 	font-family: var(--global-font-mono);
 }
-
 .button-right-icon {
 	display: flex;
 	align-items: center;

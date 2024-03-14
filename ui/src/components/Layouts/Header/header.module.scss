@@ -1,7 +1,6 @@
 .header {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	display: grid;
+	place-content: center;
 	height: var(--bt-size-64);
 
 	&_dark {

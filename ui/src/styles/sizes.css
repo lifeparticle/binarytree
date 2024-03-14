@@ -5,6 +5,10 @@
 
 	--bt-full-page-height: calc(100dvh - 110px);
 
+	/* START These custom properties all seem fairly superfluous.
+     Would be simpler to use the actual values else abstract these
+		 variables more and reduce the amount */
+
 	--bt-number-1: 1;
 
 	--bt-grid-template-1: 1fr;
@@ -48,4 +52,5 @@
 	--bt-size-135: 135px;
 	--bt-size-500: 500px;
 	--bt-size-600: 600px;
+	/* END */
 }

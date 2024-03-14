@@ -1,7 +1,6 @@
 .copyinput {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	display: grid;
+	place-content: center;
 	overflow: hidden;
 	gap: var(--bt-size-5);
 

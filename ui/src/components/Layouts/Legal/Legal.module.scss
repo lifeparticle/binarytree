@@ -12,13 +12,11 @@
 	}
 
 	h1 {
-		background-color: #c0c0c0;
-		border-radius: var(--bt-size-10);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: var(--bt-size-percent-10);
-		/* can we do better */
 		margin-bottom: var(--bt-size-64) !important;
+		padding: var(--bt-size-percent-10);
+		border-radius: var(--bt-size-10);
+		background-color: #c0c0c0;
+		display: grid;
+		place-content: center;
 	}
 }
