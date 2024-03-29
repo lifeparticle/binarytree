@@ -212,5 +212,53 @@
 				"name": ""
 			}
 		]
+	},
+	{
+		"name": "Refactoring UI",
+		"category": "UI/UX",
+		"subCategory": "Programming",
+		"url": "https://www.refactoringui.com/",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
+	},
+	{
+		"name": "Design for Hackers",
+		"category": "UI/UX",
+		"subCategory": "Programming",
+		"url": "https://www.amazon.com.au/Design-Hackers-Reverse-Engineering-Beauty/dp/1119998956",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
+	},
+	{
+		"name": "Don't Make Me Think",
+		"category": "UI/UX",
+		"subCategory": "Programming",
+		"url": "https://www.amazon.com.au/Dont-Make-Think-Revisited-Usability/dp/0321965515",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
+	},
+	{
+		"name": "Grid Systems in Graphic Design",
+		"category": "UI/UX",
+		"subCategory": "Programming",
+		"url": "https://www.amazon.com.au/Grid-Systems-Graphic-Design-Communication/dp/3721201450",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
 	}
 ]
