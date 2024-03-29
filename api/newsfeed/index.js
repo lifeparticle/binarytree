@@ -12,12 +12,6 @@ app.use((req, res, next) => {
 	next();
 });
 
-app.get("/", (req, res) => {
-	res.json({
-		message: "Generate rss feed from our domain",
-	});
-});
-
 app.get("/rss", async (req, res) => {
 	try {
 		const sitename = req.query.name;
@@ -38,19 +32,20 @@ app.get("/rss", async (req, res) => {
 		res.setHeader("Cache-Control", "s-max-age=86400, stale-while-revalidate");
 		res.set("Content-Type", "application/json");
 
-		if (sitename === "news-api") res.send(response.data);
+		if (sitename === "news-api") {
+			res.send(response.data);
+		} else {
+			const xmlData = response.data.toString();
 
-		const xmlData = response.data.toString();
-
-		parseXML(xmlData)
-			.then((parsedData) => {
-				console.log(parsedData);
-				res.send({ articles: parsedData });
-			})
-			.catch((error) => {
-				console.error("Error parsing XML:", error);
-				res.status(500).json({ error: "Error parsing XML" });
-			});
+			parseXML(xmlData)
+				.then((parsedData) => {
+					res.send({ articles: parsedData });
+				})
+				.catch((error) => {
+					console.error("Error parsing XML:", error);
+					res.status(500).json({ error: "Error parsing XML" });
+				});
+		}
 	} catch (error) {
 		if (error instanceof Error) {
 			res.status(500).json({ type: "error", message: error.message });
