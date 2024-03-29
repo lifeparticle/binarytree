@@ -1,3 +1,7 @@
+### [10.6.1] - 2024-03-29
+
+-   Update Newsfeed tests
+
 ### [10.6.0] - 2024-01-24
 
 -   Added Information Page tests
