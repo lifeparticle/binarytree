@@ -1,142 +1,111 @@
-export const mockedXMLString = `
-    <rss>
-    <channel>
-        <item>
-        <title>Example Title 1</title>
-        <description>Example Description 1 &lt;img src="example1.jpg" /&gt;</description>
-        <pubDate>Example Date 1</pubDate>
-        <link>https://example1.com</link>
-        </item>
-        <item>
-        <title>Example Title 2</title>
-        <description>Example Description 2 &lt;img src="example2.jpg" /&gt;</description>
-        <pubDate>Example Date 2</pubDate>
-        <link>https://example2.com</link>
-        </item>
-        <item>
-        <title>Example Title 3</title>
-        <description>Example Description 3 &lt;img src="example3.jpg" /&gt;</description>
-        <pubDate>Example Date 3</pubDate>
-        <link>https://example3.com</link>
-        </item>
-        <item>
-        <title>Example Title 4</title>
-        <description>Example Description 4 &lt;img src="example4.jpg" /&gt;</description>
-        <pubDate>Example Date 4</pubDate>
-        <link>https://example4.com</link>
-        </item>
-    </channel>
-    </rss>
-`;
+export const mockedJSON = {
+	articles: [
+		{
+			title: "What you need to know about modern CSS in early 2024",
+			pubDate: "Wed, 27 Mar 2024 00:00:00 +0000",
+			url: "https://frontendfoc.us/issues/636",
+			image: "https://res.cloudinary.com/cpress/image/upload/w_1280,e_sharpen:60,q_auto/v1711545832/w3yas5q9cbsev11uehnl.png",
+		},
+		{
+			title: "The web and the needs of humanity",
+			pubDate: "Wed, 20 Mar 2024 00:00:00 +0000",
+			url: "https://frontendfoc.us/issues/635",
+			image: "https://res.cloudinary.com/cpress/image/upload/w_1280,e_sharpen:60,q_auto/snpqguiz1s1vxwuegzcp.jpg",
+		},
+		{
+			title: "Browsers buddy up to bring the speed",
+			pubDate: "Wed, 13 Mar 2024 00:00:00 +0000",
+			url: "https://frontendfoc.us/issues/634",
+			image: "https://res.cloudinary.com/cpress/image/upload/w_1280,e_sharpen:60,q_auto/v1710327708/n594ptv7ycltmtq8pw1x.png",
+		},
+		{
+			title: "A week is a long time in web development",
+			pubDate: "Wed, 6 Mar 2024 00:00:00 +0000",
+			url: "https://frontendfoc.us/issues/633",
+			image: "https://copm.s3.amazonaws.com/c86bd3b0.png",
+		},
+	],
+};
 
-export const mockedXMLStringMissingDescription = `
-    <rss>
-    <channel>
-        <item>
-        <title>Example Title 1</title>
-        <pubDate>Example Date 1</pubDate>
-        <link>https://example1.com</link>
-        </item>
-        <item>
-        <title>Example Title 2</title>
-        <pubDate>Example Date 2</pubDate>
-        <link>https://example2.com</link>
-        </item>
-        <item>
-        <title>Example Title 3</title>
-        <pubDate>Example Date 3</pubDate>
-        <link>https://example3.com</link>
-        </item>
-        <item>
-        <title>Example Title 4</title>
-        <pubDate>Example Date 4</pubDate>
-        <link>https://example4.com</link>
-        </item>
-    </channel>
-    </rss>
-`;
-
-export const mockedParsedXML = [
+export const mockedParsedJSON = [
 	{
-		title: "Example Title 1",
-		pubDate: "Example Date 1",
-		url: "https://example1.com",
-		image: "example1.jpg",
+		title: "What you need to know about modern CSS in early 2024",
+		pubDate: "Wed, 27 Mar 2024 00:00:00 +0000",
+		url: "https://frontendfoc.us/issues/636",
+		image: "https://res.cloudinary.com/cpress/image/upload/w_1280,e_sharpen:60,q_auto/v1711545832/w3yas5q9cbsev11uehnl.png",
 	},
 	{
-		title: "Example Title 2",
-		pubDate: "Example Date 2",
-		url: "https://example2.com",
-		image: "example2.jpg",
+		title: "The web and the needs of humanity",
+		pubDate: "Wed, 20 Mar 2024 00:00:00 +0000",
+		url: "https://frontendfoc.us/issues/635",
+		image: "https://res.cloudinary.com/cpress/image/upload/w_1280,e_sharpen:60,q_auto/snpqguiz1s1vxwuegzcp.jpg",
 	},
 	{
-		title: "Example Title 3",
-		pubDate: "Example Date 3",
-		url: "https://example3.com",
-		image: "example3.jpg",
+		title: "Browsers buddy up to bring the speed",
+		pubDate: "Wed, 13 Mar 2024 00:00:00 +0000",
+		url: "https://frontendfoc.us/issues/634",
+		image: "https://res.cloudinary.com/cpress/image/upload/w_1280,e_sharpen:60,q_auto/v1710327708/n594ptv7ycltmtq8pw1x.png",
 	},
 	{
-		title: "Example Title 4",
-		pubDate: "Example Date 4",
-		url: "https://example4.com",
-		image: "example4.jpg",
+		title: "A week is a long time in web development",
+		pubDate: "Wed, 6 Mar 2024 00:00:00 +0000",
+		url: "https://frontendfoc.us/issues/633",
+		image: "https://copm.s3.amazonaws.com/c86bd3b0.png",
 	},
 ];
 
-export const mockedReactXMLString = `
-    <rss>
-    <channel>
-        <item>
-        <title>Sample Title 1</title>
-        <description>Sample Description 1 &lt;img src="sample1.jpg" /&gt;</description>
-        <pubDate>Sample Date 1</pubDate>
-        <link>https://sample1.com</link>
-        </item>
-        <item>
-        <title>Sample Title 2</title>
-        <description>Sample Description 2 &lt;img src="sample2.jpg" /&gt;</description>
-        <pubDate>Sample Date 2</pubDate>
-        <link>https://sample2.com</link>
-        </item>
-        <item>
-        <title>Sample Title 3</title>
-        <description>Sample Description 3 &lt;img src="sample3.jpg" /&gt;</description>
-        <pubDate>Sample Date 3</pubDate>
-        <link>https://sample3.com</link>
-        </item>
-        <item>
-        <title>Sample Title 4</title>
-        <description>Sample Description 4 &lt;img src="sample4.jpg" /&gt;</description>
-        <pubDate>Sample Date 4</pubDate>
-        <link>https://sample4.com</link>
-        </item>
-    </channel>
-    </rss>
-`;
+export const mockedReactJSON = {
+	articles: [
+		{
+			title: "React Server Components for everyone",
+			pubDate: "Wed, 27 Mar 2024 00:00:00 +0000",
+			url: "https://react.statuscode.com/issues/379",
+			image: "https://res.cloudinary.com/cpress/image/upload/w_1280,e_sharpen:60,q_auto/wjdxlkfytza3rry9sn7x.jpg",
+		},
+		{
+			title: "Writing React components with CSS",
+			pubDate: "Wed, 20 Mar 2024 00:00:00 +0000",
+			url: "https://react.statuscode.com/issues/378",
+			image: "https://res.cloudinary.com/cpress/image/upload/w_1280,e_sharpen:60,q_auto/rwuskc0xupro8k5ubslb.jpg",
+		},
+		{
+			title: "Listen to React performance issues",
+			pubDate: "Wed, 13 Mar 2024 00:00:00 +0000",
+			url: "https://react.statuscode.com/issues/377",
+			image: "https://res.cloudinary.com/cpress/image/upload/w_1280,e_sharpen:60,q_auto/dqzmfpcdovbxiin3azge.jpg",
+		},
+		{
+			title: "A linting tool for React performance",
+			pubDate: "Wed, 6 Mar 2024 00:00:00 +0000",
+			url: "https://react.statuscode.com/issues/376",
+			image: "https://res.cloudinary.com/cpress/image/upload/w_1280,e_sharpen:60,q_auto/wn2qrnorgz8kelgw2als.jpg",
+		},
+	],
+};
 
-export const mockedParsedReactXML = [
+export const mockedParsedReactJSON = [
 	{
-		title: "Sample Title 1",
-		pubDate: "Sample Date 1",
-		url: "https://sample1.com",
-		image: "sample1.jpg",
+		title: "React Server Components for everyone",
+		pubDate: "Wed, 27 Mar 2024 00:00:00 +0000",
+		url: "https://react.statuscode.com/issues/379",
+		image: "https://res.cloudinary.com/cpress/image/upload/w_1280,e_sharpen:60,q_auto/wjdxlkfytza3rry9sn7x.jpg",
 	},
 	{
-		title: "Sample Title 2",
-		pubDate: "Sample Date 2",
-		url: "https://sample2.com",
-		image: "sample2.jpg",
+		title: "Writing React components with CSS",
+		pubDate: "Wed, 20 Mar 2024 00:00:00 +0000",
+		url: "https://react.statuscode.com/issues/378",
+		image: "https://res.cloudinary.com/cpress/image/upload/w_1280,e_sharpen:60,q_auto/rwuskc0xupro8k5ubslb.jpg",
 	},
 	{
-		title: "Sample Title 3",
-		pubDate: "Sample Date 3",
-		url: "https://sample3.com",
-		image: "sample3.jpg",
+		title: "Listen to React performance issues",
+		pubDate: "Wed, 13 Mar 2024 00:00:00 +0000",
+		url: "https://react.statuscode.com/issues/377",
+		image: "https://res.cloudinary.com/cpress/image/upload/w_1280,e_sharpen:60,q_auto/dqzmfpcdovbxiin3azge.jpg",
 	},
 	{
-		title: "Sample Title 4",
-		pubDate: "Sample Date 4",
-		url: "https://sample4.com",
-		image: "sample4.jpg",
+		title: "A linting tool for React performance",
+		pubDate: "Wed, 6 Mar 2024 00:00:00 +0000",
+		url: "https://react.statuscode.com/issues/376",
+		image: "https://res.cloudinary.com/cpress/image/upload/w_1280,e_sharpen:60,q_auto/wn2qrnorgz8kelgw2als.jpg",
 	},
 ];

@@ -41,13 +41,13 @@ export default defineConfig({
 		include: ["**/*.test.{ts,tsx}"],
 		setupFiles: ["./src/test/setup.ts"],
 		css: true,
-		reporters: ['default', 'html'],
+		reporters: ["default", "html"],
 		coverage: {
 			reportsDirectory: "html/ui",
 			include: ["**/*.{ts,tsx}"],
 			exclude: ["**/*.test.{ts,tsx}", "**/types.ts", "**/*.testkit.ts"],
 			reporter: ["text", ["html", { subdir: "coverage" }], "lcov"],
 			provider: "v8",
-		}
+		},
 	},
 });

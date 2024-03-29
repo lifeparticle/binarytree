@@ -7,14 +7,14 @@ import style from "./Newsfeed.module.scss";
 import useNewsFeed from "./useNewsFeed";
 
 const Newsfeed: FC = () => {
-	const { data, isLoading, isError, setUrl } = useNewsFeed();
+	const { data, isLoading, isError, setTab } = useNewsFeed();
 
 	return (
 		<>
 			<Tabs
 				items={TAB_ITEMS}
 				onChange={(value) => {
-					setUrl(value);
+					setTab(value);
 				}}
 				className={style.newsfeed_tabs}
 			/>
