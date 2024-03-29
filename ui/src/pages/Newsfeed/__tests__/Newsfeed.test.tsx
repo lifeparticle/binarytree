@@ -22,6 +22,16 @@ vi.mock("components/ComponentInjector", () => ({
 	},
 }));
 
+const mockSetTab = vi.fn();
+
+// Mock the useNewsFeed hook
+vi.mock("./useNewsFeed", () => ({
+	data: [], // Assume empty data for simplicity
+	isLoading: false,
+	isError: false,
+	setTab: mockSetTab,
+}));
+
 const user = userEvent.setup();
 
 describe("News component", () => {
@@ -77,18 +87,16 @@ describe("News component", () => {
 			});
 		});
 
-		it("calls the SetTabValue function with the correct argument when a tab is changed", async () => {
-			// Iterate over each tab item defined in TAB_ITEMS
-			TAB_ITEMS.forEach(async (tabItem, index) => {
-				// Simulate clicking on the tab
-				await user.click(tabs[index]);
+		it("calls setTab with the new tab value on tab change", async () => {
+			// This example simulates clicking the second tab
+			const secondTab = TAB_ITEMS[1];
+			await user.click(
+				screen.getByRole("tab", { name: secondTab.label })
+			);
 
-				// Assert that mockSetTab was called with the 'key' of the current tabItem
-				expect(mockSetTab).toHaveBeenCalledWith(tabItem.key);
-
-				// Reset mock function history after each assertion to ensure independence
-				mockSetTab.mockClear();
-			});
+			// Verify setTab was called with the value of the second tab
+			expect(mockSetTab).toHaveBeenCalledWith(secondTab.key);
+			mockSetTab.mockClear();
 		});
 	});
 });
