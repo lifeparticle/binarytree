@@ -6,11 +6,10 @@ import useNewsFeed from "pages/Newsfeed/useNewsFeed";
 import { useFetch } from "hooks";
 // mocks
 import {
-	mockedParsedXML,
-	mockedParsedReactXML,
-	mockedXMLString,
-	mockedReactXMLString,
-	mockedXMLStringMissingDescription,
+	mockedParsedJSON,
+	mockedParsedReactJSON,
+	mockedJSON,
+	mockedReactJSON,
 } from "./newsFeed.testkit";
 
 vi.mock("hooks");
@@ -18,7 +17,7 @@ vi.mock("hooks");
 describe("useNewsFeed", () => {
 	beforeEach(() => {
 		vi.mocked(useFetch).mockReturnValue({
-			data: mockedXMLString,
+			data: mockedJSON,
 			isLoading: false,
 			isError: false,
 		});
@@ -30,7 +29,7 @@ describe("useNewsFeed", () => {
 
 		// assert
 		expect(result.current).toEqual({
-			data: mockedParsedXML,
+			data: mockedParsedJSON,
 			isLoading: false,
 			isError: false,
 			setTab: expect.any(Function),
@@ -45,12 +44,12 @@ describe("useNewsFeed", () => {
 		// arrange
 		vi.mocked(useFetch)
 			.mockReturnValueOnce({
-				data: mockedXMLString,
+				data: mockedJSON,
 				isLoading: false,
 				isError: false,
 			})
 			.mockReturnValue({
-				data: mockedReactXMLString,
+				data: mockedReactJSON,
 				isLoading: false,
 				isError: false,
 			});
@@ -64,7 +63,7 @@ describe("useNewsFeed", () => {
 
 		// assert
 		expect(result.current).toEqual({
-			data: mockedParsedReactXML,
+			data: mockedParsedReactJSON,
 			isLoading: false,
 			isError: false,
 			setTab: expect.any(Function),
@@ -269,18 +268,9 @@ describe("useNewsFeed", () => {
 			isError: true,
 			setTab: expect.any(Function),
 		});
-		expect(useFetch).toHaveBeenCalledWith("wrong-url", "wrong-url");
-	});
-
-	it("should break the hook on missing description xml string", () => {
-		// arrange
-		vi.mocked(useFetch).mockReturnValue({
-			data: mockedXMLStringMissingDescription,
-			isLoading: false,
-			isError: false,
-		});
-
-		// assert
-		expect(() => renderHook(() => useNewsFeed())).toThrow();
+		expect(useFetch).toHaveBeenCalledWith(
+			"wrong-url",
+			"http://localhost:3000/rss?name=wrong-url"
+		);
 	});
 });
