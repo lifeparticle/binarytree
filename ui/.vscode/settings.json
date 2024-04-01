@@ -3,5 +3,6 @@
 	"editor.formatOnSave": true,
 	"files.trimTrailingWhitespace": true,
 	"editor.codeActionsOnSave": null,
-	"prettier.useTabs": true
+	"prettier.useTabs": true,
+	"explorer.compactFolders": false
 }
