@@ -4164,7 +4164,7 @@ __metadata:
     react-responsive-carousel: ^3.2.23
     react-router-dom: ^6.21.0
     react-syntax-highlighter: ^15.5.0
-    sass: ^1.69.5
+    sass: ^1.72.0
     scaffdog: ^3.0.0
     tinycolor2: ^1.6.0
     tinymce: ^6.8.2
@@ -11809,16 +11809,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.69.5":
-  version: 1.69.7
-  resolution: "sass@npm:1.69.7"
+"sass@npm:^1.72.0":
+  version: 1.72.0
+  resolution: "sass@npm:1.72.0"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: c67cd32b69fb26a50e4535353e4145de8cbc8187db07c467cc335157fd56d03cae98754f86efe43b880b29f20c0a168ab972c7f74ebfe234e2bd2dfb868890cb
+  checksum: f420079c7d51660b7256ee52463c1499ede36f7fd5c8ef50c687451777ad641509001454dea45244073cedd7c00e7a3bc1c362e55206ac6686171b994edb41e4
   languageName: node
   linkType: hard
 
