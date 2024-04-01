@@ -60,7 +60,7 @@
 		"react-router-dom": "^6.21.0",
 		"react-syntax-highlighter": "^15.5.0",
 		"tinycolor2": "^1.6.0",
-		"tinymce": "^6.8.2",
+		"tinymce": "^7.0.0",
 		"values.js": "^2.1.1",
 		"webfontloader": "^1.6.28"
 	},
