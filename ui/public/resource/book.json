@@ -260,5 +260,19 @@
 				"name": ""
 			}
 		]
+	},
+	{
+		"name": "A Common-Sense Guide to Data Structures and Algorithms",
+		"category": "Algorithms",
+		"subCategory": "Programming",
+		"url": "https://pragprog.com/titles/jwdsal2/a-common-sense-guide-to-data-structures-and-algorithms-second-edition/",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
 	}
 ]
+
+
