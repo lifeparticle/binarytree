@@ -12,7 +12,7 @@ const InputGrid: FC<InputGridProps> = ({ children, className }) => {
 	return (
 		<Row gutter={[16, 0]} className={className}>
 			{childElements.map((child, index) => (
-				<Col key={index} xs={24} sm={24} md={24} lg={12}>
+				<Col key={child.id} xs={24} sm={24} md={24} lg={12}>
 					{child}
 				</Col>
 			))}

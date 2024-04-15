@@ -79,7 +79,7 @@ const CodeFormatter: FC = () => {
 
 					<CodeEditor
 						value={inputCode}
-						handleCode={(value) => setInputCode(value || "")}
+						handleCode={(value) => setInputCode(value ?? "")}
 						language={inputType}
 						label="Enter code"
 					/>

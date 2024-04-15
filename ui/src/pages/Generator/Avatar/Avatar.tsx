@@ -101,7 +101,7 @@ const Avatar = () => {
 							label="Font size"
 							placeholder="Enter font size"
 							value={fontSize}
-							onChange={(val) => setFontSize(val || 0)}
+							onChange={(val) => setFontSize(val ?? 0)}
 							type="number"
 						/>
 					</InputGrid>
@@ -111,7 +111,7 @@ const Avatar = () => {
 							label="Avatar size"
 							placeholder="Enter avatar size"
 							value={avatarSize}
-							onChange={(val) => setAvatarSize(val || 0)}
+							onChange={(val) => setAvatarSize(val ?? 0)}
 							type="number"
 						/>
 						<ResponsiveSegementWithLabel

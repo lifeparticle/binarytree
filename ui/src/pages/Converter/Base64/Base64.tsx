@@ -37,7 +37,7 @@ const Base64: FC = () => {
 		},
 		async onChange(info) {
 			const { status, originFileObj, type } = info.file;
-			const text = (await originFileObj?.text()) || "";
+			const text = (await originFileObj?.text()) ?? "";
 			if (status === "done") {
 				if (type?.startsWith("image/")) {
 					handleImageUpload(
@@ -76,8 +76,8 @@ const Base64: FC = () => {
 						value={input}
 						language=" "
 						handleCode={(value) => {
-							setInput(value || "");
-							onClick("encode", value || "");
+							setInput(value ?? "");
+							onClick("encode", value ?? "");
 						}}
 					/>
 					<div className={style.base64__input}>
@@ -103,8 +103,8 @@ const Base64: FC = () => {
 						value={result}
 						language={" "}
 						handleCode={(value) => {
-							setResult(value || "");
-							onClick("decode", value || "");
+							setResult(value ?? "");
+							onClick("decode", value ?? "");
 						}}
 					/>
 					<div className={style.base64__output}>

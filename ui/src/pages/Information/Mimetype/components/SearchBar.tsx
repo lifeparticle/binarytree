@@ -8,7 +8,7 @@ const MimeSearch: FC = () => {
 	const { searchParams, updateParamsValue } = useParamsValue({});
 
 	const [queryParams, setQueryParams] = useState(
-		searchParams.get(PARAMS.type) || ""
+		searchParams.get(PARAMS.type) ?? ""
 	);
 
 	useEffect(() => {

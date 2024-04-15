@@ -83,7 +83,7 @@ const TableGenerator: FC = () => {
 				)}
 				<MDEditor
 					value={output}
-					onChange={(val) => setOutput(val || "")}
+					onChange={(val) => setOutput(val ?? "")}
 					height="100%"
 				/>
 			</div>

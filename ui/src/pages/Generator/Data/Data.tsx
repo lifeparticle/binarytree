@@ -170,9 +170,7 @@ const DataGenerator: FC = () => {
 											style.dg__left__bottom__select
 										}
 										value={
-											dataTypes[k] === undefined
-												? ""
-												: dataTypes[k]
+											dataTypes[k] ?? ""
 										}
 										size="large"
 										options={[
@@ -199,9 +197,7 @@ const DataGenerator: FC = () => {
 										}
 										autoComplete="nope"
 										value={
-											colNames[k] === undefined
-												? ""
-												: colNames[k]
+											colNames[k] ?? ""
 										}
 									/>
 								))}

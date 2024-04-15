@@ -23,8 +23,8 @@ const CSharpBuilde: FC = () => {
 						value={input}
 						language="csharp"
 						handleCode={(value) => {
-							setInput(value || "");
-							onClick(value || "");
+							setInput(value ?? "");
+							onClick(value ?? "");
 						}}
 					/>
 

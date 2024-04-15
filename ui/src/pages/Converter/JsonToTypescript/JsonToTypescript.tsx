@@ -47,7 +47,7 @@ const JsonToTypescript: FC = () => {
 						label="Enter Json input"
 						language="json"
 						value={json}
-						handleCode={(value) => setJson(value || "")}
+						handleCode={(value) => setJson(value ?? "")}
 						status={status}
 					/>
 

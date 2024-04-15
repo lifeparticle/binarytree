@@ -18,7 +18,7 @@ const ColorPicker: FC = () => {
 
 	const [colorPickerRan, setColorPickerRan] = useState(false);
 	const [formatState, setFormatState] = useState(
-		searchParams.get(PARAMS.color) || ""
+		searchParams.get(PARAMS.color) ?? ""
 	);
 	const color = String(searchParams.get(PARAMS.color));
 	const format = String(searchParams.get(PARAMS.format)) as FormatType;

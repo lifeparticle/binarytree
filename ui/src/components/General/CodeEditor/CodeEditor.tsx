@@ -33,7 +33,7 @@ const CodeEditor: FC<CodeEditorProps> = ({
 				/>
 			</Form.Item>
 
-			<ValidateStatus status={status || ""} />
+			<ValidateStatus status={status ?? ""} />
 		</div>
 	);
 };
