@@ -29,7 +29,7 @@ const Colors: FC<ExtendedColorsProps> = ({ colors, isPending, type }) => {
 			<div className={styles.colors__list}>
 				{colors.map((color, index) => (
 					<Card
-						key={color.id}
+						key={index}
 						style={{
 							backgroundColor: color,
 							color: getTextColor(color),
