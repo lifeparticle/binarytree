@@ -12,7 +12,7 @@ const PageGrid: FC<PageGridProps> = ({ children, className }) => {
 	return (
 		<Row gutter={[16, 16]} className={className}>
 			{childElements.map((child, index) => (
-				<Col key={child.id} xs={24} sm={24} md={24} lg={12}>
+				<Col key={index} xs={24} sm={24} md={24} lg={12}>
 					{child}
 				</Col>
 			))}
