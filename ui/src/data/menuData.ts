@@ -141,6 +141,12 @@ export const MENU_ITEMS = [
 				icon: "Code",
 				show: true,
 			},
+			{
+				name: routesById.uuid.title,
+				url: routesById.uuid.path,
+				icon: "Key",
+				show: true,
+			},
 		],
 	},
 	{
