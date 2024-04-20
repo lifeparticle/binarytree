@@ -234,6 +234,14 @@ export const FEATURE_DATA: Feature[] = [
 		library: [{ name: "Vanilla JS", url: "" }],
 	},
 	{
+		key: routesById.uuid.id,
+		name: routesById.uuid.title,
+		shortDescription: routesById.uuid.description,
+		fullDescription: "Generate unique identifiers with our UUID tool.",
+		link: routesById.uuid.path,
+		library: [{ name: "Vanilla JS", url: "" }],
+	},
+	{
 		key: routesById.editor.id,
 		name: routesById.editor.title,
 		shortDescription: routesById.editor.description,
