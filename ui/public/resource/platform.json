@@ -156,15 +156,15 @@
 		"url": "https://scalingo.com/"
 	},
 	{
-		"name": "Infinityfree",
-		"category": "Platform",
-		"subCategory": ["Hosting", "Deployment"],
-		"url": "https://infinityfree.net/"
-	},
-	{
 		"name": "Turso",
 		"category": "Database",
 		"subCategory": ["Database"],
 		"url": "https://turso.tech/"
+	}
+	{
+		"name": "Infinityfree",
+		"category": "Platform",
+		"subCategory": ["Hosting", "Deployment"],
+		"url": "https://infinityfree.net/"
 	}
 ]
