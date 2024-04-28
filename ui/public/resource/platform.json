@@ -6,7 +6,6 @@
 		"url": "https://planetscale.com",
 		"socials": []
 	},
-
 	{
 		"name": "Render",
 		"category": "Platform",
@@ -166,5 +165,11 @@
 		"category": "Platform",
 		"subCategory": ["Hosting", "Deployment"],
 		"url": "https://infinityfree.net/"
+	},
+	{
+		"name": "Surrealdb",
+		"category": "Database",
+		"subCategory": ["Database"],
+		"url": "https://surrealdb.com/"
 	}
 ]
