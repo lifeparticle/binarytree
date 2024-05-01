@@ -2483,13 +2483,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/markdown-it@npm:^13.0.7":
-  version: 13.0.7
-  resolution: "@types/markdown-it@npm:13.0.7"
+"@types/markdown-it@npm:^14.0.1":
+  version: 14.0.1
+  resolution: "@types/markdown-it@npm:14.0.1"
   dependencies:
     "@types/linkify-it": "*"
     "@types/mdurl": "*"
-  checksum: c9e9af441340eb870a7b90b298f6197aa80b55bee28f179a4f85052333f0cb3d3f2763981359d58cf09024961f013999c1c743c1e52a185ca36576d4403f7eb9
+  checksum: d38350ab6e066ae65827a60804b283ad66986d11f7e015d3427d2b32d49cf764f315a77c97e7cbb40043f4b77328284c0d9721df6171648cf96da3c89265df0a
   languageName: node
   linkType: hard
 
@@ -4071,7 +4071,7 @@ __metadata:
     "@types/jest": ^29.5.12
     "@types/js-beautify": ^1.14.3
     "@types/js-yaml": ^4.0.9
-    "@types/markdown-it": ^13.0.7
+    "@types/markdown-it": ^14.0.1
     "@types/marked": ^6.0.0
     "@types/node": ^20.11.16
     "@types/papaparse": ^5.3.14
