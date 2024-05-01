@@ -1,9 +1,10 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import Uuid from "pages/Generator/Uuid";
 
 describe("Uuid Component", () => {
 	it("renders correctly", () => {
-		const { getByText } = render(<Uuid />);
-		expect(getByText("UUID")).toBeInTheDocument();
+		render(<Uuid />);
+		expect(screen.getByText("UUID Generator")).toBeInTheDocument();
+		expect(screen.getByRole("spinbutton")).toBeInTheDocument();
 	});
 });
