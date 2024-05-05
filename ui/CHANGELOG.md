@@ -1,3 +1,7 @@
+### [10.6.2] - 2024-05-05
+
+-   Create multiple QR codes
+
 ### [10.6.1] - 2024-04-20
 
 -   New feature UUID generator

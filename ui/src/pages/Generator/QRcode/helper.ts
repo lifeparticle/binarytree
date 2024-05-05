@@ -37,8 +37,11 @@ const downloadQRCodes = async (
 
 	const zip = new JSZip();
 
+	console.log(domEl);
+
 	await Promise.all(
 		domEl.map(async (el, idx) => {
+			console.log(el);
 			const dataUrl = ext === ".png" ? await toPng(el) : await toJpeg(el);
 			const baseData = await JSZipUtils.getBinaryContent(dataUrl);
 			zip.file(`image-${value[idx]}.${ext}`, baseData, { binary: true });

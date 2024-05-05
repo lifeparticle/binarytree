@@ -101,7 +101,7 @@ const UserInputs: FC<UserInputsProps> = ({
 					<TextArea
 						value={value}
 						rows={7}
-						onChange={(e) => setValue(e.target.value)}
+						onChange={(e) => setValue(e.target.value.trim())}
 						data-gramm={false}
 						placeholder="Enter input"
 						allowClear
@@ -142,6 +142,8 @@ const UserInputs: FC<UserInputsProps> = ({
 						>
 							Border
 						</Checkbox>
+					</Form.Item>
+					<Form.Item label="Generate multiple QR codes">
 						<Checkbox
 							type="checkbox"
 							onChange={(e) => setMultiLine(e.target.checked)}
