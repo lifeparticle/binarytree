@@ -38,12 +38,6 @@ const Output: FC<OutputProps> = ({
 
 	return (
 		<Card className={classNames(styles.qrcode__output, "qrcode")}>
-			<DropdownDownloadButton
-				handleDownload={(ext) =>
-					downloadQRCode(ext, domEl.current, value, multiLine)
-				}
-				multiple={multiLine}
-			/>
 			{trimmedValue.length > 0 ? (
 				<Space
 					direction="vertical"
@@ -51,6 +45,12 @@ const Output: FC<OutputProps> = ({
 					size={"large"}
 					id="myqrcode"
 				>
+					<DropdownDownloadButton
+						handleDownload={(ext) =>
+							downloadQRCode(ext, domEl.current, value, multiLine)
+						}
+						multiple={multiLine}
+					/>
 					<QRCodeErrorBoundary>
 						{multiLine ? (
 							trimmedValue.split("\n").map((line, index) => (
