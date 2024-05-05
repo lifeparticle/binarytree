@@ -57,41 +57,43 @@ const Output: FC<OutputProps> = ({
 					/>
 					<QRCodeErrorBoundary>
 						{multiLine ? (
-							trimmedValues.map((line, index) => (
-								<>
-									<Text
-										text={`Total QR Codes: ${trimmedValues.length}`}
-										level={4}
-									/>
-									<div
-										ref={(ref) => {
-											if (ref) {
-												domEl.push(ref);
-											}
-										}}
-										style={{
-											borderRadius: "8px",
-											width: "fit-content",
-											backgroundColor: "transparent",
-										}}
-										key={index}
-									>
-										<QRCode
-											value={line.trim()}
-											color={color}
-											bgColor={bgColor}
-											bordered={bordered}
-											size={size}
-											iconSize={iconSize}
-											icon={icon}
+							<>
+								<Text
+									text={`Total QR Codes: ${trimmedValues.length}`}
+									level={4}
+								/>
+								{trimmedValues.map((line, index) => (
+									<>
+										<div
+											ref={(ref) => {
+												if (ref) {
+													domEl.push(ref);
+												}
+											}}
+											style={{
+												borderRadius: "8px",
+												width: "fit-content",
+												backgroundColor: "transparent",
+											}}
+											key={index}
+										>
+											<QRCode
+												value={line.trim()}
+												color={color}
+												bgColor={bgColor}
+												bordered={bordered}
+												size={size}
+												iconSize={iconSize}
+												icon={icon}
+											/>
+										</div>
+										<Text
+											text={`${index + 1}. ${line}`}
+											level={5}
 										/>
-									</div>
-									<Text
-										text={`${index + 1}. ${line}`}
-										level={5}
-									/>
-								</>
-							))
+									</>
+								))}
+							</>
 						) : (
 							<QRCode
 								value={trimmedValue}
