@@ -37,6 +37,9 @@ const downloadQRCodes = async (
 
 	const zip = new JSZip();
 
+	console.log(domEl);
+	console.log(value);
+
 	await Promise.all(
 		domEl.map(async (el, idx) => {
 			const dataUrl = ext === ".png" ? await toPng(el) : await toJpeg(el);
