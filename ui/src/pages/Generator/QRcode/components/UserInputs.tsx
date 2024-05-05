@@ -101,7 +101,7 @@ const UserInputs: FC<UserInputsProps> = ({
 					<TextArea
 						value={value}
 						rows={7}
-						onChange={(e) => setValue(e.target.value.trim())}
+						onChange={(e) => setValue(e.target.value)}
 						data-gramm={false}
 						placeholder="Enter input"
 						allowClear

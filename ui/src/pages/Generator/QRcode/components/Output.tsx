@@ -34,6 +34,7 @@ const Output: FC<OutputProps> = ({
 	downloadQRCode,
 }) => {
 	const domEl = useRef<Array<HTMLDivElement>>([]);
+	const trimmedValue = value.trim();
 
 	return (
 		<Card className={classNames(styles.qrcode__output, "qrcode")}>
@@ -43,7 +44,7 @@ const Output: FC<OutputProps> = ({
 				}
 				multiple={multiLine}
 			/>
-			{value.length > 0 ? (
+			{trimmedValue.length > 0 ? (
 				<Space
 					direction="vertical"
 					align="center"
@@ -52,7 +53,7 @@ const Output: FC<OutputProps> = ({
 				>
 					<QRCodeErrorBoundary>
 						{multiLine ? (
-							value.split("\n").map((line, index) => (
+							trimmedValue.split("\n").map((line, index) => (
 								<>
 									<div
 										ref={(ref) => {
@@ -68,7 +69,7 @@ const Output: FC<OutputProps> = ({
 										key={index}
 									>
 										<QRCode
-											value={line}
+											value={line.trim()}
 											color={color}
 											bgColor={bgColor}
 											bordered={bordered}
@@ -82,7 +83,7 @@ const Output: FC<OutputProps> = ({
 							))
 						) : (
 							<QRCode
-								value={value}
+								value={trimmedValue}
 								color={color}
 								bgColor={bgColor}
 								bordered={bordered}
