@@ -1,4 +1,4 @@
-import { FC, useRef } from "react";
+import { FC } from "react";
 import styles from "pages/Generator/QRcode/QRcode.module.scss";
 import { classNames } from "utils/helper-functions/string";
 import { Card, QRCode, Space } from "antd";
@@ -14,6 +14,7 @@ interface OutputProps {
 	size: number;
 	iconSize: number;
 	icon?: string;
+	domEl: Array<HTMLDivElement>;
 	downloadQRCode: (
 		ext: string,
 		domEl: Array<HTMLDivElement>,
@@ -31,10 +32,13 @@ const Output: FC<OutputProps> = ({
 	size,
 	iconSize,
 	icon,
+	domEl,
 	downloadQRCode,
 }) => {
-	const domEl = useRef<Array<HTMLDivElement>>([]);
 	const trimmedValue = value.trim();
+	const trimmedValues = multiLine
+		? trimmedValue.split("\n").filter((line) => line !== "")
+		: [];
 
 	return (
 		<Card className={classNames(styles.qrcode__output, "qrcode")}>
@@ -47,18 +51,22 @@ const Output: FC<OutputProps> = ({
 				>
 					<DropdownDownloadButton
 						handleDownload={(ext) =>
-							downloadQRCode(ext, domEl.current, value, multiLine)
+							downloadQRCode(ext, domEl, value, multiLine)
 						}
 						multiple={multiLine}
 					/>
 					<QRCodeErrorBoundary>
 						{multiLine ? (
-							trimmedValue.split("\n").map((line, index) => (
+							trimmedValues.map((line, index) => (
 								<>
+									<Text
+										text={`Total QR Codes: ${trimmedValues.length}`}
+										level={4}
+									/>
 									<div
 										ref={(ref) => {
 											if (ref) {
-												domEl.current.push(ref);
+												domEl.push(ref);
 											}
 										}}
 										style={{
@@ -78,7 +86,10 @@ const Output: FC<OutputProps> = ({
 											icon={icon}
 										/>
 									</div>
-									<Text text={line} level={5} />
+									<Text
+										text={`${index + 1}. ${line}`}
+										level={5}
+									/>
 								</>
 							))
 						) : (

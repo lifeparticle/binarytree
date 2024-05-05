@@ -10,7 +10,11 @@ const downloadQRCode = (
 	multiLine: boolean
 ) => {
 	if (multiLine) {
-		downloadQRCodes(domEl, value.split("\n"), ext);
+		downloadQRCodes(
+			domEl,
+			value.split("\n").filter((line) => line !== ""),
+			ext
+		);
 		return;
 	}
 
@@ -37,14 +41,11 @@ const downloadQRCodes = async (
 
 	const zip = new JSZip();
 
-	console.log(domEl);
-	console.log(value);
-
 	await Promise.all(
 		domEl.map(async (el, idx) => {
 			const dataUrl = ext === ".png" ? await toPng(el) : await toJpeg(el);
 			const baseData = await JSZipUtils.getBinaryContent(dataUrl);
-			zip.file(`image-${value[idx]}.${ext}`, baseData, { binary: true });
+			zip.file(`${idx}-${value[idx]}.${ext}`, baseData, { binary: true });
 		})
 	);
 

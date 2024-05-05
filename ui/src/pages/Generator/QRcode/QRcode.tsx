@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { PageGrid } from "components/Layouts";
 import { DataDetection } from "utils/helper-classes/DataDetection";
 import UserInputs from "./components/UserInputs";
@@ -17,10 +17,12 @@ const QRcode: FC = () => {
 	const [icon, setIcon] = useState<string>("");
 	const [size, setSize] = useState(200);
 	const [iconSize, setIconSize] = useState(size / 4);
+	const domEl = useRef<Array<HTMLDivElement>>([]);
 
 	useEffect(() => {
 		detection.setData(value);
 		setDataType(detection.detect());
+		domEl.current = [];
 	}, [value]);
 
 	return (
@@ -51,6 +53,7 @@ const QRcode: FC = () => {
 				size={size}
 				iconSize={iconSize}
 				icon={icon}
+				domEl={domEl.current}
 				downloadQRCode={downloadQRCode}
 			/>
 		</PageGrid>
