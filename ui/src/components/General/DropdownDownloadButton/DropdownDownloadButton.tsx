@@ -25,10 +25,12 @@ const items: MenuProps["items"] = [
 
 interface DropdownDownloadButtonProps {
 	handleDownload: (type: string) => void;
+	multiple?: boolean;
 }
 
 const DropdownDownloadButton: FC<DropdownDownloadButtonProps> = ({
 	handleDownload,
+	multiple = false,
 }) => {
 	const [downloadType, setDownloadType] = useState(IMAGE_TYPE.png);
 
@@ -49,7 +51,9 @@ const DropdownDownloadButton: FC<DropdownDownloadButtonProps> = ({
 			aria-label="Download options"
 			onClick={() => handleDownload(downloadType)}
 		>
-			{`Download as ${formatLabelMap[downloadType]}`}
+			{`Download ${multiple ? "All" : ""} as ${
+				formatLabelMap[downloadType]
+			}`}
 		</ResponsiveDropdownButton>
 	);
 };

@@ -28,6 +28,7 @@ const CSharpBuilder = lazy(() => import("pages/Generator/CSharpBuilder"));
 const DataGenerator = lazy(() => import("pages/Generator/Data"));
 const ImageGeneratorFromColors = lazy(() => import("pages/Generator/Image"));
 const QRcode = lazy(() => import("pages/Generator/QRcode"));
+const Uuid = lazy(() => import("pages/Generator/Uuid"));
 
 const Ai = lazy(() => import("pages/Resource/Ai"));
 const Blog = lazy(() => import("pages/Resource/Blog"));
@@ -120,5 +121,6 @@ export {
 	TvSeries,
 	UiUx,
 	Units,
+	Uuid,
 	YouTube,
 };

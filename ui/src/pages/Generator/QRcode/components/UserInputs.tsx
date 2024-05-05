@@ -31,6 +31,7 @@ interface UserInputsProps {
 	size: number;
 	setSize: (size: number) => void;
 	setBordered: (bordered: boolean) => void;
+	setMultiLine: (multiLine: boolean) => void;
 	iconSize: number;
 	setIconSize: (iconSize: number) => void;
 	icon: string;
@@ -47,6 +48,7 @@ const UserInputs: FC<UserInputsProps> = ({
 	size,
 	setSize,
 	setBordered,
+	setMultiLine,
 	iconSize,
 	setIconSize,
 	setIcon,
@@ -139,6 +141,14 @@ const UserInputs: FC<UserInputsProps> = ({
 							onChange={(e) => setBordered(e.target.checked)}
 						>
 							Border
+						</Checkbox>
+					</Form.Item>
+					<Form.Item label="Generate multiple QR codes">
+						<Checkbox
+							type="checkbox"
+							onChange={(e) => setMultiLine(e.target.checked)}
+						>
+							Multi Line
 						</Checkbox>
 					</Form.Item>
 				</PageGrid>

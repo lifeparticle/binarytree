@@ -6,7 +6,6 @@
 		"url": "https://planetscale.com",
 		"socials": []
 	},
-
 	{
 		"name": "Render",
 		"category": "Platform",
@@ -124,5 +123,53 @@
 		"subCategory": ["Automation"],
 		"url": "https://pipedream.com/",
 		"socials": []
+	},
+	{
+		"name": "Cockroach Labs",
+		"category": "Database",
+		"subCategory": ["Database"],
+		"url": "https://www.cockroachlabs.com/"
+	},
+	{
+		"name": "Fauna",
+		"category": "Database",
+		"subCategory": ["Database"],
+		"url": "https://fauna.com/"
+	},
+	{
+		"name": "Fly",
+		"category": "Platform",
+		"subCategory": ["Hosting", "Deployment"],
+		"url": "https://fly.io/"
+	},
+	{
+		"name": "Adaptable",
+		"category": "Database",
+		"subCategory": ["Database"],
+		"url": "https://adaptable.io/"
+	},
+	{
+		"name": "Scalingo",
+		"category": "Platform",
+		"subCategory": ["Hosting", "Deployment"],
+		"url": "https://scalingo.com/"
+	},
+	{
+		"name": "Turso",
+		"category": "Database",
+		"subCategory": ["Database"],
+		"url": "https://turso.tech/"
+	},
+	{
+		"name": "Infinityfree",
+		"category": "Platform",
+		"subCategory": ["Hosting", "Deployment"],
+		"url": "https://infinityfree.net/"
+	},
+	{
+		"name": "Surrealdb",
+		"category": "Database",
+		"subCategory": ["Database"],
+		"url": "https://surrealdb.com/"
 	}
 ]

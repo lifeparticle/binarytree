@@ -51,6 +51,7 @@ import {
 	TvSeries,
 	UiUx,
 	Units,
+	Uuid,
 	YouTube,
 	FlexboxGenerator,
 } from "pages";
@@ -111,6 +112,7 @@ export type RouteId =
 	| "tvseries"
 	| "uiux"
 	| "units"
+	| "uuid"
 	| "youtube";
 
 interface Route {
@@ -264,7 +266,13 @@ export const routes: Route[] = [
 		description: "Build C# code with a few clicks.",
 		component: CSharpBuilder,
 	},
-
+	{
+		id: "uuid",
+		path: "/generator/uuid",
+		title: "UUID",
+		description: "Generate UUIDs - the unique ID for your unique needs.",
+		component: Uuid,
+	},
 	{
 		id: "ai",
 		path: "/resource/ai",

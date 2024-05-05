@@ -3,7 +3,7 @@
 -   Is it necessary?
 -   Does it make developing BinaryTree easier?
 -   Does it fix a bug? -> Create an [issue](https://github.com/lifeparticle/binarytree/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=) with the steps to reproduce
--   Does it break anything? -> Run the tests
+-   Does it break anything? -> Build locally, Run the tests
 -   Does it stick to the original goal of BinaryTree -> Developer Productivity Tools Designed to Help You Save Time
 -   Does it reduce the build size?
 -   Does it improve the user experience?

@@ -89,5 +89,12 @@
 		"subCategory": "Web",
 		"url": "https://www.radix-ui.com/",
 		"socials": []	
+	},
+	{
+		"name": "Blueprint",
+		"category": "Design System",
+		"subCategory": "Web",
+		"url": "https://github.com/palantir/blueprint",
+		"socials": []	
 	}
 ]
