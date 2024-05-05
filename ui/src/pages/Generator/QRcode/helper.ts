@@ -45,7 +45,9 @@ const downloadQRCodes = async (
 		domEl.map(async (el, idx) => {
 			const dataUrl = ext === ".png" ? await toPng(el) : await toJpeg(el);
 			const baseData = await JSZipUtils.getBinaryContent(dataUrl);
-			zip.file(`${idx}-${value[idx]}.${ext}`, baseData, { binary: true });
+			zip.file(`qrcode-${value[idx]}.${ext}`, baseData, {
+				binary: true,
+			});
 		})
 	);
 
