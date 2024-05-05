@@ -36,17 +36,13 @@ const Output: FC<OutputProps> = ({
 	const domEl = useRef<Array<HTMLDivElement>>([]);
 
 	return (
-		<Card
-			className={classNames(styles.qrcode__output, "qrcode")}
-			extra={
-				<DropdownDownloadButton
-					handleDownload={(ext) =>
-						downloadQRCode(ext, domEl.current, value, multiLine)
-					}
-					multiple={multiLine}
-				/>
-			}
-		>
+		<Card className={classNames(styles.qrcode__output, "qrcode")}>
+			<DropdownDownloadButton
+				handleDownload={(ext) =>
+					downloadQRCode(ext, domEl.current, value, multiLine)
+				}
+				multiple={multiLine}
+			/>
 			{value.length > 0 ? (
 				<Space
 					direction="vertical"
