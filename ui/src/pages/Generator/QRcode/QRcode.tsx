@@ -13,6 +13,7 @@ const QRcode: FC = () => {
 	const [color, setColor] = useState("#000000");
 	const [bgColor, setBgColor] = useState("#FFFFFF");
 	const [bordered, setBordered] = useState(false);
+	const [multiLine, setMultiLine] = useState(false);
 	const [icon, setIcon] = useState<string>("");
 	const [size, setSize] = useState(200);
 	const [iconSize, setIconSize] = useState(size / 4);
@@ -35,6 +36,7 @@ const QRcode: FC = () => {
 				size={size}
 				setSize={setSize}
 				setBordered={setBordered}
+				setMultiLine={setMultiLine}
 				iconSize={iconSize}
 				setIconSize={setIconSize}
 				icon={icon}
@@ -45,6 +47,7 @@ const QRcode: FC = () => {
 				color={color}
 				bgColor={bgColor}
 				bordered={bordered}
+				multiLine={multiLine}
 				size={size}
 				iconSize={iconSize}
 				icon={icon}
