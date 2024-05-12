@@ -1,4 +1,8 @@
-### ### [11.0.0] - 2024-05-12
+### [11.1.0] - 2024-05-12
+
+-   New resource - Templates
+
+### [11.0.0] - 2024-05-12
 
 -   New feature - JWT converter
 

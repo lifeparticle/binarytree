@@ -49,6 +49,7 @@ import {
 	TableOfContent,
 	Terms,
 	TextEditor,
+	Template,
 	Tool,
 	TvSeries,
 	UiUx,
@@ -110,6 +111,7 @@ export type RouteId =
 	| "tableofcontent"
 	| "terms"
 	| "texteditor"
+	| "template"
 	| "tool"
 	| "tvseries"
 	| "uiux"
@@ -365,6 +367,13 @@ export const routes: Route[] = [
 		title: "Surveys",
 		description: "Take a peek at the survey results.",
 		component: Survey,
+	},
+	{
+		id: "template",
+		path: "/resource/template",
+		title: "Templates",
+		description: "Templates to make your projects a breeze.",
+		component: Template,
 	},
 	{
 		id: "tool",

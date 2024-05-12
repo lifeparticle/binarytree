@@ -360,6 +360,12 @@ export const MENU_ITEMS = [
 				show: true,
 			},
 			{
+				name: routesById.template.title,
+				url: routesById.template.path,
+				icon: "Template",
+				show: true,
+			},
+			{
 				name: routesById.tool.title,
 				url: routesById.tool.path,
 				icon: "Wrench",
