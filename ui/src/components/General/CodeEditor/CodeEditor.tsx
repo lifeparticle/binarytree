@@ -11,6 +11,7 @@ interface CodeEditorProps {
 	value: string;
 	label: string;
 	status?: string;
+	height?: string;
 }
 
 const CodeEditor: FC<CodeEditorProps> = ({
@@ -19,6 +20,7 @@ const CodeEditor: FC<CodeEditorProps> = ({
 	value,
 	label,
 	status,
+	height = "50dvh",
 }) => {
 	const { isDarkMode } = useMode();
 	return (
@@ -26,7 +28,7 @@ const CodeEditor: FC<CodeEditorProps> = ({
 			<Form.Item label={label}>
 				<Editor
 					value={value}
-					height="50dvh"
+					height={height}
 					language={language}
 					onChange={handleCode}
 					theme={isDarkMode ? "vs-dark" : "light"}

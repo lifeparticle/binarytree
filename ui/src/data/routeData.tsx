@@ -20,6 +20,7 @@ import {
 	Editor,
 	Feedback,
 	FileConverter,
+	FlexboxGenerator,
 	Github,
 	GithubIsuue,
 	Home,
@@ -28,6 +29,7 @@ import {
 	Interview,
 	IPSubnet,
 	JsonToTypescript,
+	Jwt,
 	Mimetype,
 	Movie,
 	News,
@@ -53,7 +55,6 @@ import {
 	Units,
 	Uuid,
 	YouTube,
-	FlexboxGenerator,
 } from "pages";
 import { FC } from "react";
 
@@ -89,6 +90,7 @@ export type RouteId =
 	| "interview"
 	| "ipsubnet"
 	| "jsontotypescript"
+	| "jwt"
 	| "mimetype"
 	| "movie"
 	| "newsfeed"
@@ -186,6 +188,13 @@ export const routes: Route[] = [
 		title: "Base64",
 		description: "Encode, decode, and party in Base64 style.",
 		component: Base64,
+	},
+	{
+		id: "jwt",
+		path: "/converter/jwt",
+		title: "JWT",
+		description: "Decode JWTs like a secret agent.",
+		component: Jwt,
 	},
 	{
 		id: "pixelconverter",

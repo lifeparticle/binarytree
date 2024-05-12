@@ -81,6 +81,12 @@ export const MENU_ITEMS = [
 				show: true,
 			},
 			{
+				name: routesById.jwt.title,
+				url: routesById.jwt.path,
+				icon: "Key",
+				show: true,
+			},
+			{
 				name: routesById.fileconverter.title,
 				url: routesById.fileconverter.path,
 				icon: "FileImage",
