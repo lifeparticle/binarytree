@@ -26,6 +26,7 @@ const LIBRARY_URLS: LibraryList = {
 		"https://www.npmjs.com/package/@monaco-editor/react",
 	"@ffmpeg/ffmpeg": "https://www.npmjs.com/package/@ffmpeg/ffmpeg",
 	"@ffmpeg/util": "https://www.npmjs.com/package/@ffmpeg/util",
+	"jwt-decode": "https://www.npmjs.com/package/jwt-decode",
 };
 
 interface Feature {
@@ -102,6 +103,15 @@ export const FEATURE_DATA: Feature[] = [
 			"Unlock the power of our Base64 tool, your gateway to effortlessly converting text to Base64 and vice versa. This invaluable resource is your ally in debugging and testing the decoding process, offering a deeper insight into the mechanics of Base64 decryption. It empowers you to decode with ease, discover the process, and enhance your understanding of Base64 decoding. Dive into a world of precision and clarity with this essential utility.",
 		link: routesById.base64.path,
 		library: [{ name: "Vanilla JS", url: "" }],
+	},
+	{
+		key: routesById.jwt.id,
+		name: routesById.jwt.title,
+		shortDescription: routesById.jwt.description,
+		fullDescription:
+			"Decode your JWT tokens with ease using our JWT tool. Simply paste your token and let our tool do the heavy lifting. Decode your token to reveal the header and payload, and instantly identify any invalid tokens. Our tool streamlines the decoding process, saving you time and effort.",
+		link: routesById.jwt.path,
+		library: [{ name: "jwt-decode", url: LIBRARY_URLS["jwt-decode"] }],
 	},
 	{
 		key: routesById.fileconverter.id,

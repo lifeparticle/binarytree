@@ -81,6 +81,12 @@ export const MENU_ITEMS = [
 				show: true,
 			},
 			{
+				name: routesById.jwt.title,
+				url: routesById.jwt.path,
+				icon: "Key",
+				show: true,
+			},
+			{
 				name: routesById.fileconverter.title,
 				url: routesById.fileconverter.path,
 				icon: "FileImage",
@@ -351,6 +357,12 @@ export const MENU_ITEMS = [
 				name: routesById.survey.title,
 				url: routesById.survey.path,
 				icon: "Vote",
+				show: true,
+			},
+			{
+				name: routesById.template.title,
+				url: routesById.template.path,
+				icon: "Template",
 				show: true,
 			},
 			{

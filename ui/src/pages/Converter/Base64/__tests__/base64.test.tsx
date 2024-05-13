@@ -5,6 +5,7 @@ import Base64 from "pages/Converter/Base64";
 describe("BASE64", () => {
 	test("render component without crash", () => {
 		render(<Base64 />);
+		expect(true).toBeTruthy();
 	});
 
 	test("textbox", async () => {

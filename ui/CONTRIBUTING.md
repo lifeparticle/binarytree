@@ -188,6 +188,7 @@ PageName/
 │   ├── CompB.tsx
 ├── useHookName.ts # Put this inside a hooks folder if you have more than one hooks
 ├── someData.ts
+├── helper.ts
 └── __tests__/
     └── PageName.test.tsx
 ```
@@ -203,6 +204,7 @@ PageName/
 -   **`hooks/`**: Directory for custom hooks relevant to `PageName` or its components.
     -   **`useHookName.ts`**: Custom hook file.
 -   **`someData.ts`**: File holding specific data relevant to `PageName`.
+-   **`helper.ts`**: File holding helper functions relevant to `PageName`.
 -   **`__tests__/`**: Directory for test files related to `PageName`.
     -   **`PageName.test.tsx`**: Test file for the `PageName` component.
 

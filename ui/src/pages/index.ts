@@ -20,6 +20,7 @@ const Units = lazy(() => import("pages/CSS/Units"));
 const Base64 = lazy(() => import("pages/Converter/Base64"));
 const FileConverter = lazy(() => import("pages/Converter/File"));
 const JsonToTypescript = lazy(() => import("pages/Converter/JsonToTypescript"));
+const Jwt = lazy(() => import("pages/Converter/Jwt"));
 const Pixel = lazy(() => import("pages/Converter/Pixel"));
 const Svg = lazy(() => import("pages/Converter/Svg"));
 
@@ -42,6 +43,7 @@ const Movie = lazy(() => import("pages/Resource/Movie"));
 const Platform = lazy(() => import("pages/Resource/Platform"));
 const Plugin = lazy(() => import("pages/Resource/Plugin"));
 const Survey = lazy(() => import("pages/Resource/Survey"));
+const Template = lazy(() => import("pages/Resource/Template"));
 const Tool = lazy(() => import("pages/Resource/Tool"));
 const TvSeries = lazy(() => import("pages/Resource/TvSeries"));
 const UiUx = lazy(() => import("pages/Resource/UiUx"));
@@ -76,7 +78,6 @@ export {
 	Book,
 	BorderRadius,
 	BoxShadow,
-	FlexboxGenerator,
 	CodeFormatter,
 	ColorPicker,
 	CookiePolicy,
@@ -90,6 +91,7 @@ export {
 	Editor,
 	Feedback,
 	FileConverter,
+	FlexboxGenerator,
 	Github,
 	GithubIsuue,
 	Home,
@@ -98,6 +100,7 @@ export {
 	Interview,
 	IPSubnet,
 	JsonToTypescript,
+	Jwt,
 	Mimetype,
 	Movie,
 	News,
@@ -115,6 +118,7 @@ export {
 	Svg,
 	TableGenerator,
 	TableOfContent,
+	Template,
 	Terms,
 	TextEditor,
 	Tool,
