@@ -2,7 +2,7 @@
 
 <p align="center">
 <a href="https://binarytree.dev/" target="_blank">
-  <img src="https://github.com/lifeparticle/lifeparticle/blob/master/gh_social.png" alt="binary tree logo" height="70" />
+  <img src="https://github.com/lifeparticle/lifeparticle/blob/master/gh_social_light.png" alt="binary tree logo" height="70" />
 </a>
 </p>
 
