@@ -1,3 +1,4 @@
+import CodeEditor from "components/General/CodeEditor";
 import { HelpEntry } from "data/helpData";
 import { FC } from "react";
 
@@ -13,9 +14,25 @@ const Help: FC<HelpProps> = ({ helpObject }) => {
 				<div key={id}>
 					<h4>{title}</h4>
 					<ul>
-						{bulletPoints.map((bulletPoint) => (
-							<li key={crypto.randomUUID()}>{bulletPoint}</li>
-						))}
+						{bulletPoints.map((bulletPoint) => {
+							if (bulletPoint.dataType === "text") {
+								return (
+									<li key={crypto.randomUUID()}>
+										{bulletPoint.data}
+									</li>
+								);
+							}
+
+							return (
+								<li key={crypto.randomUUID()}>
+									<CodeEditor
+										label=""
+										value={bulletPoint.data}
+										language="csharp"
+									/>
+								</li>
+							);
+						})}
 					</ul>
 				</div>
 			))}

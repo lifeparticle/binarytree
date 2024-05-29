@@ -23,11 +23,10 @@ const CSharpBuilde: FC = () => {
 						value={input}
 						language="csharp"
 						handleCode={(value) => {
-							setInput(value || "");
-							onClick(value || "");
+							setInput(value ?? "");
+							onClick(value ?? "");
 						}}
 					/>
-
 					<Clipboard
 						text={input}
 						clipboardComponent={ClipboardButton}
@@ -42,7 +41,6 @@ const CSharpBuilde: FC = () => {
 						value={result}
 						language="csharp"
 					/>
-
 					<Clipboard
 						text={result}
 						clipboardComponent={ClipboardButton}

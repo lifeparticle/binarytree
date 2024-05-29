@@ -1,9 +1,14 @@
 import { routesById } from "data/routeData";
 import { featuresById } from "./featureData";
 
+type BulletPoint = {
+	data: string;
+	dataType: string;
+};
+
 type HelpEntry = {
 	description: string;
-	helpTexts: { id: string; title: string; bulletPoints: string[] }[];
+	helpTexts: { id: string; title: string; bulletPoints: BulletPoint[] }[];
 };
 
 interface Help {
@@ -18,39 +23,61 @@ const HELP: Help = {
 				id: "1",
 				title: "Formats Galore",
 				bulletPoints: [
-					"Our Color Picker speaks your language! Choose your preferred formats - HEX, RGB, RGBA, HSL, HSLA",
+					{
+						data: "Our Color Picker speaks your language! Choose your preferred formats - HEX, RGB, RGBA, HSL, HSLA",
+						dataType: "text",
+					},
 				],
 			},
 			{
 				id: "2",
 				title: "Colors",
 				bulletPoints: [
-					"Copy your desired color in HEX, HEX8, RGB, RGBA, HSL, HSLA",
+					{
+						data: "Copy your desired color in HEX, HEX8, RGB, RGBA, HSL, HSLA",
+						dataType: "text",
+					},
 				],
 			},
 			{
 				id: "3",
 				title: "CSS variables",
 				bulletPoints: [
-					"You can also copy your desired color in CSS variables, providing you with a consistent and efficient way to manage your color scheme.",
+					{
+						data: "You can also copy your desired color in CSS variables, providing you with a consistent and efficient way to manage your color scheme.",
+						dataType: "text",
+					},
 				],
 			},
 			{
 				id: "4",
 				title: "Use CSS variables",
 				bulletPoints: [
-					"We show you how to use CSS variables in your CSS and JS",
+					{
+						data: "We show you how to use CSS variables in your CSS and JS",
+						dataType: "text",
+					},
 				],
 			},
 			{
 				id: "5",
 				title: "Copy All",
-				bulletPoints: ["Save time and copy all your colors in one go!"],
+				bulletPoints: [
+					{
+						data: "Save time and copy all your colors in one go!",
+						dataType: "text",
+					},
+				],
 			},
 			{
 				id: "6",
 				title: "Beam it!",
-				bulletPoints: ["Beam your color to your other features!"],
+				bulletPoints: [
+					{
+						data: "Beam your color to your other features!",
+						dataType: "text",
+					},
+				],
 			},
 		],
 	},
@@ -220,13 +247,21 @@ const HELP: Help = {
 				id: "21",
 				title: "Get URL from GitHub",
 				bulletPoints: [
-					"Navigate to your markdown file and copy the raw URl",
+					{
+						data: "Navigate to your markdown file and copy the raw URL",
+						dataType: "text",
+					},
 				],
 			},
 			{
 				id: "22",
 				title: "Example URL",
-				bulletPoints: ["Press cmd + e on mac or ctrl + e on windows"],
+				bulletPoints: [
+					{
+						data: "Press cmd + e on mac or ctrl + e on windows",
+						dataType: "text",
+					},
+				],
 			},
 		],
 	},
@@ -487,6 +522,29 @@ const HELP: Help = {
 				id: "48",
 				title: "",
 				bulletPoints: [],
+			},
+		],
+	},
+	[routesById.csharpbuilder.id]: {
+		description: featuresById.csharpbuilder.fullDescription,
+		helpTexts: [
+			{
+				id: "1",
+				title: "Example Class",
+				bulletPoints: [
+					{
+						data: `public class Test {
+	public int Property1 { get; set; }
+	public Guid Property2 { get; set; }
+	public Guid Property3 { get; set; }
+	public CustomClass1 Property4 { get; set; }
+	public string Property5 { get; set; }
+	public bool Property6 { get; set; }
+	public bool Property7 { get; set; }
+}`,
+						dataType: "code",
+					},
+				],
 			},
 		],
 	},
