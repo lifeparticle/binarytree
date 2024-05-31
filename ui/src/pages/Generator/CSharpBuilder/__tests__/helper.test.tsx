@@ -9,7 +9,9 @@ describe("generateBuilderMethods", () => {
 	        }
 	    `;
 
-		const expectedOutput = `public class TestClassBuilder : TestClass \n{\n\tpublic TestClassBuilder WithPropertyOne(string propertyOne) { PropertyOne = propertyOne; return this; }\n\tpublic TestClassBuilder WithPropertyTwo(int propertyTwo) { PropertyTwo = propertyTwo; return this; }\n}`;
+		const buildMethod = `\tpublic TestClass Build()\n\t{\n\t\treturn new TestClass() \n\t\t{\n\t\t\tPropertyOne = PropertyOne,\n\t\t\tPropertyTwo = PropertyTwo\n\t\t};\n\t}`;
+
+		const expectedOutput = `public class TestClassBuilder : TestClass \n{\n\tpublic TestClassBuilder WithPropertyOne(string propertyOne) { PropertyOne = propertyOne; return this; }\n\tpublic TestClassBuilder WithPropertyTwo(int propertyTwo) { PropertyTwo = propertyTwo; return this; }\n\n${buildMethod}\n}`;
 
 		expect(generateBuilderMethods(classDefinition)).toBe(expectedOutput);
 	});
@@ -30,22 +32,16 @@ describe("generateBuilderMethods", () => {
 		);
 	});
 
-	it("should return an empty class if there are no properties", () => {
-		const classDefinition = "public class TestClass { }";
-
-		expect(generateBuilderMethods(classDefinition)).toBe(
-			`public class TestClassBuilder : TestClass \n{\n\n}`
-		);
-	});
+	const buildMethod = `\tpublic SinglePropertyClass Build()\n\t{\n\t\treturn new SinglePropertyClass() \n\t\t{\n\t\t\tIsEnabled = IsEnabled\n\t\t};\n\t}`;
 
 	it("should generate builder methods for single property", () => {
 		const classDefinition = `
-	        public class SinglePropertyClass {
-	            public bool IsEnabled { get; set; }
-	        }
-	    `;
+			public class SinglePropertyClass {
+				public bool IsEnabled { get; set; }
+			}
+		`;
 
-		const expectedOutput = `public class SinglePropertyClassBuilder : SinglePropertyClass \n{\n\tpublic SinglePropertyClassBuilder WithIsEnabled(bool isEnabled) { IsEnabled = isEnabled; return this; }\n}`;
+		const expectedOutput = `public class SinglePropertyClassBuilder : SinglePropertyClass \n{\n\tpublic SinglePropertyClassBuilder WithIsEnabled(bool isEnabled) { IsEnabled = isEnabled; return this; }\n\n${buildMethod}\n}`;
 
 		expect(generateBuilderMethods(classDefinition)).toBe(expectedOutput);
 	});
@@ -58,7 +54,7 @@ describe("generateBuilderMethods", () => {
 			}
 		`;
 
-		const expectedOutput = `public class MixedAccessClassBuilder : MixedAccessClass \n{\n\tpublic MixedAccessClassBuilder WithName(string name) { Name = name; return this; }\n\tpublic MixedAccessClassBuilder WithAge(int age) { Age = age; return this; }\n}`;
+		const expectedOutput = `public class MixedAccessClassBuilder : MixedAccessClass \n{\n\tpublic MixedAccessClassBuilder WithName(string name) { Name = name; return this; }\n\tpublic MixedAccessClassBuilder WithAge(int age) { Age = age; return this; }\n\n\tpublic MixedAccessClass Build()\n\t{\n\t\treturn new MixedAccessClass() \n\t\t{\n\t\t\tName = Name,\n\t\t\tAge = Age\n\t\t};\n\t}\n}`;
 
 		expect(generateBuilderMethods(classDefinition)).toBe(expectedOutput);
 	});

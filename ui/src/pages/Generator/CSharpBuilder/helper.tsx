@@ -26,6 +26,15 @@ export function generateBuilderMethods(
 		return { dataType: parts[1], propertyName: parts[2] };
 	});
 
+	const buildMethod = `\tpublic ${className} Build()
+	{
+		return new ${className}() \n\t\t{
+			${properties
+				.map((prop) => `${prop.propertyName} = ${prop.propertyName}`)
+				.join(",\n\t\t\t")}
+		};
+	}`;
+
 	const builderProperties = properties
 		.map((prop) => {
 			const methodName = `With${prop.propertyName}`;
@@ -42,5 +51,5 @@ export function generateBuilderMethods(
 		})
 		.join("\n");
 
-	return `${imports}public class ${className}Builder : ${className} \n{\n${useImports}${builderProperties}\n}`;
+	return `${imports}public class ${className}Builder : ${className} \n{\n${useImports}${builderProperties}\n\n${buildMethod}\n}`;
 }
