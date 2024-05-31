@@ -1,4 +1,8 @@
-export function generateBuilderMethods(classDefinition: string): string {
+export function generateBuilderMethods(
+	classDefinition: string,
+	imports = "",
+	useImports = ""
+): string {
 	const classNameMatch = /class (\w+)/.exec(classDefinition);
 	if (!classNameMatch) {
 		return "Class name not found";
@@ -6,9 +10,16 @@ export function generateBuilderMethods(classDefinition: string): string {
 	const className = classNameMatch[1];
 
 	// public int Id {get;set;}
+	// public int Id {get; private set;}
 	const propertyLines = classDefinition
 		.split("\n")
-		.filter((line) => line.trim().match(/\{\s*get\s*;\s*set\s*;\s*\}/));
+		.filter((line) =>
+			line
+				.trim()
+				.match(
+					/public\s+\w+\s+\w+\s*{\s*get\s*;\s*(private\s*)?set\s*;\s*}/
+				)
+		);
 
 	const properties = propertyLines.map((line) => {
 		const parts = line.trim().split(" ");
@@ -31,7 +42,5 @@ export function generateBuilderMethods(classDefinition: string): string {
 		})
 		.join("\n");
 
-	return `public class ${className}Builder : ${className} {\n
-${builderProperties}
-\n}`;
+	return `${imports}public class ${className}Builder : ${className} \n{\n${useImports}${builderProperties}\n}`;
 }

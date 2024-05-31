@@ -9,15 +9,42 @@ import { generateBuilderMethods } from "./helper";
 const CSharpBuilde: FC = () => {
 	const [input, setInput] = useState("");
 	const [result, setResult] = useState("");
+	const [imports, setImports] = useState("using Bogus;\n\n");
+	const [useImports, setUseImports] = useState(
+		"\tprivate static Faker faker = new();\n\n"
+	);
 
 	const onClick = (value: string) => {
-		setResult(generateBuilderMethods(value));
+		setResult(generateBuilderMethods(value, imports, useImports));
 	};
 
 	return (
 		<PageGrid>
 			<Card>
 				<Form layout="vertical">
+					<PageGrid>
+						<CodeEditor
+							label="Imports"
+							value={imports}
+							language="csharp"
+							height="17dvh"
+							handleCode={(value) => {
+								setImports(value ?? "");
+								onClick(input ?? "");
+							}}
+						/>
+						<CodeEditor
+							label="Use Import"
+							value={useImports}
+							language="csharp"
+							height="17dvh"
+							handleCode={(value) => {
+								setUseImports(value ?? "");
+								onClick(input ?? "");
+							}}
+						/>
+					</PageGrid>
+
 					<CodeEditor
 						label="Class"
 						value={input}
@@ -40,6 +67,7 @@ const CSharpBuilde: FC = () => {
 						label="Builder output"
 						value={result}
 						language="csharp"
+						height="72.5dvh"
 					/>
 					<Clipboard
 						text={result}
