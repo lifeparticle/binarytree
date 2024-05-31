@@ -15,13 +15,7 @@ const CSharpBuilde: FC = () => {
 	);
 
 	useEffect(() => {
-		setResult(
-			generateBuilderMethods(
-				input,
-				`${imports}\n\n`,
-				`\t${useImports}\n\n`
-			)
-		);
+		setResult(generateBuilderMethods(input, imports, useImports));
 	}, [imports, useImports, input]);
 
 	return (

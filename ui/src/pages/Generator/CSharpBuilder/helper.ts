@@ -1,3 +1,6 @@
+const BUILDER = "Builder";
+const PUBLIC = "public";
+
 export function generateBuilderMethods(
 	classDefinition: string,
 	imports = "",
@@ -8,6 +11,8 @@ export function generateBuilderMethods(
 		return "Class name not found";
 	}
 	const className = classNameMatch[1];
+	const classImports = imports ? `${imports}\n\n` : imports;
+	const useClassImports = useImports ? `\t${useImports}\n\n` : useImports;
 
 	// public int Id {get;set;}
 	// public int Id {get; private set;}
@@ -26,7 +31,7 @@ export function generateBuilderMethods(
 		return { dataType: parts[1], propertyName: parts[2] };
 	});
 
-	const buildMethod = `\tpublic ${className} Build()
+	const buildMethod = `\t${PUBLIC} ${className} Build()
 	{
 		return new ${className}() \n\t\t{
 			${properties
@@ -38,18 +43,13 @@ export function generateBuilderMethods(
 	const builderProperties = properties
 		.map((prop) => {
 			const methodName = `With${prop.propertyName}`;
+			const paramName = `${prop.propertyName[0].toLowerCase()}${prop.propertyName.slice(
+				1
+			)}`;
 
-			return `\tpublic ${className}Builder ${methodName}(${
-				prop.dataType
-			} ${prop.propertyName[0].toLowerCase()}${prop.propertyName.slice(
-				1
-			)}) { ${
-				prop.propertyName
-			} = ${prop.propertyName[0].toLowerCase()}${prop.propertyName.slice(
-				1
-			)}; return this; }`;
+			return `\t${PUBLIC} ${className}${BUILDER} ${methodName}(${prop.dataType} ${paramName}) { ${prop.propertyName} = ${paramName}; return this; }`;
 		})
 		.join("\n");
 
-	return `${imports}public class ${className}Builder : ${className} \n{\n${useImports}${builderProperties}\n\n${buildMethod}\n}`.trim();
+	return `${classImports}${PUBLIC} class ${className}${BUILDER} : ${className} \n{\n${useClassImports}${builderProperties}\n\n${buildMethod}\n}`.trim();
 }
