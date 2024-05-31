@@ -51,5 +51,5 @@ export function generateBuilderMethods(
 		})
 		.join("\n");
 
-	return `${imports}public class ${className}Builder : ${className} \n{\n${useImports}${builderProperties}\n\n${buildMethod}\n}`;
+	return `${imports}public class ${className}Builder : ${className} \n{\n${useImports}${builderProperties}\n\n${buildMethod}\n}`.trim();
 }

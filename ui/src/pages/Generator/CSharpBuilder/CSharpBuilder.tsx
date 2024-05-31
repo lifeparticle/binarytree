@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Card, Form } from "antd";
 import { Clipboard } from "components/ComponentInjector";
 import { CodeEditor } from "components/General";
@@ -9,14 +9,20 @@ import { generateBuilderMethods } from "./helper";
 const CSharpBuilde: FC = () => {
 	const [input, setInput] = useState("");
 	const [result, setResult] = useState("");
-	const [imports, setImports] = useState("using Bogus;\n\n");
+	const [imports, setImports] = useState("using Bogus;");
 	const [useImports, setUseImports] = useState(
-		"\tprivate static Faker faker = new();\n\n"
+		"private static Faker faker = new();"
 	);
 
-	const onClick = (value: string) => {
-		setResult(generateBuilderMethods(value, imports, useImports));
-	};
+	useEffect(() => {
+		setResult(
+			generateBuilderMethods(
+				input,
+				`${imports}\n\n`,
+				`\t${useImports}\n\n`
+			)
+		);
+	}, [imports, useImports, input]);
 
 	return (
 		<PageGrid>
@@ -30,7 +36,6 @@ const CSharpBuilde: FC = () => {
 							height="17dvh"
 							handleCode={(value) => {
 								setImports(value ?? "");
-								onClick(input ?? "");
 							}}
 						/>
 						<CodeEditor
@@ -40,7 +45,6 @@ const CSharpBuilde: FC = () => {
 							height="17dvh"
 							handleCode={(value) => {
 								setUseImports(value ?? "");
-								onClick(input ?? "");
 							}}
 						/>
 					</PageGrid>
@@ -51,7 +55,6 @@ const CSharpBuilde: FC = () => {
 						language="csharp"
 						handleCode={(value) => {
 							setInput(value ?? "");
-							onClick(value ?? "");
 						}}
 					/>
 					<Clipboard
