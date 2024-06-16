@@ -1,7 +1,5 @@
-.jwt {
-	&__input,
-	&__output {
-		display: flex;
-		justify-content: space-between;
-	}
+.jwt__input,
+.jwt__output {
+	display: flex;
+	justify-content: space-between;
 }
