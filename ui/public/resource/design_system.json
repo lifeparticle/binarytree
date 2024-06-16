@@ -96,5 +96,12 @@
 		"subCategory": "Web",
 		"url": "https://github.com/palantir/blueprint",
 		"socials": []	
+	},
+	{
+		"name": "Magic UI",
+		"category": "UI library",
+		"subCategory": "Web",
+		"url": "https://magicui.design/",
+		"socials": []	
 	}
 ]
