@@ -2,13 +2,15 @@
 	display: flex;
 	flex-direction: column;
 	gap: var(--bt-size-20);
-	&__input {
-		height: var(--bt-size-percent-100);
-	}
-	&__output {
-		height: var(--bt-size-percent-100);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
+}
+
+.fg__input,
+.fg__output {
+	height: var(--bt-size-percent-100);
+}
+
+.fg__output {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

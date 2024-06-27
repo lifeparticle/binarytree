@@ -1,31 +1,11 @@
-.dg {
-	&__left {
-		&__bottom {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			grid-gap: var(--bt-size-20) var(--bt-size-10);
+:root {
+	--avatar-size-424: 424px;
+}
 
-			&__select {
-				margin-bottom: var(--bt-size-10);
-				width: var(--bt-size-percent-100);
-			}
-
-			&__input {
-				margin-bottom: var(--bt-size-10);
-				width: var(--bt-size-percent-100);
-			}
-
-			&__autocomplete {
-				margin-bottom: var(--bt-size-10);
-				width: var(--bt-size-percent-100);
-			}
-		}
-	}
-
-	&__right {
-		display: grid;
-		row-gap: var(--bt-size-10);
-		grid-template-columns: var(--bt-grid-template-1);
-		overflow-x: auto;
-	}
+.avatar__output {
+	min-height: var(--avatar-size-424);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: auto;
 }

@@ -1,54 +1,62 @@
-$cp-size-435: 435px;
-$cp-size-380: 380px;
-$cp-size-360: 360px;
-$cp-size-minus-10: -10px;
+:root {
+	--cp-size-435: 435px;
+	--cp-size-380: 380px;
+	--cp-size-360: 360px;
+	--cp-size-minus-10: -10px;
+}
 
 .cp {
 	display: grid;
 	grid-template-columns:
-		$cp-size-380 $cp-size-360 $cp-size-435
-		$cp-size-435;
+		var(--cp-size-380) var(--cp-size-360) var(--cp-size-435)
+		var(--cp-size-435);
 	gap: var(--bt-size-16);
 	justify-content: center;
+}
 
-	&__inputs {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
+.cp__inputs {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
 
-	&__result {
-		display: flex;
-		justify-content: space-between;
-		gap: var(--bt-size-5);
+.cp__result {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--bt-size-5);
+}
 
-		&__color {
-			flex: 1;
-			border: var(--bt-border-dashed);
-			padding: var(--bt-size-4) var(--bt-size-10);
-			border-radius: var(--bt-size-5);
-		}
+.cp__result__color {
+	flex: 1;
+	border: var(--bt-border-dashed);
+	padding: var(--bt-size-4) var(--bt-size-10);
+	border-radius: var(--bt-size-5);
+}
 
-		&__button {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-	}
+.cp__result__button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
-	@media (max-width: 1900px) {
+@media (max-width: 1900px) {
+	.cp {
 		grid-template-columns:
-			$cp-size-435 $cp-size-360
-			$cp-size-435;
+			var(--cp-size-435) var(--cp-size-360)
+			var(--cp-size-435);
 	}
+}
 
-	@media (max-width: 1800px) {
-		grid-template-columns: $cp-size-435 $cp-size-435;
+@media (max-width: 1800px) {
+	.cp {
+		grid-template-columns: var(--cp-size-435) var(--cp-size-435);
 	}
+}
 
-	@media (max-width: 1200px) {
-		grid-template-columns: $cp-size-435;
+@media (max-width: 1200px) {
+	.cp {
+		grid-template-columns: var(--cp-size-435);
 	}
 }
 
@@ -56,30 +64,31 @@ $cp-size-minus-10: -10px;
 	padding: var(--bt-size-5);
 	transition: var(--bt-transition-item);
 	border-radius: var(--bt-size-10);
-	&__container {
-		display: flex;
-		gap: var(--bt-size-16);
-		align-items: center;
-		justify-content: space-between;
-		transition: var(--animation-fade-in);
-		border-radius: var(--bt-border-radius-4);
-		padding: var(--bt-size-11);
+}
 
-		&_checkered {
-			background-image: linear-gradient(
-					45deg,
-					rgba(0, 0, 0, 0.6) 25%,
-					transparent 25%
-				),
-				linear-gradient(-45deg, rgba(0, 0, 0, 0.6) 25%, transparent 25%),
-				linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.6) 75%),
-				linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.6) 70%);
-			background-size: var(--bt-size-20) var(--bt-size-20);
-			background-position: 0 0, 0 var(--bt-size-10),
-				var(--bt-size-10) $cp-size-minus-10,
-				$cp-size-minus-10 var(--bt-size-0);
-		}
-	}
+.cd__container {
+	display: flex;
+	gap: var(--bt-size-16);
+	align-items: center;
+	justify-content: space-between;
+	transition: var(--animation-fade-in);
+	border-radius: var(--bt-border-radius-4);
+	padding: var(--bt-size-11);
+}
+
+.cd__container_checkered {
+	background-image: linear-gradient(
+			45deg,
+			rgba(0, 0, 0, 0.6) 25%,
+			transparent 25%
+		),
+		linear-gradient(-45deg, rgba(0, 0, 0, 0.6) 25%, transparent 25%),
+		linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.6) 75%),
+		linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.6) 70%);
+	background-size: var(--bt-size-20) var(--bt-size-20);
+	background-position: 0 0, 0 var(--bt-size-10),
+		var(--bt-size-10) var(--cp-size-minus-10),
+		var(--cp-size-minus-10) var(--bt-size-0);
 }
 
 .dp {

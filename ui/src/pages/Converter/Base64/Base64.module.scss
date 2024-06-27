@@ -1,7 +1,5 @@
-.base64 {
-	&__input,
-	&__output {
-		display: flex;
-		justify-content: space-between;
-	}
+.base64__input,
+.base64__output {
+	display: flex;
+	justify-content: space-between;
 }

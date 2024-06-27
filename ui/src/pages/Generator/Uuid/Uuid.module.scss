@@ -3,14 +3,14 @@
 	flex-direction: column;
 	height: var(--bt-full-page-height);
 	gap: var(--bt-size-20);
+}
 
-	&__extra {
-		display: flex;
-		gap: var(--bt-size-20);
-	}
+.uuid__extra {
+	display: flex;
+	gap: var(--bt-size-20);
+}
 
-	&__output {
-		display: flex;
-		gap: var(--bt-size-10);
-	}
+.uuid__output {
+	display: flex;
+	gap: var(--bt-size-10);
 }

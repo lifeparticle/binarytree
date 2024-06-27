@@ -1,30 +1,31 @@
-$igfc-bg-color: rgba(255, 255, 255, 0.2);
+:root {
+	--igfc-bg-color: rgba(255, 255, 255, 0.2);
+}
 
-.igfc {
-	&__card {
-		min-height: var(--bt-card-height);
-	}
+.igfc__card {
+	min-height: var(--bt-card-height);
+}
 
-	&__colors {
-		grid-column: var(--bt-number-1) / var(--bt-size-minus-1);
-		margin-top: var(--bt-size-16);
-		position: relative;
-		background: $igfc-bg-color;
-	}
+.igfc__colors {
+	grid-column: 1 / -1;
+	margin-top: var(--bt-size-16);
+	position: relative;
+	background: var(--igfc-bg-color);
+}
 
-	&__images {
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--bt-size-16);
-		position: relative;
+.igfc__images {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--bt-size-16);
+	position: relative;
+}
 
-		&_image {
-			display: flex;
-			flex-direction: column;
-			gap: var(--bt-size-16);
-			&__title {
-				text-align: center;
-			}
-		}
-	}
+.igfc__images_image {
+	display: flex;
+	flex-direction: column;
+	gap: var(--bt-size-16);
+}
+
+.igfc__images_image__title {
+	text-align: center;
 }

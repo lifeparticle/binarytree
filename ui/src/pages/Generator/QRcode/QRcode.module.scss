@@ -1,17 +1,17 @@
-$qrcode-size-623: 623px;
+:root {
+	--qrcode-size-623: 623px;
+}
 
-.qrcode {
-	&__label {
-		display: flex;
-		width: var(--bt-vw-100);
-		justify-content: space-between;
-	}
+.qrcode__label {
+	display: flex;
+	width: var(--bt-vw-100);
+	justify-content: space-between;
+}
 
-	&__output {
-		height: $qrcode-size-623;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		overflow-y: auto;
-	}
+.qrcode__output {
+	height: var(--qrcode-size-623);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow-y: auto;
 }

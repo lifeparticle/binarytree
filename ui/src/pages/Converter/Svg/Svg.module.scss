@@ -1,15 +1,16 @@
-$svg-size-335: 335px;
+:root {
+	--svg-size-335: 335px;
+}
 
-.svgformatter {
-	&__left,
-	&__right {
-		display: flex;
-		flex-direction: column;
-		gap: var(--bt-size-20);
+.svgformatter__left,
+.svgformatter__right {
+	display: flex;
+	flex-direction: column;
+	gap: var(--bt-size-20);
+}
 
-		&__code {
-			min-height: $svg-size-335;
-			display: grid;
-		}
-	}
+.svgformatter__left__code,
+.svgformatter__right__code {
+	min-height: var(--svg-size-335);
+	display: grid;
 }
