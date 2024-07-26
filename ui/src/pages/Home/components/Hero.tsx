@@ -1,7 +1,7 @@
 import { FC } from "react";
 import style from "pages/Home/Home.module.scss";
 import { Typography, Image } from "antd";
-import hero from "assets/Home/hero.webp";
+import hero from "assets/Home/hero.png";
 import { Icon, ResponsiveButton } from "components/General";
 import { useModal } from "hooks";
 
