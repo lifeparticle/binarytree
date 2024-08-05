@@ -171,5 +171,23 @@
 		"category": "Database",
 		"subCategory": ["Database"],
 		"url": "https://surrealdb.com/"
+	},
+	{
+		"name": "Sentry",
+		"category": "Monitoring",
+		"subCategory": ["Monitoring"],
+		"url": "https://sentry.io/"
+	},
+	{
+		"name": "Appwrite",
+		"category": "Platform",
+		"subCategory": ["Platform"],
+		"url": "https://appwrite.io/"
+	},
+	{
+		"name": "Posthog",
+		"category": "Platform",
+		"subCategory": ["Platform"],
+		"url": "https://posthog.com/"
 	}
 ]
