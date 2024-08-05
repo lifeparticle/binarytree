@@ -175,20 +175,6 @@
 		"socials": []
 	},
 	{
-		"name": "Plausible",
-		"category": "Analytics",
-		"subCategory": "Analytics",
-		"url": "https://plausible.io/",
-		"socials": []
-	},
-	{
-		"name": "Posthog",
-		"category": "Analytics",
-		"subCategory": "Analytics",
-		"url": "https://posthog.com/",
-		"socials": []
-	},
-	{
 		"name": "error404",
 		"category": "UI",
 		"subCategory": "UI",

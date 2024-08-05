@@ -189,5 +189,12 @@
 		"category": "Platform",
 		"subCategory": ["Platform"],
 		"url": "https://posthog.com/"
+	},
+	{
+		"name": "Plausible",
+		"category": "Analytics",
+		"subCategory": "Analytics",
+		"url": "https://plausible.io/",
+		"socials": []
 	}
 ]

@@ -418,5 +418,17 @@
 				"name": ""
 			}
 		]
+	},
+	{
+		"name": "Detailed SEO extension",
+		"category": "Google Chrome Extensions",
+		"subCategory": "SEO",
+		"url": "https://chromewebstore.google.com/detail/detailed-seo-extension/pfjdepjjfjjahkjfpkcgfmfhmnakjfba",
+		"socials": [
+			{
+				"url": "",
+				"name": ""
+			}
+		]
 	}
 ]
