@@ -430,5 +430,19 @@
 				"name": ""
 			}
 		]
+	},
+	{
+		"name": "Formatting Toggle",
+		"category": "VSCode Extension",
+		"subCategory": "Performance",
+		"url": "https://marketplace.visualstudio.com/items?itemName=tombonnike.vscode-status-bar-format-toggle",
+		"socials": [
+			{
+				"url": "https://marketplace.visualstudio.com",
+				"name": "VSCode Marketplace"
+			}
+		]
 	}
 ]
+
+
