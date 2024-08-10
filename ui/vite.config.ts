@@ -46,8 +46,15 @@ export default defineConfig({
 			reportsDirectory: "html/ui",
 			include: ["**/*.{ts,tsx}"],
 			exclude: ["**/*.test.{ts,tsx}", "**/types.ts", "**/*.testkit.ts"],
-			reporter: ["text", ["html", { subdir: "coverage" }], "lcov"],
+			reporter: [
+				"text",
+				["html", { subdir: "coverage" }],
+				"lcov",
+				"json-summary",
+				"json",
+			],
 			provider: "v8",
+			reportOnFailure: true,
 		},
 	},
 });

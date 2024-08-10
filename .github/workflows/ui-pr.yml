@@ -30,6 +30,17 @@ jobs:
       - name: Run Tests
         run: yarn test
 
+      - name: "Test"
+        run: npx vitest --coverage.enabled true
+
+      - name: "Report Coverage"
+        if: always()
+        uses: davelosert/vitest-coverage-report-action@v2
+        with:
+          working-directory: ui
+          json-summary-path: html/ui/coverage-summary.json
+          json-final-path: html/ui/coverage-final.json
+
       - name: Post the knip results
         run: yarn knip --max-issues=${{ vars.KNIP_MAX_ISSUES }}
 
