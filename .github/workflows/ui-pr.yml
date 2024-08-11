@@ -28,7 +28,7 @@ jobs:
         run: yarn install --immutable
 
       - name: Run Tests
-        run: npx vitest --coverage.enabled true
+        run: yarn test:pr
 
       - name: "Report Coverage"
         if: always()
