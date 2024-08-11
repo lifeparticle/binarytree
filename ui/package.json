@@ -12,6 +12,7 @@
 		"test": "vitest",
 		"test:coverage": "vitest --coverage",
 		"test:ui": "vitest --ui --coverage.enabled=true",
+		"test:pr": "vitest --coverage.enabled true",
 		"coverage:preview": "npx vite preview --outDir ./html",
 		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"lint:fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
