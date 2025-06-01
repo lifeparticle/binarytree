@@ -194,5 +194,12 @@
 		"subCategory": "Illustrations",
 		"url": "https://uiball.com/ldrs/",
 		"socials": []
+	},
+	{
+		"name": "hashnode",
+		"category": "blog",
+		"subCategory": "blog",
+		"url": "https://hashnode.com/",
+		"socials": []
 	}
 ]
