@@ -201,5 +201,19 @@
 		"subCategory": "blog",
 		"url": "https://hashnode.com/",
 		"socials": []
+	},
+	{
+		"name": "visual-dom-diff",
+		"category": "dev",
+		"subCategory": "dev",
+		"url": "https://teamwork.github.io/visual-dom-diff/",
+		"socials": []
+	},
+	{
+		"name": "tokenizer",
+		"category": "dev",
+		"subCategory": "dev",
+		"url": "https://platform.openai.com/tokenizer",
+		"socials": []
 	}
 ]
