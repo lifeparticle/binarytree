@@ -215,5 +215,69 @@
 		"subCategory": "dev",
 		"url": "https://platform.openai.com/tokenizer",
 		"socials": []
+	},
+	{
+		"name": "gemini-cli",
+		"category": "cli",
+		"subCategory": "cli",
+		"url": "https://github.com/google-gemini/gemini-cli",
+		"socials": []
+	},
+	{
+		"name": "warp",
+		"category": "cli",
+		"subCategory": "cli",
+		"url": "https://www.warp.dev/",
+		"socials": []
+	},
+	{
+		"name": "wave-terminal",
+		"category": "cli",
+		"subCategory": "cli",
+		"url": "https://www.waveterm.dev/",
+		"socials": []
+	},
+	{
+		"name": "amazon-q-cli",
+		"category": "cli",
+		"subCategory": "cli",
+		"url": "https://aws.amazon.com/developer/learning/q-developer-cli/",
+		"socials": []
+	},
+	{
+		"name": "claude-code",
+		"category": "cli",
+		"subCategory": "cli",
+		"url": "https://www.anthropic.com/claude-code",
+		"socials": []
+	},
+	{
+		"name": "tabby-terminal",
+		"category": "cli",
+		"subCategory": "cli",
+		"url": "https://tabby.sh/",
+		"socials": []
+	},
+	{
+		"name": "ghostty",
+		"category": "cli",
+		"subCategory": "cli",
+		"url": "https://ghostty.org/",
+		"socials": []
+	},
+	{
+		"name": "wezterm",
+		"category": "cli",
+		"subCategory": "cli",
+		"url": "https://wezterm.org/",
+		"socials": []
+	},
+	{
+		"name": "alacritty",
+		"category": "cli",
+		"subCategory": "cli",
+		"url": "https://github.com/alacritty/alacritty",
+		"socials": []
 	}
+
 ]
