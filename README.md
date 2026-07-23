@@ -1,3 +1,8 @@
+> [!IMPORTANT]
+> Looking for the old BinaryTree website?
+> To use the previous version, clone the repository and run it locally.
+
+
 <!-- Measure Twice Cut Once -->
 
 <p align="center">
